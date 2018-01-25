@@ -1,5 +1,5 @@
 {
-  "name": "--skip-test-unit",
+  "name": "celp",
   "private": true,
   "dependencies": {}
 }
