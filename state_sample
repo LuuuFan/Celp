@@ -1,0 +1,100 @@
+{
+
+  entities: {
+
+    users: {
+      1: {
+        id: 1,
+        username: 'Luuu Fan',
+        email: 'LuFan@gmail.com',
+        profileUrl: 'profile1.jpg',
+        reviews: [2, 5, 7, 9]
+       },
+      2: {
+        id: 2,
+        username: 'ShaSha Fan',
+        email: 'ShashaFan@gmail.com',
+        profileUrl: 'profile2.jpg',
+        reviews: [3]
+      },
+      3: {
+        id: 3,
+        username: 'Night Fan',
+        email: 'Padma@bravo.org',
+        profileUrl: 'profile3.jpg,
+        reviews: [1]
+      }
+    }
+
+    reviews {
+      1:  {
+        id: 1,
+        body: 'Great service and good food. ',
+        businessId: 2,
+        authorId: 3,
+        starRating: 4
+      },
+      2: {
+        id: 2,
+        body: 'I usually love this place.',
+        businessId: 1
+        authorId: 1,
+        starRating: 2
+      }
+    }
+
+    businesses {
+      1: {
+        id: 1,
+        name: 'Sungrass Bakery',
+        address: '1730 O'farrell St San Francisco',
+        phoneNumber: '425-449-2096',
+        cuisine: 'Bakery',
+        reviewIds:  [1, 13, 17, 29],
+        rating: 4
+      },
+      2: {
+        id: 2,
+        name: 'Shasha Cat Cafe',
+        address: '1730 O'farrell St San Francisco',
+        phoneNumber: '425-444-8888',
+        cuisine: 'Cafe',
+        reviewIds: [2, 23, 29],
+        rating: 3
+      }
+    }
+
+    img {
+      1: {
+        id: 1,
+        url: 'sungrass.bakery.jpg',
+        bussinessId: 1,
+        userId: 1
+      },
+      2: {
+        id: 1,
+        url: 'cat.cafe.jpg',
+        bussinessId: 2,
+        userId: 3
+      }
+    }
+
+    ui: {
+      loading: true / false,
+      errors: {
+        login: ["Incorrect username/password combination"],
+        starRating: ["Please select star rating"],
+        reviewBody: ["Please add a review before submitting"]
+      }
+    }
+
+    session: {
+      currentUser {
+      username: 'shasha',
+      id: 3,
+      profileUrl: 'shasha.jpg',
+      }
+    }
+  }
+
+}
