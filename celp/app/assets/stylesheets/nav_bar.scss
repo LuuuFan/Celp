@@ -1,0 +1,200 @@
+.header{
+  background-color: #d32323;
+  height: 100px;
+  margin: 0;
+}
+
+.nav-bar{
+  vertical-align: baseline;
+  display: flex;
+  // justify-content: space-around;
+  min-width: 1020px;
+  align-items: center;
+  margin-top: 30px;
+  margin: auto;
+  width: 70%;
+  height: 70%;
+}
+.nav-bar h1 i {
+  color: red;
+  font-size: 28px;
+}
+
+.nav-bar h1 span {
+  padding-right: 3px;
+}
+
+.nav-bar h1{
+  font-family: 'Nunito';
+  font-size: 20px;
+  font-weight: 900;
+  text-shadow: 3px 3px 0 white,
+    -3px 3px 0 white,
+    3px -3px 0 white,
+    -3px -3px 0 white,
+    0px 3px 0 white,
+    0px -3px 0 white,
+    -3px 0px 0 white,
+    3px 0px 0 white,
+    2px 2px 0 white,
+    -2px 2px 0 white,
+    2px -2px 0 white,
+    -2px -2px 0 white,
+    0px 2px 0 white,
+    0px -2px 0 white,
+    -2px 0px 0 white,
+    2px 0px 0 white,
+    3px 2px 0 white,
+    -3px 2px 0 white,
+    3px -2px 0 white,
+    -3px -2px 0 white,
+    2px 3px 0 white,
+    -2px 3px 0 white,
+    2px -3px 0 white,
+    -2px -3px 0 white;
+  margin-right: 10px;
+}
+
+.searchBar{
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  background-color: white;
+  height: 40px;
+  width: 80%;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+.searchBar span{
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.searchBar input{
+  padding: 1px;
+  width: 41%;
+  // border: 1px solid gray;
+}
+
+.searchBar input:first-of-type{
+  border-right: 1px solid lightgray;
+}
+
+.searchBar button{
+  height: 100%;
+  width: 7%;
+  background-color: #bd1f1f;
+  border-radius: 0 3px 3px 0;
+  // align-items: center;
+}
+
+.searchBar button:hover{
+  background-color: #a71c1c;
+}
+
+.fa-search{
+  margin-left: 20px;
+  font-size: 28px;
+  color: white;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+.session{
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
+.session li{
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #bd1f1f;
+  width: 100%;
+  font-weight: 800;
+  font-size: 14px;
+  color: white;
+  border-radius: 4px;
+}
+
+.session li:hover{
+  background-color: #a71c1c;
+}
+
+.menu-bar{
+  width: 100%;
+  background-color: #bd1f1f;
+  height: 30%;
+  min-width: 1020px;
+  color: white;
+  font-weight: 850;
+  font-size: 13px;
+  width: 100%;
+}
+
+.menu{
+  margin: auto;
+  vertical-align: baseline;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 74%;
+  height: 100%;
+}
+
+.business{
+  width: 40%;
+}
+
+.business ul a{
+  width: 33.33%;
+}
+
+.services{
+  width: 30%;
+}
+
+.services ul a{
+  width: 33.33%;
+}
+
+.menu * {
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.menu div ul{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.menu li {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.login-btn {
+  width: 100px;
+  color: white;
+}
+
+.menu i {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+
+.menu-bar a{
+  height: 100%;
+}
+
+.menu-bar a:hover{
+  background-color: #a71c1c;
+}
