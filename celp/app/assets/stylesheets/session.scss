@@ -1,0 +1,96 @@
+.session {
+  width: 60%;
+  margin: 200px auto;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: center;
+}
+
+// .session-label{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   margin-right: 30px;
+// }
+
+.session-img{
+  width: 40%;
+}
+
+.normal-form input {
+  width: 97%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 25px;
+  padding: 8px 0 8px 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+
+}
+
+.normal-form {
+  margin-top: 20px;
+}
+
+.session button{
+  padding: 8px 0 8px 8px;
+  width: 97%;
+  text-align: center;
+  background-color: #d90007;
+  border-color: #8d0005;
+  color: white;
+  font-size: 16px;
+  height: 30px;
+  border-radius: 5px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.normal-form>a {
+  color: #0073bb;
+  text-align: right;
+  font-size: 12px;
+  // padding-left: 180px;
+}
+
+.session-form h2 {
+  font-size: 22px;
+  padding-bottom: 10px;
+  color: #d32323;
+  font-weight: 900;
+}
+
+.session-form h3 {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.session-form h3 a{
+  color: #0073bb;
+}
+
+.session-form .term{
+  margin: 10px, 0, 10px, 0;
+  color: gray;
+  font-size: 12px;
+  text-align: center;
+}
+
+.normal-form>p {
+  color: gray;
+  font-size: 12px;
+  // margin-left: 162px;
+  text-align: right;
+}
+
+.session-form p a {
+  color: #0073bb;
+}

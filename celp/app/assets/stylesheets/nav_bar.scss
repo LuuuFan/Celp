@@ -12,9 +12,10 @@
   align-items: center;
   margin-top: 30px;
   margin: auto;
-  width: 70%;
+  width: 50%;
   height: 70%;
 }
+
 .nav-bar h1 i {
   color: red;
   font-size: 28px;
@@ -58,12 +59,13 @@
 .searchBar{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: 3px;
   background-color: white;
   height: 40px;
   width: 80%;
-  margin-left: 9px;
-  margin-right: 9px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .searchBar span{
@@ -82,9 +84,13 @@
   border-right: 1px solid lightgray;
 }
 
+.searchBar button i {
+  margin-left: 28px;
+}
+
 .searchBar button{
   height: 100%;
-  width: 7%;
+  width: 70px;
   background-color: #bd1f1f;
   border-radius: 0 3px 3px 0;
   // align-items: center;
@@ -124,28 +130,26 @@
 }
 
 .menu-bar{
-  width: 100%;
   background-color: #bd1f1f;
   height: 30%;
-  min-width: 1020px;
   color: white;
   font-weight: 850;
   font-size: 13px;
-  width: 100%;
 }
 
 .menu{
+  min-width: 1020px;
   margin: auto;
   vertical-align: baseline;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 74%;
+  width: 55%;
   height: 100%;
 }
 
 .business{
-  width: 40%;
+  width: 50%;
 }
 
 .business ul a{
@@ -153,31 +157,34 @@
 }
 
 .services{
-  width: 30%;
+  width: 40%;
+}
+
+.services ul a:first-of-type{
+  width: 50%;
 }
 
 .services ul a{
-  width: 33.33%;
+  width: 25%;
+}
+
+.services ul li {
+  // text-align: center;
+  // vertical-align: middle;
+  margin-top: 7px;
 }
 
 .menu * {
   height: 100%;
+  // vertical-align: middle;
   text-align: center;
-  vertical-align: middle;
 }
 
 .menu div ul{
   height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: row;
-  text-align: center;
-  vertical-align: middle;
-
-}
-
-.menu li {
-  vertical-align: middle;
-  text-align: center;
 }
 
 .login-btn {
@@ -185,11 +192,19 @@
   color: white;
 }
 
-.menu i {
-  vertical-align: middle;
-  margin-right: 5px;
+.login-btn p {
+  margin-top: 7px;
 }
 
+.fa-sort-desc {
+  margin-left: 7px;
+}
+
+.menu i {
+  vertical-align: middle;
+  margin-right: 7px;
+  margin-top: 7px;
+}
 
 .menu-bar a{
   height: 100%;
@@ -197,4 +212,24 @@
 
 .menu-bar a:hover{
   background-color: #a71c1c;
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #bd1f1f;
+  width: 55px;
+}
+
+.user i{
+  margin-top: 10px;
+}
+
+.userImg img{
+  border-radius: 4px 0 0 4px;
+  height: 40px;
+  width: 35px
 }

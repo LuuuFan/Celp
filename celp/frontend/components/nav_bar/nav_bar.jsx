@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 const NavBar = ({currentUser, logout}) => {
 
   const display = currentUser ? (
-    <div>
+    <a className='user'>
       <div className='userImg'>
         <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
       </div>
       <a className='userMenu'>
         <i className="fa fa-sort-desc" aria-hidden="true"></i>
       </a>
-    </div>
+    </a>
   ) : (
     <div className='session'>
       <ul>
@@ -30,7 +30,7 @@ const NavBar = ({currentUser, logout}) => {
       <div className='nav-bar'>
         <h1 className='logo'>
           <span>Celp</span>
-          <i class="fa fa-yelp" aria-hidden="true"></i>
+          <i className="fa fa-yelp" aria-hidden="true"></i>
         </h1>
         <div className='searchBar'>
           <span>Find</span>
@@ -49,20 +49,21 @@ const NavBar = ({currentUser, logout}) => {
             <ul>
               <a>
                 <li>
-                  <i class="fa fa-cutlery" aria-hidden="true"></i>
+                  <i className="fa fa-cutlery" aria-hidden="true"></i>
                   Restaurants
                 </li>
               </a>
               <a>
                 <li>
-                  <i class="fa fa-glass" aria-hidden="true"></i>
+                  <i className="fa fa-glass" aria-hidden="true"></i>
                   Nightlife
                 </li>
               </a>
               <a>
                 <li>
-                  <i class="fa fa-wrench" aria-hidden="true"></i>
+                  <i className="fa fa-wrench" aria-hidden="true"></i>
                   Home Services
+                  <i className="fa fa-sort-desc" aria-hidden="true"></i>
                 </li>
               </a>
               </ul>
