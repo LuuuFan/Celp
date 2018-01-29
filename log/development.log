@@ -4793,3 +4793,67 @@ Processing by StaticPagesController#index as HTML
 Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-28 17:06:10 -0800
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+Completed 200 OK in 1777ms (Views: 1767.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 17:06:17 -0800
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 74.1ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 17:06:22 -0800
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m-90Rx8PlfinMC5PSc59hg"], ["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 67.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-01-28 17:06:33 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"formmat"=>:json}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-01-28 17:06:34 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"formmat"=>:json}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-01-28 17:06:35 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"formmat"=>:json}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-01-28 17:06:41 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"luufan", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"formmat"=>:json}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "luufan"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (5.8ms)
+Completed 200 OK in 106ms (Views: 9.3ms | ActiveRecord: 0.9ms)
+
+
