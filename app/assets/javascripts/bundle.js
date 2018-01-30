@@ -26381,7 +26381,7 @@ exports.default = SessionForm;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.AuthRoute = undefined;
+exports.ProtectedRoute = exports.AuthRoute = undefined;
 
 var _react = __webpack_require__(0);
 
@@ -26399,7 +26399,18 @@ var Auth = function Auth(_ref) {
       loggedIn = _ref.loggedIn,
       exact = _ref.exact;
   return _react2.default.createElement(_reactRouterDom.Route, { path: path, exact: exact, render: function render(props) {
-      return !loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
+      return loggedIn ? _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' }) : _react2.default.createElement(Component, props);
+    }
+  });
+};
+
+var Protected = function Protected(_ref2) {
+  var Component = _ref2.component,
+      path = _ref2.path,
+      loggedIn = _ref2.loggedIn,
+      exact = _ref2.exact;
+  return _react2.default.createElement(_reactRouterDom.Route, { path: path, exact: exact, render: function render(props) {
+      return loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/login' });
     }
   });
 };
@@ -26411,6 +26422,8 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var AuthRoute = exports.AuthRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Auth));
+
+var ProtectedRoute = exports.ProtectedRoute = withRoute((0, _reactRedux.connect)(mapStateToProps, null)(Protected));
 
 /***/ })
 /******/ ]);
