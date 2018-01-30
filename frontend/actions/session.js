@@ -9,9 +9,9 @@ export const receiveCurrentUser = (currentUser) => ({
   currentUser
 });
 
-export const logoutCurrentUser = () => ({
-  type: LOGOUT_CURRENT_USER,
-});
+// export const logoutCurrentUser = () => ({
+//   type: LOGOUT_CURRENT_USER,
+// });
 
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
@@ -30,8 +30,8 @@ export const createSession = (user) => dispatch => APIUtilSession.createSession(
     errors => dispatch(receiveErrors(errors))
   );
 
-  export const deleteSession = () => dispatch => APIUtilSession.deleteSession()
+  export const logout = () => dispatch => APIUtilSession.deleteSession()
     .then(
-      () => dispatch(logoutCurrentUser()),
+      user => dispatch(receiveCurrentUser(null)),
       errors => dispatch(receiveErrors(errors))
     );

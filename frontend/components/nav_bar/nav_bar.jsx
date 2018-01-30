@@ -1,36 +1,73 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({currentUser, logout}) => {
+class NavBar extends React.Component {
+  constructor(props){
+    super(props);
+  }
 
-  const display = currentUser ? (
-    <a className='user'>
-      <div className='userImg'>
-        <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
+  handleClick(e){
+    e.preventDefault();
+    let userDropdown = document.getElementById('user-dropdown');
+    if (userDropdown.classList.length > 0) {
+      userDropdown.classList.remove('hidden');
+    } else {
+      userDropdown.classList.add('hidden');
+    }
+    // debugger
+  }
+
+
+  render(){
+    const {currentUser, logout} = this.props;
+    const display = currentUser ? (
+      <div>
+        <a className='user' onClick={(e)=>this.handleClick(e)}>
+          <div className='userImg'>
+            <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
+          </div>
+          <a className='userMenu'>
+            <i className="fa fa-sort-desc" aria-hidden="true"></i>
+          </a>
+          <div id='user-dropdown' className='hidden'>
+            <div className='user-dropdown-detail'>
+              <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
+              <div className='user-detail'>
+                <a href='/aboutme'>{currentUser.username}</a>
+              </div>
+            </div>
+            <hr/>
+            <ul>
+              <li><i className="fa fa-user" aria-hidden="true"></i><a href='/aboutme'>About Me</a></li>
+              <li><i className="fa fa-cog" aria-hidden="true"></i><a href='/setting'>Account Setting</a></li>
+            </ul>
+            <hr/>
+            <ul>
+              <a onClick={()=>this.props.logout()}><li>Log Out</li></a>
+            </ul>
+          </div>
+        </a>
       </div>
-      <a className='userMenu'>
-        <i className="fa fa-sort-desc" aria-hidden="true"></i>
-      </a>
-    </a>
-  ) : (
-    <div className='session'>
-      <ul>
-        <Link className='signup-btn' to='/signup'>
-          <li>
-              Sign Up
-          </li>
-        </Link>
-      </ul>
-  </div>
-  );
+    ) : (
+      <div className='signup'>
+        <ul>
+          <Link className='signup-btn' to='/signup'>
+            <li>
+                Sign Up
+            </li>
+          </Link>
+        </ul>
+      </div>
+    );
 
-
-  return (
+    return (
     <header className='header'>
       <div className='nav-bar'>
         <h1 className='logo'>
-          <span>Celp</span>
-          <i className="fa fa-yelp" aria-hidden="true"></i>
+          <a href='/'>
+            <span>Celp</span>
+            <i className="fa fa-yelp" aria-hidden="true"></i>
+          </a>
         </h1>
         <div className='searchBar'>
           <span>Find</span>
@@ -85,6 +122,8 @@ const NavBar = ({currentUser, logout}) => {
       </div>
     </header>
     );
+  }
+
 }
 
 export default NavBar;

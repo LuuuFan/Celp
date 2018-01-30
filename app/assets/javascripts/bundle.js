@@ -1168,7 +1168,7 @@ module.exports = g;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.deleteSession = exports.createSession = exports.createUser = exports.receiveErrors = exports.logoutCurrentUser = exports.receiveCurrentUser = exports.RECEIVE_ERRORS = exports.LOGOUT_CURRENT_USER = exports.RECEIVE_CURRENT_USER = undefined;
+exports.logout = exports.createSession = exports.createUser = exports.receiveErrors = exports.receiveCurrentUser = exports.RECEIVE_ERRORS = exports.LOGOUT_CURRENT_USER = exports.RECEIVE_CURRENT_USER = undefined;
 
 var _session = __webpack_require__(83);
 
@@ -1187,11 +1187,9 @@ var receiveCurrentUser = exports.receiveCurrentUser = function receiveCurrentUse
   };
 };
 
-var logoutCurrentUser = exports.logoutCurrentUser = function logoutCurrentUser() {
-  return {
-    type: LOGOUT_CURRENT_USER
-  };
-};
+// export const logoutCurrentUser = () => ({
+//   type: LOGOUT_CURRENT_USER,
+// });
 
 var receiveErrors = exports.receiveErrors = function receiveErrors(errors) {
   return {
@@ -1220,10 +1218,10 @@ var createSession = exports.createSession = function createSession(user) {
   };
 };
 
-var deleteSession = exports.deleteSession = function deleteSession() {
+var logout = exports.logout = function logout() {
   return function (dispatch) {
-    return APIUtilSession.deleteSession().then(function () {
-      return dispatch(logoutCurrentUser());
+    return APIUtilSession.deleteSession().then(function (user) {
+      return dispatch(receiveCurrentUser(null));
     }, function (errors) {
       return dispatch(receiveErrors(errors));
     });
@@ -21509,10 +21507,10 @@ var sessionReducer = function sessionReducer() {
   switch (action.type) {
     case _session.RECEIVE_CURRENT_USER:
       newState = { currentUser: action.currentUser };
-      return Object.assign({}, newState);
+      return newState;
 
-    case _session.LOGOUT_CURRENT_USER:
-      return _nullSession;
+    // case LOGOUT_CURRENT_USER:
+    //   return _nullSession;
 
     default:
       return state;
@@ -25872,6 +25870,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -25880,178 +25880,282 @@ var _reactRouterDom = __webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NavBar = function NavBar(_ref) {
-  var currentUser = _ref.currentUser,
-      logout = _ref.logout;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  var display = currentUser ? _react2.default.createElement(
-    'a',
-    { className: 'user' },
-    _react2.default.createElement(
-      'div',
-      { className: 'userImg' },
-      _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' })
-    ),
-    _react2.default.createElement(
-      'a',
-      { className: 'userMenu' },
-      _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
-    )
-  ) : _react2.default.createElement(
-    'div',
-    { className: 'session' },
-    _react2.default.createElement(
-      'ul',
-      null,
-      _react2.default.createElement(
-        _reactRouterDom.Link,
-        { className: 'signup-btn', to: '/signup' },
-        _react2.default.createElement(
-          'li',
-          null,
-          'Sign Up'
-        )
-      )
-    )
-  );
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-  return _react2.default.createElement(
-    'header',
-    { className: 'header' },
-    _react2.default.createElement(
-      'div',
-      { className: 'nav-bar' },
-      _react2.default.createElement(
-        'h1',
-        { className: 'logo' },
-        _react2.default.createElement(
-          'span',
-          null,
-          'Celp'
-        ),
-        _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
-      ),
-      _react2.default.createElement(
+var NavBar = function (_React$Component) {
+  _inherits(NavBar, _React$Component);
+
+  function NavBar(props) {
+    _classCallCheck(this, NavBar);
+
+    return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
+  }
+
+  _createClass(NavBar, [{
+    key: 'handleClick',
+    value: function handleClick(e) {
+      e.preventDefault();
+      var userDropdown = document.getElementById('user-dropdown');
+      if (userDropdown.classList.length > 0) {
+        userDropdown.classList.remove('hidden');
+      } else {
+        userDropdown.classList.add('hidden');
+      }
+      // debugger
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          currentUser = _props.currentUser,
+          logout = _props.logout;
+
+      var display = currentUser ? _react2.default.createElement(
         'div',
-        { className: 'searchBar' },
+        null,
         _react2.default.createElement(
-          'span',
-          null,
-          'Find'
-        ),
-        _react2.default.createElement('input', { type: 'text', placeholder: 'tacos, cheap dinners, Max\'s' }),
-        _react2.default.createElement(
-          'span',
-          null,
-          'Near'
-        ),
-        _react2.default.createElement('input', { type: 'text', placeholder: 'San Francisco, CA, US' }),
-        _react2.default.createElement(
-          'button',
-          null,
-          _react2.default.createElement('i', { className: 'fa fa-search' })
-        )
-      ),
-      display
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'menu-bar' },
-      _react2.default.createElement(
-        'div',
-        { className: 'menu' },
-        _react2.default.createElement(
-          'div',
-          { className: 'business' },
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-cutlery', 'aria-hidden': 'true' }),
-                'Restaurants'
-              )
-            ),
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-glass', 'aria-hidden': 'true' }),
-                'Nightlife'
-              )
-            ),
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-wrench', 'aria-hidden': 'true' }),
-                'Home Services',
-                _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'services' },
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'Write a Review'
-              )
-            ),
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'Events'
-              )
-            ),
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'talk'
-              )
-            )
-          )
-        ),
-        !currentUser ? _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/login' },
+          'a',
+          { className: 'user', onClick: function onClick(e) {
+              return _this2.handleClick(e);
+            } },
           _react2.default.createElement(
             'div',
-            { className: 'login-btn' },
+            { className: 'userImg' },
+            _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' })
+          ),
+          _react2.default.createElement(
+            'a',
+            { className: 'userMenu' },
+            _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { id: 'user-dropdown', className: 'hidden' },
             _react2.default.createElement(
-              'p',
+              'div',
+              { className: 'user-dropdown-detail' },
+              _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'user-detail' },
+                _react2.default.createElement(
+                  'a',
+                  { href: '/aboutme' },
+                  currentUser.username
+                )
+              )
+            ),
+            _react2.default.createElement('hr', null),
+            _react2.default.createElement(
+              'ul',
               null,
-              'Log In'
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' }),
+                _react2.default.createElement(
+                  'a',
+                  { href: '/aboutme' },
+                  'About Me'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('i', { className: 'fa fa-cog', 'aria-hidden': 'true' }),
+                _react2.default.createElement(
+                  'a',
+                  { href: '/setting' },
+                  'Account Setting'
+                )
+              )
+            ),
+            _react2.default.createElement('hr', null),
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'a',
+                { onClick: function onClick() {
+                    return _this2.props.logout();
+                  } },
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  'Log Out'
+                )
+              )
             )
           )
-        ) : ""
-      )
-    )
-  );
-};
+        )
+      ) : _react2.default.createElement(
+        'div',
+        { className: 'signup' },
+        _react2.default.createElement(
+          'ul',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { className: 'signup-btn', to: '/signup' },
+            _react2.default.createElement(
+              'li',
+              null,
+              'Sign Up'
+            )
+          )
+        )
+      );
+
+      return _react2.default.createElement(
+        'header',
+        { className: 'header' },
+        _react2.default.createElement(
+          'div',
+          { className: 'nav-bar' },
+          _react2.default.createElement(
+            'h1',
+            { className: 'logo' },
+            _react2.default.createElement(
+              'a',
+              { href: '/' },
+              _react2.default.createElement(
+                'span',
+                null,
+                'Celp'
+              ),
+              _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'searchBar' },
+            _react2.default.createElement(
+              'span',
+              null,
+              'Find'
+            ),
+            _react2.default.createElement('input', { type: 'text', placeholder: 'tacos, cheap dinners, Max\'s' }),
+            _react2.default.createElement(
+              'span',
+              null,
+              'Near'
+            ),
+            _react2.default.createElement('input', { type: 'text', placeholder: 'San Francisco, CA, US' }),
+            _react2.default.createElement(
+              'button',
+              null,
+              _react2.default.createElement('i', { className: 'fa fa-search' })
+            )
+          ),
+          display
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'menu-bar' },
+          _react2.default.createElement(
+            'div',
+            { className: 'menu' },
+            _react2.default.createElement(
+              'div',
+              { className: 'business' },
+              _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'fa fa-cutlery', 'aria-hidden': 'true' }),
+                    'Restaurants'
+                  )
+                ),
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'fa fa-glass', 'aria-hidden': 'true' }),
+                    'Nightlife'
+                  )
+                ),
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'fa fa-wrench', 'aria-hidden': 'true' }),
+                    'Home Services',
+                    _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'services' },
+              _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    'Write a Review'
+                  )
+                ),
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    'Events'
+                  )
+                ),
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    'talk'
+                  )
+                )
+              )
+            ),
+            !currentUser ? _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/login' },
+              _react2.default.createElement(
+                'div',
+                { className: 'login-btn' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Log In'
+                )
+              )
+            ) : ""
+          )
+        )
+      );
+    }
+  }]);
+
+  return NavBar;
+}(_react2.default.Component);
 
 exports.default = NavBar;
 

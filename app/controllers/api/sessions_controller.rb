@@ -3,7 +3,8 @@ class Api::SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
-      render 'api/users/show'
+      session[:session_token] = @user.session_token
+      render "api/users/show", status: 200
     else
       render json: ['Wrong Credentials'], status: 401
     end
@@ -11,11 +12,13 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     if current_user
+      @user = current_user
       current_user.reset_session_token
       session[:session_token] = nil
-      render json: {message: 'Logout successful'}
+      @current_user = nil
+      render "api/users/show", status: 200
     else
-      render status: 404
+      render json: ['Nobody signed in'], status: 404
     end
   end
 end
