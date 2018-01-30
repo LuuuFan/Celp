@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import SessionFormContainer from './session/session_form_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
+import Home from './home/home';
 
 const App = () => (
   <div className='main'>
@@ -13,3 +14,6 @@ const App = () => (
 );
 
 export default App;
+
+
+// <Route exact path='/' component={Home} />

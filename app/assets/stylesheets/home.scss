@@ -1,3 +1,25 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+
+.home-img-frame{
+  position: absolute;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  // justify-content: center;
+
+  z-index: -1;
+}
+
+.home-img{
+  width: 100%;
+}
+
+.home {
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  // justify-content: center;
+}
