@@ -25966,9 +25966,9 @@ var _session_form_container2 = _interopRequireDefault(_session_form_container);
 
 var _route_util = __webpack_require__(128);
 
-var _home = __webpack_require__(129);
+var _home_container = __webpack_require__(130);
 
-var _home2 = _interopRequireDefault(_home);
+var _home_container2 = _interopRequireDefault(_home_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25979,7 +25979,7 @@ var App = function App() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _nav_bar_container2.default })
@@ -26536,7 +26536,9 @@ var _button2 = _interopRequireDefault(_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Home = function Home() {
+var Home = function Home(_ref) {
+  var currentUser = _ref.currentUser,
+      logout = _ref.logout;
   return _react2.default.createElement(
     'div',
     { className: 'home' },
@@ -26586,7 +26588,7 @@ var Home = function Home() {
             )
           )
         ),
-        _react2.default.createElement(
+        currentUser ? _react2.default.createElement(_button2.default, { currentUser: currentUser, logout: logout }) : _react2.default.createElement(
           'div',
           { className: 'sessionButton' },
           _react2.default.createElement(
@@ -26693,7 +26695,46 @@ var Home = function Home() {
 
 exports.default = Home;
 
-// <Button />
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(14);
+
+var _home = __webpack_require__(129);
+
+var _home2 = _interopRequireDefault(_home);
+
+var _session = __webpack_require__(20);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    currentUser: state.session.currentUser
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch((0, _session.logout)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_home2.default);
 
 /***/ })
 /******/ ]);
