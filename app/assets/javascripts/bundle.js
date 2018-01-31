@@ -21668,7 +21668,7 @@ var _errors2 = _interopRequireDefault(_errors);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
-  // entities: entitiesReducer,
+  entities: _entities2.default,
   session: _session2.default,
   errors: _errors2.default
 });
@@ -21688,7 +21688,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(8);
 
-var entitiesReducer = (0, _redux.combineReducers)({});
+var _biz = __webpack_require__(134);
+
+var _biz2 = _interopRequireDefault(_biz);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var entitiesReducer = (0, _redux.combineReducers)({
+  biz: _biz2.default
+});
 
 exports.default = entitiesReducer;
 
@@ -21717,10 +21725,6 @@ var sessionReducer = function sessionReducer() {
     case _session.RECEIVE_CURRENT_USER:
       newState = { currentUser: action.currentUser };
       return newState;
-
-    // case LOGOUT_CURRENT_USER:
-    //   return _nullSession;
-
     default:
       return state;
   };
@@ -26054,6 +26058,10 @@ var _not_found = __webpack_require__(132);
 
 var _not_found2 = _interopRequireDefault(_not_found);
 
+var _biz_index_container = __webpack_require__(137);
+
+var _biz_index_container2 = _interopRequireDefault(_biz_index_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -26066,9 +26074,13 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/nav', component: _nav_bar_container2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { component: _not_found2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _nav_bar_container2.default })
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Switch,
+      null,
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/biz', component: _biz_index_container2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { component: _not_found2.default })
     )
   );
 };
@@ -26877,10 +26889,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _not_found_util = __webpack_require__(133);
 
-var _nav_bar_container = __webpack_require__(50);
-
-var _nav_bar_container2 = _interopRequireDefault(_nav_bar_container);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26906,7 +26914,6 @@ var NotFound = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_nav_bar_container2.default, null),
         _react2.default.createElement(
           'div',
           { className: 'notfound' },
@@ -26947,6 +26954,253 @@ var getGif = exports.getGif = function getGif() {
     async: false
   });
 };
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _biz = __webpack_require__(135);
+
+var bizReducer = function bizReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  Object.freeze(state);
+  var newState = {};
+  switch (action.type) {
+    case _biz.RECEIVE_ALL_BIZ:
+      return Object.assign({}, state, action.bizes);
+    case _biz.RECEIVE_BIZ:
+      newState = Object.assign({}, state);
+      newState[action.biz.id] = action.biz;
+      return Object.assign({}, state, newState);
+    default:
+      return state;
+  }
+};
+
+exports.default = bizReducer;
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.requestBiz = exports.requestAllBiz = exports.receiveBiz = exports.receiveAllBiz = exports.RECEIVE_BIZ = exports.RECEIVE_ALL_BIZ = undefined;
+
+var _biz_util = __webpack_require__(136);
+
+var APIUtilBiz = _interopRequireWildcard(_biz_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_ALL_BIZ = exports.RECEIVE_ALL_BIZ = 'RECEIVE_ALL_BIZ';
+var RECEIVE_BIZ = exports.RECEIVE_BIZ = 'RECEIVE_BIZ';
+
+var receiveAllBiz = exports.receiveAllBiz = function receiveAllBiz(bizes) {
+  return {
+    type: RECEIVE_ALL_BIZ,
+    bizes: bizes
+  };
+};
+
+var receiveBiz = exports.receiveBiz = function receiveBiz(biz) {
+  return {
+    type: RECEIVE_BIZ,
+    bizes: bizes
+  };
+};
+
+var requestAllBiz = exports.requestAllBiz = function requestAllBiz() {
+  return function (dispatch) {
+    return APIUtilBiz.fetchBizes().then(function (bizes) {
+      return dispatch(receiveAllBiz(bizes));
+    });
+  };
+};
+
+var requestBiz = exports.requestBiz = function requestBiz(bizId) {
+  return function (dispatch) {
+    return APIUtilBiz.fetchBiz(bizId).then(function (biz) {
+      return dispatch(receiveBiz(biz));
+    });
+  };
+};
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchBizes = exports.fetchBizes = function fetchBizes() {
+  return $.ajax({
+    url: 'api/biz',
+    method: 'GET'
+  });
+};
+
+var fetchBiz = exports.fetchBiz = function fetchBiz(bizId) {
+  return $.ajax({
+    url: 'api/biz/' + biz_id,
+    method: 'GET'
+  });
+};
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(10);
+
+var _biz_index = __webpack_require__(138);
+
+var _biz_index2 = _interopRequireDefault(_biz_index);
+
+var _biz = __webpack_require__(135);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    bizes: Object.values(state.entities.biz)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    requestAllBiz: function requestAllBiz() {
+      return dispatch((0, _biz.requestAllBiz)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_biz_index2.default);
+
+/***/ }),
+/* 138 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _biz_index_item = __webpack_require__(139);
+
+var _biz_index_item2 = _interopRequireDefault(_biz_index_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizIndex = function (_React$Component) {
+  _inherits(BizIndex, _React$Component);
+
+  function BizIndex() {
+    _classCallCheck(this, BizIndex);
+
+    return _possibleConstructorReturn(this, (BizIndex.__proto__ || Object.getPrototypeOf(BizIndex)).call(this));
+  }
+
+  _createClass(BizIndex, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.requestAllBiz();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var bizes = this.props.bizes;
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'ul',
+          null,
+          bizes.map(function (biz) {
+            return _react2.default.createElement(_biz_index_item2.default, { key: biz.id, biz: biz });
+          })
+        )
+      );
+    }
+  }]);
+
+  return BizIndex;
+}(_react2.default.Component);
+
+exports.default = BizIndex;
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BizIndexItem = function BizIndexItem(_ref) {
+  var biz = _ref.biz;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'p',
+      null,
+      biz.name
+    )
+  );
+};
+
+exports.default = BizIndexItem;
 
 /***/ })
 /******/ ]);
