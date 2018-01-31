@@ -26009,6 +26009,10 @@ var _home_container = __webpack_require__(130);
 
 var _home_container2 = _interopRequireDefault(_home_container);
 
+var _not_found = __webpack_require__(133);
+
+var _not_found2 = _interopRequireDefault(_not_found);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -26021,6 +26025,7 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { component: _not_found2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _nav_bar_container2.default })
     )
   );
@@ -26804,6 +26809,89 @@ var Home = function Home(_ref) {
 };
 
 exports.default = Home;
+
+/***/ }),
+/* 132 */,
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _not_found_util = __webpack_require__(135);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NotFound = function (_React$Component) {
+  _inherits(NotFound, _React$Component);
+
+  function NotFound() {
+    _classCallCheck(this, NotFound);
+
+    return _possibleConstructorReturn(this, (NotFound.__proto__ || Object.getPrototypeOf(NotFound)).apply(this, arguments));
+  }
+
+  _createClass(NotFound, [{
+    key: 'render',
+    value: function render() {
+      var imgArr = $.parseJSON((0, _not_found_util.getGif)().responseText);
+      var imgUrl = imgArr.data[Math.floor(Math.random() * 25)].images.original.webp;
+      return _react2.default.createElement(
+        'div',
+        { className: 'notfound' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Oops! Page Not Found'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'notfound-img' },
+          _react2.default.createElement('img', { src: imgUrl })
+        )
+      );
+    }
+  }]);
+
+  return NotFound;
+}(_react2.default.Component);
+
+exports.default = NotFound;
+
+/***/ }),
+/* 134 */,
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var getGif = exports.getGif = function getGif() {
+  return $.ajax({
+    url: 'http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=e9H4ByZs95vlGYE7rg0nYbiF8eNgX4Dr',
+    method: 'GET',
+    async: false
+  });
+};
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,27 @@
+.notfound {
+  width: 40%;
+  margin: 200px auto;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.notfound h1 {
+  font-weight: 900;
+  color: red;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.notfound-img{
+  align-items: center;
+  display: flex;
+}
+
+.notfound-img img{
+  opacity: 0.9;
+  height: 300px;
+  width: auto;
+}
