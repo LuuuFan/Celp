@@ -16,8 +16,8 @@ const Home = () => (
         </ul>
       </div>
         <div className='sessionButton'>
-          <a className='login'><p>Log In</p></a>
-          <a className='signup'><p>Sign Up</p></a>
+          <a href='/#/login'><div className='login'><p>Log In</p></div></a>
+          <a href='/#/signup'><div className='signup'><p>Sign Up</p></div></a>
         </div>
       </div>
       <a href='/'><h1 className='home-logo'>Celp<i className="fa fa-yelp" aria-hidden="true"></i></h1></a>

@@ -25980,10 +25980,10 @@ var App = function App() {
       _reactRouterDom.Switch,
       null,
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
+      _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
+      _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _nav_bar_container2.default })
-    ),
-    _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
-    _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default })
+    )
   );
 };
 
@@ -26336,76 +26336,43 @@ var SessionForm = function (_React$Component) {
       var h2 = this.props.formType == 'signup' ? 'Sign Up for' : 'Log In to';
       return _react2.default.createElement(
         'div',
-        { className: 'session' },
+        null,
         _react2.default.createElement(
-          'div',
-          { className: 'session-form' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            h2,
-            ' Celp'
-          ),
-          this.props.formType !== 'signup' ? _react2.default.createElement(
-            'h3',
-            null,
-            'New to Celp? ',
-            _react2.default.createElement(
-              'a',
-              { href: '#/signup/' },
-              'Sign up'
-            )
-          ) : _react2.default.createElement(
-            'h3',
-            null,
-            'Connect with great local businesses'
-          ),
+          'header',
+          { className: 'header' },
           _react2.default.createElement(
             'div',
-            { className: 'term' },
+            { className: 'nav-bar' },
             _react2.default.createElement(
-              'p',
-              null,
-              'By ',
-              text,
-              ', you agree to Celp\u2019s ',
+              'h1',
+              { className: 'logo' },
               _react2.default.createElement(
                 'a',
-                null,
-                'Terms of Service'
-              ),
-              ' and ',
-              _react2.default.createElement(
-                'a',
-                null,
-                'Privacy Policy.'
+                { href: '/' },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Celp'
+                ),
+                _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
               )
             )
-          ),
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'session' },
           _react2.default.createElement(
-            'form',
-            { className: 'normal-form' },
-            _react2.default.createElement('input', { onChange: this.handleInput('username'), name: 'user[username]', type: 'text', value: this.state.username, placeholder: 'username' }),
-            this.props.formType == 'signup' ? _react2.default.createElement('input', { onChange: this.handleInput('email'), type: 'text', name: 'user[email]', value: this.state.email, placeholder: 'email' }) : '',
-            _react2.default.createElement('input', { onChange: this.handleInput('password'), type: 'password', name: 'user[password]', value: this.state.password, placeholder: 'password' }),
-            this.props.formType !== 'signup' ? _react2.default.createElement(
-              'a',
-              { href: '#/forgotpassword/' },
-              _react2.default.createElement(
-                'p',
-                null,
-                'Forgot password?'
-              )
-            ) : '',
+            'div',
+            { className: 'session-form' },
             _react2.default.createElement(
-              'button',
-              { onClick: function onClick(e) {
-                  return _this4.handleClick(e);
-                } },
-              text
+              'h2',
+              null,
+              h2,
+              ' Celp'
             ),
             this.props.formType !== 'signup' ? _react2.default.createElement(
-              'p',
+              'h3',
               null,
               'New to Celp? ',
               _react2.default.createElement(
@@ -26414,18 +26381,77 @@ var SessionForm = function (_React$Component) {
                 'Sign up'
               )
             ) : _react2.default.createElement(
-              'p',
+              'h3',
               null,
-              'Already on Celp? ',
+              'Connect with great local businesses'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'term' },
               _react2.default.createElement(
+                'p',
+                null,
+                'By ',
+                text,
+                ', you agree to Celp\u2019s ',
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  'Terms of Service'
+                ),
+                ' and ',
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  'Privacy Policy.'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'form',
+              { className: 'normal-form' },
+              _react2.default.createElement('input', { onChange: this.handleInput('username'), name: 'user[username]', type: 'text', value: this.state.username, placeholder: 'username' }),
+              this.props.formType == 'signup' ? _react2.default.createElement('input', { onChange: this.handleInput('email'), type: 'text', name: 'user[email]', value: this.state.email, placeholder: 'email' }) : '',
+              _react2.default.createElement('input', { onChange: this.handleInput('password'), type: 'password', name: 'user[password]', value: this.state.password, placeholder: 'password' }),
+              this.props.formType !== 'signup' ? _react2.default.createElement(
                 'a',
-                { href: '#/login/' },
-                'Log in'
+                { href: '#/forgotpassword/' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Forgot password?'
+                )
+              ) : '',
+              _react2.default.createElement(
+                'button',
+                { onClick: function onClick(e) {
+                    return _this4.handleClick(e);
+                  } },
+                text
+              ),
+              this.props.formType !== 'signup' ? _react2.default.createElement(
+                'p',
+                null,
+                'New to Celp? ',
+                _react2.default.createElement(
+                  'a',
+                  { href: '#/signup/' },
+                  'Sign up'
+                )
+              ) : _react2.default.createElement(
+                'p',
+                null,
+                'Already on Celp? ',
+                _react2.default.createElement(
+                  'a',
+                  { href: '#/login/' },
+                  'Log in'
+                )
               )
             )
-          )
-        ),
-        _react2.default.createElement('div', { className: 'session-img' })
+          ),
+          _react2.default.createElement('div', { className: 'session-img' })
+        )
       );
     }
   }]);
@@ -26565,20 +26591,28 @@ var Home = function Home() {
           { className: 'sessionButton' },
           _react2.default.createElement(
             'a',
-            { className: 'login' },
+            { href: '/#/login' },
             _react2.default.createElement(
-              'p',
-              null,
-              'Log In'
+              'div',
+              { className: 'login' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Log In'
+              )
             )
           ),
           _react2.default.createElement(
             'a',
-            { className: 'signup' },
+            { href: '/#/signup' },
             _react2.default.createElement(
-              'p',
-              null,
-              'Sign Up'
+              'div',
+              { className: 'signup' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Sign Up'
+              )
             )
           )
         )

@@ -41,6 +41,7 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+  align-items: center;
 }
 
 .home-header .services ul{
@@ -58,7 +59,7 @@
   // border: 2px solid white;
   padding: 7px;
   text-align: center;
-  border-bottom: 3px hidden;
+  border-bottom: 3px solid none;
   }
 
 .home-header .services ul a li:hover{
@@ -67,14 +68,40 @@
 
 .home-header .sessionButton {
   display: flex;
-  justify-content: space-around;
-  width: 300px;
+  justify-content: flex-end;
+  width: 250px;
+  padding: 10px;
 }
 
-.home-header .sessionButton a{
+.home-header .sessionButton div{
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.home-header .login{
+  width: 50px;
+  // border: 2px solid white;
+  padding: 0 10px;
+  margin-right: 5px;
+}
+
+.home-header .login:hover{
+  border-bottom: 2px solid white;
+}
+
+.home-header .signup{
   width: 100px;
+  border: 2px solid white;
+  border-radius: 5px;
 }
 
+.home-header .signup:hover{
+  background-color: white;
+  color: gray;
+}
 
 .home .business ul{
   display: flex;

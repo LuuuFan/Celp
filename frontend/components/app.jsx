@@ -9,10 +9,10 @@ const App = () => (
   <div className='main'>
     <Switch>
       <Route exact path='/' component={Home} />
+      <AuthRoute path='/signup' component={SessionFormContainer} />
+      <AuthRoute path='/login' component={SessionFormContainer} />
       <Route path="/" component={NavBarContainer} />
     </Switch>
-    <AuthRoute path='/signup' component={SessionFormContainer} />
-    <AuthRoute path='/login' component={SessionFormContainer} />
   </div>
 );
 
