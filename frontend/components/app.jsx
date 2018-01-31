@@ -12,6 +12,7 @@ const App = () => (
       <Route exact path='/' component={HomeContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
       <AuthRoute path='/login' component={SessionFormContainer} />
+      <Route path="/nav" component={NavBarContainer} />
       <Route component={NotFound} />
       <Route path="/" component={NavBarContainer} />
     </Switch>

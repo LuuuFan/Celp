@@ -14,6 +14,8 @@ class Button extends React.Component {
       userDropdown.classList.add('hidden');
     }
   }
+
+
   render(){
     const {currentUser, logout} = this.props;
     const display = currentUser ? (

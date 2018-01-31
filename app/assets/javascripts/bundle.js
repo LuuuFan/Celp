@@ -26066,6 +26066,7 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
       _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/nav', component: _nav_bar_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { component: _not_found2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _nav_bar_container2.default })
     )
@@ -26645,6 +26646,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -26655,163 +26658,203 @@ var _button2 = _interopRequireDefault(_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Home = function Home(_ref) {
-  var currentUser = _ref.currentUser,
-      logout = _ref.logout,
-      img = _ref.img;
-  return _react2.default.createElement(
-    'div',
-    { className: 'home' },
-    _react2.default.createElement(
-      'div',
-      { className: 'home-img-frame' },
-      _react2.default.createElement('img', { className: 'home-img', src: '' + img[Math.floor(Math.random() * 8)] })
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'home-main' },
-      _react2.default.createElement(
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_React$Component) {
+  _inherits(Home, _React$Component);
+
+  function Home(props) {
+    _classCallCheck(this, Home);
+
+    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+  }
+
+  _createClass(Home, [{
+    key: 'handleClick',
+    value: function handleClick(e) {
+      // ===========Finish it in Bonus===============//
+      // let userDropdown = document.getElementById('user-dropdown');
+      // let user = document.getElementsByClassName('user');
+      // debugger
+      // if ( e.currentTarget
+      //   && userDropdown
+      //   && userDropdown.classList.length == 0) {
+      //   userDropdown.classList.add('hidden');
+      // }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          currentUser = _props.currentUser,
+          logout = _props.logout,
+          img = _props.img;
+
+      return _react2.default.createElement(
         'div',
-        { className: 'home-header' },
+        { className: 'home', onClick: function onClick(e) {
+            return _this2.handleClick(e);
+          } },
         _react2.default.createElement(
           'div',
-          { className: 'services' },
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'Write a Review'
-              )
-            ),
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'Events'
-              )
-            ),
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'talk'
-              )
-            )
-          )
+          { className: 'home-img-frame' },
+          _react2.default.createElement('img', { className: 'home-img', src: '' + img[Math.floor(Math.random() * 8)] })
         ),
-        currentUser ? _react2.default.createElement(_button2.default, { currentUser: currentUser, logout: logout }) : _react2.default.createElement(
+        _react2.default.createElement(
           'div',
-          { className: 'sessionButton' },
+          { className: 'home-main' },
           _react2.default.createElement(
-            'a',
-            { href: '/#/login' },
+            'div',
+            { className: 'home-header' },
             _react2.default.createElement(
               'div',
-              { className: 'login' },
+              { className: 'services' },
               _react2.default.createElement(
-                'p',
+                'ul',
                 null,
-                'Log In'
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    'Write a Review'
+                  )
+                ),
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    'Events'
+                  )
+                ),
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    'talk'
+                  )
+                )
               )
-            )
-          ),
-          _react2.default.createElement(
-            'a',
-            { href: '/#/signup' },
-            _react2.default.createElement(
-              'div',
-              { className: 'signup' },
-              _react2.default.createElement(
-                'p',
-                null,
-                'Sign Up'
-              )
-            )
-          )
-        )
-      ),
-      _react2.default.createElement(
-        'a',
-        { href: '/' },
-        _react2.default.createElement(
-          'h1',
-          { className: 'home-logo' },
-          'Celp',
-          _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'searchBar' },
-        _react2.default.createElement(
-          'span',
-          null,
-          'Find'
-        ),
-        _react2.default.createElement('input', { type: 'text', placeholder: 'tacos, cheap dinners, Max\'s' }),
-        _react2.default.createElement(
-          'span',
-          null,
-          'Near'
-        ),
-        _react2.default.createElement('input', { type: 'text', placeholder: 'San Francisco, CA, US' }),
-        _react2.default.createElement(
-          'button',
-          null,
-          _react2.default.createElement('i', { className: 'fa fa-search' })
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'business' },
-        _react2.default.createElement(
-          'ul',
-          null,
-          _react2.default.createElement(
-            'a',
-            null,
-            _react2.default.createElement('i', { className: 'fa fa-cutlery', 'aria-hidden': 'true' }),
-            _react2.default.createElement(
-              'li',
-              null,
-              'Restaurants'
-            )
-          ),
-          _react2.default.createElement(
-            'a',
-            null,
-            _react2.default.createElement('i', { className: 'fa fa-glass', 'aria-hidden': 'true' }),
-            _react2.default.createElement(
-              'li',
-              null,
-              'Nightlife'
-            )
-          ),
-          _react2.default.createElement(
-            'a',
-            null,
-            _react2.default.createElement('i', { className: 'fa fa-wrench', 'aria-hidden': 'true' }),
-            _react2.default.createElement(
-              'li',
-              null,
-              'Home Services'
             ),
-            _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
+            currentUser ? _react2.default.createElement(_button2.default, { currentUser: currentUser, logout: logout }) : _react2.default.createElement(
+              'div',
+              { className: 'sessionButton' },
+              _react2.default.createElement(
+                'a',
+                { href: '/#/login' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'login' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Log In'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                { href: '/#/signup' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'signup' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Sign Up'
+                  )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'a',
+            { href: '/' },
+            _react2.default.createElement(
+              'h1',
+              { className: 'home-logo' },
+              'Celp',
+              _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'searchBar' },
+            _react2.default.createElement(
+              'span',
+              null,
+              'Find'
+            ),
+            _react2.default.createElement('input', { type: 'text', placeholder: 'tacos, cheap dinners, Max\'s' }),
+            _react2.default.createElement(
+              'span',
+              null,
+              'Near'
+            ),
+            _react2.default.createElement('input', { type: 'text', placeholder: 'San Francisco, CA, US' }),
+            _react2.default.createElement(
+              'button',
+              null,
+              _react2.default.createElement('i', { className: 'fa fa-search' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'business' },
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'a',
+                null,
+                _react2.default.createElement('i', { className: 'fa fa-cutlery', 'aria-hidden': 'true' }),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  'Restaurants'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                null,
+                _react2.default.createElement('i', { className: 'fa fa-glass', 'aria-hidden': 'true' }),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  'Nightlife'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                null,
+                _react2.default.createElement('i', { className: 'fa fa-wrench', 'aria-hidden': 'true' }),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  'Home Services'
+                ),
+                _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
+              )
+            )
           )
         )
-      )
-    )
-  );
-};
+      );
+    }
+  }]);
+
+  return Home;
+}(_react2.default.Component);
 
 exports.default = Home;
 
