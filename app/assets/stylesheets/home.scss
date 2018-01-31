@@ -1,25 +1,142 @@
 * {
   font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .home-img-frame{
   position: absolute;
   width: 100%;
-  max-height: 500px;
+  max-height: 600px;
   overflow: hidden;
   display: flex;
-  // justify-content: center;
-
+  justify-content: center;
   z-index: -1;
+  min-width: 1020px;
 }
 
 .home-img{
   width: 100%;
+  opacity: 0.8;
 }
 
 .home {
-  min-height: 400px;
+  min-height: 600px;
+  min-width: 1020px;
+}
+
+.home-main{
+  margin: 0 auto;
+  min-width: 1020px;
+  width: 50%;
+  min-height: 600px;
   display: flex;
-  align-items: flex-end;
-  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // justify-content: space-between;
+}
+
+.home-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.home-header .services ul{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-weight: 800;
+  padding: 10px;
+}
+
+
+.home-header .services ul a li{
+  width: auto;
+  margin-right: 20px;
+  // border: 2px solid white;
+  padding: 7px;
+  text-align: center;
+  border-bottom: 3px hidden;
+  }
+
+.home-header .services ul a li:hover{
+  border-bottom: 3px solid white;
+}
+
+.home-header .sessionButton {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+
+.home-header .sessionButton a{
+  width: 100px;
+}
+
+
+.home .business ul{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-weight: 800;
+}
+
+.home-logo {
+  font-family: 'Nunito';
+  font-size: 40px;
+  font-weight: 900;
+  text-shadow: 3px 3px 0 white,
+    -3px 3px 0 white,
+    3px -3px 0 white,
+    -3px -3px 0 white,
+    0px 3px 0 white,
+    0px -3px 0 white,
+    -3px 0px 0 white,
+    3px 0px 0 white,
+    2px 2px 0 white,
+    -2px 2px 0 white,
+    2px -2px 0 white,
+    -2px -2px 0 white,
+    0px 2px 0 white,
+    0px -2px 0 white,
+    -2px 0px 0 white,
+    2px 0px 0 white,
+    3px 2px 0 white,
+    -3px 2px 0 white,
+    3px -2px 0 white,
+    -3px -2px 0 white,
+    2px 3px 0 white,
+    -2px 3px 0 white,
+    2px -3px 0 white,
+    -2px -3px 0 white;
+  margin-top: 100px;
+}
+
+.home-logo i {
+  color: red;
+}
+
+.home .business ul {
+  margin-top: 15px;
+}
+
+.home .business ul a {
+  display: flex;
+  flex-direction: row;
+}
+
+.home .business ul i{
+  margin-right: 10px;
+}
+
+.home .business ul a li:hover,{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.home .searchBar {
+  width: 100%;
+  margin-top: 50px;
 }

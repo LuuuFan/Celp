@@ -7,11 +7,9 @@ class NavBar extends React.Component {
     super(props);
   }
 
-
-
-
   render(){
     const {currentUser, logout} = this.props;
+    // debugger
     return (
     <header className='header'>
       <div className='nav-bar'>
