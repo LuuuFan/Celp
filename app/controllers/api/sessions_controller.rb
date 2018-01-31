@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       session[:session_token] = @user.session_token
       render "api/users/show", status: 200
     else
-      render json: ['The email address or password you entered is incorrect.'], status: 401
+      render json: ['The username or password you entered is incorrect.'], status: 401
     end
   end
 

@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentDidMount(){
+    this.props.clearErrors();
+  }
+
   componentWillReceiveProps(newProps){
     if (this.props.match.path !== newProps.match.path) {
       this.props.clearErrors();
