@@ -1,4 +1,16 @@
-.session {
+.header-session {
+  height: 70px;
+  background-color: #d32323;
+  margin: 0;
+  align-items: center;
+  display: flex;
+}
+
+.header-session>h1 {
+  margin: auto;
+}
+
+.session{
   width: 60%;
   margin: 200px auto;
   flex-direction: row;
@@ -13,12 +25,6 @@
   align-items: center;
 }
 
-// .session-label{
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   margin-right: 30px;
-// }
 
 .session-img{
   width: 40%;
@@ -95,4 +101,35 @@
 
 .session-form p a {
   color: #0073bb;
+}
+
+.session-error{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 70px;
+  align-items: center;
+  background-color: #fcd6d3;
+  border-radius: 5px;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.session-error>p {
+  margin-left: 20px;
+}
+
+.errors-closeBtn {
+  color: gray;
+  height: 22px;
+  width: 22px;
+  text-align: center;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.errors-closeBtn:hover{
+  color: white;
+  background-color: lightgray;
+  border-radius: 50%;
 }

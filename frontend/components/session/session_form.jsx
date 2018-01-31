@@ -11,6 +11,12 @@ class SessionForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.match.path !== newProps.match.path) {
+      this.props.clearErrors();
+    }
+  }
+
   handleInput(type){
     return (e) => {
       this.setState({[type]: e.target.value});
@@ -22,21 +28,32 @@ class SessionForm extends React.Component {
     this.props.action(this.state).then(()=>this.props.history.push('/'));
   }
 
+  handleClose(){
+    this.props.clearErrors();
+  }
+
+
   render(){
     const text = this.props.formType == 'signup' ? 'Sign Up' : 'Log In';
     const h2 = this.props.formType == 'signup' ? 'Sign Up for' : 'Log In to';
     return (
       <div>
-        <header className='header'>
-          <div className='nav-bar'>
-            <h1 className='logo'>
-              <a href='/'>
-                <span>Celp</span>
-                <i className="fa fa-yelp" aria-hidden="true"></i>
-              </a>
-            </h1>
-          </div>
+        <header className='header-session'>
+          <h1 className='logo'>
+            <a href='/'>
+              <span>Celp</span>
+              <i className="fa fa-yelp" aria-hidden="true"></i>
+            </a>
+          </h1>
         </header>
+        {this.props.errors.length ? (
+          <div className='session-error'>
+            <p>{this.props.errors[0]}</p>
+            <div onClick={()=>this.handleClose()} className='errors-closeBtn'>&times;</div>
+          </div>
+        ) : (
+          ""
+        )}
         <div className='session'>
           <div className='session-form'>
             <h2>{h2} Celp</h2>

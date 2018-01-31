@@ -5,7 +5,7 @@ import Button from '../session/button';
 const Home = ({currentUser, logout}) => (
   <div className='home'>
     <div className='home-img-frame'>
-      <img className='home-img' src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1522874_10202453141665547_272813371_o.jpg?oh=ef1f681bc575f9596268b4aa7ad1c89a&oe=5B26A25C'/>
+      <img className='home-img' src='https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1500759_10202453164706123_223987173_o.jpg?oh=2ebd31423fe1780a531e1da7606cbdca&oe=5ADE4CD5'/>
     </div>
     <div className='home-main'>
       <div className='home-header'>
