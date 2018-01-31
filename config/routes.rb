@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   namespace :api, default: {formmat: :json} do
     resources :users, only: [:create]
+    resources :biz, only: [:index, :show]
     resource :session, only: [:create, :destroy]
   end
 end
