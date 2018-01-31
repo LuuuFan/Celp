@@ -2,10 +2,10 @@ import React from 'react';
 import Button from '../session/button';
 
 
-const Home = ({currentUser, logout}) => (
+const Home = ({currentUser, logout, img}) => (
   <div className='home'>
     <div className='home-img-frame'>
-      <img className='home-img' src='https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1500759_10202453164706123_223987173_o.jpg?oh=2ebd31423fe1780a531e1da7606cbdca&oe=5ADE4CD5'/>
+      <img className='home-img' src={`${img[Math.floor(Math.random()*8)]}`}/>
     </div>
     <div className='home-main'>
       <div className='home-header'>
