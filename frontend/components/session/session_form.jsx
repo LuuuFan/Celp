@@ -30,6 +30,11 @@ class SessionForm extends React.Component {
   handleClick(e){
     e.preventDefault();
     this.props.action(this.state).then(()=>this.props.history.push('/'));
+    this.setState({
+      'username': '',
+      'email': '',
+      'password': ''
+    });
   }
 
   handleClose(){
@@ -70,16 +75,16 @@ class SessionForm extends React.Component {
               <p>By {text}, you agree to Celp’s <a>Terms of Service</a> and <a>Privacy Policy.</a></p>
             </div>
             <form className='normal-form'>
-              <input onChange={this.handleInput('username')} name='user[username]' type='text' value={this.state.username} placeholder='username'/>
+              <input id='username' onChange={this.handleInput('username')} name='user[username]' type='text' value={this.state.username} placeholder='username'/>
               {this.props.formType == 'signup' ?
                 <input onChange={this.handleInput('email')} type='text' name='user[email]' value={this.state.email} placeholder='email'/> : ''
               }
-              <input onChange={this.handleInput('password')} type='password' name='user[password]' value={this.state.password} placeholder='password'/>
+              <input id='password' onChange={this.handleInput('password')} type='password' name='user[password]' value={this.state.password} placeholder='password'/>
               { this.props.formType !== 'signup' ?
                 <a href='#/forgotpassword/'><p>Forgot password?</p></a>
                 : ''
               }
-              <button onClick={(e)=>this.handleClick(e)}>{text}</button>
+              <button id='login' onClick={(e)=>this.handleClick(e)}>{text}</button>
               {this.props.formType !== 'signup' ?
                 <p>New to Celp? <a href='#/signup/'>Sign up</a></p>
                  :

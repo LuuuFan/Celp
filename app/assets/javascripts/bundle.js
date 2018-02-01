@@ -26520,6 +26520,11 @@ var SessionForm = function (_React$Component) {
       this.props.action(this.state).then(function () {
         return _this3.props.history.push('/');
       });
+      this.setState({
+        'username': '',
+        'email': '',
+        'password': ''
+      });
     }
   }, {
     key: 'handleClose',
@@ -26621,9 +26626,9 @@ var SessionForm = function (_React$Component) {
             _react2.default.createElement(
               'form',
               { className: 'normal-form' },
-              _react2.default.createElement('input', { onChange: this.handleInput('username'), name: 'user[username]', type: 'text', value: this.state.username, placeholder: 'username' }),
+              _react2.default.createElement('input', { id: 'username', onChange: this.handleInput('username'), name: 'user[username]', type: 'text', value: this.state.username, placeholder: 'username' }),
               this.props.formType == 'signup' ? _react2.default.createElement('input', { onChange: this.handleInput('email'), type: 'text', name: 'user[email]', value: this.state.email, placeholder: 'email' }) : '',
-              _react2.default.createElement('input', { onChange: this.handleInput('password'), type: 'password', name: 'user[password]', value: this.state.password, placeholder: 'password' }),
+              _react2.default.createElement('input', { id: 'password', onChange: this.handleInput('password'), type: 'password', name: 'user[password]', value: this.state.password, placeholder: 'password' }),
               this.props.formType !== 'signup' ? _react2.default.createElement(
                 'a',
                 { href: '#/forgotpassword/' },
@@ -26635,7 +26640,7 @@ var SessionForm = function (_React$Component) {
               ) : '',
               _react2.default.createElement(
                 'button',
-                { onClick: function onClick(e) {
+                { id: 'login', onClick: function onClick(e) {
                     return _this4.handleClick(e);
                   } },
                 text
@@ -26820,6 +26825,22 @@ var Home = function (_React$Component) {
       // }
     }
   }, {
+    key: 'loginDemo',
+    value: function loginDemo() {
+      window.setTimeout(function () {
+        var username = document.getElementById('username');
+        username.value = 'demo_users';
+        window.setTimeout(function () {
+          var password = document.getElementById('password');
+          password.value = 'password';
+          window.setTimeout(function () {
+            var btn = document.getElementById('login');
+            btn.click();
+          }, 2000);
+        }, 2000);
+      }, 2000);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -26883,6 +26904,21 @@ var Home = function (_React$Component) {
             currentUser ? _react2.default.createElement(_button2.default, { currentUser: currentUser, logout: logout }) : _react2.default.createElement(
               'div',
               { className: 'sessionButton' },
+              _react2.default.createElement(
+                'a',
+                { href: '/#/login', onClick: function onClick() {
+                    return _this2.loginDemo();
+                  } },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'login' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Demo'
+                  )
+                )
+              ),
               _react2.default.createElement(
                 'a',
                 { href: '/#/login' },

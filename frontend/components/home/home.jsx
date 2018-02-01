@@ -20,6 +20,21 @@ class Home extends React.Component {
     // }
   }
 
+  loginDemo(){
+    window.setTimeout(()=>{
+      const username = document.getElementById('username');
+      username.value = 'demo_users';
+      window.setTimeout(()=>{
+        const password = document.getElementById('password');
+        password.value = 'password';
+        window.setTimeout(()=>{
+          const btn = document.getElementById('login');
+          btn.click();
+        }, 2000);
+      }, 2000);
+    }, 2000);
+  }
+
   render(){
     const {currentUser, logout, img} = this.props;
     return (
@@ -40,6 +55,7 @@ class Home extends React.Component {
               <Button currentUser={currentUser} logout={logout} />
             ) : (
               <div className='sessionButton'>
+                <a href='/#/login' onClick={()=>this.loginDemo()}><div className='login'><p>Demo</p></div></a>
                 <a href='/#/login'><div className='login'><p>Log In</p></div></a>
                 <a href='/#/signup'><div className='signup'><p>Sign Up</p></div></a>
               </div>
