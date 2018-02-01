@@ -7,6 +7,7 @@ import HomeContainer from './home/home_container';
 import NotFound from './error_handle/not_found';
 import BizIndexContainer from './biz/biz_index_container';
 import BizShowContainer from './biz/biz_show_container';
+import AddImgContainer from './img/add_img_container';
 
 const App = () => (
   <div className='main'>
@@ -22,6 +23,7 @@ const App = () => (
       <Route path='/login' />
       <Route exact path='/biz' component={BizIndexContainer} />
       <Route exact path='/biz/:bizId' component={BizShowContainer} />
+      <Route exact path='/biz/:bizId/addphoto' component={AddImgContainer} />
       <Route render={()=>(<Redirect to='/' />)} />
     </Switch>
     <Switch>

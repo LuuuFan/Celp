@@ -16,7 +16,7 @@ class NavBar extends React.Component {
         <h1 className='logo'>
           <a href='/'>
             <span>Celp</span>
-            <i class="fab fa-yelp"></i>
+            <i className="fab fa-yelp"></i>
           </a>
         </h1>
         <div className='searchBar'>
@@ -25,7 +25,7 @@ class NavBar extends React.Component {
           <span>Near</span>
           <input type='text' placeholder="San Francisco, CA, US"/>
           <button>
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
           </button>
         </div>
         <Button currentUser={currentUser} logout={logout}/>
@@ -36,19 +36,19 @@ class NavBar extends React.Component {
             <ul>
               <a href='/#/biz'>
                 <li>
-                  <i class="fas fa-utensils"></i>
+                  <i className="fas fa-utensils"></i>
                   Restaurants
                 </li>
               </a>
               <a href='/'>
                 <li>
-                  <i class="fas fa-glass-martini"></i>
+                  <i className="fas fa-glass-martini"></i>
                   Nightlife
                 </li>
               </a>
               <a href='/'>
                 <li>
-                  <i class="fas fa-wrench"></i>
+                  <i className="fas fa-wrench"></i>
                   Home Services
                   <i className="fa fa-sort-desc" aria-hidden="true"></i>
                 </li>

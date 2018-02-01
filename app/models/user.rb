@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil:true}
   before_validation :ensure_session_token
 
+  has_many :imgs
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

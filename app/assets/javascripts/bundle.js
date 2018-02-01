@@ -26133,6 +26133,10 @@ var _biz_show_container = __webpack_require__(140);
 
 var _biz_show_container2 = _interopRequireDefault(_biz_show_container);
 
+var _add_img_container = __webpack_require__(142);
+
+var _add_img_container2 = _interopRequireDefault(_add_img_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -26155,6 +26159,7 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { path: '/login' }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz', component: _biz_index_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId/addphoto', component: _add_img_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
         } })
@@ -26276,7 +26281,7 @@ var NavBar = function (_React$Component) {
                 null,
                 'Celp'
               ),
-              _react2.default.createElement('i', { 'class': 'fab fa-yelp' })
+              _react2.default.createElement('i', { className: 'fab fa-yelp' })
             )
           ),
           _react2.default.createElement(
@@ -26297,7 +26302,7 @@ var NavBar = function (_React$Component) {
             _react2.default.createElement(
               'button',
               null,
-              _react2.default.createElement('i', { 'class': 'fas fa-search' })
+              _react2.default.createElement('i', { className: 'fas fa-search' })
             )
           ),
           _react2.default.createElement(_button2.default, { currentUser: currentUser, logout: logout })
@@ -26320,7 +26325,7 @@ var NavBar = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-utensils' }),
+                    _react2.default.createElement('i', { className: 'fas fa-utensils' }),
                     'Restaurants'
                   )
                 ),
@@ -26330,7 +26335,7 @@ var NavBar = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-glass-martini' }),
+                    _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
                     'Nightlife'
                   )
                 ),
@@ -26340,7 +26345,7 @@ var NavBar = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-wrench' }),
+                    _react2.default.createElement('i', { className: 'fas fa-wrench' }),
                     'Home Services',
                     _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
                   )
@@ -26848,8 +26853,8 @@ var Home = function (_React$Component) {
               _this2.props.createSession({ username: 'demo_users', email: '', password: 'password' }).then(_this2.props.history.push('/'));
             }, 1000);
           }, 1000);
-        }, 2000);
-      }, 2000);
+        }, 1000);
+      }, 1000);
     }
   }, {
     key: 'render',
@@ -27489,198 +27494,211 @@ var BizShow = function (_React$Component) {
   }
 
   _createClass(BizShow, [{
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestBiz(this.props.match.params.bizId);
     }
   }, {
-    key: 'componentWillReceiveProps',
+    key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(newProps) {
       if (!this.props.biz) {
         this.props.requestBiz(this.props.match.params.bizId);
       }
     }
   }, {
-    key: 'render',
+    key: "mouseOver",
+    value: function mouseOver() {
+      var img = document.getElementById("biz-show-img-2");
+      // debugger
+      img.classList.remove(".biz-show-img-zoom");
+    }
+  }, {
+    key: "render",
     value: function render() {
+      var _this2 = this;
+
       var biz = this.props.biz;
 
       return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-          'div',
-          { className: 'biz-show' },
+          "div",
+          { className: "biz-show" },
           biz ? _react2.default.createElement(
-            'div',
-            { className: 'biz-show-detail' },
+            "div",
+            { className: "biz-show-detail" },
             _react2.default.createElement(
-              'div',
-              { className: 'biz-show-top' },
+              "div",
+              { className: "biz-show-top" },
               _react2.default.createElement(
-                'div',
-                { className: 'biz-show-left-top' },
+                "div",
+                { className: "biz-show-left-top" },
                 _react2.default.createElement(
-                  'h1',
+                  "h1",
                   null,
                   biz.name
                 ),
                 _react2.default.createElement(
-                  'div',
-                  { className: 'biz-show-rating-number' },
-                  _react2.default.createElement('div', { className: 'biz-info-rating' }),
+                  "div",
+                  { className: "biz-show-rating-number" },
+                  _react2.default.createElement("div", { className: "biz-info-rating" }),
                   _react2.default.createElement(
-                    'p',
+                    "p",
                     null,
-                    '0000 reviews'
+                    "0000 reviews"
                   )
                 ),
                 _react2.default.createElement(
-                  'div',
-                  { className: 'biz-info-price-tags' },
+                  "div",
+                  { className: "biz-info-price-tags" },
                   _react2.default.createElement(
-                    'div',
-                    { className: 'biz-info-price' },
+                    "div",
+                    { className: "biz-info-price" },
                     _react2.default.createElement(
-                      'p',
+                      "p",
                       null,
                       biz.price
                     )
                   ),
                   _react2.default.createElement(
-                    'p',
+                    "p",
                     null,
-                    '\xB7'
+                    "\xB7"
                   ),
                   _react2.default.createElement(
-                    'div',
-                    { className: 'biz-info-tags' },
+                    "div",
+                    { className: "biz-info-tags" },
                     _react2.default.createElement(
-                      'p',
+                      "p",
                       null,
                       _react2.default.createElement(
-                        'a',
+                        "a",
                         null,
-                        'Bakery'
+                        "Bakery"
                       ),
-                      ', ',
+                      ", ",
                       _react2.default.createElement(
-                        'a',
+                        "a",
                         null,
-                        'Cake'
+                        "Cake"
                       )
                     )
                   )
                 )
               ),
               _react2.default.createElement(
-                'div',
-                { className: 'biz-show-right-top' },
+                "div",
+                { className: "biz-show-right-top" },
                 _react2.default.createElement(
-                  'button',
-                  { className: 'writeReview' },
+                  "button",
+                  { className: "writeReview" },
                   _react2.default.createElement(
-                    'p',
+                    "p",
                     null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-star' }),
-                    'Write a Review'
+                    _react2.default.createElement("i", { className: "fas fa-star" }),
+                    "Write a Review"
                   )
                 ),
                 _react2.default.createElement(
-                  'ul',
+                  "ul",
                   null,
                   _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-camera' }),
-                    'Add Photo'
+                    "a",
+                    { href: "/#/biz/" + biz.id + "/addphoto" },
+                    _react2.default.createElement(
+                      "li",
+                      null,
+                      _react2.default.createElement("i", { className: "fas fa-camera" }),
+                      "Add Photo"
+                    )
                   ),
                   _react2.default.createElement(
-                    'li',
+                    "li",
                     null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-share-square' }),
-                    'Share'
+                    _react2.default.createElement("i", { className: "fas fa-share-square" }),
+                    "Share"
                   ),
                   _react2.default.createElement(
-                    'li',
+                    "li",
                     null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-bookmark' }),
-                    'Bookmark'
+                    _react2.default.createElement("i", { className: "fas fa-bookmark" }),
+                    "Bookmark"
                   )
                 )
               )
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'biz-show-bottom' },
+              "div",
+              { className: "biz-show-bottom" },
               _react2.default.createElement(
-                'div',
-                { className: 'biz-show-left-bottom' },
-                _react2.default.createElement('img', { className: 'biz-show-map', src: 'https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=' }),
+                "div",
+                { className: "biz-show-left-bottom" },
+                _react2.default.createElement("img", { className: "biz-show-map", src: "https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=" }),
                 _react2.default.createElement(
-                  'div',
-                  { className: 'biz-show-left-bottom-detail' },
+                  "div",
+                  { className: "biz-show-left-bottom-detail" },
                   _react2.default.createElement(
-                    'div',
+                    "div",
                     null,
                     _react2.default.createElement(
-                      'div',
-                      { className: 'biz-show-info' },
+                      "div",
+                      { className: "biz-show-info" },
                       _react2.default.createElement(
-                        'div',
-                        { className: 'biz-show-info-icon' },
-                        _react2.default.createElement('i', { 'class': 'fas fa-map-marker' }),
-                        _react2.default.createElement('i', { 'class': 'far fa-compass' }),
-                        _react2.default.createElement('i', { 'class': 'fas fa-phone' }),
-                        _react2.default.createElement('i', { 'class': 'fas fa-home' }),
-                        _react2.default.createElement('i', { 'class': 'fas fa-mobile-alt' })
+                        "div",
+                        { className: "biz-show-info-icon" },
+                        _react2.default.createElement("i", { className: "fas fa-map-marker" }),
+                        _react2.default.createElement("i", { className: "far fa-compass" }),
+                        _react2.default.createElement("i", { className: "fas fa-phone" }),
+                        _react2.default.createElement("i", { className: "fas fa-home" }),
+                        _react2.default.createElement("i", { className: "fas fa-mobile-alt" })
                       ),
                       _react2.default.createElement(
-                        'div',
-                        { className: 'biz-show-info-text' },
+                        "div",
+                        { className: "biz-show-info-text" },
                         _react2.default.createElement(
-                          'div',
-                          { className: 'biz-show-address' },
+                          "div",
+                          { className: "biz-show-address" },
                           biz.location.address1,
-                          _react2.default.createElement('br', null),
+                          _react2.default.createElement("br", null),
                           biz.location.address2 ? _react2.default.createElement(
-                            'p',
+                            "p",
                             null,
-                            'biz.location.address2',
-                            _react2.default.createElement('br', null)
+                            "biz.location.address2",
+                            _react2.default.createElement("br", null)
                           ) : "",
                           biz.location.city,
-                          ', \xA0',
+                          ", \xA0",
                           biz.location.state,
-                          ' \xA0',
+                          " \xA0",
                           biz.location.zipcode
                         ),
                         _react2.default.createElement(
-                          'a',
-                          { href: '' },
-                          'Get Directions'
+                          "a",
+                          { href: "" },
+                          "Get Directions"
                         ),
                         biz.phone,
-                        _react2.default.createElement('br', null),
+                        _react2.default.createElement("br", null),
                         biz.website ? biz.website : _react2.default.createElement(
-                          'a',
-                          { href: '/#/biz/' + biz.id },
-                          'celp.com'
+                          "a",
+                          { href: "/#/biz/" + biz.id },
+                          "celp.com"
                         ),
                         _react2.default.createElement(
-                          'a',
-                          { href: '' },
-                          'Send to your Phone'
+                          "a",
+                          { href: "" },
+                          "Send to your Phone"
                         )
                       ),
                       _react2.default.createElement(
-                        'div',
-                        { className: 'biz-show-edit' },
-                        _react2.default.createElement('i', { 'class': 'fas fa-pencil-alt' }),
+                        "div",
+                        { className: "biz-show-edit" },
+                        _react2.default.createElement("i", { className: "fas fa-pencil-alt" }),
                         _react2.default.createElement(
-                          'span',
+                          "span",
                           null,
-                          'Edit'
+                          "Edit"
                         )
                       )
                     )
@@ -27688,43 +27706,47 @@ var BizShow = function (_React$Component) {
                 )
               ),
               _react2.default.createElement(
-                'div',
-                { className: 'biz-show-right-bottom' },
+                "div",
+                { className: "biz-show-right-bottom" },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'biz-show-img' },
+                  "div",
+                  { className: "biz-show-img" },
                   _react2.default.createElement(
-                    'div',
-                    { className: 'thumb', id: 'biz-show-img-1' },
-                    _react2.default.createElement('img', { src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003' })
+                    "div",
+                    { onMouseOver: function onMouseOver() {
+                        return _this2.mouseOver();
+                      }, className: "thumb", id: "biz-show-img-1" },
+                    _react2.default.createElement("img", { src: "https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003" })
                   ),
                   _react2.default.createElement(
-                    'div',
-                    { className: 'thumb', id: 'biz-show-img-2' },
-                    _react2.default.createElement('img', { src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' })
+                    "div",
+                    { className: "thumb biz-show-img-zoom", id: "biz-show-img-2" },
+                    _react2.default.createElement("img", { src: "https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97" })
                   ),
                   _react2.default.createElement(
-                    'div',
-                    { className: 'thumb', id: 'biz-show-img-3' },
-                    _react2.default.createElement('img', { src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' })
+                    "div",
+                    { onMouseOver: function onMouseOver() {
+                        return _this2.mouseOver();
+                      }, className: "thumb", id: "biz-show-img-3" },
+                    _react2.default.createElement("img", { src: "https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB" })
                   )
                 ),
                 _react2.default.createElement(
-                  'div',
-                  { className: 'biz-show-more-img' },
-                  _react2.default.createElement('i', { className: 'far fa-images' }),
+                  "div",
+                  { className: "biz-show-more-img" },
+                  _react2.default.createElement("i", { className: "far fa-images" }),
                   _react2.default.createElement(
-                    'a',
+                    "a",
                     null,
-                    'See all 000'
+                    "See all 000"
                   )
                 )
               )
             )
           ) : _react2.default.createElement(
-            'h1',
+            "h1",
             null,
-            'loading...'
+            "loading..."
           )
         )
       );
@@ -27735,6 +27757,85 @@ var BizShow = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = BizShow;
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(6);
+
+var _add_img = __webpack_require__(143);
+
+var _add_img2 = _interopRequireDefault(_add_img);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _reactRedux.connect)(null, null)(_add_img2.default);
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddImg = function (_React$Component) {
+  _inherits(AddImg, _React$Component);
+
+  function AddImg() {
+    _classCallCheck(this, AddImg);
+
+    return _possibleConstructorReturn(this, (AddImg.__proto__ || Object.getPrototypeOf(AddImg)).apply(this, arguments));
+  }
+
+  _createClass(AddImg, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Add Img For Biz'
+        )
+      );
+    }
+  }]);
+
+  return AddImg;
+}(_react2.default.Component);
+
+exports.default = AddImg;
 
 /***/ })
 /******/ ]);

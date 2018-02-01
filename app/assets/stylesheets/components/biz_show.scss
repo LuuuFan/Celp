@@ -204,7 +204,7 @@
   height: 220px;
 }
 
-.biz-show-img>.thumb{
+.thumb{
   width: 220px;
   height: 100%;
   overflow: hidden;
@@ -217,14 +217,9 @@
   box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
-// #biz-show-img-2{
+// .biz-show-img-zoom {
 //   height: 120%;
 //   width: 264px;
-// }
-
-// #biz-show-img-1:hover, #biz-show-img-3:hover #biz-show-img-2{
-//   width: 220px;
-//   height: 100%;
 // }
 
 .thumb:hover{

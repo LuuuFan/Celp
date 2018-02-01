@@ -34,8 +34,8 @@ class Home extends React.Component {
             this.props.createSession({username: 'demo_users', email:'', password: 'password'}).then(this.props.history.push('/'));
           }, 1000);
         }, 1000);
-      }, 2000);
-    }, 2000);
+      }, 1000);
+    }, 1000);
   }
 
   render(){
