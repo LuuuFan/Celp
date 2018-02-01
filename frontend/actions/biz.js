@@ -10,7 +10,7 @@ export const receiveAllBiz = (bizes) => ({
 
 export const receiveBiz = (biz) => ({
   type: RECEIVE_BIZ,
-  bizes
+  biz
 });
 
 export const requestAllBiz = () => dispatch => APIUtilBiz.fetchBizes()

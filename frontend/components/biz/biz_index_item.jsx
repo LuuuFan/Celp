@@ -8,7 +8,7 @@ const BizIndexItem = ({biz, idx}) => {
      <div className='biz-info'>
        <div className='biz-info-left'>
          <div className='biz-info-title'>
-           <p>{idx + 1}.</p><Link to={`/biz/${biz.name}`}>{biz.name}</Link>
+           <p>{idx + 1}.</p><Link to={`/biz/${biz.id}`}>{biz.name}</Link>
          </div>
          <div className='biz-info-rating'>
 

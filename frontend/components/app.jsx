@@ -6,6 +6,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import HomeContainer from './home/home_container';
 import NotFound from './error_handle/not_found';
 import BizIndexContainer from './biz/biz_index_container';
+import BizShowContainer from './biz/biz_show_container';
 
 const App = () => (
   <div className='main'>
@@ -16,8 +17,9 @@ const App = () => (
       <Route path="/" component={NavBarContainer} />
     </Switch>
     <Switch>
-      <Route path='/biz' component={BizIndexContainer} />
+      <Route exact path='/biz' component={BizIndexContainer} />
       <Route exact path='/' />
+      <Route exact path='/biz/:bizId' component={BizShowContainer} />
       <Route path='/signup' />
       <Route path='/login' />
       <Route component={NotFound} />

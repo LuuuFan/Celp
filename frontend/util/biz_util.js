@@ -7,7 +7,7 @@ export const fetchBizes = () => (
 
 export const fetchBiz = (bizId) => (
   $.ajax({
-    url: `api/biz/${biz_id}`,
+    url: `api/biz/${bizId}`,
     method: 'GET'
   })
 );
