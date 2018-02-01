@@ -26842,7 +26842,11 @@ var Home = function (_React$Component) {
           var password = document.getElementById('password');
           password.value = 'password';
           window.setTimeout(function () {
-            _this2.props.createSession({ username: 'demo_users', email: '', password: 'password' }).then(_this2.props.history.push('/'));
+            var btn = document.getElementById('login');
+            btn.setAttribute("style", "background-color: #a71c1c");
+            window.setTimeout(function () {
+              _this2.props.createSession({ username: 'demo_users', email: '', password: 'password' }).then(_this2.props.history.push('/'));
+            }, 1000);
           }, 1000);
         }, 2000);
       }, 2000);

@@ -28,7 +28,11 @@ class Home extends React.Component {
         const password = document.getElementById('password');
         password.value = 'password';
         window.setTimeout(()=>{
-          this.props.createSession({username: 'demo_users', email:'', password: 'password'}).then(this.props.history.push('/'));
+          const btn = document.getElementById('login');
+          btn.setAttribute("style", "background-color: #a71c1c");
+          window.setTimeout(()=>{
+            this.props.createSession({username: 'demo_users', email:'', password: 'password'}).then(this.props.history.push('/'));
+          }, 1000);
         }, 1000);
       }, 2000);
     }, 2000);
