@@ -17,7 +17,13 @@ const App = () => (
     </Switch>
     <Switch>
       <Route path='/biz' component={BizIndexContainer} />
+      <Route exact path='/' />
+      <Route path='/signup' />
+      <Route path='/login' />
       <Route component={NotFound} />
+    </Switch>
+    <Switch>
+      <Route />
     </Switch>
   </div>
 );

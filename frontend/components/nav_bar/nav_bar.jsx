@@ -34,19 +34,19 @@ class NavBar extends React.Component {
         <div className='menu'>
           <div className='business'>
             <ul>
-              <a>
+              <a href='/#/biz'>
                 <li>
                   <i className="fa fa-cutlery" aria-hidden="true"></i>
                   Restaurants
                 </li>
               </a>
-              <a>
+              <a href='/'>
                 <li>
                   <i className="fa fa-glass" aria-hidden="true"></i>
                   Nightlife
                 </li>
               </a>
-              <a>
+              <a href='/'>
                 <li>
                   <i className="fa fa-wrench" aria-hidden="true"></i>
                   Home Services
@@ -57,9 +57,9 @@ class NavBar extends React.Component {
           </div>
           <div className='services'>
             <ul>
-              <a><li>Write a Review</li></a>
-              <a><li>Events</li></a>
-              <a><li>talk</li></a>
+              <a href='/#/write_review'><li>Write a Review</li></a>
+              <a href='/'><li>Events</li></a>
+              <a href='/'><li>talk</li></a>
             </ul>
           </div>
           {!currentUser ?
