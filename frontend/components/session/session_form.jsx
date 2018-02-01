@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
           <h1 className='logo'>
             <a href='/'>
               <span>Celp</span>
-              <i className="fa fa-yelp" aria-hidden="true"></i>
+              <i class="fab fa-yelp"></i>
             </a>
           </h1>
         </header>

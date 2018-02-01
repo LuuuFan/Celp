@@ -61,32 +61,32 @@ class Home extends React.Component {
               </div>
             )}
           </div>
-          <a href='/'><h1 className='home-logo'>Celp<i className="fa fa-yelp" aria-hidden="true"></i></h1></a>
+          <a href='/'><h1 className='home-logo'>Celp<i class="fab fa-yelp"></i></h1></a>
           <div className='searchBar'>
             <span>Find</span>
             <input type='text' placeholder="tacos, cheap dinners, Max's"/>
             <span>Near</span>
             <input type='text' placeholder="San Francisco, CA, US"/>
             <button>
-              <i className="fa fa-search"></i>
+              <i class="fas fa-search"></i>
             </button>
           </div>
           <div className='business'>
             <ul>
             <a href='/#/biz'>
-              <i className="fa fa-cutlery" aria-hidden="true"></i>
+              <i class="fas fa-utensils"></i>
               <li>
                 Restaurants
               </li>
             </a>
             <a href='/'>
-              <i className="fa fa-glass" aria-hidden="true"></i>
+              <i class="fas fa-glass-martini"></i>
               <li>
                 Nightlife
               </li>
             </a>
             <a href='/'>
-              <i className="fa fa-wrench" aria-hidden="true"></i>
+              <i class="fas fa-wrench"></i>
               <li>
                 Home Services
               </li>

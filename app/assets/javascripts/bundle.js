@@ -3588,7 +3588,7 @@ var Button = function (_React$Component) {
           _react2.default.createElement(
             'a',
             { className: 'userMenu' },
-            _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
+            _react2.default.createElement('i', { 'class': 'fas fa-sort-down' })
           ),
           _react2.default.createElement(
             'div',
@@ -26276,7 +26276,7 @@ var NavBar = function (_React$Component) {
                 null,
                 'Celp'
               ),
-              _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
+              _react2.default.createElement('i', { 'class': 'fab fa-yelp' })
             )
           ),
           _react2.default.createElement(
@@ -26297,7 +26297,7 @@ var NavBar = function (_React$Component) {
             _react2.default.createElement(
               'button',
               null,
-              _react2.default.createElement('i', { className: 'fa fa-search' })
+              _react2.default.createElement('i', { 'class': 'fas fa-search' })
             )
           ),
           _react2.default.createElement(_button2.default, { currentUser: currentUser, logout: logout })
@@ -26320,8 +26320,12 @@ var NavBar = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { className: 'fa fa-cutlery', 'aria-hidden': 'true' }),
-                    'Restaurants'
+                    _react2.default.createElement('i', { 'class': 'fas fa-utensils' }),
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Restaurants'
+                    )
                   )
                 ),
                 _react2.default.createElement(
@@ -26330,7 +26334,7 @@ var NavBar = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { className: 'fa fa-glass', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('i', { 'class': 'fas fa-glass-martini' }),
                     'Nightlife'
                   )
                 ),
@@ -26340,7 +26344,7 @@ var NavBar = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { className: 'fa fa-wrench', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('i', { 'class': 'fas fa-wrench' }),
                     'Home Services',
                     _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
                   )
@@ -26558,7 +26562,7 @@ var SessionForm = function (_React$Component) {
                 null,
                 'Celp'
               ),
-              _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
+              _react2.default.createElement('i', { 'class': 'fab fa-yelp' })
             )
           )
         ),
@@ -26957,7 +26961,7 @@ var Home = function (_React$Component) {
               'h1',
               { className: 'home-logo' },
               'Celp',
-              _react2.default.createElement('i', { className: 'fa fa-yelp', 'aria-hidden': 'true' })
+              _react2.default.createElement('i', { 'class': 'fab fa-yelp' })
             )
           ),
           _react2.default.createElement(
@@ -26978,7 +26982,7 @@ var Home = function (_React$Component) {
             _react2.default.createElement(
               'button',
               null,
-              _react2.default.createElement('i', { className: 'fa fa-search' })
+              _react2.default.createElement('i', { 'class': 'fas fa-search' })
             )
           ),
           _react2.default.createElement(
@@ -26990,7 +26994,7 @@ var Home = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '/#/biz' },
-                _react2.default.createElement('i', { className: 'fa fa-cutlery', 'aria-hidden': 'true' }),
+                _react2.default.createElement('i', { 'class': 'fas fa-utensils' }),
                 _react2.default.createElement(
                   'li',
                   null,
@@ -27000,7 +27004,7 @@ var Home = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '/' },
-                _react2.default.createElement('i', { className: 'fa fa-glass', 'aria-hidden': 'true' }),
+                _react2.default.createElement('i', { 'class': 'fas fa-glass-martini' }),
                 _react2.default.createElement(
                   'li',
                   null,
@@ -27010,7 +27014,7 @@ var Home = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '/' },
-                _react2.default.createElement('i', { className: 'fa fa-wrench', 'aria-hidden': 'true' }),
+                _react2.default.createElement('i', { 'class': 'fas fa-wrench' }),
                 _react2.default.createElement(
                   'li',
                   null,
@@ -27266,7 +27270,7 @@ var BizIndex = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { className: 'fa fa-clock' }),
+                    _react2.default.createElement('i', { 'class': 'far fa-clock' }),
                     'Open Now'
                   )
                 )
@@ -27277,12 +27281,6 @@ var BizIndex = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'index' },
-          _react2.default.createElement(
-            'div',
-            { id: 'temp' },
-            _react2.default.createElement('i', { className: 'far fa-clock' }),
-            _react2.default.createElement('i', { className: 'fa fa-clock' })
-          ),
           _react2.default.createElement(
             'ul',
             null,
@@ -27511,39 +27509,132 @@ var BizShow = function (_React$Component) {
           { className: 'biz-show' },
           biz ? _react2.default.createElement(
             'div',
-            null,
-            _react2.default.createElement(
-              'h1',
-              null,
-              biz.name
-            ),
-            _react2.default.createElement('div', { className: 'biz-info-rating' }),
+            { className: 'biz-show-detail' },
             _react2.default.createElement(
               'div',
-              { className: 'biz-info-price' },
+              { className: 'biz-show-top' },
               _react2.default.createElement(
-                'p',
-                null,
-                biz.price
+                'div',
+                { className: 'biz-show-left-top' },
+                _react2.default.createElement(
+                  'h1',
+                  null,
+                  biz.name
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'biz-show-rating-number' },
+                  _react2.default.createElement('div', { className: 'biz-info-rating' }),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    '0000 reviews'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'biz-info-price-tags' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'biz-info-price' },
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      biz.price
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    '\xB7'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'biz-info-tags' },
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        null,
+                        'Bakery'
+                      ),
+                      ', ',
+                      _react2.default.createElement(
+                        'a',
+                        null,
+                        'Cake'
+                      )
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-show-right-top' },
+                _react2.default.createElement(
+                  'button',
+                  { className: 'writeReview' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    _react2.default.createElement('i', { 'class': 'fas fa-star' }),
+                    'Write a Review'
+                  )
+                ),
+                _react2.default.createElement(
+                  'ul',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { 'class': 'fas fa-camera' }),
+                    'Add Photo'
+                  ),
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { 'class': 'fas fa-share-square' }),
+                    'Share'
+                  ),
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { 'class': 'fas fa-bookmark' }),
+                    'Bookmark'
+                  )
+                )
               )
             ),
             _react2.default.createElement(
               'div',
-              { className: 'biz-info-tags' },
+              { className: 'biz-show-bottom' },
               _react2.default.createElement(
-                'p',
-                null,
+                'div',
+                { className: 'biz-show-left-bottom' },
+                _react2.default.createElement('img', { className: 'biz-show-map', src: 'https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=' }),
                 _react2.default.createElement(
-                  'a',
-                  null,
-                  'Bakery'
-                ),
-                ', ',
-                _react2.default.createElement(
-                  'a',
-                  null,
-                  'Cake'
+                  'div',
+                  { className: 'biz-show-left-bottom-detail' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'biz-show-address' },
+                    biz.display_address
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'biz-show-phone' },
+                    biz.phone
+                  ),
+                  _react2.default.createElement('div', { className: 'biz-show-website' })
                 )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-show-right-bottom' },
+                _react2.default.createElement('img', { id: 'biz-show-img-1', src: '' }),
+                _react2.default.createElement('img', { id: 'biz-show-img-2', src: '' }),
+                _react2.default.createElement('img', { id: 'biz-show-img-3', src: '' })
               )
             )
           ) : _react2.default.createElement(

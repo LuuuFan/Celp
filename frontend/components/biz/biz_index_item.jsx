@@ -11,7 +11,6 @@ const BizIndexItem = ({biz, idx}) => {
            <p>{idx + 1}.</p><Link to={`/biz/${biz.id}`}>{biz.name}</Link>
          </div>
          <div className='biz-info-rating'>
-
          </div>
          <div className='biz-info-price-tags'>
            <div className='biz-info-price'>

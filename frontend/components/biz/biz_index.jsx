@@ -30,17 +30,13 @@ class BizIndex extends React.Component {
               </div>
               <div className='filter-open-hour'>
                 <ul>
-                  <li><i className="fa fa-clock"></i>Open Now</li>
+                  <li><i class="far fa-clock"></i>Open Now</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div className='index'>
-          <div id='temp'>
-            <i className="far fa-clock"></i>
-            <i className="fa fa-clock"></i>
-          </div>
           <ul>
             {bizes.map((biz, idx) => <BizIndexItem key={biz.id} biz={biz} idx={idx}/>)}
           </ul>

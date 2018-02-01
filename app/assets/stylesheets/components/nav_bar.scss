@@ -86,7 +86,8 @@
 }
 
 .searchBar button i {
-  margin-left: 28px;
+  font-size: 18px;
+  margin-left: 25px;
 }
 
 .searchBar button{
@@ -140,21 +141,32 @@
 
 .menu{
   min-width: 1020px;
-  margin: auto;
+  margin: 0 auto;
   vertical-align: baseline;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 55%;
   height: 100%;
 }
 
+.menu i {
+  vertical-align: middle;
+  // margin-right: 7px;
+  padding-top: 15px;
+}
 .business{
   width: 50%;
 }
 
 .business ul a{
   width: 33.33%;
+}
+
+.business ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .services{
@@ -170,8 +182,8 @@
 }
 
 .services ul li {
-  // text-align: center;
-  // vertical-align: middle;
+  text-align: center;
+  vertical-align: middle;
   margin-top: 7px;
 }
 
@@ -201,11 +213,6 @@
   margin-left: 7px;
 }
 
-.menu i {
-  vertical-align: middle;
-  margin-right: 7px;
-  margin-top: 7px;
-}
 
 .menu-bar a{
   height: 100%;
@@ -219,15 +226,16 @@
   display: flex;
   flex-direction: row;
   color: white;
-  border-radius: 4px;
+  border-radius: 5px 4px 4px 5px;
   cursor: pointer;
   background-color: #bd1f1f;
   width: 55px;
   position: relative;
 }
 
-.user i{
+.userMenu i{
   margin-top: 10px;
+  margin-left: 5px;
 }
 
 .userImg img{
