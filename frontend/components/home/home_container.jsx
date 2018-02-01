@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Home from './home';
-import {logout} from '../../actions/session';
+import {logout, createSession} from '../../actions/session';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
@@ -18,7 +18,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  createSession: (user) => dispatch(createSession(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

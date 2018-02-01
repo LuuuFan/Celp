@@ -37,7 +37,7 @@ class NavBar extends React.Component {
               <a href='/#/biz'>
                 <li>
                   <i class="fas fa-utensils"></i>
-                  <p>Restaurants</p>
+                  Restaurants
                 </li>
               </a>
               <a href='/'>

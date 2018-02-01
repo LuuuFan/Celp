@@ -8,7 +8,6 @@
   background-color: #d32323;
   vertical-align: baseline;
   display: flex;
-  // justify-content: space-around;
   min-width: 1020px;
   align-items: center;
   margin-top: 30px;
@@ -146,13 +145,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 55%;
+  width: 50%;
   height: 100%;
 }
 
 .menu i {
-  vertical-align: middle;
-  // margin-right: 7px;
+  margin-right: 7px;
   padding-top: 15px;
 }
 .business{
@@ -160,7 +158,7 @@
 }
 
 .business ul a{
-  width: 33.33%;
+  width: 33%;
 }
 
 .business ul li {
@@ -183,13 +181,11 @@
 
 .services ul li {
   text-align: center;
-  vertical-align: middle;
   margin-top: 7px;
 }
 
 .menu * {
   height: 100%;
-  // vertical-align: middle;
   text-align: center;
 }
 

@@ -55,9 +55,20 @@ class BizShow extends React.Component {
                 <div className='biz-show-left-bottom'>
                 <img className='biz-show-map' src='https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=' />
                 <div className='biz-show-left-bottom-detail'>
-                  <div className='biz-show-address'>{biz.display_address}</div>
-                  <div className='biz-show-phone'>{biz.phone}</div>
-                  <div className='biz-show-website'></div>
+                  <div>
+                    <div className='biz-show-address'>
+                      <i class="fas fa-map-marker"></i>
+                      {biz.display_address}
+                    </div>
+                    <div className='biz-show-phone'>
+                      <i class="fas fa-phone"></i>
+                      {biz.phone}
+                    </div>
+                    <div className='biz-show-website'>
+                      <i class="fas fa-home"></i>
+                      {biz.website ? biz.website: <a href={`/#/biz/${biz.id}`}>celp.com</a> }
+                    </div>
+                  </div>
                 </div>
               </div>
                 <div className='biz-show-right-bottom'>

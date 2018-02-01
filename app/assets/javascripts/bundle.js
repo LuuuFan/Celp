@@ -26321,11 +26321,7 @@ var NavBar = function (_React$Component) {
                     'li',
                     null,
                     _react2.default.createElement('i', { 'class': 'fas fa-utensils' }),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Restaurants'
-                    )
+                    'Restaurants'
                   )
                 ),
                 _react2.default.createElement(
@@ -26774,6 +26770,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     logout: function logout() {
       return dispatch((0, _session.logout)());
+    },
+    createSession: function createSession(user) {
+      return dispatch((0, _session.createSession)(user));
     }
   };
 };
@@ -26834,6 +26833,8 @@ var Home = function (_React$Component) {
   }, {
     key: 'loginDemo',
     value: function loginDemo() {
+      var _this2 = this;
+
       window.setTimeout(function () {
         var username = document.getElementById('username');
         username.value = 'demo_users';
@@ -26841,8 +26842,7 @@ var Home = function (_React$Component) {
           var password = document.getElementById('password');
           password.value = 'password';
           window.setTimeout(function () {
-            var btn = document.getElementById('login');
-            btn.click();
+            _this2.props.createSession({ username: 'demo_users', email: '', password: 'password' }).then(_this2.props.history.push('/'));
           }, 2000);
         }, 2000);
       }, 2000);
@@ -26850,7 +26850,7 @@ var Home = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _props = this.props,
           currentUser = _props.currentUser,
@@ -26860,7 +26860,7 @@ var Home = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'home', onClick: function onClick(e) {
-            return _this2.handleClick(e);
+            return _this3.handleClick(e);
           } },
         _react2.default.createElement(
           'div',
@@ -26914,7 +26914,7 @@ var Home = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '/#/login', onClick: function onClick() {
-                    return _this2.loginDemo();
+                    return _this3.loginDemo();
                   } },
                 _react2.default.createElement(
                   'div',
@@ -27618,15 +27618,30 @@ var BizShow = function (_React$Component) {
                   { className: 'biz-show-left-bottom-detail' },
                   _react2.default.createElement(
                     'div',
-                    { className: 'biz-show-address' },
-                    biz.display_address
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'biz-show-phone' },
-                    biz.phone
-                  ),
-                  _react2.default.createElement('div', { className: 'biz-show-website' })
+                    null,
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'biz-show-address' },
+                      _react2.default.createElement('i', { 'class': 'fas fa-map-marker' }),
+                      biz.display_address
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'biz-show-phone' },
+                      _react2.default.createElement('i', { 'class': 'fas fa-phone' }),
+                      biz.phone
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'biz-show-website' },
+                      _react2.default.createElement('i', { 'class': 'fas fa-home' }),
+                      biz.website ? biz.website : _react2.default.createElement(
+                        'a',
+                        { href: '/#/biz/' + biz.id },
+                        'celp.com'
+                      )
+                    )
+                  )
                 )
               ),
               _react2.default.createElement(

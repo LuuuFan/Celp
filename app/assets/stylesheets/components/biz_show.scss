@@ -10,6 +10,7 @@
   min-width: 1020px;
   margin: 0 auto;
   padding-top: 15px;
+  height: 300px;
 }
 
 .biz-show-top{
@@ -37,6 +38,23 @@
 
 .biz-show-left-top .biz-show-rating-number *{
   padding-right: 10px;
+  color: gray;
+}
+
+.biz-show .biz-info-rating>img{
+  width: 100px;
+}
+
+.biz-info-rating{
+  background-image: url("https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png");
+  background-size: 132px 560px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  height: 0;
+  width: 132px;
+  padding-top: 24px;
+  background-position: 0 -216px;
 }
 
 .biz-show-right-top{
@@ -98,22 +116,30 @@
   box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
 }
 
-.biz-show .biz-info-rating>img{
-  width: 100px;
+.biz-show-left-bottom {
+  position: absolute;
+  top: 150px;
+  height: 320px;
+  width: 320px;
+  border: 1px solid lightgray;
+  background-color: white;
+  font-size: 14px;
 }
 
-.biz-info-rating{
-  background-image: url("https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png");
-  background-size: 132px 560px;
-  background-repeat: no-repeat;
-  vertical-align: bottom;
-  overflow: hidden;
-  height: 0;
-  width: 132px;
-  padding-top: 24px;
-  background-position: 0 -216px;
+.biz-show-left-bottom>div{
+  width: 70%;
+  padding: 10px;
 }
+
+.biz-show-left-bottom i {
+  margin-right: 10px;
+  color: gray;
+}
+
+.biz-show-address{}
 
 .biz-show-map{
-  width: 300px;
+  width: 308px;
+  margin: 5px;
+  border: 1px solid lightgray;
 }
