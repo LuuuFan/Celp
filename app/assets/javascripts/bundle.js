@@ -26150,11 +26150,11 @@ var App = function App() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz', component: _biz_index_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/' }),
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/signup' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/login' }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz', component: _biz_index_container2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
         } })
@@ -26168,6 +26168,7 @@ var App = function App() {
 };
 
 exports.default = App;
+// <Route component={NotFound}>
 
 /***/ }),
 /* 128 */

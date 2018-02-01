@@ -17,11 +17,11 @@ const App = () => (
       <Route path="/" component={NavBarContainer} />
     </Switch>
     <Switch>
-      <Route exact path='/biz' component={BizIndexContainer} />
       <Route exact path='/' />
-      <Route exact path='/biz/:bizId' component={BizShowContainer} />
       <Route path='/signup' />
       <Route path='/login' />
+      <Route exact path='/biz' component={BizIndexContainer} />
+      <Route exact path='/biz/:bizId' component={BizShowContainer} />
       <Route render={()=>(<Redirect to='/' />)} />
     </Switch>
     <Switch>
@@ -31,3 +31,4 @@ const App = () => (
 );
 
 export default App;
+// <Route component={NotFound}>
