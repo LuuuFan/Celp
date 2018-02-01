@@ -12,6 +12,8 @@ class BizShow extends React.Component {
     }
   }
 
+
+
   render(){
     const {biz} = this.props;
     return(
@@ -87,14 +89,19 @@ class BizShow extends React.Component {
                 </div>
               </div>
                 <div className='biz-show-right-bottom'>
-                  <div className='thumb'>
-                    <img id='biz-show-img-1' src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003' />
+                  <div className='biz-show-img'>
+                    <div  className='thumb' id='biz-show-img-1'>
+                      <img  src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003' />
+                    </div>
+                    <div className='thumb'id='biz-show-img-2'>
+                      <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' />
+                    </div>
+                    <div className='thumb' id='biz-show-img-3'>
+                      <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' />
+                    </div>
                   </div>
-                  <div className='thumb'>
-                    <img id='biz-show-img-2' src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' />
-                  </div>
-                  <div className='thumb'>
-                    <img id='biz-show-img-3' src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' />
+                  <div className='biz-show-more-img'>
+                    <i className="far fa-images"></i><a>See all 000</a>
                   </div>
               </div>
               </div>
