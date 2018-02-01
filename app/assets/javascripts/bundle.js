@@ -26168,7 +26168,7 @@ var App = function App() {
 };
 
 exports.default = App;
-// <Route component={NotFound}>
+// <Route component={NotFound} />
 
 /***/ }),
 /* 128 */
@@ -26843,7 +26843,7 @@ var Home = function (_React$Component) {
           password.value = 'password';
           window.setTimeout(function () {
             _this2.props.createSession({ username: 'demo_users', email: '', password: 'password' }).then(_this2.props.history.push('/'));
-          }, 2000);
+          }, 1000);
         }, 2000);
       }, 2000);
     }
@@ -27621,24 +27621,63 @@ var BizShow = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'div',
-                      { className: 'biz-show-address' },
-                      _react2.default.createElement('i', { 'class': 'fas fa-map-marker' }),
-                      biz.display_address
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'biz-show-phone' },
-                      _react2.default.createElement('i', { 'class': 'fas fa-phone' }),
-                      biz.phone
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'biz-show-website' },
-                      _react2.default.createElement('i', { 'class': 'fas fa-home' }),
-                      biz.website ? biz.website : _react2.default.createElement(
-                        'a',
-                        { href: '/#/biz/' + biz.id },
-                        'celp.com'
+                      { className: 'biz-show-info' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'biz-show-info-icon' },
+                        _react2.default.createElement('i', { 'class': 'fas fa-map-marker' }),
+                        _react2.default.createElement('i', { 'class': 'far fa-compass' }),
+                        _react2.default.createElement('i', { 'class': 'fas fa-phone' }),
+                        _react2.default.createElement('i', { 'class': 'fas fa-home' }),
+                        _react2.default.createElement('i', { 'class': 'fas fa-mobile-alt' })
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'biz-show-info-text' },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'biz-show-address' },
+                          biz.location.address1,
+                          _react2.default.createElement('br', null),
+                          biz.location.address2 ? _react2.default.createElement(
+                            'p',
+                            null,
+                            'biz.location.address2',
+                            _react2.default.createElement('br', null)
+                          ) : "",
+                          biz.location.city,
+                          ', \xA0',
+                          biz.location.state,
+                          ' \xA0',
+                          biz.location.zipcode
+                        ),
+                        _react2.default.createElement(
+                          'a',
+                          { href: '' },
+                          'Get Directions'
+                        ),
+                        biz.phone,
+                        _react2.default.createElement('br', null),
+                        biz.website ? biz.website : _react2.default.createElement(
+                          'a',
+                          { href: '/#/biz/' + biz.id },
+                          'celp.com'
+                        ),
+                        _react2.default.createElement(
+                          'a',
+                          { href: '' },
+                          'Send to your Phone'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'biz-show-edit' },
+                        _react2.default.createElement('i', { 'class': 'fas fa-pencil-alt' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          'Edit'
+                        )
                       )
                     )
                   )
@@ -27647,9 +27686,21 @@ var BizShow = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'biz-show-right-bottom' },
-                _react2.default.createElement('img', { id: 'biz-show-img-1', src: '' }),
-                _react2.default.createElement('img', { id: 'biz-show-img-2', src: '' }),
-                _react2.default.createElement('img', { id: 'biz-show-img-3', src: '' })
+                _react2.default.createElement(
+                  'div',
+                  { className: 'thumb' },
+                  _react2.default.createElement('img', { id: 'biz-show-img-1', src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'thumb' },
+                  _react2.default.createElement('img', { id: 'biz-show-img-2', src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'thumb' },
+                  _react2.default.createElement('img', { id: 'biz-show-img-3', src: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' })
+                )
               )
             )
           ) : _react2.default.createElement(

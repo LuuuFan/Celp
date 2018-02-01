@@ -10,7 +10,7 @@
   min-width: 1020px;
   margin: 0 auto;
   padding-top: 15px;
-  height: 300px;
+  height: 400px;
 }
 
 .biz-show-top{
@@ -28,6 +28,7 @@
   font-size: 36px;
   font-weight: 900;
   padding-bottom: 15px;
+  color: #333;
 }
 
 .biz-show-left-top .biz-show-rating-number{
@@ -70,7 +71,7 @@
   font-weight: 700;
   border-radius: 3px;
   padding: 10px 15px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .writeReview:hover{
@@ -102,13 +103,13 @@
   cursor: pointer;
 }
 
-.biz-show-right-top ul li:first-of-type {
+.biz-show-right-top ul li:last-of-type {
   border-radius:  0 3px 3px 0 ;
+  border-right: 1px solid #ccc;
 }
 
-.biz-show-right-top ul li:last-of-type {
+.biz-show-right-top ul li:first-of-type {
   border-radius: 3px 0 0 3px;
-  border-right: 1px solid #ccc;
 }
 
 .biz-show-right-top ul li:hover {
@@ -126,20 +127,94 @@
   font-size: 14px;
 }
 
-.biz-show-left-bottom>div{
-  width: 70%;
-  padding: 10px;
-}
-
-.biz-show-left-bottom i {
-  margin-right: 10px;
-  color: gray;
-}
-
-.biz-show-address{}
-
 .biz-show-map{
   width: 308px;
   margin: 5px;
   border: 1px solid lightgray;
+}
+
+.biz-show-info{
+  display: flex;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.biz-show-info-icon i {
+  margin-right: 5px;
+  color: gray;
+  padding: 0 5px 7px 0;
+}
+
+.biz-show-info-text{
+  display: flex;
+  flex-direction: column;
+  margin-right: 95px;
+  line-height: 18px;
+}
+
+.biz-show-info-text a{
+  color: #0073bb;
+  cursor: pointer;
+  line-height: 22px;
+
+}
+
+.biz-show-info-icon{
+  display: flex;
+  flex-direction: column;
+}
+
+.biz-show-info-icon i:first-of-type{
+  padding-bottom: 28px;
+}
+
+.biz-show-address{
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.biz-show-edit{
+  color: #0073bb;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.biz-show-edit i{
+  padding-right: 5px;
+}
+
+.biz-show-right-bottom{
+  position: absolute;
+  top: 195px;
+  left: 325px;
+  width: 68%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.biz-show-right-bottom>.thumb{
+  width: 220px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.thumb>img{
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+// .thumb:nth-child(2){
+//   height: 120%;
+//   width: 264px;
+// }
+
+.thumb:hover{
+  height: 120%;
+  width: 264px;
+  -webkit-transition: height 1s, width 1s;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }

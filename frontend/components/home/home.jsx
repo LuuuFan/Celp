@@ -29,7 +29,7 @@ class Home extends React.Component {
         password.value = 'password';
         window.setTimeout(()=>{
           this.props.createSession({username: 'demo_users', email:'', password: 'password'}).then(this.props.history.push('/'));
-        }, 2000);
+        }, 1000);
       }, 2000);
     }, 2000);
   }

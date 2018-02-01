@@ -56,25 +56,46 @@ class BizShow extends React.Component {
                 <img className='biz-show-map' src='https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=' />
                 <div className='biz-show-left-bottom-detail'>
                   <div>
-                    <div className='biz-show-address'>
-                      <i class="fas fa-map-marker"></i>
-                      {biz.display_address}
-                    </div>
-                    <div className='biz-show-phone'>
-                      <i class="fas fa-phone"></i>
-                      {biz.phone}
-                    </div>
-                    <div className='biz-show-website'>
-                      <i class="fas fa-home"></i>
-                      {biz.website ? biz.website: <a href={`/#/biz/${biz.id}`}>celp.com</a> }
+                    <div className='biz-show-info'>
+                      <div className='biz-show-info-icon'>
+                        <i class="fas fa-map-marker"></i>
+                        <i class="far fa-compass"></i>
+                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-home"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                      </div>
+                      <div className='biz-show-info-text'>
+                        <div className='biz-show-address'>
+                          {biz.location.address1}
+                          <br/>
+                          { biz.location.address2 ? <p>biz.location.address2<br/></p> : ""}
+                          {biz.location.city}, &nbsp;{biz.location.state} &nbsp;{biz.location.zipcode}
+                        </div>
+                        <a href=''>Get Directions</a>
+                        {biz.phone}
+                        <br/>
+                        {biz.website ? biz.website: <a href={`/#/biz/${biz.id}`}>celp.com</a> }
+                        <a href=''>Send to your Phone</a>
+                      </div>
+
+                      <div className='biz-show-edit'>
+                        <i class="fas fa-pencil-alt"></i>
+                        <span>Edit</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
                 <div className='biz-show-right-bottom'>
-                <img id='biz-show-img-1' src='' />
-                <img id='biz-show-img-2' src='' />
-                <img id='biz-show-img-3' src='' />
+                  <div className='thumb'>
+                    <img id='biz-show-img-1' src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003' />
+                  </div>
+                  <div className='thumb'>
+                    <img id='biz-show-img-2' src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' />
+                  </div>
+                  <div className='thumb'>
+                    <img id='biz-show-img-3' src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' />
+                  </div>
               </div>
               </div>
             </div>

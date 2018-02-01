@@ -31,4 +31,4 @@ const App = () => (
 );
 
 export default App;
-// <Route component={NotFound}>
+// <Route component={NotFound} />
