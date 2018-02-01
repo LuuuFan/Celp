@@ -26155,7 +26155,9 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/signup' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/login' }),
-      _react2.default.createElement(_reactRouterDom.Route, { component: _not_found2.default })
+      _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
+          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
+        } })
     ),
     _react2.default.createElement(
       _reactRouterDom.Switch,

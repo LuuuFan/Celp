@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import SessionFormContainer from './session/session_form_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
@@ -22,7 +22,7 @@ const App = () => (
       <Route exact path='/biz/:bizId' component={BizShowContainer} />
       <Route path='/signup' />
       <Route path='/login' />
-      <Route component={NotFound} />
+      <Route render={()=>(<Redirect to='/' />)} />
     </Switch>
     <Switch>
       <Route />
