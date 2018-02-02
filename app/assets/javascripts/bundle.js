@@ -28018,7 +28018,7 @@ var AddImg = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'group' },
+          { className: 'uploadImgGroup group' },
           this.state.img ? this.state.img.map(function (img, idx) {
             return _react2.default.createElement(
               'div',

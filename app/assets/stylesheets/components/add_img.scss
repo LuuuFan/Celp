@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.upload-photo-page>div{
+.upload-photo-page>div:first-of-type{
   padding-top: 50px;
   align-items: center;
   display: flex;
@@ -32,7 +32,6 @@
 .finish-upload>button{
   width: 100px;
   text-align: center;
-  float: right;
 }
 
 .upload-photo-page button{
@@ -49,10 +48,13 @@
 }
 
 .addImgContainer{
-  float:left;
   margin-right: 15px;
   width: 220px;
+  float: left;
+}
 
+.uploadImgGroup{
+  width: 60%;
 }
 
 .addImgContainer>textarea{

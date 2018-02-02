@@ -53,7 +53,7 @@ class AddImg extends React.Component {
 
           <button className='invokeCloudinary' onClick={()=>this.cloudinary()}>Click to upload images</button>
         </div>
-        <div className='group'>
+        <div className='uploadImgGroup group'>
           { this.state.img ?
             this.state.img.map((img, idx)=>
               <div key={idx} className='addImgContainer'>
