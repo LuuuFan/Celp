@@ -30,7 +30,7 @@ class BizIndex extends React.Component {
               </div>
               <div className='filter-open-hour'>
                 <ul>
-                  <li><i class="far fa-clock"></i>Open Now</li>
+                  <li><i className="far fa-clock"></i>Open Now</li>
                 </ul>
               </div>
             </div>

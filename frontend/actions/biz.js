@@ -8,9 +8,9 @@ export const receiveAllBiz = (bizes) => ({
   bizes
 });
 
-export const receiveBiz = (biz) => ({
+export const receiveBiz = (payload) => ({
   type: RECEIVE_BIZ,
-  biz
+  payload
 });
 
 export const requestAllBiz = () => dispatch => APIUtilBiz.fetchBizes()
@@ -20,5 +20,5 @@ export const requestAllBiz = () => dispatch => APIUtilBiz.fetchBizes()
 
 export const requestBiz = (bizId) => dispatch => APIUtilBiz.fetchBiz(bizId)
   .then(
-    biz => dispatch(receiveBiz(biz))
+    payload => dispatch(receiveBiz(payload))
   );

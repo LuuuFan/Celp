@@ -199,9 +199,16 @@
 }
 
 .biz-show-img{
+  width: 100%;
+  background-image: url("../../images/city_line.png");
+}
+
+.biz-show-img > div{
   display: flex;
+  flex-direction: row;
   align-items: center;
   height: 220px;
+  width: 100%;
 }
 
 .thumb{
@@ -240,4 +247,26 @@
 }
 .biz-show-more-img a{
   color: #0073bb;
+}
+
+.biz-show-no-img{
+  margin: auto;
+  width: 100%;
+}
+
+.biz-show-no-img div:hover{
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.biz-show-no-img div{
+  margin-left: 300px;
+  padding: 8px 15px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  color: gray;
+}
+
+.biz-show-no-img div i{
+  padding-right: 8px;
 }

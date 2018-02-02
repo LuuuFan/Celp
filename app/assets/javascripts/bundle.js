@@ -1337,10 +1337,10 @@ var receiveAllBiz = exports.receiveAllBiz = function receiveAllBiz(bizes) {
   };
 };
 
-var receiveBiz = exports.receiveBiz = function receiveBiz(biz) {
+var receiveBiz = exports.receiveBiz = function receiveBiz(payload) {
   return {
     type: RECEIVE_BIZ,
-    biz: biz
+    payload: payload
   };
 };
 
@@ -1354,8 +1354,8 @@ var requestAllBiz = exports.requestAllBiz = function requestAllBiz() {
 
 var requestBiz = exports.requestBiz = function requestBiz(bizId) {
   return function (dispatch) {
-    return APIUtilBiz.fetchBiz(bizId).then(function (biz) {
-      return dispatch(receiveBiz(biz));
+    return APIUtilBiz.fetchBiz(bizId).then(function (payload) {
+      return dispatch(receiveBiz(payload));
     });
   };
 };
@@ -21702,10 +21702,15 @@ var _biz = __webpack_require__(84);
 
 var _biz2 = _interopRequireDefault(_biz);
 
+var _img = __webpack_require__(144);
+
+var _img2 = _interopRequireDefault(_img);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var entitiesReducer = (0, _redux.combineReducers)({
-  biz: _biz2.default
+  biz: _biz2.default,
+  imgs: _img2.default
 });
 
 exports.default = entitiesReducer;
@@ -21734,7 +21739,7 @@ var bizReducer = function bizReducer() {
       return Object.assign({}, state, action.bizes);
     case _biz.RECEIVE_BIZ:
       newState = Object.assign({}, state);
-      newState[action.biz.id] = action.biz;
+      newState[action.payload.biz.id] = action.payload.biz;
       return Object.assign({}, state, newState);
     default:
       return state;
@@ -27279,7 +27284,7 @@ var BizIndex = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { 'class': 'far fa-clock' }),
+                    _react2.default.createElement('i', { className: 'far fa-clock' }),
                     'Open Now'
                   )
                 )
@@ -27444,8 +27449,16 @@ var _biz = __webpack_require__(21);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var biz = state.entities.biz[ownProps.match.params.bizId];
+  var imgs = [];
+  if (biz && biz.img_ids) {
+    imgs = biz.img_ids.map(function (id) {
+      return state.entities.imgs[id];
+    });
+  }
   return {
-    biz: state.entities.biz[ownProps.match.params.bizId]
+    biz: biz,
+    imgs: imgs
   };
 };
 
@@ -27517,7 +27530,9 @@ var BizShow = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var biz = this.props.biz;
+      var _props = this.props,
+          biz = _props.biz,
+          imgs = _props.imgs;
 
       return _react2.default.createElement(
         "div",
@@ -27664,7 +27679,7 @@ var BizShow = function (_React$Component) {
                           biz.location.address2 ? _react2.default.createElement(
                             "p",
                             null,
-                            "biz.location.address2",
+                            biz.location.address2,
                             _react2.default.createElement("br", null)
                           ) : "",
                           biz.location.city,
@@ -27711,27 +27726,34 @@ var BizShow = function (_React$Component) {
                 _react2.default.createElement(
                   "div",
                   { className: "biz-show-img" },
-                  _react2.default.createElement(
+                  imgs.length > 0 ? _react2.default.createElement(
                     "div",
-                    { onMouseOver: function onMouseOver() {
-                        return _this2.mouseOver();
-                      }, className: "thumb", id: "biz-show-img-1" },
-                    _react2.default.createElement("img", { src: "https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003" })
-                  ),
-                  _react2.default.createElement(
+                    null,
+                    imgs.map(function (img, idx) {
+                      return _react2.default.createElement(
+                        "div",
+                        { key: idx, onMouseOver: function onMouseOver() {
+                            return _this2.mouseOver();
+                          }, className: "thumb", id: "biz-show-img-" + idx },
+                        _react2.default.createElement("img", { src: img.url })
+                      );
+                    })
+                  ) : _react2.default.createElement(
                     "div",
-                    { className: "thumb biz-show-img-zoom", id: "biz-show-img-2" },
-                    _react2.default.createElement("img", { src: "https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97" })
-                  ),
-                  _react2.default.createElement(
-                    "div",
-                    { onMouseOver: function onMouseOver() {
-                        return _this2.mouseOver();
-                      }, className: "thumb", id: "biz-show-img-3" },
-                    _react2.default.createElement("img", { src: "https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB" })
+                    { className: "biz-show-no-img" },
+                    _react2.default.createElement(
+                      "a",
+                      { href: "/#/biz/" + biz.id + "/addphoto" },
+                      _react2.default.createElement(
+                        "div",
+                        null,
+                        _react2.default.createElement("i", { className: "fas fa-camera" }),
+                        "Add Photo"
+                      )
+                    )
                   )
                 ),
-                _react2.default.createElement(
+                imgs.length > 0 ? _react2.default.createElement(
                   "div",
                   { className: "biz-show-more-img" },
                   _react2.default.createElement("i", { className: "far fa-images" }),
@@ -27740,7 +27762,7 @@ var BizShow = function (_React$Component) {
                     null,
                     "See all 000"
                   )
-                )
+                ) : ""
               )
             )
           ) : _react2.default.createElement(
@@ -27757,6 +27779,13 @@ var BizShow = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = BizShow;
+
+// <div className='thumb biz-show-img-zoom' id='biz-show-img-2'>
+//   <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' />
+// </div>
+// <div onMouseOver={()=>this.mouseOver()} className='thumb' id='biz-show-img-3'>
+//   <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' />
+// </div>
 
 /***/ }),
 /* 142 */
@@ -27836,6 +27865,38 @@ var AddImg = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AddImg;
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _biz = __webpack_require__(21);
+
+var imgReducer = function imgReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  Object.freeze(state);
+  switch (action.type) {
+    case _biz.RECEIVE_BIZ:
+      if (action.payload.imgs) {
+        return action.payload.imgs;
+      } else {
+        return state;
+      }
+    default:
+      return state;
+  }
+};
+
+exports.default = imgReducer;
 
 /***/ })
 /******/ ]);

@@ -19,7 +19,7 @@ class BizShow extends React.Component {
   }
 
   render(){
-    const {biz} = this.props;
+    const {biz, imgs} = this.props;
     return(
       <div>
         <div className='biz-show'>
@@ -74,7 +74,7 @@ class BizShow extends React.Component {
                           <div className='biz-show-address'>
                             {biz.location.address1}
                             <br/>
-                            { biz.location.address2 ? <p>biz.location.address2<br/></p> : ""}
+                            { biz.location.address2 ? <p>{biz.location.address2}<br/></p> : ""}
                             {biz.location.city}, &nbsp;{biz.location.state} &nbsp;{biz.location.zipcode}
                           </div>
                           <a href=''>Get Directions</a>
@@ -94,19 +94,24 @@ class BizShow extends React.Component {
                 </div>
                 <div className='biz-show-right-bottom'>
                   <div className='biz-show-img'>
-                    <div onMouseOver={()=>this.mouseOver()} className='thumb' id='biz-show-img-1'>
-                      <img  src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003' />
-                    </div>
-                    <div className='thumb biz-show-img-zoom' id='biz-show-img-2'>
-                      <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' />
-                    </div>
-                    <div onMouseOver={()=>this.mouseOver()} className='thumb' id='biz-show-img-3'>
-                      <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' />
-                    </div>
+                    { imgs.length > 0 ? (
+                      <div>
+                        { imgs.map((img, idx) =>
+                          <div key={idx} onMouseOver={()=>this.mouseOver()} className='thumb' id={`biz-show-img-${idx}`}>
+                            <img  src={img.url} />
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className='biz-show-no-img'>
+                        <a href={`/#/biz/${biz.id}/addphoto`}><div><i className="fas fa-camera"></i>Add Photo</div></a>
+                      </div>
+                    )}
                   </div>
-                  <div className='biz-show-more-img'>
+                  { imgs.length > 0 ? (<div className='biz-show-more-img'>
                     <i className="far fa-images"></i><a>See all 000</a>
-                  </div>
+                  </div>) : ""}
+
               </div>
               </div>
             </div>
@@ -120,3 +125,10 @@ class BizShow extends React.Component {
 }
 
 export default BizShow;
+
+// <div className='thumb biz-show-img-zoom' id='biz-show-img-2'>
+//   <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' />
+// </div>
+// <div onMouseOver={()=>this.mouseOver()} className='thumb' id='biz-show-img-3'>
+//   <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' />
+// </div>
