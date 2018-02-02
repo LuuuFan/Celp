@@ -2,6 +2,7 @@ class Biz < ApplicationRecord
   validates :name, :address1, presence: true
 
   has_many :imgs
+  has_many :reviews
 
   def display_address
     address_arr = [self.address1, self.address2, self.address3, self.city, self.state, self.zip_code]
