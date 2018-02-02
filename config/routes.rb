@@ -9,6 +9,6 @@ Rails.application.routes.draw do
       resources :imgs, only: [:index, :create]
     end
     resource :session, only: [:create, :destroy]
-    resources :imgs, only: [:show]
+    resources :imgs, only: [:show, :destroy]
   end
 end

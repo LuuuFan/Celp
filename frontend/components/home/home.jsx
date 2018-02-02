@@ -64,7 +64,7 @@ class Home extends React.Component {
               </div>
             )}
           </div>
-          <a href='/'><h1 className='home-logo'>Celp<i class="fab fa-yelp"></i></h1></a>
+          <a href='/'><h1 className='home-logo'>Celp<i className="fab fa-yelp"></i></h1></a>
           <div className='searchBar'>
             <span>Find</span>
             <input type='text' placeholder="tacos, cheap dinners, Max's"/>

@@ -25,7 +25,7 @@ class Button extends React.Component {
             <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
           </div>
           <a className='userMenu'>
-            <i class="fas fa-sort-down"></i>
+            <i className="fas fa-sort-down"></i>
           </a>
           <div id='user-dropdown' className='hidden'>
             <div className='user-dropdown-detail'>

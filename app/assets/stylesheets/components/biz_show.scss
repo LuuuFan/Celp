@@ -200,7 +200,44 @@
 
 .biz-show-img{
   width: 100%;
-  background-image: url("../../images/city_line.png");
+}
+
+.biz-show-no-img{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.biz-show-no-img>img{
+  position: absolute;
+  width:100%;
+  object-fit: cover;
+  opacity: 0.3;
+  top: -45px;
+}
+
+.biz-show-no-img a{
+  z-index:1000;
+}
+
+.biz-show-no-img div{
+  padding: 8px 15px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  color: gray;
+  z-index: 1000;
+  background-color: #f5f5f5;
+}
+
+.biz-show-no-img div:hover{
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.biz-show-no-img div i{
+  padding-right: 8px;
 }
 
 .biz-show-img > div{
@@ -247,26 +284,4 @@
 }
 .biz-show-more-img a{
   color: #0073bb;
-}
-
-.biz-show-no-img{
-  margin: auto;
-  width: 100%;
-}
-
-.biz-show-no-img div:hover{
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
-  background-color: white;
-}
-
-.biz-show-no-img div{
-  margin-left: 300px;
-  padding: 8px 15px;
-  border: 1px solid gray;
-  border-radius: 3px;
-  color: gray;
-}
-
-.biz-show-no-img div i{
-  padding-right: 8px;
 }

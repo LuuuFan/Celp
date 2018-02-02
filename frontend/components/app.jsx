@@ -23,7 +23,7 @@ const App = () => (
       <Route path='/login' />
       <Route exact path='/biz' component={BizIndexContainer} />
       <Route exact path='/biz/:bizId' component={BizShowContainer} />
-      <Route exact path='/biz/:bizId/addphoto' component={AddImgContainer} />
+      <ProtectedRoute exact path='/biz/:bizId/addphoto' component={AddImgContainer} />
       <Route render={()=>(<Redirect to='/' />)} />
     </Switch>
     <Switch>

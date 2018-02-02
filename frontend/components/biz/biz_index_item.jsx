@@ -4,7 +4,13 @@ import {Link} from 'react-router-dom';
 const BizIndexItem = ({biz, idx}) => {
  return (
    <div className='biz_index_item'>
-     <img src='https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' />
+     {biz.img_url ?
+      <div className='index-thumb'><img src={`${biz.img_url}`} /></div>
+       :
+      <div className='index-thumb'>
+        <img src='https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' />
+      </div>
+     }
      <div className='biz-info'>
        <div className='biz-info-left'>
          <div className='biz-info-title'>

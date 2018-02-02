@@ -6,10 +6,16 @@
   color: #333;
 }
 
+.index-thumb{
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .biz_index_item img{
-  width: 80px;
-  height: 80px;
-  border-radius: 3px;
+  object-fit: cover;
+  height: 100%;
 }
 
 .biz-info {
