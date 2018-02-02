@@ -32,7 +32,7 @@ class Home extends React.Component {
           btn.setAttribute("style", "background-color: #a71c1c");
           window.setTimeout(()=>{
             this.props.createSession({username: 'demo_users', email:'', password: 'password'}).then(this.props.history.push('/'));
-          }, 500);
+          }, 100);
         }, 500);
       }, 1000);
     }, 1000);
@@ -69,25 +69,25 @@ class Home extends React.Component {
             <span>Near</span>
             <input type='text' placeholder="San Francisco, CA, US"/>
             <button>
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </button>
           </div>
           <div className='business'>
             <ul>
             <a href='/#/biz'>
-              <i class="fas fa-utensils"></i>
+              <i className="fas fa-utensils"></i>
               <li>
                 Restaurants
               </li>
             </a>
             <a href='/'>
-              <i class="fas fa-glass-martini"></i>
+              <i className="fas fa-glass-martini"></i>
               <li>
                 Nightlife
               </li>
             </a>
             <a href='/'>
-              <i class="fas fa-wrench"></i>
+              <i className="fas fa-wrench"></i>
               <li>
                 Home Services
               </li>

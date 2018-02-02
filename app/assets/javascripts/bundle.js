@@ -27040,7 +27040,7 @@ var Home = function (_React$Component) {
             btn.setAttribute("style", "background-color: #a71c1c");
             window.setTimeout(function () {
               _this2.props.createSession({ username: 'demo_users', email: '', password: 'password' }).then(_this2.props.history.push('/'));
-            }, 500);
+            }, 100);
           }, 500);
         }, 1000);
       }, 1000);
@@ -27176,7 +27176,7 @@ var Home = function (_React$Component) {
             _react2.default.createElement(
               'button',
               null,
-              _react2.default.createElement('i', { 'class': 'fas fa-search' })
+              _react2.default.createElement('i', { className: 'fas fa-search' })
             )
           ),
           _react2.default.createElement(
@@ -27188,7 +27188,7 @@ var Home = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '/#/biz' },
-                _react2.default.createElement('i', { 'class': 'fas fa-utensils' }),
+                _react2.default.createElement('i', { className: 'fas fa-utensils' }),
                 _react2.default.createElement(
                   'li',
                   null,
@@ -27198,7 +27198,7 @@ var Home = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '/' },
-                _react2.default.createElement('i', { 'class': 'fas fa-glass-martini' }),
+                _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
                 _react2.default.createElement(
                   'li',
                   null,
@@ -27208,7 +27208,7 @@ var Home = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '/' },
-                _react2.default.createElement('i', { 'class': 'fas fa-wrench' }),
+                _react2.default.createElement('i', { className: 'fas fa-wrench' }),
                 _react2.default.createElement(
                   'li',
                   null,
@@ -31054,6 +31054,8 @@ var BizImgIndex = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var imgs = this.props.imgs;
 
       return _react2.default.createElement(
@@ -31103,8 +31105,8 @@ var BizImgIndex = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'group' },
-            imgs.map(function (img, idx) {
-              return _react2.default.createElement(_biz_img_index_item2.default, { key: idx, img: img });
+            imgs.map(function (img) {
+              return _react2.default.createElement(_biz_img_index_item2.default, { key: img.id, bizId: _this2.props.match.params.bizId, img: img, cover: imgs[0] });
             })
           )
         ) : "Loading..."
@@ -31158,17 +31160,14 @@ var BizImgIndexItem = function (_React$Component) {
     key: 'showImg',
     value: function showImg(e) {
       e.preventDefault();
-      var modal = document.getElementById('modal-' + this.props.img.id);
-      // $(`#modal-${this.props.img.id}`).addClass('is-open');
-      this.setState({ className: 'is-open' });
+      if (e.target.classList.value !== 'modal-screen') {
+        this.setState({ className: 'is-open' });
+      }
     }
   }, {
     key: 'closeShowImg',
     value: function closeShowImg(e) {
       e.preventDefault();
-      // $(`#modal-${this.props.img.id}`).removeClass('is-open');
-      var modal = document.getElementById('modal-' + this.props.img.id);
-      debugger;
       this.setState({ className: 'modal' });
     }
   }, {
@@ -31176,7 +31175,10 @@ var BizImgIndexItem = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var img = this.props.img;
+      var _props = this.props,
+          img = _props.img,
+          cover = _props.cover,
+          bizId = _props.bizId;
 
       return _react2.default.createElement(
         'div',
@@ -31189,7 +31191,63 @@ var BizImgIndexItem = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: this.state.className, id: 'modal-' + img.id },
-          _react2.default.createElement('div', { className: 'modal-img-show' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'img-show' },
+            _react2.default.createElement(
+              'div',
+              { onClick: function onClick(e) {
+                  return _this2.closeShowImg(e);
+                }, className: 'modal-close' },
+              _react2.default.createElement(
+                'span',
+                null,
+                '\xD7'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'modal-img-show' },
+              _react2.default.createElement('img', { src: img.url })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'modal-img-show-description' },
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'div',
+                  { className: 'biz-all-imgs-title-img' },
+                  _react2.default.createElement('img', { src: cover.url })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: '/#/biz/' + bizId },
+                    img.biz
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'From ',
+                    img.user
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'img-description' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  img.description
+                )
+              )
+            )
+          ),
           _react2.default.createElement('div', { onClick: function onClick(e) {
               return _this2.closeShowImg(e);
             }, className: 'modal-screen' })
