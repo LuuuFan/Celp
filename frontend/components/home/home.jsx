@@ -13,7 +13,7 @@ class Home extends React.Component {
     // let userDropdown = document.getElementById('user-dropdown');
     // let user = document.getElementsByClassName('user');
     // debugger
-    // if ( e.currentTarget
+    // if ( ec.currentTarget
     //   && userDropdown
     //   && userDropdown.classList.length == 0) {
     //   userDropdown.classList.add('hidden');
@@ -32,8 +32,8 @@ class Home extends React.Component {
           btn.setAttribute("style", "background-color: #a71c1c");
           window.setTimeout(()=>{
             this.props.createSession({username: 'demo_users', email:'', password: 'password'}).then(this.props.history.push('/'));
-          }, 1000);
-        }, 1000);
+          }, 500);
+        }, 500);
       }, 1000);
     }, 1000);
   }
@@ -48,11 +48,9 @@ class Home extends React.Component {
         <div className='home-main'>
           <div className='home-header'>
             <div className='services'>
-              <ul>
-                <a href='/#/write_review'><li>Write a Review</li></a>
-                <a href='/'><li>Events</li></a>
-                <a href='/'><li>talk</li></a>
-              </ul>
+              <a href='/#/write_review'><div>Write a Review</div></a>
+              <a href='/'><div>Events</div></a>
+              <a href='/'><div>talk</div></a>
             </div>
             {currentUser ? (
               <Button currentUser={currentUser} logout={logout} />

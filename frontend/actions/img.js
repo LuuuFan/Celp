@@ -12,12 +12,12 @@ export const receiveAllImg = (imgs) => ({
 export const receiveImg = (img) => ({
   type: RECEIVE_IMG,
   img
-})
+});
 
 export const removeImg = (imgId) => ({
   type: REMOVE_IMG,
   imgId
-})
+});
 
 export const requestAllImg = (id) => dispatch => APIUtilImg.requestAllImg(id)
   .then(

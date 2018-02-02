@@ -40,16 +40,27 @@
 #   phone:'(415) 525-3013'
 # )
 
-Biz.create(
-  name: 'Fog Harbor Fish House',
-  address1: "Pier 39",
-  address2: "Ste A-202",
-  city:'San Francisco',
-  zip_code:'94133',
-  state:'CA',
-  phone:'(415) 421-2442',
-  website: 'fogharbor.com'
-)
+# Biz.create(
+#   name: 'Fog Harbor Fish House',
+#   address1: "Pier 39",
+#   address2: "Ste A-202",
+#   city:'San Francisco',
+#   zip_code:'94133',
+#   state:'CA',
+#   phone:'(415) 421-2442',
+#   website: 'fogharbor.com'
+# )
+
+# Biz.create(
+#   name: 'The House ',
+#   address1: "1230 Grant Ave",
+#   address2: "",
+#   city:'San Francisco',
+#   zip_code:'94133',
+#   state:'CA',
+#   phone:'(415) 986-8612',
+#   website: 'thehse.com'
+# )
 #
 # Img.destroy_all
 # Img.create(

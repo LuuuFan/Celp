@@ -46,27 +46,28 @@
   height:65px;
 }
 
+.home-header .services{
+  padding: 5px;
+}
 
-
-.home-header .services ul{
+.home-header .services {
   display: flex;
-  flex-direction: row;
   color: white;
   font-weight: 800;
   padding: 10px;
 }
 
 
-.home-header .services ul a li{
+.home-header .services>a>div{
   width: auto;
-  margin-right: 20px;
-  // border: 2px solid white;
+  margin: 2px 15px;
   padding: 7px;
   text-align: center;
   border-bottom: 3px solid none;
+  border-bottom: 3px solid transparent;
   }
 
-.home-header .services ul a li:hover{
+.home-header .services>a>div:hover{
   border-bottom: 3px solid white;
 }
 
@@ -87,7 +88,6 @@
 
 .home-header .login{
   width: 50px;
-  // border: 2px solid white;
   padding: 0 10px;
   margin-right: 5px;
 }
@@ -172,4 +172,5 @@
 .home .searchBar {
   width: 100%;
   margin-top: 50px;
+  color: #333;
 }

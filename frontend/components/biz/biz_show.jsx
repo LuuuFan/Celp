@@ -114,7 +114,7 @@ class BizShow extends React.Component {
                   )}
                 </div>
                 { imgs.length > 0 ? (<div className='biz-show-more-img'>
-                  <i className="far fa-images"></i><a>See all {biz.img_ids.length}</a>
+                  <i className="far fa-images"></i><a href={`/#/biz/${biz.id}/photos`}>See all {biz.img_ids.length}</a>
                 </div>) : ""}
             </div>
             </div>

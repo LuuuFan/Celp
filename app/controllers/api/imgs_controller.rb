@@ -1,7 +1,9 @@
 class Api::ImgsController < ApplicationController
 
   def index
-
+    if params[:biz_id]
+      @imgs = Img.where(biz_id: params[:biz_id])
+    end
   end
 
   def show
