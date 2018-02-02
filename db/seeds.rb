@@ -6,41 +6,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
-# User.create(username: 'demo_users', password: 'password', email:'demo@gmail.com')
-# User.create(username: 'luufan', password:'shasha', email:'luuufan@gmail.com')
-# User.create(username: 'shasha', password: 'shasha', email:'shasha@gmail.com')
-# User.create(username: 'night', password: 'night123', email:'night@gmail.com')
+User.destroy_all
+User.create(username: 'demo_users', password: 'password', email:'demo@gmail.com')
+User.create(username: 'luufan', password:'shasha', email:'luuufan@gmail.com')
+User.create(username: 'shasha', password: 'shasha', email:'shasha@gmail.com')
+User.create(username: 'night', password: 'night123', email:'night@gmail.com')
 
-# Biz.destroy_all
-# Biz.create(
-#   name: 'Sungrass Bakery',
-#   address1: "1730 O'farrell St",
-#   city:'San Francisco',
-#   zip_code:'94115',
-#   state:'CA',
-#   phone:'(415) 000-0000'
-# )
-# Biz.create(
-#   name: 'Shasha Café',
-#   address1: "1730 O'farrell St",
-#   address2: "#888",
-#   city:'San Francisco',
-#   zip_code:'94115',
-#   state:'CA',
-#   phone:'(415) 000-0000'
-# )
-# Biz.create(
-#   name: 'Fat Angel',
-#   address1: "1740 O'farrell St",
-#   address2: "",
-#   city:'San Francisco',
-#   zip_code:'94115',
-#   state:'CA',
-#   phone:'(415) 525-3013'
-# )
+Biz.destroy_all
+Biz.create(
+  name: 'Sungrass Bakery',
+  address1: "1730 O'farrell St",
+  city:'San Francisco',
+  zip_code:'94115',
+  state:'CA',
+  phone:'(415) 000-0000'
+)
+Biz.create(
+  name: 'Shasha Café',
+  address1: "1730 O'farrell St",
+  address2: "#888",
+  city:'San Francisco',
+  zip_code:'94115',
+  state:'CA',
+  phone:'(415) 000-0000'
+)
+Biz.create(
+  name: 'Fat Angel',
+  address1: "1740 O'farrell St",
+  address2: "",
+  city:'San Francisco',
+  zip_code:'94115',
+  state:'CA',
+  phone:'(415) 525-3013'
+)
 
-# Img.destroy_all
+Img.destroy_all
 Img.create(
   biz_id: 7,
   user_id: 5,
