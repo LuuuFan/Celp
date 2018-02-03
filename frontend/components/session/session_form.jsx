@@ -67,35 +67,35 @@ class SessionForm extends React.Component {
           <div className='session-form'>
             <h2>{h2} Celp</h2>
               {this.props.formType !== 'signup' ?
-                <h3>New to Celp? <a href='#/signup/'>Sign up</a></h3>
+                <h3><p>New to Celp? <a href='#/signup/'>Sign up</a></p></h3>
                  :
                 <h3>Connect with great local businesses</h3>
               }
-            <div className='term'>
-              <p>By {text}, you agree to Celp’s <a>Terms of Service</a> and <a>Privacy Policy.</a></p>
+              <div className='term'>
+                <p>By {text}, you agree to Celp’s <a>Terms of Service</a> and <a>Privacy Policy.</a></p>
+              </div>
+
+              <form className='normal-form'>
+                <input id='username' onChange={this.handleInput('username')} name='user[username]' type='text' value={this.state.username} placeholder='username'/>
+                {this.props.formType == 'signup' ?
+                  <input onChange={this.handleInput('email')} type='text' name='user[email]' value={this.state.email} placeholder='email'/> : ''
+                }
+                <input id='password' onChange={this.handleInput('password')} type='password' name='user[password]' value={this.state.password} placeholder='password'/>
+                { this.props.formType !== 'signup' ?
+                  <a href='#/forgotpassword/'><p>Forgot password?</p></a>
+                  : ''
+                }
+                <button id='login' onClick={(e)=>this.handleClick(e)}>{text}</button>
+                {this.props.formType !== 'signup' ?
+                  <p>New to Celp? <a href='#/signup/'>Sign up</a></p>
+                   :
+                  <p>Already on Celp? <a href='#/login/'>Log in</a></p>
+                }
+              </form>
             </div>
-            <form className='normal-form'>
-              <input id='username' onChange={this.handleInput('username')} name='user[username]' type='text' value={this.state.username} placeholder='username'/>
-              {this.props.formType == 'signup' ?
-                <input onChange={this.handleInput('email')} type='text' name='user[email]' value={this.state.email} placeholder='email'/> : ''
-              }
-              <input id='password' onChange={this.handleInput('password')} type='password' name='user[password]' value={this.state.password} placeholder='password'/>
-              { this.props.formType !== 'signup' ?
-                <a href='#/forgotpassword/'><p>Forgot password?</p></a>
-                : ''
-              }
-              <button id='login' onClick={(e)=>this.handleClick(e)}>{text}</button>
-              {this.props.formType !== 'signup' ?
-                <p>New to Celp? <a href='#/signup/'>Sign up</a></p>
-                 :
-                <p>Already on Celp? <a href='#/login/'>Log in</a></p>
-              }
-          </form>
-          </div>
-          <div className='session-img'>
+            <div className='session-img'></div>
           </div>
         </div>
-      </div>
     );
   }
 }

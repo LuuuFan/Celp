@@ -54,6 +54,8 @@
 }
 
 .uploadImgGroup{
+  padding-top: 40px;
+  padding-bottom: 20px;
   width: 60%;
 }
 
@@ -68,11 +70,26 @@
 }
 
 .uploadedImg {
+  position: relative;
   height: 220px;
   width: 220px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+.deleteUpload{
+  color: white;
+  font-size: 18px;
+  padding: 5px 7px;
+  position: absolute;
+  top: 5px;
+  left: 185px;
+  background-color: gray;
+}
+
+.deleteUpload:hover{
+  background-color: black;
 }
 
 .uploadedImg>img{

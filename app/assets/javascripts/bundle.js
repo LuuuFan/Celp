@@ -26981,11 +26981,15 @@ var SessionForm = function (_React$Component) {
             this.props.formType !== 'signup' ? _react2.default.createElement(
               'h3',
               null,
-              'New to Celp? ',
               _react2.default.createElement(
-                'a',
-                { href: '#/signup/' },
-                'Sign up'
+                'p',
+                null,
+                'New to Celp? ',
+                _react2.default.createElement(
+                  'a',
+                  { href: '#/signup/' },
+                  'Sign up'
+                )
               )
             ) : _react2.default.createElement(
               'h3',
@@ -28315,6 +28319,11 @@ var AddImg = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'uploadedImg' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'deleteUpload' },
+                  _react2.default.createElement('i', { className: 'fas fa-trash-alt' })
+                ),
                 _react2.default.createElement('img', { src: '' + img.url })
               ),
               _react2.default.createElement('textarea', { placeholder: 'Add a caption' })
@@ -28340,6 +28349,18 @@ var AddImg = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AddImg;
+
+// <div className='uploadImgGroup group'>
+//   <div className='addImgContainer'>
+//     <div className='uploadedImg'>
+//       <div className='deleteUpload'>
+//         <i className="fas fa-trash-alt"></i>
+//       </div>
+//       <img src='http://res.cloudinary.com/ddwejrtgh/image/upload/v1517642020/celp/IMG_2236_vydurt.jpg' />
+//     </div>
+//     <textarea placeholder='Add a caption'/>
+//   </div>
+// </div>
 
 /***/ }),
 /* 151 */
