@@ -2,7 +2,8 @@ import React from 'react';
 
 const ReviewsIndexItem = ({review}) => {
   return (
-    <div>
+    <div className='reviews-index-item'>
+      
       <p>{review.body}</p>
     </div>
   );

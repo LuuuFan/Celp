@@ -26519,10 +26519,6 @@ var _home_center = __webpack_require__(166);
 
 var _home_center2 = _interopRequireDefault(_home_center);
 
-var _reviews_index_container = __webpack_require__(168);
-
-var _reviews_index_container2 = _interopRequireDefault(_reviews_index_container);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -26550,11 +26546,6 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
         } })
-    ),
-    _react2.default.createElement(
-      _reactRouterDom.Switch,
-      null,
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _reviews_index_container2.default })
     ),
     _react2.default.createElement(
       _reactRouterDom.Switch,
@@ -27828,6 +27819,8 @@ var _biz_show2 = _interopRequireDefault(_biz_show);
 
 var _biz = __webpack_require__(8);
 
+var _reactRouterDom = __webpack_require__(7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
@@ -27859,7 +27852,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_biz_show2.default);
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_biz_show2.default));
 
 /***/ }),
 /* 148 */
@@ -27881,6 +27874,12 @@ var _react2 = _interopRequireDefault(_react);
 var _biz_show_img = __webpack_require__(149);
 
 var _biz_show_img2 = _interopRequireDefault(_biz_show_img);
+
+var _reviews_index_container = __webpack_require__(168);
+
+var _reviews_index_container2 = _interopRequireDefault(_reviews_index_container);
+
+var _reactRouterDom = __webpack_require__(7);
 
 var _loading = __webpack_require__(167);
 
@@ -27924,194 +27923,199 @@ var BizShow = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'biz-show' },
-        biz ? _react2.default.createElement(
+        null,
+        _react2.default.createElement(
           'div',
-          { className: 'biz-show-detail' },
-          _react2.default.createElement(
+          { className: 'biz-show' },
+          biz ? _react2.default.createElement(
             'div',
-            { className: 'biz-show-top' },
+            { className: 'biz-show-detail' },
             _react2.default.createElement(
               'div',
-              { className: 'biz-show-left-top' },
-              _react2.default.createElement(
-                'h1',
-                null,
-                biz.name
-              ),
+              { className: 'biz-show-top' },
               _react2.default.createElement(
                 'div',
-                { className: 'biz-show-rating-number' },
-                _react2.default.createElement('div', { className: 'biz-info-rating' }),
+                { className: 'biz-show-left-top' },
                 _react2.default.createElement(
-                  'p',
+                  'h1',
                   null,
-                  '0000 reviews'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'biz-info-price-tags' },
+                  biz.name
+                ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'biz-info-price' },
+                  { className: 'biz-show-rating-number' },
+                  _react2.default.createElement('div', { className: 'biz-info-rating' }),
                   _react2.default.createElement(
                     'p',
                     null,
-                    biz.price
+                    '0000 reviews'
                   )
                 ),
                 _react2.default.createElement(
-                  'p',
-                  null,
-                  '\xB7'
-                ),
-                _react2.default.createElement(
                   'div',
-                  { className: 'biz-info-tags' },
+                  { className: 'biz-info-price-tags' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'biz-info-price' },
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      biz.price
+                    )
+                  ),
                   _react2.default.createElement(
                     'p',
                     null,
+                    '\xB7'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'biz-info-tags' },
                     _react2.default.createElement(
-                      'a',
+                      'p',
                       null,
-                      'Bakery'
-                    ),
-                    ', ',
-                    _react2.default.createElement(
-                      'a',
-                      null,
-                      'Cake'
+                      _react2.default.createElement(
+                        'a',
+                        null,
+                        'Bakery'
+                      ),
+                      ', ',
+                      _react2.default.createElement(
+                        'a',
+                        null,
+                        'Cake'
+                      )
                     )
                   )
                 )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'biz-show-right-top' },
-              _react2.default.createElement(
-                'button',
-                { className: 'writeReview' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement('i', { className: 'fas fa-star' }),
-                  'Write a Review'
-                )
               ),
               _react2.default.createElement(
-                'ul',
-                null,
+                'div',
+                { className: 'biz-show-right-top' },
                 _react2.default.createElement(
-                  'a',
-                  { href: '/#/biz/' + biz.id + '/addphoto' },
+                  'button',
+                  { className: 'writeReview' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    _react2.default.createElement('i', { className: 'fas fa-star' }),
+                    'Write a Review'
+                  )
+                ),
+                _react2.default.createElement(
+                  'ul',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: '/#/biz/' + biz.id + '/addphoto' },
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-camera' }),
+                      'Add Photo'
+                    )
+                  ),
                   _react2.default.createElement(
                     'li',
                     null,
-                    _react2.default.createElement('i', { className: 'fas fa-camera' }),
-                    'Add Photo'
-                  )
-                ),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  _react2.default.createElement('i', { className: 'fas fa-share-square' }),
-                  'Share'
-                ),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
-                  'Bookmark'
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'biz-show-bottom' },
-            _react2.default.createElement(
-              'div',
-              { className: 'biz-show-left-bottom' },
-              _react2.default.createElement('img', { className: 'biz-show-map', src: 'https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=' }),
-              _react2.default.createElement(
-                'div',
-                { className: 'biz-show-left-bottom-detail' },
-                _react2.default.createElement(
-                  'div',
-                  null,
+                    _react2.default.createElement('i', { className: 'fas fa-share-square' }),
+                    'Share'
+                  ),
                   _react2.default.createElement(
-                    'div',
-                    { className: 'biz-show-info' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'biz-show-info-icon' },
-                      _react2.default.createElement('i', { className: 'fas fa-map-marker' }),
-                      _react2.default.createElement('i', { className: 'far fa-compass' }),
-                      _react2.default.createElement('i', { className: 'fas fa-phone' }),
-                      _react2.default.createElement('i', { className: 'fas fa-home' }),
-                      _react2.default.createElement('i', { className: 'fas fa-mobile-alt' })
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'biz-show-info-text' },
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'biz-show-address' },
-                        biz.location.address1,
-                        _react2.default.createElement('br', null),
-                        biz.location.address2 ? _react2.default.createElement(
-                          'p',
-                          null,
-                          biz.location.address2,
-                          _react2.default.createElement('br', null)
-                        ) : "",
-                        biz.location.city,
-                        ', \xA0',
-                        biz.location.state,
-                        ' \xA0',
-                        biz.location.zipcode
-                      ),
-                      _react2.default.createElement(
-                        'a',
-                        { href: '' },
-                        'Get Directions'
-                      ),
-                      biz.phone,
-                      _react2.default.createElement('br', null),
-                      biz.website ? _react2.default.createElement(
-                        'a',
-                        { href: 'http://' + biz.website },
-                        biz.website
-                      ) : _react2.default.createElement(
-                        'a',
-                        { href: '/#/biz/' + biz.id },
-                        'celp.com'
-                      ),
-                      _react2.default.createElement(
-                        'a',
-                        { href: '' },
-                        'Send to your Phone'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'biz-show-edit' },
-                      _react2.default.createElement('i', { className: 'fas fa-pencil-alt' }),
-                      _react2.default.createElement(
-                        'span',
-                        null,
-                        'Edit'
-                      )
-                    )
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
+                    'Bookmark'
                   )
                 )
               )
             ),
-            _react2.default.createElement(_biz_show_img2.default, { imgs: imgs, biz: biz })
-          )
-        ) : _react2.default.createElement(_loading2.default, null)
+            _react2.default.createElement(
+              'div',
+              { className: 'biz-show-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-show-left-bottom' },
+                _react2.default.createElement('img', { className: 'biz-show-map', src: 'https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=' }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'biz-show-left-bottom-detail' },
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'biz-show-info' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'biz-show-info-icon' },
+                        _react2.default.createElement('i', { className: 'fas fa-map-marker' }),
+                        _react2.default.createElement('i', { className: 'far fa-compass' }),
+                        _react2.default.createElement('i', { className: 'fas fa-phone' }),
+                        _react2.default.createElement('i', { className: 'fas fa-home' }),
+                        _react2.default.createElement('i', { className: 'fas fa-mobile-alt' })
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'biz-show-info-text' },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'biz-show-address' },
+                          biz.location.address1,
+                          _react2.default.createElement('br', null),
+                          biz.location.address2 ? _react2.default.createElement(
+                            'p',
+                            null,
+                            biz.location.address2,
+                            _react2.default.createElement('br', null)
+                          ) : "",
+                          biz.location.city,
+                          ', \xA0',
+                          biz.location.state,
+                          ' \xA0',
+                          biz.location.zipcode
+                        ),
+                        _react2.default.createElement(
+                          'a',
+                          { href: '' },
+                          'Get Directions'
+                        ),
+                        biz.phone,
+                        _react2.default.createElement('br', null),
+                        biz.website ? _react2.default.createElement(
+                          'a',
+                          { href: 'http://' + biz.website },
+                          biz.website
+                        ) : _react2.default.createElement(
+                          'a',
+                          { href: '/#/biz/' + biz.id },
+                          'celp.com'
+                        ),
+                        _react2.default.createElement(
+                          'a',
+                          { href: '' },
+                          'Send to your Phone'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'biz-show-edit' },
+                        _react2.default.createElement('i', { className: 'fas fa-pencil-alt' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          'Edit'
+                        )
+                      )
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(_biz_show_img2.default, { imgs: imgs, biz: biz })
+            )
+          ) : _react2.default.createElement(_loading2.default, null)
+        ),
+        _react2.default.createElement(_reactRouterDom.Route, { component: _reviews_index_container2.default })
       );
     }
   }]);
@@ -31883,7 +31887,6 @@ var ReviewsIndex = function (_React$Component) {
           reviews = _props.reviews,
           currentUser = _props.currentUser;
 
-      debugger;
       return _react2.default.createElement(
         'div',
         null,
@@ -31925,7 +31928,7 @@ var ReviewsIndexItem = function ReviewsIndexItem(_ref) {
 
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'reviews-index-item' },
     _react2.default.createElement(
       'p',
       null,

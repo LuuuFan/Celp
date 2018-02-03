@@ -10,7 +10,6 @@ class ReviewsIndex extends React.Component {
 
   render(){
     const {reviews, currentUser} = this.props;
-    debugger
     return (
       <div>
         { reviews.length > 0 ?

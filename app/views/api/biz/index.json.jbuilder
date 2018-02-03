@@ -11,6 +11,6 @@
       json.extract! biz, :address1, :address2, :address3, :city, :state, :zip_code
     end
     json.set! :display_address, biz.display_address
-    json.set! :reviews, biz.reviews.length
+    json.set! :reviews_num, biz.reviews.length
   end
 end

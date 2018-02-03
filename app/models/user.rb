@@ -2,11 +2,15 @@ class User < ApplicationRecord
   attr_reader :password
   validates :username, :password_digest, :session_token, :email, presence: true
   validates :username, :email, :session_token, uniqueness: true
-  validates :password, length: {minimum: 6, allow_nil:true}
+  validates :password, length: {in: 6..20, allow_nil:true}
   before_validation :ensure_session_token
 
   has_many :imgs
   has_many :reviews
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, format: { with: VALID_EMAIL_REGEX, message: "Invalid, example: 'celp@celp.com' "}
+
 
   def password=(password)
     @password = password

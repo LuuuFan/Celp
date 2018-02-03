@@ -11,7 +11,6 @@ import AddImgContainer from './img/add_img_container';
 import BizImgIndexContainer from './img/biz_img_index_container';
 import Footer from './footer';
 import HomeCenter from './home/home_center';
-import ReviewsIndexContainer from './review/reviews_index_container';
 
 const App = () => (
   <div className='main'>
@@ -30,9 +29,6 @@ const App = () => (
       <Route exact path='/biz/:bizId/photos' component={BizImgIndexContainer} />
       <ProtectedRoute exact path='/biz/:bizId/addphoto' component={AddImgContainer} />
       <Route render={()=>(<Redirect to='/' />)} />
-    </Switch>
-    <Switch>
-      <Route exact path='/biz/:bizId' component={ReviewsIndexContainer} />
     </Switch>
     <Switch>
       <Route component={Footer}/>

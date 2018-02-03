@@ -1,7 +1,7 @@
 class Api::BizController < ApplicationController
 
   def index
-    @bizes = Biz.all
+    @bizes = Biz.all.includes(:reviews)
     @bizes.each {|biz| biz.set_img}
     render :index
   end

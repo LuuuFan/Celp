@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import BizShow from './biz_show';
 import {requestBiz} from '../../actions/biz';
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   let biz = state.entities.biz[ownProps.match.params.bizId];
@@ -26,4 +27,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   });
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BizShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BizShow));
