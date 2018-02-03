@@ -1,5 +1,6 @@
 import React from 'react';
 import BizShowImg from '../img/biz_show_img';
+import Loading from '../loading';
 
 class BizShow extends React.Component {
 
@@ -89,9 +90,7 @@ class BizShow extends React.Component {
               <BizShowImg imgs={imgs} biz={biz} />
             </div>
           </div>
-        ) : (
-          <h1>loading...</h1>
-        )}
+        ) : <Loading />}
       </div>
     );
   }

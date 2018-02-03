@@ -1,6 +1,7 @@
 import React from 'react';
 import BizImgIndexItem from './biz_img_index_item';
 import {Link} from 'react-router-dom';
+import Loading from '../loading';
 
 class BizImgIndex extends React.Component {
 
@@ -39,7 +40,7 @@ class BizImgIndex extends React.Component {
             </div>
           </div>
            :
-          "Loading..."
+          <Loading />
         }
       </div>
     );

@@ -40,14 +40,16 @@ class AddImg extends React.Component {
   }
 
   render(){
-    const {biz} = this.props;
+    const {biz, imgs} = this.props;
     return(
       <div className='upload-photo-page'>
         <div>
             {biz ?
               <div>
                 <h1><a href={`/#/biz/${biz.id}`}>{biz.name}:</a> Your Photos</h1>
-                <a href={`/#/biz/${biz.id}/photos`}>View all photos</a>
+                { biz.img_ids.length > 0 ?
+                  <a href={`/#/biz/${biz.id}/photos`}>View all photos</a>
+                : ""}
               </div>
             : ""}
 

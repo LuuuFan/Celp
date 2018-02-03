@@ -8,18 +8,6 @@ class Home extends React.Component {
     super(props);
   }
 
-  handleClick(e){
-    // ===========Finish it in Bonus===============//
-    // let userDropdown = document.getElementById('user-dropdown');
-    // let user = document.getElementsByClassName('user');
-    // debugger
-    // if ( ec.currentTarget
-    //   && userDropdown
-    //   && userDropdown.classList.length == 0) {
-    //   userDropdown.classList.add('hidden');
-    // }
-  }
-
   loginDemo(){
     window.setTimeout(()=>{
       const username = document.getElementById('username');

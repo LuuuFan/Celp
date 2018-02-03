@@ -27210,19 +27210,6 @@ var Home = function (_React$Component) {
   }
 
   _createClass(Home, [{
-    key: 'handleClick',
-    value: function handleClick(e) {
-      // ===========Finish it in Bonus===============//
-      // let userDropdown = document.getElementById('user-dropdown');
-      // let user = document.getElementsByClassName('user');
-      // debugger
-      // if ( ec.currentTarget
-      //   && userDropdown
-      //   && userDropdown.classList.length == 0) {
-      //   userDropdown.classList.add('hidden');
-      // }
-    }
-  }, {
     key: 'loginDemo',
     value: function loginDemo() {
       var _this2 = this;
@@ -27886,6 +27873,10 @@ var _biz_show_img = __webpack_require__(149);
 
 var _biz_show_img2 = _interopRequireDefault(_biz_show_img);
 
+var _loading = __webpack_require__(167);
+
+var _loading2 = _interopRequireDefault(_loading);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28107,11 +28098,7 @@ var BizShow = function (_React$Component) {
             ),
             _react2.default.createElement(_biz_show_img2.default, { imgs: imgs, biz: biz })
           )
-        ) : _react2.default.createElement(
-          'h1',
-          null,
-          'loading...'
-        )
+        ) : _react2.default.createElement(_loading2.default, null)
       );
     }
   }]);
@@ -28375,7 +28362,9 @@ var AddImg = function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      var biz = this.props.biz;
+      var _props = this.props,
+          biz = _props.biz,
+          imgs = _props.imgs;
 
       return _react2.default.createElement(
         'div',
@@ -28397,11 +28386,11 @@ var AddImg = function (_React$Component) {
               ),
               ' Your Photos'
             ),
-            _react2.default.createElement(
+            biz.img_ids.length > 0 ? _react2.default.createElement(
               'a',
               { href: '/#/biz/' + biz.id + '/photos' },
               'View all photos'
-            )
+            ) : ""
           ) : "",
           _react2.default.createElement(
             'button',
@@ -31303,6 +31292,10 @@ var _biz_img_index_item2 = _interopRequireDefault(_biz_img_index_item);
 
 var _reactRouterDom = __webpack_require__(7);
 
+var _loading = __webpack_require__(167);
+
+var _loading2 = _interopRequireDefault(_loading);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31387,7 +31380,7 @@ var BizImgIndex = function (_React$Component) {
                 cover: imgs[0].biz_img_url });
             })
           )
-        ) : "Loading..."
+        ) : _react2.default.createElement(_loading2.default, null)
       );
     }
   }]);
@@ -31742,6 +31735,42 @@ var HomeCenter = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = HomeCenter;
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Loading = function Loading() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'loading' },
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517685405/celp/loading_n3hxjr.gif' })
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Loading...'
+    )
+  );
+};
+
+exports.default = Loading;
 
 /***/ })
 /******/ ]);
