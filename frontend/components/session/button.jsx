@@ -7,8 +7,8 @@ class Button extends React.Component {
 
   handleClick(e){
     e.preventDefault();
-    let userDropdown = document.getElementById('user-dropdown');
-    if (userDropdown.classList.length > 0) {
+    let userDropdown = document.getElementById('dropdown');
+    if (userDropdown.classList.length > 0 && e.target.classList.value !== 'dropdown-modal-screen') {
       userDropdown.classList.remove('hidden');
     } else {
       userDropdown.classList.add('hidden');
@@ -27,22 +27,26 @@ class Button extends React.Component {
           <div className='userMenu'>
             <i className="fas fa-sort-down"></i>
           </div>
-          <div id='user-dropdown' className='hidden'>
-            <div className='user-dropdown-detail'>
-              <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
-              <div className='user-detail'>
-                <a href='/aboutme'>{currentUser.username}</a>
+          <div id='dropdown' className='hidden'>
+            <div id='user-dropdown' >
+              <div className='user-dropdown-detail'>
+                <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
+                <div className='user-detail'>
+                  <a href='/aboutme'>{currentUser.username}</a>
+                </div>
               </div>
+              <hr/>
+              <ul>
+                <li><i className="fa fa-user" aria-hidden="true"></i><a href='/aboutme'>About Me</a></li>
+                <li><i className="fa fa-cog" aria-hidden="true"></i><a href='/setting'>Account Setting</a></li>
+              </ul>
+              <hr/>
+              <ul>
+                <a><li onClick={()=>this.props.logout()}>Log Out</li></a>
+              </ul>
             </div>
-            <hr/>
-            <ul>
-              <li><i className="fa fa-user" aria-hidden="true"></i><a href='/aboutme'>About Me</a></li>
-              <li><i className="fa fa-cog" aria-hidden="true"></i><a href='/setting'>Account Setting</a></li>
-            </ul>
-            <hr/>
-            <ul>
-              <a><li onClick={()=>this.props.logout()}>Log Out</li></a>
-            </ul>
+            <div onClick={(e)=>this.handleClick(e)} className='dropdown-modal-screen'>
+            </div>
           </div>
         </div>
       </div>

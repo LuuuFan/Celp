@@ -3630,8 +3630,8 @@ var Button = function (_React$Component) {
     key: 'handleClick',
     value: function handleClick(e) {
       e.preventDefault();
-      var userDropdown = document.getElementById('user-dropdown');
-      if (userDropdown.classList.length > 0) {
+      var userDropdown = document.getElementById('dropdown');
+      if (userDropdown.classList.length > 0 && e.target.classList.value !== 'dropdown-modal-screen') {
         userDropdown.classList.remove('hidden');
       } else {
         userDropdown.classList.add('hidden');
@@ -3666,62 +3666,69 @@ var Button = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { id: 'user-dropdown', className: 'hidden' },
+            { id: 'dropdown', className: 'hidden' },
             _react2.default.createElement(
               'div',
-              { className: 'user-dropdown-detail' },
-              _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' }),
+              { id: 'user-dropdown' },
               _react2.default.createElement(
                 'div',
-                { className: 'user-detail' },
+                { className: 'user-dropdown-detail' },
+                _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' }),
                 _react2.default.createElement(
-                  'a',
-                  { href: '/aboutme' },
-                  currentUser.username
-                )
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'ul',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' }),
-                _react2.default.createElement(
-                  'a',
-                  { href: '/aboutme' },
-                  'About Me'
+                  'div',
+                  { className: 'user-detail' },
+                  _react2.default.createElement(
+                    'a',
+                    { href: '/aboutme' },
+                    currentUser.username
+                  )
                 )
               ),
+              _react2.default.createElement('hr', null),
               _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-cog', 'aria-hidden': 'true' }),
-                _react2.default.createElement(
-                  'a',
-                  { href: '/setting' },
-                  'Account Setting'
-                )
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'ul',
-              null,
-              _react2.default.createElement(
-                'a',
+                'ul',
                 null,
                 _react2.default.createElement(
                   'li',
-                  { onClick: function onClick() {
-                      return _this2.props.logout();
-                    } },
-                  'Log Out'
+                  null,
+                  _react2.default.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' }),
+                  _react2.default.createElement(
+                    'a',
+                    { href: '/aboutme' },
+                    'About Me'
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement('i', { className: 'fa fa-cog', 'aria-hidden': 'true' }),
+                  _react2.default.createElement(
+                    'a',
+                    { href: '/setting' },
+                    'Account Setting'
+                  )
+                )
+              ),
+              _react2.default.createElement('hr', null),
+              _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    { onClick: function onClick() {
+                        return _this2.props.logout();
+                      } },
+                    'Log Out'
+                  )
                 )
               )
-            )
+            ),
+            _react2.default.createElement('div', { onClick: function onClick(e) {
+                return _this2.handleClick(e);
+              }, className: 'dropdown-modal-screen' })
           )
         )
       ) : _react2.default.createElement(
