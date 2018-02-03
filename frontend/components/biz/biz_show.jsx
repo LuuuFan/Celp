@@ -29,7 +29,7 @@ class BizShow extends React.Component {
                   <div className='biz-show-rating-number'>
                     <div className='biz-info-rating'>
                     </div>
-                    <p>0000 reviews</p>
+                    <p>{biz.total_reviews} reviews</p>
                   </div>
                   <div className='biz-info-price-tags'>
                     <div className='biz-info-price'>

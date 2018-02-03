@@ -1,0 +1,84 @@
+.review-main{
+  width: 60%;
+  margin: auto;
+  min-width: 1020px;
+  color: #333;
+  font-size: 14px;
+}
+
+.review-index{
+  margin-top: 100px;
+  width: 70%;
+  float: left;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid lightgray;
+  padding-top: 5px;
+}
+
+.ask-question{
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 3px;
+  font-weight: 800;
+  color: #666;
+  cursor: pointer;
+  background: linear-gradient(#fff, #f7f7f7);
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  margin-top: 8px;
+}
+
+.review-index h1{
+  font-size: 20px;
+  font-weight: 900;
+  color: #d32323;
+  margin-right: 5px;
+}
+
+.review-index h2{
+  font-size: 20px;
+}
+
+strong{
+  font-weight: 700;
+}
+
+.review-index-title>div{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.searchReview {
+  margin: 10px 0;
+  width: 250px;
+  border-radius: 3px;
+  border: 1px solid gray;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchReview>input{
+  padding: 5px 8px;
+  font-size: 14px;
+}
+
+.searchReview > button{
+  border-left: 1px solid gray;
+  height: 26px;
+  width: 40px;
+  background-color: #bd1f1f;
+  position: relative;
+}
+.searchReview > button > i{
+  font-size: 14px;
+  position: absolute;
+  margin: auto;
+  top: 25%;
+  right: 30%;
+}

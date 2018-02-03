@@ -8,7 +8,7 @@ json.biz do
   end
   json.set! :display_address, @biz.display_address
   json.img_ids @biz.imgs.pluck(:id)
-  json.review_ids @biz.reviews.pluck(:id)
+  json.total_reviews @biz.reviews.pluck(:id).length
 end
 
 json.imgs do
