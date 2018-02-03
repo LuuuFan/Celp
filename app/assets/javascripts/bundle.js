@@ -26503,11 +26503,11 @@ var _biz_show_container = __webpack_require__(147);
 
 var _biz_show_container2 = _interopRequireDefault(_biz_show_container);
 
-var _add_img_container = __webpack_require__(149);
+var _add_img_container = __webpack_require__(150);
 
 var _add_img_container2 = _interopRequireDefault(_add_img_container);
 
-var _biz_img_index_container = __webpack_require__(161);
+var _biz_img_index_container = __webpack_require__(162);
 
 var _biz_img_index_container2 = _interopRequireDefault(_biz_img_index_container);
 
@@ -27882,7 +27882,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _biz_show_img = __webpack_require__(164);
+var _biz_show_img = __webpack_require__(149);
 
 var _biz_show_img2 = _interopRequireDefault(_biz_show_img);
 
@@ -28139,13 +28139,115 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizShowImg = function (_React$Component) {
+  _inherits(BizShowImg, _React$Component);
+
+  function BizShowImg() {
+    _classCallCheck(this, BizShowImg);
+
+    return _possibleConstructorReturn(this, (BizShowImg.__proto__ || Object.getPrototypeOf(BizShowImg)).apply(this, arguments));
+  }
+
+  _createClass(BizShowImg, [{
+    key: 'mouseOver',
+    value: function mouseOver() {
+      // const img = document.getElementById("biz-show-img-2");
+      // // debugger
+      // img.classList.remove(".biz-show-img-zoom");
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          imgs = _props.imgs,
+          biz = _props.biz;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'biz-show-right-bottom' },
+        _react2.default.createElement(
+          'div',
+          { className: 'biz-show-img' },
+          imgs.length > 0 ? _react2.default.createElement(
+            'div',
+            null,
+            imgs.map(function (img, idx) {
+              if (idx <= 2) {
+                return _react2.default.createElement(
+                  'div',
+                  { key: idx, className: 'thumb', id: 'biz-show-img-' + idx },
+                  _react2.default.createElement('img', { src: img.url })
+                );
+              }
+            })
+          ) : _react2.default.createElement(
+            'div',
+            { className: 'biz-show-no-img' },
+            _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' }),
+            _react2.default.createElement(
+              'a',
+              { href: '/#/biz/' + biz.id + '/addphoto' },
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('i', { className: 'fas fa-camera' }),
+                'Add Photo'
+              )
+            )
+          )
+        ),
+        imgs.length > 0 ? _react2.default.createElement(
+          'div',
+          { className: 'biz-show-more-img' },
+          _react2.default.createElement('i', { className: 'far fa-images' }),
+          _react2.default.createElement(
+            'a',
+            { href: '/#/biz/' + biz.id + '/photos' },
+            'See all ',
+            biz.img_ids.length
+          )
+        ) : ""
+      );
+    }
+  }]);
+
+  return BizShowImg;
+}(_react2.default.Component);
+
+exports.default = BizShowImg;
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
-var _add_img = __webpack_require__(150);
+var _add_img = __webpack_require__(151);
 
 var _add_img2 = _interopRequireDefault(_add_img);
 
@@ -28175,7 +28277,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_add_img2.default);
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28191,11 +28293,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDropzone = __webpack_require__(151);
+var _reactDropzone = __webpack_require__(152);
 
 var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
 
-var _superagent = __webpack_require__(155);
+var _superagent = __webpack_require__(156);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
@@ -28363,7 +28465,7 @@ exports.default = AddImg;
 // </div>
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28372,8 +28474,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_styles__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_styles__ = __webpack_require__(155);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29000,7 +29102,7 @@ Dropzone.defaultProps = {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29010,7 +29112,7 @@ Dropzone.defaultProps = {
 /* harmony export (immutable) */ __webpack_exports__["c"] = fileMatchSize;
 /* harmony export (immutable) */ __webpack_exports__["a"] = allFilesAccepted;
 /* harmony export (immutable) */ __webpack_exports__["e"] = onDocumentDragOver;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_attr_accept__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_attr_accept__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_attr_accept___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_attr_accept__);
 
 
@@ -29056,13 +29158,13 @@ function onDocumentDragOver(evt) {
 }
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 module.exports=function(t){function n(e){if(r[e])return r[e].exports;var o=r[e]={exports:{},id:e,loaded:!1};return t[e].call(o.exports,o,o.exports,n),o.loaded=!0,o.exports}var r={};return n.m=t,n.c=r,n.p="",n(0)}([function(t,n,r){"use strict";n.__esModule=!0,r(8),r(9),n["default"]=function(t,n){if(t&&n){var r=function(){var r=Array.isArray(n)?n:n.split(","),e=t.name||"",o=t.type||"",i=o.replace(/\/.*$/,"");return{v:r.some(function(t){var n=t.trim();return"."===n.charAt(0)?e.toLowerCase().endsWith(n.toLowerCase()):/\/\*$/.test(n)?i===n.replace(/\/.*$/,""):o===n})}}();if("object"==typeof r)return r.v}return!0},t.exports=n["default"]},function(t,n){var r=t.exports={version:"1.2.2"};"number"==typeof __e&&(__e=r)},function(t,n){var r=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=r)},function(t,n,r){var e=r(2),o=r(1),i=r(4),u=r(19),c="prototype",f=function(t,n){return function(){return t.apply(n,arguments)}},s=function(t,n,r){var a,p,l,y,d=t&s.G,h=t&s.P,v=d?e:t&s.S?e[n]||(e[n]={}):(e[n]||{})[c],x=d?o:o[n]||(o[n]={});d&&(r=n);for(a in r)p=!(t&s.F)&&v&&a in v,l=(p?v:r)[a],y=t&s.B&&p?f(l,e):h&&"function"==typeof l?f(Function.call,l):l,v&&!p&&u(v,a,l),x[a]!=l&&i(x,a,y),h&&((x[c]||(x[c]={}))[a]=l)};e.core=o,s.F=1,s.G=2,s.S=4,s.P=8,s.B=16,s.W=32,t.exports=s},function(t,n,r){var e=r(5),o=r(18);t.exports=r(22)?function(t,n,r){return e.setDesc(t,n,o(1,r))}:function(t,n,r){return t[n]=r,t}},function(t,n){var r=Object;t.exports={create:r.create,getProto:r.getPrototypeOf,isEnum:{}.propertyIsEnumerable,getDesc:r.getOwnPropertyDescriptor,setDesc:r.defineProperty,setDescs:r.defineProperties,getKeys:r.keys,getNames:r.getOwnPropertyNames,getSymbols:r.getOwnPropertySymbols,each:[].forEach}},function(t,n){var r=0,e=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++r+e).toString(36))}},function(t,n,r){var e=r(20)("wks"),o=r(2).Symbol;t.exports=function(t){return e[t]||(e[t]=o&&o[t]||(o||r(6))("Symbol."+t))}},function(t,n,r){r(26),t.exports=r(1).Array.some},function(t,n,r){r(25),t.exports=r(1).String.endsWith},function(t,n){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,n){var r={}.toString;t.exports=function(t){return r.call(t).slice(8,-1)}},function(t,n,r){var e=r(10);t.exports=function(t,n,r){if(e(t),void 0===n)return t;switch(r){case 1:return function(r){return t.call(n,r)};case 2:return function(r,e){return t.call(n,r,e)};case 3:return function(r,e,o){return t.call(n,r,e,o)}}return function(){return t.apply(n,arguments)}}},function(t,n){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,n,r){t.exports=function(t){var n=/./;try{"/./"[t](n)}catch(e){try{return n[r(7)("match")]=!1,!"/./"[t](n)}catch(o){}}return!0}},function(t,n){t.exports=function(t){try{return!!t()}catch(n){return!0}}},function(t,n){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,n,r){var e=r(16),o=r(11),i=r(7)("match");t.exports=function(t){var n;return e(t)&&(void 0!==(n=t[i])?!!n:"RegExp"==o(t))}},function(t,n){t.exports=function(t,n){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:n}}},function(t,n,r){var e=r(2),o=r(4),i=r(6)("src"),u="toString",c=Function[u],f=(""+c).split(u);r(1).inspectSource=function(t){return c.call(t)},(t.exports=function(t,n,r,u){"function"==typeof r&&(o(r,i,t[n]?""+t[n]:f.join(String(n))),"name"in r||(r.name=n)),t===e?t[n]=r:(u||delete t[n],o(t,n,r))})(Function.prototype,u,function(){return"function"==typeof this&&this[i]||c.call(this)})},function(t,n,r){var e=r(2),o="__core-js_shared__",i=e[o]||(e[o]={});t.exports=function(t){return i[t]||(i[t]={})}},function(t,n,r){var e=r(17),o=r(13);t.exports=function(t,n,r){if(e(n))throw TypeError("String#"+r+" doesn't accept regex!");return String(o(t))}},function(t,n,r){t.exports=!r(15)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,n){var r=Math.ceil,e=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?e:r)(t)}},function(t,n,r){var e=r(23),o=Math.min;t.exports=function(t){return t>0?o(e(t),9007199254740991):0}},function(t,n,r){"use strict";var e=r(3),o=r(24),i=r(21),u="endsWith",c=""[u];e(e.P+e.F*r(14)(u),"String",{endsWith:function(t){var n=i(this,t,u),r=arguments,e=r.length>1?r[1]:void 0,f=o(n.length),s=void 0===e?f:Math.min(o(e),f),a=String(t);return c?c.call(n,a,s):n.slice(s-a.length,s)===a}})},function(t,n,r){var e=r(5),o=r(3),i=r(1).Array||Array,u={},c=function(t,n){e.each.call(t.split(","),function(t){void 0==n&&t in i?u[t]=i[t]:t in[]&&(u[t]=r(12)(Function.call,[][t],n))})};c("pop,reverse,shift,keys,values,entries",1),c("indexOf,every,some,forEach,map,filter,find,findIndex,includes",3),c("join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill"),o(o.S,"Array",u)}]);
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29091,7 +29193,7 @@ module.exports=function(t){function n(e){if(r[e])return r[e].exports;var o=r[e]=
 });
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -29108,11 +29210,11 @@ if (typeof window !== 'undefined') { // Browser window
   root = this;
 }
 
-var Emitter = __webpack_require__(156);
-var RequestBase = __webpack_require__(157);
+var Emitter = __webpack_require__(157);
+var RequestBase = __webpack_require__(158);
 var isObject = __webpack_require__(53);
-var ResponseBase = __webpack_require__(158);
-var Agent = __webpack_require__(160);
+var ResponseBase = __webpack_require__(159);
+var Agent = __webpack_require__(161);
 
 /**
  * Noop.
@@ -30017,7 +30119,7 @@ request.put = function(url, data, fn) {
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -30186,7 +30288,7 @@ Emitter.prototype.hasListeners = function(event){
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30887,7 +30989,7 @@ RequestBase.prototype._setTimeouts = function() {
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30897,7 +30999,7 @@ RequestBase.prototype._setTimeouts = function() {
  * Module dependencies.
  */
 
-var utils = __webpack_require__(159);
+var utils = __webpack_require__(160);
 
 /**
  * Expose `ResponseBase`.
@@ -31028,7 +31130,7 @@ ResponseBase.prototype._setStatusProperties = function(status){
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31106,7 +31208,7 @@ exports.cleanHeader = function(header, changesOrigin){
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports) {
 
 function Agent() {
@@ -31132,7 +31234,7 @@ module.exports = Agent;
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31148,7 +31250,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
-var _biz_img_index = __webpack_require__(162);
+var _biz_img_index = __webpack_require__(163);
 
 var _biz_img_index2 = _interopRequireDefault(_biz_img_index);
 
@@ -31179,7 +31281,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_biz_img_index2.default);
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31195,7 +31297,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _biz_img_index_item = __webpack_require__(163);
+var _biz_img_index_item = __webpack_require__(164);
 
 var _biz_img_index_item2 = _interopRequireDefault(_biz_img_index_item);
 
@@ -31296,7 +31398,7 @@ var BizImgIndex = function (_React$Component) {
 exports.default = BizImgIndex;
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31436,108 +31538,6 @@ var BizImgIndexItem = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = BizImgIndexItem;
-
-/***/ }),
-/* 164 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BizShowImg = function (_React$Component) {
-  _inherits(BizShowImg, _React$Component);
-
-  function BizShowImg() {
-    _classCallCheck(this, BizShowImg);
-
-    return _possibleConstructorReturn(this, (BizShowImg.__proto__ || Object.getPrototypeOf(BizShowImg)).apply(this, arguments));
-  }
-
-  _createClass(BizShowImg, [{
-    key: 'mouseOver',
-    value: function mouseOver() {
-      // const img = document.getElementById("biz-show-img-2");
-      // // debugger
-      // img.classList.remove(".biz-show-img-zoom");
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          imgs = _props.imgs,
-          biz = _props.biz;
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'biz-show-right-bottom' },
-        _react2.default.createElement(
-          'div',
-          { className: 'biz-show-img' },
-          imgs.length > 0 ? _react2.default.createElement(
-            'div',
-            null,
-            imgs.map(function (img, idx) {
-              if (idx <= 2) {
-                return _react2.default.createElement(
-                  'div',
-                  { key: idx, className: 'thumb', id: 'biz-show-img-' + idx },
-                  _react2.default.createElement('img', { src: img.url })
-                );
-              }
-            })
-          ) : _react2.default.createElement(
-            'div',
-            { className: 'biz-show-no-img' },
-            _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' }),
-            _react2.default.createElement(
-              'a',
-              { href: '/#/biz/' + biz.id + '/addphoto' },
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement('i', { className: 'fas fa-camera' }),
-                'Add Photo'
-              )
-            )
-          )
-        ),
-        imgs.length > 0 ? _react2.default.createElement(
-          'div',
-          { className: 'biz-show-more-img' },
-          _react2.default.createElement('i', { className: 'far fa-images' }),
-          _react2.default.createElement(
-            'a',
-            { href: '/#/biz/' + biz.id + '/photos' },
-            'See all ',
-            biz.img_ids.length
-          )
-        ) : ""
-      );
-    }
-  }]);
-
-  return BizShowImg;
-}(_react2.default.Component);
-
-exports.default = BizShowImg;
 
 /***/ }),
 /* 165 */

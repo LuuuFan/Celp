@@ -20,8 +20,10 @@ class Biz < ApplicationRecord
   def set_img
     if self.img_url.nil? && self.imgs.length > 0
       self.img_url = self.imgs.first.url
-      self.save
+    elsif self.img_url.nil?
+      self.img_url = "https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png"
     end
+    self.save
     self.img_url
   end
 

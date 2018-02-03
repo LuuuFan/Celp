@@ -79,10 +79,6 @@ class AddImg extends React.Component {
 
 export default AddImg;
 
-
-
-
-
 // <div className='uploadImgGroup group'>
 //   <div className='addImgContainer'>
 //     <div className='uploadedImg'>
