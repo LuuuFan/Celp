@@ -59,7 +59,7 @@ class NavBar extends React.Component {
             <ul>
               <a href='/#/write_review'><li>Write a Review</li></a>
               <a href='/'><li>Events</li></a>
-              <a href='/'><li>talk</li></a>
+              <a href='/'><li>Talk</li></a>
             </ul>
           </div>
           {!currentUser ?

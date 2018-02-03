@@ -18,7 +18,7 @@ class BizImgIndex extends React.Component {
             <div className='biz-all-imgs-title'>
               <div>
                 <div className='biz-all-imgs-title-img'>
-                  <img src={`${imgs[0].url}`} />
+                  <img src={`${imgs[0].biz_img_url}`} />
                 </div>
                 <div className='biz-all-imgs-title-biz-name'>
                   <Link to={`/biz/${this.props.match.params.bizId}`}>
@@ -31,7 +31,11 @@ class BizImgIndex extends React.Component {
               </Link>
             </div>
             <div className='group'>
-              {imgs.map((img) => <BizImgIndexItem key={img.id} bizId={this.props.match.params.bizId} img={img} cover={imgs[0]}/>)}
+              {imgs.map((img) => <BizImgIndexItem
+                key={img.id}
+                bizId={this.props.match.params.bizId}
+                img={img}
+                cover={imgs[0].biz_img_url}/>)}
             </div>
           </div>
            :

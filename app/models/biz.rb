@@ -18,7 +18,7 @@ class Biz < ApplicationRecord
   end
 
   def set_img
-    if self.img_url.nil? && self.imgs
+    if self.img_url.nil? && self.imgs.length > 0
       self.img_url = self.imgs.first.url
       self.save
     end

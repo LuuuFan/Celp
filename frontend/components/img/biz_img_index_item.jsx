@@ -36,10 +36,10 @@ class BizImgIndexItem extends React.Component{
             <div className='modal-img-show-description'>
               <div>
                 <div className="biz-all-imgs-title-img">
-                  <img src={cover.url} />
+                  <img src={cover} />
                 </div>
                 <div>
-                  <a href={`/#/biz/${bizId}`}>{img.biz}</a>
+                  <a href={`#/biz/${bizId}`}>{img.biz}</a>
                   <p>From {img.user}</p>
                 </div>
               </div>

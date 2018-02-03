@@ -3650,7 +3650,7 @@ var Button = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'a',
+          'div',
           { className: 'user', onClick: function onClick(e) {
               return _this2.handleClick(e);
             } },
@@ -3660,7 +3660,7 @@ var Button = function (_React$Component) {
             _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' })
           ),
           _react2.default.createElement(
-            'a',
+            'div',
             { className: 'userMenu' },
             _react2.default.createElement('i', { className: 'fas fa-sort-down' })
           ),
@@ -3712,12 +3712,12 @@ var Button = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { onClick: function onClick() {
-                    return _this2.props.logout();
-                  } },
+                null,
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { onClick: function onClick() {
+                      return _this2.props.logout();
+                    } },
                   'Log Out'
                 )
               )
@@ -26504,6 +26504,14 @@ var _biz_img_index_container = __webpack_require__(161);
 
 var _biz_img_index_container2 = _interopRequireDefault(_biz_img_index_container);
 
+var _footer = __webpack_require__(165);
+
+var _footer2 = _interopRequireDefault(_footer);
+
+var _home_center = __webpack_require__(166);
+
+var _home_center2 = _interopRequireDefault(_home_center);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -26521,7 +26529,7 @@ var App = function App() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/' }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home_center2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/signup' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/login' }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz', component: _biz_index_container2.default }),
@@ -26535,7 +26543,7 @@ var App = function App() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, null)
+      _react2.default.createElement(_reactRouterDom.Route, { component: _footer2.default })
     )
   );
 };
@@ -26750,7 +26758,7 @@ var NavBar = function (_React$Component) {
                   _react2.default.createElement(
                     'li',
                     null,
-                    'talk'
+                    'Talk'
                   )
                 )
               )
@@ -26931,7 +26939,7 @@ var SessionForm = function (_React$Component) {
                 null,
                 'Celp'
               ),
-              _react2.default.createElement('i', { 'class': 'fab fa-yelp' })
+              _react2.default.createElement('i', { className: 'fab fa-yelp' })
             )
           )
         ),
@@ -27277,7 +27285,7 @@ var Home = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   null,
-                  'talk'
+                  'Talk'
                 )
               )
             ),
@@ -27863,6 +27871,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _biz_show_img = __webpack_require__(164);
+
+var _biz_show_img2 = _interopRequireDefault(_biz_show_img);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27891,13 +27903,6 @@ var BizShow = function (_React$Component) {
       if (!this.props.biz) {
         this.props.requestBiz(this.props.match.params.bizId);
       }
-    }
-  }, {
-    key: 'mouseOver',
-    value: function mouseOver() {
-      // const img = document.getElementById("biz-show-img-2");
-      // // debugger
-      // img.classList.remove(".biz-show-img-zoom");
     }
   }, {
     key: 'render',
@@ -28089,52 +28094,7 @@ var BizShow = function (_React$Component) {
                 )
               )
             ),
-            _react2.default.createElement(
-              'div',
-              { className: 'biz-show-right-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'biz-show-img' },
-                imgs.length > 0 ? _react2.default.createElement(
-                  'div',
-                  null,
-                  imgs.map(function (img, idx) {
-                    if (idx <= 2) {
-                      return _react2.default.createElement(
-                        'div',
-                        { key: idx, className: 'thumb', id: 'biz-show-img-' + idx },
-                        _react2.default.createElement('img', { src: img.url })
-                      );
-                    }
-                  })
-                ) : _react2.default.createElement(
-                  'div',
-                  { className: 'biz-show-no-img' },
-                  _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' }),
-                  _react2.default.createElement(
-                    'a',
-                    { href: '/#/biz/' + biz.id + '/addphoto' },
-                    _react2.default.createElement(
-                      'div',
-                      null,
-                      _react2.default.createElement('i', { className: 'fas fa-camera' }),
-                      'Add Photo'
-                    )
-                  )
-                )
-              ),
-              imgs.length > 0 ? _react2.default.createElement(
-                'div',
-                { className: 'biz-show-more-img' },
-                _react2.default.createElement('i', { className: 'far fa-images' }),
-                _react2.default.createElement(
-                  'a',
-                  { href: '/#/biz/' + biz.id + '/photos' },
-                  'See all ',
-                  biz.img_ids.length
-                )
-              ) : ""
-            )
+            _react2.default.createElement(_biz_show_img2.default, { imgs: imgs, biz: biz })
           )
         ) : _react2.default.createElement(
           'h1',
@@ -31263,7 +31223,7 @@ var BizImgIndex = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'biz-all-imgs-title-img' },
-                _react2.default.createElement('img', { src: '' + imgs[0].url })
+                _react2.default.createElement('img', { src: '' + imgs[0].biz_img_url })
               ),
               _react2.default.createElement(
                 'div',
@@ -31290,7 +31250,11 @@ var BizImgIndex = function (_React$Component) {
             'div',
             { className: 'group' },
             imgs.map(function (img) {
-              return _react2.default.createElement(_biz_img_index_item2.default, { key: img.id, bizId: _this2.props.match.params.bizId, img: img, cover: imgs[0] });
+              return _react2.default.createElement(_biz_img_index_item2.default, {
+                key: img.id,
+                bizId: _this2.props.match.params.bizId,
+                img: img,
+                cover: imgs[0].biz_img_url });
             })
           )
         ) : "Loading..."
@@ -31403,14 +31367,14 @@ var BizImgIndexItem = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'biz-all-imgs-title-img' },
-                  _react2.default.createElement('img', { src: cover.url })
+                  _react2.default.createElement('img', { src: cover })
                 ),
                 _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement(
                     'a',
-                    { href: '/#/biz/' + bizId },
+                    { href: '#/biz/' + bizId },
                     img.biz
                   ),
                   _react2.default.createElement(
@@ -31444,6 +31408,312 @@ var BizImgIndexItem = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = BizImgIndexItem;
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizShowImg = function (_React$Component) {
+  _inherits(BizShowImg, _React$Component);
+
+  function BizShowImg() {
+    _classCallCheck(this, BizShowImg);
+
+    return _possibleConstructorReturn(this, (BizShowImg.__proto__ || Object.getPrototypeOf(BizShowImg)).apply(this, arguments));
+  }
+
+  _createClass(BizShowImg, [{
+    key: 'mouseOver',
+    value: function mouseOver() {
+      // const img = document.getElementById("biz-show-img-2");
+      // // debugger
+      // img.classList.remove(".biz-show-img-zoom");
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          imgs = _props.imgs,
+          biz = _props.biz;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'biz-show-right-bottom' },
+        _react2.default.createElement(
+          'div',
+          { className: 'biz-show-img' },
+          imgs.length > 0 ? _react2.default.createElement(
+            'div',
+            null,
+            imgs.map(function (img, idx) {
+              if (idx <= 2) {
+                return _react2.default.createElement(
+                  'div',
+                  { key: idx, className: 'thumb', id: 'biz-show-img-' + idx },
+                  _react2.default.createElement('img', { src: img.url })
+                );
+              }
+            })
+          ) : _react2.default.createElement(
+            'div',
+            { className: 'biz-show-no-img' },
+            _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' }),
+            _react2.default.createElement(
+              'a',
+              { href: '/#/biz/' + biz.id + '/addphoto' },
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement('i', { className: 'fas fa-camera' }),
+                'Add Photo'
+              )
+            )
+          )
+        ),
+        imgs.length > 0 ? _react2.default.createElement(
+          'div',
+          { className: 'biz-show-more-img' },
+          _react2.default.createElement('i', { className: 'far fa-images' }),
+          _react2.default.createElement(
+            'a',
+            { href: '/#/biz/' + biz.id + '/photos' },
+            'See all ',
+            biz.img_ids.length
+          )
+        ) : ""
+      );
+    }
+  }]);
+
+  return BizShowImg;
+}(_react2.default.Component);
+
+exports.default = BizShowImg;
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Footer = function Footer() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'footer' },
+    _react2.default.createElement(
+      'div',
+      { className: 'footer-main' },
+      _react2.default.createElement(
+        'ul',
+        null,
+        _react2.default.createElement(
+          'li',
+          null,
+          'About',
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: '/' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'About Celp'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '/' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'About Me'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          'Discover',
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: '/' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'The Local Celp'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '/' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Celp Blog'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '/' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Support'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          'Celp for Business Owner'
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'li',
+            null,
+            'Languages',
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: '/' },
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  'English'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            'Countries',
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: '/' },
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  'United States'
+                )
+              )
+            )
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'footer-background-container' },
+      _react2.default.createElement(
+        'div',
+        { className: 'footer-background' },
+        _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' })
+      )
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Copyright \xA9 2018-2018 Celp Inc. ',
+      _react2.default.createElement('i', { className: 'fab fa-yelp' }),
+      ' and related marks are registered trademarks of Yelp.'
+    )
+  );
+};
+
+exports.default = Footer;
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeCenter = function (_React$Component) {
+  _inherits(HomeCenter, _React$Component);
+
+  function HomeCenter() {
+    _classCallCheck(this, HomeCenter);
+
+    return _possibleConstructorReturn(this, (HomeCenter.__proto__ || Object.getPrototypeOf(HomeCenter)).apply(this, arguments));
+  }
+
+  _createClass(HomeCenter, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement('div', { className: 'homecenter' });
+    }
+  }]);
+
+  return HomeCenter;
+}(_react2.default.Component);
+
+exports.default = HomeCenter;
 
 /***/ })
 /******/ ]);

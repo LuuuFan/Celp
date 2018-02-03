@@ -20,13 +20,13 @@ class Button extends React.Component {
     const {currentUser, logout} = this.props;
     const display = currentUser ? (
       <div>
-        <a className='user' onClick={(e)=>this.handleClick(e)}>
+        <div className='user' onClick={(e)=>this.handleClick(e)}>
           <div className='userImg'>
             <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
           </div>
-          <a className='userMenu'>
+          <div className='userMenu'>
             <i className="fas fa-sort-down"></i>
-          </a>
+          </div>
           <div id='user-dropdown' className='hidden'>
             <div className='user-dropdown-detail'>
               <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
@@ -41,10 +41,10 @@ class Button extends React.Component {
             </ul>
             <hr/>
             <ul>
-              <a onClick={()=>this.props.logout()}><li>Log Out</li></a>
+              <a><li onClick={()=>this.props.logout()}>Log Out</li></a>
             </ul>
           </div>
-        </a>
+        </div>
       </div>
     ) : (
       <div className='signup'>

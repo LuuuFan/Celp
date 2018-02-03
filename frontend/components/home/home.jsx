@@ -50,7 +50,7 @@ class Home extends React.Component {
             <div className='services'>
               <a href='/#/write_review'><div>Write a Review</div></a>
               <a href='/'><div>Events</div></a>
-              <a href='/'><div>talk</div></a>
+              <a href='/'><div>Talk</div></a>
             </div>
             {currentUser ? (
               <Button currentUser={currentUser} logout={logout} />

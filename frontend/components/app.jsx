@@ -9,6 +9,8 @@ import BizIndexContainer from './biz/biz_index_container';
 import BizShowContainer from './biz/biz_show_container';
 import AddImgContainer from './img/add_img_container';
 import BizImgIndexContainer from './img/biz_img_index_container';
+import Footer from './footer';
+import HomeCenter from './home/home_center';
 
 const App = () => (
   <div className='main'>
@@ -19,7 +21,7 @@ const App = () => (
       <Route path="/" component={NavBarContainer} />
     </Switch>
     <Switch>
-      <Route exact path='/' />
+      <Route exact path='/' component={HomeCenter}/>
       <Route path='/signup' />
       <Route path='/login' />
       <Route exact path='/biz' component={BizIndexContainer} />
@@ -29,7 +31,7 @@ const App = () => (
       <Route render={()=>(<Redirect to='/' />)} />
     </Switch>
     <Switch>
-      <Route />
+      <Route component={Footer}/>
     </Switch>
   </div>
 );
