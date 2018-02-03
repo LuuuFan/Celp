@@ -75,7 +75,10 @@ class BizShow extends React.Component {
                         <a href=''>Get Directions</a>
                         {biz.phone}
                         <br/>
-                        {biz.website ? biz.website: <a href={`/#/biz/${biz.id}`}>celp.com</a> }
+                        {biz.website ?
+                        <a href={`http://${biz.website}`}>{biz.website}</a>
+                        :
+                        <a href={`/#/biz/${biz.id}`}>celp.com</a> }
                         <a href=''>Send to your Phone</a>
                       </div>
 

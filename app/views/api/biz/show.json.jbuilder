@@ -19,13 +19,13 @@ json.imgs do
   end
 end
 
-json.reviews do
-  @biz.reviews.each do |review|
-    json.set! review.id do
-      json.extract! review, :body
-      json.set! :user_id, review.user.id
-      json.set! :user, review.user.username
-      json.set! :user_avatar, review.user.avatar_url
-    end
-  end
-end
+# json.reviews do
+#   @biz.reviews.each do |review|
+#     json.set! review.id do
+#       json.extract! review, :body
+#       json.set! :user_id, review.user.id
+#       json.set! :user, review.user.username
+#       json.set! :user_avatar, review.user.avatar_url
+#     end
+#   end
+# end

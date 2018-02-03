@@ -8,7 +8,7 @@ export const createReview = (bizId, review) => (
 
 export const requestAllReviews = (bizId) => (
   $.ajax({
-    url: `app/biz/${bizId}/reviews`,
+    url: `api/biz/${bizId}/reviews`,
     method: 'GET'
   })
 )
