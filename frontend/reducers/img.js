@@ -14,7 +14,7 @@ const imgReducer = (state={}, action) => {
     case RECEIVE_ALL_IMG:
       return Object.assign({}, state, action.imgs);
     case RECEIVE_IMG:
-      newState[action.img.id] = action.img
+      newState[action.img.id] = action.img;
       return Object.assign({}, state, newState);
     case REMOVE_IMG:
       newState = Object.assign({}, state);

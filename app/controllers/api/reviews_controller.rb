@@ -1,10 +1,11 @@
 class Api::ReviewsController < ApplicationController
   def index
     if params[:biz_id]
-      @reviews = Img.where(biz_id: params[:biz_id])
+      @reviews = Review.where(biz_id: params[:biz_id])
     elsif params[:user_id]
-      @reviews = Img.where(user_id: params[:user_id])
+      @reviews = Review.where(user_id: params[:user_id])
     end
+    render :index
   end
 
   def create
@@ -20,14 +21,9 @@ class Api::ReviewsController < ApplicationController
 
   def show
     @review = Review.find_by(id: params[:id])
-    if @review
-      render :show
-    else
-      render json: ['No review found']
-    end
   end
 
-  def edit
+  def update
     @review = Review.find_by(id: params[:id])
     if @review.update(review_params)
       render :show

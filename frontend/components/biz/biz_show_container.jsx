@@ -9,9 +9,14 @@ const mapStateToProps = (state, ownProps) => {
   if (biz && biz.img_ids) {
     imgs = biz.img_ids.map(id=>state.entities.imgs[id]);
   }
+  let reviews= [];
+  if (biz && biz.review_ids) {
+    reviews = biz.review_ids.map(id=>state.entities.reviews[id]);
+  }
   return ({
     biz,
-    imgs
+    imgs,
+    reviews
   });
 };
 

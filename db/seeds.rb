@@ -80,3 +80,33 @@
 #   user_id: 5,
 #   url: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB'
 # )
+
+Review.create(
+  biz_id: 7,
+  user_id: 5,
+  body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
+)
+
+Review.create(
+  biz_id: 7,
+  user_id: 6,
+  body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
+)
+
+Review.create(
+  biz_id: 7,
+  user_id: 8,
+  body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
+)
+
+Review.create(
+  biz_id: 8,
+  user_id: 5,
+  body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma.Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma.Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma.Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma.Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
+)
+
+Review.create(
+  biz_id: 9,
+  user_id: 5,
+  body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
+)

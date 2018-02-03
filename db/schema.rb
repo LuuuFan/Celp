@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202224902) do
+ActiveRecord::Schema.define(version: 20180203005619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180202224902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "website"
+    t.string "img_url"
     t.index ["name"], name: "index_bizs_on_name"
   end
 
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180202224902) do
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rate", default: 0, null: false
     t.index ["biz_id"], name: "index_reviews_on_biz_id"
     t.index ["user_id", "biz_id"], name: "index_reviews_on_user_id_and_biz_id", unique: true
     t.index ["user_id"], name: "index_reviews_on_user_id"
@@ -66,7 +68,6 @@ ActiveRecord::Schema.define(version: 20180202224902) do
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.string "email", null: false
-    t.string "profileUrl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_url"

@@ -17,6 +17,14 @@ class Biz < ApplicationRecord
     @display_address
   end
 
+  def set_img
+    if self.img_url.nil? && self.imgs
+      self.img_url = self.imgs.first.url
+      self.save
+    end
+    self.img_url
+  end
+
   private
 
 end
