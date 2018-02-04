@@ -101,16 +101,14 @@ class BizShow extends React.Component {
           ) : <Loading />}
         </div>
         <div>
-          {biz && biz.review_ids ? <div>
-            {biz.review_ids.length > 0 ?
-              <ReviewsIndex
-                reviews={reviews}
-                users={users}
-                currentUser={currentUser}
-                deleteReview={deleteReview}
-                biz={biz} />
-              : <p>No review yet</p>}
-          </div> : ""}
+          {biz ?
+            <ReviewsIndex
+              reviews={reviews}
+              users={users}
+              currentUser={currentUser}
+              deleteReview={deleteReview}
+              biz={biz} />
+          : ""}
         </div>
       </div>
     );

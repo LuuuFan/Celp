@@ -39,14 +39,22 @@ class ReviewsIndex extends React.Component {
             </div>
           </div>
           <hr/>
-          {reviews.map(review =>
-            <ReviewsIndexItem
-              key={review.id}
-              review={review}
-              users={users}
-              currentUser={currentUser}
-              deleteReview={deleteReview}/>
-          )}
+          {biz.review_ids && biz.review_ids.length > 0 ?
+            <div>
+              {reviews.map(review =>
+                <ReviewsIndexItem
+                  key={review.id}
+                  review={review}
+                  users={users}
+                  currentUser={currentUser}
+                  deleteReview={deleteReview}/>
+              )}
+            </div>
+            :
+            <div className='no-review'>
+              <h1>There is no review for this business, be the first one to review it!</h1>
+            </div>
+          }
         </div>
       </div>
     );

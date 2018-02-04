@@ -28198,20 +28198,12 @@ var BizShow = function (_React$Component) {
         _react2.default.createElement(
           'div',
           null,
-          biz && biz.review_ids ? _react2.default.createElement(
-            'div',
-            null,
-            biz.review_ids.length > 0 ? _react2.default.createElement(_reviews_index2.default, {
-              reviews: reviews,
-              users: users,
-              currentUser: currentUser,
-              deleteReview: deleteReview,
-              biz: biz }) : _react2.default.createElement(
-              'p',
-              null,
-              'No review yet'
-            )
-          ) : ""
+          biz ? _react2.default.createElement(_reviews_index2.default, {
+            reviews: reviews,
+            users: users,
+            currentUser: currentUser,
+            deleteReview: deleteReview,
+            biz: biz }) : ""
         )
       );
     }
@@ -28458,14 +28450,26 @@ var ReviewsIndex = function (_React$Component) {
             )
           ),
           _react2.default.createElement('hr', null),
-          reviews.map(function (review) {
-            return _react2.default.createElement(_reviews_index_item2.default, {
-              key: review.id,
-              review: review,
-              users: users,
-              currentUser: currentUser,
-              deleteReview: deleteReview });
-          })
+          biz.review_ids && biz.review_ids.length > 0 ? _react2.default.createElement(
+            'div',
+            null,
+            reviews.map(function (review) {
+              return _react2.default.createElement(_reviews_index_item2.default, {
+                key: review.id,
+                review: review,
+                users: users,
+                currentUser: currentUser,
+                deleteReview: deleteReview });
+            })
+          ) : _react2.default.createElement(
+            'div',
+            { className: 'no-review' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              'There is no review for this business, be the first one to review it!'
+            )
+          )
         )
       );
     }
