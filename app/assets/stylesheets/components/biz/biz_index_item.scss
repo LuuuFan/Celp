@@ -73,8 +73,15 @@
   vertical-align: bottom;
   overflow: hidden;
   height: 0;
-  width: 132px;
+  width: 108px;
   padding-top: 18px;
   background-position: 0 -402px;
   margin-bottom: 5px;
+}
+
+.biz-info-rate-review{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
 }

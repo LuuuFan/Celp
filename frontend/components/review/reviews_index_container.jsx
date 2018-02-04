@@ -5,9 +5,11 @@ import {requestAllReviews} from '../../actions/review';
 
 const mapStateToProps = (state, ownProps) => {
   let reviews = Object.values(state.entities.reviews);
+  let biz = state.entities.biz[ownProps.match.params.bizId];
   let currentUser = state.session.currentUser;
   return ({
     reviews,
+    biz,
     currentUser
   });
 };

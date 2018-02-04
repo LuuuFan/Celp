@@ -9,6 +9,7 @@ json.biz do
   json.set! :display_address, @biz.display_address
   json.img_ids @biz.imgs.pluck(:id)
   json.total_reviews @biz.reviews.pluck(:id).length
+  json.review_ids @biz.reviews.pluck(:id)
 end
 
 json.imgs do

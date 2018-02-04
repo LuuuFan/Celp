@@ -22111,7 +22111,7 @@ var reviewReducer = function reviewReducer() {
         return state;
       }
     case _review.RECEIVE_ALL_REVIEWS:
-      return Object.assign({}, state, action.reviews);
+      return Object.assign({}, action.reviews);
     case _review.RECEIVE_REVIEW:
       newState[action.review.id] = action.review;
       return Object.assign({}, state, newState);
@@ -27736,6 +27736,13 @@ var BizIndexItem = function BizIndexItem(_ref) {
   var biz = _ref.biz,
       idx = _ref.idx;
 
+  var review = void 0;
+  if (biz.reviews_num > 1) {
+    review = biz.reviews_num + ' Reviews';
+  } else if (biz.reviews_num) {
+    review = biz.reviews_num + ' Review';
+  }
+
   return _react2.default.createElement(
     'div',
     { className: 'biz_index_item' },
@@ -27769,7 +27776,16 @@ var BizIndexItem = function BizIndexItem(_ref) {
             biz.name
           )
         ),
-        _react2.default.createElement('div', { className: 'biz-info-rating' }),
+        biz.reviews_num ? _react2.default.createElement(
+          'div',
+          { className: 'biz-info-rate-review' },
+          _react2.default.createElement('div', { className: 'biz-info-rating' }),
+          _react2.default.createElement(
+            'p',
+            null,
+            review
+          )
+        ) : "",
         _react2.default.createElement(
           'div',
           { className: 'biz-info-price-tags' },
@@ -27946,8 +27962,8 @@ var BizShow = function (_React$Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
-      if (!this.props.biz) {
-        this.props.requestBiz(this.props.match.params.bizId);
+      if (!this.props.biz || this.props.match.params.bizId !== newProps.match.params.bizId) {
+        this.props.requestBiz(newProps.match.params.bizId);
       }
     }
   }, {
@@ -28298,9 +28314,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var reviews = Object.values(state.entities.reviews);
+  var biz = state.entities.biz[ownProps.match.params.bizId];
   var currentUser = state.session.currentUser;
   return {
     reviews: reviews,
+    biz: biz,
     currentUser: currentUser
   };
 };
@@ -28363,10 +28381,19 @@ var ReviewsIndex = function (_React$Component) {
       this.props.requestAllReviews(this.props.match.params.bizId);
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.match.params.bizId !== newProps.match.params.bizId) {
+        debugger;
+        this.props.requestAllReviews(newProps.match.params.bizId);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
           reviews = _props.reviews,
+          biz = _props.biz,
           currentUser = _props.currentUser;
 
       return _react2.default.createElement(
@@ -28384,16 +28411,16 @@ var ReviewsIndex = function (_React$Component) {
               'Ask the Community'
             ),
             _react2.default.createElement('hr', null),
-            _react2.default.createElement(
+            biz ? _react2.default.createElement(
               'p',
               null,
               'Celp users haven\'t asked any questions yet about ',
               _react2.default.createElement(
                 'strong',
                 null,
-                reviews[0].biz
+                biz.name
               )
-            ),
+            ) : "",
             _react2.default.createElement(
               'button',
               { className: 'ask-question' },
@@ -28411,12 +28438,12 @@ var ReviewsIndex = function (_React$Component) {
                 null,
                 'Recommended Reviews'
               ),
-              _react2.default.createElement(
+              biz ? _react2.default.createElement(
                 'h2',
                 null,
                 'for ',
-                reviews[0].biz
-              )
+                biz.name
+              ) : ''
             ),
             _react2.default.createElement(
               'div',
@@ -28431,7 +28458,7 @@ var ReviewsIndex = function (_React$Component) {
           ),
           _react2.default.createElement('hr', null),
           reviews.map(function (review) {
-            return _react2.default.createElement(_reviews_index_item2.default, { key: review.id, review: review });
+            return _react2.default.createElement(_reviews_index_item2.default, { key: review.id, review: review, currentUser: currentUser });
           })
         ) : _react2.default.createElement(_loading2.default, null)
       );
@@ -28489,21 +28516,129 @@ var ReviewsIndexItem = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var review = this.props.review;
+      var _props = this.props,
+          review = _props.review,
+          currentUser = _props.currentUser;
 
       return _react2.default.createElement(
         'div',
         { className: 'reviews-index-item' },
-        _react2.default.createElement('div', { id: 'review-item-rate-' + review.id, className: 'biz-review-rating' }),
         _react2.default.createElement(
-          'p',
-          null,
-          review.created_at.slice(0, 10)
+          'div',
+          { className: 'review-user' },
+          _react2.default.createElement(
+            'div',
+            { className: 'review-user-avatar' },
+            _react2.default.createElement('img', { src: review.user_avatar })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'review-user-info' },
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  null,
+                  review.user
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'San Francisco, CA'
+              ),
+              review.user_review_num > 1 ? _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  review.user_review_num
+                ),
+                ' reviews'
+              ) : _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  '1'
+                ),
+                ' review'
+              )
+            )
+          )
         ),
         _react2.default.createElement(
-          'p',
-          null,
-          review.body
+          'div',
+          { className: 'review-info' },
+          _react2.default.createElement(
+            'div',
+            { className: 'review-info-rate-time' },
+            _react2.default.createElement('div', { id: 'review-item-rate-' + review.id, className: 'biz-review-rating' }),
+            _react2.default.createElement(
+              'p',
+              null,
+              review.created_at.slice(0, 10)
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'review-info-body group' },
+            _react2.default.createElement(
+              'p',
+              null,
+              review.body
+            ),
+            review.user_id === currentUser.id ? _react2.default.createElement(
+              'div',
+              { className: 'deleteReview' },
+              _react2.default.createElement('i', { className: 'fas fa-trash-alt' })
+            ) : _react2.default.createElement(
+              'div',
+              { className: 'review-status' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Was this review ...?'
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'ul',
+                  { className: 'group' },
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'fas fa-lightbulb' }),
+                    'Userful'
+                  ),
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'far fa-smile' }),
+                    'Funny'
+                  ),
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'far fa-hand-peace' }),
+                    'Cool'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'report-review' },
+                  _react2.default.createElement('i', { className: 'fas fa-flag' })
+                )
+              )
+            )
+          )
         )
       );
     }

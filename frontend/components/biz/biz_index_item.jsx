@@ -2,6 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const BizIndexItem = ({biz, idx}) => {
+  let review;
+  if (biz.reviews_num > 1) {
+    review = `${biz.reviews_num} Reviews`;
+  } else if (biz.reviews_num) {
+    review = `${biz.reviews_num} Review`;
+  }
+
  return (
    <div className='biz_index_item'>
      {biz.img_url ?
@@ -16,8 +23,12 @@ const BizIndexItem = ({biz, idx}) => {
          <div className='biz-info-title'>
            <p>{idx + 1}.</p><Link to={`/biz/${biz.id}`}>{biz.name}</Link>
          </div>
-         <div className='biz-info-rating'>
+         {biz.reviews_num ?
+         <div className='biz-info-rate-review'>
+           <div className='biz-info-rating'></div>
+           <p>{review}</p>
          </div>
+         : ""}
          <div className='biz-info-price-tags'>
            <div className='biz-info-price'>
              <p>{biz.price}</p>

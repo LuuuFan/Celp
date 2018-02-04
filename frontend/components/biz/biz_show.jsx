@@ -11,8 +11,8 @@ class BizShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    if (!this.props.biz) {
-      this.props.requestBiz(this.props.match.params.bizId);
+    if (!this.props.biz || this.props.match.params.bizId !== newProps.match.params.bizId) {
+      this.props.requestBiz(newProps.match.params.bizId);
     }
   }
 
