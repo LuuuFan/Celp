@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import BizShow from './biz_show';
 import {requestBiz} from '../../actions/biz';
 import {withRouter} from 'react-router-dom';
+import {deleteReview} from '../../actions/review';
 
 const mapStateToProps = (state, ownProps) => {
   let biz = state.entities.biz[ownProps.match.params.bizId];
@@ -11,19 +12,26 @@ const mapStateToProps = (state, ownProps) => {
     imgs = biz.img_ids.map(id=>state.entities.imgs[id]);
   }
   let reviews= [];
+  let users = [];
   if (biz && biz.review_ids) {
     reviews = biz.review_ids.map(id=>state.entities.reviews[id]);
+    users = state.entities.users;
   }
+  let currentUser = state.session.currentUser;
   return ({
     biz,
     imgs,
-    reviews
+    reviews,
+    users,
+    currentUser
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return({
-    requestBiz: (bizId) => dispatch(requestBiz(bizId))
+    requestBiz: (bizId) => dispatch(requestBiz(bizId)),
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
+
   });
 }
 

@@ -29,7 +29,7 @@ class Home extends React.Component {
   render(){
     const {currentUser, logout, img} = this.props;
     return (
-      <div className='home' onClick={(e)=>this.handleClick(e)}>
+      <div className='home'>
         <div className='home-img-frame'>
           <img className='home-img' src={`${img[Math.floor(Math.random()*8)]}`}/>
         </div>

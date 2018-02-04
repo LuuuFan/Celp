@@ -1,6 +1,6 @@
 import React from 'react';
 import BizShowImg from '../img/biz_show_img';
-import ReviewsIndexContainer from '../review/reviews_index_container';
+import ReviewsIndex from '../review/reviews_index';
 import { Route, Link } from 'react-router-dom';
 import Loading from '../loading';
 
@@ -17,7 +17,7 @@ class BizShow extends React.Component {
   }
 
   render(){
-    const {biz, imgs} = this.props;
+    const {biz, imgs, reviews, users, currentUser, deleteReview} = this.props;
     return(
       <div>
         <div className='biz-show'>
@@ -100,7 +100,18 @@ class BizShow extends React.Component {
             </div>
           ) : <Loading />}
         </div>
-        <Route component={ReviewsIndexContainer} />
+        <div>
+          {biz && biz.review_ids ? <div>
+            {biz.review_ids.length > 0 ?
+              <ReviewsIndex
+                reviews={reviews}
+                users={users}
+                currentUser={currentUser}
+                deleteReview={deleteReview}
+                biz={biz} />
+              : <p>No review yet</p>}
+          </div> : ""}
+        </div>
       </div>
     );
   }

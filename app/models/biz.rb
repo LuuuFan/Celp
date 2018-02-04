@@ -3,6 +3,9 @@ class Biz < ApplicationRecord
 
   has_many :imgs
   has_many :reviews
+  has_many :reviewed_users,
+    through: :reviews,
+    source: :user
 
   def display_address
     address_arr = [self.address1, self.address2, self.address3, self.city, self.state, self.zip_code]

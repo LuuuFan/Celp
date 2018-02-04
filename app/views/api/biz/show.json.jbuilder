@@ -8,8 +8,9 @@ json.biz do
   end
   json.set! :display_address, @biz.display_address
   json.img_ids @biz.imgs.pluck(:id)
-  json.total_reviews @biz.reviews.pluck(:id).length
   json.review_ids @biz.reviews.pluck(:id)
+  json.total_reviews @biz.reviews.pluck(:id).length
+  json.user_ids @biz.reviewed_users.pluck(:id)
 end
 
 json.imgs do
@@ -20,13 +21,22 @@ json.imgs do
   end
 end
 
-# json.reviews do
-#   @biz.reviews.each do |review|
-#     json.set! review.id do
-#       json.extract! review, :body
-#       json.set! :user_id, review.user.id
-#       json.set! :user, review.user.username
-#       json.set! :user_avatar, review.user.avatar_url
-#     end
-#   end
-# end
+json.reviews do
+  @biz.reviews.each do |review|
+    json.set! review.id do
+      json.extract! review, :id, :body, :rate, :updated_at
+      json.set! :user_id, review.user.id
+      # json.set! :user, review.user.username
+      # json.set! :user_avatar, review.user.avatar_url
+    end
+  end
+end
+
+json.set! :users do
+  @biz.reviewed_users.each do |user|
+    json.set! user.id do
+      json.extract! user, :id, :avatar_url, :username
+      json.set! :user_review_num, user.reviews.length
+    end
+  end
+end

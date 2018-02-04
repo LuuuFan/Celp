@@ -4,22 +4,21 @@ import ReviewsIndexItem from './reviews_index_item';
 
 class ReviewsIndex extends React.Component {
 
-  componentDidMount(){
-    this.props.requestAllReviews(this.props.match.params.bizId);
-  }
-
-  componentWillReceiveProps(newProps){
-    if (this.props.match.params.bizId !== newProps.match.params.bizId) {
-      debugger
-      this.props.requestAllReviews(newProps.match.params.bizId);
-    }
-  }
+  // componentDidMount(){
+  //   this.props.requestAllReviews(this.props.match.params.bizId);
+  // }
+  //
+  // componentWillReceiveProps(newProps){
+  //   if (this.props.match.params.bizId !== newProps.match.params.bizId) {
+  //     debugger
+  //     this.props.requestAllReviews(newProps.match.params.bizId);
+  //   }
+  // }
 
   render(){
-    const {reviews, biz, currentUser, deleteReview} = this.props;
+    const {reviews, biz, currentUser, users, deleteReview} = this.props;
     return (
       <div className='review-main group'>
-        { reviews.length > 0 ?
         <div className='review-index'>
           <div className='ask-community'>
             <h1>Ask the Community</h1>
@@ -41,10 +40,14 @@ class ReviewsIndex extends React.Component {
           </div>
           <hr/>
           {reviews.map(review =>
-            <ReviewsIndexItem key={review.id} review={review} currentUser={currentUser} deleteReview={deleteReview}/>
+            <ReviewsIndexItem
+              key={review.id}
+              review={review}
+              users={users}
+              currentUser={currentUser}
+              deleteReview={deleteReview}/>
           )}
         </div>
-        : <Loading />}
       </div>
     );
   }

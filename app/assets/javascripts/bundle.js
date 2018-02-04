@@ -21932,12 +21932,17 @@ var _review = __webpack_require__(92);
 
 var _review2 = _interopRequireDefault(_review);
 
+var _user = __webpack_require__(173);
+
+var _user2 = _interopRequireDefault(_user);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var entitiesReducer = (0, _redux.combineReducers)({
   biz: _biz2.default,
   imgs: _img2.default,
-  reviews: _review2.default
+  reviews: _review2.default,
+  users: _user2.default
 });
 
 exports.default = entitiesReducer;
@@ -27283,9 +27288,7 @@ var Home = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'home', onClick: function onClick(e) {
-            return _this3.handleClick(e);
-          } },
+        { className: 'home' },
         _react2.default.createElement(
           'div',
           { className: 'home-img-frame' },
@@ -27878,6 +27881,8 @@ var _biz = __webpack_require__(8);
 
 var _reactRouterDom = __webpack_require__(6);
 
+var _review = __webpack_require__(41);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
@@ -27889,15 +27894,20 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     });
   }
   var reviews = [];
+  var users = [];
   if (biz && biz.review_ids) {
     reviews = biz.review_ids.map(function (id) {
       return state.entities.reviews[id];
     });
+    users = state.entities.users;
   }
+  var currentUser = state.session.currentUser;
   return {
     biz: biz,
     imgs: imgs,
-    reviews: reviews
+    reviews: reviews,
+    users: users,
+    currentUser: currentUser
   };
 };
 
@@ -27905,7 +27915,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     requestBiz: function requestBiz(bizId) {
       return dispatch((0, _biz.requestBiz)(bizId));
+    },
+    deleteReview: function deleteReview(reviewId) {
+      return dispatch((0, _review.deleteReview)(reviewId));
     }
+
   };
 };
 
@@ -27932,9 +27946,9 @@ var _biz_show_img = __webpack_require__(150);
 
 var _biz_show_img2 = _interopRequireDefault(_biz_show_img);
 
-var _reviews_index_container = __webpack_require__(151);
+var _reviews_index = __webpack_require__(152);
 
-var _reviews_index_container2 = _interopRequireDefault(_reviews_index_container);
+var _reviews_index2 = _interopRequireDefault(_reviews_index);
 
 var _reactRouterDom = __webpack_require__(6);
 
@@ -27976,7 +27990,11 @@ var BizShow = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           biz = _props.biz,
-          imgs = _props.imgs;
+          imgs = _props.imgs,
+          reviews = _props.reviews,
+          users = _props.users,
+          currentUser = _props.currentUser,
+          deleteReview = _props.deleteReview;
 
       return _react2.default.createElement(
         'div',
@@ -28177,7 +28195,24 @@ var BizShow = function (_React$Component) {
             )
           ) : _react2.default.createElement(_loading2.default, null)
         ),
-        _react2.default.createElement(_reactRouterDom.Route, { component: _reviews_index_container2.default })
+        _react2.default.createElement(
+          'div',
+          null,
+          biz && biz.review_ids ? _react2.default.createElement(
+            'div',
+            null,
+            biz.review_ids.length > 0 ? _react2.default.createElement(_reviews_index2.default, {
+              reviews: reviews,
+              users: users,
+              currentUser: currentUser,
+              deleteReview: deleteReview,
+              biz: biz }) : _react2.default.createElement(
+              'p',
+              null,
+              'No review yet'
+            )
+          ) : ""
+        )
       );
     }
   }]);
@@ -28297,55 +28332,7 @@ var BizShowImg = function (_React$Component) {
 exports.default = BizShowImg;
 
 /***/ }),
-/* 151 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(5);
-
-var _reviews_index = __webpack_require__(152);
-
-var _reviews_index2 = _interopRequireDefault(_reviews_index);
-
-var _review = __webpack_require__(41);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = function mapStateToProps(state, ownProps) {
-  var reviews = Object.values(state.entities.reviews);
-  var biz = state.entities.biz[ownProps.match.params.bizId];
-  var currentUser = state.session.currentUser;
-  return {
-    reviews: reviews,
-    biz: biz,
-    currentUser: currentUser
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-  return {
-    requestAllReviews: function requestAllReviews(bizId) {
-      return dispatch((0, _review.requestAllReviews)(bizId));
-    },
-    deleteReview: function deleteReview(reviewId) {
-      return dispatch((0, _review.deleteReview)(reviewId));
-    }
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_reviews_index2.default);
-
-/***/ }),
+/* 151 */,
 /* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28388,31 +28375,32 @@ var ReviewsIndex = function (_React$Component) {
   }
 
   _createClass(ReviewsIndex, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.requestAllReviews(this.props.match.params.bizId);
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps) {
-      if (this.props.match.params.bizId !== newProps.match.params.bizId) {
-        debugger;
-        this.props.requestAllReviews(newProps.match.params.bizId);
-      }
-    }
-  }, {
     key: 'render',
+
+
+    // componentDidMount(){
+    //   this.props.requestAllReviews(this.props.match.params.bizId);
+    // }
+    //
+    // componentWillReceiveProps(newProps){
+    //   if (this.props.match.params.bizId !== newProps.match.params.bizId) {
+    //     debugger
+    //     this.props.requestAllReviews(newProps.match.params.bizId);
+    //   }
+    // }
+
     value: function render() {
       var _props = this.props,
           reviews = _props.reviews,
           biz = _props.biz,
           currentUser = _props.currentUser,
+          users = _props.users,
           deleteReview = _props.deleteReview;
 
       return _react2.default.createElement(
         'div',
         { className: 'review-main group' },
-        reviews.length > 0 ? _react2.default.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'review-index' },
           _react2.default.createElement(
@@ -28471,9 +28459,14 @@ var ReviewsIndex = function (_React$Component) {
           ),
           _react2.default.createElement('hr', null),
           reviews.map(function (review) {
-            return _react2.default.createElement(_reviews_index_item2.default, { key: review.id, review: review, currentUser: currentUser, deleteReview: deleteReview });
+            return _react2.default.createElement(_reviews_index_item2.default, {
+              key: review.id,
+              review: review,
+              users: users,
+              currentUser: currentUser,
+              deleteReview: deleteReview });
           })
-        ) : _react2.default.createElement(_loading2.default, null)
+        )
       );
     }
   }]);
@@ -28539,12 +28532,14 @@ var ReviewsIndexItem = function (_React$Component) {
 
       var _props = this.props,
           review = _props.review,
-          currentUser = _props.currentUser;
+          currentUser = _props.currentUser,
+          deleteReview = _props.deleteReview,
+          users = _props.users;
 
       return _react2.default.createElement(
         'div',
         null,
-        review ? _react2.default.createElement(
+        review && users ? _react2.default.createElement(
           'div',
           { className: 'reviews-index-item' },
           _react2.default.createElement(
@@ -28553,7 +28548,7 @@ var ReviewsIndexItem = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'review-user-avatar' },
-              _react2.default.createElement('img', { src: review.user_avatar })
+              _react2.default.createElement('img', { src: users[review.user_id].avatar_url })
             ),
             _react2.default.createElement(
               'div',
@@ -28567,7 +28562,7 @@ var ReviewsIndexItem = function (_React$Component) {
                   _react2.default.createElement(
                     'a',
                     null,
-                    review.user
+                    users[review.user_id].username
                   )
                 ),
                 _react2.default.createElement(
@@ -28575,13 +28570,13 @@ var ReviewsIndexItem = function (_React$Component) {
                   null,
                   'San Francisco, CA'
                 ),
-                review.user_review_num > 1 ? _react2.default.createElement(
+                users[review.user_id].user_review_num > 1 ? _react2.default.createElement(
                   'li',
                   null,
                   _react2.default.createElement(
                     'strong',
                     null,
-                    review.user_review_num
+                    users[review.user_id].user_review_num
                   ),
                   ' reviews'
                 ) : _react2.default.createElement(
@@ -28607,7 +28602,7 @@ var ReviewsIndexItem = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                review.created_at.slice(0, 10)
+                review.updated_at.slice(0, 10)
               )
             ),
             _react2.default.createElement(
@@ -32361,6 +32356,39 @@ var WriteReview = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WriteReview;
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _biz = __webpack_require__(8);
+
+var userReducer = function userReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  Object.freeze(state);
+  var newState = {};
+  switch (action.type) {
+    case _biz.RECEIVE_BIZ:
+      if (action.payload.users) {
+        return action.payload.users;
+      } else {
+        return state;
+      }
+    default:
+      return state;
+  }
+};
+
+exports.default = userReducer;
 
 /***/ })
 /******/ ]);

@@ -14,21 +14,21 @@ class ReviewsIndexItem extends React.Component {
   }
 
   render(){
-    const {review, currentUser} = this.props;
+    const {review, currentUser, deleteReview, users} = this.props;
     return (
       <div>
-      {review ?
+      {review && users ?
         <div className='reviews-index-item'>
           <div className='review-user'>
             <div className='review-user-avatar'>
-              <img src={review.user_avatar}/>
+              <img src={users[review.user_id].avatar_url}/>
             </div>
             <div className='review-user-info'>
               <ul>
-                <li><a>{review.user}</a></li>
+                <li><a>{users[review.user_id].username}</a></li>
                 <li>San Francisco, CA</li>
-                {review.user_review_num > 1 ?
-                  <li><strong>{review.user_review_num}</strong> reviews</li>
+                {users[review.user_id].user_review_num > 1 ?
+                  <li><strong>{users[review.user_id].user_review_num}</strong> reviews</li>
                 : <li><strong>1</strong> review</li>
                 }
               </ul>
@@ -38,7 +38,7 @@ class ReviewsIndexItem extends React.Component {
             <div className='review-info-rate-time'>
               <div id={`review-item-rate-${review.id}`} className='biz-review-rating'>
               </div>
-              <p>{review.created_at.slice(0, 10)}</p>
+              <p>{review.updated_at.slice(0, 10)}</p>
             </div>
             <div className='review-info-body group'>
               <p>{review.body}</p>
