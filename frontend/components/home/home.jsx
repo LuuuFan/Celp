@@ -11,7 +11,7 @@ class Home extends React.Component {
   loginDemo(){
     window.setTimeout(()=>{
       const username = document.getElementById('username');
-      username.value = 'demo_users';
+      username.value = 'demo_user';
       window.setTimeout(()=>{
         const password = document.getElementById('password');
         password.value = 'password';

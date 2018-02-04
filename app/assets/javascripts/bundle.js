@@ -27252,7 +27252,7 @@ var Home = function (_React$Component) {
 
       window.setTimeout(function () {
         var username = document.getElementById('username');
-        username.value = 'demo_users';
+        username.value = 'demo_user';
         window.setTimeout(function () {
           var password = document.getElementById('password');
           password.value = 'password';
