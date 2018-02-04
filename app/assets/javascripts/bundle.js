@@ -27260,7 +27260,7 @@ var Home = function (_React$Component) {
             var btn = document.getElementById('login');
             btn.setAttribute("style", "background-color: #a71c1c");
             window.setTimeout(function () {
-              _this2.props.createSession({ username: 'demo_users', email: '', password: 'password' }).then(_this2.props.history.push('/'));
+              _this2.props.createSession({ username: 'demo_user', email: '', password: 'password' }).then(_this2.props.history.push('/'));
             }, 100);
           }, 500);
         }, 1000);
@@ -28522,124 +28522,128 @@ var ReviewsIndexItem = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'reviews-index-item' },
-        _react2.default.createElement(
+        null,
+        review ? _react2.default.createElement(
           'div',
-          { className: 'review-user' },
+          { className: 'reviews-index-item' },
           _react2.default.createElement(
             'div',
-            { className: 'review-user-avatar' },
-            _react2.default.createElement('img', { src: review.user_avatar })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'review-user-info' },
+            { className: 'review-user' },
             _react2.default.createElement(
-              'ul',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'a',
-                  null,
-                  review.user
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                'San Francisco, CA'
-              ),
-              review.user_review_num > 1 ? _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  review.user_review_num
-                ),
-                ' reviews'
-              ) : _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  '1'
-                ),
-                ' review'
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'review-info' },
-          _react2.default.createElement(
-            'div',
-            { className: 'review-info-rate-time' },
-            _react2.default.createElement('div', { id: 'review-item-rate-' + review.id, className: 'biz-review-rating' }),
-            _react2.default.createElement(
-              'p',
-              null,
-              review.created_at.slice(0, 10)
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'review-info-body group' },
-            _react2.default.createElement(
-              'p',
-              null,
-              review.body
+              'div',
+              { className: 'review-user-avatar' },
+              _react2.default.createElement('img', { src: review.user_avatar })
             ),
-            review.user_id === currentUser.id ? _react2.default.createElement(
+            _react2.default.createElement(
               'div',
-              { className: 'deleteReview' },
-              _react2.default.createElement('i', { className: 'fas fa-trash-alt' })
-            ) : _react2.default.createElement(
-              'div',
-              { className: 'review-status' },
+              { className: 'review-user-info' },
               _react2.default.createElement(
-                'p',
-                null,
-                'Was this review ...?'
-              ),
-              _react2.default.createElement(
-                'div',
+                'ul',
                 null,
                 _react2.default.createElement(
-                  'ul',
-                  { className: 'group' },
+                  'li',
+                  null,
                   _react2.default.createElement(
-                    'li',
+                    'a',
                     null,
-                    _react2.default.createElement('i', { className: 'fas fa-lightbulb' }),
-                    'Userful'
-                  ),
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('i', { className: 'far fa-smile' }),
-                    'Funny'
-                  ),
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('i', { className: 'far fa-hand-peace' }),
-                    'Cool'
+                    review.user
                   )
                 ),
                 _react2.default.createElement(
+                  'li',
+                  null,
+                  'San Francisco, CA'
+                ),
+                review.user_review_num > 1 ? _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    review.user_review_num
+                  ),
+                  ' reviews'
+                ) : _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    '1'
+                  ),
+                  ' review'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'review-info' },
+            _react2.default.createElement(
+              'div',
+              { className: 'review-info-rate-time' },
+              _react2.default.createElement('div', { id: 'review-item-rate-' + review.id, className: 'biz-review-rating' }),
+              _react2.default.createElement(
+                'p',
+                null,
+                review.created_at.slice(0, 10)
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'review-info-body group' },
+              _react2.default.createElement(
+                'p',
+                null,
+                review.body
+              ),
+              currentUser && review.user_id === currentUser.id ? _react2.default.createElement(
+                'div',
+                { className: 'deleteReview' },
+                _react2.default.createElement('i', { className: 'fas fa-trash-alt' })
+              ) : _react2.default.createElement(
+                'div',
+                { className: 'review-status' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Was this review ...?'
+                ),
+                _react2.default.createElement(
                   'div',
-                  { className: 'report-review' },
-                  _react2.default.createElement('i', { className: 'fas fa-flag' })
+                  null,
+                  _react2.default.createElement(
+                    'ul',
+                    { className: 'group' },
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-lightbulb' }),
+                      'Userful'
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement('i', { className: 'far fa-smile' }),
+                      'Funny'
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement('i', { className: 'far fa-hand-peace' }),
+                      'Cool'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'report-review' },
+                    _react2.default.createElement('i', { className: 'fas fa-flag' })
+                  )
                 )
               )
             )
           )
-        )
+        ) : ""
       );
     }
   }]);
