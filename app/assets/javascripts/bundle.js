@@ -22169,7 +22169,7 @@ var updateReview = exports.updateReview = function updateReview(review) {
 var deleteReview = exports.deleteReview = function deleteReview(reviewId) {
   return $.ajax({
     url: 'api/reviews/' + reviewId,
-    method: 'DETELE'
+    method: 'DELETE'
   });
 };
 
@@ -28327,6 +28327,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     requestAllReviews: function requestAllReviews(bizId) {
       return dispatch((0, _review.requestAllReviews)(bizId));
+    },
+    deleteReview: function deleteReview(reviewId) {
+      return dispatch((0, _review.deleteReview)(reviewId));
     }
   };
 };
@@ -28394,7 +28397,8 @@ var ReviewsIndex = function (_React$Component) {
       var _props = this.props,
           reviews = _props.reviews,
           biz = _props.biz,
-          currentUser = _props.currentUser;
+          currentUser = _props.currentUser,
+          deleteReview = _props.deleteReview;
 
       return _react2.default.createElement(
         'div',
@@ -28458,7 +28462,7 @@ var ReviewsIndex = function (_React$Component) {
           ),
           _react2.default.createElement('hr', null),
           reviews.map(function (review) {
-            return _react2.default.createElement(_reviews_index_item2.default, { key: review.id, review: review, currentUser: currentUser });
+            return _react2.default.createElement(_reviews_index_item2.default, { key: review.id, review: review, currentUser: currentUser, deleteReview: deleteReview });
           })
         ) : _react2.default.createElement(_loading2.default, null)
       );
@@ -28514,8 +28518,16 @@ var ReviewsIndexItem = function (_React$Component) {
       rate.style.backgroundPosition = '0 -' + position + 'px';
     }
   }, {
+    key: 'handleClick',
+    value: function handleClick(e, id) {
+      e.preventDefault();
+      this.props.deleteReview(id);
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props,
           review = _props.review,
           currentUser = _props.currentUser;
@@ -28599,7 +28611,9 @@ var ReviewsIndexItem = function (_React$Component) {
               ),
               currentUser && review.user_id === currentUser.id ? _react2.default.createElement(
                 'div',
-                { className: 'deleteReview' },
+                { onClick: function onClick(e) {
+                    return _this2.handleClick(e, review.id);
+                  }, className: 'deleteReview' },
                 _react2.default.createElement('i', { className: 'fas fa-trash-alt' })
               ) : _react2.default.createElement(
                 'div',

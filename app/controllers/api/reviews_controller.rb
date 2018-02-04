@@ -1,7 +1,7 @@
 class Api::ReviewsController < ApplicationController
   def index
     if params[:biz_id]
-      @reviews = Review.where(biz_id: params[:biz_id]).includes(:user)
+      @reviews = Review.where(biz_id: params[:biz_id]).order(id: :desc).includes(:user)
       render :index
     elsif params[:user_id]
       @reviews = Review.where(user_id: params[:user_id]).includes(:biz)

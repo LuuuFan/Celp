@@ -1,5 +1,4 @@
 import React from 'react';
-
 class ReviewsIndexItem extends React.Component {
 
   componentDidMount(){
@@ -7,6 +6,11 @@ class ReviewsIndexItem extends React.Component {
     const rate = document.getElementById(`review-item-rate-${review.id}`);
     const position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
     rate.style.backgroundPosition = `0 -${position}px`;
+  }
+
+  handleClick(e, id){
+    e.preventDefault();
+    this.props.deleteReview(id);
   }
 
   render(){
@@ -39,7 +43,7 @@ class ReviewsIndexItem extends React.Component {
             <div className='review-info-body group'>
               <p>{review.body}</p>
               { currentUser && review.user_id === currentUser.id ?
-                <div className='deleteReview'><i className="fas fa-trash-alt"></i></div>
+                <div onClick={(e)=>this.handleClick(e, review.id)}className='deleteReview'><i className="fas fa-trash-alt"></i></div>
               :
                 <div className='review-status'>
                   <p>Was this review ...?</p>

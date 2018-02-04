@@ -16,7 +16,7 @@ class ReviewsIndex extends React.Component {
   }
 
   render(){
-    const {reviews, biz, currentUser} = this.props;
+    const {reviews, biz, currentUser, deleteReview} = this.props;
     return (
       <div className='review-main group'>
         { reviews.length > 0 ?
@@ -41,7 +41,7 @@ class ReviewsIndex extends React.Component {
           </div>
           <hr/>
           {reviews.map(review =>
-            <ReviewsIndexItem key={review.id} review={review} currentUser={currentUser}/>
+            <ReviewsIndexItem key={review.id} review={review} currentUser={currentUser} deleteReview={deleteReview}/>
           )}
         </div>
         : <Loading />}
