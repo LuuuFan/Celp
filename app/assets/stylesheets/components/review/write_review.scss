@@ -1,0 +1,44 @@
+.write-review{
+  width: 30%;
+  min-width: 600px;
+  margin: 15px auto;
+}
+
+.write-review>h1{
+  color: #0073bb;
+  font-size: 32px;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 20px 0;
+}
+
+.write-review>h1:hover{
+  text-decoration: underline;
+}
+
+.write-review-input{
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 400px;
+  padding: 20px;
+}
+
+.write-review-input>ul{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.write-review-input>ul>li{
+  margin-right: 5px;
+}
+
+.write-review-input>textarea{
+  width: 100%;
+  min-height: 350px;
+  resize: vertical;
+  overflow: visible;
+  line-height: 1.5em;
+  maxlength: 5000;
+}

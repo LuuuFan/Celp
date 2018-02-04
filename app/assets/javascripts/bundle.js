@@ -26555,6 +26555,10 @@ var _home_center = __webpack_require__(170);
 
 var _home_center2 = _interopRequireDefault(_home_center);
 
+var _write_review_container = __webpack_require__(171);
+
+var _write_review_container2 = _interopRequireDefault(_write_review_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -26579,6 +26583,7 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId/photos', component: _biz_img_index_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/biz/:bizId/addphoto', component: _add_img_container2.default }),
+      _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/write_review/biz/:bizId', component: _write_review_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
         } })
@@ -28046,13 +28051,17 @@ var BizShow = function (_React$Component) {
                 'div',
                 { className: 'biz-show-right-top' },
                 _react2.default.createElement(
-                  'button',
-                  { className: 'writeReview' },
+                  _reactRouterDom.Link,
+                  { to: '/write_review/biz/' + biz.id },
                   _react2.default.createElement(
-                    'p',
-                    null,
-                    _react2.default.createElement('i', { className: 'fas fa-star' }),
-                    'Write a Review'
+                    'button',
+                    { className: 'writeReview' },
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-star' }),
+                      'Write a Review'
+                    )
                   )
                 ),
                 _react2.default.createElement(
@@ -32187,6 +32196,171 @@ var HomeCenter = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = HomeCenter;
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(5);
+
+var _write_review = __webpack_require__(172);
+
+var _write_review2 = _interopRequireDefault(_write_review);
+
+var _review = __webpack_require__(41);
+
+var _biz = __webpack_require__(8);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    biz: state.entities.biz[ownProps.match.params.bizId]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    createReview: function createReview(bizId, review) {
+      return dispatch((0, _review.createReview)(bizId, review));
+    },
+    requestBiz: function requestBiz(bizId) {
+      return dispatch((0, _biz.requestBiz)(bizId));
+    }
+
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_write_review2.default);
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var WriteReview = function (_React$Component) {
+  _inherits(WriteReview, _React$Component);
+
+  function WriteReview() {
+    _classCallCheck(this, WriteReview);
+
+    var _this = _possibleConstructorReturn(this, (WriteReview.__proto__ || Object.getPrototypeOf(WriteReview)).call(this));
+
+    _this.state = { body: '', rate: 0 };
+    _this.handleInput = _this.handleInput.bind(_this);
+    return _this;
+  }
+
+  _createClass(WriteReview, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (!this.props.biz) {
+        this.props.requestBiz(this.props.match.params.bizId);
+      }
+    }
+  }, {
+    key: 'handleInput',
+    value: function handleInput(e) {
+      this.setState({ body: e.target.value });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var biz = this.props.biz;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'write-review' },
+        biz ? _react2.default.createElement(
+          'h1',
+          null,
+          _react2.default.createElement(
+            'a',
+            { href: '/#/biz/' + biz.id, target: '_blank' },
+            biz.name
+          )
+        ) : "",
+        _react2.default.createElement(
+          'form',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'write-review-input' },
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-1', value: '1' })
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-2', value: '2' })
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-3', value: '3' })
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-4', value: '4' })
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-5', value: '5' })
+              )
+            ),
+            _react2.default.createElement('textarea', {
+              onChange: this.handleInput,
+              value: this.state.body,
+              placeholder: 'Your review helps others learn about great local businesses. \nPlease don\'t review this business if you received a freebie for writing this review, or if you\'re connected in any way to the owner or employees.'
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return WriteReview;
+}(_react2.default.Component);
+
+exports.default = WriteReview;
 
 /***/ })
 /******/ ]);

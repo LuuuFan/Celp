@@ -1,7 +1,7 @@
 import React from 'react';
 import BizShowImg from '../img/biz_show_img';
 import ReviewsIndexContainer from '../review/reviews_index_container';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Loading from '../loading';
 
 class BizShow extends React.Component {
@@ -42,12 +42,14 @@ class BizShow extends React.Component {
                   </div>
                 </div>
                 <div className='biz-show-right-top'>
-                  <button className='writeReview'>
-                    <p>
-                      <i className="fas fa-star"></i>
-                      Write a Review
-                    </p>
-                  </button>
+                  <Link to={`/write_review/biz/${biz.id}`}>
+                    <button className='writeReview'>
+                      <p>
+                        <i className="fas fa-star"></i>
+                        Write a Review
+                      </p>
+                    </button>
+                  </Link>
                   <ul>
                     <a href={`/#/biz/${biz.id}/addphoto`}><li><i className="fas fa-camera"></i>Add Photo</li></a>
                     <li><i className="fas fa-share-square"></i>Share</li>
