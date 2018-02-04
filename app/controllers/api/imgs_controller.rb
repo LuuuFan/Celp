@@ -16,6 +16,10 @@ class Api::ImgsController < ApplicationController
     @img = Img.new(img_params)
     @img.biz_id = params[:biz_id]
     @img.user_id = current_user.id
+    if @img.biz.img_url.nil?
+      @img.biz.img_url = @img.url
+      @img.biz.save
+    end
     if @img.save
       render :show
     else
