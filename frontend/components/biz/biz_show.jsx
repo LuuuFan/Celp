@@ -45,7 +45,7 @@ class BizShow extends React.Component {
                   </div>
                 </div>
                 <div className='biz-show-right-top'>
-                  { biz.user_ids && biz.user_ids.includes(currentUser.id) ?
+                  { currentUser && biz.user_ids && biz.user_ids.includes(currentUser.id) ?
                     <Link to={`/update_review/biz/${biz.id}`}>
                       <button className='writeReview'>
                         <p>

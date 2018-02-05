@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  requestBiz: (bizId) => dispatch(requestBiz(bizId)),
+  // requestBiz: (bizId) => dispatch(requestBiz(bizId)),
   requestAllImg: (bizId) => dispatch(requestAllImg(bizId))
 });
 

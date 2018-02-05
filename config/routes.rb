@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     resources :biz, only: [:index, :show] do
       resources :imgs, only: [:index, :create]
       resources :reviews, only: [:index, :create]
+      resource :review, only: [:show, :update,]
     end
     resource :session, only: [:create, :destroy]
     resources :imgs, only: [:show, :destroy]
-    resources :reviews, only: [:show, :update, :destroy]
+    resources :reviews, only: [:show, :destroy]
   end
 end

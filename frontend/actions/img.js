@@ -28,6 +28,7 @@ export const requestImg = (imgId) => dispatch => APIUtilImg.requestImg(imgId)
   .then(
     img => dispatch(receiveImg(img))
   );
+
 export const createImg = (bizId, img) => dispatch => APIUtilImg.createImg(bizId, img)
   .then(
     img => dispatch(receiveImg(img))

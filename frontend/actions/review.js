@@ -30,12 +30,12 @@ export const requestAllReviews = bizId => dispatch => APIUtilReview.requestAllRe
     reviews => dispatch(receiveAllReviews(reviews))
   );
 
-export const requestReview = reviewId => dispatch => APIUtilReview.requestReview(reviewId)
+export const requestReview = bizId => dispatch => APIUtilReview.requestReview(bizId)
   .then(
     review => dispatch(receiveReview(review))
   );
 
-export const updateReview = review => dispatch => APIUtilReview.updateReview(review)
+export const updateReview = (bizId, review) => dispatch => APIUtilReview.updateReview(bizId, review)
   .then(
     review => dispatch(receiveReview(review))
   );

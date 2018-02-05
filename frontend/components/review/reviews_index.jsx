@@ -46,7 +46,7 @@ class ReviewsIndex extends React.Component {
               {reviews.map(review =>
                 <div>
                   <ReviewsIndexItem
-                    key={`review-${review.id}`}
+                    key={review.id}
                     review={review}
                     users={users}
                     bizId={biz.id}

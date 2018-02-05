@@ -13,16 +13,16 @@ export const requestAllReviews = (bizId) => (
   })
 )
 
-export const requestReview  = (reviewId) => (
+export const requestReview  = (bizId) => (
   $.ajax({
-    url: `api/reviews/${reviewId}`,
+    url: `api/biz/${biz_id}/review`,
     method: 'GET'
   })
 )
 
-export const updateReview = (review) => (
+export const updateReview = (bizId, review) => (
   $.ajax({
-    url: `api/reviews/${review.id}`,
+    url: `api/biz/${bizId}/review`,
     method: 'PATCH',
     data: {review}
   })
