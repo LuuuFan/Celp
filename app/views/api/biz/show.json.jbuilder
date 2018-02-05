@@ -10,6 +10,7 @@ json.biz do
   json.review_ids @biz.reviews.pluck(:id)
   json.total_reviews @biz.reviews.pluck(:id).length
   json.user_ids @biz.reviewed_users.pluck(:id)
+  json.bookmarked_user_ids @biz.bookmarked_users.pluck(:id)
 end
 
 json.imgs do
@@ -29,6 +30,7 @@ json.reviews do
       # json.set! :user_avatar, review.user.avatar_url
     end
   end
+  json.order @biz.reviews.order(updated_at: :desc).pluck(:id)
 end
 
 json.set! :users do

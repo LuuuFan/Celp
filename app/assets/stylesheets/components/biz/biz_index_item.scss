@@ -19,8 +19,7 @@
 }
 
 .biz-info {
-  margin-left: 15px;
-  width: 80%;
+
   display: flex;
   justify-content: space-between;
 }
@@ -50,7 +49,8 @@
 }
 
 .biz-info-right{
-  width: 50%;
+  width: 30%;
+  font-size: 14px;
 }
  .biz-info-left {
   width: 50%;
@@ -79,8 +79,55 @@
 }
 
 .biz-info-rate-review{
+  height: 18px;
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 13px;
   color: #666;
+}
+
+.biz-info-rate-review>div{
+  height: 100%;
+  text-align: center;
+}
+
+.biz-index-item-right{
+  margin-left: 15px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sample-review{
+  margin-top: 15px;
+}
+
+.sample-review>div{
+  display: flex;
+}
+
+.sample-review-user-avatar{
+  height: 30px;
+  width: 30px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.sample-review-user-avatar>img{
+  height: 100%;
+  object-fit: cover;
+}
+
+.sample-review-body{
+  overflow: hidden;
+  height: 30px;
+  font-size: 12px;
+  width: 90%;
+}
+
+.sample-review-body>p>a{
+  float: right;
+  cursor: pointer;
+  color: #0073bb;
 }

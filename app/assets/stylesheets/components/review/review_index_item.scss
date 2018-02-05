@@ -29,10 +29,12 @@
   width: 60px;
   overflow: hidden;
   margin-right: 5px;
+  border-radius: 5px;
 }
 
 .review-user-avatar>img{
   object-fit: cover;
+  height: 100%;
 }
 
 .review-user-info>ul>li>a{
@@ -64,6 +66,11 @@
 
 .review-info-body{
   margin-top: 5px;
+}
+
+.review-info-body>p{
+  white-space: pre-wrap;
+
 }
 
 .deleteReview{

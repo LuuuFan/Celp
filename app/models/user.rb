@@ -7,6 +7,11 @@ class User < ApplicationRecord
 
   has_many :imgs
   has_many :reviews
+  has_many :bookmarks
+  has_many :bookmark_biz,
+    through: :bookmarks,
+    source: :biz
+
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX, message: "Invalid, example: 'celp@celp.com' "}

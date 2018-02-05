@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
   let reviews= [];
   let users = [];
   if (biz && biz.review_ids) {
-    reviews = biz.review_ids.map(id=>state.entities.reviews[id]);
+    reviews = state.entities.reviews.order.map(id=>state.entities.reviews[id]);
     users = state.entities.users;
   }
   let currentUser = state.session.currentUser;

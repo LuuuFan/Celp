@@ -12,5 +12,11 @@
     end
     json.set! :display_address, biz.display_address
     json.set! :reviews_num, biz.reviews.length
+     if biz.review_sample
+       json.set! :review_sample do
+         json.extract! biz.review_sample, :body
+         json.set! :user_url, biz.review_sample.user.avatar_url
+       end
+     end
   end
 end

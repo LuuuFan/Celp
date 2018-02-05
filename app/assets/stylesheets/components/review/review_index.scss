@@ -55,12 +55,13 @@ strong{
 
 .searchReview {
   margin: 10px 0;
-  width: 300px;
+  width: 400px;
   border-radius: 3px;
   border: 1px solid gray;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  height: 26px;
 }
 
 .searchReview>input{
@@ -70,7 +71,7 @@ strong{
 
 .searchReview > button{
   border-left: 1px solid gray;
-  height: 26px;
+  height: 100%;
   width: 40px;
   background-color: #bd1f1f;
   position: relative;

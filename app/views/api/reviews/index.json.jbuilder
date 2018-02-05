@@ -6,4 +6,5 @@
     json.set! :user_id, review.user.id
     json.set! :user_review_num, review.user.reviews.length
   end
+  json.order @reviews.pluck(:id)
 end

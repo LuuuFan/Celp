@@ -26586,27 +26586,27 @@ var _biz_index_container = __webpack_require__(146);
 
 var _biz_index_container2 = _interopRequireDefault(_biz_index_container);
 
-var _biz_show_container = __webpack_require__(149);
+var _biz_show_container = __webpack_require__(150);
 
 var _biz_show_container2 = _interopRequireDefault(_biz_show_container);
 
-var _add_img_container = __webpack_require__(154);
+var _add_img_container = __webpack_require__(157);
 
 var _add_img_container2 = _interopRequireDefault(_add_img_container);
 
-var _biz_img_index_container = __webpack_require__(166);
+var _biz_img_index_container = __webpack_require__(169);
 
 var _biz_img_index_container2 = _interopRequireDefault(_biz_img_index_container);
 
-var _footer = __webpack_require__(169);
+var _footer = __webpack_require__(172);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _home_center = __webpack_require__(170);
+var _home_center = __webpack_require__(173);
 
 var _home_center2 = _interopRequireDefault(_home_center);
 
-var _write_review_container = __webpack_require__(171);
+var _write_review_container = __webpack_require__(174);
 
 var _write_review_container2 = _interopRequireDefault(_write_review_container);
 
@@ -27787,7 +27787,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _biz_index_item_rating = __webpack_require__(173);
+var _biz_index_item_rating = __webpack_require__(149);
 
 var _biz_index_item_rating2 = _interopRequireDefault(_biz_index_item_rating);
 
@@ -27836,90 +27836,125 @@ var BizIndexItem = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'biz-info' },
+          { className: 'biz-index-item-right' },
           _react2.default.createElement(
             'div',
-            { className: 'biz-info-left' },
+            { className: 'biz-info' },
             _react2.default.createElement(
               'div',
-              { className: 'biz-info-title' },
-              _react2.default.createElement(
-                'p',
-                null,
-                idx + 1,
-                '.'
-              ),
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/biz/' + biz.id },
-                biz.name
-              )
-            ),
-            biz.reviews_num ? _react2.default.createElement(
-              'div',
-              { className: 'biz-info-rate-review' },
-              _react2.default.createElement(_biz_index_item_rating2.default, { biz: biz }),
-              _react2.default.createElement(
-                'p',
-                null,
-                review
-              )
-            ) : "",
-            _react2.default.createElement(
-              'div',
-              { className: 'biz-info-price-tags' },
+              { className: 'biz-info-left' },
               _react2.default.createElement(
                 'div',
-                { className: 'biz-info-price' },
+                { className: 'biz-info-title' },
                 _react2.default.createElement(
                   'p',
                   null,
-                  biz.price
+                  idx + 1,
+                  '.'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/biz/' + biz.id },
+                  biz.name
                 )
               ),
-              _react2.default.createElement(
-                'p',
-                null,
-                '\xB7'
-              ),
+              biz.reviews_num ? _react2.default.createElement(
+                'div',
+                { className: 'biz-info-rate-review' },
+                _react2.default.createElement(_biz_index_item_rating2.default, { biz: biz }),
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    review
+                  )
+                )
+              ) : "",
               _react2.default.createElement(
                 'div',
-                { className: 'biz-info-tags' },
+                { className: 'biz-info-price-tags' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'biz-info-price' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    biz.price
+                  )
+                ),
                 _react2.default.createElement(
                   'p',
                   null,
+                  '\xB7'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'biz-info-tags' },
                   _react2.default.createElement(
-                    'a',
+                    'p',
                     null,
-                    'Bakery'
-                  ),
-                  ', ',
-                  _react2.default.createElement(
-                    'a',
-                    null,
-                    'Cake'
+                    _react2.default.createElement(
+                      'a',
+                      null,
+                      'Bakery'
+                    ),
+                    ', ',
+                    _react2.default.createElement(
+                      'a',
+                      null,
+                      'Cake'
+                    )
                   )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'biz-info-right' },
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-info-address' },
+                biz.display_address
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-info-phone' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  biz.phone
                 )
               )
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'biz-info-right' },
-            _react2.default.createElement(
+            { className: 'sample-review' },
+            biz.review_sample ? _react2.default.createElement(
               'div',
-              { className: 'biz-info-address' },
-              biz.display_address
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'biz-info-phone' },
+              null,
               _react2.default.createElement(
-                'p',
-                null,
-                biz.phone
+                'div',
+                { className: 'sample-review-user-avatar' },
+                _react2.default.createElement('img', { src: biz.review_sample.user_url })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'sample-review-body group' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  biz.review_sample.body.slice(0, 141),
+                  _react2.default.createElement(
+                    'a',
+                    { href: '/#/biz/' + biz.id },
+                    'read more'
+                  )
+                )
               )
-            )
+            ) : ""
           )
         )
       );
@@ -27942,13 +27977,85 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizIndexItemRating = function (_React$Component) {
+  _inherits(BizIndexItemRating, _React$Component);
+
+  function BizIndexItemRating() {
+    _classCallCheck(this, BizIndexItemRating);
+
+    return _possibleConstructorReturn(this, (BizIndexItemRating.__proto__ || Object.getPrototypeOf(BizIndexItemRating)).apply(this, arguments));
+  }
+
+  _createClass(BizIndexItemRating, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var biz = this.props.biz;
+
+      var rate = document.getElementById('biz-info-rating-' + biz.id);
+      var position = biz.biz_rate === 0 ? 240 : 222 + 36 * biz.biz_rate;
+      if (rate) {
+        rate.style.backgroundPosition = '0 -' + position + 'px';
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.biz.biz_rate !== newProps.biz.biz_rate) {
+        var biz = newProps.biz;
+
+        var rate = document.getElementById('biz-info-rating-' + biz.id);
+        var position = biz.biz_rate === 0 ? 240 : 222 + 36 * biz.biz_rate;
+        if (rate) {
+          rate.style.backgroundPosition = '0 -' + position + 'px';
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var biz = this.props.biz;
+
+      return _react2.default.createElement('div', { id: 'biz-info-rating-' + biz.id, className: 'biz-info-rating' });
+    }
+  }]);
+
+  return BizIndexItemRating;
+}(_react2.default.Component);
+
+exports.default = BizIndexItemRating;
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _biz_show = __webpack_require__(150);
+var _biz_show = __webpack_require__(151);
 
 var _biz_show2 = _interopRequireDefault(_biz_show);
 
@@ -27971,7 +28078,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var reviews = [];
   var users = [];
   if (biz && biz.review_ids) {
-    reviews = biz.review_ids.map(function (id) {
+    reviews = state.entities.reviews.order.map(function (id) {
       return state.entities.reviews[id];
     });
     users = state.entities.users;
@@ -28001,7 +28108,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_biz_show2.default));
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28017,11 +28124,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _biz_show_img = __webpack_require__(151);
+var _biz_show_img = __webpack_require__(152);
 
 var _biz_show_img2 = _interopRequireDefault(_biz_show_img);
 
-var _reviews_index = __webpack_require__(152);
+var _reviews_index = __webpack_require__(153);
 
 var _reviews_index2 = _interopRequireDefault(_reviews_index);
 
@@ -28031,7 +28138,7 @@ var _loading = __webpack_require__(31);
 
 var _loading2 = _interopRequireDefault(_loading);
 
-var _biz_show_rating = __webpack_require__(174);
+var _biz_show_rating = __webpack_require__(156);
 
 var _biz_show_rating2 = _interopRequireDefault(_biz_show_rating);
 
@@ -28318,7 +28425,7 @@ exports.default = BizShow;
 // </div>
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28420,7 +28527,7 @@ var BizShowImg = function (_React$Component) {
 exports.default = BizShowImg;
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28440,7 +28547,7 @@ var _loading = __webpack_require__(31);
 
 var _loading2 = _interopRequireDefault(_loading);
 
-var _reviews_index_item = __webpack_require__(153);
+var _reviews_index_item = __webpack_require__(154);
 
 var _reviews_index_item2 = _interopRequireDefault(_reviews_index_item);
 
@@ -28584,7 +28691,7 @@ var ReviewsIndex = function (_React$Component) {
 exports.default = ReviewsIndex;
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28600,7 +28707,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reviews_index_item_rating = __webpack_require__(175);
+var _reviews_index_item_rating = __webpack_require__(155);
 
 var _reviews_index_item_rating2 = _interopRequireDefault(_reviews_index_item_rating);
 
@@ -28779,7 +28886,152 @@ var ReviewsIndexItem = function (_React$Component) {
 exports.default = ReviewsIndexItem;
 
 /***/ }),
-/* 154 */
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ReviewsIndexItemRating = function (_React$Component) {
+  _inherits(ReviewsIndexItemRating, _React$Component);
+
+  function ReviewsIndexItemRating() {
+    _classCallCheck(this, ReviewsIndexItemRating);
+
+    return _possibleConstructorReturn(this, (ReviewsIndexItemRating.__proto__ || Object.getPrototypeOf(ReviewsIndexItemRating)).apply(this, arguments));
+  }
+
+  _createClass(ReviewsIndexItemRating, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var review = this.props.review;
+
+      var rate = document.getElementById('review-item-rate-' + review.id);
+      var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
+      if (rate) {
+        rate.style.backgroundPosition = '0 -' + position + 'px';
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.review.rate !== newProps.review.rate) {
+        var review = newProps.review;
+
+        var rate = document.getElementById('review-item-rate-' + review.id);
+        var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
+        if (rate) {
+          rate.style.backgroundPosition = '0 -' + position + 'px';
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var review = this.props.review;
+
+      return _react2.default.createElement('div', { id: 'review-item-rate-' + review.id,
+        className: 'biz-review-rating' });
+    }
+  }]);
+
+  return ReviewsIndexItemRating;
+}(_react2.default.Component);
+
+exports.default = ReviewsIndexItemRating;
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizShowRating = function (_React$Component) {
+  _inherits(BizShowRating, _React$Component);
+
+  function BizShowRating() {
+    _classCallCheck(this, BizShowRating);
+
+    return _possibleConstructorReturn(this, (BizShowRating.__proto__ || Object.getPrototypeOf(BizShowRating)).apply(this, arguments));
+  }
+
+  _createClass(BizShowRating, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var biz = this.props.biz;
+
+      var rate = document.getElementById('biz-show-rating-' + biz.id);
+      var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
+      if (rate) {
+        rate.style.backgroundPosition = '0 -' + position + 'px';
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.biz.biz_rate !== newProps.biz.biz_rate) {
+        var biz = newProps.biz;
+
+        var rate = document.getElementById('biz-show-rating-' + biz.id);
+        var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
+        if (rate) {
+          rate.style.backgroundPosition = '0 -' + position + 'px';
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var biz = this.props.biz;
+
+      return _react2.default.createElement('div', { id: 'biz-show-rating-' + biz.id, className: 'biz-info-rating' });
+    }
+  }]);
+
+  return BizShowRating;
+}(_react2.default.Component);
+
+exports.default = BizShowRating;
+
+/***/ }),
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28795,7 +29047,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _add_img = __webpack_require__(155);
+var _add_img = __webpack_require__(158);
 
 var _add_img2 = _interopRequireDefault(_add_img);
 
@@ -28825,7 +29077,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_add_img2.default);
 
 /***/ }),
-/* 155 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28841,11 +29093,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDropzone = __webpack_require__(156);
+var _reactDropzone = __webpack_require__(159);
 
 var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
 
-var _superagent = __webpack_require__(160);
+var _superagent = __webpack_require__(163);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
@@ -29015,7 +29267,7 @@ exports.default = AddImg;
 // </div>
 
 /***/ }),
-/* 156 */
+/* 159 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29024,8 +29276,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_styles__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_styles__ = __webpack_require__(162);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29652,7 +29904,7 @@ Dropzone.defaultProps = {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 157 */
+/* 160 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29662,7 +29914,7 @@ Dropzone.defaultProps = {
 /* harmony export (immutable) */ __webpack_exports__["c"] = fileMatchSize;
 /* harmony export (immutable) */ __webpack_exports__["a"] = allFilesAccepted;
 /* harmony export (immutable) */ __webpack_exports__["e"] = onDocumentDragOver;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_attr_accept__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_attr_accept__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_attr_accept___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_attr_accept__);
 
 
@@ -29708,13 +29960,13 @@ function onDocumentDragOver(evt) {
 }
 
 /***/ }),
-/* 158 */
+/* 161 */
 /***/ (function(module, exports) {
 
 module.exports=function(t){function n(e){if(r[e])return r[e].exports;var o=r[e]={exports:{},id:e,loaded:!1};return t[e].call(o.exports,o,o.exports,n),o.loaded=!0,o.exports}var r={};return n.m=t,n.c=r,n.p="",n(0)}([function(t,n,r){"use strict";n.__esModule=!0,r(8),r(9),n["default"]=function(t,n){if(t&&n){var r=function(){var r=Array.isArray(n)?n:n.split(","),e=t.name||"",o=t.type||"",i=o.replace(/\/.*$/,"");return{v:r.some(function(t){var n=t.trim();return"."===n.charAt(0)?e.toLowerCase().endsWith(n.toLowerCase()):/\/\*$/.test(n)?i===n.replace(/\/.*$/,""):o===n})}}();if("object"==typeof r)return r.v}return!0},t.exports=n["default"]},function(t,n){var r=t.exports={version:"1.2.2"};"number"==typeof __e&&(__e=r)},function(t,n){var r=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=r)},function(t,n,r){var e=r(2),o=r(1),i=r(4),u=r(19),c="prototype",f=function(t,n){return function(){return t.apply(n,arguments)}},s=function(t,n,r){var a,p,l,y,d=t&s.G,h=t&s.P,v=d?e:t&s.S?e[n]||(e[n]={}):(e[n]||{})[c],x=d?o:o[n]||(o[n]={});d&&(r=n);for(a in r)p=!(t&s.F)&&v&&a in v,l=(p?v:r)[a],y=t&s.B&&p?f(l,e):h&&"function"==typeof l?f(Function.call,l):l,v&&!p&&u(v,a,l),x[a]!=l&&i(x,a,y),h&&((x[c]||(x[c]={}))[a]=l)};e.core=o,s.F=1,s.G=2,s.S=4,s.P=8,s.B=16,s.W=32,t.exports=s},function(t,n,r){var e=r(5),o=r(18);t.exports=r(22)?function(t,n,r){return e.setDesc(t,n,o(1,r))}:function(t,n,r){return t[n]=r,t}},function(t,n){var r=Object;t.exports={create:r.create,getProto:r.getPrototypeOf,isEnum:{}.propertyIsEnumerable,getDesc:r.getOwnPropertyDescriptor,setDesc:r.defineProperty,setDescs:r.defineProperties,getKeys:r.keys,getNames:r.getOwnPropertyNames,getSymbols:r.getOwnPropertySymbols,each:[].forEach}},function(t,n){var r=0,e=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++r+e).toString(36))}},function(t,n,r){var e=r(20)("wks"),o=r(2).Symbol;t.exports=function(t){return e[t]||(e[t]=o&&o[t]||(o||r(6))("Symbol."+t))}},function(t,n,r){r(26),t.exports=r(1).Array.some},function(t,n,r){r(25),t.exports=r(1).String.endsWith},function(t,n){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,n){var r={}.toString;t.exports=function(t){return r.call(t).slice(8,-1)}},function(t,n,r){var e=r(10);t.exports=function(t,n,r){if(e(t),void 0===n)return t;switch(r){case 1:return function(r){return t.call(n,r)};case 2:return function(r,e){return t.call(n,r,e)};case 3:return function(r,e,o){return t.call(n,r,e,o)}}return function(){return t.apply(n,arguments)}}},function(t,n){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,n,r){t.exports=function(t){var n=/./;try{"/./"[t](n)}catch(e){try{return n[r(7)("match")]=!1,!"/./"[t](n)}catch(o){}}return!0}},function(t,n){t.exports=function(t){try{return!!t()}catch(n){return!0}}},function(t,n){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,n,r){var e=r(16),o=r(11),i=r(7)("match");t.exports=function(t){var n;return e(t)&&(void 0!==(n=t[i])?!!n:"RegExp"==o(t))}},function(t,n){t.exports=function(t,n){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:n}}},function(t,n,r){var e=r(2),o=r(4),i=r(6)("src"),u="toString",c=Function[u],f=(""+c).split(u);r(1).inspectSource=function(t){return c.call(t)},(t.exports=function(t,n,r,u){"function"==typeof r&&(o(r,i,t[n]?""+t[n]:f.join(String(n))),"name"in r||(r.name=n)),t===e?t[n]=r:(u||delete t[n],o(t,n,r))})(Function.prototype,u,function(){return"function"==typeof this&&this[i]||c.call(this)})},function(t,n,r){var e=r(2),o="__core-js_shared__",i=e[o]||(e[o]={});t.exports=function(t){return i[t]||(i[t]={})}},function(t,n,r){var e=r(17),o=r(13);t.exports=function(t,n,r){if(e(n))throw TypeError("String#"+r+" doesn't accept regex!");return String(o(t))}},function(t,n,r){t.exports=!r(15)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,n){var r=Math.ceil,e=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?e:r)(t)}},function(t,n,r){var e=r(23),o=Math.min;t.exports=function(t){return t>0?o(e(t),9007199254740991):0}},function(t,n,r){"use strict";var e=r(3),o=r(24),i=r(21),u="endsWith",c=""[u];e(e.P+e.F*r(14)(u),"String",{endsWith:function(t){var n=i(this,t,u),r=arguments,e=r.length>1?r[1]:void 0,f=o(n.length),s=void 0===e?f:Math.min(o(e),f),a=String(t);return c?c.call(n,a,s):n.slice(s-a.length,s)===a}})},function(t,n,r){var e=r(5),o=r(3),i=r(1).Array||Array,u={},c=function(t,n){e.each.call(t.split(","),function(t){void 0==n&&t in i?u[t]=i[t]:t in[]&&(u[t]=r(12)(Function.call,[][t],n))})};c("pop,reverse,shift,keys,values,entries",1),c("indexOf,every,some,forEach,map,filter,find,findIndex,includes",3),c("join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill"),o(o.S,"Array",u)}]);
 
 /***/ }),
-/* 159 */
+/* 162 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29743,7 +29995,7 @@ module.exports=function(t){function n(e){if(r[e])return r[e].exports;var o=r[e]=
 });
 
 /***/ }),
-/* 160 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -29760,11 +30012,11 @@ if (typeof window !== 'undefined') { // Browser window
   root = this;
 }
 
-var Emitter = __webpack_require__(161);
-var RequestBase = __webpack_require__(162);
+var Emitter = __webpack_require__(164);
+var RequestBase = __webpack_require__(165);
 var isObject = __webpack_require__(55);
-var ResponseBase = __webpack_require__(163);
-var Agent = __webpack_require__(165);
+var ResponseBase = __webpack_require__(166);
+var Agent = __webpack_require__(168);
 
 /**
  * Noop.
@@ -30669,7 +30921,7 @@ request.put = function(url, data, fn) {
 
 
 /***/ }),
-/* 161 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -30838,7 +31090,7 @@ Emitter.prototype.hasListeners = function(event){
 
 
 /***/ }),
-/* 162 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31539,7 +31791,7 @@ RequestBase.prototype._setTimeouts = function() {
 
 
 /***/ }),
-/* 163 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31549,7 +31801,7 @@ RequestBase.prototype._setTimeouts = function() {
  * Module dependencies.
  */
 
-var utils = __webpack_require__(164);
+var utils = __webpack_require__(167);
 
 /**
  * Expose `ResponseBase`.
@@ -31680,7 +31932,7 @@ ResponseBase.prototype._setStatusProperties = function(status){
 
 
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31758,7 +32010,7 @@ exports.cleanHeader = function(header, changesOrigin){
 
 
 /***/ }),
-/* 165 */
+/* 168 */
 /***/ (function(module, exports) {
 
 function Agent() {
@@ -31784,7 +32036,7 @@ module.exports = Agent;
 
 
 /***/ }),
-/* 166 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31800,7 +32052,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _biz_img_index = __webpack_require__(167);
+var _biz_img_index = __webpack_require__(170);
 
 var _biz_img_index2 = _interopRequireDefault(_biz_img_index);
 
@@ -31829,7 +32081,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_biz_img_index2.default);
 
 /***/ }),
-/* 167 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31845,7 +32097,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _biz_img_index_item = __webpack_require__(168);
+var _biz_img_index_item = __webpack_require__(171);
 
 var _biz_img_index_item2 = _interopRequireDefault(_biz_img_index_item);
 
@@ -31950,7 +32202,7 @@ var BizImgIndex = function (_React$Component) {
 exports.default = BizImgIndex;
 
 /***/ }),
-/* 168 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32092,7 +32344,7 @@ var BizImgIndexItem = function (_React$Component) {
 exports.default = BizImgIndexItem;
 
 /***/ }),
-/* 169 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32250,7 +32502,7 @@ var Footer = function Footer() {
 exports.default = Footer;
 
 /***/ }),
-/* 170 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32296,7 +32548,7 @@ var HomeCenter = function (_React$Component) {
 exports.default = HomeCenter;
 
 /***/ }),
-/* 171 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32312,7 +32564,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _write_review = __webpack_require__(172);
+var _write_review = __webpack_require__(175);
 
 var _write_review2 = _interopRequireDefault(_write_review);
 
@@ -32355,7 +32607,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_write_review2.default);
 
 /***/ }),
-/* 172 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32423,13 +32675,12 @@ var WriteReview = function (_React$Component) {
   }, {
     key: 'handleInput',
     value: function handleInput(e) {
-      // this.setState({body: e.target.value.replace(/\n\r?/g, '<br />')});
       this.setState({ body: e.target.value });
+      // this.setState({body: e.target.value.replace(/\n/g, '<br>\n')});
     }
   }, {
     key: 'handleChange',
     value: function handleChange(e, rate) {
-      // console.log(rate);
       this.setState({ rate: rate });
     }
   }, {
@@ -32495,7 +32746,7 @@ var WriteReview = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'label',
-                    { 'for': 'rate-1', onMouseOver: function onMouseOver() {
+                    { htmlFor: 'rate-1', onMouseOver: function onMouseOver() {
                         return _this2.mouseOver(1);
                       } },
                     _react2.default.createElement('input', (_React$createElement = { id: 'rate-1', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement, 'id', 'rating-1'), _defineProperty(_React$createElement, 'checked', this.state.rate === 1), _defineProperty(_React$createElement, 'onChange', function onChange(e) {
@@ -32508,7 +32759,7 @@ var WriteReview = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'label',
-                    { 'for': 'rate-2', onMouseOver: function onMouseOver() {
+                    { htmlFor: 'rate-2', onMouseOver: function onMouseOver() {
                         return _this2.mouseOver(2);
                       } },
                     _react2.default.createElement('input', (_React$createElement2 = { id: 'rate-2', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement2, 'id', 'rating-2'), _defineProperty(_React$createElement2, 'checked', this.state.rate === 2), _defineProperty(_React$createElement2, 'onChange', function onChange(e) {
@@ -32521,7 +32772,7 @@ var WriteReview = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'label',
-                    { 'for': 'rate-3', onMouseOver: function onMouseOver() {
+                    { htmlFor: 'rate-3', onMouseOver: function onMouseOver() {
                         return _this2.mouseOver(3);
                       } },
                     _react2.default.createElement('input', (_React$createElement3 = { id: 'rate-3', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement3, 'id', 'rating-3'), _defineProperty(_React$createElement3, 'checked', this.state.rate === 3), _defineProperty(_React$createElement3, 'onChange', function onChange(e) {
@@ -32534,7 +32785,7 @@ var WriteReview = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'label',
-                    { 'for': 'rate-4', onMouseOver: function onMouseOver() {
+                    { htmlFor: 'rate-4', onMouseOver: function onMouseOver() {
                         return _this2.mouseOver(4);
                       } },
                     _react2.default.createElement('input', (_React$createElement4 = { id: 'rate-4', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement4, 'id', 'rating-4'), _defineProperty(_React$createElement4, 'checked', this.state.rate === 4), _defineProperty(_React$createElement4, 'onChange', function onChange(e) {
@@ -32547,7 +32798,7 @@ var WriteReview = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'label',
-                    { 'for': 'rate-5', onMouseOver: function onMouseOver() {
+                    { htmlFor: 'rate-5', onMouseOver: function onMouseOver() {
                         return _this2.mouseOver(5);
                       } },
                     _react2.default.createElement('input', (_React$createElement5 = { id: 'rate-5', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement5, 'id', 'rating-5'), _defineProperty(_React$createElement5, 'checked', this.state.rate === 5), _defineProperty(_React$createElement5, 'onChange', function onChange(e) {
@@ -32573,223 +32824,6 @@ var WriteReview = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WriteReview;
-
-/***/ }),
-/* 173 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BizIndexItemRating = function (_React$Component) {
-  _inherits(BizIndexItemRating, _React$Component);
-
-  function BizIndexItemRating() {
-    _classCallCheck(this, BizIndexItemRating);
-
-    return _possibleConstructorReturn(this, (BizIndexItemRating.__proto__ || Object.getPrototypeOf(BizIndexItemRating)).apply(this, arguments));
-  }
-
-  _createClass(BizIndexItemRating, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var biz = this.props.biz;
-
-      var rate = document.getElementById('biz-info-rating-' + biz.id);
-      var position = biz.biz_rate === 0 ? 240 : 222 + 36 * biz.biz_rate;
-      if (rate) {
-        rate.style.backgroundPosition = '0 -' + position + 'px';
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps) {
-      if (this.props.biz.biz_rate !== newProps.biz.biz_rate) {
-        var biz = newProps.biz;
-
-        var rate = document.getElementById('biz-info-rating-' + biz.id);
-        var position = biz.biz_rate === 0 ? 240 : 222 + 36 * biz.biz_rate;
-        if (rate) {
-          rate.style.backgroundPosition = '0 -' + position + 'px';
-        }
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var biz = this.props.biz;
-
-      return _react2.default.createElement('div', { id: 'biz-info-rating-' + biz.id, className: 'biz-info-rating' });
-    }
-  }]);
-
-  return BizIndexItemRating;
-}(_react2.default.Component);
-
-exports.default = BizIndexItemRating;
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BizShowRating = function (_React$Component) {
-  _inherits(BizShowRating, _React$Component);
-
-  function BizShowRating() {
-    _classCallCheck(this, BizShowRating);
-
-    return _possibleConstructorReturn(this, (BizShowRating.__proto__ || Object.getPrototypeOf(BizShowRating)).apply(this, arguments));
-  }
-
-  _createClass(BizShowRating, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var biz = this.props.biz;
-
-      var rate = document.getElementById('biz-show-rating-' + biz.id);
-      var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
-      if (rate) {
-        rate.style.backgroundPosition = '0 -' + position + 'px';
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps) {
-      if (this.props.biz.biz_rate !== newProps.biz.biz_rate) {
-        var biz = newProps.biz;
-
-        var rate = document.getElementById('biz-show-rating-' + biz.id);
-        var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
-        if (rate) {
-          rate.style.backgroundPosition = '0 -' + position + 'px';
-        }
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var biz = this.props.biz;
-
-      return _react2.default.createElement('div', { id: 'biz-show-rating-' + biz.id, className: 'biz-info-rating' });
-    }
-  }]);
-
-  return BizShowRating;
-}(_react2.default.Component);
-
-exports.default = BizShowRating;
-
-/***/ }),
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ReviewsIndexItemRating = function (_React$Component) {
-  _inherits(ReviewsIndexItemRating, _React$Component);
-
-  function ReviewsIndexItemRating() {
-    _classCallCheck(this, ReviewsIndexItemRating);
-
-    return _possibleConstructorReturn(this, (ReviewsIndexItemRating.__proto__ || Object.getPrototypeOf(ReviewsIndexItemRating)).apply(this, arguments));
-  }
-
-  _createClass(ReviewsIndexItemRating, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var review = this.props.review;
-
-      var rate = document.getElementById('review-item-rate-' + review.id);
-      var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
-      if (rate) {
-        rate.style.backgroundPosition = '0 -' + position + 'px';
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps) {
-      if (this.props.review.rate !== newProps.review.rate) {
-        var review = newProps.review;
-
-        var rate = document.getElementById('review-item-rate-' + review.id);
-        var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
-        if (rate) {
-          rate.style.backgroundPosition = '0 -' + position + 'px';
-        }
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var review = this.props.review;
-
-      return _react2.default.createElement('div', { id: 'review-item-rate-' + review.id,
-        className: 'biz-review-rating' });
-    }
-  }]);
-
-  return ReviewsIndexItemRating;
-}(_react2.default.Component);
-
-exports.default = ReviewsIndexItemRating;
 
 /***/ })
 /******/ ]);

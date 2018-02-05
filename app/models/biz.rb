@@ -6,6 +6,10 @@ class Biz < ApplicationRecord
   has_many :reviewed_users,
     through: :reviews,
     source: :user
+  has_many :bookmarks
+  has_many :bookmarked_users,
+    through: :bookmarks,
+    source: :user
 
   def display_address
     address_arr = [self.address1, self.address2, self.address3, self.city, self.state, self.zip_code]
@@ -28,6 +32,10 @@ class Biz < ApplicationRecord
     self.img_url = url
     self.save
     self.img_url
+  end
+
+  def review_sample
+    self.reviews.sample
   end
 
   private

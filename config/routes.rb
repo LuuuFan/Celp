@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :imgs, only: [:index, :create]
       resources :reviews, only: [:index, :create]
       resource :review, only: [:show, :update,]
+      resource :bookmark, only: [:create, :destroy]
     end
     resource :session, only: [:create, :destroy]
     resources :imgs, only: [:show, :destroy]

@@ -1,7 +1,7 @@
 class Api::BizController < ApplicationController
 
   def index
-    @bizes = Biz.all.includes(:reviews)
+    @bizes = Biz.all.includes(:reviews, :reviewed_users)
     render :index
   end
 

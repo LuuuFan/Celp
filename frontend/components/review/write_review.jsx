@@ -32,12 +32,11 @@ class WriteReview extends React.Component{
   }
 
   handleInput(e){
-    // this.setState({body: e.target.value.replace(/\n\r?/g, '<br />')});
     this.setState({body: e.target.value});
+    // this.setState({body: e.target.value.replace(/\n/g, '<br>\n')});
   }
 
   handleChange(e, rate){
-    // console.log(rate);
     this.setState({rate: rate});
   }
 
@@ -72,27 +71,27 @@ class WriteReview extends React.Component{
               <div id='write-review-rating-background'>
                 <ul id='write-review-rating'>
                   <li>
-                    <label for='rate-1' onMouseOver={()=>this.mouseOver(1)}>
+                    <label htmlFor='rate-1' onMouseOver={()=>this.mouseOver(1)}>
                       <input id='rate-1' type='radio' name='rating' id='rating-1' checked={this.state.rate === 1} onChange={(e)=>this.handleChange(e, 1)}/>
                     </label>
                   </li>
                   <li>
-                    <label for='rate-2' onMouseOver={()=>this.mouseOver(2)}>
+                    <label htmlFor='rate-2' onMouseOver={()=>this.mouseOver(2)}>
                       <input id='rate-2' type='radio' name='rating' id='rating-2' checked={this.state.rate === 2} onChange={(e)=>this.handleChange(e, 2)}/>
                     </label>
                   </li>
                   <li>
-                    <label for='rate-3' onMouseOver={()=>this.mouseOver(3)}>
+                    <label htmlFor='rate-3' onMouseOver={()=>this.mouseOver(3)}>
                       <input id='rate-3' type='radio' name='rating' id='rating-3' checked={this.state.rate === 3} onChange={(e)=>this.handleChange(e, 3)}/>
                     </label>
                   </li>
                   <li>
-                    <label for='rate-4' onMouseOver={()=>this.mouseOver(4)}>
+                    <label htmlFor='rate-4' onMouseOver={()=>this.mouseOver(4)}>
                       <input id='rate-4' type='radio' name='rating' id='rating-4' checked={this.state.rate === 4} onChange={(e)=>this.handleChange(e, 4)}/>
                     </label>
                   </li>
                   <li>
-                    <label for='rate-5' onMouseOver={()=>this.mouseOver(5)}>
+                    <label htmlFor='rate-5' onMouseOver={()=>this.mouseOver(5)}>
                       <input id='rate-5' type='radio' name='rating' id='rating-5' checked={this.state.rate === 5} onChange={(e)=>this.handleChange(e, 5)}/>
                     </label>
                   </li>

@@ -23,34 +23,48 @@ class BizIndexItem extends React.Component {
           <img src='https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' />
         </div>
        }
-       <div className='biz-info'>
-         <div className='biz-info-left'>
-           <div className='biz-info-title'>
-             <p>{idx + 1}.</p><Link to={`/biz/${biz.id}`}>{biz.name}</Link>
-           </div>
-           {biz.reviews_num ?
-           <div className='biz-info-rate-review'>
-             <BizIndexItemRating biz={biz}/>
-             <p>{review}</p>
-           </div>
-           : ""}
-           <div className='biz-info-price-tags'>
-             <div className='biz-info-price'>
-               <p>{biz.price}</p>
+       <div className='biz-index-item-right'>
+         <div className='biz-info'>
+           <div className='biz-info-left'>
+             <div className='biz-info-title'>
+               <p>{idx + 1}.</p><Link to={`/biz/${biz.id}`}>{biz.name}</Link>
              </div>
-             <p>&middot;</p>
-             <div className='biz-info-tags'>
-               <p><a>Bakery</a>, <a>Cake</a></p>
+             {biz.reviews_num ?
+             <div className='biz-info-rate-review'>
+               <BizIndexItemRating biz={biz}/>
+               <div><p>{review}</p></div>
+             </div>
+             : ""}
+             <div className='biz-info-price-tags'>
+               <div className='biz-info-price'>
+                 <p>{biz.price}</p>
+               </div>
+               <p>&middot;</p>
+               <div className='biz-info-tags'>
+                 <p><a>Bakery</a>, <a>Cake</a></p>
+               </div>
+             </div>
+           </div>
+           <div className='biz-info-right'>
+             <div className='biz-info-address'>
+               {biz.display_address}
+             </div>
+             <div className='biz-info-phone'>
+               <p>{biz.phone}</p>
              </div>
            </div>
          </div>
-         <div className='biz-info-right'>
-           <div className='biz-info-address'>
-             {biz.display_address}
-           </div>
-           <div className='biz-info-phone'>
-             <p>{biz.phone}</p>
-           </div>
+         <div className='sample-review'>
+           {biz.review_sample ?
+             <div>
+               <div className='sample-review-user-avatar'>
+                 <img src={biz.review_sample.user_url}/>
+               </div>
+               <div className='sample-review-body group'>
+                 <p>{biz.review_sample.body.slice(0, 141)}<a href={`/#/biz/${biz.id}`}>read more</a></p>
+               </div>
+             </div>
+           : ""}
          </div>
        </div>
      </div>
