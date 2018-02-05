@@ -106,8 +106,10 @@ class BizShow extends React.Component {
                         </div>
 
                         <div className='biz-show-edit'>
+                          {/*
                           <i className="fas fa-pencil-alt"></i>
                           <span>Edit</span>
+                          */}
                         </div>
                       </div>
                     </div>

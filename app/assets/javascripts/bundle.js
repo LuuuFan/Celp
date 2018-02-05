@@ -28401,16 +28401,7 @@ var BizShow = function (_React$Component) {
                           'Send to your Phone'
                         )
                       ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'biz-show-edit' },
-                        _react2.default.createElement('i', { className: 'fas fa-pencil-alt' }),
-                        _react2.default.createElement(
-                          'span',
-                          null,
-                          'Edit'
-                        )
-                      )
+                      _react2.default.createElement('div', { className: 'biz-show-edit' })
                     )
                   )
                 )
