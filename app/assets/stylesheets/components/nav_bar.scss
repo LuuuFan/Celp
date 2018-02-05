@@ -234,11 +234,30 @@
   margin-left: 5px;
 }
 
-.userImg img{
-  border-radius: 4px 0 0 4px;
+.userImg{
   height: 40px;
   width: 35px;
+  overflow: hidden;
+  border-radius: 4px 0 0 4px;
+}
 
+.user-dropdown-detail-userImg{
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.user-dropdown-detail-userImg>img{
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.userImg img{
+  height: 100%;
+  object-fit: cover;
 }
 
 .hidden{
@@ -271,10 +290,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-}
-
-.user-dropdown-detail * {
-  padding: 5px;
+  margin: 10px;
 }
 
 #user-dropdown .user-dropdown-detail>img{

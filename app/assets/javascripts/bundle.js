@@ -3787,7 +3787,7 @@ var Button = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'userImg' },
-            _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' })
+            _react2.default.createElement('img', { src: '' + currentUser.avatar_url })
           ),
           _react2.default.createElement(
             'div',
@@ -3803,7 +3803,11 @@ var Button = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'user-dropdown-detail' },
-                _react2.default.createElement('img', { src: 'https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'user-dropdown-detail-userImg' },
+                  _react2.default.createElement('img', { src: '' + currentUser.avatar_url })
+                ),
                 _react2.default.createElement(
                   'div',
                   { className: 'user-detail' },

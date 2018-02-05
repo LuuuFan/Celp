@@ -22,7 +22,7 @@ class Button extends React.Component {
       <div>
         <div className='user' onClick={(e)=>this.handleClick(e)}>
           <div className='userImg'>
-            <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
+            <img src={`${currentUser.avatar_url}`} />
           </div>
           <div className='userMenu'>
             <i className="fas fa-sort-down"></i>
@@ -30,7 +30,9 @@ class Button extends React.Component {
           <div id='dropdown' className='hidden'>
             <div id='user-dropdown' >
               <div className='user-dropdown-detail'>
-                <img src='https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/7e4e0dfd903f/assets/img/default_avatars/user_large_square.png' />
+                <div className='user-dropdown-detail-userImg'>
+                  <img src={`${currentUser.avatar_url}`} />
+                </div>
                 <div className='user-detail'>
                   <a href='/aboutme'>{currentUser.username}</a>
                 </div>
