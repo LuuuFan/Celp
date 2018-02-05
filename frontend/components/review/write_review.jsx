@@ -2,9 +2,9 @@ import React from 'react';
 
 
 class WriteReview extends React.Component{
-  constructor(){
-    super();
-    this.state=this.props.review;
+  constructor(props){
+    super(props);
+    this.state = this.props.review;
     this.handleInput = this.handleInput.bind(this);
   }
 
@@ -13,9 +13,15 @@ class WriteReview extends React.Component{
       this.props.requestBiz(this.props.match.params.bizId);
     }
   }
+  //
+  // componentWillReceiveProps(newProps){
+  //   if (!this.props.review) {
+  //     this.props.requestBiz(this.props.match.params.bizId);
+  //   }
+  // }
 
   handleInput(e){
-    this.setState({body: e.target.value});
+    this.setState({body: e.target.value.replace(/\n\r?/g, '<br />')});
   }
 
   handleChange(e, rate){
@@ -29,7 +35,6 @@ class WriteReview extends React.Component{
   }
 
 
-
   render(){
     const {biz} = this.props;
     return (
@@ -41,19 +46,19 @@ class WriteReview extends React.Component{
           <div className='write-review-input'>
             <ul>
               <li>
-                <input type='radio' id='rating-1' onChange={(e)=>this.handleChange(e, 1)}/>
+                <input type='radio' name='rating' id='rating-1' onChange={(e)=>this.handleChange(e, 1)}/>
               </li>
               <li>
-                <input type='radio' id='rating-2' onChange={(e)=>this.handleChange(e, 2)}/>
+                <input type='radio' name='rating' id='rating-2' onChange={(e)=>this.handleChange(e, 2)}/>
               </li>
               <li>
-                <input type='radio' id='rating-3' onChange={(e)=>this.handleChange(e, 3)}/>
+                <input type='radio' name='rating' id='rating-3' onChange={(e)=>this.handleChange(e, 3)}/>
               </li>
               <li>
-                <input type='radio' id='rating-4' onChange={(e)=>this.handleChange(e, 4)}/>
+                <input type='radio' name='rating' id='rating-4' onChange={(e)=>this.handleChange(e, 4)}/>
               </li>
               <li>
-                <input type='radio' id='rating-5' onChange={(e)=>this.handleChange(e, 5)}/>
+                <input type='radio' name='rating' id='rating-5' onChange={(e)=>this.handleChange(e, 5)}/>
               </li>
             </ul>
             <textarea

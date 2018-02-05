@@ -11,7 +11,10 @@ class BizShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    if (!this.props.biz || this.props.match.params.bizId !== newProps.match.params.bizId) {
+    if (!this.props.biz
+        || this.props.match.params.bizId !== newProps.match.params.bizId
+        || this.props.reviews.length !== newProps.reviews.length
+      ) {
       this.props.requestBiz(newProps.match.params.bizId);
     }
   }
@@ -42,7 +45,7 @@ class BizShow extends React.Component {
                   </div>
                 </div>
                 <div className='biz-show-right-top'>
-                  { biz.user_ids.includes(currentUser.id) ?
+                  { biz.user_ids && biz.user_ids.includes(currentUser.id) ?
                     <Link to={`/update_review/biz/${biz.id}`}>
                       <button className='writeReview'>
                         <p>
@@ -112,7 +115,7 @@ class BizShow extends React.Component {
           ) : <Loading />}
         </div>
         <div>
-          {biz ?
+          {biz && reviews ?
             <ReviewsIndex
               reviews={reviews}
               users={users}

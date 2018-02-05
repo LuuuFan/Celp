@@ -6,11 +6,12 @@ import {requestBiz} from '../../actions/biz';
 
 const mapStateToProps = (state, ownProps) => {
   let review = {body:'', rate: 0};
-  if (condition) {
-    review = state.entities.reviews[ownProps.match]
+  if (ownProps.match.path !== '/write_review/biz/:bizId') {
+    review = state.entities.reviews;
   }
   return ({
-    biz: state.entities.biz[ownProps.match.params.bizId]
+    biz: state.entities.biz[ownProps.match.params.bizId],
+    review: review
   });
 };
 

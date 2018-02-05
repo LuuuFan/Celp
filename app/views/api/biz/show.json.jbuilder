@@ -1,7 +1,6 @@
 # json.partial! '/api/biz/biz', biz: @biz
 
 json.biz do
-
   json.extract! @biz, :id, :name, :phone, :price, :website, :img_url, :biz_rate
   json.set! :location do
     json.extract! @biz, :address1, :address2, :address3, :city, :zip_code, :state

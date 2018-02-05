@@ -1,6 +1,8 @@
 import React from 'react';
 import Loading from '../loading';
 import ReviewsIndexItem from './reviews_index_item';
+import {withRouter} from 'react-router-dom';
+
 
 class ReviewsIndex extends React.Component {
 
@@ -16,7 +18,7 @@ class ReviewsIndex extends React.Component {
   // }
 
   render(){
-    const {reviews, biz, currentUser, users, deleteReview} = this.props;
+    const {reviews, biz, currentUser, users, deleteReview, history} = this.props;
     return (
       <div className='review-main group'>
         <div className='review-index'>
@@ -39,15 +41,20 @@ class ReviewsIndex extends React.Component {
             </div>
           </div>
           <hr/>
-          {biz.review_ids && biz.review_ids.length > 0 ?
+          { biz.review_ids && biz.review_ids.length > 0 ?
             <div>
               {reviews.map(review =>
-                <ReviewsIndexItem
-                  key={review.id}
-                  review={review}
-                  users={users}
-                  currentUser={currentUser}
-                  deleteReview={deleteReview}/>
+                <div>
+                  {review ?
+                      <ReviewsIndexItem
+                        key={`review-${review.id}`}
+                        review={review}
+                        users={users}
+                        bizId={biz.id}
+                        currentUser={currentUser}
+                        deleteReview={deleteReview} />
+                  : ""}
+                </div>
               )}
             </div>
             :

@@ -1,16 +1,25 @@
 import React from 'react';
+// import { browserHistory } from 'react-router';
+// import { Redirect } from 'react-router-dom';
+
+
 class ReviewsIndexItem extends React.Component {
 
   componentDidMount(){
     const {review} = this.props;
     const rate = document.getElementById(`review-item-rate-${review.id}`);
     const position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
-    rate.style.backgroundPosition = `0 -${position}px`;
+    if (rate) {
+      rate.style.backgroundPosition = `0 -${position}px`;
+    }
   }
 
   handleClick(e, id){
     e.preventDefault();
     this.props.deleteReview(id);
+    // .then(<Redirect to={`/biz/${this.props.bizId}`} />)
+    // .then(browserHistory.push(`/biz/${this.props.bizId}`));
+    // .then(this.props.history.push(`/biz/${this.props.match.params.bizId}`));
   }
 
   render(){
