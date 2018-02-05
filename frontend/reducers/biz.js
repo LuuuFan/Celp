@@ -1,6 +1,6 @@
 import {RECEIVE_ALL_BIZ, RECEIVE_BIZ} from '../actions/biz';
 import {REMOVE_REVIEW, RECEIVE_REVIEW} from '../actions/review';
-
+import {RECEIVE_BOOKMARK, REMOVE_BOOKMARK} from '../actions/bookmark';
 
 const bizReducer = (state={}, action) => {
   Object.freeze(state);
@@ -17,6 +17,14 @@ const bizReducer = (state={}, action) => {
       newState[action.biz.id] = action.biz;
       return newState;
     case REMOVE_REVIEW:
+      newState = Object.assign({}, state);
+      newState[action.biz.id] = action.biz;
+      return newState;
+    case RECEIVE_BOOKMARK:
+      newState = Object.assign({}, state);
+      newState[action.biz.id] = action.biz;
+      return newState;
+    case REMOVE_BOOKMARK:
       newState = Object.assign({}, state);
       newState[action.biz.id] = action.biz;
       return newState;

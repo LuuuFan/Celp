@@ -4,6 +4,7 @@ import ReviewsIndex from '../review/reviews_index';
 import { Route, Link } from 'react-router-dom';
 import Loading from '../loading';
 import BizShowRating from './biz_show_rating';
+import BizShowBookmarkContainer from './biz_show_bookmark_container';
 
 class BizShow extends React.Component {
 
@@ -70,7 +71,7 @@ class BizShow extends React.Component {
                   <ul>
                     <a href={`/#/biz/${biz.id}/addphoto`}><li><i className="fas fa-camera"></i>Add Photo</li></a>
                     <li><i className="fas fa-share-square"></i>Share</li>
-                    <li><i className="fas fa-bookmark"></i>Bookmark</li>
+                    <Route component={BizShowBookmarkContainer} />
                   </ul>
                 </div>
               </div>

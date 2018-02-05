@@ -5,7 +5,6 @@ export const createBookmark = (bizId) => (
   })
 );
 
-
 export const deleteBookmark = (bizId) => (
   $.ajax({
     url: `api/biz/${bizId}/bookmark`,

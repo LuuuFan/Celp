@@ -10,7 +10,8 @@ json.biz do
   json.review_ids @biz.reviews.pluck(:id)
   json.total_reviews @biz.reviews.pluck(:id).length
   json.user_ids @biz.reviewed_users.pluck(:id)
-  json.bookmarked_user_ids @biz.bookmarked_users.pluck(:id)
+  json.bookmarked? @biz.bookmarked?(current_user.id)
+  # json.bookmarked_user_ids @biz.bookmarked_users.pluck(:id)
 end
 
 json.imgs do

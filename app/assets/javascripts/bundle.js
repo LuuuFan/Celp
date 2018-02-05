@@ -21965,6 +21965,8 @@ var _biz = __webpack_require__(7);
 
 var _review = __webpack_require__(17);
 
+var _bookmark = __webpack_require__(176);
+
 var bizReducer = function bizReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments[1];
@@ -21983,6 +21985,14 @@ var bizReducer = function bizReducer() {
       newState[action.biz.id] = action.biz;
       return newState;
     case _review.REMOVE_REVIEW:
+      newState = Object.assign({}, state);
+      newState[action.biz.id] = action.biz;
+      return newState;
+    case _bookmark.RECEIVE_BOOKMARK:
+      newState = Object.assign({}, state);
+      newState[action.biz.id] = action.biz;
+      return newState;
+    case _bookmark.REMOVE_BOOKMARK:
       newState = Object.assign({}, state);
       newState[action.biz.id] = action.biz;
       return newState;
@@ -28142,6 +28152,10 @@ var _biz_show_rating = __webpack_require__(156);
 
 var _biz_show_rating2 = _interopRequireDefault(_biz_show_rating);
 
+var _biz_show_bookmark_container = __webpack_require__(177);
+
+var _biz_show_bookmark_container2 = _interopRequireDefault(_biz_show_bookmark_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28304,12 +28318,7 @@ var BizShow = function (_React$Component) {
                     _react2.default.createElement('i', { className: 'fas fa-share-square' }),
                     'Share'
                   ),
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
-                    'Bookmark'
-                  )
+                  _react2.default.createElement(_reactRouterDom.Route, { component: _biz_show_bookmark_container2.default })
                 )
               )
             ),
@@ -32824,6 +32833,208 @@ var WriteReview = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WriteReview;
+
+/***/ }),
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.deleteBookmark = exports.createBookmark = exports.removeBookmark = exports.receiveBookmark = exports.REMOVE_BOOKMARK = exports.RECEIVE_BOOKMARK = undefined;
+
+var _bookmark_util = __webpack_require__(179);
+
+var APIUtilBookmark = _interopRequireWildcard(_bookmark_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_BOOKMARK = exports.RECEIVE_BOOKMARK = 'RECEIVE_BOOKMARK';
+var REMOVE_BOOKMARK = exports.REMOVE_BOOKMARK = 'REMOVE_BOOKMARK';
+
+var receiveBookmark = exports.receiveBookmark = function receiveBookmark(payload) {
+  return {
+    type: 'RECEIVE_BOOKMARK',
+    biz: payload.biz
+  };
+};
+
+var removeBookmark = exports.removeBookmark = function removeBookmark(payload) {
+  return {
+    type: 'REMOVE_BOOKMARK',
+    biz: payload.biz
+  };
+};
+
+var createBookmark = exports.createBookmark = function createBookmark(bizId) {
+  return function (dispatch) {
+    return APIUtilBookmark.createBookmark(bizId).then(function (payload) {
+      return dispatch(receiveBookmark(payload));
+    });
+  };
+};
+
+var deleteBookmark = exports.deleteBookmark = function deleteBookmark(bizId) {
+  return function (dispatch) {
+    return APIUtilBookmark.deleteBookmark(bizId).then(function (payload) {
+      return dispatch(removeBookmark(payload));
+    });
+  };
+};
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(6);
+
+var _bookmark = __webpack_require__(176);
+
+var _biz_show_bookmark = __webpack_require__(178);
+
+var _biz_show_bookmark2 = _interopRequireDefault(_biz_show_bookmark);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    marked: state.entities.biz[ownProps.match.params.bizId]['bookmarked?']
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    createBookmark: function createBookmark(bizId) {
+      return dispatch((0, _bookmark.createBookmark)(bizId));
+    },
+    deleteBookmark: function deleteBookmark(bizId) {
+      return dispatch((0, _bookmark.deleteBookmark)(bizId));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_biz_show_bookmark2.default);
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizShowBookmark = function (_React$Component) {
+  _inherits(BizShowBookmark, _React$Component);
+
+  function BizShowBookmark() {
+    _classCallCheck(this, BizShowBookmark);
+
+    return _possibleConstructorReturn(this, (BizShowBookmark.__proto__ || Object.getPrototypeOf(BizShowBookmark)).apply(this, arguments));
+  }
+
+  _createClass(BizShowBookmark, [{
+    key: 'handleClick',
+    value: function handleClick(action) {
+      if (action == 'unmark') {
+        this.props.deleteBookmark(this.props.match.params.bizId);
+      } else {
+        this.props.createBookmark(this.props.match.params.bizId);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var marked = this.props.marked;
+
+      if (marked === undefined) {
+        return _react2.default.createElement('div', null);
+      } else if (marked) {
+        return _react2.default.createElement(
+          'li',
+          { onClick: function onClick() {
+              return _this2.handleClick('unmark');
+            }, className: 'biz-show-bookmark-marked' },
+          _react2.default.createElement(
+            'p',
+            { className: 'inner' },
+            _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
+            'Bookmarked'
+          )
+        );
+      } else {
+        return _react2.default.createElement(
+          'li',
+          { onClick: function onClick() {
+              return _this2.handleClick('mark');
+            } },
+          _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
+          'Bookmark'
+        );
+      }
+    }
+  }]);
+
+  return BizShowBookmark;
+}(_react2.default.Component);
+
+exports.default = BizShowBookmark;
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var createBookmark = exports.createBookmark = function createBookmark(bizId) {
+  return $.ajax({
+    url: 'api/biz/' + bizId + '/bookmark',
+    method: 'POST'
+  });
+};
+
+var deleteBookmark = exports.deleteBookmark = function deleteBookmark(bizId) {
+  return $.ajax({
+    url: 'api/biz/' + bizId + '/bookmark',
+    method: 'DELETE'
+  });
+};
 
 /***/ })
 /******/ ]);

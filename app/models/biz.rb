@@ -38,6 +38,10 @@ class Biz < ApplicationRecord
     self.reviews.sample
   end
 
+  def bookmarked?(userId)
+    self.bookmarked_users.pluck(:id).include?(userId)
+  end
+
   private
 
 end
