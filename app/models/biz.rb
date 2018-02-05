@@ -21,7 +21,7 @@ class Biz < ApplicationRecord
   end
 
   def biz_rate
-    self.reviews.average(:rate).to_f
+    (self.reviews.average(:rate).to_f * 2).round(0) / 2.to_f
   end
 
   def set_img(url)

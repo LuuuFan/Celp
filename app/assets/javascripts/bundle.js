@@ -27774,127 +27774,155 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
+var _biz_index_item_rating = __webpack_require__(173);
+
+var _biz_index_item_rating2 = _interopRequireDefault(_biz_index_item_rating);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BizIndexItem = function BizIndexItem(_ref) {
-  var biz = _ref.biz,
-      idx = _ref.idx;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  var review = void 0;
-  if (biz.reviews_num > 1) {
-    review = biz.reviews_num + ' Reviews';
-  } else if (biz.reviews_num) {
-    review = biz.reviews_num + ' Review';
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizIndexItem = function (_React$Component) {
+  _inherits(BizIndexItem, _React$Component);
+
+  function BizIndexItem() {
+    _classCallCheck(this, BizIndexItem);
+
+    return _possibleConstructorReturn(this, (BizIndexItem.__proto__ || Object.getPrototypeOf(BizIndexItem)).apply(this, arguments));
   }
 
-  return _react2.default.createElement(
-    'div',
-    { className: 'biz_index_item' },
-    biz.img_url ? _react2.default.createElement(
-      'div',
-      { className: 'index-thumb' },
-      _react2.default.createElement('img', { src: '' + biz.img_url })
-    ) : _react2.default.createElement(
-      'div',
-      { className: 'index-thumb' },
-      _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' })
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'biz-info' },
-      _react2.default.createElement(
+  _createClass(BizIndexItem, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          biz = _props.biz,
+          idx = _props.idx;
+
+      var review = void 0;
+      if (biz.reviews_num > 1) {
+        review = biz.reviews_num + ' Reviews';
+      } else if (biz.reviews_num) {
+        review = biz.reviews_num + ' Review';
+      }
+
+      return _react2.default.createElement(
         'div',
-        { className: 'biz-info-left' },
-        _react2.default.createElement(
+        { className: 'biz_index_item' },
+        biz.img_url ? _react2.default.createElement(
           'div',
-          { className: 'biz-info-title' },
-          _react2.default.createElement(
-            'p',
-            null,
-            idx + 1,
-            '.'
-          ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/biz/' + biz.id },
-            biz.name
-          )
+          { className: 'index-thumb' },
+          _react2.default.createElement('img', { src: '' + biz.img_url })
+        ) : _react2.default.createElement(
+          'div',
+          { className: 'index-thumb' },
+          _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' })
         ),
-        biz.reviews_num ? _react2.default.createElement(
-          'div',
-          { className: 'biz-info-rate-review' },
-          _react2.default.createElement('div', { className: 'biz-info-rating' }),
-          _react2.default.createElement(
-            'p',
-            null,
-            review
-          )
-        ) : "",
         _react2.default.createElement(
           'div',
-          { className: 'biz-info-price-tags' },
+          { className: 'biz-info' },
           _react2.default.createElement(
             'div',
-            { className: 'biz-info-price' },
+            { className: 'biz-info-left' },
             _react2.default.createElement(
-              'p',
-              null,
-              biz.price
+              'div',
+              { className: 'biz-info-title' },
+              _react2.default.createElement(
+                'p',
+                null,
+                idx + 1,
+                '.'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/biz/' + biz.id },
+                biz.name
+              )
+            ),
+            biz.reviews_num ? _react2.default.createElement(
+              'div',
+              { className: 'biz-info-rate-review' },
+              _react2.default.createElement(_biz_index_item_rating2.default, { biz: biz }),
+              _react2.default.createElement(
+                'p',
+                null,
+                review
+              )
+            ) : "",
+            _react2.default.createElement(
+              'div',
+              { className: 'biz-info-price-tags' },
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-info-price' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  biz.price
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                '\xB7'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-info-tags' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'Bakery'
+                  ),
+                  ', ',
+                  _react2.default.createElement(
+                    'a',
+                    null,
+                    'Cake'
+                  )
+                )
+              )
             )
           ),
           _react2.default.createElement(
-            'p',
-            null,
-            '\xB7'
-          ),
-          _react2.default.createElement(
             'div',
-            { className: 'biz-info-tags' },
+            { className: 'biz-info-right' },
             _react2.default.createElement(
-              'p',
-              null,
+              'div',
+              { className: 'biz-info-address' },
+              biz.display_address
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'biz-info-phone' },
               _react2.default.createElement(
-                'a',
+                'p',
                 null,
-                'Bakery'
-              ),
-              ', ',
-              _react2.default.createElement(
-                'a',
-                null,
-                'Cake'
+                biz.phone
               )
             )
           )
         )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'biz-info-right' },
-        _react2.default.createElement(
-          'div',
-          { className: 'biz-info-address' },
-          biz.display_address
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'biz-info-phone' },
-          _react2.default.createElement(
-            'p',
-            null,
-            biz.phone
-          )
-        )
-      )
-    )
-  );
-};
+      );
+    }
+  }]);
+
+  return BizIndexItem;
+}(_react2.default.Component);
 
 exports.default = BizIndexItem;
 
@@ -27998,6 +28026,10 @@ var _loading = __webpack_require__(31);
 
 var _loading2 = _interopRequireDefault(_loading);
 
+var _biz_show_rating = __webpack_require__(174);
+
+var _biz_show_rating2 = _interopRequireDefault(_biz_show_rating);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28061,7 +28093,7 @@ var BizShow = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'biz-show-rating-number' },
-                  _react2.default.createElement('div', { className: 'biz-info-rating' }),
+                  _react2.default.createElement(_biz_show_rating2.default, { biz: biz }),
                   _react2.default.createElement(
                     'p',
                     null,
@@ -32482,6 +32514,150 @@ var WriteReview = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WriteReview;
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizIndexItemRating = function (_React$Component) {
+  _inherits(BizIndexItemRating, _React$Component);
+
+  function BizIndexItemRating() {
+    _classCallCheck(this, BizIndexItemRating);
+
+    return _possibleConstructorReturn(this, (BizIndexItemRating.__proto__ || Object.getPrototypeOf(BizIndexItemRating)).apply(this, arguments));
+  }
+
+  _createClass(BizIndexItemRating, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var biz = this.props.biz;
+
+      var rate = document.getElementById('biz-info-rating-' + biz.id);
+      var position = biz.biz_rate === 0 ? 240 : 222 + 36 * biz.biz_rate;
+      if (rate) {
+        rate.style.backgroundPosition = '0 -' + position + 'px';
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.biz.biz_rate !== newProps.biz.biz_rate) {
+        var biz = newProps.biz;
+
+        var rate = document.getElementById('biz-info-rating-' + biz.id);
+        var position = biz.biz_rate === 0 ? 240 : 222 + 36 * biz.biz_rate;
+        if (rate) {
+          rate.style.backgroundPosition = '0 -' + position + 'px';
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var biz = this.props.biz;
+
+      return _react2.default.createElement('div', { id: 'biz-info-rating-' + biz.id, className: 'biz-info-rating' });
+    }
+  }]);
+
+  return BizIndexItemRating;
+}(_react2.default.Component);
+
+exports.default = BizIndexItemRating;
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BizShowRating = function (_React$Component) {
+  _inherits(BizShowRating, _React$Component);
+
+  function BizShowRating() {
+    _classCallCheck(this, BizShowRating);
+
+    return _possibleConstructorReturn(this, (BizShowRating.__proto__ || Object.getPrototypeOf(BizShowRating)).apply(this, arguments));
+  }
+
+  _createClass(BizShowRating, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var biz = this.props.biz;
+
+      var rate = document.getElementById('biz-show-rating-' + biz.id);
+      var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
+      if (rate) {
+        rate.style.backgroundPosition = '0 -' + position + 'px';
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.biz.biz_rate !== newProps.biz.biz_rate) {
+        var biz = newProps.biz;
+
+        var rate = document.getElementById('biz-show-rating-' + biz.id);
+        var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
+        if (rate) {
+          rate.style.backgroundPosition = '0 -' + position + 'px';
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var biz = this.props.biz;
+
+      return _react2.default.createElement('div', { id: 'biz-show-rating-' + biz.id, className: 'biz-info-rating' });
+    }
+  }]);
+
+  return BizShowRating;
+}(_react2.default.Component);
+
+exports.default = BizShowRating;
 
 /***/ })
 /******/ ]);

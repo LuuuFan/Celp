@@ -3,6 +3,7 @@ import BizShowImg from '../img/biz_show_img';
 import ReviewsIndex from '../review/reviews_index';
 import { Route, Link } from 'react-router-dom';
 import Loading from '../loading';
+import BizShowRating from './biz_show_rating';
 
 class BizShow extends React.Component {
 
@@ -30,8 +31,7 @@ class BizShow extends React.Component {
                 <div className='biz-show-left-top'>
                   <h1>{biz.name}</h1>
                   <div className='biz-show-rating-number'>
-                    <div className='biz-info-rating'>
-                    </div>
+                    <BizShowRating biz={biz}/>
                     <p>{biz.total_reviews} reviews</p>
                   </div>
                   <div className='biz-info-price-tags'>
