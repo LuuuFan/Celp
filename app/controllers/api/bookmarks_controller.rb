@@ -4,7 +4,6 @@ class Api::BookmarksController < ApplicationController
     @bookmark = Bookmark.new(biz_id: params[:biz_id])
     @bookmark.user_id = current_user.id
     @biz = Biz.find_by(id: params[:biz_id])
-    debugger
     if @bookmark.save
       render 'api/biz/show', status: 200
     else
