@@ -6,7 +6,7 @@
 
 @bizes.each do |biz|
   json.set! biz.id do
-    json.extract! biz, :id, :name, :phone, :price, :img_url
+    json.extract! biz, :id, :name, :phone, :price, :img_url, :biz_rate
     json.set! :location do
       json.extract! biz, :address1, :address2, :address3, :city, :state, :zip_code
     end

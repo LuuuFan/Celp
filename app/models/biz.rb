@@ -20,6 +20,10 @@ class Biz < ApplicationRecord
     @display_address
   end
 
+  def biz_rate
+    self.reviews.average(:rate).to_f
+  end
+
   def set_img(url)
     self.img_url = url
     self.save

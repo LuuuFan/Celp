@@ -42,14 +42,25 @@ class BizShow extends React.Component {
                   </div>
                 </div>
                 <div className='biz-show-right-top'>
-                  <Link to={`/write_review/biz/${biz.id}`}>
-                    <button className='writeReview'>
-                      <p>
-                        <i className="fas fa-star"></i>
-                        Write a Review
-                      </p>
-                    </button>
-                  </Link>
+                  { biz.user_ids.includes(currentUser.id) ?
+                    <Link to={`/update_review/biz/${biz.id}`}>
+                      <button className='writeReview'>
+                        <p>
+                          <i className="fas fa-star"></i>
+                          Update your Review
+                        </p>
+                      </button>
+                    </Link>
+                  :
+                    <Link to={`/write_review/biz/${biz.id}`}>
+                      <button className='writeReview'>
+                        <p>
+                          <i className="fas fa-star"></i>
+                          Write a Review
+                        </p>
+                      </button>
+                    </Link>
+                  }
                   <ul>
                     <a href={`/#/biz/${biz.id}/addphoto`}><li><i className="fas fa-camera"></i>Add Photo</li></a>
                     <li><i className="fas fa-share-square"></i>Share</li>

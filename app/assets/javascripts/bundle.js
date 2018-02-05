@@ -26588,6 +26588,7 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId/photos', component: _biz_img_index_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/biz/:bizId/addphoto', component: _add_img_container2.default }),
+      _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/update_review/biz/:bizId', component: _write_review_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/write_review/biz/:bizId', component: _write_review_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
@@ -28068,7 +28069,20 @@ var BizShow = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'biz-show-right-top' },
-                _react2.default.createElement(
+                biz.user_ids.includes(currentUser.id) ? _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/update_review/biz/' + biz.id },
+                  _react2.default.createElement(
+                    'button',
+                    { className: 'writeReview' },
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-star' }),
+                      'Update your Review'
+                    )
+                  )
+                ) : _react2.default.createElement(
                   _reactRouterDom.Link,
                   { to: '/write_review/biz/' + biz.id },
                   _react2.default.createElement(
@@ -32224,6 +32238,10 @@ var _biz = __webpack_require__(8);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var review = { body: '', rate: 0 };
+  if (condition) {
+    review = state.entities.reviews[ownProps.match];
+  }
   return {
     biz: state.entities.biz[ownProps.match.params.bizId]
   };
@@ -32231,13 +32249,18 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
+    requestReview: function requestReview(reviewId) {
+      return dispatch((0, _review.requestReview)(reviewId));
+    },
+    updateReview: function updateReview(review) {
+      return dispatch((0, _review.updateReview)(review));
+    },
     createReview: function createReview(bizId, review) {
       return dispatch((0, _review.createReview)(bizId, review));
     },
     requestBiz: function requestBiz(bizId) {
       return dispatch((0, _biz.requestBiz)(bizId));
     }
-
   };
 };
 
@@ -32276,7 +32299,7 @@ var WriteReview = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (WriteReview.__proto__ || Object.getPrototypeOf(WriteReview)).call(this));
 
-    _this.state = { body: '', rate: 0 };
+    _this.state = _this.props.review;
     _this.handleInput = _this.handleInput.bind(_this);
     return _this;
   }
@@ -32294,8 +32317,21 @@ var WriteReview = function (_React$Component) {
       this.setState({ body: e.target.value });
     }
   }, {
+    key: 'handleChange',
+    value: function handleChange(e, rate) {
+      this.setState({ rate: rate });
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      this.props.createReview(this.props.match.params.bizId, this.state).then(this.props.history.push('/biz/' + this.props.match.params.bizId));
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var biz = this.props.biz;
 
       return _react2.default.createElement(
@@ -32312,7 +32348,9 @@ var WriteReview = function (_React$Component) {
         ) : "",
         _react2.default.createElement(
           'form',
-          null,
+          { onSubmit: function onSubmit(e) {
+              return _this2.handleSubmit(e);
+            } },
           _react2.default.createElement(
             'div',
             { className: 'write-review-input' },
@@ -32322,27 +32360,37 @@ var WriteReview = function (_React$Component) {
               _react2.default.createElement(
                 'li',
                 null,
-                _react2.default.createElement('input', { type: 'radio', id: 'rating-1', value: '1' })
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-1', onChange: function onChange(e) {
+                    return _this2.handleChange(e, 1);
+                  } })
               ),
               _react2.default.createElement(
                 'li',
                 null,
-                _react2.default.createElement('input', { type: 'radio', id: 'rating-2', value: '2' })
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-2', onChange: function onChange(e) {
+                    return _this2.handleChange(e, 2);
+                  } })
               ),
               _react2.default.createElement(
                 'li',
                 null,
-                _react2.default.createElement('input', { type: 'radio', id: 'rating-3', value: '3' })
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-3', onChange: function onChange(e) {
+                    return _this2.handleChange(e, 3);
+                  } })
               ),
               _react2.default.createElement(
                 'li',
                 null,
-                _react2.default.createElement('input', { type: 'radio', id: 'rating-4', value: '4' })
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-4', onChange: function onChange(e) {
+                    return _this2.handleChange(e, 4);
+                  } })
               ),
               _react2.default.createElement(
                 'li',
                 null,
-                _react2.default.createElement('input', { type: 'radio', id: 'rating-5', value: '5' })
+                _react2.default.createElement('input', { type: 'radio', id: 'rating-5', onChange: function onChange(e) {
+                    return _this2.handleChange(e, 5);
+                  } })
               )
             ),
             _react2.default.createElement('textarea', {
@@ -32350,7 +32398,8 @@ var WriteReview = function (_React$Component) {
               value: this.state.body,
               placeholder: 'Your review helps others learn about great local businesses. \nPlease don\'t review this business if you received a freebie for writing this review, or if you\'re connected in any way to the owner or employees.'
             })
-          )
+          ),
+          _react2.default.createElement('input', { type: 'submit' })
         )
       );
     }
