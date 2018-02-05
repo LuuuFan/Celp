@@ -25,7 +25,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.where(biz_id: params[:biz_id], user_id: current_user.id)[0]
+    @review = Review.where(biz_id: params[:biz_id], user_id: params[:review][:user_id])[0]
     if @review.update(review_params)
       render :show
     else

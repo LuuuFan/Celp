@@ -32396,6 +32396,7 @@ var WriteReview = function (_React$Component) {
       e.preventDefault();
       if (this.props.match.path == '/write_review/biz/:bizId') {
         this.props.createReview(this.props.match.params.bizId, this.state).then(this.props.history.push('/biz/' + this.props.match.params.bizId));
+      } else {
         this.props.updateReview(this.props.match.params.bizId, this.state).then(this.props.history.push('/biz/' + this.props.match.params.bizId));
       }
     }
