@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     createReview: (bizId, review) => dispatch(createReview(bizId, review)),
     updateReview: (bizId, review) => dispatch(updateReview(bizId, review)),
+    requestReview: (bizId) => dispatch(requestReview(bizId)),
     requestBiz: (bizId) => dispatch(requestBiz(bizId))
   });
 }

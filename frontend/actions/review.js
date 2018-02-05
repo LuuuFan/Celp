@@ -9,9 +9,10 @@ export const receiveAllReviews = (reviews) => ({
   reviews
 });
 
-export const receiveReview = (review) => ({
+export const receiveReview = (payload) => ({
   type: RECEIVE_REVIEW,
-  review
+  review: payload.review,
+  biz: payload.biz
 });
 
 export const removeReview = (payload) => ({
@@ -32,12 +33,12 @@ export const requestAllReviews = bizId => dispatch => APIUtilReview.requestAllRe
 
 export const requestReview = bizId => dispatch => APIUtilReview.requestReview(bizId)
   .then(
-    review => dispatch(receiveReview(review))
+    payload => dispatch(receiveReview(payload))
   );
 
 export const updateReview = (bizId, review) => dispatch => APIUtilReview.updateReview(bizId, review)
   .then(
-    review => dispatch(receiveReview(review))
+    payload => dispatch(receiveReview(payload))
   );
 
 export const deleteReview = reviewId => dispatch => APIUtilReview.deleteReview(reviewId)

@@ -9,11 +9,27 @@ class WriteReview extends React.Component{
   }
 
   componentDidMount(){
+    if (this.props.match.path == '/update_review/biz/:bizId'){
+      this.props.requestReview(this.props.match.params.bizId)
+    }
     if (!this.props.biz) {
       this.props.requestBiz(this.props.match.params.bizId);
     }
   }
 
+  componentWillReceiveProps(newProps){
+    if (newProps.review) {
+      this.setState(newProps.review);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    const background = document.getElementById('write-review-rating-background');
+    if (background) {
+      const position = 48 * this.state.rate - 24;
+      background.style.backgroundPosition = `0 -${position}px`;
+    }
+  }
 
   handleInput(e){
     // this.setState({body: e.target.value.replace(/\n\r?/g, '<br />')});
@@ -21,6 +37,7 @@ class WriteReview extends React.Component{
   }
 
   handleChange(e, rate){
+    // console.log(rate);
     this.setState({rate: rate});
   }
 
@@ -35,40 +52,61 @@ class WriteReview extends React.Component{
     }
   }
 
+  mouseOver(rate){
+    const background = document.getElementById('write-review-rating-background');
+    const position = 48 * rate - 24;
+    background.style.backgroundPosition = `0 -${position}px`;
+    this.setState({rate: rate});
+  }
+
   render(){
-    const {biz} = this.props;
+    const {biz, review} = this.props;
     return (
       <div className='write-review'>
         { biz ?
           <h1><a href={`/#/biz/${biz.id}`} target="_blank">{biz.name}</a></h1>
         : ""}
-        <form onSubmit={(e)=>this.handleSubmit(e)}>
-          <div className='write-review-input'>
-            <ul>
-              <li>
-                <input type='radio' name='rating' id='rating-1' checked={this.state.rate === 1} onChange={(e)=>this.handleChange(e, 1)}/>
-              </li>
-              <li>
-                <input type='radio' name='rating' id='rating-2' checked={this.state.rate === 2} onChange={(e)=>this.handleChange(e, 2)}/>
-              </li>
-              <li>
-                <input type='radio' name='rating' id='rating-3' checked={this.state.rate === 3} onChange={(e)=>this.handleChange(e, 3)}/>
-              </li>
-              <li>
-                <input type='radio' name='rating' id='rating-4' checked={this.state.rate === 4} onChange={(e)=>this.handleChange(e, 4)}/>
-              </li>
-              <li>
-                <input type='radio' name='rating' id='rating-5' checked={this.state.rate === 5} onChange={(e)=>this.handleChange(e, 5)}/>
-              </li>
-            </ul>
-            <textarea
-              onChange={this.handleInput}
-              value={this.state.body}
-              placeholder="Your review helps others learn about great local businesses. &#10;Please don't review this business if you received a freebie for writing this review, or if you're connected in any way to the owner or employees."
-            />
-          </div>
-          <input type='submit' />
-        </form>
+        { this.state ?
+          <form onSubmit={(e)=>this.handleSubmit(e)}>
+            <div className='write-review-input'>
+              <div id='write-review-rating-background'>
+                <ul id='write-review-rating'>
+                  <li>
+                    <label for='rate-1' onMouseOver={()=>this.mouseOver(1)}>
+                      <input id='rate-1' type='radio' name='rating' id='rating-1' checked={this.state.rate === 1} onChange={(e)=>this.handleChange(e, 1)}/>
+                    </label>
+                  </li>
+                  <li>
+                    <label for='rate-2' onMouseOver={()=>this.mouseOver(2)}>
+                      <input id='rate-2' type='radio' name='rating' id='rating-2' checked={this.state.rate === 2} onChange={(e)=>this.handleChange(e, 2)}/>
+                    </label>
+                  </li>
+                  <li>
+                    <label for='rate-3' onMouseOver={()=>this.mouseOver(3)}>
+                      <input id='rate-3' type='radio' name='rating' id='rating-3' checked={this.state.rate === 3} onChange={(e)=>this.handleChange(e, 3)}/>
+                    </label>
+                  </li>
+                  <li>
+                    <label for='rate-4' onMouseOver={()=>this.mouseOver(4)}>
+                      <input id='rate-4' type='radio' name='rating' id='rating-4' checked={this.state.rate === 4} onChange={(e)=>this.handleChange(e, 4)}/>
+                    </label>
+                  </li>
+                  <li>
+                    <label for='rate-5' onMouseOver={()=>this.mouseOver(5)}>
+                      <input id='rate-5' type='radio' name='rating' id='rating-5' checked={this.state.rate === 5} onChange={(e)=>this.handleChange(e, 5)}/>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <textarea
+                onChange={this.handleInput}
+                value={this.state.body}
+                placeholder="Your review helps others learn about great local businesses. &#10;Please don't review this business if you received a freebie for writing this review, or if you're connected in any way to the owner or employees."
+                />
+            </div>
+            <input type='submit' value='Post Review'/>
+          </form>
+        :""}
       </div>
     );
   }

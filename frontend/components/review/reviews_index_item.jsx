@@ -1,43 +1,22 @@
 import React from 'react';
 // import { browserHistory } from 'react-router';
 // import { Redirect } from 'react-router-dom';
-
+import ReviewsIndexItemRating from './reviews_index_item_rating';
 
 class ReviewsIndexItem extends React.Component {
 
-  componentDidMount(){
-    const {review} = this.props;
-    const rate = document.getElementById(`review-item-rate-${review.id}`);
-    const position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
-    if (rate) {
-      rate.style.backgroundPosition = `0 -${position}px`;
-    }
-  }
 
-  componentWillReceiveProps(newProps){
-    if (this.props.review.rate !== newProps.review.rate) {
-      const {review} = newProps;
-      const rate = document.getElementById(`review-item-rate-${review.id}`);
-      const position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
-      if (rate) {
-        rate.style.backgroundPosition = `0 -${position}px`;
-      }
-    }
-  }
 
   handleClick(e, id){
     e.preventDefault();
     this.props.deleteReview(id);
-    // .then(<Redirect to={`/biz/${this.props.bizId}`} />)
-    // .then(browserHistory.push(`/biz/${this.props.bizId}`));
-    // .then(this.props.history.push(`/biz/${this.props.match.params.bizId}`));
   }
 
   render(){
     const {review, currentUser, deleteReview, users} = this.props;
     return (
       <div>
-      {review && users ?
+      {review && users[review.user_id] ?
         <div className='reviews-index-item'>
           <div className='review-user'>
             <div className='review-user-avatar'>
@@ -56,8 +35,7 @@ class ReviewsIndexItem extends React.Component {
           </div>
           <div className='review-info'>
             <div className='review-info-rate-time'>
-              <div id={`review-item-rate-${review.id}`} className='biz-review-rating'>
-              </div>
+              <ReviewsIndexItemRating review={review}/>
               <p>{review.updated_at.slice(0, 10)}</p>
             </div>
             <div className='review-info-body group'>

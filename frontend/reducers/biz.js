@@ -1,5 +1,5 @@
 import {RECEIVE_ALL_BIZ, RECEIVE_BIZ} from '../actions/biz';
-import {REMOVE_REVIEW} from '../actions/review';
+import {REMOVE_REVIEW, RECEIVE_REVIEW} from '../actions/review';
 
 
 const bizReducer = (state={}, action) => {
@@ -12,6 +12,10 @@ const bizReducer = (state={}, action) => {
       newState = Object.assign({}, state);
       newState[action.payload.biz.id] = action.payload.biz;
       return Object.assign({}, state, newState);
+    case RECEIVE_REVIEW:
+      newState = Object.assign({}, state);
+      newState[action.biz.id] = action.biz;
+      return newState;
     case REMOVE_REVIEW:
       newState = Object.assign({}, state);
       newState[action.biz.id] = action.biz;

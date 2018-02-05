@@ -1128,10 +1128,11 @@ var receiveAllReviews = exports.receiveAllReviews = function receiveAllReviews(r
   };
 };
 
-var receiveReview = exports.receiveReview = function receiveReview(review) {
+var receiveReview = exports.receiveReview = function receiveReview(payload) {
   return {
     type: RECEIVE_REVIEW,
-    review: review
+    review: payload.review,
+    biz: payload.biz
   };
 };
 
@@ -1161,16 +1162,16 @@ var requestAllReviews = exports.requestAllReviews = function requestAllReviews(b
 
 var requestReview = exports.requestReview = function requestReview(bizId) {
   return function (dispatch) {
-    return APIUtilReview.requestReview(bizId).then(function (review) {
-      return dispatch(receiveReview(review));
+    return APIUtilReview.requestReview(bizId).then(function (payload) {
+      return dispatch(receiveReview(payload));
     });
   };
 };
 
 var updateReview = exports.updateReview = function updateReview(bizId, review) {
   return function (dispatch) {
-    return APIUtilReview.updateReview(bizId, review).then(function (review) {
-      return dispatch(receiveReview(review));
+    return APIUtilReview.updateReview(bizId, review).then(function (payload) {
+      return dispatch(receiveReview(payload));
     });
   };
 };
@@ -21977,6 +21978,10 @@ var bizReducer = function bizReducer() {
       newState = Object.assign({}, state);
       newState[action.payload.biz.id] = action.payload.biz;
       return Object.assign({}, state, newState);
+    case _review.RECEIVE_REVIEW:
+      newState = Object.assign({}, state);
+      newState[action.biz.id] = action.biz;
+      return newState;
     case _review.REMOVE_REVIEW:
       newState = Object.assign({}, state);
       newState[action.biz.id] = action.biz;
@@ -22039,7 +22044,7 @@ var requestAllReviews = exports.requestAllReviews = function requestAllReviews(b
 
 var requestReview = exports.requestReview = function requestReview(bizId) {
   return $.ajax({
-    url: 'api/biz/' + biz_id + '/review',
+    url: 'api/biz/' + bizId + '/review',
     method: 'GET'
   });
 };
@@ -28094,11 +28099,15 @@ var BizShow = function (_React$Component) {
                   'div',
                   { className: 'biz-show-rating-number' },
                   _react2.default.createElement(_biz_show_rating2.default, { biz: biz }),
-                  _react2.default.createElement(
+                  biz.total_reviews > 1 ? _react2.default.createElement(
                     'p',
                     null,
                     biz.total_reviews,
                     ' reviews'
+                  ) : _react2.default.createElement(
+                    'p',
+                    null,
+                    biz.total_reviews === 1 ? "1 review" : '0 review'
                   )
                 ),
                 _react2.default.createElement(
@@ -28591,6 +28600,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reviews_index_item_rating = __webpack_require__(175);
+
+var _reviews_index_item_rating2 = _interopRequireDefault(_reviews_index_item_rating);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28598,7 +28611,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 // import { browserHistory } from 'react-router';
 // import { Redirect } from 'react-router-dom';
 
@@ -28613,37 +28625,10 @@ var ReviewsIndexItem = function (_React$Component) {
   }
 
   _createClass(ReviewsIndexItem, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var review = this.props.review;
-
-      var rate = document.getElementById('review-item-rate-' + review.id);
-      var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
-      if (rate) {
-        rate.style.backgroundPosition = '0 -' + position + 'px';
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps) {
-      if (this.props.review.rate !== newProps.review.rate) {
-        var review = newProps.review;
-
-        var rate = document.getElementById('review-item-rate-' + review.id);
-        var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
-        if (rate) {
-          rate.style.backgroundPosition = '0 -' + position + 'px';
-        }
-      }
-    }
-  }, {
     key: 'handleClick',
     value: function handleClick(e, id) {
       e.preventDefault();
       this.props.deleteReview(id);
-      // .then(<Redirect to={`/biz/${this.props.bizId}`} />)
-      // .then(browserHistory.push(`/biz/${this.props.bizId}`));
-      // .then(this.props.history.push(`/biz/${this.props.match.params.bizId}`));
     }
   }, {
     key: 'render',
@@ -28659,7 +28644,7 @@ var ReviewsIndexItem = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        review && users ? _react2.default.createElement(
+        review && users[review.user_id] ? _react2.default.createElement(
           'div',
           { className: 'reviews-index-item' },
           _react2.default.createElement(
@@ -28718,7 +28703,7 @@ var ReviewsIndexItem = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'review-info-rate-time' },
-              _react2.default.createElement('div', { id: 'review-item-rate-' + review.id, className: 'biz-review-rating' }),
+              _react2.default.createElement(_reviews_index_item_rating2.default, { review: review }),
               _react2.default.createElement(
                 'p',
                 null,
@@ -32358,6 +32343,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     updateReview: function updateReview(bizId, review) {
       return dispatch((0, _review.updateReview)(bizId, review));
     },
+    requestReview: function requestReview(bizId) {
+      return dispatch((0, _review.requestReview)(bizId));
+    },
     requestBiz: function requestBiz(bizId) {
       return dispatch((0, _biz.requestBiz)(bizId));
     }
@@ -32385,6 +32373,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -32407,8 +32397,27 @@ var WriteReview = function (_React$Component) {
   _createClass(WriteReview, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      if (this.props.match.path == '/update_review/biz/:bizId') {
+        this.props.requestReview(this.props.match.params.bizId);
+      }
       if (!this.props.biz) {
         this.props.requestBiz(this.props.match.params.bizId);
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (newProps.review) {
+        this.setState(newProps.review);
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      var background = document.getElementById('write-review-rating-background');
+      if (background) {
+        var position = 48 * this.state.rate - 24;
+        background.style.backgroundPosition = '0 -' + position + 'px';
       }
     }
   }, {
@@ -32420,6 +32429,7 @@ var WriteReview = function (_React$Component) {
   }, {
     key: 'handleChange',
     value: function handleChange(e, rate) {
+      // console.log(rate);
       this.setState({ rate: rate });
     }
   }, {
@@ -32433,11 +32443,26 @@ var WriteReview = function (_React$Component) {
       }
     }
   }, {
+    key: 'mouseOver',
+    value: function mouseOver(rate) {
+      var background = document.getElementById('write-review-rating-background');
+      var position = 48 * rate - 24;
+      background.style.backgroundPosition = '0 -' + position + 'px';
+      this.setState({ rate: rate });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this2 = this,
+          _React$createElement,
+          _React$createElement2,
+          _React$createElement3,
+          _React$createElement4,
+          _React$createElement5;
 
-      var biz = this.props.biz;
+      var _props = this.props,
+          biz = _props.biz,
+          review = _props.review;
 
       return _react2.default.createElement(
         'div',
@@ -32451,7 +32476,7 @@ var WriteReview = function (_React$Component) {
             biz.name
           )
         ) : "",
-        _react2.default.createElement(
+        this.state ? _react2.default.createElement(
           'form',
           { onSubmit: function onSubmit(e) {
               return _this2.handleSubmit(e);
@@ -32460,42 +32485,76 @@ var WriteReview = function (_React$Component) {
             'div',
             { className: 'write-review-input' },
             _react2.default.createElement(
-              'ul',
-              null,
+              'div',
+              { id: 'write-review-rating-background' },
               _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'rating', id: 'rating-1', checked: this.state.rate === 1, onChange: function onChange(e) {
-                    return _this2.handleChange(e, 1);
-                  } })
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'rating', id: 'rating-2', checked: this.state.rate === 2, onChange: function onChange(e) {
-                    return _this2.handleChange(e, 2);
-                  } })
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'rating', id: 'rating-3', checked: this.state.rate === 3, onChange: function onChange(e) {
-                    return _this2.handleChange(e, 3);
-                  } })
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'rating', id: 'rating-4', checked: this.state.rate === 4, onChange: function onChange(e) {
-                    return _this2.handleChange(e, 4);
-                  } })
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'rating', id: 'rating-5', checked: this.state.rate === 5, onChange: function onChange(e) {
-                    return _this2.handleChange(e, 5);
-                  } })
+                'ul',
+                { id: 'write-review-rating' },
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { 'for': 'rate-1', onMouseOver: function onMouseOver() {
+                        return _this2.mouseOver(1);
+                      } },
+                    _react2.default.createElement('input', (_React$createElement = { id: 'rate-1', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement, 'id', 'rating-1'), _defineProperty(_React$createElement, 'checked', this.state.rate === 1), _defineProperty(_React$createElement, 'onChange', function onChange(e) {
+                      return _this2.handleChange(e, 1);
+                    }), _React$createElement))
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { 'for': 'rate-2', onMouseOver: function onMouseOver() {
+                        return _this2.mouseOver(2);
+                      } },
+                    _react2.default.createElement('input', (_React$createElement2 = { id: 'rate-2', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement2, 'id', 'rating-2'), _defineProperty(_React$createElement2, 'checked', this.state.rate === 2), _defineProperty(_React$createElement2, 'onChange', function onChange(e) {
+                      return _this2.handleChange(e, 2);
+                    }), _React$createElement2))
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { 'for': 'rate-3', onMouseOver: function onMouseOver() {
+                        return _this2.mouseOver(3);
+                      } },
+                    _react2.default.createElement('input', (_React$createElement3 = { id: 'rate-3', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement3, 'id', 'rating-3'), _defineProperty(_React$createElement3, 'checked', this.state.rate === 3), _defineProperty(_React$createElement3, 'onChange', function onChange(e) {
+                      return _this2.handleChange(e, 3);
+                    }), _React$createElement3))
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { 'for': 'rate-4', onMouseOver: function onMouseOver() {
+                        return _this2.mouseOver(4);
+                      } },
+                    _react2.default.createElement('input', (_React$createElement4 = { id: 'rate-4', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement4, 'id', 'rating-4'), _defineProperty(_React$createElement4, 'checked', this.state.rate === 4), _defineProperty(_React$createElement4, 'onChange', function onChange(e) {
+                      return _this2.handleChange(e, 4);
+                    }), _React$createElement4))
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'label',
+                    { 'for': 'rate-5', onMouseOver: function onMouseOver() {
+                        return _this2.mouseOver(5);
+                      } },
+                    _react2.default.createElement('input', (_React$createElement5 = { id: 'rate-5', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement5, 'id', 'rating-5'), _defineProperty(_React$createElement5, 'checked', this.state.rate === 5), _defineProperty(_React$createElement5, 'onChange', function onChange(e) {
+                      return _this2.handleChange(e, 5);
+                    }), _React$createElement5))
+                  )
+                )
               )
             ),
             _react2.default.createElement('textarea', {
@@ -32504,8 +32563,8 @@ var WriteReview = function (_React$Component) {
               placeholder: 'Your review helps others learn about great local businesses. \nPlease don\'t review this business if you received a freebie for writing this review, or if you\'re connected in any way to the owner or employees.'
             })
           ),
-          _react2.default.createElement('input', { type: 'submit' })
-        )
+          _react2.default.createElement('input', { type: 'submit', value: 'Post Review' })
+        ) : ""
       );
     }
   }]);
@@ -32658,6 +32717,79 @@ var BizShowRating = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = BizShowRating;
+
+/***/ }),
+/* 175 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ReviewsIndexItemRating = function (_React$Component) {
+  _inherits(ReviewsIndexItemRating, _React$Component);
+
+  function ReviewsIndexItemRating() {
+    _classCallCheck(this, ReviewsIndexItemRating);
+
+    return _possibleConstructorReturn(this, (ReviewsIndexItemRating.__proto__ || Object.getPrototypeOf(ReviewsIndexItemRating)).apply(this, arguments));
+  }
+
+  _createClass(ReviewsIndexItemRating, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var review = this.props.review;
+
+      var rate = document.getElementById('review-item-rate-' + review.id);
+      var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
+      if (rate) {
+        rate.style.backgroundPosition = '0 -' + position + 'px';
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.review.rate !== newProps.review.rate) {
+        var review = newProps.review;
+
+        var rate = document.getElementById('review-item-rate-' + review.id);
+        var position = review.rate === 0 ? 240 : 222 + 36 * review.rate;
+        if (rate) {
+          rate.style.backgroundPosition = '0 -' + position + 'px';
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var review = this.props.review;
+
+      return _react2.default.createElement('div', { id: 'review-item-rate-' + review.id,
+        className: 'biz-review-rating' });
+    }
+  }]);
+
+  return ReviewsIndexItemRating;
+}(_react2.default.Component);
+
+exports.default = ReviewsIndexItemRating;
 
 /***/ })
 /******/ ]);
