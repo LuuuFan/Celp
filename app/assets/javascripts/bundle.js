@@ -1115,6 +1115,8 @@ var _review_util = __webpack_require__(90);
 
 var APIUtilReview = _interopRequireWildcard(_review_util);
 
+var _session = __webpack_require__(12);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var RECEIVE_ALL_REVIEWS = exports.RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
@@ -1148,6 +1150,8 @@ var createReview = exports.createReview = function createReview(bizId, review) {
   return function (dispatch) {
     return APIUtilReview.createReview(bizId, review).then(function (review) {
       return dispatch(receiveReview(review));
+    }, function (errors) {
+      return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
   };
 };
@@ -1172,6 +1176,8 @@ var updateReview = exports.updateReview = function updateReview(bizId, review) {
   return function (dispatch) {
     return APIUtilReview.updateReview(bizId, review).then(function (payload) {
       return dispatch(receiveReview(payload));
+    }, function (errors) {
+      return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
   };
 };
@@ -1180,6 +1186,8 @@ var deleteReview = exports.deleteReview = function deleteReview(reviewId) {
   return function (dispatch) {
     return APIUtilReview.deleteReview(reviewId).then(function (payload) {
       return dispatch(removeReview(payload));
+    }, function (errors) {
+      return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
   };
 };
@@ -32581,6 +32589,8 @@ var _review = __webpack_require__(17);
 
 var _biz = __webpack_require__(7);
 
+var _session = __webpack_require__(12);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
@@ -32592,7 +32602,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   }
   return {
     biz: state.entities.biz[ownProps.match.params.bizId],
-    review: review
+    review: review,
+    errors: state.errors
   };
 };
 
@@ -32609,6 +32620,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     },
     requestBiz: function requestBiz(bizId) {
       return dispatch((0, _biz.requestBiz)(bizId));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch((0, _session.clearErrors)());
     }
   };
 };
@@ -32664,6 +32678,7 @@ var WriteReview = function (_React$Component) {
       if (!this.props.biz) {
         this.props.requestBiz(this.props.match.params.bizId);
       }
+      this.props.clearErrors();
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -32671,6 +32686,11 @@ var WriteReview = function (_React$Component) {
       if (newProps.review) {
         this.setState(newProps.review);
       }
+    }
+  }, {
+    key: 'handleClose',
+    value: function handleClose() {
+      this.props.clearErrors();
     }
   }, {
     key: 'componentDidUpdate',
@@ -32695,11 +32715,17 @@ var WriteReview = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
       if (this.props.match.path == '/write_review/biz/:bizId') {
-        this.props.createReview(this.props.match.params.bizId, this.state).then(this.props.history.push('/biz/' + this.props.match.params.bizId));
+        this.props.createReview(this.props.match.params.bizId, this.state).then(function () {
+          return _this2.props.history.push('/biz/' + _this2.props.match.params.bizId);
+        });
       } else {
-        this.props.updateReview(this.props.match.params.bizId, this.state).then(this.props.history.push('/biz/' + this.props.match.params.bizId));
+        this.props.updateReview(this.props.match.params.bizId, this.state).then(function () {
+          return _this2.props.history.push('/biz/' + _this2.props.match.params.bizId);
+        });
       }
     }
   }, {
@@ -32713,7 +32739,7 @@ var WriteReview = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this,
+      var _this3 = this,
           _React$createElement,
           _React$createElement2,
           _React$createElement3,
@@ -32722,11 +32748,28 @@ var WriteReview = function (_React$Component) {
 
       var _props = this.props,
           biz = _props.biz,
-          review = _props.review;
+          review = _props.review,
+          errors = _props.errors;
 
       return _react2.default.createElement(
         'div',
         { className: 'write-review' },
+        errors.length ? _react2.default.createElement(
+          'div',
+          { className: 'session-error' },
+          _react2.default.createElement(
+            'p',
+            null,
+            errors[0]
+          ),
+          _react2.default.createElement(
+            'div',
+            { onClick: function onClick() {
+                return _this3.handleClose();
+              }, className: 'errors-closeBtn' },
+            '\xD7'
+          )
+        ) : "",
         biz ? _react2.default.createElement(
           'h1',
           null,
@@ -32739,7 +32782,7 @@ var WriteReview = function (_React$Component) {
         this.state ? _react2.default.createElement(
           'form',
           { onSubmit: function onSubmit(e) {
-              return _this2.handleSubmit(e);
+              return _this3.handleSubmit(e);
             } },
           _react2.default.createElement(
             'div',
@@ -32756,10 +32799,10 @@ var WriteReview = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     { htmlFor: 'rate-1', onMouseOver: function onMouseOver() {
-                        return _this2.mouseOver(1);
+                        return _this3.mouseOver(1);
                       } },
                     _react2.default.createElement('input', (_React$createElement = { id: 'rate-1', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement, 'id', 'rating-1'), _defineProperty(_React$createElement, 'checked', this.state.rate === 1), _defineProperty(_React$createElement, 'onChange', function onChange(e) {
-                      return _this2.handleChange(e, 1);
+                      return _this3.handleChange(e, 1);
                     }), _React$createElement))
                   )
                 ),
@@ -32769,10 +32812,10 @@ var WriteReview = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     { htmlFor: 'rate-2', onMouseOver: function onMouseOver() {
-                        return _this2.mouseOver(2);
+                        return _this3.mouseOver(2);
                       } },
                     _react2.default.createElement('input', (_React$createElement2 = { id: 'rate-2', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement2, 'id', 'rating-2'), _defineProperty(_React$createElement2, 'checked', this.state.rate === 2), _defineProperty(_React$createElement2, 'onChange', function onChange(e) {
-                      return _this2.handleChange(e, 2);
+                      return _this3.handleChange(e, 2);
                     }), _React$createElement2))
                   )
                 ),
@@ -32782,10 +32825,10 @@ var WriteReview = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     { htmlFor: 'rate-3', onMouseOver: function onMouseOver() {
-                        return _this2.mouseOver(3);
+                        return _this3.mouseOver(3);
                       } },
                     _react2.default.createElement('input', (_React$createElement3 = { id: 'rate-3', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement3, 'id', 'rating-3'), _defineProperty(_React$createElement3, 'checked', this.state.rate === 3), _defineProperty(_React$createElement3, 'onChange', function onChange(e) {
-                      return _this2.handleChange(e, 3);
+                      return _this3.handleChange(e, 3);
                     }), _React$createElement3))
                   )
                 ),
@@ -32795,10 +32838,10 @@ var WriteReview = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     { htmlFor: 'rate-4', onMouseOver: function onMouseOver() {
-                        return _this2.mouseOver(4);
+                        return _this3.mouseOver(4);
                       } },
                     _react2.default.createElement('input', (_React$createElement4 = { id: 'rate-4', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement4, 'id', 'rating-4'), _defineProperty(_React$createElement4, 'checked', this.state.rate === 4), _defineProperty(_React$createElement4, 'onChange', function onChange(e) {
-                      return _this2.handleChange(e, 4);
+                      return _this3.handleChange(e, 4);
                     }), _React$createElement4))
                   )
                 ),
@@ -32808,10 +32851,10 @@ var WriteReview = function (_React$Component) {
                   _react2.default.createElement(
                     'label',
                     { htmlFor: 'rate-5', onMouseOver: function onMouseOver() {
-                        return _this2.mouseOver(5);
+                        return _this3.mouseOver(5);
                       } },
                     _react2.default.createElement('input', (_React$createElement5 = { id: 'rate-5', type: 'radio', name: 'rating' }, _defineProperty(_React$createElement5, 'id', 'rating-5'), _defineProperty(_React$createElement5, 'checked', this.state.rate === 5), _defineProperty(_React$createElement5, 'onChange', function onChange(e) {
-                      return _this2.handleChange(e, 5);
+                      return _this3.handleChange(e, 5);
                     }), _React$createElement5))
                   )
                 )

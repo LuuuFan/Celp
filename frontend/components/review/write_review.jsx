@@ -15,12 +15,17 @@ class WriteReview extends React.Component{
     if (!this.props.biz) {
       this.props.requestBiz(this.props.match.params.bizId);
     }
+    this.props.clearErrors();
   }
 
   componentWillReceiveProps(newProps){
     if (newProps.review) {
       this.setState(newProps.review);
     }
+  }
+
+  handleClose(){
+    this.props.clearErrors();
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -44,10 +49,10 @@ class WriteReview extends React.Component{
     e.preventDefault();
     if (this.props.match.path == '/write_review/biz/:bizId') {
       this.props.createReview(this.props.match.params.bizId, this.state)
-      .then(this.props.history.push(`/biz/${this.props.match.params.bizId}`));
+      .then(()=>this.props.history.push(`/biz/${this.props.match.params.bizId}`));
     } else {
       this.props.updateReview(this.props.match.params.bizId, this.state)
-      .then(this.props.history.push(`/biz/${this.props.match.params.bizId}`));
+      .then(()=>this.props.history.push(`/biz/${this.props.match.params.bizId}`));
     }
   }
 
@@ -59,9 +64,17 @@ class WriteReview extends React.Component{
   }
 
   render(){
-    const {biz, review} = this.props;
+    const {biz, review, errors} = this.props;
     return (
       <div className='write-review'>
+        {errors.length ? (
+          <div className='session-error'>
+            <p>{errors[0]}</p>
+            <div onClick={()=>this.handleClose()} className='errors-closeBtn'>&times;</div>
+          </div>
+        ) : (
+          ""
+        )}
         { biz ?
           <h1><a href={`/#/biz/${biz.id}`} target="_blank">{biz.name}</a></h1>
         : ""}

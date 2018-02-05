@@ -1,4 +1,5 @@
 import * as APIUtilReview from '../util/review_util';
+import {receiveErrors} from './session';
 
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
@@ -23,7 +24,8 @@ export const removeReview = (payload) => ({
 
 export const createReview = (bizId, review) => dispatch => APIUtilReview.createReview(bizId, review)
   .then(
-    review => dispatch(receiveReview(review))
+    review => dispatch(receiveReview(review)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
   );
 
 export const requestAllReviews = bizId => dispatch => APIUtilReview.requestAllReviews(bizId)
@@ -38,10 +40,12 @@ export const requestReview = bizId => dispatch => APIUtilReview.requestReview(bi
 
 export const updateReview = (bizId, review) => dispatch => APIUtilReview.updateReview(bizId, review)
   .then(
-    payload => dispatch(receiveReview(payload))
+    payload => dispatch(receiveReview(payload)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
   );
 
 export const deleteReview = reviewId => dispatch => APIUtilReview.deleteReview(reviewId)
   .then(
-    payload => dispatch(removeReview(payload))
+    payload => dispatch(removeReview(payload)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
   );

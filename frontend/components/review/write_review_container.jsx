@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import WriteReview from './write_review';
 import {createReview, updateReview, requestReview} from '../../actions/review';
 import {requestBiz} from '../../actions/biz';
+import {clearErrors} from '../../actions/session';
 
 const mapStateToProps = (state, ownProps) => {
   let review = {body: '', rate: 0};
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
   }
   return ({
     biz: state.entities.biz[ownProps.match.params.bizId],
-    review: review
+    review: review,
+    errors: state.errors
   });
 };
 
@@ -20,7 +22,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     createReview: (bizId, review) => dispatch(createReview(bizId, review)),
     updateReview: (bizId, review) => dispatch(updateReview(bizId, review)),
     requestReview: (bizId) => dispatch(requestReview(bizId)),
-    requestBiz: (bizId) => dispatch(requestBiz(bizId))
+    requestBiz: (bizId) => dispatch(requestBiz(bizId)),
+    clearErrors: () => dispatch(clearErrors())
   });
 }
 
