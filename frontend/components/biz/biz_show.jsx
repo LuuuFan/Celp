@@ -122,12 +122,12 @@ class BizShow extends React.Component {
         </div>
         <div>
           {biz && reviews ?
-            <ReviewsIndex
-              reviews={reviews}
-              users={users}
-              currentUser={currentUser}
-              deleteReview={deleteReview}
-              biz={biz} />
+              <ReviewsIndex
+                reviews={reviews}
+                users={users}
+                currentUser={currentUser}
+                deleteReview={deleteReview}
+                biz={biz} />
           : ""}
         </div>
       </div>

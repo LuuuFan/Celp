@@ -143,3 +143,8 @@
 #   user_id: 5,
 #   body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
 # )
+
+
+Biz.all.pluck(:id).each do |biz_id|
+
+end

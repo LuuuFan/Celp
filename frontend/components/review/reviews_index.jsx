@@ -2,6 +2,7 @@ import React from 'react';
 import Loading from '../loading';
 import ReviewsIndexItem from './reviews_index_item';
 import {withRouter} from 'react-router-dom';
+import BizShowMoreInfo from '../biz/biz_show_more_info';
 
 
 class ReviewsIndex extends React.Component {
@@ -61,6 +62,7 @@ class ReviewsIndex extends React.Component {
             </div>
           }
         </div>
+        <BizShowMoreInfo biz={biz}/>
       </div>
     );
   }

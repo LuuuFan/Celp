@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180205171321) do
+ActiveRecord::Schema.define(version: 20180206001348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(version: 20180205171321) do
     t.datetime "updated_at", null: false
     t.string "website"
     t.string "img_url"
+    t.boolean "takes_reservations", default: true
+    t.boolean "delivery", default: false
+    t.boolean "take_out", default: true
+    t.boolean "credit_cards", default: true
+    t.boolean "apple_pay", default: true
+    t.boolean "android_pay", default: true
+    t.boolean "bitcoin", default: false
+    t.string "parking", default: "Street"
+    t.boolean "bike_parking", default: true
+    t.boolean "wheelchair", default: true
+    t.string "noise_level", default: "Quiet"
+    t.string "alcohol", default: "Full Bar"
+    t.boolean "outdoor_seating", default: true
+    t.boolean "wifi", default: true
+    t.boolean "has_tv", default: true
+    t.boolean "dogs_allowed", default: true
+    t.boolean "cats_allowed", default: true
+    t.boolean "waiter_service", default: true
+    t.boolean "caters", default: true
+    t.boolean "gender_neutral_restrooms", default: true
     t.index ["name"], name: "index_bizs_on_name"
   end
 
@@ -42,6 +62,16 @@ ActiveRecord::Schema.define(version: 20180205171321) do
     t.index ["biz_id"], name: "index_bookmarks_on_biz_id"
     t.index ["user_id", "biz_id"], name: "index_bookmarks_on_user_id_and_biz_id", unique: true
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "hours", force: :cascade do |t|
+    t.integer "biz_id", null: false
+    t.integer "day", null: false
+    t.string "start", null: false
+    t.string "end", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["biz_id"], name: "index_hours_on_biz_id"
   end
 
   create_table "imgs", force: :cascade do |t|

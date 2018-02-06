@@ -28565,6 +28565,10 @@ var _reviews_index_item2 = _interopRequireDefault(_reviews_index_item);
 
 var _reactRouterDom = __webpack_require__(5);
 
+var _biz_show_more_info = __webpack_require__(180);
+
+var _biz_show_more_info2 = _interopRequireDefault(_biz_show_more_info);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28692,7 +28696,8 @@ var ReviewsIndex = function (_React$Component) {
               'There is no review for this business, be the first one to review it!'
             )
           )
-        )
+        ),
+        _react2.default.createElement(_biz_show_more_info2.default, { biz: biz })
       );
     }
   }]);
@@ -33073,6 +33078,443 @@ var deleteBookmark = exports.deleteBookmark = function deleteBookmark(bizId) {
     method: 'DELETE'
   });
 };
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
+  var biz = _ref.biz;
+  return _react2.default.createElement(
+    'div',
+    { className: 'biz-show-more-info' },
+    _react2.default.createElement(
+      'div',
+      { className: 'today-open-info' },
+      _react2.default.createElement('i', { className: 'far fa-clock' }),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Today 7:00 am - 10:00 pm'
+      )
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Hours'
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      'More business info'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'more-biz-info' },
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Takes Reservations'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.takes_reservations ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Delivery'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.delivery ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Take-out'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.take_out ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Accepts Credit Cards'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.credit_cards ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Accepts Apple Pay'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.apple_pay ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Accepts Android Pay'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.android_pay ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Accepts Bitcoin'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.bitcoin ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Parking'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.parking
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Bike Parking'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.bike_parking ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Wheelchair Accessible'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.wheelchair ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Noise Level'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.noise_level
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Alcohol'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.alcohol
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Outdoor Seating'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.outdoor_seating ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Wi-Fi'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.wifi ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Has TV'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.has_tv ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Dogs Allowed'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.dogs_allowed ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Cats Allowed'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.cats_allowed ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Waiter Service'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.waiter_service ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Caters'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.caters ? "Yes" : "No"
+        )
+      ),
+      _react2.default.createElement(
+        'dl',
+        null,
+        _react2.default.createElement(
+          'dt',
+          null,
+          'Gender Neutral Restrooms'
+        ),
+        _react2.default.createElement(
+          'dd',
+          null,
+          biz.gender_neutral_restrooms ? "Yes" : "No"
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Other Restaurants Nearby'
+    ),
+    _react2.default.createElement(
+      'ul',
+      null,
+      _react2.default.createElement(
+        'li',
+        null,
+        'Find more Restaurants nearby'
+      )
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Browse nearby'
+    ),
+    _react2.default.createElement(
+      'ul',
+      null,
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement('i', { className: 'fas fa-utensils' }),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Restaurants'
+        )
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Nightlife'
+        )
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement('i', { className: 'fas fa-shopping-bag' }),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Shopping'
+        )
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement('i', { className: 'fas fa-ellipsis-h' }),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Show all'
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Dining in Yelp'
+    ),
+    _react2.default.createElement(
+      'ul',
+      null,
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement('i', { className: 'fas fa-search' }),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Search for reservations'
+        )
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement('i', { className: 'fas fa-calendar-alt' }),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Book a Table in Yelp'
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Near Me'
+    ),
+    _react2.default.createElement(
+      'ul',
+      null,
+      _react2.default.createElement(
+        'li',
+        null,
+        'Restaurants Near Me'
+      )
+    )
+  );
+};
+
+exports.default = BizShowMoreInfo;
 
 /***/ })
 /******/ ]);
