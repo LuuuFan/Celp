@@ -33,6 +33,7 @@ gem 'rails_12factor'
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails'
 gem 'pry-rails'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
