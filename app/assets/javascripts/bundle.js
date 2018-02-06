@@ -33152,6 +33152,14 @@ var BizImgIndexItem = function (_React$Component) {
       });
     }
   }, {
+    key: 'escImg',
+    value: function escImg(e) {
+      Debugger;
+      if (e.keyCode == 27) {
+        this.closeShowImg(e);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -33259,7 +33267,9 @@ var BizImgIndexItem = function (_React$Component) {
               ) : ""
             )
           ),
-          _react2.default.createElement('div', { onClick: function onClick(e) {
+          _react2.default.createElement('div', { onKeyPress: function onKeyPress(e) {
+              return _this2.escImg(e);
+            }, onClick: function onClick(e) {
               return _this2.closeShowImg(e);
             }, className: 'modal-screen' })
         )

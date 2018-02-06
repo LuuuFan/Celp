@@ -30,6 +30,13 @@ class BizImgIndexItem extends React.Component{
       );
   }
 
+  escImg(e){
+    Debugger
+    if (e.keyCode == 27) {
+      this.closeShowImg(e);
+    }
+  }
+
   render(){
     const {img, cover, bizId, currentUser} = this.props;
     return (
@@ -71,7 +78,7 @@ class BizImgIndexItem extends React.Component{
               : ""}
             </div>
           </div>
-          <div onClick={(e)=>this.closeShowImg(e)} className='modal-screen'>
+          <div onKeyPress={(e)=>this.escImg(e)} onClick={(e)=>this.closeShowImg(e)} className='modal-screen'>
           </div>
         </div>
 
