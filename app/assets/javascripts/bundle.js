@@ -26830,6 +26830,13 @@ var NavBar = function (_React$Component) {
   }
 
   _createClass(NavBar, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.currentUser !== newProps.currentUser) {
+        console.log('do something but I donot know');
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
