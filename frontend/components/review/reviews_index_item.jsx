@@ -5,11 +5,19 @@ import ReviewsIndexItemRating from './reviews_index_item_rating';
 
 class ReviewsIndexItem extends React.Component {
 
-
-
   handleClick(e, id){
     e.preventDefault();
     this.props.deleteReview(id);
+  }
+
+  mouseOver(id){
+    const reviewTable = document.getElementById(`review-table-${id}`);
+    reviewTable.classList.remove('hidden');
+  }
+
+  mouseOut(id){
+    const reviewTable = document.getElementById(`review-table-${id}`);
+    reviewTable.classList.add('hidden');
   }
 
   render(){
@@ -18,19 +26,30 @@ class ReviewsIndexItem extends React.Component {
       <div>
       {review && users[review.user_id] ?
         <div className='reviews-index-item'>
-          <div className='review-user'>
-            <div className='review-user-avatar'>
-              <img src={users[review.user_id].avatar_url}/>
-            </div>
+          <div onMouseOut={()=>this.mouseOut(review.id)} onMouseOver={()=>this.mouseOver(review.id)} className='review-user'>
             <div className='review-user-info'>
-              <ul>
-                <li><a>{users[review.user_id].username}</a></li>
-                <li>San Francisco, CA</li>
-                {users[review.user_id].user_review_num > 1 ?
-                  <li><strong>{users[review.user_id].user_review_num}</strong> reviews</li>
-                : <li><strong>1</strong> review</li>
-                }
-              </ul>
+              <div className='review-user-avatar'>
+                <img src={users[review.user_id].avatar_url}/>
+              </div>
+              <div className='review-user-info'>
+                <ul>
+                  <li><a>{users[review.user_id].username}</a></li>
+                  <li>San Francisco, CA</li>
+                  {users[review.user_id].user_review_num > 1 ?
+                    <li><strong>{users[review.user_id].user_review_num}</strong> reviews</li>
+                  : <li><strong>1</strong> review</li>
+                  }
+                </ul>
+              </div>
+            </div>
+            <div id={`review-table-${review.id}`} className='review-table hidden'>
+              <table>
+                <tr><th><i class="fas fa-share-square"></i></th><td>Share Review</td></tr>
+                <tr><th><i class="fas fa-code"></i></th><td>Embed Review</td></tr>
+                {review.user_id === currentUser.id ?
+                <tr><th><i class="fas fa-pencil-alt"></i></th><td><a href={`/#/update_review/biz/${review.biz_id}`}>Edit Review</a></td></tr>
+                : ""}
+              </table>
             </div>
           </div>
           <div className='review-info'>
@@ -38,10 +57,12 @@ class ReviewsIndexItem extends React.Component {
               <ReviewsIndexItemRating review={review}/>
               <p>{review.updated_at.slice(0, 10)}</p>
             </div>
-            <div className='review-info-body group'>
+            <div className='review-info-body'>
               <p>{review.body}</p>
               { currentUser && review.user_id === currentUser.id ?
-                <div onClick={(e)=>this.handleClick(e, review.id)}className='deleteReview'><i className="fas fa-trash-alt"></i></div>
+                <div className='review-status'>
+                  <div onClick={(e)=>this.handleClick(e, review.id)} className='deleteReview'><i className="fas fa-trash-alt"></i></div>
+                </div>
               :
                 <div className='review-status'>
                   <p>Was this review ...?</p>
