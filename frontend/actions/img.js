@@ -36,5 +36,5 @@ export const createImg = (bizId, img) => dispatch => APIUtilImg.createImg(bizId,
 
 export const deleteImg = (imgId) => dispatch => APIUtilImg.deleteImg(imgId)
   .then(
-    img => dispatch(removeImg(img))
+    img => dispatch(removeImg(img.id))
   );

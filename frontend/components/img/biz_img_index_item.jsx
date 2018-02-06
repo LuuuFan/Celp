@@ -23,7 +23,8 @@ class BizImgIndexItem extends React.Component{
     const {bizId, history} = this.props;
     this.props.deleteImg(imgId)
       .then(()=>{
-          // debugger;
+        // debugger;
+          this.setState({className: 'modal'});
           history.pop;
           history.push(`/biz/${bizId}/photos`);
         }
