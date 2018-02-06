@@ -10,6 +10,7 @@ class Biz < ApplicationRecord
   has_many :bookmarked_users,
     through: :bookmarks,
     source: :user
+  has_many :hours
 
   def display_address
     address_arr = [self.address1, self.address2, self.address3, self.city, self.state, self.zip_code]

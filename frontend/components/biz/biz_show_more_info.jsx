@@ -1,11 +1,13 @@
 import React from 'react';
+import BizMoreInfoHours from './biz_more_info_hours';
 
 const BizShowMoreInfo = ({biz}) => (
   <div className='biz-show-more-info'>
     <div className='today-open-info'>
-      <i className="far fa-clock"></i><p>Today 7:00 am - 10:00 pm</p>
+      <i className="far fa-clock"></i><p>Today 11:00 am - 10:00 pm</p>
     </div>
     <h1>Hours</h1>
+    { biz.hours ? <BizMoreInfoHours hours={biz.hours}/> : ''}
     <h1>More business info</h1>
     <div className='more-biz-info'>
       <dl><dt>Takes Reservations</dt><dd>{biz.takes_reservations ? "Yes" : "No"}</dd></dl>

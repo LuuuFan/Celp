@@ -33094,6 +33094,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _biz_more_info_hours = __webpack_require__(181);
+
+var _biz_more_info_hours2 = _interopRequireDefault(_biz_more_info_hours);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
@@ -33108,7 +33112,7 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       _react2.default.createElement(
         'p',
         null,
-        'Today 7:00 am - 10:00 pm'
+        'Today 11:00 am - 10:00 pm'
       )
     ),
     _react2.default.createElement(
@@ -33116,6 +33120,7 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       null,
       'Hours'
     ),
+    biz.hours ? _react2.default.createElement(_biz_more_info_hours2.default, { hours: biz.hours }) : '',
     _react2.default.createElement(
       'h1',
       null,
@@ -33515,6 +33520,146 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
 };
 
 exports.default = BizShowMoreInfo;
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BizMoreInfoHours = function BizMoreInfoHours(_ref) {
+  var hours = _ref.hours;
+
+  var time = function time(str) {
+    if (str.slice(0, 2) > 12) {
+      return str.slice(0, 2) - 12 + ':' + str.slice(2) + ' pm';
+    } else {
+      return str.slice(0, 2) + ':' + str.slice(2) + ' am';
+    }
+  };
+
+  return _react2.default.createElement(
+    'table',
+    { className: 'biz-more-info-hours' },
+    _react2.default.createElement(
+      'tr',
+      null,
+      _react2.default.createElement(
+        'th',
+        null,
+        'Mon'
+      ),
+      _react2.default.createElement(
+        'td',
+        null,
+        hours[1] ? time(hours[1].start) + ' - ' + time(hours[1].end) : "Closed"
+      ),
+      _react2.default.createElement('td', null)
+    ),
+    _react2.default.createElement(
+      'tr',
+      null,
+      _react2.default.createElement(
+        'th',
+        null,
+        'Tue'
+      ),
+      _react2.default.createElement(
+        'td',
+        null,
+        hours[2] ? time(hours[2].start) + ' - ' + time(hours[2].end) : "Closed"
+      ),
+      _react2.default.createElement('td', null)
+    ),
+    _react2.default.createElement(
+      'tr',
+      null,
+      _react2.default.createElement(
+        'th',
+        null,
+        'Wed'
+      ),
+      _react2.default.createElement(
+        'td',
+        null,
+        hours[3] ? time(hours[3].start) + ' - ' + time(hours[3].end) : "Closed"
+      ),
+      _react2.default.createElement('td', null)
+    ),
+    _react2.default.createElement(
+      'tr',
+      null,
+      _react2.default.createElement(
+        'th',
+        null,
+        'Thu'
+      ),
+      _react2.default.createElement(
+        'td',
+        null,
+        hours[4] ? time(hours[4].start) + ' - ' + time(hours[4].end) : "Closed"
+      ),
+      _react2.default.createElement('td', null)
+    ),
+    _react2.default.createElement(
+      'tr',
+      null,
+      _react2.default.createElement(
+        'th',
+        null,
+        'Fri'
+      ),
+      _react2.default.createElement(
+        'td',
+        null,
+        hours[5] ? time(hours[5].start) + ' - ' + time(hours[5].end) : "Closed"
+      ),
+      _react2.default.createElement('td', null)
+    ),
+    _react2.default.createElement(
+      'tr',
+      null,
+      _react2.default.createElement(
+        'th',
+        null,
+        'Sat'
+      ),
+      _react2.default.createElement(
+        'td',
+        null,
+        hours[6] ? time(hours[6].start) + ' - ' + time(hours[6].end) : "Closed"
+      ),
+      _react2.default.createElement('td', null)
+    ),
+    _react2.default.createElement(
+      'tr',
+      null,
+      _react2.default.createElement(
+        'th',
+        null,
+        'Sun'
+      ),
+      _react2.default.createElement(
+        'td',
+        null,
+        hours[0] ? time(hours[0].start) + ' - ' + time(hours[0].end) : "Closed"
+      ),
+      _react2.default.createElement('td', null)
+    )
+  );
+};
+exports.default = BizMoreInfoHours;
 
 /***/ })
 /******/ ]);

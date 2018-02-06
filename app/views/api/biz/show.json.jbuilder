@@ -13,6 +13,13 @@ json.biz do
   if current_user
     json.bookmarked? @biz.bookmarked?(current_user.id)
   end
+  json.set! :hours do
+    @biz.hours.each do |hour|
+      json.set! hour.day do
+        json.extract! hour, :day, :start, :end
+      end
+    end
+  end
   # json.bookmarked_user_ids @biz.bookmarked_users.pluck(:id)
 end
 

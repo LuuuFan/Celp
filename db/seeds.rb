@@ -146,5 +146,9 @@
 
 
 Biz.all.pluck(:id).each do |biz_id|
-
+  (0..6).each do |day|
+    if day != 6
+      Hour.create(biz_id: biz_id, day: day, start:'1100', end: '2200' )
+    end
+  end
 end
