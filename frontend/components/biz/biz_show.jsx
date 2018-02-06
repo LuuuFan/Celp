@@ -81,30 +81,40 @@ class BizShow extends React.Component {
                   <div className='biz-show-left-bottom-detail'>
                     <div>
                       <div className='biz-show-info'>
-                        <div className='biz-show-info-icon'>
-                          <i className="fas fa-map-marker"></i>
-                          <i className="far fa-compass"></i>
-                          <i className="fas fa-phone"></i>
-                          <i className="fas fa-home"></i>
-                          <i className="fas fa-mobile-alt"></i>
-                        </div>
-                        <div className='biz-show-info-text'>
-                          <div className='biz-show-address'>
-                            {biz.location.address1}
-                            <br/>
-                            { biz.location.address2 ? <p>{biz.location.address2}<br/></p> : ""}
-                            {biz.location.city}, &nbsp;{biz.location.state} &nbsp;{biz.location.zipcode}
-                          </div>
-                          <a href=''>Get Directions</a>
-                          {biz.phone}
-                          <br/>
-                          {biz.website ?
-                          <a href={`http://${biz.website}`}>{biz.website}</a>
-                          :
-                          <a href={`/#/biz/${biz.id}`}>celp.com</a> }
-                          <a href=''>Send to your Phone</a>
-                        </div>
-
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th><i className="fas fa-map-marker"></i></th>
+                              <td>
+                                {biz.location.address1}
+                                <br/>
+                                { biz.location.address2 ? <p>{biz.location.address2}<br/></p> : ""}
+                                {biz.location.city}, &nbsp;{biz.location.state} &nbsp;{biz.location.zipcode}
+                              </td>
+                            </tr>
+                            <tr>
+                              <th><i className="far fa-compass"></i></th>
+                              <td><a href=''>Get Directions</a></td></tr>
+                            <tr>
+                              <th><i className="fas fa-phone"></i></th>
+                              <td>{biz.phone}</td>
+                            </tr>
+                            <tr>
+                              <th><i className="fas fa-home"></i></th>
+                              <td>
+                                { biz.website ?
+                                  <a href={`http://${biz.website}`}>{biz.website}</a>
+                                  :
+                                  <a href={`/#/biz/${biz.id}`}>celp.com</a>
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <th><i className="fas fa-mobile-alt"></i></th>
+                              <td><a href=''>Send to your Phone</a></td>
+                            </tr>
+                          </tbody>
+                        </table>
                         <div className='biz-show-edit'>
                           {/*
                           <i className="fas fa-pencil-alt"></i>

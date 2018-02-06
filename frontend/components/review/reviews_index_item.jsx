@@ -46,11 +46,13 @@ class ReviewsIndexItem extends React.Component {
             </div>
             <div id={`review-table-${review.id}`} className='review-table'>
               <table>
-                <tr><th><i class="fas fa-share-square"></i></th><td>Share Review</td></tr>
-                <tr><th><i class="fas fa-code"></i></th><td>Embed Review</td></tr>
-                {review.user_id === currentUser.id ?
-                <tr><th><i class="fas fa-pencil-alt"></i></th><td><a href={`/#/update_review/biz/${review.biz_id}`}>Edit Review</a></td></tr>
-                : ""}
+                <tbody>
+                  <tr><th><i className="fas fa-share-square"></i></th><td>Share Review</td></tr>
+                  <tr><th><i className="fas fa-code"></i></th><td>Embed Review</td></tr>
+                  {currentUser && review.user_id === currentUser.id ?
+                  <tr><th><i className="fas fa-pencil-alt"></i></th><td><a href={`/#/update_review/biz/${review.biz_id}`}>Edit Review</a></td></tr>
+                  : ""}
+                </tbody>
               </table>
             </div>
           </div>

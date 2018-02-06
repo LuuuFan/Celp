@@ -28426,54 +28426,109 @@ var BizShow = function (_React$Component) {
                       'div',
                       { className: 'biz-show-info' },
                       _react2.default.createElement(
-                        'div',
-                        { className: 'biz-show-info-icon' },
-                        _react2.default.createElement('i', { className: 'fas fa-map-marker' }),
-                        _react2.default.createElement('i', { className: 'far fa-compass' }),
-                        _react2.default.createElement('i', { className: 'fas fa-phone' }),
-                        _react2.default.createElement('i', { className: 'fas fa-home' }),
-                        _react2.default.createElement('i', { className: 'fas fa-mobile-alt' })
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'biz-show-info-text' },
+                        'table',
+                        null,
                         _react2.default.createElement(
-                          'div',
-                          { className: 'biz-show-address' },
-                          biz.location.address1,
-                          _react2.default.createElement('br', null),
-                          biz.location.address2 ? _react2.default.createElement(
-                            'p',
+                          'tbody',
+                          null,
+                          _react2.default.createElement(
+                            'tr',
                             null,
-                            biz.location.address2,
-                            _react2.default.createElement('br', null)
-                          ) : "",
-                          biz.location.city,
-                          ', \xA0',
-                          biz.location.state,
-                          ' \xA0',
-                          biz.location.zipcode
-                        ),
-                        _react2.default.createElement(
-                          'a',
-                          { href: '' },
-                          'Get Directions'
-                        ),
-                        biz.phone,
-                        _react2.default.createElement('br', null),
-                        biz.website ? _react2.default.createElement(
-                          'a',
-                          { href: 'http://' + biz.website },
-                          biz.website
-                        ) : _react2.default.createElement(
-                          'a',
-                          { href: '/#/biz/' + biz.id },
-                          'celp.com'
-                        ),
-                        _react2.default.createElement(
-                          'a',
-                          { href: '' },
-                          'Send to your Phone'
+                            _react2.default.createElement(
+                              'th',
+                              null,
+                              _react2.default.createElement('i', { className: 'fas fa-map-marker' })
+                            ),
+                            _react2.default.createElement(
+                              'td',
+                              null,
+                              biz.location.address1,
+                              _react2.default.createElement('br', null),
+                              biz.location.address2 ? _react2.default.createElement(
+                                'p',
+                                null,
+                                biz.location.address2,
+                                _react2.default.createElement('br', null)
+                              ) : "",
+                              biz.location.city,
+                              ', \xA0',
+                              biz.location.state,
+                              ' \xA0',
+                              biz.location.zipcode
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                              'th',
+                              null,
+                              _react2.default.createElement('i', { className: 'far fa-compass' })
+                            ),
+                            _react2.default.createElement(
+                              'td',
+                              null,
+                              _react2.default.createElement(
+                                'a',
+                                { href: '' },
+                                'Get Directions'
+                              )
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                              'th',
+                              null,
+                              _react2.default.createElement('i', { className: 'fas fa-phone' })
+                            ),
+                            _react2.default.createElement(
+                              'td',
+                              null,
+                              biz.phone
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                              'th',
+                              null,
+                              _react2.default.createElement('i', { className: 'fas fa-home' })
+                            ),
+                            _react2.default.createElement(
+                              'td',
+                              null,
+                              biz.website ? _react2.default.createElement(
+                                'a',
+                                { href: 'http://' + biz.website },
+                                biz.website
+                              ) : _react2.default.createElement(
+                                'a',
+                                { href: '/#/biz/' + biz.id },
+                                'celp.com'
+                              )
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                              'th',
+                              null,
+                              _react2.default.createElement('i', { className: 'fas fa-mobile-alt' })
+                            ),
+                            _react2.default.createElement(
+                              'td',
+                              null,
+                              _react2.default.createElement(
+                                'a',
+                                { href: '' },
+                                'Send to your Phone'
+                              )
+                            )
+                          )
                         )
                       ),
                       _react2.default.createElement('div', { className: 'biz-show-edit' })
@@ -28919,51 +28974,55 @@ var ReviewsIndexItem = function (_React$Component) {
                 'table',
                 null,
                 _react2.default.createElement(
-                  'tr',
+                  'tbody',
                   null,
                   _react2.default.createElement(
-                    'th',
-                    null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-share-square' })
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Share Review'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'th',
-                    null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-code' })
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Embed Review'
-                  )
-                ),
-                review.user_id === currentUser.id ? _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'th',
-                    null,
-                    _react2.default.createElement('i', { 'class': 'fas fa-pencil-alt' })
-                  ),
-                  _react2.default.createElement(
-                    'td',
+                    'tr',
                     null,
                     _react2.default.createElement(
-                      'a',
-                      { href: '/#/update_review/biz/' + review.biz_id },
-                      'Edit Review'
+                      'th',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-share-square' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Share Review'
                     )
-                  )
-                ) : ""
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'th',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-code' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Embed Review'
+                    )
+                  ),
+                  currentUser && review.user_id === currentUser.id ? _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'th',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-pencil-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '/#/update_review/biz/' + review.biz_id },
+                        'Edit Review'
+                      )
+                    )
+                  ) : ""
+                )
               )
             )
           ),
@@ -29599,109 +29658,113 @@ var BizMoreInfoHours = function BizMoreInfoHours(_ref) {
     'table',
     { className: 'biz-more-info-hours' },
     _react2.default.createElement(
-      'tr',
+      'tbody',
       null,
       _react2.default.createElement(
-        'th',
+        'tr',
         null,
-        'Mon'
+        _react2.default.createElement(
+          'th',
+          null,
+          'Mon'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          hours[1] ? time(hours[1].start) + ' - ' + time(hours[1].end) : "Closed"
+        ),
+        _react2.default.createElement('td', null)
       ),
       _react2.default.createElement(
-        'td',
+        'tr',
         null,
-        hours[1] ? time(hours[1].start) + ' - ' + time(hours[1].end) : "Closed"
-      ),
-      _react2.default.createElement('td', null)
-    ),
-    _react2.default.createElement(
-      'tr',
-      null,
-      _react2.default.createElement(
-        'th',
-        null,
-        'Tue'
-      ),
-      _react2.default.createElement(
-        'td',
-        null,
-        hours[2] ? time(hours[2].start) + ' - ' + time(hours[2].end) : "Closed"
-      ),
-      _react2.default.createElement('td', null)
-    ),
-    _react2.default.createElement(
-      'tr',
-      null,
-      _react2.default.createElement(
-        'th',
-        null,
-        'Wed'
+        _react2.default.createElement(
+          'th',
+          null,
+          'Tue'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          hours[2] ? time(hours[2].start) + ' - ' + time(hours[2].end) : "Closed"
+        ),
+        _react2.default.createElement('td', null)
       ),
       _react2.default.createElement(
-        'td',
+        'tr',
         null,
-        hours[3] ? time(hours[3].start) + ' - ' + time(hours[3].end) : "Closed"
-      ),
-      _react2.default.createElement('td', null)
-    ),
-    _react2.default.createElement(
-      'tr',
-      null,
-      _react2.default.createElement(
-        'th',
-        null,
-        'Thu'
-      ),
-      _react2.default.createElement(
-        'td',
-        null,
-        hours[4] ? time(hours[4].start) + ' - ' + time(hours[4].end) : "Closed"
-      ),
-      _react2.default.createElement('td', null)
-    ),
-    _react2.default.createElement(
-      'tr',
-      null,
-      _react2.default.createElement(
-        'th',
-        null,
-        'Fri'
+        _react2.default.createElement(
+          'th',
+          null,
+          'Wed'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          hours[3] ? time(hours[3].start) + ' - ' + time(hours[3].end) : "Closed"
+        ),
+        _react2.default.createElement('td', null)
       ),
       _react2.default.createElement(
-        'td',
+        'tr',
         null,
-        hours[5] ? time(hours[5].start) + ' - ' + time(hours[5].end) : "Closed"
-      ),
-      _react2.default.createElement('td', null)
-    ),
-    _react2.default.createElement(
-      'tr',
-      null,
-      _react2.default.createElement(
-        'th',
-        null,
-        'Sat'
-      ),
-      _react2.default.createElement(
-        'td',
-        null,
-        hours[6] ? time(hours[6].start) + ' - ' + time(hours[6].end) : "Closed"
-      ),
-      _react2.default.createElement('td', null)
-    ),
-    _react2.default.createElement(
-      'tr',
-      null,
-      _react2.default.createElement(
-        'th',
-        null,
-        'Sun'
+        _react2.default.createElement(
+          'th',
+          null,
+          'Thu'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          hours[4] ? time(hours[4].start) + ' - ' + time(hours[4].end) : "Closed"
+        ),
+        _react2.default.createElement('td', null)
       ),
       _react2.default.createElement(
-        'td',
+        'tr',
         null,
-        hours[0] ? time(hours[0].start) + ' - ' + time(hours[0].end) : "Closed"
+        _react2.default.createElement(
+          'th',
+          null,
+          'Fri'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          hours[5] ? time(hours[5].start) + ' - ' + time(hours[5].end) : "Closed"
+        ),
+        _react2.default.createElement('td', null)
       ),
-      _react2.default.createElement('td', null)
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'th',
+          null,
+          'Sat'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          hours[6] ? time(hours[6].start) + ' - ' + time(hours[6].end) : "Closed"
+        ),
+        _react2.default.createElement('td', null)
+      ),
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'th',
+          null,
+          'Sun'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          hours[0] ? time(hours[0].start) + ' - ' + time(hours[0].end) : "Closed"
+        ),
+        _react2.default.createElement('td', null)
+      )
     )
   );
 };
