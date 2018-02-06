@@ -1,8 +1,12 @@
+.biz_index_list{
+  width: 70%;
+}
+
 .biz_index_item {
   display: flex;
-  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   padding: 15px 0;
-  width: 60%;
+  width: 95%;
   color: #333;
 }
 
@@ -50,7 +54,8 @@
 
 .biz-info-right{
   width: 30%;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: 'Rubik';
 }
  .biz-info-left {
   width: 50%;

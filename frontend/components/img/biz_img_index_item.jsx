@@ -19,14 +19,11 @@ class BizImgIndexItem extends React.Component{
     this.setState({className: 'modal'});
   }
 
-  handleDelete(e, imgId){
-    const {bizId, history} = this.props;
+  handleDelete(imgId){
+    const {bizId} = this.props;
     this.props.deleteImg(imgId)
       .then(()=>{
-        // debugger;
           this.setState({className: 'modal'});
-          history.pop;
-          history.push(`/biz/${bizId}/photos`);
         }
       );
   }
@@ -69,7 +66,7 @@ class BizImgIndexItem extends React.Component{
                   <tbody>
                     <tr>
                       <th><i className="far fa-trash-alt"></i></th>
-                      <td onClick={(e)=>this.handleDelete(e, img.id)}>Delete photo</td>
+                      <td onClick={()=>this.handleDelete(img.id)}>Delete photo</td>
                     </tr>
                   </tbody>
                 </table>

@@ -38,7 +38,7 @@ const Footer = () => (
       </div>
     </div>
     <p>
-      Copyright &copy; 2018-2018 Celp Inc. <i className="fab fa-yelp"></i> and related marks are registered trademarks of Yelp.
+      Copyright &copy; 2018-2018 Celp Inc. <i className="fab fa-yelp"></i> and related marks are registered trademarks of Celp.
     </p>
   </div>
 );

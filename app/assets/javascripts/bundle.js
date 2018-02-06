@@ -27755,6 +27755,10 @@ var _biz_index_item = __webpack_require__(150);
 
 var _biz_index_item2 = _interopRequireDefault(_biz_index_item);
 
+var _map_container = __webpack_require__(182);
+
+var _map_container2 = _interopRequireDefault(_map_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27857,11 +27861,12 @@ var BizIndex = function (_React$Component) {
           { className: 'index' },
           _react2.default.createElement(
             'ul',
-            null,
+            { className: 'biz_index_list' },
             bizes.map(function (biz, idx) {
               return _react2.default.createElement(_biz_index_item2.default, { key: biz.id, biz: biz, idx: idx });
             })
-          )
+          ),
+          _react2.default.createElement(_map_container2.default, null)
         )
       );
     }
@@ -29588,7 +29593,7 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
     _react2.default.createElement(
       'h1',
       null,
-      'Dining in Yelp'
+      'Dining in Celp'
     ),
     _react2.default.createElement(
       'ul',
@@ -29610,7 +29615,7 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
         _react2.default.createElement(
           'p',
           null,
-          'Book a Table in Yelp'
+          'Book a Table in Celp'
         )
       )
     ),
@@ -33143,7 +33148,6 @@ var BizImgIndex = function (_React$Component) {
                 currentUser: currentUser,
                 img: img,
                 deleteImg: deleteImg,
-                history: _this2.props.history,
                 cover: imgs[0].biz_img_url });
             })
           )
@@ -33210,18 +33214,13 @@ var BizImgIndexItem = function (_React$Component) {
     }
   }, {
     key: 'handleDelete',
-    value: function handleDelete(e, imgId) {
+    value: function handleDelete(imgId) {
       var _this2 = this;
 
-      var _props = this.props,
-          bizId = _props.bizId,
-          history = _props.history;
+      var bizId = this.props.bizId;
 
       this.props.deleteImg(imgId).then(function () {
-        // debugger;
         _this2.setState({ className: 'modal' });
-        history.pop;
-        history.push('/biz/' + bizId + '/photos');
       });
     }
   }, {
@@ -33237,11 +33236,11 @@ var BizImgIndexItem = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var _props2 = this.props,
-          img = _props2.img,
-          cover = _props2.cover,
-          bizId = _props2.bizId,
-          currentUser = _props2.currentUser;
+      var _props = this.props,
+          img = _props.img,
+          cover = _props.cover,
+          bizId = _props.bizId,
+          currentUser = _props.currentUser;
 
       return _react2.default.createElement(
         'div',
@@ -33325,8 +33324,8 @@ var BizImgIndexItem = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
-                      { onClick: function onClick(e) {
-                          return _this3.handleDelete(e, img.id);
+                      { onClick: function onClick() {
+                          return _this3.handleDelete(img.id);
                         } },
                       'Delete photo'
                     )
@@ -33506,7 +33505,7 @@ var Footer = function Footer() {
       null,
       'Copyright \xA9 2018-2018 Celp Inc. ',
       _react2.default.createElement('i', { className: 'fab fa-yelp' }),
-      ' and related marks are registered trademarks of Yelp.'
+      ' and related marks are registered trademarks of Celp.'
     )
   );
 };
@@ -33871,6 +33870,140 @@ var WriteReview = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WriteReview;
+
+/***/ }),
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(5);
+
+var _map = __webpack_require__(183);
+
+var _map2 = _interopRequireDefault(_map);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_map2.default);
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(60);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Map = function (_React$Component) {
+  _inherits(Map, _React$Component);
+
+  function Map(props) {
+    _classCallCheck(this, Map);
+
+    var _this = _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).call(this, props));
+
+    _this.addBurritoPlace = _this.addBurritoPlace.bind(_this);
+    return _this;
+  }
+
+  _createClass(Map, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var map = _reactDom2.default.findDOMNode(this.refs.map);
+      var options = {
+        center: { lat: 37.7758, lng: -122.435 },
+        zoom: 13
+      };
+
+      this.map = new google.maps.Map(map, options);
+      this.listenForMove();
+
+      var burritos = [{ lat: 37.775785, lng: -122.445979, name: "Papalote" }, { lat: 37.772045, lng: -122.437015, name: "The Little Chihuahua" }, { lat: 37.781899, lng: -122.410426, name: "Cancun" }];
+
+      burritos.forEach(this.addBurritoPlace);
+    }
+  }, {
+    key: 'addBurritoPlace',
+    value: function addBurritoPlace(burritoPlace) {
+      var pos = new google.maps.LatLng(burritoPlace.lat, burritoPlace.lng);
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: this.map
+      });
+      marker.addListener('click', function () {
+        alert('clicked on: ' + burritoPlace.name);
+      });
+    }
+  }, {
+    key: 'listenForMove',
+    value: function listenForMove() {
+      var _this2 = this;
+
+      google.maps.event.addListener(this.map, 'idle', function () {
+        var bounds = _this2.map.getBounds();
+        console.log('center', bounds.getCenter().lat(), bounds.getCenter().lng());
+        console.log("north east", bounds.getNorthEast().lat(), bounds.getNorthEast().lng());
+        console.log("south west", bounds.getSouthWest().lat(), bounds.getSouthWest().lng());
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'map', id: 'index-map', ref: 'map' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'Hey! Here are a few good burrito places in SF. Click on them to find their name. Move the map and check the console to see the new boundaries of the displayed map.'
+        )
+      );
+    }
+  }]);
+
+  return Map;
+}(_react2.default.Component);
+
+exports.default = Map;
 
 /***/ })
 /******/ ]);

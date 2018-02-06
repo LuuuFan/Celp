@@ -38,7 +38,6 @@ class BizImgIndex extends React.Component {
                 currentUser={currentUser}
                 img={img}
                 deleteImg={deleteImg}
-                history={this.props.history}
                 cover={imgs[0].biz_img_url}/>)}
             </div>
           </div>

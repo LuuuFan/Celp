@@ -1,5 +1,6 @@
 import React from 'react';
 import BizIndexItem from './biz_index_item';
+import MapContainer from '../map/map_container';
 
 class BizIndex extends React.Component {
   constructor(){
@@ -37,9 +38,10 @@ class BizIndex extends React.Component {
           </div>
         </div>
         <div className='index'>
-          <ul>
+          <ul className='biz_index_list'>
             {bizes.map((biz, idx) => <BizIndexItem key={biz.id} biz={biz} idx={idx}/>)}
           </ul>
+          <MapContainer />
         </div>
       </div>
     );

@@ -42,10 +42,10 @@ const BizShowMoreInfo = ({biz}) => (
       <li><i className="fas fa-shopping-bag"></i><p>Shopping</p></li>
       <li><i className="fas fa-ellipsis-h"></i><p>Show all</p></li>
     </ul>
-    <h1>Dining in Yelp</h1>
+    <h1>Dining in Celp</h1>
     <ul>
       <li><i className="fas fa-search"></i><p>Search for reservations</p></li>
-      <li><i className="fas fa-calendar-alt"></i><p>Book a Table in Yelp</p></li>
+      <li><i className="fas fa-calendar-alt"></i><p>Book a Table in Celp</p></li>
     </ul>
     <h1>Near Me</h1>
     <ul>
