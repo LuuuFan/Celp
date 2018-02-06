@@ -33880,6 +33880,7 @@ var WriteReview = function (_React$Component) {
           review = _props.review,
           errors = _props.errors;
 
+      var btnName = this.props.match.path == '/write_review/biz/:bizId' ? "Post Review" : "Update Review";
       return _react2.default.createElement(
         'div',
         { className: 'write-review' },
@@ -33988,7 +33989,7 @@ var WriteReview = function (_React$Component) {
               )
             ) : ""
           ),
-          _react2.default.createElement('input', { type: 'submit', value: 'Post Review' })
+          _react2.default.createElement('input', { type: 'submit', value: btnName })
         ) : ""
       );
     }

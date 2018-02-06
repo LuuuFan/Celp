@@ -63,6 +63,7 @@ class WriteReview extends React.Component{
 
   render(){
     const {biz, review, errors} = this.props;
+    const btnName = this.props.match.path == '/write_review/biz/:bizId' ? "Post Review" : "Update Review";
     return (
       <div className='write-review'>
         { biz ?
@@ -113,7 +114,7 @@ class WriteReview extends React.Component{
                   ""
                 )}
             </div>
-            <input type='submit' value='Post Review'/>
+            <input type='submit' value={btnName}/>
           </form>
         :""}
 
