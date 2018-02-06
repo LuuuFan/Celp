@@ -131,8 +131,10 @@
 
 .biz-show-map{
   width: 308px;
+  height: 150px;
   margin: 5px;
   border: 1px solid lightgray;
+  overflow: hidden;
 }
 
 .biz-show-info{
@@ -155,7 +157,7 @@
 
 .biz-show-info table td{
   font-family: "Rubik";
-  
+
   padding: 0;
 }
 

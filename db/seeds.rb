@@ -144,11 +144,10 @@
 #   body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
 # )
 
-
-Biz.all.pluck(:id).each do |biz_id|
-  (0..6).each do |day|
-    if day != 6
-      Hour.create(biz_id: biz_id, day: day, start:'1100', end: '2200' )
-    end
-  end
-end
+# Biz.all.pluck(:id).each do |biz_id|
+#   (0..6).each do |day|
+#     if day != 6
+#       Hour.create(biz_id: biz_id, day: day, start:'1100', end: '2200' )
+#     end
+#   end
+# end

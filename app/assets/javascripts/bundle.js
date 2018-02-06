@@ -27755,9 +27755,9 @@ var _biz_index_item = __webpack_require__(150);
 
 var _biz_index_item2 = _interopRequireDefault(_biz_index_item);
 
-var _map_container = __webpack_require__(182);
+var _map = __webpack_require__(183);
 
-var _map_container2 = _interopRequireDefault(_map_container);
+var _map2 = _interopRequireDefault(_map);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27866,7 +27866,11 @@ var BizIndex = function (_React$Component) {
               return _react2.default.createElement(_biz_index_item2.default, { key: biz.id, biz: biz, idx: idx });
             })
           ),
-          _react2.default.createElement(_map_container2.default, null)
+          _react2.default.createElement(
+            'div',
+            { className: 'biz-index-map' },
+            _react2.default.createElement(_map2.default, { bizes: bizes })
+          )
         )
       );
     }
@@ -28251,6 +28255,10 @@ var _biz_show_rating = __webpack_require__(160);
 
 var _biz_show_rating2 = _interopRequireDefault(_biz_show_rating);
 
+var _map = __webpack_require__(183);
+
+var _map2 = _interopRequireDefault(_map);
+
 var _biz_show_bookmark_container = __webpack_require__(161);
 
 var _biz_show_bookmark_container2 = _interopRequireDefault(_biz_show_bookmark_container);
@@ -28427,7 +28435,11 @@ var BizShow = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'biz-show-left-bottom' },
-                _react2.default.createElement('img', { className: 'biz-show-map', src: 'https://maps.googleapis.com/maps/api/staticmap?scale=2&center=37.798470%2C-122.407051&language=None&zoom=15&markers=scale%3A2%7Cicon%3Ahttps%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C37.798470%2C-122.407051&client=gme-yelp&sensor=false&size=286x135&signature=7mQXep0kYDegNJB7m85dVwicCL0=' }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'biz-show-map' },
+                  _react2.default.createElement(_map2.default, { biz: biz })
+                ),
                 _react2.default.createElement(
                   'div',
                   { className: 'biz-show-left-bottom-detail' },
@@ -33872,39 +33884,7 @@ var WriteReview = function (_React$Component) {
 exports.default = WriteReview;
 
 /***/ }),
-/* 182 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(5);
-
-var _map = __webpack_require__(183);
-
-var _map2 = _interopRequireDefault(_map);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {};
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_map2.default);
-
-/***/ }),
+/* 182 */,
 /* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33941,7 +33921,7 @@ var Map = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).call(this, props));
 
-    _this.addBurritoPlace = _this.addBurritoPlace.bind(_this);
+    _this.addBizPlace = _this.addBizPlace.bind(_this);
     return _this;
   }
 
@@ -33956,21 +33936,40 @@ var Map = function (_React$Component) {
 
       this.map = new google.maps.Map(map, options);
       this.listenForMove();
-
-      var burritos = [{ lat: 37.775785, lng: -122.445979, name: "Papalote" }, { lat: 37.772045, lng: -122.437015, name: "The Little Chihuahua" }, { lat: 37.781899, lng: -122.410426, name: "Cancun" }];
-
-      burritos.forEach(this.addBurritoPlace);
     }
   }, {
-    key: 'addBurritoPlace',
-    value: function addBurritoPlace(burritoPlace) {
-      var pos = new google.maps.LatLng(burritoPlace.lat, burritoPlace.lng);
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      var bizPlace = [];
+      if (this.props.bizes) {
+        this.props.bizes.map(function (biz) {
+          if (biz.lat && biz.lng) {
+            bizPlace.push({
+              lat: biz.lat,
+              lng: biz.lng,
+              name: biz.name
+            });
+          }
+        });
+      } else if (this.props.biz) {
+        bizPlace.push({
+          lat: this.props.biz.lat,
+          lng: this.props.biz.lng,
+          name: this.props.biz.name
+        });
+      }
+      bizPlace.forEach(this.addBizPlace);
+    }
+  }, {
+    key: 'addBizPlace',
+    value: function addBizPlace(place) {
+      var pos = new google.maps.LatLng(place.lat, place.lng);
       var marker = new google.maps.Marker({
         position: pos,
         map: this.map
       });
       marker.addListener('click', function () {
-        alert('clicked on: ' + burritoPlace.name);
+        alert('clicked on: ' + place.name);
       });
     }
   }, {
@@ -33981,8 +33980,6 @@ var Map = function (_React$Component) {
       google.maps.event.addListener(this.map, 'idle', function () {
         var bounds = _this2.map.getBounds();
         console.log('center', bounds.getCenter().lat(), bounds.getCenter().lng());
-        console.log("north east", bounds.getNorthEast().lat(), bounds.getNorthEast().lng());
-        console.log("south west", bounds.getSouthWest().lat(), bounds.getSouthWest().lng());
       });
     }
   }, {
@@ -33990,7 +33987,7 @@ var Map = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'map', id: 'index-map', ref: 'map' },
+        { className: 'map', ref: 'map' },
         _react2.default.createElement(
           'p',
           null,

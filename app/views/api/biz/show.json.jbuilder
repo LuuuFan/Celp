@@ -1,7 +1,7 @@
 # json.partial! '/api/biz/biz', biz: @biz
 
 json.biz do
-  json.extract! @biz, :id, :name, :phone, :price, :website, :img_url, :biz_rate, :takes_reservations, :delivery, :take_out, :credit_cards, :apple_pay, :android_pay, :bitcoin, :parking, :bike_parking, :wheelchair, :noise_level, :alcohol, :outdoor_seating, :wifi, :has_tv, :dogs_allowed, :cats_allowed, :waiter_service, :caters, :gender_neutral_restrooms
+  json.extract! @biz, :id, :name, :phone, :price, :website, :img_url, :biz_rate, :lat, :lng, :takes_reservations, :delivery, :take_out, :credit_cards, :apple_pay, :android_pay, :bitcoin, :parking, :bike_parking, :wheelchair, :noise_level, :alcohol, :outdoor_seating, :wifi, :has_tv, :dogs_allowed, :cats_allowed, :waiter_service, :caters, :gender_neutral_restrooms
   json.set! :location do
     json.extract! @biz, :address1, :address2, :address3, :city, :zip_code, :state
   end

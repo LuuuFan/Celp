@@ -5,7 +5,7 @@ class Map extends React.Component {
 
   constructor(props){
     super(props);
-    this.addBurritoPlace = this.addBurritoPlace.bind(this);
+    this.addBizPlace = this.addBizPlace.bind(this);
   }
 
   componentDidMount(){
@@ -17,24 +17,38 @@ class Map extends React.Component {
 
     this.map = new google.maps.Map(map, options);
     this.listenForMove();
-
-    const burritos = [
-      { lat: 37.775785, lng: -122.445979, name: "Papalote" },
-      { lat: 37.772045, lng: -122.437015, name: "The Little Chihuahua" },
-      { lat: 37.781899, lng: -122.410426, name: "Cancun" }
-    ];
-
-    burritos.forEach(this.addBurritoPlace);
   }
 
-  addBurritoPlace(burritoPlace) {
-    const pos = new google.maps.LatLng(burritoPlace.lat, burritoPlace.lng);
+  componentDidUpdate(){
+    const bizPlace = [];
+    if (this.props.bizes) {
+      this.props.bizes.map((biz)=>{
+        if (biz.lat && biz.lng) {
+          bizPlace.push({
+            lat: biz.lat,
+            lng: biz.lng,
+            name: biz.name
+          });
+        }
+      });
+    } else if (this.props.biz){
+      bizPlace.push({
+        lat: this.props.biz.lat,
+        lng: this.props.biz.lng,
+        name: this.props.biz.name
+      });
+    }
+    bizPlace.forEach(this.addBizPlace);
+  }
+
+  addBizPlace(place) {
+    const pos = new google.maps.LatLng(place.lat, place.lng);
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map
     });
     marker.addListener('click', () => {
-      alert(`clicked on: ${burritoPlace.name}`);
+      alert(`clicked on: ${place.name}`);
     });
   }
 
@@ -44,18 +58,12 @@ class Map extends React.Component {
       console.log('center',
         bounds.getCenter().lat(),
         bounds.getCenter().lng());
-      console.log("north east",
-        bounds.getNorthEast().lat(),
-        bounds.getNorthEast().lng());
-      console.log("south west",
-        bounds.getSouthWest().lat(),
-        bounds.getSouthWest().lng());
     });
   }
 
   render(){
     return(
-      <div className='map' id='index-map' ref='map'>
+      <div className='map' ref='map'>
         <p>
           Hey! Here are a few good burrito places in SF. Click on them
           to find their name. Move the map and check the console to see
