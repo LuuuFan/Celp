@@ -19,9 +19,19 @@ class BizImgIndexItem extends React.Component{
     this.setState({className: 'modal'});
   }
 
+  handleDelete(e, imgId){
+    const {bizId, history} = this.props;
+    this.props.deleteImg(imgId)
+      .then(()=>{
+          // debugger;
+          history.pop;
+          history.push(`/biz/${bizId}/photos`);
+        }
+      );
+  }
 
   render(){
-    const {img, cover, bizId} = this.props;
+    const {img, cover, bizId, currentUser} = this.props;
     return (
       <div onClick={(e)=>this.showImg(e)} className='img-item'>
         { img ? <img onClick={(e)=>this.showImg(e)} src={img.url}/> : ""}
@@ -46,6 +56,19 @@ class BizImgIndexItem extends React.Component{
               <div className='img-description'>
                 <p>{img.description}</p>
               </div>
+              {img.user_id === currentUser.id ?
+                <table className='img-description-table'>
+                  <tbody>
+                    <tr>
+                      <th><i className="far fa-trash-alt"></i></th>
+                      <td onClick={(e)=>this.handleDelete(e, img.id)}>Delete photo</td>
+                    </tr>
+                  </tbody>
+                </table>
+                : ""}
+              {img && img.created_at ?
+                <div className='img-description-created-at'>{img.created_at.slice(0, 10)}</div>
+              : ""}
             </div>
           </div>
           <div onClick={(e)=>this.closeShowImg(e)} className='modal-screen'>

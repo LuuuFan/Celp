@@ -28829,18 +28829,19 @@ var ReviewsIndexItem = function (_React$Component) {
       e.preventDefault();
       this.props.deleteReview(id);
     }
-  }, {
-    key: 'mouseOver',
-    value: function mouseOver(id) {
-      var reviewTable = document.getElementById('review-table-' + id);
-      reviewTable.classList.remove('hidden');
-    }
-  }, {
-    key: 'mouseOut',
-    value: function mouseOut(id) {
-      var reviewTable = document.getElementById('review-table-' + id);
-      reviewTable.classList.add('hidden');
-    }
+
+    // mouseOver(id){
+    //   const reviewTable = document.getElementById(`review-table-${id}`);
+    //   reviewTable.classList.remove('hidden');
+    // }
+    //
+    // mouseOut(id){
+    //   const reviewTable = document.getElementById(`review-table-${id}`);
+    //   reviewTable.classList.add('hidden');
+    // }
+
+    // onMouseOut={()=>this.mouseOut(review.id)} onMouseOver={()=>this.mouseOver(review.id)}
+
   }, {
     key: 'render',
     value: function render() {
@@ -28860,11 +28861,7 @@ var ReviewsIndexItem = function (_React$Component) {
           { className: 'reviews-index-item' },
           _react2.default.createElement(
             'div',
-            { onMouseOut: function onMouseOut() {
-                return _this2.mouseOut(review.id);
-              }, onMouseOver: function onMouseOver() {
-                return _this2.mouseOver(review.id);
-              }, className: 'review-user' },
+            { className: 'review-user' },
             _react2.default.createElement(
               'div',
               { className: 'review-user-info' },
@@ -28917,7 +28914,7 @@ var ReviewsIndexItem = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { id: 'review-table-' + review.id, className: 'review-table hidden' },
+              { id: 'review-table-' + review.id, className: 'review-table' },
               _react2.default.createElement(
                 'table',
                 null,
@@ -32943,8 +32940,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    biz: state.entities.biz[ownProps.match.params.bizId],
-    imgs: Object.values(state.entities.imgs)
+    // biz: state.entities.biz[ownProps.match.params.bizId],
+    imgs: Object.values(state.entities.imgs),
+    currentUser: state.session.currentUser
   };
 };
 
@@ -32953,6 +32951,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     // requestBiz: (bizId) => dispatch(requestBiz(bizId)),
     requestAllImg: function requestAllImg(bizId) {
       return dispatch((0, _img.requestAllImg)(bizId));
+    },
+    deleteImg: function deleteImg(imgId) {
+      return dispatch((0, _img.deleteImg)(imgId));
     }
   };
 };
@@ -33013,7 +33014,10 @@ var BizImgIndex = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var imgs = this.props.imgs;
+      var _props = this.props,
+          imgs = _props.imgs,
+          currentUser = _props.currentUser,
+          deleteImg = _props.deleteImg;
 
       return _react2.default.createElement(
         'div',
@@ -33066,7 +33070,10 @@ var BizImgIndex = function (_React$Component) {
               return _react2.default.createElement(_biz_img_index_item2.default, {
                 key: img.id,
                 bizId: _this2.props.match.params.bizId,
+                currentUser: currentUser,
                 img: img,
+                deleteImg: deleteImg,
+                history: _this2.props.history,
                 cover: imgs[0].biz_img_url });
             })
           )
@@ -33132,14 +33139,28 @@ var BizImgIndexItem = function (_React$Component) {
       this.setState({ className: 'modal' });
     }
   }, {
+    key: 'handleDelete',
+    value: function handleDelete(e, imgId) {
+      var _props = this.props,
+          bizId = _props.bizId,
+          history = _props.history;
+
+      this.props.deleteImg(imgId).then(function () {
+        // debugger;
+        history.pop;
+        history.push('/biz/' + bizId + '/photos');
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props,
-          img = _props.img,
-          cover = _props.cover,
-          bizId = _props.bizId;
+      var _props2 = this.props,
+          img = _props2.img,
+          cover = _props2.cover,
+          bizId = _props2.bizId,
+          currentUser = _props2.currentUser;
 
       return _react2.default.createElement(
         'div',
@@ -33206,7 +33227,36 @@ var BizImgIndexItem = function (_React$Component) {
                   null,
                   img.description
                 )
-              )
+              ),
+              img.user_id === currentUser.id ? _react2.default.createElement(
+                'table',
+                { className: 'img-description-table' },
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'th',
+                      null,
+                      _react2.default.createElement('i', { className: 'far fa-trash-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { onClick: function onClick(e) {
+                          return _this2.handleDelete(e, img.id);
+                        } },
+                      'Delete photo'
+                    )
+                  )
+                )
+              ) : "",
+              img && img.created_at ? _react2.default.createElement(
+                'div',
+                { className: 'img-description-created-at' },
+                img.created_at.slice(0, 10)
+              ) : ""
             )
           ),
           _react2.default.createElement('div', { onClick: function onClick(e) {

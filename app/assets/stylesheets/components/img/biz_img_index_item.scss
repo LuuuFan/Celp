@@ -101,5 +101,33 @@
 
 .img-description{
   color: #333;
+}
 
+.img-description-table *{
+  color: #0073bb;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Rubik';
+}
+
+.img-description-table{
+  margin-left: 15px;
+}
+
+.img-description-table th{
+  padding-right: 15px
+}
+
+.img-description-table td{
+  padding: 0;
+}
+
+.img-description-table td:hover{
+  text-decoration: underline;
+}
+
+.img-description-created-at{
+  color: gray;
+  font-size: 12px;
 }

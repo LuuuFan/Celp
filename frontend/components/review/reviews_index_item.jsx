@@ -10,15 +10,17 @@ class ReviewsIndexItem extends React.Component {
     this.props.deleteReview(id);
   }
 
-  mouseOver(id){
-    const reviewTable = document.getElementById(`review-table-${id}`);
-    reviewTable.classList.remove('hidden');
-  }
+  // mouseOver(id){
+  //   const reviewTable = document.getElementById(`review-table-${id}`);
+  //   reviewTable.classList.remove('hidden');
+  // }
+  //
+  // mouseOut(id){
+  //   const reviewTable = document.getElementById(`review-table-${id}`);
+  //   reviewTable.classList.add('hidden');
+  // }
 
-  mouseOut(id){
-    const reviewTable = document.getElementById(`review-table-${id}`);
-    reviewTable.classList.add('hidden');
-  }
+// onMouseOut={()=>this.mouseOut(review.id)} onMouseOver={()=>this.mouseOver(review.id)}
 
   render(){
     const {review, currentUser, deleteReview, users} = this.props;
@@ -26,7 +28,7 @@ class ReviewsIndexItem extends React.Component {
       <div>
       {review && users[review.user_id] ?
         <div className='reviews-index-item'>
-          <div onMouseOut={()=>this.mouseOut(review.id)} onMouseOver={()=>this.mouseOver(review.id)} className='review-user'>
+          <div className='review-user'>
             <div className='review-user-info'>
               <div className='review-user-avatar'>
                 <img src={users[review.user_id].avatar_url}/>
@@ -42,7 +44,7 @@ class ReviewsIndexItem extends React.Component {
                 </ul>
               </div>
             </div>
-            <div id={`review-table-${review.id}`} className='review-table hidden'>
+            <div id={`review-table-${review.id}`} className='review-table'>
               <table>
                 <tr><th><i class="fas fa-share-square"></i></th><td>Share Review</td></tr>
                 <tr><th><i class="fas fa-code"></i></th><td>Embed Review</td></tr>

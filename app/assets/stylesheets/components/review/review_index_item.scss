@@ -29,29 +29,6 @@
   width: 67%;
 }
 
-.review-table{
-  margin-top: 10px;
-}
-
-.review-table *{
-  color: #0073bb;
-  font-size: 12px;
-  cursor: pointer
-}
-
-.review-table th, td{
-  padding-bottom: 10px;
-}
-
-.review-table td {
-  padding-left: 10px;
-  font-weight: bold;
-  font-family: 'Rubik';
-}
-
-.review-table td:hover {
-  text-decoration: underline;
-}
 
 .review-user-avatar{
   height: 60px;
@@ -164,4 +141,35 @@
 
 .review-status ul>li>i{
   margin-right: 5px;
+}
+
+
+.review-user:hover .review-table{
+  display: block;
+  transition: display 2s;
+}
+
+.review-table{
+  display: none;
+  margin-top: 10px;
+}
+
+.review-table *{
+  color: #0073bb;
+  font-size: 12px;
+  cursor: pointer
+}
+
+.review-table th, td{
+  padding-bottom: 10px;
+}
+
+.review-table td {
+  padding-left: 10px;
+  font-weight: bold;
+  font-family: 'Rubik';
+}
+
+.review-table td:hover {
+  text-decoration: underline;
 }

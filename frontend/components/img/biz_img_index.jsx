@@ -10,7 +10,7 @@ class BizImgIndex extends React.Component {
   }
 
   render(){
-    const {imgs} = this.props;
+    const {imgs, currentUser, deleteImg} = this.props;
     return (
       <div className='biz-all-imgs'>
         { this.props.imgs.length > 0 ?
@@ -35,7 +35,10 @@ class BizImgIndex extends React.Component {
               {imgs.map((img) => <BizImgIndexItem
                 key={img.id}
                 bizId={this.props.match.params.bizId}
+                currentUser={currentUser}
                 img={img}
+                deleteImg={deleteImg}
+                history={this.props.history}
                 cover={imgs[0].biz_img_url}/>)}
             </div>
           </div>
