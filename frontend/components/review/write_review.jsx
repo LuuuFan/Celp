@@ -19,7 +19,8 @@ class WriteReview extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    if (newProps.review) {
+    if ((!this.state.body && !this.state.rate)
+        || this.props.match.params.bizId !== newProps.match.params.bizId) {
       this.setState(newProps.review);
     }
   }

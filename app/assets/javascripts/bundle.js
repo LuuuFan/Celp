@@ -33815,7 +33815,7 @@ var WriteReview = function (_React$Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
-      if (newProps.review) {
+      if (!this.state.body && !this.state.rate || this.props.match.params.bizId !== newProps.match.params.bizId) {
         this.setState(newProps.review);
       }
     }
