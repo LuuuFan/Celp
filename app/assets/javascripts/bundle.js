@@ -28832,13 +28832,13 @@ var ReviewsIndex = function (_React$Component) {
               return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_reviews_index_item2.default, {
+                review ? _react2.default.createElement(_reviews_index_item2.default, {
                   key: review.id,
                   review: review,
                   users: users,
                   bizId: biz.id,
                   currentUser: currentUser,
-                  deleteReview: deleteReview })
+                  deleteReview: deleteReview }) : ""
               );
             })
           ) : _react2.default.createElement(
