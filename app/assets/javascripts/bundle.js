@@ -33228,7 +33228,7 @@ var BizImgIndexItem = function (_React$Component) {
                   img.description
                 )
               ),
-              img.user_id === currentUser.id ? _react2.default.createElement(
+              currentUser && img.user_id === currentUser.id ? _react2.default.createElement(
                 'table',
                 { className: 'img-description-table' },
                 _react2.default.createElement(

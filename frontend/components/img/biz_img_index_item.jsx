@@ -56,7 +56,7 @@ class BizImgIndexItem extends React.Component{
               <div className='img-description'>
                 <p>{img.description}</p>
               </div>
-              {img.user_id === currentUser.id ?
+              {currentUser && img.user_id === currentUser.id ?
                 <table className='img-description-table'>
                   <tbody>
                     <tr>
