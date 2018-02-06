@@ -9,12 +9,12 @@ class Map extends React.Component {
   }
 
   componentDidMount(){
+    this.geocoder = new google.maps.Geocoder();
     const map = ReactDOM.findDOMNode(this.refs.map);
     const options = {
       center: { lat: 37.7758, lng: -122.435 },
       zoom: 13
     };
-
     this.map = new google.maps.Map(map, options);
     this.listenForMove();
   }
@@ -22,29 +22,35 @@ class Map extends React.Component {
   componentDidUpdate(){
     const bizPlace = [];
     if (this.props.bizes) {
-      this.props.bizes.map((biz)=>{
-        if (biz.lat && biz.lng) {
-          bizPlace.push({
-            lat: biz.lat,
-            lng: biz.lng,
-            name: biz.name
-          });
-        }
+      this.props.bizes.forEach((biz, idx) => {
+        this.geocoder.geocode({'address': biz.display_address}, (results, status)=>{
+          if (status == 'OK') {
+            if (idx === 0) {
+              this.map.setCenter(results[0].geometry.location);
+            }
+            this.addBizPlace({pos: results[0].geometry.location, name: biz.name})
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
       });
     } else if (this.props.biz){
-      bizPlace.push({
-        lat: this.props.biz.lat,
-        lng: this.props.biz.lng,
-        name: this.props.biz.name
+      this.geocoder.geocode({'address': this.props.biz.display_address}, (results, status)=>{
+        if (status == 'OK') {
+          this.map.setCenter(results[0].geometry.location);
+          this.addBizPlace({pos: results[0].geometry.location, name: this.props.biz.name})
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
       });
     }
-    bizPlace.forEach(this.addBizPlace);
+    // bizPlace.forEach(this.addBizPlace);
   }
 
   addBizPlace(place) {
-    const pos = new google.maps.LatLng(place.lat, place.lng);
+    // const pos = new google.maps.LatLng(place.lat, place.lng);
     const marker = new google.maps.Marker({
-      position: pos,
+      position: place.pos,
       map: this.map
     });
     marker.addListener('click', () => {

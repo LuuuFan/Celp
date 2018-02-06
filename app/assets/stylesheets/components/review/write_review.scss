@@ -34,6 +34,12 @@
   maxlength: 5000;
 }
 
+.write-review-error{
+  color: #d32323;
+  font-size: 13px;
+  font-family: 'Rubik';
+}
+
 #write-review-rating-background{
   margin-bottom: 30px;
   background-image: url("https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png");

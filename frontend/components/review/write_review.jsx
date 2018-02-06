@@ -24,10 +24,6 @@ class WriteReview extends React.Component{
     }
   }
 
-  handleClose(){
-    this.props.clearErrors();
-  }
-
   componentDidUpdate(prevProps, prevState){
     const background = document.getElementById('write-review-rating-background');
     if (background) {
@@ -37,8 +33,10 @@ class WriteReview extends React.Component{
   }
 
   handleInput(e){
+    if (this.props.errors.length > 0) {
+      this.props.clearErrors();
+    }
     this.setState({body: e.target.value});
-    // this.setState({body: e.target.value.replace(/\n/g, '<br>\n')});
   }
 
   handleChange(e, rate){
@@ -67,14 +65,6 @@ class WriteReview extends React.Component{
     const {biz, review, errors} = this.props;
     return (
       <div className='write-review'>
-        {errors.length ? (
-          <div className='session-error'>
-            <p>{errors[0]}</p>
-            <div onClick={()=>this.handleClose()} className='errors-closeBtn'>&times;</div>
-          </div>
-        ) : (
-          ""
-        )}
         { biz ?
           <h1><a href={`/#/biz/${biz.id}`} target="_blank">{biz.name}</a></h1>
         : ""}
@@ -115,10 +105,18 @@ class WriteReview extends React.Component{
                 value={this.state.body}
                 placeholder="Your review helps others learn about great local businesses. &#10;Please don't review this business if you received a freebie for writing this review, or if you're connected in any way to the owner or employees."
                 />
+                {errors.length ? (
+                  <div className='write-review-error'>
+                    <p>{errors[0]}</p>
+                  </div>
+                ) : (
+                  ""
+                )}
             </div>
             <input type='submit' value='Post Review'/>
           </form>
         :""}
+
       </div>
     );
   }

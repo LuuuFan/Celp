@@ -33,6 +33,10 @@
   padding-bottom: 5px;
 }
 
+.biz-info-title p{
+  padding-right: 7px;
+}
+
 .biz-info-title a {
   cursor: pointer;
   color: #0073bb;
@@ -43,11 +47,12 @@
 }
 
 .biz-info-price-tags {
+  padding-top: 5px;
   display: flex;
 }
 
 .biz-info-price-tags p {
-  padding-right: 8px;
+  padding-right: 10px;
   color: #333;
   font-size: 14px;
 }
@@ -88,6 +93,7 @@
   display: flex;
   align-items: center;
   font-size: 13px;
+  padding-top: 5px;
   color: #666;
 }
 
@@ -125,10 +131,12 @@
 }
 
 .sample-review-body{
-  overflow: hidden;
   height: 30px;
   font-size: 12px;
   width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // white-space: nowrap;
 }
 
 .sample-review-body>p>a{

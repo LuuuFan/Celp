@@ -61,7 +61,7 @@ class BizIndexItem extends React.Component {
                  <img src={biz.review_sample.user_url}/>
                </div>
                <div className='sample-review-body group'>
-                 <p>{biz.review_sample.body.slice(0, 141)}<a href={`/#/biz/${biz.id}`}>read more</a></p>
+                 <p>{biz.review_sample.body.slice(0, 160)}<a href={`/#/biz/${biz.id}`}>read more</a></p>
                </div>
              </div>
            : ""}
