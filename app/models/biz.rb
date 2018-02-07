@@ -13,6 +13,8 @@ class Biz < ApplicationRecord
   has_many :hours
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+  has_many :categorizing, dependent: :destroy
+  has_many :categories, through: :categorizing
 
   def display_address
     address_arr = [self.address1, self.address2, self.address3, self.city, self.state, self.zip_code]

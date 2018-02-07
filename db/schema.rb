@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207005401) do
+ActiveRecord::Schema.define(version: 20180207063341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,23 @@ ActiveRecord::Schema.define(version: 20180207005401) do
     t.index ["biz_id"], name: "index_bookmarks_on_biz_id"
     t.index ["user_id", "biz_id"], name: "index_bookmarks_on_user_id_and_biz_id", unique: true
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_categories_on_category", unique: true
+  end
+
+  create_table "categorizings", force: :cascade do |t|
+    t.integer "biz_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["biz_id", "category_id"], name: "index_categorizings_on_biz_id_and_category_id", unique: true
+    t.index ["biz_id"], name: "index_categorizings_on_biz_id"
+    t.index ["category_id"], name: "index_categorizings_on_category_id"
   end
 
   create_table "hours", force: :cascade do |t|

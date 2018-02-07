@@ -152,8 +152,7 @@
 #   end
 # end
 
-# ['Restaurant',
-#   'Taco',
+# [ 'Taco',
 #   'Bakeries',
 #   'Cake',
 #   'Bootcamp',
@@ -176,4 +175,8 @@
 #   'Thai'
 # ].each do |tag|
 #   Tag.create(tag_name: tag)
+# end
+
+# ['Restaurant', 'Nightlife', 'Home Services', 'Bootcamp'].each do |category|
+#   Category.create(category: category)
 # end
