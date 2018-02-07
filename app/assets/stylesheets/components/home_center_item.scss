@@ -1,0 +1,78 @@
+.home-center-item{
+  width: 30%;
+  height: 350px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid lightgray;
+  margin-bottom: 15px;
+}
+
+.home-center-item-img{
+  width: 100%;
+  overflow: hidden;
+  height: 200px;
+}
+
+
+
+.home-center-item-img>img{
+  object-fit: cover;
+  height: 100%;
+}
+
+.home-center-item-biz-info{
+  padding: 15px;
+}
+
+.home-center-item h1{
+  margin-top: 5px;
+  margin-bottom: 7px;
+  text-align: left;
+  font-size: 18px;
+  color: #0073bb;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.home-center-item a:hover{
+  text-decoration: underline;
+}
+
+.home-center-item p{
+  padding-bottom: 7px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.home-center-item .biz-info-rating{
+  background-image: url("https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png");
+  background-size: 132px 560px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  height: 0;
+  width: 108px;
+  padding-top: 18px;
+  margin-bottom: 5px;
+}
+
+.home-ceter-item-biz-info-rating-review{
+  display: flex;
+}
+
+.home-center-item p{
+  color: #666;
+  font-size: 13px;
+  font-weight: 100;
+}
+
+
+.home-center-item-biz-hot{
+  display: flex;
+  color: #f15c00;
+}
+
+.home-center-item-biz-hot p{
+  color: #f15c00;
+  padding-left: 7px;
+}

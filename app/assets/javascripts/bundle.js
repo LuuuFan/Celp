@@ -33832,6 +33832,8 @@ var _home_center_item = __webpack_require__(189);
 
 var _home_center_item2 = _interopRequireDefault(_home_center_item);
 
+var _reactRouterDom = __webpack_require__(6);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33933,8 +33935,45 @@ var HomeCenter = function (_React$Component) {
               bizes.map(function (biz) {
                 return _react2.default.createElement(_home_center_item2.default, { key: biz.id, biz: biz });
               })
+            ),
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/search?cat=Restaurant' },
+              'See more hot and new businesses'
             )
           ) : ""
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'home-center-recent-activity' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Recent Activity'
+          ),
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'Nearby'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Friends'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Following'
+              )
+            )
+          )
         )
       );
     }
@@ -34398,6 +34437,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _biz_index_item_rating = __webpack_require__(156);
+
+var _biz_index_item_rating2 = _interopRequireDefault(_biz_index_item_rating);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34424,9 +34467,80 @@ var HomeCenterItem = function (_React$Component) {
         'div',
         { className: 'home-center-item' },
         biz ? _react2.default.createElement(
-          'h1',
+          'div',
           null,
-          biz.name
+          _react2.default.createElement(
+            'div',
+            { className: 'home-center-item-img' },
+            biz.img_url ? _react2.default.createElement('img', { src: biz.img_url }) : _react2.default.createElement('img', { src: biz.img_url })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'home-center-item-biz-info' },
+            _react2.default.createElement(
+              'a',
+              { href: '/#/biz/' + biz.id },
+              _react2.default.createElement(
+                'h1',
+                null,
+                biz.name
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'home-ceter-item-biz-info-rating-review' },
+              _react2.default.createElement(_biz_index_item_rating2.default, { biz: biz }),
+              _react2.default.createElement(
+                'p',
+                null,
+                biz.reviews_num,
+                ' ',
+                biz.reviews_num > 1 ? 'reviews' : 'review'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'biz-info-price-tags' },
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-info-price' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  biz.price
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                '\xB7'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'biz-info-tags' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Bakery, Cake'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              biz.location.city
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'home-center-item-biz-hot' },
+              _react2.default.createElement('i', { className: 'fas fa-fire' }),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Hot place'
+              )
+            )
+          )
         ) : ""
       );
     }

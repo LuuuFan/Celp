@@ -9,15 +9,16 @@
   width: 100%;
 }
 
-.home-center-restaurant-location h1{
+.home-center h1{
   text-align: center;
   color: #d32323;
   font-size: 20px;
   font-weight: 900;
-  margin-bottom: 30px;
+  margin: 30px auto;
 }
 
-.home-center-restaurant-location ul{
+.home-center ul{
+  margin: auto;
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -26,15 +27,16 @@
   border-bottom: 1px solid lightgray;
   padding: 0 10px;
   margin-bottom: 40px;
+  font-size: 16px;
 }
 
-.home-center-restaurant-location li{
+.home-center li{
   border-bottom: 3px solid transparent;
   padding: 10px 5px;
   cursor: pointer;
 }
 
-.home-center-restaurant-location li:hover{
+.home-center li:hover{
   border-bottom: 3px solid #d32323;
 }
 
@@ -54,4 +56,19 @@
 .home-center-restaurant-samples>div{
   display: flex;
   justify-content: space-between;
+}
+
+.home-center-restaurant-samples a{
+  font-size: 14px;
+  color: #0073bb;
+}
+
+.home-center-restaurant-samples a:hover{
+  text-decoration: underline;
+}
+
+.home-center-recent-activity ul>div{
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
 }

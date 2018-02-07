@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeCenterItem from './home_center_item';
+import {Link} from 'react-router-dom';
 
 class HomeCenter extends React.Component{
 
@@ -25,10 +26,21 @@ class HomeCenter extends React.Component{
             <div className='home-center-restaurant-samples'>
               <h2>Hot & New Businesses</h2>
               <div>
-                {bizes.map(biz=><HomeCenterItem key={biz.id} biz={biz}/>)}
+                {bizes.map(biz=><HomeCenterItem key={biz.id} biz={biz} />)}
               </div>
+              <Link to='/search?cat=Restaurant'>See more hot and new businesses</Link>
             </div>
            : ""}
+        </div>
+        <div className='home-center-recent-activity'>
+          <h1>Recent Activity</h1>
+            <ul>
+              <div>
+                <li>Nearby</li>
+                <li>Friends</li>
+                <li>Following</li>
+              </div>
+            </ul>
         </div>
       </div>
     );
