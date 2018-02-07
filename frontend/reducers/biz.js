@@ -7,7 +7,7 @@ const bizReducer = (state={}, action) => {
   let newState = {};
   switch (action.type) {
     case RECEIVE_ALL_BIZ:
-      return Object.assign({}, state, action.bizes);
+      return action.bizes;
     case RECEIVE_BIZ:
       newState = Object.assign({}, state);
       newState[action.payload.biz.id] = action.payload.biz;

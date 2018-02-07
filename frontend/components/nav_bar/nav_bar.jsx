@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../session/button';
+import SearchContainer from './search_container';
 
 class NavBar extends React.Component {
   constructor(props){
     super(props);
   }
-
-  
 
   componentWillReceiveProps(newProps){
     if (this.props.currentUser !== newProps.currentUser) {
@@ -27,15 +26,7 @@ class NavBar extends React.Component {
             <i className="fab fa-yelp"></i>
           </a>
         </h1>
-        <div className='searchBar'>
-          <span>Find</span>
-          <input type='text' placeholder="tacos, cheap dinners, Max's"/>
-          <span>Near</span>
-          <input type='text' placeholder="San Francisco, CA, US"/>
-          <button>
-            <i className="fas fa-search"></i>
-          </button>
-        </div>
+        <SearchContainer />
         <Button currentUser={currentUser} logout={logout}/>
       </div>
       <div className='menu-bar'>

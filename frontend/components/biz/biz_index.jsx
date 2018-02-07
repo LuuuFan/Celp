@@ -7,10 +7,6 @@ class BizIndex extends React.Component {
     super();
   }
 
-  componentDidMount(){
-    this.props.requestAllBiz();
-  }
-
   render(){
     const bizes = this.props.bizes;
     return(

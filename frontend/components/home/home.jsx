@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../session/button';
+import SearchContainer from '../nav_bar/search_container';
 
 
 class Home extends React.Component {
@@ -51,15 +52,7 @@ class Home extends React.Component {
             )}
           </div>
           <a href='/'><h1 className='home-logo'>Celp<i className="fab fa-yelp"></i></h1></a>
-          <div className='searchBar'>
-            <span>Find</span>
-            <input type='text' placeholder="tacos, cheap dinners, Max's"/>
-            <span>Near</span>
-            <input type='text' placeholder="San Francisco, CA, US"/>
-            <button>
-              <i className="fas fa-search"></i>
-            </button>
-          </div>
+          <SearchContainer />
           <div className='business'>
             <ul>
             <a href='/#/biz'>
