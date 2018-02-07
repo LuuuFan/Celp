@@ -157,10 +157,10 @@
 .review-table *{
   color: #0073bb;
   font-size: 12px;
-  cursor: pointer
+  cursor: pointer;
 }
 
-.review-table th, td{
+.review-table>tbody>tr{
   padding-bottom: 10px;
 }
 
@@ -172,4 +172,59 @@
 
 .review-table td:hover {
   text-decoration: underline;
+}
+
+.delete-confirmation{
+  position: fixed;
+  top: 33%;
+  left: 40%;
+  width: 20%;
+  height: 140px;
+  z-index: 3;
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.delete-confirmation span{
+  font-weight: bold;
+  font-size: 20px;
+  color: gray;
+  cursor: pointer;
+}
+
+.delete-confirmation span:hover{
+  color: black;
+}
+
+.delete-confirmation>div{
+  display: flex;
+}
+
+.delete-confirmation>div:first-of-type{
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.delete-confirmation>div>button:first-of-type{
+  color: white;
+  padding: 7px 10px;
+  border: 1px solid #8d0005;
+  margin-right: 15px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #bd1f1f;
+  border-radius: 4px;
+}
+
+.delete-confirmation>div>button:first-of-type:hover{
+  background-color: #a71c1c;
+}
+
+.delete-confirmation>div>button:last-of-type:hover{
+  color: #0073bb;
 }

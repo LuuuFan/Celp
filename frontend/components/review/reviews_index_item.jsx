@@ -4,10 +4,27 @@ import React from 'react';
 import ReviewsIndexItemRating from './reviews_index_item_rating';
 
 class ReviewsIndexItem extends React.Component {
+  constructor(){
+    super();
+    this.state = {className: 'modal'};
+  }
 
   handleClick(e, id){
     e.preventDefault();
     this.props.deleteReview(id);
+    this.setState({className: 'modal'});
+  }
+
+  showDelete(e){
+    e.preventDefault();
+    if (e.target.classList.value !== 'modal-screen') {
+      this.setState({className: 'is-open'});
+    }
+  }
+
+  closeDelete(e){
+    e.preventDefault();
+    this.setState({className: 'modal'});
   }
 
   // mouseOver(id){
@@ -65,7 +82,7 @@ class ReviewsIndexItem extends React.Component {
               <p>{review.body}</p>
               { currentUser && review.user_id === currentUser.id ?
                 <div className='review-status'>
-                  <div onClick={(e)=>this.handleClick(e, review.id)} className='deleteReview'><i className="fas fa-trash-alt"></i></div>
+                  <div onClick={(e)=>this.showDelete(e)} className='deleteReview'><i className="fas fa-trash-alt"></i></div>
                 </div>
               :
                 <div className='review-status'>
@@ -84,6 +101,23 @@ class ReviewsIndexItem extends React.Component {
           </div>
         </div>
         : ""}
+        <div className={this.state.className} id={`modal-${review.id}`}>
+          <div className='delete-confirmation'>
+            <div>
+              <h1>Confirmation</h1>
+                <div onClick={(e)=>this.closeDelete(e)}>
+                  <span>&times;</span>
+                </div>
+            </div>
+            <p>Are you sure you would like to delete this review?</p>
+            <div>
+              <button onClick={(e)=>this.handleClick(e, review.id)}>Yes</button>
+              <button onClick={(e)=>this.closeDelete(e)}>No</button>
+            </div>
+          </div>
+          <div onClick={(e)=>this.closeDelete(e)} className='modal-screen'>
+          </div>
+        </div>
       </div>
     );
   }

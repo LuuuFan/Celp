@@ -29025,7 +29025,10 @@ var ReviewsIndexItem = function (_React$Component) {
   function ReviewsIndexItem() {
     _classCallCheck(this, ReviewsIndexItem);
 
-    return _possibleConstructorReturn(this, (ReviewsIndexItem.__proto__ || Object.getPrototypeOf(ReviewsIndexItem)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (ReviewsIndexItem.__proto__ || Object.getPrototypeOf(ReviewsIndexItem)).call(this));
+
+    _this.state = { className: 'modal' };
+    return _this;
   }
 
   _createClass(ReviewsIndexItem, [{
@@ -29033,6 +29036,21 @@ var ReviewsIndexItem = function (_React$Component) {
     value: function handleClick(e, id) {
       e.preventDefault();
       this.props.deleteReview(id);
+      this.setState({ className: 'modal' });
+    }
+  }, {
+    key: 'showDelete',
+    value: function showDelete(e) {
+      e.preventDefault();
+      if (e.target.classList.value !== 'modal-screen') {
+        this.setState({ className: 'is-open' });
+      }
+    }
+  }, {
+    key: 'closeDelete',
+    value: function closeDelete(e) {
+      e.preventDefault();
+      this.setState({ className: 'modal' });
     }
 
     // mouseOver(id){
@@ -29203,7 +29221,7 @@ var ReviewsIndexItem = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { onClick: function onClick(e) {
-                      return _this2.handleClick(e, review.id);
+                      return _this2.showDelete(e);
                     }, className: 'deleteReview' },
                   _react2.default.createElement('i', { className: 'fas fa-trash-alt' })
                 )
@@ -29249,7 +29267,61 @@ var ReviewsIndexItem = function (_React$Component) {
               )
             )
           )
-        ) : ""
+        ) : "",
+        _react2.default.createElement(
+          'div',
+          { className: this.state.className, id: 'modal-' + review.id },
+          _react2.default.createElement(
+            'div',
+            { className: 'delete-confirmation' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'h1',
+                null,
+                'Confirmation'
+              ),
+              _react2.default.createElement(
+                'div',
+                { onClick: function onClick(e) {
+                    return _this2.closeDelete(e);
+                  } },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  '\xD7'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Are you sure you would like to delete this review?'
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'button',
+                { onClick: function onClick(e) {
+                    return _this2.handleClick(e, review.id);
+                  } },
+                'Yes'
+              ),
+              _react2.default.createElement(
+                'button',
+                { onClick: function onClick(e) {
+                    return _this2.closeDelete(e);
+                  } },
+                'No'
+              )
+            )
+          ),
+          _react2.default.createElement('div', { onClick: function onClick(e) {
+              return _this2.closeDelete(e);
+            }, className: 'modal-screen' })
+        )
       );
     }
   }]);
