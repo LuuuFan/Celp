@@ -7,6 +7,14 @@ class BizIndex extends React.Component {
     super();
   }
 
+  componentDidMount(){
+    if (this.props.location.search.includes('cat')) {
+      this.props.requestCategory(this.props.location.search.slice(5));
+    } else if (this.props.location.search.includes('key')) {
+      console.log('under constructing');
+    }
+  }
+
   render(){
     const bizes = this.props.bizes;
     return(

@@ -37,7 +37,7 @@ class Home extends React.Component {
     return (
       <div className='home'>
         <div className='home-img-frame'>
-          <img className='home-img' src={`${img[Math.floor(Math.random()*8)]}`}/>
+          <img className='home-img' src={`${img[Math.floor(Math.random()*6)]}`}/>
         </div>
         <div className='home-main'>
           <div className='home-header'>
