@@ -15,7 +15,7 @@
   margin: 200px auto;
   // flex-direction: row;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .session-form {
@@ -26,7 +26,18 @@
 }
 
 .session-img{
-  width: 40%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  overflow: hidden;
+}
+
+.session-img>img{
+  object-fit: cover;
+  height: 100%;
+  opacity: 0.5;
 }
 
 .normal-form {
@@ -135,6 +146,4 @@
 
 .errors-closeBtn:hover{
   color: black;
-  // background-color: lightgray;
-  // border-radius: 50%;
 }

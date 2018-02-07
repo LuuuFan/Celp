@@ -16,19 +16,19 @@ class Category extends React.Component {
           <a onClick={()=>this.handleClick("Restaurant")}>
             <li>
               <i className="fas fa-utensils"></i>
-              Restaurants
+              <p>Restaurants</p>
             </li>
           </a>
           <a onClick={()=>this.handleClick("Nightlife")}>
             <li>
               <i className="fas fa-glass-martini"></i>
-              Nightlife
+              <p>Nightlife</p>
             </li>
           </a>
           <a href='/'>
             <li>
               <i className="fas fa-wrench"></i>
-              Home Services
+              <p>Home Services</p>
               <i className="fa fa-sort-desc" aria-hidden="true"></i>
             </li>
           </a>

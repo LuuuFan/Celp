@@ -27171,7 +27171,7 @@ var Search = function (_React$Component) {
         ),
         _react2.default.createElement('input', { onChange: function onChange(e) {
             return _this2.handleInput(e, 'key');
-          }, type: 'text', value: this.state.key, placeholder: 'tacos, cheap dinners, Max\'s' }),
+          }, type: 'text', value: this.state.key, placeholder: 'App Academy, Cake, Bakeries' }),
         _react2.default.createElement(
           'span',
           null,
@@ -27389,6 +27389,7 @@ var SessionForm = function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
+      var img = ['https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865952/celp/135238_10202453128025206_873409347_o_vz2crb.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517604985/celp/IMG_0533_zxvywc.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559871/celp/135238_10202453128025206_873409347_o_ih9kch.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559888/celp/1008639_10202453128065207_145749917_o_e7phk4.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559921/celp/1149704_10202694169251086_786668984_o_dscte2.jpg'];
       var text = this.props.formType == 'signup' ? 'Sign Up' : 'Log In';
       var h2 = this.props.formType == 'signup' ? 'Sign Up for' : 'Log In to';
       return _react2.default.createElement(
@@ -27523,7 +27524,11 @@ var SessionForm = function (_React$Component) {
               )
             )
           ),
-          _react2.default.createElement('div', { className: 'session-img' })
+          _react2.default.createElement(
+            'div',
+            { className: 'session-img' },
+            _react2.default.createElement('img', { src: '' + img[Math.floor(Math.random() * 6)] })
+          )
         )
       );
     }
@@ -34384,7 +34389,11 @@ var Category = function (_React$Component) {
               'li',
               null,
               _react2.default.createElement('i', { className: 'fas fa-utensils' }),
-              'Restaurants'
+              _react2.default.createElement(
+                'p',
+                null,
+                'Restaurants'
+              )
             )
           ),
           _react2.default.createElement(
@@ -34396,7 +34405,11 @@ var Category = function (_React$Component) {
               'li',
               null,
               _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
-              'Nightlife'
+              _react2.default.createElement(
+                'p',
+                null,
+                'Nightlife'
+              )
             )
           ),
           _react2.default.createElement(
@@ -34406,7 +34419,11 @@ var Category = function (_React$Component) {
               'li',
               null,
               _react2.default.createElement('i', { className: 'fas fa-wrench' }),
-              'Home Services',
+              _react2.default.createElement(
+                'p',
+                null,
+                'Home Services'
+              ),
               _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
             )
           )
@@ -34472,7 +34489,7 @@ var HomeCenterItem = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'home-center-item-img' },
-            biz.img_url ? _react2.default.createElement('img', { src: biz.img_url }) : _react2.default.createElement('img', { src: biz.img_url })
+            biz.img_url ? _react2.default.createElement('img', { src: biz.img_url }) : _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517604984/celp/IMG_0531_id5npe.jpg' })
           ),
           _react2.default.createElement(
             'div',

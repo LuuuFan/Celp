@@ -43,6 +43,14 @@ class SessionForm extends React.Component {
 
 
   render(){
+    const img = [
+      'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865952/celp/135238_10202453128025206_873409347_o_vz2crb.jpg',
+      'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg',
+      'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517604985/celp/IMG_0533_zxvywc.jpg',
+      'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559871/celp/135238_10202453128025206_873409347_o_ih9kch.jpg',
+      'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559888/celp/1008639_10202453128065207_145749917_o_e7phk4.jpg',
+      'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559921/celp/1149704_10202694169251086_786668984_o_dscte2.jpg'
+    ]
     const text = this.props.formType == 'signup' ? 'Sign Up' : 'Log In';
     const h2 = this.props.formType == 'signup' ? 'Sign Up for' : 'Log In to';
     return (
@@ -93,7 +101,9 @@ class SessionForm extends React.Component {
                 }
               </form>
             </div>
-            <div className='session-img'></div>
+            <div className='session-img'>
+              <img src={`${img[Math.floor(Math.random()*6)]}`}/>
+            </div>
           </div>
         </div>
     );

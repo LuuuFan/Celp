@@ -22,7 +22,7 @@ class Search extends React.Component{
     return(
       <form onSubmit={(e)=>handleClick(e)} className='searchBar'>
         <span>Find</span>
-        <input onChange={(e)=>this.handleInput(e,'key')} type='text' value={this.state.key} placeholder="tacos, cheap dinners, Max's"/>
+        <input onChange={(e)=>this.handleInput(e,'key')} type='text' value={this.state.key} placeholder="App Academy, Cake, Bakeries"/>
         <span>Near</span>
         <input onChange={(e)=>this.handleInput(e,'loc')} type='text' value={this.state.loc} placeholder="San Francisco, CA, US"/>
         <button onClick={(e)=>this.handleClick(e)}>

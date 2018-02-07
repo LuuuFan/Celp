@@ -13,7 +13,7 @@ class HomeCenterItem extends React.Component{
               {biz.img_url ?
                 <img src={biz.img_url} />
               :
-                <img src={biz.img_url} />
+                <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517604984/celp/IMG_0531_id5npe.jpg' />
               }
             </div>
             <div className='home-center-item-biz-info'>

@@ -177,10 +177,10 @@
 #   Tag.create(tag_name: tag)
 # end
 
-['Restaurant', 'Nightlife', 'Home Services', 'Bootcamp'].each do |category|
-  Category.create(category: category)
-end
-
-Biz.all.each do |biz|
-  biz.category_ids = [1]
-end
+# ['Restaurant', 'Nightlife', 'Home Services', 'Bootcamp'].each do |category|
+#   Category.create(category: category)
+# end
+#
+# Biz.all.each do |biz|
+#   biz.category_ids = [1]
+# end
