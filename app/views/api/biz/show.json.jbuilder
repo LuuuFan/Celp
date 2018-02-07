@@ -1,15 +1,18 @@
 # json.partial! '/api/biz/biz', biz: @biz
 
 json.biz do
-  json.extract! @biz, :id, :name, :phone, :price, :website, :img_url, :biz_rate, :lat, :lng, :takes_reservations, :delivery, :take_out, :credit_cards, :apple_pay, :android_pay, :bitcoin, :parking, :bike_parking, :wheelchair, :noise_level, :alcohol, :outdoor_seating, :wifi, :has_tv, :dogs_allowed, :cats_allowed, :waiter_service, :caters, :gender_neutral_restrooms
+  json.extract! @biz, :id, :name, :phone, :price, :website, :img_url, :biz_rate, :takes_reservations, :delivery, :take_out, :credit_cards, :apple_pay, :android_pay, :bitcoin, :parking, :bike_parking, :wheelchair, :noise_level, :alcohol, :outdoor_seating, :wifi, :has_tv, :dogs_allowed, :cats_allowed, :waiter_service, :caters, :gender_neutral_restrooms
   json.set! :location do
     json.extract! @biz, :address1, :address2, :address3, :city, :zip_code, :state
   end
   json.set! :display_address, @biz.display_address
-  json.img_ids @biz.imgs.pluck(:id)
-  json.review_ids @biz.reviews.pluck(:id)
-  json.total_reviews @biz.reviews.pluck(:id).length
-  json.user_ids @biz.reviewed_users.pluck(:id)
+  json.img_ids @biz.img_ids
+  # @biz.imgs.pluck(:id)
+  json.review_ids @biz.review_ids
+  # @biz.reviews.pluck(:id)
+  json.total_reviews @biz.review_ids.length
+  json.user_ids @biz.reviewed_user_ids
+  # @biz.reviewed_users.pluck(:id)
   if current_user
     json.bookmarked? @biz.bookmarked?(current_user.id)
   end

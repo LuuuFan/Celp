@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206001348) do
+ActiveRecord::Schema.define(version: 20180207005401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,10 +97,21 @@ ActiveRecord::Schema.define(version: 20180206001348) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "taggings", force: :cascade do |t|
+    t.integer "biz_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["biz_id", "tag_id"], name: "index_taggings_on_biz_id_and_tag_id", unique: true
+    t.index ["biz_id"], name: "index_taggings_on_biz_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "tag_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tag_name"], name: "index_tags_on_tag_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

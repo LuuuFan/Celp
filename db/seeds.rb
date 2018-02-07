@@ -151,3 +151,29 @@
 #     end
 #   end
 # end
+
+# ['Restaurant',
+#   'Taco',
+#   'Bakeries',
+#   'Cake',
+#   'Bootcamp',
+#   'Bars',
+#   'American(New)',
+#   'Japanese',
+#   'Sushi Bars',
+#   'Breakfast & Brunch',
+#   'Greek',
+#   'Mediterranean',
+#   'Sandwiches',
+#   'Salad',
+#   'Cocktail Bars',
+#   'Ramen',
+#   'Coffee & Tea',
+#   'Chinese',
+#   'Seafood',
+#   'Pizza',
+#   'Wine Bars',
+#   'Thai'
+# ].each do |tag|
+#   Tag.create(tag_name: tag)
+# end

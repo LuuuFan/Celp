@@ -30027,10 +30027,8 @@ var BizShowRating = function (_React$Component) {
   }
 
   _createClass(BizShowRating, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var biz = this.props.biz;
-
+    key: 'setRatingPosition',
+    value: function setRatingPosition(biz) {
       var rate = document.getElementById('biz-show-rating-' + biz.id);
       var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
       if (rate) {
@@ -30038,16 +30036,19 @@ var BizShowRating = function (_React$Component) {
       }
     }
   }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var biz = this.props.biz;
+
+      this.setRatingPosition(biz);
+    }
+  }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
       if (this.props.biz.biz_rate !== newProps.biz.biz_rate) {
         var biz = newProps.biz;
 
-        var rate = document.getElementById('biz-show-rating-' + biz.id);
-        var position = biz.biz_rate === 0 ? 0 : 48 * biz.biz_rate - 24;
-        if (rate) {
-          rate.style.backgroundPosition = '0 -' + position + 'px';
-        }
+        this.setRatingPosition(biz);
       }
     }
   }, {

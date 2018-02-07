@@ -11,6 +11,8 @@ class Biz < ApplicationRecord
     through: :bookmarks,
     source: :user
   has_many :hours
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 
   def display_address
     address_arr = [self.address1, self.address2, self.address3, self.city, self.state, self.zip_code]

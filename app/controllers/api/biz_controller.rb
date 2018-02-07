@@ -1,7 +1,11 @@
 class Api::BizController < ApplicationController
 
   def index
-    @bizes = Biz.all.includes(:reviews, :reviewed_users)
+    if params[:search]
+      @bizes = Biz.joins(:tags).where(tags: {tag_name: params[:search]}).includes(:reviews, :reviewed_users)
+    else
+      @bizes = Biz.all.includes(:reviews, :reviewed_users)
+    end
     render :index
   end
 
