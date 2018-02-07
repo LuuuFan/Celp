@@ -10,7 +10,6 @@ import BizShowContainer from './biz/biz_show_container';
 import AddImgContainer from './img/add_img_container';
 import BizImgIndexContainer from './img/biz_img_index_container';
 import Footer from './footer';
-import HomeCenter from './home/home_center';
 import WriteReviewContainer from './review/write_review_container';
 
 const App = () => (
@@ -22,7 +21,7 @@ const App = () => (
       <Route path="/" component={NavBarContainer} />
     </Switch>
     <Switch>
-      <Route exact path='/' component={HomeCenter}/>
+      <Route exact path='/' />
       <Route path='/signup' />
       <Route path='/login' />
       <Route path='/search' component={BizIndexContainer} />

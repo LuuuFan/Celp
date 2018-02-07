@@ -26862,10 +26862,6 @@ var _footer = __webpack_require__(183);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _home_center = __webpack_require__(184);
-
-var _home_center2 = _interopRequireDefault(_home_center);
-
 var _write_review_container = __webpack_require__(185);
 
 var _write_review_container2 = _interopRequireDefault(_write_review_container);
@@ -26887,7 +26883,7 @@ var App = function App() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home_center2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/signup' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/login' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _biz_index_container2.default }),
@@ -27228,9 +27224,9 @@ var requestSearch = exports.requestSearch = function requestSearch(key, loc) {
   };
 };
 
-var requestCategory = exports.requestCategory = function requestCategory(cat) {
+var requestCategory = exports.requestCategory = function requestCategory(cat, num) {
   return function (dispatch) {
-    return APIUtilSearch.requestCategory(cat).then(function (bizes) {
+    return APIUtilSearch.requestCategory(cat, num).then(function (bizes) {
       return dispatch((0, _biz.receiveAllBiz)(bizes));
     });
   };
@@ -27253,9 +27249,9 @@ var requestSearch = exports.requestSearch = function requestSearch(key, loc) {
   });
 };
 
-var requestCategory = exports.requestCategory = function requestCategory(cat) {
+var requestCategory = exports.requestCategory = function requestCategory(cat, num) {
   return $.ajax({
-    url: 'api/searches?cat=' + cat,
+    url: 'api/searches?cat=' + cat + '&num=' + num,
     method: 'GET'
   });
 };
@@ -27615,11 +27611,14 @@ var _home2 = _interopRequireDefault(_home);
 
 var _session = __webpack_require__(9);
 
+var _search = __webpack_require__(144);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
     currentUser: state.session.currentUser,
+    bizes: Object.values(state.entities.biz),
     img: ['https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1500759_10202453164706123_223987173_o.jpg?oh=2ebd31423fe1780a531e1da7606cbdca&oe=5ADE4CD5', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1522874_10202453141665547_272813371_o.jpg?oh=ef1f681bc575f9596268b4aa7ad1c89a&oe=5B26A25C', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1559264_10202644420367395_1712400262_o.jpg?oh=86dab3ebf108d9a7b0f86aac79abd884&oe=5ADD2FE1', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1932594_10202694158330813_956381266_o.jpg?oh=9cb0eca26e19c589c9a1ed7baafc4718&oe=5AED5112', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1780203_10202739253498164_176394682_o.jpg?oh=5601d7dff6eb11a843356b6c7bf43ad0&oe=5B257BF7', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1781138_10203058700044128_2477849618289538833_o.jpg?oh=94d82f982e25f4bcaef50f5c7179cde9&oe=5AE41CF0', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/10257499_10203058700124130_4604953966735714631_o.jpg?oh=a7b965f0ec8763c059571f004befc809&oe=5AE79426']
   };
 };
@@ -27631,6 +27630,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createSession: function createSession(user) {
       return dispatch((0, _session.createSession)(user));
+    },
+    requestCategory: function requestCategory(cat, num) {
+      return dispatch((0, _search.requestCategory)(cat, num));
     }
   };
 };
@@ -27666,6 +27668,10 @@ var _category_container = __webpack_require__(187);
 
 var _category_container2 = _interopRequireDefault(_category_container);
 
+var _home_center = __webpack_require__(184);
+
+var _home_center2 = _interopRequireDefault(_home_center);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27684,6 +27690,11 @@ var Home = function (_React$Component) {
   }
 
   _createClass(Home, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.requestCategory('Restaurant', 3);
+    }
+  }, {
     key: 'loginDemo',
     value: function loginDemo() {
       var _this2 = this;
@@ -27817,7 +27828,8 @@ var Home = function (_React$Component) {
           ),
           _react2.default.createElement(_search_container2.default, null),
           _react2.default.createElement(_category_container2.default, null)
-        )
+        ),
+        _react2.default.createElement(_home_center2.default, { bizes: this.props.bizes })
       );
     }
   }]);
@@ -33816,6 +33828,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _home_center_item = __webpack_require__(189);
+
+var _home_center_item2 = _interopRequireDefault(_home_center_item);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33836,7 +33852,91 @@ var HomeCenter = function (_React$Component) {
   _createClass(HomeCenter, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('div', { className: 'homecenter' });
+      var bizes = this.props.bizes;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'home-center' },
+        _react2.default.createElement(
+          'div',
+          { className: 'home-center-restaurant-location' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Celp San Francisco'
+          ),
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'li',
+              null,
+              'Daly City'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'South San Francisco'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'San Burno'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Millbare'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Burlingame'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'San Mateo'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Foster City'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Belmont'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'San Carlos'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Redwood City'
+            )
+          ),
+          bizes.length > 0 ? _react2.default.createElement(
+            'div',
+            { className: 'home-center-restaurant-samples' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Hot & New Businesses'
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              bizes.map(function (biz) {
+                return _react2.default.createElement(_home_center_item2.default, { key: biz.id, biz: biz });
+              })
+            )
+          ) : ""
+        )
+      );
     }
   }]);
 
@@ -34280,6 +34380,62 @@ var Category = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Category;
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeCenterItem = function (_React$Component) {
+  _inherits(HomeCenterItem, _React$Component);
+
+  function HomeCenterItem() {
+    _classCallCheck(this, HomeCenterItem);
+
+    return _possibleConstructorReturn(this, (HomeCenterItem.__proto__ || Object.getPrototypeOf(HomeCenterItem)).apply(this, arguments));
+  }
+
+  _createClass(HomeCenterItem, [{
+    key: 'render',
+    value: function render() {
+      var biz = this.props.biz;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'home-center-item' },
+        biz ? _react2.default.createElement(
+          'h1',
+          null,
+          biz.name
+        ) : ""
+      );
+    }
+  }]);
+
+  return HomeCenterItem;
+}(_react2.default.Component);
+
+exports.default = HomeCenterItem;
 
 /***/ })
 /******/ ]);

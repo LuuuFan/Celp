@@ -2,12 +2,16 @@ import React from 'react';
 import Button from '../session/button';
 import SearchContainer from '../nav_bar/search_container';
 import CategoryContainer from '../nav_bar/category_container';
-
+import HomeCenter from './home_center';
 
 class Home extends React.Component {
 
   constructor(props){
     super(props);
+  }
+
+  componentDidMount(){
+    this.props.requestCategory('Restaurant', 3);
   }
 
   loginDemo(){
@@ -56,6 +60,7 @@ class Home extends React.Component {
           <SearchContainer />
           <CategoryContainer />
         </div>
+        <HomeCenter bizes={this.props.bizes}/>
       </div>
     );
   }

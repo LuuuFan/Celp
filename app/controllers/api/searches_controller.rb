@@ -3,7 +3,7 @@ class Api::SearchesController < ApplicationController
   def index
     if params[:key]
       if Tag.all.pluck(:tag_name).include?(params[:key].capitalize)
-        if params[:loc]
+        if !params[:loc].nil?
           @bizes = Biz.joins(:tags).where(tags: {tag_name: params[:key].capitalize}, city: params[:loc].split(' ').map{|el| el.capitalize}.join(' ')).includes(:reviews, :reviewed_users)
         else
           @bizes = Biz.joins(:tags).where(tags: {tag_name: params[:key].capitalize}).includes(:reviews, :reviewed_users)
@@ -15,7 +15,11 @@ class Api::SearchesController < ApplicationController
     elsif params[:loc]
       @bizes = Biz.where(city: params[:loc].split(' ').map{|el| el.capitalize}.join(' ')).includes(:reviews, :reviewed_users)
     elsif params[:cat]
-      @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users)
+      if params[:num].to_i > 0
+        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users).sample(params[:num].to_i)
+      else
+        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users)
+      end
     else
       @bizes = {}
     end

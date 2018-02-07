@@ -5,5 +5,5 @@ export const requestSearch = (key, loc) => dispatch => APIUtilSearch.requestSear
   .then(bizes => dispatch(receiveAllBiz(bizes)));
 
 
-  export const requestCategory = (cat) => dispatch => APIUtilSearch.requestCategory(cat)
+  export const requestCategory = (cat, num) => dispatch => APIUtilSearch.requestCategory(cat, num)
     .then(bizes => dispatch(receiveAllBiz(bizes)));

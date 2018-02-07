@@ -2,9 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Home from './home';
 import {logout, createSession} from '../../actions/session';
+import {requestCategory} from '../../actions/search';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
+  bizes: Object.values(state.entities.biz),
   img: [
     'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1500759_10202453164706123_223987173_o.jpg?oh=2ebd31423fe1780a531e1da7606cbdca&oe=5ADE4CD5',
     'https://scontent-sjc3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB',
@@ -19,7 +21,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
-  createSession: (user) => dispatch(createSession(user))
+  createSession: (user) => dispatch(createSession(user)),
+  requestCategory: (cat, num) => dispatch(requestCategory(cat, num))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

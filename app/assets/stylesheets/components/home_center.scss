@@ -1,3 +1,57 @@
-.homecenter{
-  height: 600px;
+.home-center{
+  width: 50%;
+  min-width: 1020px;
+  margin: 100px auto;
+    font-family: 'Rubik';
+}
+
+.home-center-restaurant-location{
+  width: 100%;
+}
+
+.home-center-restaurant-location h1{
+  text-align: center;
+  color: #d32323;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.home-center-restaurant-location ul{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5px;
+  color: #666;
+  border-bottom: 1px solid lightgray;
+  padding: 0 10px;
+  margin-bottom: 40px;
+}
+
+.home-center-restaurant-location li{
+  border-bottom: 3px solid transparent;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.home-center-restaurant-location li:hover{
+  border-bottom: 3px solid #d32323;
+}
+
+.home-center-restaurant-samples{
+  width: 100%;
+  text-align: center;
+}
+
+.home-center-restaurant-samples h2{
+  color: #d32323;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 900;
+  margin: 20px auto;
+}
+
+.home-center-restaurant-samples>div{
+  display: flex;
+  justify-content: space-between;
 }

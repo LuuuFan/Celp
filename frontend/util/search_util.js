@@ -6,9 +6,9 @@ export const requestSearch = (key, loc) => (
 );
 
 
-export const requestCategory = (cat) => (
+export const requestCategory = (cat, num) => (
   $.ajax({
-    url: `api/searches?cat=${cat}`,
+    url: `api/searches?cat=${cat}&num=${num}`,
     method: 'GET'
   })
 );
