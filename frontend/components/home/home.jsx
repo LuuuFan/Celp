@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../session/button';
 import SearchContainer from '../nav_bar/search_container';
+import CategoryContainer from '../nav_bar/category_container';
 
 
 class Home extends React.Component {
@@ -53,29 +54,7 @@ class Home extends React.Component {
           </div>
           <a href='/'><h1 className='home-logo'>Celp<i className="fab fa-yelp"></i></h1></a>
           <SearchContainer />
-          <div className='business'>
-            <ul>
-            <a href='/#/biz'>
-              <i className="fas fa-utensils"></i>
-              <li>
-                Restaurants
-              </li>
-            </a>
-            <a href='/'>
-              <i className="fas fa-glass-martini"></i>
-              <li>
-                Nightlife
-              </li>
-            </a>
-            <a href='/'>
-              <i className="fas fa-wrench"></i>
-              <li>
-                Home Services
-              </li>
-              <i className="fa fa-sort-desc" aria-hidden="true"></i>
-            </a>
-            </ul>
-          </div>
+          <CategoryContainer />
         </div>
       </div>
     );

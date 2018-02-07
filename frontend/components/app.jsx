@@ -25,12 +25,12 @@ const App = () => (
       <Route exact path='/' component={HomeCenter}/>
       <Route path='/signup' />
       <Route path='/login' />
+      <Route path='/search' component={BizIndexContainer} />
       <Route exact path='/biz/:bizId' component={BizShowContainer} />
       <Route exact path='/biz/:bizId/photos' component={BizImgIndexContainer} />
       <ProtectedRoute exact path='/biz/:bizId/addphoto' component={AddImgContainer} />
       <ProtectedRoute exact path='/update_review/biz/:bizId' component={WriteReviewContainer} />
       <ProtectedRoute exact path='/write_review/biz/:bizId' component={WriteReviewContainer} />
-      <Route path='/search' component={BizIndexContainer} />
       <Route render={()=>(<Redirect to='/' />)} />
     </Switch>
     <Switch>

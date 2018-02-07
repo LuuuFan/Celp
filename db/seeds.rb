@@ -180,3 +180,7 @@
 # ['Restaurant', 'Nightlife', 'Home Services', 'Bootcamp'].each do |category|
 #   Category.create(category: category)
 # end
+
+# Biz.all.each do |biz|
+#   biz.category_ids = [1]
+# end

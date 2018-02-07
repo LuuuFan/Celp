@@ -26890,12 +26890,12 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home_center2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/signup' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/login' }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _biz_index_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId/photos', component: _biz_img_index_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/biz/:bizId/addphoto', component: _add_img_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/update_review/biz/:bizId', component: _write_review_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/write_review/biz/:bizId', component: _write_review_container2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _biz_index_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
         } })
@@ -26930,6 +26930,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(4);
 
+var _reactRouterDom = __webpack_require__(6);
+
 var _nav_bar = __webpack_require__(142);
 
 var _nav_bar2 = _interopRequireDefault(_nav_bar);
@@ -26952,7 +26954,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_nav_bar2.default);
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_nav_bar2.default));
 
 /***/ }),
 /* 142 */
@@ -26981,6 +26983,10 @@ var _search_container = __webpack_require__(57);
 
 var _search_container2 = _interopRequireDefault(_search_container);
 
+var _category_container = __webpack_require__(187);
+
+var _category_container2 = _interopRequireDefault(_category_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26997,21 +27003,19 @@ var NavBar = function (_React$Component) {
 
     return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
   }
+  //
+  // componentWillReceiveProps(newProps){
+  //   if (this.props.currentUser !== newProps.currentUser) {
+  //     console.log('do something but I donot know');
+  //   }
+  // }
 
   _createClass(NavBar, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps) {
-      if (this.props.currentUser !== newProps.currentUser) {
-        console.log('do something but I donot know');
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
           currentUser = _props.currentUser,
           logout = _props.logout;
-      // debugger
 
       return _react2.default.createElement(
         'header',
@@ -27042,45 +27046,7 @@ var NavBar = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'menu' },
-            _react2.default.createElement(
-              'div',
-              { className: 'business' },
-              _react2.default.createElement(
-                'ul',
-                null,
-                _react2.default.createElement(
-                  'a',
-                  { href: '/#/biz' },
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('i', { className: 'fas fa-utensils' }),
-                    'Restaurants'
-                  )
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '/' },
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
-                    'Nightlife'
-                  )
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '/' },
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('i', { className: 'fas fa-wrench' }),
-                    'Home Services',
-                    _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
-                  )
-                )
-              )
-            ),
+            _react2.default.createElement(_category_container2.default, null),
             _react2.default.createElement(
               'div',
               { className: 'services' },
@@ -27176,7 +27142,6 @@ var Search = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
 
     _this.state = { key: '', loc: '' };
-    // this.handleInput = this.handleInput.bind(this);
     return _this;
   }
 
@@ -27189,8 +27154,9 @@ var Search = function (_React$Component) {
     key: 'handleClick',
     value: function handleClick(e) {
       e.preventDefault();
-      var loc = this.state.loc ? this.state.loc : 'San Francisco';
-      this.props.requestSearch(this.state.key, loc.split(' ').join('+')).then(this.props.history.push('/search'));
+      var loc = this.state.loc ? this.state.loc.split(' ').join('+') : 'San+Francisco';
+      var key = this.state.key.split(' ').join('+');
+      this.props.requestSearch(key, loc).then(this.props.history.push('/search?key=' + key + '&loc=' + loc));
     }
   }, {
     key: 'render',
@@ -27244,7 +27210,7 @@ exports.default = Search;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.requestSearch = undefined;
+exports.requestCategory = exports.requestSearch = undefined;
 
 var _search_util = __webpack_require__(145);
 
@@ -27257,6 +27223,14 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var requestSearch = exports.requestSearch = function requestSearch(key, loc) {
   return function (dispatch) {
     return APIUtilSearch.requestSearch(key, loc).then(function (bizes) {
+      return dispatch((0, _biz.receiveAllBiz)(bizes));
+    });
+  };
+};
+
+var requestCategory = exports.requestCategory = function requestCategory(cat) {
+  return function (dispatch) {
+    return APIUtilSearch.requestCategory(cat).then(function (bizes) {
       return dispatch((0, _biz.receiveAllBiz)(bizes));
     });
   };
@@ -27275,6 +27249,13 @@ Object.defineProperty(exports, "__esModule", {
 var requestSearch = exports.requestSearch = function requestSearch(key, loc) {
   return $.ajax({
     url: 'api/searches?key=' + key + '&loc=' + loc,
+    method: 'GET'
+  });
+};
+
+var requestCategory = exports.requestCategory = function requestCategory(cat) {
+  return $.ajax({
+    url: 'api/searches?cat=' + cat,
     method: 'GET'
   });
 };
@@ -27681,6 +27662,10 @@ var _search_container = __webpack_require__(57);
 
 var _search_container2 = _interopRequireDefault(_search_container);
 
+var _category_container = __webpack_require__(187);
+
+var _category_container2 = _interopRequireDefault(_category_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27831,45 +27816,7 @@ var Home = function (_React$Component) {
             )
           ),
           _react2.default.createElement(_search_container2.default, null),
-          _react2.default.createElement(
-            'div',
-            { className: 'business' },
-            _react2.default.createElement(
-              'ul',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: '/#/biz' },
-                _react2.default.createElement('i', { className: 'fas fa-utensils' }),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  'Restaurants'
-                )
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: '/' },
-                _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  'Nightlife'
-                )
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: '/' },
-                _react2.default.createElement('i', { className: 'fas fa-wrench' }),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  'Home Services'
-                ),
-                _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
-              )
-            )
-          )
+          _react2.default.createElement(_category_container2.default, null)
         )
       );
     }
@@ -34201,6 +34148,138 @@ var WriteReview = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WriteReview;
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(4);
+
+var _reactRouterDom = __webpack_require__(6);
+
+var _search = __webpack_require__(144);
+
+var _category = __webpack_require__(188);
+
+var _category2 = _interopRequireDefault(_category);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    requestCategory: function requestCategory(cat) {
+      return dispatch((0, _search.requestCategory)(cat));
+    }
+  };
+};
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, mapDispatchToProps)(_category2.default));
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Category = function (_React$Component) {
+  _inherits(Category, _React$Component);
+
+  function Category() {
+    _classCallCheck(this, Category);
+
+    return _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).apply(this, arguments));
+  }
+
+  _createClass(Category, [{
+    key: 'handleClick',
+    value: function handleClick(cat) {
+      this.props.requestCategory(cat).then(this.props.history.push('/search?cat=' + cat));
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'business' },
+        _react2.default.createElement(
+          'ul',
+          null,
+          _react2.default.createElement(
+            'a',
+            { onClick: function onClick() {
+                return _this2.handleClick("Restaurant");
+              } },
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement('i', { className: 'fas fa-utensils' }),
+              'Restaurants'
+            )
+          ),
+          _react2.default.createElement(
+            'a',
+            { onClick: function onClick() {
+                return _this2.handleClick("Nightlife");
+              } },
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
+              'Nightlife'
+            )
+          ),
+          _react2.default.createElement(
+            'a',
+            { href: '/' },
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement('i', { className: 'fas fa-wrench' }),
+              'Home Services',
+              _react2.default.createElement('i', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Category;
+}(_react2.default.Component);
+
+exports.default = Category;
 
 /***/ })
 /******/ ]);

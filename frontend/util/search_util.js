@@ -4,3 +4,11 @@ export const requestSearch = (key, loc) => (
     method: 'GET'
   })
 );
+
+
+export const requestCategory = (cat) => (
+  $.ajax({
+    url: `api/searches?cat=${cat}`,
+    method: 'GET'
+  })
+);

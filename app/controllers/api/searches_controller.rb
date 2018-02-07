@@ -14,6 +14,8 @@ class Api::SearchesController < ApplicationController
       end
     elsif params[:loc]
       @bizes = Biz.where(city: params[:loc].split(' ').map{|el| el.capitalize}.join(' ')).includes(:reviews, :reviewed_users)
+    elsif params[:cat]
+      @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users)
     else
       @bizes = {}
     end

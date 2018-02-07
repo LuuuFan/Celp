@@ -4,7 +4,6 @@ class Search extends React.Component{
   constructor(props){
     super(props);
     this.state = {key: '', loc: ''};
-    // this.handleInput = this.handleInput.bind(this);
   }
 
   handleInput(e, type){
@@ -13,9 +12,10 @@ class Search extends React.Component{
 
   handleClick(e){
     e.preventDefault();
-    const loc = this.state.loc ? this.state.loc : 'San Francisco'
-    this.props.requestSearch(this.state.key, loc.split(' ').join('+'))
-      .then(this.props.history.push('/search'));
+    const loc = this.state.loc ? this.state.loc.split(' ').join('+') : 'San+Francisco';
+    const key = this.state.key.split(' ').join('+');
+    this.props.requestSearch(key, loc)
+      .then(this.props.history.push(`/search?key=${key}&loc=${loc}`));
   }
 
   render(){
