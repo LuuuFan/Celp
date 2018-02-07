@@ -33412,7 +33412,7 @@ var BizImgIndexItem = function (_React$Component) {
     key: 'showImg',
     value: function showImg(e) {
       e.preventDefault();
-      if (e.target.classList.value !== 'modal-screen') {
+      if (e.target.tagName === 'IMG') {
         this.setState({ className: 'is-open' });
       }
     }
@@ -33454,9 +33454,7 @@ var BizImgIndexItem = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { onClick: function onClick(e) {
-            return _this3.showImg(e);
-          }, className: 'img-item' },
+        { className: 'img-item' },
         img ? _react2.default.createElement('img', { onClick: function onClick(e) {
             return _this3.showImg(e);
           }, src: img.url }) : "",
@@ -33466,17 +33464,6 @@ var BizImgIndexItem = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'img-show' },
-            _react2.default.createElement(
-              'div',
-              { onClick: function onClick(e) {
-                  return _this3.closeShowImg(e);
-                }, className: 'modal-close' },
-              _react2.default.createElement(
-                'span',
-                null,
-                '\xD7'
-              )
-            ),
             _react2.default.createElement(
               'div',
               { className: 'modal-img-show' },
@@ -33506,6 +33493,17 @@ var BizImgIndexItem = function (_React$Component) {
                     null,
                     'From ',
                     img.user
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'close-modal', onClick: function onClick(e) {
+                      return _this3.closeShowImg(e);
+                    } },
+                  _react2.default.createElement(
+                    'span',
+                    null,
+                    '\xD7'
                   )
                 )
               ),

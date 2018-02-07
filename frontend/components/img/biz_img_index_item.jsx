@@ -9,7 +9,7 @@ class BizImgIndexItem extends React.Component{
 
   showImg(e){
     e.preventDefault();
-    if (e.target.classList.value !== 'modal-screen') {
+    if (e.target.tagName === 'IMG') {
       this.setState({className: 'is-open'});
     }
   }
@@ -38,13 +38,11 @@ class BizImgIndexItem extends React.Component{
   render(){
     const {img, cover, bizId, currentUser} = this.props;
     return (
-      <div onClick={(e)=>this.showImg(e)} className='img-item'>
+      <div className='img-item'>
         { img ? <img onClick={(e)=>this.showImg(e)} src={img.url}/> : ""}
         <div className={this.state.className} id={`modal-${img.id}`}>
           <div className='img-show'>
-            <div onClick={(e)=>this.closeShowImg(e)} className='modal-close'>
-              <span>&times;</span>
-            </div>
+
             <div className='modal-img-show'>
               <img src={img.url} />
             </div>
@@ -56,6 +54,9 @@ class BizImgIndexItem extends React.Component{
                 <div>
                   <a href={`#/biz/${bizId}`}>{img.biz}</a>
                   <p>From {img.user}</p>
+                </div>
+                <div className='close-modal' onClick={(e)=>this.closeShowImg(e)}>
+                  <span>&times;</span>
                 </div>
               </div>
               <div className='img-description'>

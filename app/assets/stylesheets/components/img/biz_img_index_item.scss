@@ -66,18 +66,15 @@
   background-color: white;
 }
 
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 24px;
-  line-height: 1;
-  color: white;
+.close-modal{
+  font-size: 20px;
+  font-weight: bold;
+  color: gray;
   cursor: pointer;
+  margin-left: 100px;
 }
-
-.modal-close:hover {
-  color: white;
+.close-modal:hover{
+  color: black;
 }
 
 .modal-img-show-description img{
