@@ -11,6 +11,7 @@ import AddImgContainer from './img/add_img_container';
 import BizImgIndexContainer from './img/biz_img_index_container';
 import Footer from './footer';
 import WriteReviewContainer from './review/write_review_container';
+import UserProfileContainer from './user/user_profile_container';
 
 const App = () => (
   <div className='main'>
@@ -24,6 +25,8 @@ const App = () => (
       <Route exact path='/' />
       <Route path='/signup' />
       <Route path='/login' />
+      <Route exact path='/aboutme'  component={UserProfileContainer}/>
+      <Route exact path='/user/:username' component={UserProfileContainer} />
       <Route path='/search' component={BizIndexContainer} />
       <Route exact path='/biz/:bizId' component={BizShowContainer} />
       <Route exact path='/biz/:bizId/photos' component={BizImgIndexContainer} />

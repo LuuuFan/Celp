@@ -6,7 +6,13 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_many :imgs
+  has_many :imged_biz,
+    through: :imgs,
+    source: :biz
   has_many :reviews
+  has_many :reviewed_biz,
+    through: :reviews,
+    source: :biz
   has_many :bookmarks
   has_many :bookmark_biz,
     through: :bookmarks,

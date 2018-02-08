@@ -1,0 +1,35 @@
+.user-show-detail-nav{
+  width: 20%;
+  color: #333;
+}
+
+.user-show-detail-nav h2{
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Rubik';
+  margin-bottom: 7px;
+}
+
+.user-show-detail-nav ul{
+  width: 100%;
+}
+
+
+.user-show-detail-nav>ul>li{
+  width: 88%;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 13px;
+}
+
+.user-show-detail-nav li i{
+  margin-right: 13px;
+  color: gray;
+}
+
+.user-show-detail-nav li:hover{
+  background-color: #f5f5f5;
+}
+
+.user-show-detail-nav li:first-of-type{
+  border-top: 1px solid #e6e6e6;
+}

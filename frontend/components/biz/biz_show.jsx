@@ -17,6 +17,7 @@ class BizShow extends React.Component {
     if (!this.props.biz
         || this.props.match.params.bizId !== newProps.match.params.bizId
         || this.props.reviews.length !== newProps.reviews.length
+        // || this.props.match.path !== newProps.match.path
       ) {
       this.props.requestBiz(newProps.match.params.bizId);
     }

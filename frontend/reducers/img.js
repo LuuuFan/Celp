@@ -1,5 +1,6 @@
 import {RECEIVE_BIZ} from '../actions/biz';
 import {RECEIVE_ALL_IMG, RECEIVE_IMG, REMOVE_IMG} from '../actions/img'
+import {RECEIVE_USER} from '../actions/user';
 
 const imgReducer = (state={}, action) => {
   Object.freeze(state);
@@ -20,6 +21,8 @@ const imgReducer = (state={}, action) => {
       newState = Object.assign({}, state);
       delete newState[action.imgId];
       return newState;
+    case RECEIVE_USER:
+      return action.imgs;
     default:
       return state;
   }

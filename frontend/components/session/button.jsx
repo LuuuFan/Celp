@@ -34,13 +34,13 @@ class Button extends React.Component {
                   <img src={currentUser.avatar_url} />
                 </div>
                 <div className='user-detail'>
-                  <a href='/aboutme'>{currentUser.username}</a>
+                  <Link to='/aboutme'>{currentUser.username}</Link>
                 </div>
               </div>
               <hr/>
               <ul>
-                <li><i className="fa fa-user" aria-hidden="true"></i><a href='/aboutme'>About Me</a></li>
-                <li><i className="fa fa-cog" aria-hidden="true"></i><a href='/setting'>Account Setting</a></li>
+                <li><i className="fa fa-user" aria-hidden="true"></i><Link to='/aboutme'>About Me</Link></li>
+                <li><i className="fa fa-cog" aria-hidden="true"></i><Link to='/aboutme'>Account Setting</Link></li>
               </ul>
               <hr/>
               <ul>

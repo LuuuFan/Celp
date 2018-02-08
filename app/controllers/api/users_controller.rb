@@ -9,6 +9,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find_by(username: params[:id])
+    if @user
+      render :show
+    else
+      render json: ['no such user']
+    end
+  end
+
   private
 
   def user_params
