@@ -170,26 +170,22 @@ def fetch_review(biz_id, my_biz_id)
   end
 end
 
-# location_file = [
-#   'belmont.json',
-#   'burlingame.json',
-#   'daly_city.json',
-#   'forster_city.json',
-#   'millbrae.json',
-#   'redwood_city.json',
-#   'san_bruno.json',
-#   'san_francisco.json',
-#   'san_mateo.json',
-#   'south_san_francisco.json',
-# ]
-#
-#
-#
-#
-#
+location_file = [
+  # 'belmont.json',
+  'burlingame.json',
+  'daly_city.json',
+  'forster_city.json',
+  'millbrae.json',
+  'redwood_city.json',
+  'san_bruno.json',
+  'san_francisco.json',
+  'san_mateo.json',
+  'south_san_francisco.json',
+]
+
 def seed(filenames, cat="")
-  # filenames.each do |filename|
-    file = File.read(File.join(Rails.root, 'db', filenames))
+  filenames.each do |filename|
+    file = File.read(File.join(Rails.root, 'db', filename))
     data_hash = JSON.parse(file)
     data_hash['businesses'].each do |biz|
       biz_already_there = Biz.find_by(name: biz['name'], address1: biz['location']['address1'])
@@ -229,20 +225,20 @@ def seed(filenames, cat="")
           end
       end
     end
-  # end
+  end
 end
 
-# seed(location_file)
+seed(location_file)
 
-category_file = [
-  'san_francisco_homeservices.json',
-  'san_francisco_nightlife.json',
-  'san_francisco_restaurants.json'
-]
-
-seed('san_francisco_homeservices.json', 'homeservices')
-seed('san_francisco_nightlife.json', 'nightlife')
-seed('san_francisco_restaurants.json', 'restaurants')
+# category_file = [
+#   'san_francisco_homeservices.json',
+#   'san_francisco_nightlife.json',
+#   'san_francisco_restaurants.json'
+# ]
+#
+# seed('san_francisco_homeservices.json', 'homeservices')
+# seed('san_francisco_nightlife.json', 'nightlife')
+# seed('san_francisco_restaurants.json', 'restaurants')
 
 # category = ['homeservices', 'nightlife', 'restaurants']
 # category.each do |cat, cat_idx|

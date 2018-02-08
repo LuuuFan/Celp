@@ -37,12 +37,14 @@ class BizIndexItem extends React.Component {
              : ""}
              <div className='biz-info-price-tags'>
                <div className='biz-info-price'>
-                 <p>{biz.price}</p>
+                 {biz.price ? <p>{biz.price}</p> : "$$"}
                </div>
-               <p>&middot;</p>
-               <div className='biz-info-tags'>
-                 <p><a>Bakery</a>, <a>Cake</a></p>
-               </div>
+               {biz.tags.length > 0 ? <p>&middot;</p> : ""}
+               {biz.tags.length > 0 ?
+                 <div className='biz-info-tags'>
+                   {biz.tags.map(tag => <p><a href={`/#/search?key=${tag}`}>{tag} </a></p>)}
+                 </div>
+                 : ""}
              </div>
            </div>
            <div className='biz-info-right'>

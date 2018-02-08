@@ -11,7 +11,10 @@ class BizIndex extends React.Component {
     if (this.props.location.search.includes('cat')) {
       this.props.requestCategory(this.props.location.search.slice(5));
     } else if (this.props.location.search.includes('key')) {
-      console.log('under constructing');
+      let arr = this.props.location.search.split('&');
+      let key = arr[0].slice(5);
+      let loc = arr[1].slice(4);
+      this.props.requestSearch(key, loc);
     }
   }
 

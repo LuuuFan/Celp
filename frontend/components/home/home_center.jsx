@@ -11,15 +11,15 @@ class HomeCenter extends React.Component{
         <div className='home-center-restaurant-location'>
           <h1>Celp San Francisco</h1>
           <ul>
-            <li>Daly City</li>
-            <li>South San Francisco</li>
-            <li>San Burno</li>
-            <li>Millbare</li>
-            <li>Burlingame</li>
-            <li>San Mateo</li>
-            <li>Foster City</li>
-            <li>Belmont</li>
-            <li>Redwood City</li>
+            <Link to='/search?key=&loc=daly+city'><li>Daly City</li></Link>
+            <Link  to='/search?key=&loc=South+San+Francisco'><li>South San Francisco</li></Link>
+            <Link  to='/search?key=&loc=San+Burno'><li>San Burno</li></Link>
+            <Link  to='/search?key=&loc=Millbare'><li>Millbare</li></Link>
+            <Link  to='/search?key=&loc=Burlingame'><li>Burlingame</li></Link>
+            <Link  to='/search?key=&loc=San+Mateo'><li>San Mateo</li></Link>
+            <Link  to='/search?key=&loc=Foster+City'><li>Foster City</li></Link>
+            <Link  to='/search?key=&loc=Belmont'><li>Belmont</li></Link>
+            <Link  to='/search?key=&loc=Redwood=City'><li>Redwood City</li></Link>
           </ul>
           {bizes.length > 0 ?
             <div className='home-center-restaurant-samples'>

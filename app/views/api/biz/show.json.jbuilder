@@ -6,6 +6,7 @@ json.biz do
     json.extract! @biz, :address1, :address2, :address3, :city, :zip_code, :state
   end
   json.set! :display_address, @biz.display_address
+  json.tags @biz.tags.pluck(:tag_name)
   json.img_ids @biz.img_ids
   # @biz.imgs.pluck(:id)
   json.review_ids @biz.review_ids

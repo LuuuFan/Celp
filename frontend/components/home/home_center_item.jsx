@@ -26,12 +26,14 @@ class HomeCenterItem extends React.Component{
               </div>
               <div className='biz-info-price-tags'>
                 <div className='biz-info-price'>
-                  <p>{biz.price}</p>
+                  {biz.price ? <p>{biz.price}</p> : "$$"}
                 </div>
-                <p>&middot;</p>
-                <div className='biz-info-tags'>
-                  <p>Bakery, Cake</p>
-                </div>
+                {biz.tags.length > 0 ? <p>&middot;</p> : ""}
+                {biz.tags.length > 0 ?
+                  <div className='biz-info-tags'>
+                    {biz.tags.map(tag => <p><a href={`/#/search?key=${tag}`}>{tag} </a></p>)}
+                  </div>
+                 : ""}
               </div>
               <p>{biz.location.city}</p>
               <div className='home-center-item-biz-hot'>

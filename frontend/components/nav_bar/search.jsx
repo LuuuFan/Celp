@@ -6,6 +6,15 @@ class Search extends React.Component{
     this.state = {key: '', loc: ''};
   }
 
+  // componentDidMount(){
+  //   if (this.props.match.params.key || this.props.match.params.loc) {
+  //     let key = this.props.match.params.key;
+  //     let loc = this.props.match.params.loc;
+  //     this.props.requestSearch(key, loc)
+  //       .then(this.props.history.push(`/search?key=${key}&loc=${loc}`));
+  //   }
+  // }
+
   handleInput(e, type){
     this.setState({[type]: e.target.value});
   }

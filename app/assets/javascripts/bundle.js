@@ -27386,6 +27386,15 @@ var Search = function (_React$Component) {
     return _this;
   }
 
+  // componentDidMount(){
+  //   if (this.props.match.params.key || this.props.match.params.loc) {
+  //     let key = this.props.match.params.key;
+  //     let loc = this.props.match.params.loc;
+  //     this.props.requestSearch(key, loc)
+  //       .then(this.props.history.push(`/search?key=${key}&loc=${loc}`));
+  //   }
+  // }
+
   _createClass(Search, [{
     key: 'handleInput',
     value: function handleInput(e, type) {
@@ -27634,6 +27643,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _session_img = __webpack_require__(196);
+
+var _session_img2 = _interopRequireDefault(_session_img);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -27707,7 +27720,7 @@ var SessionForm = function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      var img = ['https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865952/celp/135238_10202453128025206_873409347_o_vz2crb.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517604985/celp/IMG_0533_zxvywc.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559871/celp/135238_10202453128025206_873409347_o_ih9kch.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559888/celp/1008639_10202453128065207_145749917_o_e7phk4.jpg', 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517559921/celp/1149704_10202694169251086_786668984_o_dscte2.jpg'];
+      var img = ['https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865952/celp/135238_10202453128025206_873409347_o_vz2crb.jpg'];
       var text = this.props.formType == 'signup' ? 'Sign Up' : 'Log In';
       var h2 = this.props.formType == 'signup' ? 'Sign Up for' : 'Log In to';
       return _react2.default.createElement(
@@ -27842,11 +27855,7 @@ var SessionForm = function (_React$Component) {
               )
             )
           ),
-          _react2.default.createElement(
-            'div',
-            { className: 'session-img' },
-            _react2.default.createElement('img', { src: '' + img[Math.floor(Math.random() * 6)] })
-          )
+          _react2.default.createElement(_session_img2.default, { img: img[0] })
         )
       );
     }
@@ -28222,49 +28231,85 @@ var HomeCenter = function (_React$Component) {
             'ul',
             null,
             _react2.default.createElement(
-              'li',
-              null,
-              'Daly City'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=daly+city' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Daly City'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'South San Francisco'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=South+San+Francisco' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'South San Francisco'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'San Burno'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=San+Burno' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'San Burno'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'Millbare'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=Millbare' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Millbare'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'Burlingame'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=Burlingame' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Burlingame'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'San Mateo'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=San+Mateo' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'San Mateo'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'Foster City'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=Foster+City' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Foster City'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'Belmont'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=Belmont' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Belmont'
+              )
             ),
             _react2.default.createElement(
-              'li',
-              null,
-              'Redwood City'
+              _reactRouterDom.Link,
+              { to: '/search?key=&loc=Redwood=City' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Redwood City'
+              )
             )
           ),
           bizes.length > 0 ? _react2.default.createElement(
@@ -28418,26 +28463,33 @@ var HomeCenterItem = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'biz-info-price' },
-                _react2.default.createElement(
+                biz.price ? _react2.default.createElement(
                   'p',
                   null,
                   biz.price
-                )
+                ) : "$$"
               ),
-              _react2.default.createElement(
+              biz.tags.length > 0 ? _react2.default.createElement(
                 'p',
                 null,
                 '\xB7'
-              ),
-              _react2.default.createElement(
+              ) : "",
+              biz.tags.length > 0 ? _react2.default.createElement(
                 'div',
                 { className: 'biz-info-tags' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Bakery, Cake'
-                )
-              )
+                biz.tags.map(function (tag) {
+                  return _react2.default.createElement(
+                    'p',
+                    null,
+                    _react2.default.createElement(
+                      'a',
+                      { href: '/#/search?key=' + tag },
+                      tag,
+                      ' '
+                    )
+                  );
+                })
+              ) : ""
             ),
             _react2.default.createElement(
               'p',
@@ -28644,7 +28696,10 @@ var BizIndex = function (_React$Component) {
       if (this.props.location.search.includes('cat')) {
         this.props.requestCategory(this.props.location.search.slice(5));
       } else if (this.props.location.search.includes('key')) {
-        console.log('under constructing');
+        var arr = this.props.location.search.split('&');
+        var key = arr[0].slice(5);
+        var loc = arr[1].slice(4);
+        this.props.requestSearch(key, loc);
       }
     }
   }, {
@@ -28857,36 +28912,33 @@ var BizIndexItem = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'biz-info-price' },
-                  _react2.default.createElement(
+                  biz.price ? _react2.default.createElement(
                     'p',
                     null,
                     biz.price
-                  )
+                  ) : "$$"
                 ),
-                _react2.default.createElement(
+                biz.tags.length > 0 ? _react2.default.createElement(
                   'p',
                   null,
                   '\xB7'
-                ),
-                _react2.default.createElement(
+                ) : "",
+                biz.tags.length > 0 ? _react2.default.createElement(
                   'div',
                   { className: 'biz-info-tags' },
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    _react2.default.createElement(
-                      'a',
+                  biz.tags.map(function (tag) {
+                    return _react2.default.createElement(
+                      'p',
                       null,
-                      'Bakery'
-                    ),
-                    ', ',
-                    _react2.default.createElement(
-                      'a',
-                      null,
-                      'Cake'
-                    )
-                  )
-                )
+                      _react2.default.createElement(
+                        'a',
+                        { href: '/#/search?key=' + tag },
+                        tag,
+                        ' '
+                      )
+                    );
+                  })
+                ) : ""
               )
             ),
             _react2.default.createElement(
@@ -35248,6 +35300,34 @@ var UserProfileNav = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = UserProfileNav;
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SessionImg = function SessionImg(_ref) {
+  var img = _ref.img;
+  return _react2.default.createElement(
+    'div',
+    { className: 'session-img' },
+    _react2.default.createElement('img', { src: img })
+  );
+};
+
+exports.default = SessionImg;
 
 /***/ })
 /******/ ]);
