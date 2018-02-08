@@ -23,7 +23,7 @@
 # )
 # Biz.create(
 #   name: 'Shasha Café',
-#   address1: "1730 O'farrell St",
+#   address1: "1750 O'farrell St",
 #   address2: "#888",
 #   city:'San Francisco',
 #   zip_code:'94115',
@@ -95,25 +95,8 @@
 # )
 
 # Img.destroy_all
-# Img.create(
-#   biz_id: 7,
-#   user_id: 5,
-#   url: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1911276_10202656012097181_1086564781_o.jpg?oh=b78d1e273835e7866c33dbfa6a67b14b&oe=5B250003'
-# )
 #
-# Img.create(
-#   biz_id: 7,
-#   user_id: 5,
-#   url: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97'
-# )
-#
-# Img.create(
-#   biz_id: 7,
-#   user_id: 5,
-#   url: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB'
-# )
-
-
+# Review.destroy_all
 # Review.create(
 #   biz_id: 7,
 #   user_id: 5,
@@ -144,14 +127,8 @@
 #   body: "Top quality. The best sun, grass, and kittens you'd find anywhere. I would have given a full five stars had they used the oxford comma."
 # )
 
-# Biz.all.pluck(:id).each do |biz_id|
-#   (0..6).each do |day|
-#     if day != 6
-#       Hour.create(biz_id: biz_id, day: day, start:'1100', end: '2200' )
-#     end
-#   end
-# end
 
+# Tag.destroy_all
 # [ 'Taco',
 #   'Bakeries',
 #   'Cake',
@@ -177,10 +154,132 @@
 #   Tag.create(tag_name: tag)
 # end
 
+
+require 'json'
+require 'rest-client'
+
+def fetch_photo(biz_id, my_biz_id)
+  response = RestClient::Request.execute(
+    method: :get,
+    url: "https://api.yelp.com/v3/businesses/#{biz_id}",
+    headers: {Authorization: 'Bearer 7AzKetI9iUF-ZdqNIap3z9d4VfqUYmpneo5BlqrukldMYwGIIckvirm-jTcF59M2HMH7GnVcbB8e7e9om6-OuxN2ZrIgabRNjNng6viVPS14AAZPFV0M9B20pglqWnYx'}
+  )
+
+  photos=JSON.parse(response)['photos']
+
+  photos.each do |photo|
+    random_user_id = User.all.sample.id
+    Img.create(
+      biz_id: my_biz_id,
+      user_id: random_user_id,
+      url: photo)
+  end
+end
+
+def fetch_review(biz_id, my_biz_id)
+  response = RestClient::Request.execute(
+    method: :get,
+    url: "https://api.yelp.com/v3/businesses/#{biz_id}/reviews",
+    headers: {Authorization: 'Bearer 7AzKetI9iUF-ZdqNIap3z9d4VfqUYmpneo5BlqrukldMYwGIIckvirm-jTcF59M2HMH7GnVcbB8e7e9om6-OuxN2ZrIgabRNjNng6viVPS14AAZPFV0M9B20pglqWnYx'}
+  )
+
+  review = JSON.parse(response)
+
+  review['reviews'].each do |review|
+    user = User.find_by(username: review['user']['name'].split(' ').join('_'))
+    if !user
+      User.create(
+        username: review['user']['name'].split(' ').join('_'),
+        password: 'password',
+        avatar_url: review['user']['image_url'],
+        email: "#{review['user']['name'].split(' ').join('_')}@celp.com"
+      )
+      user = User.find_by(username: review['user']['name'].split(' ').join('_'))
+    end
+    Review.create(
+      user_id: user.id,
+      biz_id: my_biz_id,
+      body: review['text'],
+      rate: review['rating']
+    )
+  end
+end
+
+filename = [
+  'belmont.json',
+  'burlingame.json',
+  'daly_city.json',
+  'forster_city.json',
+  'millbrae.json',
+  'redwood_city.json',
+  'san_bruno.json',
+  'san_francisco.json',
+  'san_mateo.json',
+  'south_san_francisco.json',
+  'san_francisco_homeservices.json',
+  'san_francisco_nightlife.json',
+  'san_francisco_restaurants.json'
+]
+
+# filename.each do |filename|
+  # file = File.open(File.join(Rails.root, 'db', 'san_francisco_restaurants.json'))
+
+  file = File.read(File.join(Rails.root, 'db', 'san_francisco_homeservices.json'))
+  data_hash = JSON.parse(file)
+  data_hash['businesses'].each do |biz|
+    biz_already_there = Biz.find_by(name: biz['name'], address1: biz['location']['address1'])
+    if !biz_already_there
+      Biz.create(
+        name: biz['name'],
+        address1: biz['location']['address1'],
+        address2: biz['location']['address2'],
+        address3: biz['location']['address3'],
+        city: biz['location']['city'],
+        zip_code: biz['location']['zip_code'],
+        state: biz['location']['state'],
+        lat: biz['coordinates']['latitude'],
+        lng: biz['coordinates']['longitude'],
+        price: biz['price'],
+        phone: biz['display_phone'],
+        img_url: biz['image_url'],
+      )
+      my_biz = Biz.find_by(name:biz['name'])
+      if my_biz
+        if !biz['categories'].empty?
+          biz['categories'].each do |category|
+            my_biz.assign(category['alias'])
+          end
+        end
+        (0..6).each do |day|
+          if day != 6
+            Hour.create(biz_id: my_biz.id, day: day, start:'1100', end: '2200' )
+          end
+        end
+        my_biz.category('homeservices')
+        fetch_review(biz['id'], my_biz.id)
+        fetch_photo(biz['id'], my_biz.id)
+      end
+    end
+
+    end
+# end
+
+
+# Category.destroy_all
 # ['Restaurant', 'Nightlife', 'Home Services', 'Bootcamp'].each do |category|
 #   Category.create(category: category)
 # end
+
+# Hour.destroy_all
+# Biz.all.pluck(:id).each do |biz_id|
+#   (0..6).each do |day|
+#     if day != 6
+#       Hour.create(biz_id: biz_id, day: day, start:'1100', end: '2200' )
+#     end
+#   end
+# end
+
 #
 # Biz.all.each do |biz|
-#   biz.category_ids = [1]
+#   biz.category('Restaurant')
 # end

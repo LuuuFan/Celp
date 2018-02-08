@@ -1,0 +1,825 @@
+{
+    "businesses": [
+        {
+            "id": "twin-peaks-san-francisco",
+            "name": "Twin Peaks",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/IU1G5VuL7-DUdVTpnBbHfA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/twin-peaks-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1000,
+            "categories": [
+                {
+                    "alias": "parks",
+                    "title": "Parks"
+                },
+                {
+                    "alias": "landmarks",
+                    "title": "Landmarks & Historical Buildings"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7521564122127,
+                "longitude": -122.447519302368
+            },
+            "transactions": [],
+            "location": {
+                "address1": "501 Twin Peaks Blvd",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "501 Twin Peaks Blvd",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14158312700",
+            "display_phone": "(415) 831-2700",
+            "distance": 1375.6233249122
+        },
+        {
+            "id": "tom-and-jerrys-house-san-francisco",
+            "name": "Tom and Jerry's House",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/9ex0NOn7HiUdLRiDXfOroA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tom-and-jerrys-house-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 60,
+            "categories": [
+                {
+                    "alias": "localflavor",
+                    "title": "Local Flavor"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.75667,
+                "longitude": -122.42907
+            },
+            "transactions": [],
+            "location": {
+                "address1": "3650 21st St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3650 21st St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 808.6806844942
+        },
+        {
+            "id": "coffeeshop-san-francisco",
+            "name": "CoffeeShop",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/buGWN2vnsJyUcDST9wsFTQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/coffeeshop-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 306,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.747,
+                "longitude": -122.41865
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "3139 Mission St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3139 Mission St",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14153683802",
+            "display_phone": "(415) 368-3802",
+            "distance": 2193.741887276
+        },
+        {
+            "id": "mission-dolores-park-san-francisco",
+            "name": "Mission Dolores Park",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/9m6qOWYztlV8jOR9z1u11g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mission-dolores-park-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1374,
+            "categories": [
+                {
+                    "alias": "parks",
+                    "title": "Parks"
+                },
+                {
+                    "alias": "playgrounds",
+                    "title": "Playgrounds"
+                },
+                {
+                    "alias": "basketballcourts",
+                    "title": "Basketball Courts"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.759764,
+                "longitude": -122.427052
+            },
+            "transactions": [],
+            "location": {
+                "address1": "19th & Dolores St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "19th & Dolores St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14158312700",
+            "display_phone": "(415) 831-2700",
+            "distance": 835.1720463276
+        },
+        {
+            "id": "neighbors-corner-san-francisco-2",
+            "name": "Neighbor's Corner",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/RXBcqpghxjdLYUeorvUmNA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/neighbors-corner-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 63,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "bakeries",
+                    "title": "Bakeries"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7555695675718,
+                "longitude": -122.438793493909
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "499 Douglass St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "499 Douglass St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14159930499",
+            "display_phone": "(415) 993-0499",
+            "distance": 625.2144921816
+        },
+        {
+            "id": "seward-street-slides-san-francisco",
+            "name": "Seward Street Slides",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/i3_oPpQ4xZJB2vUsKMUSew/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/seward-street-slides-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 491,
+            "categories": [
+                {
+                    "alias": "parks",
+                    "title": "Parks"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7579189398193,
+                "longitude": -122.439813773941
+            },
+            "transactions": [],
+            "location": {
+                "address1": "30 Seward St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "30 Seward St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14152544299",
+            "display_phone": "(415) 254-4299",
+            "distance": 444.106385304
+        },
+        {
+            "id": "grandview-park-san-francisco",
+            "name": "Grandview Park",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/bn70M2Ec0zw_ci_gPQR5Bw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/grandview-park-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 303,
+            "categories": [
+                {
+                    "alias": "parks",
+                    "title": "Parks"
+                },
+                {
+                    "alias": "hiking",
+                    "title": "Hiking"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7564069062467,
+                "longitude": -122.471924048429
+            },
+            "transactions": [],
+            "location": {
+                "address1": "14TH Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94122",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "14TH Ave",
+                    "San Francisco, CA 94122"
+                ]
+            },
+            "phone": "+14158316331",
+            "display_phone": "(415) 831-6331",
+            "distance": 3158.4731421939996
+        },
+        {
+            "id": "l-ardoise-bistro-san-francisco",
+            "name": "L'ardoise Bistro",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/VJDYOLw03bUGeBLb14BRGA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/l-ardoise-bistro-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1166,
+            "categories": [
+                {
+                    "alias": "french",
+                    "title": "French"
+                },
+                {
+                    "alias": "wine_bars",
+                    "title": "Wine Bars"
+                },
+                {
+                    "alias": "desserts",
+                    "title": "Desserts"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7665241,
+                "longitude": -122.4331385
+            },
+            "transactions": [],
+            "price": "$$$",
+            "location": {
+                "address1": "151 Noe St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "151 Noe St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14154372600",
+            "display_phone": "(415) 437-2600",
+            "distance": 699.6128319756
+        },
+        {
+            "id": "chicks-and-love-pizza-patio-san-francisco-5",
+            "name": "Chicks and Love Pizza Patio",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/oSobqPX5nKuJPhE793p5lQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/chicks-and-love-pizza-patio-san-francisco-5?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 55,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7693226761551,
+                "longitude": -122.415308338623
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1701 Folsom St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1701 Folsom St",
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14159126647",
+            "display_phone": "(415) 912-6647",
+            "distance": 2081.022748072
+        },
+        {
+            "id": "philz-coffee-san-francisco-2",
+            "name": "Philz Coffee",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/20tF68QURIehyhBwA7zniQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/philz-coffee-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1016,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7601254,
+                "longitude": -122.4348964
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "549 Castro St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "549 Castro St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14158759656",
+            "display_phone": "(415) 875-9656",
+            "distance": 161.0933809869
+        },
+        {
+            "id": "miyako-old-fashioned-ice-cream-san-francisco",
+            "name": "Miyako Old Fashioned Ice Cream",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/p63HPr-ZQZr8gSTQgPrMaQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/miyako-old-fashioned-ice-cream-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 285,
+            "categories": [
+                {
+                    "alias": "icecream",
+                    "title": "Ice Cream & Frozen Yogurt"
+                },
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7830991389702,
+                "longitude": -122.432461963236
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1470 Fillmore St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94118",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1470 Fillmore St",
+                    "San Francisco, CA 94118"
+                ]
+            },
+            "phone": "+14159315260",
+            "display_phone": "(415) 931-5260",
+            "distance": 2493.388925226
+        },
+        {
+            "id": "cuisine-of-nepal-san-francisco",
+            "name": "Cuisine of Nepal",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/Ps6UvrXCnzj3UJT1f1372w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cuisine-of-nepal-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 324,
+            "categories": [
+                {
+                    "alias": "himalayan",
+                    "title": "Himalayan/Nepalese"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.74097,
+                "longitude": -122.42318
+            },
+            "transactions": [
+                "delivery",
+                "pickup",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "3486 Mission St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3486 Mission St",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14156472222",
+            "display_phone": "(415) 647-2222",
+            "distance": 2502.5961202999997
+        },
+        {
+            "id": "the-16th-avenue-tiled-steps-san-francisco",
+            "name": "The 16th Avenue Tiled Steps",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/wQjK6G5DYu_ioWSoY7xiKA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/the-16th-avenue-tiled-steps-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 524,
+            "categories": [
+                {
+                    "alias": "localflavor",
+                    "title": "Local Flavor"
+                },
+                {
+                    "alias": "landmarks",
+                    "title": "Landmarks & Historical Buildings"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7562695920562,
+                "longitude": -122.473148091171
+            },
+            "transactions": [],
+            "location": {
+                "address1": "Moraga St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94122",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "Moraga St",
+                    "San Francisco, CA 94122"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 3266.853500758
+        },
+        {
+            "id": "el-gallo-giro-taco-truck-san-francisco-4",
+            "name": "El Gallo Giro Taco Truck",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/LRWb0SHyiX27PDaCWgWNxQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/el-gallo-giro-taco-truck-san-francisco-4?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 150,
+            "categories": [
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                },
+                {
+                    "alias": "tacos",
+                    "title": "Tacos"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.75417,
+                "longitude": -122.41312
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "23rd St & Treat Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "23rd St & Treat Ave",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14152401224",
+            "display_phone": "(415) 240-1224",
+            "distance": 2178.70517992
+        },
+        {
+            "id": "shizen-vegan-sushi-bar-and-izakaya-san-francisco",
+            "name": "Shizen Vegan Sushi Bar & Izakaya",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ose-rlo_a7c6pybjIxjHbA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/shizen-vegan-sushi-bar-and-izakaya-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 957,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "vegan",
+                    "title": "Vegan"
+                },
+                {
+                    "alias": "izakaya",
+                    "title": "Izakaya"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.768314,
+                "longitude": -122.421642
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "370 14th St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "370 14th St",
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14156785767",
+            "display_phone": "(415) 678-5767",
+            "distance": 1540.926312864
+        },
+        {
+            "id": "anchor-oyster-bar-san-francisco",
+            "name": "Anchor Oyster Bar",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/-Zw6ivl7HlQ7ELe0OnPJFQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/anchor-oyster-bar-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1306,
+            "categories": [
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.759689,
+                "longitude": -122.434609
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$$",
+            "location": {
+                "address1": "579 Castro St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "579 Castro St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14154313990",
+            "display_phone": "(415) 431-3990",
+            "distance": 210.253350838
+        },
+        {
+            "id": "philz-coffee-san-francisco",
+            "name": "Philz Coffee",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/mGZVAE9mrLTQ67s1FuGI1g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/philz-coffee-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1587,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.752397102831,
+                "longitude": -122.41426366546
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "3101 24th St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3101 24th St",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14158759370",
+            "display_phone": "(415) 875-9370",
+            "distance": 2167.53716499
+        },
+        {
+            "id": "hidden-garden-steps-san-francisco",
+            "name": "Hidden Garden Steps",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/348l2xXzw-dTTDoIzfI91Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hidden-garden-steps-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 47,
+            "categories": [
+                {
+                    "alias": "publicart",
+                    "title": "Public Art"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7598852846454,
+                "longitude": -122.473695315421
+            },
+            "transactions": [],
+            "location": {
+                "address1": "16TH Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94122",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "16TH Ave",
+                    "San Francisco, CA 94122"
+                ]
+            },
+            "phone": "+14156213260",
+            "display_phone": "(415) 621-3260",
+            "distance": 3276.23482642
+        },
+        {
+            "id": "five-star-truffles-co-san-francisco",
+            "name": "Five Star Truffles Co.",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/SuNQSMRamNFyTBS11GaKQA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/five-star-truffles-co-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 174,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "chocolate",
+                    "title": "Chocolatiers & Shops"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.76058,
+                "longitude": -122.43693
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "4251 A 18th St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "4251 A 18th St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14155525128",
+            "display_phone": "(415) 552-5128",
+            "distance": 49.195299692119995
+        },
+        {
+            "id": "castro-coffee-company-san-francisco-2",
+            "name": "Castro Coffee Company",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/-3JY8o6I78BUguCRcxtWvA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/castro-coffee-company-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 191,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7621868135634,
+                "longitude": -122.434965349623
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "427 Castro St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "427 Castro St",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14155526676",
+            "display_phone": "(415) 552-6676",
+            "distance": 193.60824655524
+        }
+    ],
+    "total": 54600,
+    "region": {
+        "center": {
+            "longitude": -122.4364471436,
+            "latitude": 37.7608993898
+        }
+    }
+}

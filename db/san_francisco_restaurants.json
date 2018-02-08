@@ -1,0 +1,631 @@
+{
+    "businesses": [
+        {
+            "id": "franciscan-restaurant-san-francisco",
+            "name": "Franciscan Restaurant",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/franciscan-restaurant-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 3,
+            "categories": [],
+            "rating": 2,
+            "coordinates": {
+                "latitude": 37.7870801281603,
+                "longitude": -122.460505039254
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1 2nd Ave Pier 43",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94118",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1 2nd Ave Pier 43",
+                    "San Francisco, CA 94118"
+                ]
+            },
+            "phone": "+14153620174",
+            "display_phone": "(415) 362-0174",
+            "distance": 3597.8831515099996
+        },
+        {
+            "id": "pat-kuleto-restaurant-development-and-managment-company-san-francisco",
+            "name": "Pat Kuleto Restaurant Development & Managment Company",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/pat-kuleto-restaurant-development-and-managment-company-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.80547,
+                "longitude": -122.40612
+            },
+            "transactions": [],
+            "location": {
+                "address1": "55 Francisco St",
+                "address2": "Ste 430",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94133",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "55 Francisco St",
+                    "Ste 430",
+                    "San Francisco, CA 94133"
+                ]
+            },
+            "phone": "+14153934751",
+            "display_phone": "(415) 393-4751",
+            "distance": 5633.808169432
+        },
+        {
+            "id": "san-francisco-restaurant-company-san-francisco",
+            "name": "San Francisco Restaurant Company",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/san-francisco-restaurant-company-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 1,
+            "coordinates": {
+                "latitude": 37.7951292693615,
+                "longitude": -122.396138906479
+            },
+            "transactions": [],
+            "location": {
+                "address1": "4 Embarcadero Ctr",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94111",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "4 Embarcadero Ctr",
+                    "San Francisco, CA 94111"
+                ]
+            },
+            "phone": "+14156757200",
+            "display_phone": "(415) 675-7200",
+            "distance": 5211.293011436
+        },
+        {
+            "id": "dine-around-the-bay-san-francisco",
+            "name": "Dine Around the Bay",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/dine-around-the-bay-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.77501,
+                "longitude": -122.41826
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1001 Van Ness Ave",
+                "address2": "",
+                "address3": "KRON4-TV",
+                "city": "San Francisco",
+                "zip_code": "94101",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1001 Van Ness Ave",
+                    "KRON4-TV",
+                    "San Francisco, CA 94101"
+                ]
+            },
+            "phone": "+14155618000",
+            "display_phone": "(415) 561-8000",
+            "distance": 2240.053703522
+        },
+        {
+            "id": "san-francisco-general-cafe-nightingales-san-francisco",
+            "name": "San Francisco General Cafe Nightingales",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/san-francisco-general-cafe-nightingales-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 8,
+            "categories": [],
+            "rating": 2.5,
+            "coordinates": {
+                "latitude": 37.7556299,
+                "longitude": -122.4051
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1001 Potrero Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1001 Potrero Ave",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 2870.0264669079997
+        },
+        {
+            "id": "singapore-american-business-association-san-francisco",
+            "name": "Singapore American Business Association",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/singapore-american-business-association-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.77991,
+                "longitude": -122.42112
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94102",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94102"
+                ]
+            },
+            "phone": "+14152521150",
+            "display_phone": "(415) 252-1150",
+            "distance": 2387.141424964
+        },
+        {
+            "id": "biedenweg-roanna-san-francisco",
+            "name": "Biedenweg Roanna",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Rl9SGBmuf3_qqX0cl6QCaw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/biedenweg-roanna-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.784778,
+                "longitude": -122.424125
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1200 Gough Street Ofc",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1200 Gough Street Ofc",
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14154412775",
+            "display_phone": "(415) 441-2775",
+            "distance": 2162.04207356
+        },
+        {
+            "id": "moon-kang-engineering-company-san-francisco",
+            "name": "Moon Kang Engineering Company",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/moon-kang-engineering-company-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.72605,
+                "longitude": -122.40141
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1485 Bayshore Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94124",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1485 Bayshore Blvd",
+                    "San Francisco, CA 94124"
+                ]
+            },
+            "phone": "+14153303522",
+            "display_phone": "(415) 330-3522",
+            "distance": 4945.026742831999
+        },
+        {
+            "id": "jc-decaux-automated-toilet-san-francisco",
+            "name": "JC Decaux automated toilet",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/6dz3Zb8BFkF7IAdRw4WDGQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/jc-decaux-automated-toilet-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 2,
+            "coordinates": {
+                "latitude": 37.79918,
+                "longitude": -122.39776
+            },
+            "transactions": [],
+            "location": {
+                "address1": "Embarcadero At Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94111",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "Embarcadero At Broadway",
+                    "San Francisco, CA 94111"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 5448.629945134
+        },
+        {
+            "id": "maxs-restaurants-south-san-francisco-2",
+            "name": "Max's Restaurants",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/d1K_aXAVOUcBxZV9Qz-nyA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/maxs-restaurants-south-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6555595397949,
+                "longitude": -122.421798706055
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16508736297",
+            "display_phone": "(650) 873-6297",
+            "distance": 12081.208680758
+        },
+        {
+            "id": "odeo-san-francisco",
+            "name": "Odeo",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/odeo-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 2,
+            "coordinates": {
+                "latitude": 37.781192,
+                "longitude": -122.394935
+            },
+            "transactions": [],
+            "location": {
+                "address1": "164 South Park Inc",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94107",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "164 South Park Inc",
+                    "San Francisco, CA 94107"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 2162.04207356
+        },
+        {
+            "id": "baner-financial-interests-san-francisco",
+            "name": "Baner Financial Interests",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/baner-financial-interests-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 2,
+            "coordinates": {
+                "latitude": 37.7970208,
+                "longitude": -122.3998597
+            },
+            "transactions": [],
+            "location": {
+                "address1": "220 Jackson St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94111",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "220 Jackson St",
+                    "San Francisco, CA 94111"
+                ]
+            },
+            "phone": "+14153622844",
+            "display_phone": "(415) 362-2844",
+            "distance": 5138.582064632
+        },
+        {
+            "id": "rustic-canyon-san-francisco",
+            "name": "Rustic Canyon",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/rustic-canyon-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 1,
+            "coordinates": {
+                "latitude": 37.79145,
+                "longitude": -122.40503
+            },
+            "transactions": [],
+            "location": {
+                "address1": "555 Pine St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94108",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "555 Pine St",
+                    "San Francisco, CA 94108"
+                ]
+            },
+            "phone": "+16506548503",
+            "display_phone": "(650) 654-8503",
+            "distance": 4371.300251512
+        },
+        {
+            "id": "improper-apostrophes-san-francisco",
+            "name": "Improper apostrophes",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/QYANyen_xXE-tC8m0dxhKw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/improper-apostrophes-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 2,
+            "categories": [],
+            "rating": 1,
+            "coordinates": {
+                "latitude": 37.77501,
+                "longitude": -122.41826
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94101",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94101"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 2240.053703522
+        },
+        {
+            "id": "data-glass-san-francisco",
+            "name": "Data Glass",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/data-glass-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 2,
+            "categories": [],
+            "rating": 3,
+            "coordinates": {
+                "latitude": 37.780460357666,
+                "longitude": -122.408935546875
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1013 Mission St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1013 Mission St",
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14158647728",
+            "display_phone": "(415) 864-7728",
+            "distance": 3252.513637622
+        },
+        {
+            "id": "coastwood-capital-group-san-francisco",
+            "name": "Coastwood Capital Group",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/coastwood-capital-group-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 1,
+            "coordinates": {
+                "latitude": 37.793212890625,
+                "longitude": -122.397041320801
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1 California St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94111",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1 California St",
+                    "San Francisco, CA 94111"
+                ]
+            },
+            "phone": "+14155689500",
+            "display_phone": "(415) 568-9500",
+            "distance": 4997.105146166
+        },
+        {
+            "id": "emax-llc-oakland",
+            "name": "EMAX LLC",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/jRPxOG7PoKeGpqqqFFtWSw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/emax-llc-oakland?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.74372,
+                "longitude": -122.19201
+            },
+            "transactions": [],
+            "location": {
+                "address1": "631 85th Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Oakland",
+                "zip_code": "94621",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "631 85th Ave",
+                    "Oakland, CA 94621"
+                ]
+            },
+            "phone": "+15106331452",
+            "display_phone": "(510) 633-1452",
+            "distance": 21592.117273019998
+        },
+        {
+            "id": "san-anselmo-town-of-san-anselmo",
+            "name": "San Anselmo Town of",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/san-anselmo-town-of-san-anselmo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.974666595459,
+                "longitude": -122.562927246094
+            },
+            "transactions": [],
+            "location": {
+                "address1": "525 San Anselmo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Anselmo",
+                "zip_code": "94960",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "525 San Anselmo Ave",
+                    "San Anselmo, CA 94960"
+                ]
+            },
+            "phone": "+14152584600",
+            "display_phone": "(415) 258-4600",
+            "distance": 26244.14467864
+        },
+        {
+            "id": "spi-holdings-san-francisco",
+            "name": "Spi Holdings",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/spi-holdings-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 7,
+            "categories": [],
+            "rating": 1,
+            "coordinates": {
+                "latitude": 37.7887115478516,
+                "longitude": -122.403396606445
+            },
+            "transactions": [],
+            "location": {
+                "address1": "88 Kearny St",
+                "address2": "Ste 1818",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94108",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "88 Kearny St",
+                    "Ste 1818",
+                    "San Francisco, CA 94108"
+                ]
+            },
+            "phone": "+14152887900",
+            "display_phone": "(415) 288-7900",
+            "distance": 4228.769698147999
+        },
+        {
+            "id": "buen-apetito-restaurant-oakland",
+            "name": "Buen Apetito Restaurant",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/buen-apetito-restaurant-oakland?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [],
+            "rating": 1,
+            "coordinates": {
+                "latitude": 37.7854042053223,
+                "longitude": -122.222496032715
+            },
+            "transactions": [],
+            "location": {
+                "address1": "2221 Fruitvale Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Oakland",
+                "zip_code": "94601",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2221 Fruitvale Ave",
+                    "Oakland, CA 94601"
+                ]
+            },
+            "phone": "+15105346200",
+            "display_phone": "(510) 534-6200",
+            "distance": 19001.2118389
+        }
+    ],
+    "total": 46,
+    "region": {
+        "center": {
+            "longitude": -122.4364471436,
+            "latitude": 37.7608993898
+        }
+    }
+}

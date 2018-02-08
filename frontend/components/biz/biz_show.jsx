@@ -9,12 +9,14 @@ import BizShowBookmarkContainer from './biz_show_bookmark_container';
 
 class BizShow extends React.Component {
 
+
   componentDidMount(){
     this.props.requestBiz(this.props.match.params.bizId);
   }
 
   componentWillReceiveProps(newProps){
     if (!this.props.biz
+        // || !this.props.biz.location.address1
         || this.props.match.params.bizId !== newProps.match.params.bizId
         || this.props.reviews.length !== newProps.reviews.length
         // || this.props.match.path !== newProps.match.path
@@ -24,11 +26,12 @@ class BizShow extends React.Component {
   }
 
   render(){
-    const {biz, imgs, reviews, users, currentUser, deleteReview} = this.props;
+    console.log('=========biz show is rendering==============');
+    const {bizEnoughInfo, biz, imgs, reviews, users, currentUser, deleteReview} = this.props;
     return(
       <div>
         <div className='biz-show'>
-          { biz ? (
+          { bizEnoughInfo ? (
             <div className='biz-show-detail'>
               <div className='biz-show-top'>
                 <div className='biz-show-left-top'>
@@ -135,7 +138,7 @@ class BizShow extends React.Component {
           ) : <Loading />}
         </div>
         <div>
-          {biz && reviews ?
+          {bizEnoughInfo && reviews ?
               <ReviewsIndex
                 reviews={reviews}
                 users={users}

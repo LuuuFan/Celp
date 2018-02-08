@@ -1,0 +1,865 @@
+{
+    "businesses": [
+        {
+            "id": "fiero-caffe-san-mateo-2",
+            "name": "Fiero Caffe",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/U77HNl5m2qGGNwgGWImi2g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/fiero-caffe-san-mateo-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 208,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "italian",
+                    "title": "Italian"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5639419555664,
+                "longitude": -122.327301025391
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "106 S El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "106 S El Camino Real",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16506858210",
+            "display_phone": "(650) 685-8210",
+            "distance": 1492.4302520897998
+        },
+        {
+            "id": "the-ravioli-house-san-mateo",
+            "name": "The Ravioli House",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/7N4_sUuCsHjwlMmnXWD1AQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/the-ravioli-house-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 410,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "catering",
+                    "title": "Caterers"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5640830993652,
+                "longitude": -122.320419311523
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "505 S B St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "505 S B St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16503447433",
+            "display_phone": "(650) 344-7433",
+            "distance": 1108.606250918
+        },
+        {
+            "id": "sushi-yoshizumi-san-mateo",
+            "name": "Sushi Yoshizumi",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/VVU61OXpUVvAQPGgfFg3DA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sushi-yoshizumi-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 170,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5652157,
+                "longitude": -122.3211649
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$$$",
+            "location": {
+                "address1": "325 E 4th Ave",
+                "address2": null,
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "325 E 4th Ave",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16504372282",
+            "display_phone": "(650) 437-2282",
+            "distance": 1245.054947488
+        },
+        {
+            "id": "all-spice-san-mateo-2",
+            "name": "All Spice",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/zp0dul7wRMkpO3xTcdql2g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/all-spice-san-mateo-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 554,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.55285,
+                "longitude": -122.31566
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$$",
+            "location": {
+                "address1": "1602 S El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94402",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1602 S El Camino Real",
+                    "San Mateo, CA 94402"
+                ]
+            },
+            "phone": "+16506274303",
+            "display_phone": "(650) 627-4303",
+            "distance": 314.817240059
+        },
+        {
+            "id": "takahashi-market-san-mateo",
+            "name": "Takahashi Market",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/wfcJkvjEXHJAJ9tmZcShXg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/takahashi-market-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 564,
+            "categories": [
+                {
+                    "alias": "grocery",
+                    "title": "Grocery"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "hawaiian",
+                    "title": "Hawaiian"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.566842,
+                "longitude": -122.320909
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "221 S Claremont St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "221 S Claremont St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16503430394",
+            "display_phone": "(650) 343-0394",
+            "distance": 1396.4965773659999
+        },
+        {
+            "id": "suruki-supermarket-san-mateo",
+            "name": "Suruki Supermarket",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/oMUBpTBLF6qZNdIn4x8b6g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/suruki-supermarket-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 558,
+            "categories": [
+                {
+                    "alias": "grocery",
+                    "title": "Grocery"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "importedfood",
+                    "title": "Imported Food"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5635228,
+                "longitude": -122.323688
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "71 E 4th Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "71 E 4th Ave",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16503475288",
+            "display_phone": "(650) 347-5288",
+            "distance": 1224.8419589559999
+        },
+        {
+            "id": "philz-coffee-san-mateo",
+            "name": "Philz Coffee",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/b58PkQZGJvXxIgw5AEDFCQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/philz-coffee-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 475,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.56697,
+                "longitude": -122.32359
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "113 S B St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "113 S B St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16509311770",
+            "display_phone": "(650) 931-1770",
+            "distance": 1526.784800883
+        },
+        {
+            "id": "kingston-cafe-san-mateo",
+            "name": "Kingston Cafe",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/RuWIfZVYmSXq9QSkQtUPZw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kingston-cafe-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 162,
+            "categories": [
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5747221345603,
+                "longitude": -122.317034634966
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "19 N Kingston St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "19 N Kingston St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16504772276",
+            "display_phone": "(650) 477-2276",
+            "distance": 2156.749276168
+        },
+        {
+            "id": "grape-and-grain-san-mateo",
+            "name": "Grape & Grain",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/LkTcd3APdMlDzyCdm0KW4A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/grape-and-grain-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 397,
+            "categories": [
+                {
+                    "alias": "wine_bars",
+                    "title": "Wine Bars"
+                },
+                {
+                    "alias": "pubs",
+                    "title": "Pubs"
+                },
+                {
+                    "alias": "lounges",
+                    "title": "Lounges"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.56485,
+                "longitude": -122.32437
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "227 S San Mateo Dr",
+                "address2": null,
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "227 S San Mateo Dr",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16503429463",
+            "display_phone": "(650) 342-9463",
+            "distance": 1374.78110901
+        },
+        {
+            "id": "village-hummus-san-mateo-2",
+            "name": "Village Hummus",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/q1yePsHgJOljYJ2Uui25-Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/village-hummus-san-mateo-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 281,
+            "categories": [
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                },
+                {
+                    "alias": "mideastern",
+                    "title": "Middle Eastern"
+                },
+                {
+                    "alias": "vegetarian",
+                    "title": "Vegetarian"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5446097,
+                "longitude": -122.2927084
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1001 Park Pl",
+                "address2": null,
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94403",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1001 Park Pl",
+                    "San Mateo, CA 94403"
+                ]
+            },
+            "phone": "+16502127711",
+            "display_phone": "(650) 212-7711",
+            "distance": 2243.408855554
+        },
+        {
+            "id": "velo-city-pizza-san-mateo-2",
+            "name": "Velo City Pizza",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/gMeU5R5269Pumjg4AIF81g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/velo-city-pizza-san-mateo-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 218,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5436820983887,
+                "longitude": -122.308479309082
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "168 W 25th Ave",
+                "address2": "",
+                "address3": null,
+                "city": "San Mateo",
+                "zip_code": "94403",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "168 W 25th Ave",
+                    "San Mateo, CA 94403"
+                ]
+            },
+            "phone": "+16502688100",
+            "display_phone": "(650) 268-8100",
+            "distance": 1401.6499415403998
+        },
+        {
+            "id": "charm-thai-eatery-san-mateo-2",
+            "name": "Charm Thai Eatery",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/PoTX0px1Il_J53gZKxFw_Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/charm-thai-eatery-san-mateo-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 342,
+            "categories": [
+                {
+                    "alias": "thai",
+                    "title": "Thai"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5538205601561,
+                "longitude": -122.316233887225
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1428 S El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94402",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1428 S El Camino Real",
+                    "San Mateo, CA 94402"
+                ]
+            },
+            "phone": "+16502123444",
+            "display_phone": "(650) 212-3444",
+            "distance": 253.4674772652
+        },
+        {
+            "id": "cobani-gyro-and-kebab-san-mateo",
+            "name": "Cobani Gyro & Kebab",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/1zvmcgAgPDgMLpuvGD1fAQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cobani-gyro-and-kebab-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 483,
+            "categories": [
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                },
+                {
+                    "alias": "turkish",
+                    "title": "Turkish"
+                },
+                {
+                    "alias": "mideastern",
+                    "title": "Middle Eastern"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5443238,
+                "longitude": -122.3059478
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "8 W 25th Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94403",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "8 W 25th Ave",
+                    "San Mateo, CA 94403"
+                ]
+            },
+            "phone": "+16503896861",
+            "display_phone": "(650) 389-6861",
+            "distance": 1433.3449916099999
+        },
+        {
+            "id": "mordisko-cakes-san-mateo",
+            "name": "Mordisko Cakes",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/q6MfnrG-4DUnSxMUR4BPLg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mordisko-cakes-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 117,
+            "categories": [
+                {
+                    "alias": "cakeshop",
+                    "title": "Patisserie/Cake Shop"
+                },
+                {
+                    "alias": "bakeries",
+                    "title": "Bakeries"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.56446,
+                "longitude": -122.32227
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "205 E 4th Ave",
+                "address2": "",
+                "address3": null,
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "205 E 4th Ave",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16509314181",
+            "display_phone": "(650) 931-4181",
+            "distance": 1228.36335581
+        },
+        {
+            "id": "espetus-churrascaria-san-mateo-san-mateo-2",
+            "name": "Espetus Churrascaria San Mateo",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/bRYlxMQ-3jhbjzoN9J9oXQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/espetus-churrascaria-san-mateo-san-mateo-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1903,
+            "categories": [
+                {
+                    "alias": "brazilian",
+                    "title": "Brazilian"
+                },
+                {
+                    "alias": "steak",
+                    "title": "Steakhouses"
+                },
+                {
+                    "alias": "latin",
+                    "title": "Latin American"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5623272,
+                "longitude": -122.3193225
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$$",
+            "location": {
+                "address1": "710 S B St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "710 S B St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16503428700",
+            "display_phone": "(650) 342-8700",
+            "distance": 886.6020626689999
+        },
+        {
+            "id": "b-street-and-vine-san-mateo",
+            "name": "B Street & Vine",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/avgPbQa0KRbk55OI9SXmGQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/b-street-and-vine-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1679,
+            "categories": [
+                {
+                    "alias": "jazzandblues",
+                    "title": "Jazz & Blues"
+                },
+                {
+                    "alias": "italian",
+                    "title": "Italian"
+                },
+                {
+                    "alias": "wine_bars",
+                    "title": "Wine Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5652478635311,
+                "longitude": -122.322215884924
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "320 S B St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "320 S B St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16503478463",
+            "display_phone": "(650) 347-8463",
+            "distance": 1293.87234518
+        },
+        {
+            "id": "pokeatery-san-mateo",
+            "name": "Pokeatery",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/VPojIK0lHqKB38VGOCDWqA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/pokeatery-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 725,
+            "categories": [
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                },
+                {
+                    "alias": "hawaiian",
+                    "title": "Hawaiian"
+                },
+                {
+                    "alias": "poke",
+                    "title": "Poke"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5646703,
+                "longitude": -122.3211737
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "407 S B St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "407 S B St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16503892672",
+            "display_phone": "(650) 389-2672",
+            "distance": 1193.969104599
+        },
+        {
+            "id": "japanese-gardens-san-mateo",
+            "name": "Japanese Gardens",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/b2u0hh0Pd-6Og8GT9ho3Sg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/japanese-gardens-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 85,
+            "categories": [
+                {
+                    "alias": "parks",
+                    "title": "Parks"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5621075139762,
+                "longitude": -122.321455478668
+            },
+            "transactions": [],
+            "location": {
+                "address1": "Central Park",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94402",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "Central Park",
+                    "San Mateo, CA 94402"
+                ]
+            },
+            "phone": "+16505227440",
+            "display_phone": "(650) 522-7440",
+            "distance": 976.5768985484
+        },
+        {
+            "id": "ramen-dojo-san-mateo",
+            "name": "Ramen Dojo",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/nvOE2wAcuITraLEKRTAS-w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ramen-dojo-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 3526,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5621429,
+                "longitude": -122.3185051
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "805 S B St",
+                "address2": "",
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "805 S B St",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16504016568",
+            "display_phone": "(650) 401-6568",
+            "distance": 840.4860226339999
+        },
+        {
+            "id": "central-park-san-mateo",
+            "name": "Central Park",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/mRNkWvIcPIpaB1d7Fc6xfg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/central-park-san-mateo?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 138,
+            "categories": [
+                {
+                    "alias": "parks",
+                    "title": "Parks"
+                },
+                {
+                    "alias": "playgrounds",
+                    "title": "Playgrounds"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5624327,
+                "longitude": -122.3230575
+            },
+            "transactions": [],
+            "location": {
+                "address1": "50 E 5th Ave",
+                "address2": null,
+                "address3": "",
+                "city": "San Mateo",
+                "zip_code": "94401",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "50 E 5th Ave",
+                    "San Mateo, CA 94401"
+                ]
+            },
+            "phone": "+16505227530",
+            "display_phone": "(650) 522-7530",
+            "distance": 1116.609498738
+        }
+    ],
+    "total": 17100,
+    "region": {
+        "center": {
+            "longitude": -122.3142242432,
+            "latitude": 37.5554538848
+        }
+    }
+}

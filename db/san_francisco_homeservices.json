@@ -1,0 +1,784 @@
+{
+    "businesses": [
+        {
+            "id": "color-home-services-san-francisco-5",
+            "name": "Color Home Services",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/YfgZT8uFVm7lwTEeF_Geqg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/color-home-services-san-francisco-5?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                },
+                {
+                    "alias": "handyman",
+                    "title": "Handyman"
+                },
+                {
+                    "alias": "pressurewashers",
+                    "title": "Pressure Washers"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7580642700195,
+                "longitude": -122.435722351074
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14159903504",
+            "display_phone": "(415) 990-3504",
+            "distance": 628.8268489323999
+        },
+        {
+            "id": "chateau-painting-company-san-francisco",
+            "name": "Chateau Painting Company",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/5qqTKRNMbfCp4OWY0FPnlg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/chateau-painting-company-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 12,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7672329545021,
+                "longitude": -122.458389624953
+            },
+            "transactions": [],
+            "location": {
+                "address1": "670 Kezar Dr",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94118",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "670 Kezar Dr",
+                    "San Francisco, CA 94118"
+                ]
+            },
+            "phone": "+14152713588",
+            "display_phone": "(415) 271-3588",
+            "distance": 2034.731692312
+        },
+        {
+            "id": "zaven-daigian-painting-san-francisco-2",
+            "name": "Zaven Daigian Painting",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/NCbyYQiLyRTd4JonXIkUXg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/zaven-daigian-painting-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 10,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7731018066406,
+                "longitude": -122.411277770996
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14157515543",
+            "display_phone": "(415) 751-5543",
+            "distance": 2672.99867219
+        },
+        {
+            "id": "pipeline-plumbing-san-francisco-3",
+            "name": "Pipeline Plumbing",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/_Q4PPrTPOyBfK61D0-Gr8A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/pipeline-plumbing-san-francisco-3?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 133,
+            "categories": [
+                {
+                    "alias": "plumbing",
+                    "title": "Plumbing"
+                },
+                {
+                    "alias": "waterheaterinstallrepair",
+                    "title": "Water Heater Installation/Repair"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7907257080078,
+                "longitude": -122.419906616211
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "location": {
+                "address1": "",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14153141336",
+            "display_phone": "(415) 314-1336",
+            "distance": 3809.408524684
+        },
+        {
+            "id": "foundations-r-us-san-francisco-6",
+            "name": "Foundations R Us",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/Z67JpTywCYjgpuK0QTHJBA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/foundations-r-us-san-francisco-6?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 7,
+            "categories": [
+                {
+                    "alias": "contractors",
+                    "title": "Contractors"
+                },
+                {
+                    "alias": "carpenters",
+                    "title": "Carpenters"
+                },
+                {
+                    "alias": "structuralengineers",
+                    "title": "Structural Engineers"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.76414,
+                "longitude": -122.46875
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1291 11th Ave",
+                "address2": "Ste 5",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94122",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1291 11th Ave",
+                    "Ste 5",
+                    "San Francisco, CA 94122"
+                ]
+            },
+            "phone": "+14153075152",
+            "display_phone": "(415) 307-5152",
+            "distance": 2860.0096128799996
+        },
+        {
+            "id": "catalina-house-cleaning-san-francisco",
+            "name": "Catalina House Cleaning",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/V4hZAjUnCT5clPpKEf8uaQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/catalina-house-cleaning-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 14,
+            "categories": [
+                {
+                    "alias": "homecleaning",
+                    "title": "Home Cleaning"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7994728088379,
+                "longitude": -122.425559997559
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1580 Filbert St",
+                "address2": "Ste 10",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94123",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1580 Filbert St",
+                    "Ste 10",
+                    "San Francisco, CA 94123"
+                ]
+            },
+            "phone": "+14153074989",
+            "display_phone": "(415) 307-4989",
+            "distance": 4394.754128936
+        },
+        {
+            "id": "handyman-ricky-san-francisco",
+            "name": "Handyman Ricky",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/CVx2AHvELqvlfToTtE03xw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/handyman-ricky-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 5,
+            "categories": [
+                {
+                    "alias": "handyman",
+                    "title": "Handyman"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7580642700195,
+                "longitude": -122.435722351074
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14155748437",
+            "display_phone": "(415) 574-8437",
+            "distance": 628.8268489323999
+        },
+        {
+            "id": "russian-hill-handyman-co-san-francisco-5",
+            "name": "Russian Hill Handyman Co",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/7rash-NBTSR4rsMytvU0Rw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/russian-hill-handyman-co-san-francisco-5?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 83,
+            "categories": [
+                {
+                    "alias": "handyman",
+                    "title": "Handyman"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7907257080078,
+                "longitude": -122.419906616211
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 3809.408524684
+        },
+        {
+            "id": "cairn-construction-san-francisco",
+            "name": "Cairn Construction",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/ENEHceHy0w0gcfGroC0LMQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cairn-construction-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 13,
+            "categories": [
+                {
+                    "alias": "contractors",
+                    "title": "Contractors"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7812364,
+                "longitude": -122.4553847
+            },
+            "transactions": [],
+            "location": {
+                "address1": "3401 Geary Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94118",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3401 Geary Blvd",
+                    "San Francisco, CA 94118"
+                ]
+            },
+            "phone": "+14156614367",
+            "display_phone": "(415) 661-4367",
+            "distance": 2807.775103566
+        },
+        {
+            "id": "garfias-handyman-san-francisco",
+            "name": "Garfias Handyman",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/MV9bAa7g3M5kjunm_Cy_Lg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/garfias-handyman-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 10,
+            "categories": [
+                {
+                    "alias": "handyman",
+                    "title": "Handyman"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.751478,
+                "longitude": -122.408291
+            },
+            "transactions": [],
+            "location": {
+                "address1": "2904 25th St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2904 25th St",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14158457051",
+            "display_phone": "(415) 845-7051",
+            "distance": 2687.6000530759998
+        },
+        {
+            "id": "mizen-construction-san-francisco",
+            "name": "Mizen.Construction",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/CXmuZsXFjXor5ZGejkw9HQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mizen-construction-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 12,
+            "categories": [
+                {
+                    "alias": "contractors",
+                    "title": "Contractors"
+                },
+                {
+                    "alias": "carpenters",
+                    "title": "Carpenters"
+                },
+                {
+                    "alias": "decksrailing",
+                    "title": "Decks & Railing"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7497024536133,
+                "longitude": -122.415405273438
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14157029360",
+            "display_phone": "(415) 702-9360",
+            "distance": 2095.273453772
+        },
+        {
+            "id": "paul-evans-painting-san-francisco",
+            "name": "Paul Evans Painting",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ljwlDDTR1AJ8ncFvtDei6g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/paul-evans-painting-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 15,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                },
+                {
+                    "alias": "pressurewashers",
+                    "title": "Pressure Washers"
+                },
+                {
+                    "alias": "refinishing",
+                    "title": "Refinishing Services"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.79657,
+                "longitude": -122.45496
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94129",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94129"
+                ]
+            },
+            "phone": "+14157794663",
+            "display_phone": "(415) 779-4663",
+            "distance": 4471.393957482
+        },
+        {
+            "id": "handyman-heroes-san-francisco",
+            "name": "Handyman Heroes",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/SRMOUT3IUxz55wANyIDg2Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/handyman-heroes-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 46,
+            "categories": [
+                {
+                    "alias": "handyman",
+                    "title": "Handyman"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7699203491211,
+                "longitude": -122.446319580078
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94117",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94117"
+                ]
+            },
+            "phone": "+18443824376",
+            "display_phone": "(844) 382-4376",
+            "distance": 1369.4998183989999
+        },
+        {
+            "id": "mulderrig-painting-san-francisco",
+            "name": "Mulderrig Painting",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/TXqbP4FnTIW98NXc8hFM7w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mulderrig-painting-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 5,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7458648681641,
+                "longitude": -122.443550109863
+            },
+            "transactions": [],
+            "location": {
+                "address1": "",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94131",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "San Francisco, CA 94131"
+                ]
+            },
+            "phone": "+14152391756",
+            "display_phone": "(415) 239-1756",
+            "distance": 2317.496914596
+        },
+        {
+            "id": "sft-construction-san-francisco-6",
+            "name": "SFT Construction",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/-HDrRWsMk_brysu-9qgVhw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sft-construction-san-francisco-6?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 12,
+            "categories": [
+                {
+                    "alias": "contractors",
+                    "title": "Contractors"
+                },
+                {
+                    "alias": "masonry_concrete",
+                    "title": "Masonry/Concrete"
+                },
+                {
+                    "alias": "foundationrepair",
+                    "title": "Foundation Repair"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.7625909559213,
+                "longitude": -122.41306098271
+            },
+            "transactions": [],
+            "location": {
+                "address1": "2130 Harrison St",
+                "address2": "Ste A",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2130 Harrison St",
+                    "Ste A",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14157071046",
+            "display_phone": "(415) 707-1046",
+            "distance": 2064.226066492
+        },
+        {
+            "id": "super-fabulous-house-cleaning-san-francisco",
+            "name": "Super Fabulous House Cleaning",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/mEV1I4Hwh5HWiFZwSPNWzA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/super-fabulous-house-cleaning-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 10,
+            "categories": [
+                {
+                    "alias": "homecleaning",
+                    "title": "Home Cleaning"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.78821,
+                "longitude": -122.41829
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1112 Larkin St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1112 Larkin St",
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14155745035",
+            "display_phone": "(415) 574-5035",
+            "distance": 3435.25290715
+        },
+        {
+            "id": "dwell-painting-san-francisco",
+            "name": "Dwell Painting",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Vn-G3Eo5Ed2oYomNMf9GKQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/dwell-painting-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 7,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.76332,
+                "longitude": -122.43474
+            },
+            "transactions": [],
+            "location": {
+                "address1": "2370 Market St",
+                "address2": "Ste 350",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94114",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2370 Market St",
+                    "Ste 350",
+                    "San Francisco, CA 94114"
+                ]
+            },
+            "phone": "+14154247808",
+            "display_phone": "(415) 424-7808",
+            "distance": 313.5151713452
+        },
+        {
+            "id": "california-painting-and-decorating-san-francisco-2",
+            "name": "California Painting & Decorating",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/wZcDhQ0w9lELPugctiwtmg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/california-painting-and-decorating-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 3,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                },
+                {
+                    "alias": "handyman",
+                    "title": "Handyman"
+                },
+                {
+                    "alias": "homedecor",
+                    "title": "Home Decor"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.79122,
+                "longitude": -122.41718
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1102 Hyde St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1102 Hyde St",
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14154413416",
+            "display_phone": "(415) 441-3416",
+            "distance": 3772.7216881759996
+        },
+        {
+            "id": "russell-hinton-san-francisco",
+            "name": "Russell Hinton",
+            "image_url": "",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/russell-hinton-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1,
+            "categories": [
+                {
+                    "alias": "contractors",
+                    "title": "Contractors"
+                },
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7609214782715,
+                "longitude": -122.416297912598
+            },
+            "transactions": [],
+            "location": {
+                "address1": "450 Shotwell St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "450 Shotwell St",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14152060150",
+            "display_phone": "(415) 206-0150",
+            "distance": 1760.54071168
+        },
+        {
+            "id": "heather-and-french-painting-san-francisco",
+            "name": "Heather and French Painting",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/aEm8-rbSHX3X8kqxbhK96g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/heather-and-french-painting-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 18,
+            "categories": [
+                {
+                    "alias": "painters",
+                    "title": "Painters"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.7394208,
+                "longitude": -122.4029827
+            },
+            "transactions": [],
+            "location": {
+                "address1": "51 Dorman Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94124",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "51 Dorman Ave",
+                    "San Francisco, CA 94124"
+                ]
+            },
+            "phone": "+14152826244",
+            "display_phone": "(415) 282-6244",
+            "distance": 3789.27712969
+        }
+    ],
+    "total": 19800,
+    "region": {
+        "center": {
+            "longitude": -122.4364471436,
+            "latitude": 37.7608993898
+        }
+    }
+}

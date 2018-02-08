@@ -17,7 +17,9 @@ class HomeCenterItem extends React.Component{
               }
             </div>
             <div className='home-center-item-biz-info'>
-              <a href={`/#/biz/${biz.id}`}><h1>{biz.name}</h1></a>
+              <div className='home-center-item-biz-name'>
+                <a href={`/#/biz/${biz.id}`}><h1>{biz.name}</h1></a>
+              </div>
               <div className='home-ceter-item-biz-info-rating-review'>
                 <BizIndexItemRating biz={biz}/>
                 <p>{biz.reviews_num} {biz.reviews_num > 1 ? 'reviews' : 'review'}</p>

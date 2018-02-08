@@ -1,0 +1,836 @@
+{
+    "businesses": [
+        {
+            "id": "penelopes-coffee-and-tea-foster-city",
+            "name": "Penelope's Coffee and Tea",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/4NTPuYEPxgxDeExZdohtKw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/penelopes-coffee-and-tea-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 203,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.56446,
+                "longitude": -122.270244
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "3 Plaza View Ln",
+                "address2": "Ste N",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3 Plaza View Ln",
+                    "Ste N",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16503934035",
+            "display_phone": "(650) 393-4035",
+            "distance": 790.3392618217999
+        },
+        {
+            "id": "leo-j-ryan-memorial-park-foster-city-2",
+            "name": "Leo J Ryan Memorial Park",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/SaTcLq21cNX6AMdobL8tCw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/leo-j-ryan-memorial-park-foster-city-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 59,
+            "categories": [
+                {
+                    "alias": "parks",
+                    "title": "Parks"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.558030808798,
+                "longitude": -122.27127502579
+            },
+            "transactions": [],
+            "location": {
+                "address1": "650 Shell Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "650 Shell Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16502863380",
+            "display_phone": "(650) 286-3380",
+            "distance": 361.55527391059996
+        },
+        {
+            "id": "mod-pizza-foster-city",
+            "name": "MOD Pizza",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/h3tRZH7vQTY_QxtoK6y8vg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mod-pizza-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 124,
+            "categories": [
+                {
+                    "alias": "hotdogs",
+                    "title": "Fast Food"
+                },
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5618352895753,
+                "longitude": -122.279040050985
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1297 Chess Dr",
+                "address2": "Ste B",
+                "address3": null,
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1297 Chess Dr",
+                    "Ste B",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16503501530",
+            "display_phone": "(650) 350-1530",
+            "distance": 1137.7392317075999
+        },
+        {
+            "id": "tpumps-foster-city",
+            "name": "Tpumps",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/ouVGd0xcf0hk_i1QobACuA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tpumps-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 221,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "tea",
+                    "title": "Tea Rooms"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5573531403401,
+                "longitude": -122.274742340384
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "985 E Hillsdale Blvd",
+                "address2": "",
+                "address3": "Metro Center Plz",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "985 E Hillsdale Blvd",
+                    "Metro Center Plz",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+15103988499",
+            "display_phone": "(510) 398-8499",
+            "distance": 667.458798138
+        },
+        {
+            "id": "sandwich-monkey-foster-city",
+            "name": "Sandwich Monkey",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/e79rNbDCVhZrugvVedhkkQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sandwich-monkey-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 218,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5645211015295,
+                "longitude": -122.27000364916
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "3 Plaza View Ln",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3 Plaza View Ln",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16502740264",
+            "display_phone": "(650) 274-0264",
+            "distance": 811.4279405279999
+        },
+        {
+            "id": "century-centre-cafe-foster-city",
+            "name": "Century Centre Cafe",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/PNTY7jBh9fpeZivwMBifPA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/century-centre-cafe-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 44,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "juicebars",
+                    "title": "Juice Bars & Smoothies"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5569,
+                "longitude": -122.28723
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1450 Fashion Island Blvd",
+                "address2": "Ste 110",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1450 Fashion Island Blvd",
+                    "Ste 110",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16503498098",
+            "display_phone": "(650) 349-8098",
+            "distance": 1788.9273771379999
+        },
+        {
+            "id": "soons-tofu-and-korean-bbq-foster-city-2",
+            "name": "Soon's Tofu and Korean BBQ",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/APuNbg-UAhpdtuVs73aS1w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/soons-tofu-and-korean-bbq-foster-city-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 429,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "noodles",
+                    "title": "Noodles"
+                },
+                {
+                    "alias": "vegetarian",
+                    "title": "Vegetarian"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 37.5538628685701,
+                "longitude": -122.257294506079
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1062 Foster City Blvd",
+                "address2": null,
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1062 Foster City Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16502860860",
+            "display_phone": "(650) 286-0860",
+            "distance": 974.8205292459999
+        },
+        {
+            "id": "tai-wu-mr-fongs-restaurant-foster-city",
+            "name": "Tai Wu Mr Fong's Restaurant",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ay6BL88c2Wl5gYOKpQP5oA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tai-wu-mr-fongs-restaurant-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 326,
+            "categories": [
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                },
+                {
+                    "alias": "cantonese",
+                    "title": "Cantonese"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 37.5539974,
+                "longitude": -122.2564693
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1080 Foster City Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1080 Foster City Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16506380168",
+            "display_phone": "(650) 638-0168",
+            "distance": 1031.152579134
+        },
+        {
+            "id": "sweet-basil-thai-cuisine-foster-city",
+            "name": "Sweet Basil Thai Cuisine",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/UjGFWPHx19Z-39wc0QOoqw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sweet-basil-thai-cuisine-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1260,
+            "categories": [
+                {
+                    "alias": "thai",
+                    "title": "Thai"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5630527010733,
+                "longitude": -122.250368984649
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1473 Beach Park Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1473 Beach Park Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16502125788",
+            "display_phone": "(650) 212-5788",
+            "distance": 1594.675854854
+        },
+        {
+            "id": "first-call-plumbing-foster-city-3",
+            "name": "First Call Plumbing",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Dipc7dB9H1WvbwvjG5Cr2w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/first-call-plumbing-foster-city-3?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 64,
+            "categories": [
+                {
+                    "alias": "plumbing",
+                    "title": "Plumbing"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.549793,
+                "longitude": -122.2634045
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1041 Shell Blvd",
+                "address2": "Ste 8",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1041 Shell Blvd",
+                    "Ste 8",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16504588442",
+            "display_phone": "(650) 458-8442",
+            "distance": 948.401121004
+        },
+        {
+            "id": "akizu-sushi-bar-and-grill-foster-city-5",
+            "name": "Akizu Sushi Bar & Grill",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ol3I5Np5ArVgc4MScGYRzg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/akizu-sushi-bar-and-grill-foster-city-5?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 359,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5631023953515,
+                "longitude": -122.250133305675
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1457 Beach Park Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1457 Beach Park Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16502359356",
+            "display_phone": "(650) 235-9356",
+            "distance": 1616.091342234
+        },
+        {
+            "id": "tokyo-village-foster-city-3",
+            "name": "Tokyo Village",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/7zO2x7kn2pLqlGz7AV5Ulg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tokyo-village-foster-city-3?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 82,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5624467586513,
+                "longitude": -122.277225028173
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1221 Chess Dr",
+                "address2": null,
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1221 Chess Dr",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16503416888",
+            "display_phone": "(650) 341-6888",
+            "distance": 1025.478850964
+        },
+        {
+            "id": "fashion-wok-foster-city",
+            "name": "Fashion Wok",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/xS-wsnFCI8LQeSoMBlG7qg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/fashion-wok-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 339,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                },
+                {
+                    "alias": "hotpot",
+                    "title": "Hot Pot"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5452836454887,
+                "longitude": -122.27046500734
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "929 A Edgewater Blvd",
+                "address2": null,
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "929 A Edgewater Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16503588820",
+            "display_phone": "(650) 358-8820",
+            "distance": 1418.8198934399998
+        },
+        {
+            "id": "foster-city-dog-park-foster-city",
+            "name": "Foster City Dog Park",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/OYGU9YU4BU5bpoHNm6wtjw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/foster-city-dog-park-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 145,
+            "categories": [
+                {
+                    "alias": "dog_parks",
+                    "title": "Dog Parks"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 37.5562641689347,
+                "longitude": -122.260547923938
+            },
+            "transactions": [],
+            "location": {
+                "address1": "100 Lincoln Centre Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "100 Lincoln Centre Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 608.8490171612
+        },
+        {
+            "id": "moo-moo-yogurt-foster-city",
+            "name": "Moo Moo Yogurt",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/pHVpXES8rDgHEI39_XfXcg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/moo-moo-yogurt-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 69,
+            "categories": [
+                {
+                    "alias": "desserts",
+                    "title": "Desserts"
+                },
+                {
+                    "alias": "icecream",
+                    "title": "Ice Cream & Frozen Yogurt"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5441112400917,
+                "longitude": -122.270671007271
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "969F Edgewater Blvd",
+                "address2": null,
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "969F Edgewater Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16506670009",
+            "display_phone": "(650) 667-0009",
+            "distance": 1550.4539919055999
+        },
+        {
+            "id": "plaza-gourmet-delicatessen-foster-city",
+            "name": "Plaza Gourmet Delicatessen",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/JAVnGACn01MiVBOF-U5JxQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/plaza-gourmet-delicatessen-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 188,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5454495,
+                "longitude": -122.271864
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "929 Edgewater Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "929 Edgewater Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16506380213",
+            "display_phone": "(650) 638-0213",
+            "distance": 1438.3337363957999
+        },
+        {
+            "id": "kobe-japanese-cuisine-and-bar-foster-city",
+            "name": "Kobe Japanese Cuisine & Bar",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/KxFUS7fgATB7qhFyszz2Rg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kobe-japanese-cuisine-and-bar-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 376,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 37.545304984758,
+                "longitude": -122.27056553816
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "929 Edgewater Blvd",
+                "address2": null,
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "929 Edgewater Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16505718798",
+            "display_phone": "(650) 571-8798",
+            "distance": 1418.6910657729998
+        },
+        {
+            "id": "public-storage-foster-city-3",
+            "name": "Public Storage",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/y2KfwGv8D0FUiDDfRA5LIQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/public-storage-foster-city-3?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 68,
+            "categories": [
+                {
+                    "alias": "selfstorage",
+                    "title": "Self Storage"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.5633738,
+                "longitude": -122.2712032
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1121 Triton Drive",
+                "address2": null,
+                "address3": null,
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1121 Triton Drive",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16505394291",
+            "display_phone": "(650) 539-4291",
+            "distance": 822.7712608641999
+        },
+        {
+            "id": "rickshaw-corner-restaurant-foster-city",
+            "name": "Rickshaw Corner Restaurant",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/X4qiEytsesb054MyP65odg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/rickshaw-corner-restaurant-foster-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 224,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.545401319678,
+                "longitude": -122.27164723716
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "901 Edgewater Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "901 Edgewater Blvd",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16505742603",
+            "display_phone": "(650) 574-2603",
+            "distance": 1430.9843151375999
+        },
+        {
+            "id": "dozo-izakaya-foster-city-6",
+            "name": "Dozo Izakaya",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/_eWupfI0O09BNAOEmqqiWw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/dozo-izakaya-foster-city-6?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 55,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5643420833264,
+                "longitude": -122.270239032805
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "3 Plaza View Ln",
+                "address2": "",
+                "address3": null,
+                "city": "Foster City",
+                "zip_code": "94404",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3 Plaza View Ln",
+                    "Foster City, CA 94404"
+                ]
+            },
+            "phone": "+16503588889",
+            "display_phone": "(650) 358-8889",
+            "distance": 777.9878830964
+        }
+    ],
+    "total": 11600,
+    "region": {
+        "center": {
+            "longitude": -122.2671890259,
+            "latitude": 37.5577757137
+        }
+    }
+}

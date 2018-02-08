@@ -1,0 +1,901 @@
+{
+    "businesses": [
+        {
+            "id": "jougert-bar-burlingame",
+            "name": "Jougert Bar",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/fzlBr31C7ukBswjESohP6A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/jougert-bar-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 499,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "desserts",
+                    "title": "Desserts"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5793126,
+                "longitude": -122.3457401
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1115 Burlingame Ave",
+                "address2": null,
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1115 Burlingame Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503431110",
+            "display_phone": "(650) 343-1110",
+            "distance": 1516.2822641363998
+        },
+        {
+            "id": "que-seraw-seraw-burlingame-3",
+            "name": "Que SeRaw SeRaw",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/pJujsdqUxiXZatiMrtBEVg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/que-seraw-seraw-burlingame-3?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 232,
+            "categories": [
+                {
+                    "alias": "vegan",
+                    "title": "Vegan"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "juicebars",
+                    "title": "Juice Bars & Smoothies"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5845161825418,
+                "longitude": -122.364775836468
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1160 Capuchino Ave",
+                "address2": null,
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1160 Capuchino Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503487298",
+            "display_phone": "(650) 348-7298",
+            "distance": 513.1847942336
+        },
+        {
+            "id": "royal-donut-cafe-burlingame",
+            "name": "Royal Donut Cafe",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/BX4ZY-bjATro31c_6hVuOQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/royal-donut-cafe-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 374,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "diners",
+                    "title": "Diners"
+                },
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5865326,
+                "longitude": -122.3641434
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1165 Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1165 Broadway",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503483443",
+            "display_phone": "(650) 348-3443",
+            "distance": 372.43870924839996
+        },
+        {
+            "id": "new-world-cafe-burlingame",
+            "name": "New World Cafe",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/oTugwmkc3QSprKnDNsjwZg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/new-world-cafe-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 130,
+            "categories": [
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                },
+                {
+                    "alias": "peruvian",
+                    "title": "Peruvian"
+                },
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.596196,
+                "longitude": -122.367442
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "833 Mahler Rd",
+                "address2": "Ste 10",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "833 Mahler Rd",
+                    "Ste 10",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16502399750",
+            "display_phone": "(650) 239-9750",
+            "distance": 1218.016587082
+        },
+        {
+            "id": "young-can-wok-burlingame",
+            "name": "Young Can Wok",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/rx3g0YAE0NOVjNVUCS0Y9Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/young-can-wok-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 184,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5862352998605,
+                "longitude": -122.364845328634
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1200 Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1200 Broadway",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503433322",
+            "display_phone": "(650) 343-3322",
+            "distance": 445.61927755779993
+        },
+        {
+            "id": "gabriel-and-daniels-mexican-grill-burlingame",
+            "name": "Gabriel & Daniel's Mexican Grill",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/afTFU13w8T_9R_rIseZiZA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/gabriel-and-daniels-mexican-grill-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 414,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5901390922668,
+                "longitude": -122.352901956253
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "250 Anza Blvd",
+                "address2": "",
+                "address3": "Burlingame Golf Center",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "250 Anza Blvd",
+                    "Burlingame Golf Center",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16505482447",
+            "display_phone": "(650) 548-2447",
+            "distance": 706.0072708777999
+        },
+        {
+            "id": "cafe-capuchino-burlingame",
+            "name": "Cafe Capuchino",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/IU_ZMB9WtEAnv-GiJmW0vg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cafe-capuchino-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 45,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5849199,
+                "longitude": -122.36529
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1158 Capuchino Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1158 Capuchino Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503422669",
+            "display_phone": "(650) 342-2669",
+            "distance": 545.4794200136
+        },
+        {
+            "id": "le-croissant-cafe-burlingame-5",
+            "name": "Le Croissant Cafe",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/3MaXloWbe9qWQQZQZtdMTA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/le-croissant-cafe-burlingame-5?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 252,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "bagels",
+                    "title": "Bagels"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.586741,
+                "longitude": -122.364085
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1151 Broadway Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1151 Broadway Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503489988",
+            "display_phone": "(650) 348-9988",
+            "distance": 371.03547742219996
+        },
+        {
+            "id": "blue-line-pizza-burlingame",
+            "name": "Blue Line Pizza",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/kFQHxZXSSKvgpTIqH1lceA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/blue-line-pizza-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 838,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                },
+                {
+                    "alias": "salad",
+                    "title": "Salad"
+                },
+                {
+                    "alias": "gluten_free",
+                    "title": "Gluten-Free"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5797348,
+                "longitude": -122.3456497
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1108 Burlingame Ave",
+                "address2": null,
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1108 Burlingame Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503751700",
+            "display_phone": "(650) 375-1700",
+            "distance": 1488.0005920199999
+        },
+        {
+            "id": "oak-grove-market-burlingame-2",
+            "name": "Oak Grove Market",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/VF__upSLussPzqx0m8yQOQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/oak-grove-market-burlingame-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 33,
+            "categories": [
+                {
+                    "alias": "grocery",
+                    "title": "Grocery"
+                },
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.583154,
+                "longitude": -122.3501083
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1000 Oak Grove Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1000 Oak Grove Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16504772127",
+            "display_phone": "(650) 477-2127",
+            "distance": 951.640883358
+        },
+        {
+            "id": "mr-teriyaki-burlingame",
+            "name": "Mr. Teriyaki",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/2a1rcUzDFP98dOz0TsG0Fg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mr-teriyaki-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 366,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.59709,
+                "longitude": -122.36659
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "801 Mahler Rd",
+                "address2": "Ste C",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "801 Mahler Rd",
+                    "Ste C",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16506978450",
+            "display_phone": "(650) 697-8450",
+            "distance": 1250.3578193484
+        },
+        {
+            "id": "new-england-lobster-market-and-eatery-burlingame",
+            "name": "New England Lobster Market & Eatery",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/eIEvQKEdybaW7Xx3ZYRsyw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/new-england-lobster-market-and-eatery-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 2244,
+            "categories": [
+                {
+                    "alias": "seafoodmarkets",
+                    "title": "Seafood Markets"
+                },
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                },
+                {
+                    "alias": "tapasmallplates",
+                    "title": "Tapas/Small Plates"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6025163682965,
+                "longitude": -122.374696808268
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "824 Cowan Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "824 Cowan Rd",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16504431543",
+            "display_phone": "(650) 443-1543",
+            "distance": 2161.247542402
+        },
+        {
+            "id": "bonne-sante-burlingame",
+            "name": "Bonne Sante",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/_XnPmufKiA0Zfu4KwhT0kQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bonne-sante-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 550,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                },
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.58661,
+                "longitude": -122.36469
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1184 Broadway",
+                "address2": null,
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94012",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1184 Broadway",
+                    "Burlingame, CA 94012"
+                ]
+            },
+            "phone": "+16503421529",
+            "display_phone": "(650) 342-1529",
+            "distance": 427.6577717792
+        },
+        {
+            "id": "fika-cafe-burlingame",
+            "name": "Fika Cafe",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/sFFhdjRr8Fsgs_12j5ibNg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/fika-cafe-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 22,
+            "categories": [
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.5792198181152,
+                "longitude": -122.348861694336
+            },
+            "transactions": [],
+            "price": "$$$",
+            "location": {
+                "address1": "480 Primrose Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "480 Primrose Rd",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 1276.1059718764
+        },
+        {
+            "id": "il-piccolo-caffe-burlingame",
+            "name": "Il Piccolo Caffe",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/sOfGfNENdt6kVgw-bpIbaA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/il-piccolo-caffe-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 229,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "wine_bars",
+                    "title": "Wine Bars"
+                },
+                {
+                    "alias": "italian",
+                    "title": "Italian"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5858,
+                "longitude": -122.36462
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1219 Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1219 Broadway",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503484147",
+            "display_phone": "(650) 348-4147",
+            "distance": 458.0660579584
+        },
+        {
+            "id": "crepevine-restaurant-burlingame",
+            "name": "Crepevine Restaurant",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/b64OW038S8EtgTMmMwnvOA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/crepevine-restaurant-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1387,
+            "categories": [
+                {
+                    "alias": "creperies",
+                    "title": "Creperies"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5784205268316,
+                "longitude": -122.347540479158
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1310 Burlingame Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1310 Burlingame Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503441310",
+            "display_phone": "(650) 344-1310",
+            "distance": 1448.5047651957998
+        },
+        {
+            "id": "yangon-burlingame-2",
+            "name": "Yangon",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/PjTiJbdXFQE5hQ11XjwA8w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/yangon-burlingame-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 117,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                },
+                {
+                    "alias": "burmese",
+                    "title": "Burmese"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.58717,
+                "longitude": -122.36419
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1136 Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1136 Broadway",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503488848",
+            "display_phone": "(650) 348-8848",
+            "distance": 384.849842768
+        },
+        {
+            "id": "philz-coffee-burlingame",
+            "name": "Philz Coffee",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/cuQtwgr9zNo6IQZuV-0HKw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/philz-coffee-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 145,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.5778100034608,
+                "longitude": -122.348362728953
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "305 Primrose Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "305 Primrose Rd",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16509312655",
+            "display_phone": "(650) 931-2655",
+            "distance": 1442.194269468
+        },
+        {
+            "id": "rasoi-burlingame",
+            "name": "Rasoi",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/HzILOPtfHZ-RDVoRPyodIg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/rasoi-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 339,
+            "categories": [
+                {
+                    "alias": "indpak",
+                    "title": "Indian"
+                },
+                {
+                    "alias": "pakistani",
+                    "title": "Pakistani"
+                },
+                {
+                    "alias": "lounges",
+                    "title": "Lounges"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.5771668160936,
+                "longitude": -122.348935492067
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1425 Burlingame Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1425 Burlingame Ave",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16505795661",
+            "display_phone": "(650) 579-5661",
+            "distance": 1459.8548447599999
+        },
+        {
+            "id": "hanabi-ramen-and-japanese-curry-burlingame",
+            "name": "Hanabi Ramen & Japanese Curry",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/9yhvwOGv5gLw5kA2Lk1wPA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hanabi-ramen-and-japanese-curry-burlingame?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 464,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "japacurry",
+                    "title": "Japanese Curry"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.58243,
+                "longitude": -122.35195
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "723 California Dr",
+                "address2": null,
+                "address3": "",
+                "city": "Burlingame",
+                "zip_code": "94010",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "723 California Dr",
+                    "Burlingame, CA 94010"
+                ]
+            },
+            "phone": "+16503428888",
+            "display_phone": "(650) 342-8888",
+            "distance": 872.4532603778
+        }
+    ],
+    "total": 15900,
+    "region": {
+        "center": {
+            "longitude": -122.3598861694,
+            "latitude": 37.5870193538
+        }
+    }
+}

@@ -1,0 +1,862 @@
+{
+    "businesses": [
+        {
+            "id": "inshallah-mediterranean-cuisine-daly-city",
+            "name": "Inshallah Mediterranean Cuisine",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/LLAKXUuVSs50Ts9T4pxZTQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/inshallah-mediterranean-cuisine-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 141,
+            "categories": [
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.68577,
+                "longitude": -122.45978
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1216 Hillside Blvd",
+                "address2": null,
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1216 Hillside Blvd",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16502716848",
+            "display_phone": "(650) 271-6848",
+            "distance": 568.032244065
+        },
+        {
+            "id": "keiths-chicken-n-waffles-daly-city",
+            "name": "Keith's Chicken N Waffles",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/dvo60FbKHfpoUzz5dgypZA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/keiths-chicken-n-waffles-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 324,
+            "categories": [
+                {
+                    "alias": "southern",
+                    "title": "Southern"
+                },
+                {
+                    "alias": "soulfood",
+                    "title": "Soul Food"
+                },
+                {
+                    "alias": "waffles",
+                    "title": "Waffles"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6868264,
+                "longitude": -122.46962
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "270 San Pedro Rd",
+                "address2": null,
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "270 San Pedro Rd",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+14153477208",
+            "display_phone": "(415) 347-7208",
+            "distance": 333.78323149199997
+        },
+        {
+            "id": "in-n-out-burger-daly-city",
+            "name": "In-N-Out Burger",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/tetbe9kBMYZW1zOkyTXrZw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/in-n-out-burger-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1021,
+            "categories": [
+                {
+                    "alias": "hotdogs",
+                    "title": "Fast Food"
+                },
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6883316040039,
+                "longitude": -122.47193145752
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "260 Washington St",
+                "address2": null,
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "260 Washington St",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+18007861000",
+            "display_phone": "(800) 786-1000",
+            "distance": 588.112542514
+        },
+        {
+            "id": "sams-sandwiches-and-coffee-daly-city",
+            "name": "Sam's Sandwiches & Coffee",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/BI5rBTsl0ySxt9xJ-LoXGg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sams-sandwiches-and-coffee-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 282,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.693105,
+                "longitude": -122.4747306
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "301 87th St",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "301 87th St",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+16509926249",
+            "display_phone": "(650) 992-6249",
+            "distance": 1126.5487182043998
+        },
+        {
+            "id": "hi-t-cafe-and-deli-daly-city",
+            "name": "Hi-T Cafe & Deli",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/SitAKVBPNX0CrymesMLoZg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hi-t-cafe-and-deli-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 85,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "juicebars",
+                    "title": "Juice Bars & Smoothies"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.70798,
+                "longitude": -122.455879
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "6012 Mission St",
+                "address2": "",
+                "address3": null,
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "6012 Mission St",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16507315998",
+            "display_phone": "(650) 731-5998",
+            "distance": 2669.369127688
+        },
+        {
+            "id": "fil-am-cuisine-daly-city",
+            "name": "Fil-Am Cuisine",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/y9q8dTq5Bi2Ms9DToSFlZw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/fil-am-cuisine-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 828,
+            "categories": [
+                {
+                    "alias": "filipino",
+                    "title": "Filipino"
+                },
+                {
+                    "alias": "bbq",
+                    "title": "Barbeque"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6935081,
+                "longitude": -122.4656525
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "66 School St",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "66 School St",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16509926191",
+            "display_phone": "(650) 992-6191",
+            "distance": 902.684116822
+        },
+        {
+            "id": "bart-grocery-and-bbq-daly-city",
+            "name": "Bart Grocery & BBQ",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/YdJHWutgj5X1iMOfoQ4W9g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bart-grocery-and-bbq-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 630,
+            "categories": [
+                {
+                    "alias": "grocery",
+                    "title": "Grocery"
+                },
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "bbq",
+                    "title": "Barbeque"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.70578,
+                "longitude": -122.4641
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "108 Los Olivos Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "108 Los Olivos Ave",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16509938782",
+            "display_phone": "(650) 993-8782",
+            "distance": 2265.60551657
+        },
+        {
+            "id": "phusion-daly-city-2",
+            "name": "Phusion",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/b8JSdJZhwjerRxlrJ_KcfQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/phusion-daly-city-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 275,
+            "categories": [
+                {
+                    "alias": "waffles",
+                    "title": "Waffles"
+                },
+                {
+                    "alias": "bubbletea",
+                    "title": "Bubble Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6997831033248,
+                "longitude": -122.463566433934
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "6785 Mission St",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "6785 Mission St",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16507314243",
+            "display_phone": "(650) 731-4243",
+            "distance": 1613.1018322500001
+        },
+        {
+            "id": "california-fish-grill-daly-city",
+            "name": "California Fish Grill",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/dItaUdV-89okN0Zd5NcrUg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/california-fish-grill-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 124,
+            "categories": [
+                {
+                    "alias": "fishnchips",
+                    "title": "Fish & Chips"
+                },
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6696062,
+                "longitude": -122.469098
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "153-C Serramonte Ctr",
+                "address2": "",
+                "address3": null,
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "153-C Serramonte Ctr",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+16505175712",
+            "display_phone": "(650) 517-5712",
+            "distance": 1630.695780866
+        },
+        {
+            "id": "ketsourine-macarons-daly-city",
+            "name": "Ketsourine Macarons",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/pL_3O_Nsff95Sm8rX9owNQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ketsourine-macarons-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 411,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "macarons",
+                    "title": "Macarons"
+                },
+                {
+                    "alias": "icecream",
+                    "title": "Ice Cream & Frozen Yogurt"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6994254975925,
+                "longitude": -122.482653558254
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "500 Westlake Ctr",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "500 Westlake Ctr",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+14154125923",
+            "display_phone": "(415) 412-5923",
+            "distance": 2117.500853182
+        },
+        {
+            "id": "wongs-cafe-daly-city",
+            "name": "Wong's Cafe",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/njtGqHRhRiaTx8Y5rM-Sow/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/wongs-cafe-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 128,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.687931060791,
+                "longitude": -122.460220336914
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1111 Hillside Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1111 Hillside Blvd",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16507568023",
+            "display_phone": "(650) 756-8023",
+            "distance": 604.2417825158
+        },
+        {
+            "id": "poki-time-daly-city",
+            "name": "Poki Time",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/vKLS_FOrsuey_PLk1Yevcw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/poki-time-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 125,
+            "categories": [
+                {
+                    "alias": "poke",
+                    "title": "Poke"
+                },
+                {
+                    "alias": "hawaiian",
+                    "title": "Hawaiian"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6974514203343,
+                "longitude": -122.483674106048
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "177 Southgate Ave",
+                "address2": "",
+                "address3": null,
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "177 Southgate Ave",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+16505504244",
+            "display_phone": "(650) 550-4244",
+            "distance": 2028.941286992
+        },
+        {
+            "id": "valerios-tropical-bakeshop-daly-city",
+            "name": "Valerio's Tropical Bakeshop",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Ar4r-zIxfVTujEp2TMsZUQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/valerios-tropical-bakeshop-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 104,
+            "categories": [
+                {
+                    "alias": "bakeries",
+                    "title": "Bakeries"
+                },
+                {
+                    "alias": "filipino",
+                    "title": "Filipino"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.674399395275,
+                "longitude": -122.47889988623
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "37 St Francis Sq",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "37 St Francis Sq",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+16507562911",
+            "display_phone": "(650) 756-2911",
+            "distance": 1653.093609382
+        },
+        {
+            "id": "in-n-out-burger-daly-city-4",
+            "name": "In-N-Out Burger",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/fVDbJsshv_ulzh-Y-Bxhpg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/in-n-out-burger-daly-city-4?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 98,
+            "categories": [
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6660899,
+                "longitude": -122.46931
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "372 Gellert Blvd",
+                "address2": "",
+                "address3": null,
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "372 Gellert Blvd",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+18007861000",
+            "display_phone": "(800) 786-1000",
+            "distance": 2175.5941647659997
+        },
+        {
+            "id": "fog-city-hookah-lounge-daly-city",
+            "name": "Fog City Hookah Lounge",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/zgWgad0T4mn5pbi2_3lpCg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/fog-city-hookah-lounge-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 75,
+            "categories": [
+                {
+                    "alias": "hookah_bars",
+                    "title": "Hookah Bars"
+                },
+                {
+                    "alias": "lounges",
+                    "title": "Lounges"
+                },
+                {
+                    "alias": "danceclubs",
+                    "title": "Dance Clubs"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6900734,
+                "longitude": -122.46559
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "7379 Mission St",
+                "address2": null,
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "7379 Mission St",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+14157695555",
+            "display_phone": "(415) 769-5555",
+            "distance": 517.1159129582
+        },
+        {
+            "id": "miss-tomato-daly-city",
+            "name": "Miss Tomato",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/DEb8vjG22BHlsjYleascPA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/miss-tomato-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 216,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "desserts",
+                    "title": "Desserts"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6931351,
+                "longitude": -122.4720399
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "199 87th St",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "199 87th St",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+16509947676",
+            "display_phone": "(650) 994-7676",
+            "distance": 994.5484627019999
+        },
+        {
+            "id": "el-taconazo-daly-city",
+            "name": "El Taconazo",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/HGavqiFgpaImNxJ4goed2w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/el-taconazo-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 102,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.690063,
+                "longitude": -122.4660696
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "7384 Mission St",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "7384 Mission St",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16507579820",
+            "display_phone": "(650) 757-9820",
+            "distance": 525.7991552084
+        },
+        {
+            "id": "blue-line-pizza-daly-city",
+            "name": "Blue Line Pizza",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/c4IjQ3JvMCUAjRPT_GfV3A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/blue-line-pizza-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 366,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                },
+                {
+                    "alias": "gluten_free",
+                    "title": "Gluten-Free"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6993808917781,
+                "longitude": -122.482248498148
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "511 Westlake Ctr",
+                "address2": null,
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "511 Westlake Ctr",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+16507558500",
+            "display_phone": "(650) 755-8500",
+            "distance": 2090.051306406
+        },
+        {
+            "id": "los-metates-daly-city",
+            "name": "Los Metates",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/xgX1C5U_3H_mhaElrAVqnQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/los-metates-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 254,
+            "categories": [
+                {
+                    "alias": "tacos",
+                    "title": "Tacos"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6870593719188,
+                "longitude": -122.469495880951
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "260 San Pedro Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94014",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "260 San Pedro Rd",
+                    "Daly City, CA 94014"
+                ]
+            },
+            "phone": "+16509924661",
+            "display_phone": "(650) 992-4661",
+            "distance": 332.74853852580003
+        },
+        {
+            "id": "royal-donut-daly-city",
+            "name": "Royal Donut",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/fJXqhwQquf3Yrpvj1hGsvg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/royal-donut-daly-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 117,
+            "categories": [
+                {
+                    "alias": "donuts",
+                    "title": "Donuts"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.681854,
+                "longitude": -122.487889
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "236 Skyline Plz",
+                "address2": "",
+                "address3": "",
+                "city": "Daly City",
+                "zip_code": "94015",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "236 Skyline Plz",
+                    "Daly City, CA 94015"
+                ]
+            },
+            "phone": "+16509973758",
+            "display_phone": "(650) 997-3758",
+            "distance": 1940.0823835619997
+        }
+    ],
+    "total": 15000,
+    "region": {
+        "center": {
+            "longitude": -122.4663162231,
+            "latitude": 37.6854393379
+        }
+    }
+}

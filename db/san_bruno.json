@@ -1,0 +1,861 @@
+{
+    "businesses": [
+        {
+            "id": "carrolls-meats-san-bruno-4",
+            "name": "Carroll's Meats",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/YXSjhk1LjemzLM8ORnH6Ug/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/carrolls-meats-san-bruno-4?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 220,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.630225,
+                "longitude": -122.412556
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation",
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "189 San Bruno Ave W",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "189 San Bruno Ave W",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16508718593",
+            "display_phone": "(650) 871-8593",
+            "distance": 619.8483088856
+        },
+        {
+            "id": "taqueria-san-bruno-san-bruno",
+            "name": "Taqueria San Bruno",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/QSqwopttsKNlptrLg27vXw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taqueria-san-bruno-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 782,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.63532,
+                "longitude": -122.41174
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1045 San Mateo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1045 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16508731752",
+            "display_phone": "(650) 873-1752",
+            "distance": 1111.65080033
+        },
+        {
+            "id": "taqueria-leon-san-bruno",
+            "name": "Taqueria Leon",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/_9FQihEt5zQ2VVgoS5a1DA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taqueria-leon-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 47,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6252601540813,
+                "longitude": -122.411696339293
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "551 San Mateo Ave",
+                "address2": "",
+                "address3": null,
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "551 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16505898762",
+            "display_phone": "(650) 589-8762",
+            "distance": 566.94392789
+        },
+        {
+            "id": "grand-leader-market-san-bruno",
+            "name": "Grand Leader Market",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/IYHet-nbXDzETf1kI8hfGA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/grand-leader-market-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 94,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.626651,
+                "longitude": -122.4109783
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "600 San Mateo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "600 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16505892928",
+            "display_phone": "(650) 589-2928",
+            "distance": 610.1078750959999
+        },
+        {
+            "id": "hana-hawaiian-barbeque-san-bruno-2",
+            "name": "Hana Hawaiian Barbeque",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/luSInnSYsIf_HLjIZQ1vZw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hana-hawaiian-barbeque-san-bruno-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 87,
+            "categories": [
+                {
+                    "alias": "hawaiian",
+                    "title": "Hawaiian"
+                },
+                {
+                    "alias": "bbq",
+                    "title": "Barbeque"
+                },
+                {
+                    "alias": "hotdogs",
+                    "title": "Fast Food"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6241,
+                "longitude": -122.41093
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "482 San Mateo Ave",
+                "address2": null,
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "482 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16506348788",
+            "display_phone": "(650) 634-8788",
+            "distance": 680.889384174
+        },
+        {
+            "id": "roma-deli-san-bruno",
+            "name": "Roma Deli",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/o8Y-YjVp0-oU9iZbnostGA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/roma-deli-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 263,
+            "categories": [
+                {
+                    "alias": "italian",
+                    "title": "Italian"
+                },
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.62214,
+                "longitude": -122.41094
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "424 San Mateo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "424 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16505892360",
+            "display_phone": "(650) 589-2360",
+            "distance": 789.8716358979999
+        },
+        {
+            "id": "paradise-hookah-lounge-san-bruno",
+            "name": "Paradise Hookah Lounge",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/8rOv8jadbPkwi9NC4Bz68g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/paradise-hookah-lounge-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 149,
+            "categories": [
+                {
+                    "alias": "hookah_bars",
+                    "title": "Hookah Bars"
+                },
+                {
+                    "alias": "lounges",
+                    "title": "Lounges"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.62612,
+                "longitude": -122.41154
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "591 San Mateo Ave",
+                "address2": null,
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "591 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16507630751",
+            "display_phone": "(650) 763-0751",
+            "distance": 561.3649415658
+        },
+        {
+            "id": "kava-bar-san-bruno-2",
+            "name": "Kava Bar",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/CSZ3auhQufY2wsoGCOr94A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kava-bar-san-bruno-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 37,
+            "categories": [
+                {
+                    "alias": "lounges",
+                    "title": "Lounges"
+                },
+                {
+                    "alias": "tea",
+                    "title": "Tea Rooms"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.62708,
+                "longitude": -122.41102
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "630 San Mateo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "630 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16503514370",
+            "display_phone": "(650) 351-4370",
+            "distance": 606.3198427908
+        },
+        {
+            "id": "green-valley-market-san-bruno-2",
+            "name": "Green Valley Market",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/epzcN0bC9SDhba1qPSzqvg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/green-valley-market-san-bruno-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 111,
+            "categories": [
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                },
+                {
+                    "alias": "meats",
+                    "title": "Meat Shops"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.62957,
+                "longitude": -122.41554
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "504 San Bruno Ave W",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "504 San Bruno Ave W",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16502259027",
+            "display_phone": "(650) 225-9027",
+            "distance": 388.8179763126
+        },
+        {
+            "id": "mariscos-el-pariente-san-bruno",
+            "name": "Mariscos El Pariente",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/S0Vcd0QxUpnKw1wCmjgWOg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mariscos-el-pariente-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 45,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.6168624078381,
+                "longitude": -122.407715264573
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "160 El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "160 El Camino Real",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+14152335175",
+            "display_phone": "(415) 233-5175",
+            "distance": 1406.6275335999999
+        },
+        {
+            "id": "taqueria-mi-durango-san-bruno",
+            "name": "Taqueria Mi Durango",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/gHLzGKYiCHA8Wp8-50utJA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taqueria-mi-durango-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 214,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.61963,
+                "longitude": -122.41062
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "287 El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "287 El Camino Real",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16505888810",
+            "display_phone": "(650) 588-8810",
+            "distance": 1004.743792536
+        },
+        {
+            "id": "mazzat-bistro-san-bruno-2",
+            "name": "Mazzat Bistro",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/6yBRpRzHqIltLcL6bDSJCg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mazzat-bistro-san-bruno-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 116,
+            "categories": [
+                {
+                    "alias": "lebanese",
+                    "title": "Lebanese"
+                },
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                },
+                {
+                    "alias": "arabian",
+                    "title": "Arabian"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6264979,
+                "longitude": -122.424924
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "851 Cherry Ave",
+                "address2": null,
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "851 Cherry Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16506348315",
+            "display_phone": "(650) 634-8315",
+            "distance": 726.4640100462
+        },
+        {
+            "id": "boiling-beijing-san-bruno-4",
+            "name": "Boiling BeiJing",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/ralWss2y02NXwUXufAa0sg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/boiling-beijing-san-bruno-4?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 371,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                },
+                {
+                    "alias": "hotpot",
+                    "title": "Hot Pot"
+                },
+                {
+                    "alias": "karaoke",
+                    "title": "Karaoke"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.62741,
+                "longitude": -122.41154
+            },
+            "transactions": [
+                "delivery",
+                "pickup",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "649 San Mateo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "649 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16509523388",
+            "display_phone": "(650) 952-3388",
+            "distance": 567.0010111798
+        },
+        {
+            "id": "pita-hub-san-bruno",
+            "name": "Pita Hub",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/EiZNM4F1C5cv4vstE5pGrA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/pita-hub-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 298,
+            "categories": [
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.62841,
+                "longitude": -122.41667
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "799 El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "799 El Camino Real",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16508757482",
+            "display_phone": "(650) 875-7482",
+            "distance": 218.29364566479998
+        },
+        {
+            "id": "gintei-san-bruno",
+            "name": "Gintei",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/cT5zczC94W-xzoVjAnW-rQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/gintei-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 325,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.618545,
+                "longitude": -122.40979
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$$",
+            "location": {
+                "address1": "235 El Camino Real",
+                "address2": null,
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "235 El Camino Real",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16506364135",
+            "display_phone": "(650) 636-4135",
+            "distance": 1146.16551064
+        },
+        {
+            "id": "k-grill-and-tofu-house-san-bruno",
+            "name": "K. Grill & Tofu House",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/6xyzRLOgL14Ko3_50PQo8g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/k-grill-and-tofu-house-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 386,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6267649,
+                "longitude": -122.4114249
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "617 San Mateo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "617 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16508733030",
+            "display_phone": "(650) 873-3030",
+            "distance": 561.3585524859999
+        },
+        {
+            "id": "ruddys-taco-truck-san-bruno",
+            "name": "Ruddy's Taco Truck",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/awXFz1M99CN1nNDRrRZibA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ruddys-taco-truck-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 150,
+            "categories": [
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6302024967283,
+                "longitude": -122.417753257286
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "El Camino Real & Bayhill",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "El Camino Real & Bayhill",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16507710410",
+            "display_phone": "(650) 771-0410",
+            "distance": 400.646158604
+        },
+        {
+            "id": "west-coast-cafe-san-bruno",
+            "name": "West Coast Cafe",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/SYcRgRX7PGww_HlhMP1EvA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/west-coast-cafe-san-bruno?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 255,
+            "categories": [
+                {
+                    "alias": "italian",
+                    "title": "Italian"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.623477,
+                "longitude": -122.410937
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "466 San Mateo Ave",
+                "address2": null,
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "466 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16505881912",
+            "display_phone": "(650) 588-1912",
+            "distance": 705.5767241476
+        },
+        {
+            "id": "never-too-latte-san-bruno-2",
+            "name": "Never Too Latte",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/9zA35xPPMqs95KNvR6Z07A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/never-too-latte-san-bruno-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 783,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "desserts",
+                    "title": "Desserts"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 37.6241,
+                "longitude": -122.41095
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "486 San Mateo Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "486 San Mateo Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16505884685",
+            "display_phone": "(650) 588-4685",
+            "distance": 668.539630882
+        },
+        {
+            "id": "seniores-pizza-san-bruno-4",
+            "name": "Seniore's Pizza",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/DiXKqhnbPdGZWGfkzLWK_Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/seniores-pizza-san-bruno-4?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 206,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.627449,
+                "longitude": -122.416373
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "730 Kains Ave",
+                "address2": "",
+                "address3": "",
+                "city": "San Bruno",
+                "zip_code": "94066",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "730 Kains Ave",
+                    "San Bruno, CA 94066"
+                ]
+            },
+            "phone": "+16509524100",
+            "display_phone": "(650) 952-4100",
+            "distance": 164.639183482
+        }
+    ],
+    "total": 11200,
+    "region": {
+        "center": {
+            "longitude": -122.4179077148,
+            "latitude": 37.6266017237
+        }
+    }
+}

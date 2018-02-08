@@ -1,0 +1,867 @@
+{
+    "businesses": [
+        {
+            "id": "big-belly-deli-south-san-francisco",
+            "name": "Big Belly Deli",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/RU_PCwepKUox5tHY80egNw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/big-belly-deli-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 352,
+            "categories": [
+                {
+                    "alias": "bagels",
+                    "title": "Bagels"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6546293793785,
+                "longitude": -122.408526959454
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "115 Grand Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "115 Grand Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16505885695",
+            "display_phone": "(650) 588-5695",
+            "distance": 5462.812253884
+        },
+        {
+            "id": "cafe-de-casa-south-san-francisco-2",
+            "name": "Cafe de Casa",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/3nCzZiV7do834QsvBLd91Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cafe-de-casa-south-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 240,
+            "categories": [
+                {
+                    "alias": "brazilian",
+                    "title": "Brazilian"
+                },
+                {
+                    "alias": "acaibowls",
+                    "title": "Acai Bowls"
+                },
+                {
+                    "alias": "vegetarian",
+                    "title": "Vegetarian"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6640655,
+                "longitude": -122.3998725
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1165 Airport Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1165 Airport Blvd",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16507631025",
+            "display_phone": "(650) 763-1025",
+            "distance": 4851.280112888
+        },
+        {
+            "id": "taqueria-las-pencas-south-san-francisco-4",
+            "name": "Taqueria Las Pencas",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/4MeZ9pIDJRvFmG7BLlN4Fg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taqueria-las-pencas-south-san-francisco-4?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 67,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.654117,
+                "longitude": -122.411399
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "319 Baden Ave",
+                "address2": "",
+                "address3": null,
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "319 Baden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16506348635",
+            "display_phone": "(650) 634-8635",
+            "distance": 5715.4453205459995
+        },
+        {
+            "id": "47-hills-brewing-company-south-san-francisco-2",
+            "name": "47 Hills Brewing Company",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/QVDY-QnOxkB7hdg_05W-1A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/47-hills-brewing-company-south-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 82,
+            "categories": [
+                {
+                    "alias": "breweries",
+                    "title": "Breweries"
+                },
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.644218,
+                "longitude": -122.413452
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "137 S Linden Ave",
+                "address2": "",
+                "address3": null,
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "137 S Linden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16508678476",
+            "display_phone": "(650) 867-8476",
+            "distance": 5993.4557478
+        },
+        {
+            "id": "little-lucca-specialty-sandwich-shop-south-san-francisco",
+            "name": "Little Lucca Specialty Sandwich Shop",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/G9HmfK_pYUNLF7BBnHOIug/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/little-lucca-specialty-sandwich-shop-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 2357,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.65091,
+                "longitude": -122.43056
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "724 El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "724 El Camino Real",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16505898916",
+            "display_phone": "(650) 589-8916",
+            "distance": 7412.996625559999
+        },
+        {
+            "id": "amoura-restaurant-south-san-francisco",
+            "name": "Amoura Restaurant",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/zJ75ENvyYCBNe5r9RU--7w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/amoura-restaurant-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 205,
+            "categories": [
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                },
+                {
+                    "alias": "mideastern",
+                    "title": "Middle Eastern"
+                },
+                {
+                    "alias": "greek",
+                    "title": "Greek"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.65955,
+                "longitude": -122.40894
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "713 Linden Ave",
+                "address2": null,
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "713 Linden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16507546891",
+            "display_phone": "(650) 754-6891",
+            "distance": 5543.18011854
+        },
+        {
+            "id": "subculture-deli-south-san-francisco",
+            "name": "Subculture Deli",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/RSHFrsiRUWKn_WcFNEITzw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/subculture-deli-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 210,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6496799,
+                "longitude": -122.41801
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "151 S Spruce Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "151 S Spruce Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16507456270",
+            "display_phone": "(650) 745-6270",
+            "distance": 6317.240793608
+        },
+        {
+            "id": "antigua-coffee-shop-south-san-francisco-2",
+            "name": "Antigua Coffee Shop",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/M3om4Hr9HGp8peI-P3cE8A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/antigua-coffee-shop-south-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 272,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.655723,
+                "longitude": -122.414047
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "437A Grand Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "437A Grand Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16507416261",
+            "display_phone": "(650) 741-6261",
+            "distance": 5953.86276512
+        },
+        {
+            "id": "its-all-gravy-south-san-francisco",
+            "name": "It's All Gravy",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/rpeeyWxiRU6Wb9KamN5BNQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/its-all-gravy-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 58,
+            "categories": [
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                },
+                {
+                    "alias": "catering",
+                    "title": "Caterers"
+                },
+                {
+                    "alias": "comfortfood",
+                    "title": "Comfort Food"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6573715209961,
+                "longitude": -122.415107727051
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": null,
+                "address2": null,
+                "address3": null,
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+14156108808",
+            "display_phone": "(415) 610-8808",
+            "distance": 6331.041527844
+        },
+        {
+            "id": "las-hijas-del-gallo-bakery-south-san-francisco",
+            "name": "Las Hijas Del Gallo Bakery",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/jAANb7F6wZopfv2IPtbHQg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/las-hijas-del-gallo-bakery-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 62,
+            "categories": [
+                {
+                    "alias": "bakeries",
+                    "title": "Bakeries"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.65867,
+                "longitude": -122.40926
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "615 Linden Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "615 Linden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16505894329",
+            "display_phone": "(650) 589-4329",
+            "distance": 5547.549959442
+        },
+        {
+            "id": "flavas-jamaican-grill-south-san-francisco",
+            "name": "Flavas Jamaican Grill",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/9Qd2AnyJfhrfKd2R5-3Qmg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/flavas-jamaican-grill-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 467,
+            "categories": [
+                {
+                    "alias": "caribbean",
+                    "title": "Caribbean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6557135964466,
+                "longitude": -122.409782813556
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "314 Linden Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "314 Linden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16504471713",
+            "display_phone": "(650) 447-1713",
+            "distance": 5578.268075758
+        },
+        {
+            "id": "la-tapatia-mexicatessen-south-san-francisco",
+            "name": "La Tapatia Mexicatessen",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/z0jGo3ng84Qk0e5C2MFtXg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/la-tapatia-mexicatessen-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 613,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.65548,
+                "longitude": -122.41296
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "411 Grand Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "411 Grand Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16505895881",
+            "display_phone": "(650) 589-5881",
+            "distance": 5860.256147756
+        },
+        {
+            "id": "the-standby-south-san-francisco",
+            "name": "The StandBy",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/0V7-g5K2lWrIX4Esi0TGWw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/the-standby-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 141,
+            "categories": [
+                {
+                    "alias": "lounges",
+                    "title": "Lounges"
+                },
+                {
+                    "alias": "beergardens",
+                    "title": "Beer Gardens"
+                },
+                {
+                    "alias": "cocktailbars",
+                    "title": "Cocktail Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6621,
+                "longitude": -122.40316
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "935 Airport Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "935 Airport Blvd",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16505888300",
+            "display_phone": "(650) 588-8300",
+            "distance": 5074.85735052
+        },
+        {
+            "id": "cafe-382-south-san-francisco",
+            "name": "Cafe 382",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/Af_VeaL49qH29eAf8k6qLQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cafe-382-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 335,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.655673395519,
+                "longitude": -122.411917256493
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "382 Grand Ave",
+                "address2": "",
+                "address3": null,
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "382 Grand Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16507631640",
+            "display_phone": "(650) 763-1640",
+            "distance": 5765.899417017999
+        },
+        {
+            "id": "mayo-and-mustard-south-san-francisco-2",
+            "name": "Mayo & Mustard",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/rdNMquPzAgvhPtgzDt1GBg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mayo-and-mustard-south-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 106,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.646231569269,
+                "longitude": -122.413194160748
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "107 S Linden Ave",
+                "address2": null,
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "107 S Linden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+15104691053",
+            "display_phone": "(510) 469-1053",
+            "distance": 5903.176119018
+        },
+        {
+            "id": "country-cottage-cafe-south-san-francisco-3",
+            "name": "Country Cottage Cafe",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/gGHhACgUNG3PaHxpDoDFow/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/country-cottage-cafe-south-san-francisco-3?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 285,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6551811,
+                "longitude": -122.4096021
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "238 Grand Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "238 Grand Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16508735478",
+            "display_phone": "(650) 873-5478",
+            "distance": 5541.077515829999
+        },
+        {
+            "id": "mike-and-kens-deli-south-san-francisco-2",
+            "name": "Mike & Ken's Deli",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/OQXYIPuMeVT9YVKH6guaxQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mike-and-kens-deli-south-san-francisco-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 123,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "bagels",
+                    "title": "Bagels"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6628696,
+                "longitude": -122.40166
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1031 Airport Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1031 Airport Blvd",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16505883659",
+            "display_phone": "(650) 588-3659",
+            "distance": 4966.042148288
+        },
+        {
+            "id": "taqueria-celaya-south-san-francisco",
+            "name": "Taqueria Celaya",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/-crrGE6vyD_Qt_mMDw9fqA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taqueria-celaya-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 112,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6582708,
+                "longitude": -122.4088649
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "608 Linden Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "608 Linden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16505881289",
+            "display_phone": "(650) 588-1289",
+            "distance": 5521.155978772
+        },
+        {
+            "id": "kings-sandwich-south-san-francisco",
+            "name": "King's Sandwich",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/mFtPc_ssigDIYTPCYVgW5g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kings-sandwich-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 90,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "salad",
+                    "title": "Salad"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.6543219,
+                "longitude": -122.4117339
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "331 Baden Ave",
+                "address2": "",
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "331 Baden Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16502731559",
+            "display_phone": "(650) 273-1559",
+            "distance": 5757.134629509999
+        },
+        {
+            "id": "hometown-heroes-south-san-francisco",
+            "name": "Hometown Heroes",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/GJVCoi1hPzqMivcSPa1sPQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hometown-heroes-south-san-francisco?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 162,
+            "categories": [
+                {
+                    "alias": "sportsbars",
+                    "title": "Sports Bars"
+                },
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.6550735,
+                "longitude": -122.4103483
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "303 Grand Ave",
+                "address2": null,
+                "address3": "",
+                "city": "South San Francisco",
+                "zip_code": "94080",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "303 Grand Ave",
+                    "South San Francisco, CA 94080"
+                ]
+            },
+            "phone": "+16508724484",
+            "display_phone": "(650) 872-4484",
+            "distance": 5631.082752142
+        }
+    ],
+    "total": 87300,
+    "region": {
+        "center": {
+            "longitude": -122.346496582,
+            "latitude": 37.6532041061
+        }
+    }
+}

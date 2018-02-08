@@ -25,7 +25,7 @@ class Category extends React.Component {
               <p>Nightlife</p>
             </li>
           </a>
-          <a href='/'>
+          <a onClick={()=>this.handleClick("Homeservices")}>
             <li>
               <i className="fas fa-wrench"></i>
               <p>Home Services</p>

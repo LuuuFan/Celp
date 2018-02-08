@@ -1,0 +1,876 @@
+{
+    "businesses": [
+        {
+            "id": "cariblue-restaurant-redwood-city",
+            "name": "Cariblue Restaurant",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ya-mfyTjFA_uptocnGNM6g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cariblue-restaurant-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 134,
+            "categories": [
+                {
+                    "alias": "caribbean",
+                    "title": "Caribbean"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.4870914,
+                "longitude": -122.2201632
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1660 Broadway St",
+                "address2": null,
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1660 Broadway St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503151262",
+            "display_phone": "(650) 315-1262",
+            "distance": 1925.3977997979998
+        },
+        {
+            "id": "bliss-coffee-redwood-city",
+            "name": "Bliss Coffee",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/5DV7eMzb7G0lY5_XEU9GZg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bliss-coffee-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 278,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.486619,
+                "longitude": -122.231402
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2400 Broadway St",
+                "address2": "Ste 110",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2400 Broadway St",
+                    "Ste 110",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16502604356",
+            "display_phone": "(650) 260-4356",
+            "distance": 1716.7867804299997
+        },
+        {
+            "id": "curry-wrappers-delight-redwood-city",
+            "name": "Curry Wrapper's Delight",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/0By_SxGToU2wKQ0Eft5BOQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/curry-wrappers-delight-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 200,
+            "categories": [
+                {
+                    "alias": "indpak",
+                    "title": "Indian"
+                },
+                {
+                    "alias": "wraps",
+                    "title": "Wraps"
+                },
+                {
+                    "alias": "comfortfood",
+                    "title": "Comfort Food"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4865874,
+                "longitude": -122.2320578
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "312 Arguello St",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "312 Arguello St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16502613987",
+            "display_phone": "(650) 261-3987",
+            "distance": 1725.52227795
+        },
+        {
+            "id": "zadna-restaurant-redwood-city-2",
+            "name": "Zadna Restaurant",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/yvyqaWa3JRnRW_vcnh4n9Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/zadna-restaurant-redwood-city-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 294,
+            "categories": [
+                {
+                    "alias": "mediterranean",
+                    "title": "Mediterranean"
+                },
+                {
+                    "alias": "halal",
+                    "title": "Halal"
+                },
+                {
+                    "alias": "gluten_free",
+                    "title": "Gluten-Free"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.48598,
+                "longitude": -122.23422
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2653 Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2653 Broadway",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503669600",
+            "display_phone": "(650) 366-9600",
+            "distance": 1810.841116182
+        },
+        {
+            "id": "vesta-redwood-city",
+            "name": "Vesta",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/E6eE_maKXNqFuoAkkx5WMQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/vesta-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1335,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                },
+                {
+                    "alias": "tapasmallplates",
+                    "title": "Tapas/Small Plates"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.48682,
+                "longitude": -122.22677
+            },
+            "transactions": [
+                "restaurant_reservation",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2022 Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2022 Broadway",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503625052",
+            "display_phone": "(650) 362-5052",
+            "distance": 1738.707117768
+        },
+        {
+            "id": "kristi-maries-redwood-city",
+            "name": "Kristi Marie's",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/x2DQhPR700x-z3Nw0AtAwQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kristi-maries-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 142,
+            "categories": [
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4865513033186,
+                "longitude": -122.232173860332
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "318 Arguello St",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "318 Arguello St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503694351",
+            "display_phone": "(650) 369-4351",
+            "distance": 1714.2770146999999
+        },
+        {
+            "id": "the-sandwich-spot-redwood-city-5",
+            "name": "The Sandwich Spot",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Id7DFC0t6bqZnIQr9qP3eQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/the-sandwich-spot-redwood-city-5?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 657,
+            "categories": [
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                },
+                {
+                    "alias": "hookah_bars",
+                    "title": "Hookah Bars"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4864070738747,
+                "longitude": -122.231816384113
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "2420 Broadway St",
+                "address2": null,
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2420 Broadway St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16502991300",
+            "display_phone": "(650) 299-1300",
+            "distance": 1740.994794578
+        },
+        {
+            "id": "taza-deli-and-cafe-redwood-city",
+            "name": "Taza Deli & Cafe",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/-YL-dFMywMUv4Mk7R6W-1Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taza-deli-and-cafe-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 49,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                },
+                {
+                    "alias": "gelato",
+                    "title": "Gelato"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.4868656,
+                "longitude": -122.2234133
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1796 Broadway",
+                "address2": "",
+                "address3": null,
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1796 Broadway",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16502573576",
+            "display_phone": "(650) 257-3576",
+            "distance": 1824.7675398719998
+        },
+        {
+            "id": "el-camaron-de-sinaloa-redwood-city-4",
+            "name": "El Camaron De Sinaloa",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/VyAznzRSiNYEC0CSlnM67A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/el-camaron-de-sinaloa-redwood-city-4?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 144,
+            "categories": [
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                },
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.47125,
+                "longitude": -122.21414
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2761 El Camino Real",
+                "address2": null,
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94061",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2761 El Camino Real",
+                    "Redwood City, CA 94061"
+                ]
+            },
+            "phone": "+16503894587",
+            "display_phone": "(650) 389-4587",
+            "distance": 3742.796010876
+        },
+        {
+            "id": "la-viga-seafood-and-cocina-mexicana-redwood-city",
+            "name": "La Viga Seafood & Cocina Mexicana",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/JuaG6nH-wWnajsRvtpyWZw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/la-viga-seafood-and-cocina-mexicana-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 1074,
+            "categories": [
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                },
+                {
+                    "alias": "latin",
+                    "title": "Latin American"
+                },
+                {
+                    "alias": "newmexican",
+                    "title": "New Mexican Cuisine"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.487042,
+                "longitude": -122.222857
+            },
+            "transactions": [
+                "pickup",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1772 Broadway St",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1772 Broadway St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16506798141",
+            "display_phone": "(650) 679-8141",
+            "distance": 1822.5600081939997
+        },
+        {
+            "id": "redwood-bistro-redwood-city",
+            "name": "Redwood Bistro",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/ZWKlWHenWfEqAin2nydMvQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/redwood-bistro-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 150,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.48712,
+                "longitude": -122.23548
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "711 El Camino Real",
+                "address2": null,
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "711 El Camino Real",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16502169988",
+            "display_phone": "(650) 216-9988",
+            "distance": 1708.595722632
+        },
+        {
+            "id": "gourmet-haus-staudt-gifts-and-cafe-redwood-city",
+            "name": "Gourmet Haus Staudt Gifts & Cafe",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/jkMxylkGgSSlWBtBJ5NtAw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/gourmet-haus-staudt-gifts-and-cafe-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 619,
+            "categories": [
+                {
+                    "alias": "german",
+                    "title": "German"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.486204,
+                "longitude": -122.233537
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2615 Broadway St",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2615 Broadway St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503649232",
+            "display_phone": "(650) 364-9232",
+            "distance": 1775.493733356
+        },
+        {
+            "id": "courthouse-square-redwood-city",
+            "name": "Courthouse Square",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/S2y3PRU4YebML35FqXvgxA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/courthouse-square-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 35,
+            "categories": [
+                {
+                    "alias": "landmarks",
+                    "title": "Landmarks & Historical Buildings"
+                },
+                {
+                    "alias": "musicvenues",
+                    "title": "Music Venues"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4869842529297,
+                "longitude": -122.229652404785
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "2200 Broadway",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2200 Broadway",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16507807340",
+            "display_phone": "(650) 780-7340",
+            "distance": 1678.308104766
+        },
+        {
+            "id": "cyclismo-cafe-redwood-city",
+            "name": "Cyclismo Cafe",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/LBR48F3XxUin9RUyc_9SyQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cyclismo-cafe-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 110,
+            "categories": [
+                {
+                    "alias": "cafes",
+                    "title": "Cafes"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4857326,
+                "longitude": -122.2289415
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "871 Middlefield Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "871 Middlefield Rd",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503623970",
+            "display_phone": "(650) 362-3970",
+            "distance": 1831.374041506
+        },
+        {
+            "id": "los-carnalitos-redwood-city-3",
+            "name": "Los Carnalitos",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/h4rSeUkToDtQvWOrcYiOHQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/los-carnalitos-redwood-city-3?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 98,
+            "categories": [
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 37.46933,
+                "longitude": -122.21135
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "2907 El Camino Real",
+                "address2": null,
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2907 El Camino Real",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503155090",
+            "display_phone": "(650) 315-5090",
+            "distance": 4043.6651816219996
+        },
+        {
+            "id": "teaquation-redwood-city",
+            "name": "Teaquation",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/A7yCU7gGKrVdFV0P84ZK8g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/teaquation-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 422,
+            "categories": [
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "juicebars",
+                    "title": "Juice Bars & Smoothies"
+                },
+                {
+                    "alias": "desserts",
+                    "title": "Desserts"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4839509441577,
+                "longitude": -122.232653501548
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1036 El Camino Real",
+                "address2": null,
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1036 El Camino Real",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16503624592",
+            "display_phone": "(650) 362-4592",
+            "distance": 2017.539113092
+        },
+        {
+            "id": "chiquitas-redwood-city-6",
+            "name": "Chiquitas",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/e4Y8m20mD8mvWJH1Os4HbA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/chiquitas-redwood-city-6?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 123,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4868414560864,
+                "longitude": -122.22337782383
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1798 Broadway St",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1798 Broadway St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16506798259",
+            "display_phone": "(650) 679-8259",
+            "distance": 1824.8624909319997
+        },
+        {
+            "id": "nuris-donut-house-redwood-city-2",
+            "name": "Nuri's Donut House",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/UhVrkJqWeZUD0cgauDwT9Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/nuris-donut-house-redwood-city-2?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 100,
+            "categories": [
+                {
+                    "alias": "donuts",
+                    "title": "Donuts"
+                },
+                {
+                    "alias": "coffee",
+                    "title": "Coffee & Tea"
+                },
+                {
+                    "alias": "empanadas",
+                    "title": "Empanadas"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4908465,
+                "longitude": -122.2406263
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "416 El Camino Real",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94062",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "416 El Camino Real",
+                    "Redwood City, CA 94062"
+                ]
+            },
+            "phone": "+16503651841",
+            "display_phone": "(650) 365-1841",
+            "distance": 1525.9525307019999
+        },
+        {
+            "id": "go-fish-poke-bar-redwood-city",
+            "name": "Go Fish Poke Bar",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/MGbpk_VzJNZTT_Ink1TNkw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/go-fish-poke-bar-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 135,
+            "categories": [
+                {
+                    "alias": "poke",
+                    "title": "Poke"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.4861625,
+                "longitude": -122.2299124
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "823 Hamilton St",
+                "address2": null,
+                "address3": null,
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "823 Hamilton St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16502602066",
+            "display_phone": "(650) 260-2066",
+            "distance": 1792.106950176
+        },
+        {
+            "id": "lv-mar-redwood-city",
+            "name": "LV Mar",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/NW8Byl43NaSiESBpNzQ39A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/lv-mar-redwood-city?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
+            "review_count": 458,
+            "categories": [
+                {
+                    "alias": "latin",
+                    "title": "Latin American"
+                },
+                {
+                    "alias": "tapasmallplates",
+                    "title": "Tapas/Small Plates"
+                },
+                {
+                    "alias": "cocktailbars",
+                    "title": "Cocktail Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.4867856,
+                "longitude": -122.2270308
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2042 Broadway St",
+                "address2": "",
+                "address3": "",
+                "city": "Redwood City",
+                "zip_code": "94063",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2042 Broadway St",
+                    "Redwood City, CA 94063"
+                ]
+            },
+            "phone": "+16502413111",
+            "display_phone": "(650) 241-3111",
+            "distance": 1736.296326448
+        }
+    ],
+    "total": 26400,
+    "region": {
+        "center": {
+            "longitude": -122.2311401367,
+            "latitude": 37.5020552005
+        }
+    }
+}

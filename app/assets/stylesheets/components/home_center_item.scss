@@ -7,6 +7,14 @@
   margin-bottom: 15px;
 }
 
+.home-center-item-biz-name{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 90%;
+  height: 30px;
+}
+
 .home-center-item-img{
   width: 100%;
   overflow: hidden;
