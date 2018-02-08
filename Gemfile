@@ -35,6 +35,7 @@ gem 'jquery-rails'
 gem 'pry-rails'
 gem 'figaro'
 gem 'json'
+gem 'rest-client'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,7 +46,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate'
-  gem 'rest-client'
 end
 
 group :development do
