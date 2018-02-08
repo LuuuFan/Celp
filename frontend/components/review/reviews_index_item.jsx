@@ -1,6 +1,5 @@
 import React from 'react';
-// import { browserHistory } from 'react-router';
-// import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ReviewsIndexItemRating from './reviews_index_item_rating';
 
 class ReviewsIndexItem extends React.Component {
@@ -52,7 +51,7 @@ class ReviewsIndexItem extends React.Component {
               </div>
               <div className='review-user-info'>
                 <ul>
-                  <li><a>{users[review.user_id].username}</a></li>
+                  <li><Link to={`/user/${users[review.user_id].username}`}>{users[review.user_id].username}</Link></li>
                   <li>San Francisco, CA</li>
                   {users[review.user_id].user_review_num > 1 ?
                     <li><strong>{users[review.user_id].user_review_num}</strong> reviews</li>

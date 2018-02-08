@@ -28396,6 +28396,8 @@ var _biz_index_item_rating = __webpack_require__(61);
 
 var _biz_index_item_rating2 = _interopRequireDefault(_biz_index_item_rating);
 
+var _reactRouterDom = __webpack_require__(2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28436,8 +28438,8 @@ var HomeCenterItem = function (_React$Component) {
               'div',
               { className: 'home-center-item-biz-name' },
               _react2.default.createElement(
-                'a',
-                { href: '/#/biz/' + biz.id },
+                _reactRouterDom.Link,
+                { to: '/biz/' + biz.id },
                 _react2.default.createElement(
                   'h1',
                   null,
@@ -28482,8 +28484,8 @@ var HomeCenterItem = function (_React$Component) {
                     'p',
                     null,
                     _react2.default.createElement(
-                      'a',
-                      { href: '/#/search?key=' + tag },
+                      _reactRouterDom.Link,
+                      { href: '/search?key=' + tag },
                       tag,
                       ' '
                     )
@@ -28697,8 +28699,8 @@ var BizIndex = function (_React$Component) {
         this.props.requestCategory(this.props.location.search.slice(5));
       } else if (this.props.location.search.includes('key')) {
         var arr = this.props.location.search.split('&');
-        var key = arr[0].slice(5);
-        var loc = arr[1].slice(4);
+        var key = arr[0] ? arr[0].slice(5) : "";
+        var loc = arr[1] ? arr[1].slice(4) : "";
         this.props.requestSearch(key, loc);
       }
     }
@@ -28931,8 +28933,8 @@ var BizIndexItem = function (_React$Component) {
                       'p',
                       null,
                       _react2.default.createElement(
-                        'a',
-                        { href: '/#/search?key=' + tag },
+                        _reactRouterDom.Link,
+                        { to: '/search?key=' + tag },
                         tag,
                         ' '
                       )
@@ -29196,36 +29198,33 @@ var BizShow = function (_React$Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'biz-info-price' },
-                    _react2.default.createElement(
+                    biz.price ? _react2.default.createElement(
                       'p',
                       null,
                       biz.price
-                    )
+                    ) : "$$"
                   ),
-                  _react2.default.createElement(
+                  biz.tags.length > 0 ? _react2.default.createElement(
                     'p',
                     null,
                     '\xB7'
-                  ),
-                  _react2.default.createElement(
+                  ) : "",
+                  biz.tags.length > 0 ? _react2.default.createElement(
                     'div',
                     { className: 'biz-info-tags' },
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      _react2.default.createElement(
-                        'a',
+                    biz.tags.map(function (tag) {
+                      return _react2.default.createElement(
+                        'p',
                         null,
-                        'Bakery'
-                      ),
-                      ', ',
-                      _react2.default.createElement(
-                        'a',
-                        null,
-                        'Cake'
-                      )
-                    )
-                  )
+                        _react2.default.createElement(
+                          _reactRouterDom.Link,
+                          { to: '/search?key=' + tag },
+                          tag,
+                          ' '
+                        )
+                      );
+                    })
+                  ) : ""
                 )
               ),
               _react2.default.createElement(
@@ -29730,6 +29729,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(2);
+
 var _reviews_index_item_rating = __webpack_require__(168);
 
 var _reviews_index_item_rating2 = _interopRequireDefault(_reviews_index_item_rating);
@@ -29741,9 +29742,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import { browserHistory } from 'react-router';
-// import { Redirect } from 'react-router-dom';
-
 
 var ReviewsIndexItem = function (_React$Component) {
   _inherits(ReviewsIndexItem, _React$Component);
@@ -29829,8 +29827,8 @@ var ReviewsIndexItem = function (_React$Component) {
                     'li',
                     null,
                     _react2.default.createElement(
-                      'a',
-                      null,
+                      _reactRouterDom.Link,
+                      { to: '/user/' + users[review.user_id].username },
                       users[review.user_id].username
                     )
                   ),

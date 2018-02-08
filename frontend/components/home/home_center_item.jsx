@@ -1,5 +1,6 @@
 import React from 'react';
 import BizIndexItemRating from '../biz/biz_index_item_rating';
+import {Link} from 'react-router-dom';
 
 class HomeCenterItem extends React.Component{
 
@@ -18,7 +19,7 @@ class HomeCenterItem extends React.Component{
             </div>
             <div className='home-center-item-biz-info'>
               <div className='home-center-item-biz-name'>
-                <a href={`/#/biz/${biz.id}`}><h1>{biz.name}</h1></a>
+                <Link to={`/biz/${biz.id}`}><h1>{biz.name}</h1></Link>
               </div>
               <div className='home-ceter-item-biz-info-rating-review'>
                 <BizIndexItemRating biz={biz}/>
@@ -31,7 +32,7 @@ class HomeCenterItem extends React.Component{
                 {biz.tags.length > 0 ? <p>&middot;</p> : ""}
                 {biz.tags.length > 0 ?
                   <div className='biz-info-tags'>
-                    {biz.tags.map(tag => <p><a href={`/#/search?key=${tag}`}>{tag} </a></p>)}
+                    {biz.tags.map(tag => <p><Link href={`/search?key=${tag}`}>{tag} </Link></p>)}
                   </div>
                  : ""}
               </div>

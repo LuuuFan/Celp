@@ -42,7 +42,7 @@ class BizIndexItem extends React.Component {
                {biz.tags.length > 0 ? <p>&middot;</p> : ""}
                {biz.tags.length > 0 ?
                  <div className='biz-info-tags'>
-                   {biz.tags.map(tag => <p><a href={`/#/search?key=${tag}`}>{tag} </a></p>)}
+                   {biz.tags.map(tag => <p><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
                  </div>
                  : ""}
              </div>
