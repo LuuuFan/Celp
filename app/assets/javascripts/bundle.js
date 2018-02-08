@@ -27518,7 +27518,7 @@ var Category = function (_React$Component) {
           _react2.default.createElement(
             'a',
             { onClick: function onClick() {
-                return _this2.handleClick("Restaurant");
+                return _this2.handleClick("restaurants");
               } },
             _react2.default.createElement(
               'li',
@@ -27534,7 +27534,7 @@ var Category = function (_React$Component) {
           _react2.default.createElement(
             'a',
             { onClick: function onClick() {
-                return _this2.handleClick("Nightlife");
+                return _this2.handleClick("nightlife");
               } },
             _react2.default.createElement(
               'li',
@@ -27550,7 +27550,7 @@ var Category = function (_React$Component) {
           _react2.default.createElement(
             'a',
             { onClick: function onClick() {
-                return _this2.handleClick("Homeservices");
+                return _this2.handleClick("homeservices");
               } },
             _react2.default.createElement(
               'li',

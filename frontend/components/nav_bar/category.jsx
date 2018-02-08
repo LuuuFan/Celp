@@ -13,19 +13,19 @@ class Category extends React.Component {
     return(
       <div className='business'>
         <ul>
-          <a onClick={()=>this.handleClick("Restaurant")}>
+          <a onClick={()=>this.handleClick("restaurants")}>
             <li>
               <i className="fas fa-utensils"></i>
               <p>Restaurants</p>
             </li>
           </a>
-          <a onClick={()=>this.handleClick("Nightlife")}>
+          <a onClick={()=>this.handleClick("nightlife")}>
             <li>
               <i className="fas fa-glass-martini"></i>
               <p>Nightlife</p>
             </li>
           </a>
-          <a onClick={()=>this.handleClick("Homeservices")}>
+          <a onClick={()=>this.handleClick("homeservices")}>
             <li>
               <i className="fas fa-wrench"></i>
               <p>Home Services</p>
