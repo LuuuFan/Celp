@@ -19,7 +19,6 @@ class HomeCenter extends React.Component{
             <li>San Mateo</li>
             <li>Foster City</li>
             <li>Belmont</li>
-            <li>San Carlos</li>
             <li>Redwood City</li>
           </ul>
           {bizes.length > 0 ?

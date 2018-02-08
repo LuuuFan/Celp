@@ -33,7 +33,7 @@ class Api::SearchesController < ApplicationController
       if params[:num].to_i > 0
         @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users).sample(params[:num].to_i)
       else
-        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users).limit(20)
+        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users).sample(20)
       end
     else
       @bizes = {}

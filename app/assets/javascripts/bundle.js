@@ -28264,11 +28264,6 @@ var HomeCenter = function (_React$Component) {
             _react2.default.createElement(
               'li',
               null,
-              'San Carlos'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
               'Redwood City'
             )
           ),

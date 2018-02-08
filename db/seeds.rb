@@ -188,8 +188,8 @@ end
 #
 #
 def seed(filenames, cat="")
-  filenames.each do |filename|
-    file = File.read(File.join(Rails.root, 'db', filename))
+  # filenames.each do |filename|
+    file = File.read(File.join(Rails.root, 'db', filenames))
     data_hash = JSON.parse(file)
     data_hash['businesses'].each do |biz|
       biz_already_there = Biz.find_by(name: biz['name'], address1: biz['location']['address1'])
@@ -229,7 +229,7 @@ def seed(filenames, cat="")
           end
       end
     end
-  end
+  # end
 end
 
 # seed(location_file)
@@ -240,7 +240,15 @@ category_file = [
   'san_francisco_restaurants.json'
 ]
 
-category = ['homeservices', 'nightlife', 'restaurants']
-category.each do |cat|
-  seed(category_file, cat)
-end
+seed('san_francisco_homeservices.json', 'homeservices')
+seed('san_francisco_nightlife.json', 'nightlife')
+seed('san_francisco_restaurants.json', 'restaurants')
+
+# category = ['homeservices', 'nightlife', 'restaurants']
+# category.each do |cat, cat_idx|
+#   category_file.each do |file, file_idx|
+#     if cat_idx = file_idx
+#       seed(file, cat)
+#     end
+#   end
+# end
