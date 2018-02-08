@@ -6,110 +6,110 @@
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 #
-User.destroy_all
-User.create(username: 'demo_user', password: 'password', email:'demo@gmail.com')
-User.create(username: 'luufan', password:'shasha', email:'luuufan@gmail.com')
-User.create(username: 'shasha', password: 'shasha', email:'shasha@gmail.com')
-User.create(username: 'night', password: 'night123', email:'night@gmail.com')
+# User.destroy_all
+# User.create(username: 'demo_user', password: 'password', email:'demo@gmail.com')
+# User.create(username: 'luufan', password:'shasha', email:'luuufan@gmail.com')
+# User.create(username: 'shasha', password: 'shasha', email:'shasha@gmail.com')
+# User.create(username: 'night', password: 'night123', email:'night@gmail.com')
+# #
+# Biz.destroy_all
+# Hour.destroy_all
+# Biz.create(
+#   name: 'Sungrass Bakery',
+#   address1: "1730 O'farrell St",
+#   city:'San Francisco',
+#   zip_code:'94115',
+#   state:'CA',
+#   phone:'(415) 000-0000'
+# )
+# Biz.create(
+#   name: 'Shasha Café',
+#   address1: "1750 O'farrell St",
+#   address2: "#888",
+#   city:'San Francisco',
+#   zip_code:'94115',
+#   state:'CA',
+#   phone:'(415) 000-0000'
+# )
+# Biz.create(
+#   name: 'Fat Angel',
+#   address1: "1740 O'farrell St",
+#   address2: "",
+#   city:'San Francisco',
+#   zip_code:'94115',
+#   state:'CA',
+#   phone:'(415) 525-3013'
+# )
 #
-Biz.destroy_all
-Hour.destroy_all
-Biz.create(
-  name: 'Sungrass Bakery',
-  address1: "1730 O'farrell St",
-  city:'San Francisco',
-  zip_code:'94115',
-  state:'CA',
-  phone:'(415) 000-0000'
-)
-Biz.create(
-  name: 'Shasha Café',
-  address1: "1750 O'farrell St",
-  address2: "#888",
-  city:'San Francisco',
-  zip_code:'94115',
-  state:'CA',
-  phone:'(415) 000-0000'
-)
-Biz.create(
-  name: 'Fat Angel',
-  address1: "1740 O'farrell St",
-  address2: "",
-  city:'San Francisco',
-  zip_code:'94115',
-  state:'CA',
-  phone:'(415) 525-3013'
-)
-
-Biz.create(
-  name: 'Fog Harbor Fish House',
-  address1: "Pier 39",
-  address2: "Ste A-202",
-  city:'San Francisco',
-  zip_code:'94133',
-  state:'CA',
-  phone:'(415) 421-2442',
-  website: 'fogharbor.com'
-)
-
-Biz.create(
-  name: 'The House ',
-  address1: "1230 Grant Ave",
-  address2: "",
-  city:'San Francisco',
-  zip_code:'94133',
-  state:'CA',
-  phone:'(415) 986-8612',
-  website: 'thehse.com'
-)
-
-Biz.create(
-  name: 'Hog Island Oyster Co',
-  address1: "1 Ferry Bldg",
-  address2: "Shop 11",
-  city:'San Francisco',
-  zip_code:'94111',
-  state:'CA',
-  phone:'(415) 391-7117',
-  website: 'hogislandoysters.com'
-)
-
-
-Biz.create(
-  name: 'Marlowe',
-  address1: "500 Brannan St",
-  city:'San Francisco',
-  zip_code:'94107',
-  state:'CA',
-  phone:'(415) 777-1413',
-  website: 'websitemarlowesf.com'
-)
-
-Img.destroy_all
-
-Review.destroy_all
-
-Tag.destroy_all
-
-Biz.create(
-  name: 'App Academy',
-  address1: '160 Spear St',
-  city:'San Francisco',
-  zip_code:'94111',
-  state:'CA',
-  phone:'',
-  website: 'appacademy.io'
-)
-
-Biz.all.pluck(:id).each do |biz_id|
-  (0..6).each do |day|
-    if day != 6
-      Hour.create(biz_id: biz_id, day: day, start:'1100', end: '2200' )
-    end
-  end
-end
-
-
+# Biz.create(
+#   name: 'Fog Harbor Fish House',
+#   address1: "Pier 39",
+#   address2: "Ste A-202",
+#   city:'San Francisco',
+#   zip_code:'94133',
+#   state:'CA',
+#   phone:'(415) 421-2442',
+#   website: 'fogharbor.com'
+# )
+#
+# Biz.create(
+#   name: 'The House ',
+#   address1: "1230 Grant Ave",
+#   address2: "",
+#   city:'San Francisco',
+#   zip_code:'94133',
+#   state:'CA',
+#   phone:'(415) 986-8612',
+#   website: 'thehse.com'
+# )
+#
+# Biz.create(
+#   name: 'Hog Island Oyster Co',
+#   address1: "1 Ferry Bldg",
+#   address2: "Shop 11",
+#   city:'San Francisco',
+#   zip_code:'94111',
+#   state:'CA',
+#   phone:'(415) 391-7117',
+#   website: 'hogislandoysters.com'
+# )
+#
+#
+# Biz.create(
+#   name: 'Marlowe',
+#   address1: "500 Brannan St",
+#   city:'San Francisco',
+#   zip_code:'94107',
+#   state:'CA',
+#   phone:'(415) 777-1413',
+#   website: 'websitemarlowesf.com'
+# )
+#
+# Img.destroy_all
+#
+# Review.destroy_all
+#
+# Tag.destroy_all
+#
+# Biz.create(
+#   name: 'App Academy',
+#   address1: '160 Spear St',
+#   city:'San Francisco',
+#   zip_code:'94111',
+#   state:'CA',
+#   phone:'',
+#   website: 'appacademy.io'
+# )
+#
+# Biz.all.pluck(:id).each do |biz_id|
+#   (0..6).each do |day|
+#     if day != 6
+#       Hour.create(biz_id: biz_id, day: day, start:'1100', end: '2200' )
+#     end
+#   end
+# end
+#
+#
 require 'json'
 require 'rest-client'
 
@@ -170,24 +170,24 @@ def fetch_review(biz_id, my_biz_id)
   end
 end
 
-location_file = [
-  'belmont.json',
-  'burlingame.json',
-  'daly_city.json',
-  'forster_city.json',
-  'millbrae.json',
-  'redwood_city.json',
-  'san_bruno.json',
-  'san_francisco.json',
-  'san_mateo.json',
-  'south_san_francisco.json',
-]
-
-
-
-
-
-def seed(filenames, cat = "")
+# location_file = [
+#   'belmont.json',
+#   'burlingame.json',
+#   'daly_city.json',
+#   'forster_city.json',
+#   'millbrae.json',
+#   'redwood_city.json',
+#   'san_bruno.json',
+#   'san_francisco.json',
+#   'san_mateo.json',
+#   'south_san_francisco.json',
+# ]
+#
+#
+#
+#
+#
+def seed(filenames, cat="")
   filenames.each do |filename|
     file = File.read(File.join(Rails.root, 'db', filename))
     data_hash = JSON.parse(file)
@@ -232,7 +232,7 @@ def seed(filenames, cat = "")
   end
 end
 
-seed(location_file)
+# seed(location_file)
 
 category_file = [
   'san_francisco_homeservices.json',

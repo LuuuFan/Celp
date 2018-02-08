@@ -66,7 +66,6 @@ class Biz < ApplicationRecord
       Category.create(category: cat.capitalize)
       new_cat = Category.find_by(category: cat.capitalize)
       Categorizing.create(category_id: new_cat.id, biz_id: self.id)
-
     end
 
   end
