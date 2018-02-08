@@ -47,6 +47,7 @@ class Map extends React.Component {
       if (this.props.biz.lat && this.props.biz.lng) {
         pos = new google.maps.LatLng(this.props.biz.lat, this.props.biz.lng);
         this.addBizPlace({pos: pos, name: this.props.biz.name});
+        this.map.setCenter(pos);
       } else {
         this.geocoder.geocode({'address': this.props.biz.display_address}, (results, status)=>{
         if (status == 'OK') {

@@ -12,7 +12,7 @@ class Search extends React.Component{
 
   handleClick(e){
     e.preventDefault();
-    const loc = this.state.loc ? this.state.loc.split(' ').join('+') : 'San+Francisco';
+    const loc = this.state.loc.split(' ').join('+');
     const key = this.state.key.split(' ').join('+');
     this.props.requestSearch(key, loc)
       .then(this.props.history.push(`/search?key=${key}&loc=${loc}`));

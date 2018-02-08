@@ -16,17 +16,14 @@ class BizShow extends React.Component {
 
   componentWillReceiveProps(newProps){
     if (!this.props.biz
-        // || !this.props.biz.location.address1
         || this.props.match.params.bizId !== newProps.match.params.bizId
         || this.props.reviews.length !== newProps.reviews.length
-        // || this.props.match.path !== newProps.match.path
       ) {
       this.props.requestBiz(newProps.match.params.bizId);
     }
   }
 
   render(){
-    console.log('=========biz show is rendering==============');
     const {bizEnoughInfo, biz, imgs, reviews, users, currentUser, deleteReview} = this.props;
     return(
       <div>

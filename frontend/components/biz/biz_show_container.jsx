@@ -7,7 +7,10 @@ import {deleteReview} from '../../actions/review';
 
 const mapStateToProps = (state, ownProps) => {
   let biz = state.entities.biz[ownProps.match.params.bizId];
-  let bizEnoughInfo = biz.hasOwnProperty("location");
+  let bizEnoughInfo = false;
+  if (biz) {
+    bizEnoughInfo = biz.hasOwnProperty("location");
+  }
   let imgs = [];
   if (biz && biz.img_ids) {
     imgs = biz.img_ids.map(id=>state.entities.imgs[id]);

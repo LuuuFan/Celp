@@ -684,45 +684,6 @@
             "distance": 295.8870725344
         },
         {
-            "id": "yummy-szechuan-印象四川-millbrae",
-            "name": "Yummy Szechuan 印象四川",
-            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/oGJE2s8AsX9N4cL1Bhq6Tw/o.jpg",
-            "is_closed": false,
-            "url": "https://www.yelp.com/biz/yummy-szechuan-%E5%8D%B0%E8%B1%A1%E5%9B%9B%E5%B7%9D-millbrae?adjust_creative=R1Ms2oQu-rTEykdSrM2llQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=R1Ms2oQu-rTEykdSrM2llQ",
-            "review_count": 197,
-            "categories": [
-                {
-                    "alias": "szechuan",
-                    "title": "Szechuan"
-                }
-            ],
-            "rating": 4,
-            "coordinates": {
-                "latitude": 37.61321,
-                "longitude": -122.40476
-            },
-            "transactions": [
-                "pickup"
-            ],
-            "price": "$$",
-            "location": {
-                "address1": "1661 El Camino Real",
-                "address2": null,
-                "address3": "",
-                "city": "Millbrae",
-                "zip_code": "94030",
-                "country": "US",
-                "state": "CA",
-                "display_address": [
-                    "1661 El Camino Real",
-                    "Millbrae, CA 94030"
-                ]
-            },
-            "phone": "+16506159648",
-            "display_phone": "(650) 615-9648",
-            "distance": 1295.0503176864
-        },
-        {
             "id": "royal-feast-millbrae",
             "name": "Royal Feast",
             "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/9rbJJXRaLWoOFKA8Gm2lYw/o.jpg",

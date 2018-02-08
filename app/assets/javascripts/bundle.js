@@ -4298,6 +4298,7 @@ var Map = function (_React$Component) {
         if (this.props.biz.lat && this.props.biz.lng) {
           pos = new google.maps.LatLng(this.props.biz.lat, this.props.biz.lng);
           this.addBizPlace({ pos: pos, name: this.props.biz.name });
+          this.map.setCenter(pos);
         } else {
           this.geocoder.geocode({ 'address': this.props.biz.display_address }, function (results, status) {
             if (status == 'OK') {
@@ -27394,7 +27395,7 @@ var Search = function (_React$Component) {
     key: 'handleClick',
     value: function handleClick(e) {
       e.preventDefault();
-      var loc = this.state.loc ? this.state.loc.split(' ').join('+') : 'San+Francisco';
+      var loc = this.state.loc.split(' ').join('+');
       var key = this.state.key.split(' ').join('+');
       this.props.requestSearch(key, loc).then(this.props.history.push('/search?key=' + key + '&loc=' + loc));
     }
@@ -28980,7 +28981,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var biz = state.entities.biz[ownProps.match.params.bizId];
-  var bizEnoughInfo = biz.hasOwnProperty("location");
+  var bizEnoughInfo = false;
+  if (biz) {
+    bizEnoughInfo = biz.hasOwnProperty("location");
+  }
   var imgs = [];
   if (biz && biz.img_ids) {
     imgs = biz.img_ids.map(function (id) {
@@ -29088,18 +29092,13 @@ var BizShow = function (_React$Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
-      if (!this.props.biz
-      // || !this.props.biz.location.address1
-      || this.props.match.params.bizId !== newProps.match.params.bizId || this.props.reviews.length !== newProps.reviews.length
-      // || this.props.match.path !== newProps.match.path
-      ) {
-          this.props.requestBiz(newProps.match.params.bizId);
-        }
+      if (!this.props.biz || this.props.match.params.bizId !== newProps.match.params.bizId || this.props.reviews.length !== newProps.reviews.length) {
+        this.props.requestBiz(newProps.match.params.bizId);
+      }
     }
   }, {
     key: 'render',
     value: function render() {
-      console.log('=========biz show is rendering==============');
       var _props = this.props,
           bizEnoughInfo = _props.bizEnoughInfo,
           biz = _props.biz,

@@ -196,35 +196,43 @@ def fetch_review(biz_id, my_biz_id)
       )
       user = User.find_by(username: review['user']['name'].split(' ').join('_'))
     end
-    Review.create(
-      user_id: user.id,
-      biz_id: my_biz_id,
-      body: review['text'],
-      rate: review['rating']
-    )
+    if user
+      Review.create(
+        user_id: user.id,
+        biz_id: my_biz_id,
+        body: review['text'],
+        rate: review['rating']
+      )
+    else
+      random_user_id = User.all.sample.id
+      Review.create(
+        user_id: random_user_id,
+        biz_id: my_biz_id,
+        body: review['text'],
+        rate: review['rating']
+      )
+    end
   end
 end
 
 filename = [
-  'belmont.json',
-  'burlingame.json',
-  'daly_city.json',
-  'forster_city.json',
-  'millbrae.json',
-  'redwood_city.json',
+  # 'belmont.json',
+  # 'burlingame.json',
+  # 'daly_city.json',
+  # 'forster_city.json',
+  # 'millbrae.json',
+  # 'redwood_city.json',
   'san_bruno.json',
   'san_francisco.json',
   'san_mateo.json',
   'south_san_francisco.json',
-  'san_francisco_homeservices.json',
-  'san_francisco_nightlife.json',
-  'san_francisco_restaurants.json'
+  # 'san_francisco_homeservices.json',
+  # 'san_francisco_nightlife.json',
+  # 'san_francisco_restaurants.json'
 ]
 
-# filename.each do |filename|
-  # file = File.open(File.join(Rails.root, 'db', 'san_francisco_restaurants.json'))
-
-  file = File.read(File.join(Rails.root, 'db', 'san_francisco_homeservices.json'))
+filename.each do |filename|
+  file = File.read(File.join(Rails.root, 'db', filename))
   data_hash = JSON.parse(file)
   data_hash['businesses'].each do |biz|
     biz_already_there = Biz.find_by(name: biz['name'], address1: biz['location']['address1'])
@@ -260,9 +268,8 @@ filename = [
         fetch_photo(biz['id'], my_biz.id)
       end
     end
-
-    end
-# end
+  end
+end
 
 
 # Category.destroy_all
