@@ -210,7 +210,7 @@ def seed(filenames, cat = "")
         )
         my_biz = Biz.find_by(name:biz['name'])
         if my_biz
-          if category.length > 0
+          if cat.length > 0
             my_biz.category(cat)
           end
 
