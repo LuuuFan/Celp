@@ -4010,12 +4010,17 @@ var Button = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement('i', { className: 'fa fa-cog', 'aria-hidden': 'true' }),
                   _react2.default.createElement(
                     _reactRouterDom.Link,
                     { to: '/aboutme' },
                     'Account Setting'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltiptext' },
+                    'under construction'
                   )
                 )
               ),
@@ -27293,7 +27298,7 @@ var NavBar = function (_React$Component) {
               { className: 'services' },
               _react2.default.createElement(
                 'ul',
-                null,
+                { className: 'tooltip' },
                 _react2.default.createElement(
                   'a',
                   { href: '/#/write_review' },
@@ -27317,9 +27322,14 @@ var NavBar = function (_React$Component) {
                   { href: '/' },
                   _react2.default.createElement(
                     'li',
-                    null,
+                    { className: 'tooltip' },
                     'Talk'
                   )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'tooltiptext' },
+                  'under construction'
                 )
               )
             ),
@@ -34621,6 +34631,7 @@ var Footer = function Footer() {
                 _react2.default.createElement(
                   'li',
                   null,
+                  _react2.default.createElement('i', { 'class': 'fas fa-language' }),
                   'English'
                 )
               )
@@ -34639,6 +34650,7 @@ var Footer = function Footer() {
                 _react2.default.createElement(
                   'li',
                   null,
+                  _react2.default.createElement('i', { 'class': 'fas fa-globe' }),
                   'United States'
                 )
               )
@@ -35642,7 +35654,19 @@ var HomeCenterActivities = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'home-center-activities group' },
-          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'home-center-activity-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'home-center-activity-item-user' },
+              _react2.default.createElement(
+                'div',
+                { className: 'activity-item-avatar' },
+                _react2.default.createElement('img', { src: '' })
+              )
+            )
+          ),
           _react2.default.createElement('div', { className: 'home-center-activity-item' }),
           _react2.default.createElement('div', { className: 'home-center-activity-item' }),
           _react2.default.createElement('div', { className: 'home-center-activity-item' }),

@@ -33,10 +33,11 @@ class NavBar extends React.Component {
         <div className='menu'>
           <CategoryContainer />
           <div className='services'>
-            <ul>
+            <ul className='tooltip'>
               <a href='/#/write_review'><li>Write a Review</li></a>
               <a href='/'><li>Events</li></a>
-              <a href='/'><li>Talk</li></a>
+              <a href='/'><li className='tooltip'>Talk</li></a>
+              <div className='tooltiptext'>under construction</div>
             </ul>
           </div>
           {!currentUser ?

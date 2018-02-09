@@ -19,7 +19,13 @@ class HomeCenterActivities extends React.Component {
             </div>
           </ul>
           <div className='home-center-activities group'>
-            <div className='home-center-activity-item'></div>
+            <div className='home-center-activity-item'>
+              <div className='home-center-activity-item-user'>
+                <div className='activity-item-avatar'>
+                  <img src='' />
+                </div>
+              </div>
+            </div>
             <div className='home-center-activity-item'></div>
             <div className='home-center-activity-item'></div>
             <div className='home-center-activity-item'></div>
