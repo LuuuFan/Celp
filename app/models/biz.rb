@@ -67,7 +67,21 @@ class Biz < ApplicationRecord
       new_cat = Category.find_by(category: cat.capitalize)
       Categorizing.create(category_id: new_cat.id, biz_id: self.id)
     end
+  end
 
+  def is_open
+    today_hour = self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
+    start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3)
+    over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3)
+    if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
+      true
+    else
+      false
+    end
+  end
+
+  def today_hour
+    self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
   end
 
   private

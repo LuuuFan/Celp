@@ -1,5 +1,6 @@
 .biz-more-info-hours{
   margin-left: 5px;
+  width: 100%;
 }
 
 .biz-more-info-hours *{
@@ -9,4 +10,18 @@
 .biz-more-info-hours th{
   text-align: left;
   padding-right: 15px;
+}
+
+.open-now{
+  margin-top: 3px;
+  color: green;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.closed-now{
+  margin-top: 3px;
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
 }
