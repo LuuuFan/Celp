@@ -28521,7 +28521,7 @@ var HomeCenterItem = function (_React$Component) {
                 })
               ) : ""
             ),
-            biz.location.city ? _react2.default.createElement(
+            biz.location && biz.location.city ? _react2.default.createElement(
               'p',
               null,
               biz.location.city

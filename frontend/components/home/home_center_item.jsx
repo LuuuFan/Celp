@@ -36,7 +36,7 @@ class HomeCenterItem extends React.Component{
                   </div>
                  : ""}
               </div>
-              {biz.location.city ? <p>{biz.location.city}</p> : ""}
+              {biz.location && biz.location.city ? <p>{biz.location.city}</p> : ""}
               <div className='home-center-item-biz-hot'>
                 <i className="fas fa-fire"></i><p>Hot place</p>
               </div>
