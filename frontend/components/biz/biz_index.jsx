@@ -54,15 +54,16 @@ class BizIndex extends React.Component {
             <div className='filter-btn'>
               <div className='filter-price'>
                 <ul>
-                  <li>$</li>
-                  <li>$$</li>
-                  <li>$$$</li>
-                  <li>$$$$</li>
+                  <li className='tooltip'>$<div className='tooltiptext'>under construction</div></li>
+                  <li className='tooltip'>$$<div className='tooltiptext'>under construction</div></li>
+                  <li className='tooltip'>$$$<div className='tooltiptext'>under construction</div></li>
+                  <li className='tooltip'>$$$$<div className='tooltiptext'>under construction</div></li>
                 </ul>
               </div>
               <div className='filter-open-hour'>
-                <ul>
+                <ul className='tooltip'>
                   <li><i className="far fa-clock"></i>Open Now</li>
+                  <div className='tooltiptext'>under construction</div>
                 </ul>
               </div>
             </div>

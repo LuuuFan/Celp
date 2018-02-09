@@ -28804,23 +28804,43 @@ var BizIndex = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'li',
-                    null,
-                    '$'
+                    { className: 'tooltip' },
+                    '$',
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'tooltiptext' },
+                      'under construction'
+                    )
                   ),
                   _react2.default.createElement(
                     'li',
-                    null,
-                    '$$'
+                    { className: 'tooltip' },
+                    '$$',
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'tooltiptext' },
+                      'under construction'
+                    )
                   ),
                   _react2.default.createElement(
                     'li',
-                    null,
-                    '$$$'
+                    { className: 'tooltip' },
+                    '$$$',
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'tooltiptext' },
+                      'under construction'
+                    )
                   ),
                   _react2.default.createElement(
                     'li',
-                    null,
-                    '$$$$'
+                    { className: 'tooltip' },
+                    '$$$$',
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'tooltiptext' },
+                      'under construction'
+                    )
                   )
                 )
               ),
@@ -28829,12 +28849,17 @@ var BizIndex = function (_React$Component) {
                 { className: 'filter-open-hour' },
                 _react2.default.createElement(
                   'ul',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'li',
                     null,
                     _react2.default.createElement('i', { className: 'far fa-clock' }),
                     'Open Now'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltiptext' },
+                    'under construction'
                   )
                 )
               )
@@ -30219,7 +30244,7 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'biz-show-more-info' },
-    biz.hours ? _react2.default.createElement(_biz_more_info_hours2.default, { hours: biz.hours, isOpen: biz.is_open, today_hour: biz.today_hour }) : '',
+    biz.hours ? _react2.default.createElement(_biz_more_info_hours2.default, { hours: biz.hours, isOpen: biz.is_open, todayHour: biz.today_hour }) : '',
     _react2.default.createElement(
       'h1',
       null,
@@ -30669,15 +30694,22 @@ var BizMoreInfoHours = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (BizMoreInfoHours.__proto__ || Object.getPrototypeOf(BizMoreInfoHours)).call(this, props));
 
-    _this.state = { className: 'closed-now' };
+    _this.state = { className: 'closed-now', openStatus: 'Closed now' };
     return _this;
   }
 
   _createClass(BizMoreInfoHours, [{
     key: 'ComponentDidMount',
     value: function ComponentDidMount() {
-      if (this.props.is_open) {
-        this.setState({ className: 'open-now' });
+      if (this.props.isOpen) {
+        this.setState({ className: 'open-now', openStatus: 'Open now' });
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (newProps.isOpen) {
+        this.setState({ className: 'open-now', openStatus: 'Open now' });
       }
     }
   }, {
@@ -30685,8 +30717,7 @@ var BizMoreInfoHours = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           hours = _props.hours,
-          is_open = _props.is_open,
-          today_hour = _props.today_hour;
+          todayHour = _props.todayHour;
 
       var time = function time(str) {
         if (str.slice(0, 2) > 12) {
@@ -30696,7 +30727,6 @@ var BizMoreInfoHours = function (_React$Component) {
         }
       };
 
-      var open_status = is_open ? "Open now" : "Closed now";
       var today = new Date().getDay();
 
       return _react2.default.createElement(
@@ -30709,18 +30739,18 @@ var BizMoreInfoHours = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            today_hour ? _react2.default.createElement(
+            todayHour ? _react2.default.createElement(
               'p',
               null,
               'Today ',
-              time(today_hour[0]),
+              time(todayHour[0]),
               ' - ',
-              time(today_hour[1])
+              time(todayHour[1])
             ) : "",
             _react2.default.createElement(
               'div',
               { className: this.state.className },
-              open_status
+              this.state.openStatus
             )
           )
         ),
@@ -30754,7 +30784,7 @@ var BizMoreInfoHours = function (_React$Component) {
                 today === 1 ? _react2.default.createElement(
                   'div',
                   { className: this.state.className },
-                  open_status
+                  this.state.openStatus
                 ) : ""
               )
             ),
@@ -30777,7 +30807,7 @@ var BizMoreInfoHours = function (_React$Component) {
                 today === 2 ? _react2.default.createElement(
                   'div',
                   { className: this.state.className },
-                  open_status
+                  this.state.openStatus
                 ) : ""
               )
             ),
@@ -30800,7 +30830,7 @@ var BizMoreInfoHours = function (_React$Component) {
                 today === 3 ? _react2.default.createElement(
                   'div',
                   { className: this.state.className },
-                  open_status
+                  this.state.openStatus
                 ) : ""
               )
             ),
@@ -30823,7 +30853,7 @@ var BizMoreInfoHours = function (_React$Component) {
                 today === 4 ? _react2.default.createElement(
                   'div',
                   { className: this.state.className },
-                  open_status
+                  this.state.openStatus
                 ) : ""
               )
             ),
@@ -30846,7 +30876,7 @@ var BizMoreInfoHours = function (_React$Component) {
                 today === 5 ? _react2.default.createElement(
                   'div',
                   { className: this.state.className },
-                  open_status
+                  this.state.openStatus
                 ) : ""
               )
             ),
@@ -30869,7 +30899,7 @@ var BizMoreInfoHours = function (_React$Component) {
                 today === 6 ? _react2.default.createElement(
                   'div',
                   { className: this.state.className },
-                  open_status
+                  this.state.openStatus
                 ) : ""
               )
             ),
@@ -30892,7 +30922,7 @@ var BizMoreInfoHours = function (_React$Component) {
                 today === 0 ? _react2.default.createElement(
                   'div',
                   { className: this.state.className },
-                  open_status
+                  this.state.openStatus
                 ) : ""
               )
             )
@@ -35124,32 +35154,47 @@ var UserProfile = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'li',
-                      null,
+                      { className: 'tooltip' },
                       _react2.default.createElement('i', { className: 'fas fa-camera-retro' }),
                       _react2.default.createElement(
                         'a',
                         null,
                         'Add Profile Photos'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'tooltiptext' },
+                        'under construction'
                       )
                     ),
                     _react2.default.createElement(
                       'li',
-                      null,
+                      { className: 'tooltip' },
                       _react2.default.createElement('i', { className: 'fas fa-id-card' }),
                       _react2.default.createElement(
                         'a',
                         null,
                         'Update Your Profile'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'tooltiptext' },
+                        'under construction'
                       )
                     ),
                     _react2.default.createElement(
                       'li',
-                      null,
+                      { className: 'tooltip' },
                       _react2.default.createElement('i', { className: 'fas fa-users' }),
                       _react2.default.createElement(
                         'a',
                         null,
                         'Find Friends'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'tooltiptext' },
+                        'under construction'
                       )
                     )
                   )
@@ -35319,21 +35364,36 @@ var UserProfileNav = function (_React$Component) {
           ),
           _react2.default.createElement(
             'li',
-            null,
+            { className: 'tooltip' },
             _react2.default.createElement('i', { className: 'fas fa-star' }),
-            'Reviews'
+            'Reviews',
+            _react2.default.createElement(
+              'div',
+              { className: 'tooltiptext' },
+              'under construction'
+            )
           ),
           _react2.default.createElement(
             'li',
-            null,
+            { className: 'tooltip' },
             _react2.default.createElement('i', { className: 'fas fa-camera' }),
-            'Business Photos'
+            'Business Photos',
+            _react2.default.createElement(
+              'div',
+              { className: 'tooltiptext' },
+              'under construction'
+            )
           ),
           _react2.default.createElement(
             'li',
-            null,
+            { className: 'tooltip' },
             _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
-            'Bookmarks'
+            'Bookmarks',
+            _react2.default.createElement(
+              'div',
+              { className: 'tooltiptext' },
+              'under construction'
+            )
           )
         )
       );

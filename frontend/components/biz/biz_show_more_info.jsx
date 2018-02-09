@@ -3,7 +3,7 @@ import BizMoreInfoHours from './biz_more_info_hours';
 
 const BizShowMoreInfo = ({biz}) => (
   <div className='biz-show-more-info'>
-    { biz.hours ? <BizMoreInfoHours hours={biz.hours} isOpen={biz.is_open} today_hour={biz.today_hour}/> : ''}
+    { biz.hours ? <BizMoreInfoHours hours={biz.hours} isOpen={biz.is_open} todayHour={biz.today_hour}/> : ''}
     <h1>More business info</h1>
     <div className='more-biz-info'>
       <dl><dt>Takes Reservations</dt><dd>{biz.takes_reservations ? "Yes" : "No"}</dd></dl>
