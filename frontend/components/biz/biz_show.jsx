@@ -101,7 +101,7 @@ class BizShow extends React.Component {
                             </tr>
                             <tr>
                               <th><i className="far fa-compass"></i></th>
-                              <td><a href=''>Get Directions</a></td></tr>
+                              <td><a>Get Directions</a></td></tr>
                             <tr>
                               <th><i className="fas fa-phone"></i></th>
                               <td>{biz.phone}</td>
@@ -118,7 +118,7 @@ class BizShow extends React.Component {
                             </tr>
                             <tr>
                               <th><i className="fas fa-mobile-alt"></i></th>
-                              <td><a href=''>Send to your Phone</a></td>
+                              <td><a>Send to your Phone</a></td>
                             </tr>
                           </tbody>
                         </table>
