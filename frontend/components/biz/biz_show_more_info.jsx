@@ -35,13 +35,13 @@ const BizShowMoreInfo = ({biz}) => (
     <ul>
       <li><i className="fas fa-utensils"></i><a href='/#/search?cat=Restaurant'><p>Restaurants</p></a></li>
       <li><i className="fas fa-glass-martini"></i><a href='/#/search?cat=Nightlife'><p>Nightlife</p></a></li>
-      <li><i className="fas fa-shopping-bag"></i><p>Shopping</p></li>
-      <li><i className="fas fa-ellipsis-h"></i><p>Show all</p></li>
+      <li className='tooltip'><i className="fas fa-shopping-bag"></i><p>Shopping</p><div className='tooltiptext'>under construction</div></li>
+      <li className='tooltip'><i className="fas fa-ellipsis-h"></i><p>Show all</p><div className='tooltiptext'>under construction</div></li>
     </ul>
     <h1>Dining in Celp</h1>
     <ul>
-      <li><i className="fas fa-search"></i><p>Search for reservations</p></li>
-      <li><i className="fas fa-calendar-alt"></i><p>Book a Table in Celp</p></li>
+      <li className='tooltip'><i className="fas fa-search"></i><p>Search for reservations</p><div className='tooltiptext'>under construction</div></li>
+      <li className='tooltip'><i className="fas fa-calendar-alt"></i><p>Book a Table in Celp</p><div className='tooltiptext'>under construction</div></li>
     </ul>
     <h1>Near Me</h1>
     <ul>

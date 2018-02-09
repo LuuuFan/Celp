@@ -27,14 +27,14 @@ class ReviewsIndex extends React.Component {
             <h1>Ask the Community</h1>
             <hr />
             {biz ? <p>Celp users haven't asked any questions yet about <strong>{biz.name}</strong></p> : ""}
-            <button className='ask-question'>Ask a Question</button>
+            <button className='ask-question tooltip'>Ask a Question<div className='tooltiptext'>under construction</div></button>
           </div>
           <div className='review-index-title'>
             <div>
               <h1>Recommended Reviews</h1>
               {biz ? <h2>for {biz.name}</h2> : ''}
             </div>
-            <div className='searchReview'>
+            <div className='searchReview '>
               <input placeholder='Search within the reviews'/>
               <button>
                 <i className="fas fa-search"></i>

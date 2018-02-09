@@ -88,11 +88,11 @@ class ReviewsIndexItem extends React.Component {
                   <p>Was this review ...?</p>
                   <div>
                     <ul className='group'>
-                      <li><i className="fas fa-lightbulb"></i>Userful</li>
-                      <li><i className="far fa-smile"></i>Funny</li>
-                      <li><i className="far fa-hand-peace"></i>Cool</li>
+                      <li className='tooltip'><i className="fas fa-lightbulb"></i>Userful<div className='tooltiptext'>under construction</div></li>
+                      <li className='tooltip'><i className="far fa-smile"></i>Funny<div className='tooltiptext'>under construction</div></li>
+                      <li className='tooltip'><i className="far fa-hand-peace"></i>Cool<div className='tooltiptext'>under construction</div></li>
                     </ul>
-                    <div className='report-review'><i className="fas fa-flag"></i></div>
+                    <div className='report-review tooltip'><i className="fas fa-flag"></i><div className='tooltiptext'>under construction</div></div>
                   </div>
                 </div>
               }

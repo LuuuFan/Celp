@@ -29740,8 +29740,13 @@ var ReviewsIndex = function (_React$Component) {
             ) : "",
             _react2.default.createElement(
               'button',
-              { className: 'ask-question' },
-              'Ask a Question'
+              { className: 'ask-question tooltip' },
+              'Ask a Question',
+              _react2.default.createElement(
+                'div',
+                { className: 'tooltiptext' },
+                'under construction'
+              )
             )
           ),
           _react2.default.createElement(
@@ -29764,7 +29769,7 @@ var ReviewsIndex = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'searchReview' },
+              { className: 'searchReview ' },
               _react2.default.createElement('input', { placeholder: 'Search within the reviews' }),
               _react2.default.createElement(
                 'button',
@@ -30063,27 +30068,47 @@ var ReviewsIndexItem = function (_React$Component) {
                     { className: 'group' },
                     _react2.default.createElement(
                       'li',
-                      null,
+                      { className: 'tooltip' },
                       _react2.default.createElement('i', { className: 'fas fa-lightbulb' }),
-                      'Userful'
+                      'Userful',
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'tooltiptext' },
+                        'under construction'
+                      )
                     ),
                     _react2.default.createElement(
                       'li',
-                      null,
+                      { className: 'tooltip' },
                       _react2.default.createElement('i', { className: 'far fa-smile' }),
-                      'Funny'
+                      'Funny',
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'tooltiptext' },
+                        'under construction'
+                      )
                     ),
                     _react2.default.createElement(
                       'li',
-                      null,
+                      { className: 'tooltip' },
                       _react2.default.createElement('i', { className: 'far fa-hand-peace' }),
-                      'Cool'
+                      'Cool',
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'tooltiptext' },
+                        'under construction'
+                      )
                     )
                   ),
                   _react2.default.createElement(
                     'div',
-                    { className: 'report-review' },
-                    _react2.default.createElement('i', { className: 'fas fa-flag' })
+                    { className: 'report-review tooltip' },
+                    _react2.default.createElement('i', { className: 'fas fa-flag' }),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'tooltiptext' },
+                      'under construction'
+                    )
                   )
                 )
               )
@@ -30600,22 +30625,32 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       ),
       _react2.default.createElement(
         'li',
-        null,
+        { className: 'tooltip' },
         _react2.default.createElement('i', { className: 'fas fa-shopping-bag' }),
         _react2.default.createElement(
           'p',
           null,
           'Shopping'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'tooltiptext' },
+          'under construction'
         )
       ),
       _react2.default.createElement(
         'li',
-        null,
+        { className: 'tooltip' },
         _react2.default.createElement('i', { className: 'fas fa-ellipsis-h' }),
         _react2.default.createElement(
           'p',
           null,
           'Show all'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'tooltiptext' },
+          'under construction'
         )
       )
     ),
@@ -30629,22 +30664,32 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       null,
       _react2.default.createElement(
         'li',
-        null,
+        { className: 'tooltip' },
         _react2.default.createElement('i', { className: 'fas fa-search' }),
         _react2.default.createElement(
           'p',
           null,
           'Search for reservations'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'tooltiptext' },
+          'under construction'
         )
       ),
       _react2.default.createElement(
         'li',
-        null,
+        { className: 'tooltip' },
         _react2.default.createElement('i', { className: 'fas fa-calendar-alt' }),
         _react2.default.createElement(
           'p',
           null,
           'Book a Table in Celp'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'tooltiptext' },
+          'under construction'
         )
       )
     ),
@@ -35663,14 +35708,212 @@ var HomeCenterActivities = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'activity-item-avatar' },
-                _react2.default.createElement('img', { src: '' })
+                _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg' })
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://celp.herokuapp.com/#/user/night' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    'night'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Added 2 photos'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'activity-item-biz' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://celp.herokuapp.com/#/biz/41/' },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  'Sungrass Bakery'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'activity-two-photo-container' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'activity-one-of-two-photo' },
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518152703/celp/IMG_6974_ci5qep.jpg' })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltip' },
+                    _react2.default.createElement('i', { className: 'far fa-thumbs-up' }),
+                    'Like',
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'tooltiptext' },
+                      'under construction'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'activity-one-of-two-photo' },
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518152650/celp/IMG_8181_wezxkw.jpg' })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltip' },
+                    _react2.default.createElement('i', { className: 'far fa-thumbs-up' }),
+                    'Like',
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'tooltiptext' },
+                      'under construction'
+                    )
+                  )
+                )
               )
             )
           ),
-          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
-          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
-          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
-          _react2.default.createElement('div', { className: 'home-center-activity-item' })
+          _react2.default.createElement(
+            'div',
+            { className: 'home-center-activity-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'home-center-activity-item-user' },
+              _react2.default.createElement(
+                'div',
+                { className: 'activity-item-avatar' },
+                _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865985/celp/323463_2651367759148_317015209_o_ywnmvb.jpg' })
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://celp.herokuapp.com/#/user/luufan' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    'luufan'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Wrote a review'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'activity-item-biz' },
+              _react2.default.createElement(
+                'div',
+                { className: 'activity-item-biz-img' },
+                _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518141662/celp/o_llfg8s.png' })
+              ),
+              _react2.default.createElement(
+                'a',
+                { href: 'https://celp.herokuapp.com/#/biz/48/' },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  'App Academy'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'activity-item-biz-review' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'I was once in your shoes looking to see if App Academy was the right bootcamp for me. Well, you\'re in luck. I\'m going to spend the next ten minutes giving you a quick rundown on my thoughts on this program. A quick note of disclosure, I will be  receiving an a/A branded sweater for posting a review but fear not, that review is completely unbiased and independent of that.'
+                )
+              ),
+              _react2.default.createElement(
+                'a',
+                { href: 'https://celp.herokuapp.com/#/biz/48/' },
+                'Continue reading'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'home-center-activity-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'home-center-activity-item-user' },
+              _react2.default.createElement(
+                'div',
+                { className: 'activity-item-avatar' },
+                _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg' })
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://celp.herokuapp.com/#/user/night' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    'night'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Added 1 photo'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'activity-item-biz' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://celp.herokuapp.com/#/biz/42/' },
+                _react2.default.createElement(
+                  'h2',
+                  null,
+                  'Shasha Caf\xE9'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'activity-one-photo-container' },
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518152938/celp/IMG_6995_xbjibc.jpg' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'tooltip' },
+                  _react2.default.createElement('i', { className: 'far fa-thumbs-up' }),
+                  'Like',
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltiptext' },
+                    'under construction'
+                  )
+                )
+              )
+            )
+          )
         )
       );
     }
