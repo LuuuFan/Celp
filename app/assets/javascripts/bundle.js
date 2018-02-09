@@ -34676,7 +34676,7 @@ var Footer = function Footer() {
                 _react2.default.createElement(
                   'li',
                   null,
-                  _react2.default.createElement('i', { 'class': 'fas fa-language' }),
+                  _react2.default.createElement('i', { className: 'fas fa-language' }),
                   'English'
                 )
               )
@@ -34695,7 +34695,7 @@ var Footer = function Footer() {
                 _react2.default.createElement(
                   'li',
                   null,
-                  _react2.default.createElement('i', { 'class': 'fas fa-globe' }),
+                  _react2.default.createElement('i', { className: 'fas fa-globe' }),
                   'United States'
                 )
               )

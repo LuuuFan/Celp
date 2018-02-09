@@ -21,12 +21,12 @@ const Footer = () => (
       <div>
         <li>Languages
           <ul>
-            <a href='/'><li><i class="fas fa-language"></i>English</li></a>
+            <a href='/'><li><i className="fas fa-language"></i>English</li></a>
           </ul>
         </li>
         <li>Countries
           <ul>
-            <a href='/'><li><i class="fas fa-globe"></i>United States</li></a>
+            <a href='/'><li><i className="fas fa-globe"></i>United States</li></a>
           </ul>
         </li>
       </div>
