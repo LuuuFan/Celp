@@ -27134,7 +27134,7 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/signup' }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/login' }),
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/aboutme', component: _user_profile_container2.default }),
+      _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/aboutme', component: _user_profile_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/user/:username', component: _user_profile_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _biz_index_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
