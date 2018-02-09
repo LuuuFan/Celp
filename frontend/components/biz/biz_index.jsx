@@ -9,24 +9,27 @@ class BizIndex extends React.Component {
 
   componentDidMount(){
     if (this.props.location.search.includes('key')) {
+      console.log("======DidMount sending requestCategory======");
+
       let arr = this.props.location.search.split('&');
       let key = arr[0] ? arr[0].slice(5) : "";
       let loc = arr[1] ? arr[1].slice(4) : "";
       this.props.requestSearch(key, loc);
     } else if (this.props.location.search.includes('cat')) {
+      console.log("======DidMount sending requestCategory======");
       this.props.requestCategory(this.props.location.search.slice(5));
     }
   }
 
   componentWillReceiveProps(newProps){
     if (this.props.location.search !== newProps.location.search) {
-      if (newProps.location.search.includes('cat')) {
-        this.props.requestCategory(newProps.location.search.slice(5));
-      } else if (newProps.location.search.includes('key')) {
+      if (newProps.location.search.includes('key')) {
         let arr = newProps.location.search.split('&');
         let key = arr[0] ? arr[0].slice(5) : "";
         let loc = arr[1] ? arr[1].slice(4) : "";
         this.props.requestSearch(key, loc);
+      } else if (newProps.location.search.includes('cat')) {
+        this.props.requestCategory(newProps.location.search.slice(5));
       }
     }
   }
