@@ -3,7 +3,7 @@ import React from 'react';
 class Search extends React.Component{
   constructor(props){
     super(props);
-    this.state = {key: '', loc: ''};
+    this.state = {key: '', loc: '', className: 'hidden'};
   }
 
   // componentDidMount(){
@@ -16,6 +16,9 @@ class Search extends React.Component{
   // }
 
   handleInput(e, type){
+    if (this.state.className == '') {
+      this.setState({className:'hidden'})
+    }
     this.setState({[type]: e.target.value});
   }
 
@@ -23,8 +26,12 @@ class Search extends React.Component{
     e.preventDefault();
     const loc = this.state.loc.split(' ').join('+');
     const key = this.state.key.split(' ').join('+');
-    this.props.requestSearch(key, loc)
+    if (!loc && !key) {
+      this.setState({className: ''})
+    } else {
+      this.props.requestSearch(key, loc)
       .then(this.props.history.push(`/search?key=${key}&loc=${loc}`));
+    }
   }
 
   render(){
@@ -37,6 +44,7 @@ class Search extends React.Component{
         <button onClick={(e)=>this.handleClick(e)}>
           <i className="fas fa-search"></i>
         </button>
+        <div className={`hint ${this.state.className}`}>Say something here</div>
       </form>
     );
   }

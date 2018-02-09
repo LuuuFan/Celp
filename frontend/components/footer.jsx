@@ -6,8 +6,8 @@ const Footer = () => (
       <ul>
       <li>About
         <ul>
-          <a href='/'><li>About Celp</li></a>
-          <a href='/'><li>About Me</li></a>
+          <a href='https://github.com/LuuuFan/Celp'><li><i className="fab fa-github"></i>About Celp</li></a>
+          <a href='/'><li><i className="fab fa-linkedin"></i>About Me</li></a>
         </ul>
       </li>
       <li>Discover

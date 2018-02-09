@@ -27382,7 +27382,7 @@ var Search = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
 
-    _this.state = { key: '', loc: '' };
+    _this.state = { key: '', loc: '', className: 'hidden' };
     return _this;
   }
 
@@ -27398,6 +27398,9 @@ var Search = function (_React$Component) {
   _createClass(Search, [{
     key: 'handleInput',
     value: function handleInput(e, type) {
+      if (this.state.className == '') {
+        this.setState({ className: 'hidden' });
+      }
       this.setState(_defineProperty({}, type, e.target.value));
     }
   }, {
@@ -27406,7 +27409,11 @@ var Search = function (_React$Component) {
       e.preventDefault();
       var loc = this.state.loc.split(' ').join('+');
       var key = this.state.key.split(' ').join('+');
-      this.props.requestSearch(key, loc).then(this.props.history.push('/search?key=' + key + '&loc=' + loc));
+      if (!loc && !key) {
+        this.setState({ className: '' });
+      } else {
+        this.props.requestSearch(key, loc).then(this.props.history.push('/search?key=' + key + '&loc=' + loc));
+      }
     }
   }, {
     key: 'render',
@@ -27440,6 +27447,11 @@ var Search = function (_React$Component) {
               return _this2.handleClick(e);
             } },
           _react2.default.createElement('i', { className: 'fas fa-search' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'hint ' + this.state.className },
+          'Say something here'
         )
       );
     }
@@ -28107,8 +28119,13 @@ var Home = function (_React$Component) {
                 { href: '/#/write_review' },
                 _react2.default.createElement(
                   'div',
-                  null,
-                  'Write a Review'
+                  { className: 'tooltip' },
+                  'Write a Review',
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltiptext' },
+                    'under construction'
+                  )
                 )
               ),
               _react2.default.createElement(
@@ -28116,8 +28133,13 @@ var Home = function (_React$Component) {
                 { href: '/' },
                 _react2.default.createElement(
                   'div',
-                  null,
-                  'Events'
+                  { className: 'tooltip' },
+                  'Events',
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltiptext' },
+                    'under construction'
+                  )
                 )
               ),
               _react2.default.createElement(
@@ -28125,8 +28147,13 @@ var Home = function (_React$Component) {
                 { href: '/' },
                 _react2.default.createElement(
                   'div',
-                  null,
-                  'Talk'
+                  { className: 'tooltip' },
+                  'Talk',
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'tooltiptext' },
+                    'under construction'
+                  )
                 )
               )
             ),
@@ -28221,6 +28248,10 @@ var _home_center_item = __webpack_require__(158);
 var _home_center_item2 = _interopRequireDefault(_home_center_item);
 
 var _reactRouterDom = __webpack_require__(2);
+
+var _home_center_activities = __webpack_require__(197);
+
+var _home_center_activities2 = _interopRequireDefault(_home_center_activities);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28362,38 +28393,7 @@ var HomeCenter = function (_React$Component) {
             )
           ) : ""
         ),
-        _react2.default.createElement(
-          'div',
-          { className: 'home-center-recent-activity' },
-          _react2.default.createElement(
-            'h1',
-            null,
-            'Recent Activity'
-          ),
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'Nearby'
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                'Friends'
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                'Following'
-              )
-            )
-          )
-        )
+        _react2.default.createElement(_home_center_activities2.default, null)
       );
     }
   }]);
@@ -28721,7 +28721,10 @@ var BizIndex = function (_React$Component) {
   function BizIndex() {
     _classCallCheck(this, BizIndex);
 
-    return _possibleConstructorReturn(this, (BizIndex.__proto__ || Object.getPrototypeOf(BizIndex)).call(this));
+    var _this = _possibleConstructorReturn(this, (BizIndex.__proto__ || Object.getPrototypeOf(BizIndex)).call(this));
+
+    _this.state = { loc: '', cat: '', key: '' };
+    return _this;
   }
 
   _createClass(BizIndex, [{
@@ -28730,14 +28733,14 @@ var BizIndex = function (_React$Component) {
       window.scrollTo(0, 0);
       // ReactDOM.findDOMNode(this).scrollTop = 0;
       if (this.props.location.search.includes('key')) {
-        console.log("======DidMount sending requestCategory======");
-
         var arr = this.props.location.search.split('&');
         var key = arr[0] ? arr[0].slice(5) : "";
         var loc = arr[1] ? arr[1].slice(4) : "";
+        this.setState({ cat: '' });
+        this.setState({ loc: loc.split('+').join(' '), key: key });
         this.props.requestSearch(key, loc);
       } else if (this.props.location.search.includes('cat')) {
-        console.log("======DidMount sending requestCategory======");
+        this.setState({ cat: this.props.location.search.slice(5) });
         this.props.requestCategory(this.props.location.search.slice(5));
       }
     }
@@ -28749,8 +28752,11 @@ var BizIndex = function (_React$Component) {
           var arr = newProps.location.search.split('&');
           var key = arr[0] ? arr[0].slice(5) : "";
           var loc = arr[1] ? arr[1].slice(4) : "";
+          this.setState({ cat: '' });
+          this.setState({ loc: loc.split('+').join(' '), key: key });
           this.props.requestSearch(key, loc);
         } else if (newProps.location.search.includes('cat')) {
+          this.setState({ cat: newProps.location.search.slice(5) });
           this.props.requestCategory(newProps.location.search.slice(5));
         }
       }
@@ -28774,12 +28780,17 @@ var BizIndex = function (_React$Component) {
               _react2.default.createElement(
                 'h1',
                 null,
-                'Best Restaurants '
+                'Best ',
+                this.state.cat ? this.state.cat : this.state.key
               ),
               _react2.default.createElement(
                 'h1',
                 null,
-                'in San Francisco, CA'
+                this.state.cat ? 'in San Francisco, CA' : _react2.default.createElement(
+                  'div',
+                  null,
+                  this.state.loc ? 'in ' + this.state.loc : ''
+                )
               )
             ),
             _react2.default.createElement(
@@ -30507,9 +30518,13 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       'ul',
       null,
       _react2.default.createElement(
-        'li',
-        null,
-        'Find more Restaurants nearby'
+        'a',
+        { href: '/#/search?cat=Restaurant' },
+        _react2.default.createElement(
+          'li',
+          null,
+          'Find more Restaurants nearby'
+        )
       )
     ),
     _react2.default.createElement(
@@ -30525,9 +30540,13 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
         null,
         _react2.default.createElement('i', { className: 'fas fa-utensils' }),
         _react2.default.createElement(
-          'p',
-          null,
-          'Restaurants'
+          'a',
+          { href: '/#/search?cat=Restaurant' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Restaurants'
+          )
         )
       ),
       _react2.default.createElement(
@@ -30535,9 +30554,13 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
         null,
         _react2.default.createElement('i', { className: 'fas fa-glass-martini' }),
         _react2.default.createElement(
-          'p',
-          null,
-          'Nightlife'
+          'a',
+          { href: '/#/search?cat=Nightlife' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Nightlife'
+          )
         )
       ),
       _react2.default.createElement(
@@ -30599,9 +30622,13 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       'ul',
       null,
       _react2.default.createElement(
-        'li',
-        null,
-        'Restaurants Near Me'
+        'a',
+        { href: '/#/search?cat=Restaurant' },
+        _react2.default.createElement(
+          'li',
+          null,
+          'Restaurants Near Me'
+        )
       )
     )
   );
@@ -34487,10 +34514,11 @@ var Footer = function Footer() {
             null,
             _react2.default.createElement(
               'a',
-              { href: '/' },
+              { href: 'https://github.com/LuuuFan/Celp' },
               _react2.default.createElement(
                 'li',
                 null,
+                _react2.default.createElement('i', { className: 'fab fa-github' }),
                 'About Celp'
               )
             ),
@@ -34500,6 +34528,7 @@ var Footer = function Footer() {
               _react2.default.createElement(
                 'li',
                 null,
+                _react2.default.createElement('i', { className: 'fab fa-linkedin' }),
                 'About Me'
               )
             )
@@ -35462,6 +35491,111 @@ var UserProfileNav = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = UserProfileNav;
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeCenterActivities = function (_React$Component) {
+  _inherits(HomeCenterActivities, _React$Component);
+
+  function HomeCenterActivities(props) {
+    _classCallCheck(this, HomeCenterActivities);
+
+    var _this = _possibleConstructorReturn(this, (HomeCenterActivities.__proto__ || Object.getPrototypeOf(HomeCenterActivities)).call(this, props));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(HomeCenterActivities, [{
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'home-center-recent-activity' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Recent Activity'
+        ),
+        _react2.default.createElement(
+          'ul',
+          null,
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'li',
+              { className: 'tooltip' },
+              'Nearby',
+              _react2.default.createElement(
+                'div',
+                { className: 'tooltiptext' },
+                'under construction'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'tooltip' },
+              'Friends',
+              _react2.default.createElement(
+                'div',
+                { className: 'tooltiptext' },
+                'under construction'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'tooltip' },
+              'Following',
+              _react2.default.createElement(
+                'div',
+                { className: 'tooltiptext' },
+                'under construction'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'home-center-activities group' },
+          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
+          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
+          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
+          _react2.default.createElement('div', { className: 'home-center-activity-item' }),
+          _react2.default.createElement('div', { className: 'home-center-activity-item' })
+        )
+      );
+    }
+  }]);
+
+  return HomeCenterActivities;
+}(_react2.default.Component);
+
+exports.default = HomeCenterActivities;
 
 /***/ })
 /******/ ]);

@@ -29,12 +29,12 @@ const BizShowMoreInfo = ({biz}) => (
     </div>
     <h1>Other Restaurants Nearby</h1>
     <ul>
-      <li>Find more Restaurants nearby</li>
+      <a href='/#/search?cat=Restaurant'><li>Find more Restaurants nearby</li></a>
     </ul>
     <h1>Browse nearby</h1>
     <ul>
-      <li><i className="fas fa-utensils"></i><p>Restaurants</p></li>
-      <li><i className="fas fa-glass-martini"></i><p>Nightlife</p></li>
+      <li><i className="fas fa-utensils"></i><a href='/#/search?cat=Restaurant'><p>Restaurants</p></a></li>
+      <li><i className="fas fa-glass-martini"></i><a href='/#/search?cat=Nightlife'><p>Nightlife</p></a></li>
       <li><i className="fas fa-shopping-bag"></i><p>Shopping</p></li>
       <li><i className="fas fa-ellipsis-h"></i><p>Show all</p></li>
     </ul>
@@ -45,7 +45,7 @@ const BizShowMoreInfo = ({biz}) => (
     </ul>
     <h1>Near Me</h1>
     <ul>
-      <li>Restaurants Near Me</li>
+      <a href='/#/search?cat=Restaurant'><li>Restaurants Near Me</li></a>
     </ul>
   </div>
 );

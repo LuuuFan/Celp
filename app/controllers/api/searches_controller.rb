@@ -4,17 +4,17 @@ class Api::SearchesController < ApplicationController
     if params[:key] && params[:key].length > 0
       if Tag.all.pluck(:tag_name).include?(params[:key].capitalize)
           if params[:loc] && params[:loc].length > 0
-            @bizes = Biz.joins(:tags).where(tags: {tag_name: params[:key].capitalize}, city: params[:loc].split(' ').map{|el| el.capitalize}.join(' ')).includes(:reviews, :reviewed_users)
+            @bizes = Biz.joins(:tags).where(tags: {tag_name: params[:key].capitalize}, city: params[:loc].split(' ').map{|el| el.capitalize}.join(' ')).includes(:reviews, :reviewed_users).limit(15)
           else
-            @bizes = Biz.joins(:tags).where(tags: {tag_name: params[:key].capitalize}).includes(:reviews, :reviewed_users)
+            @bizes = Biz.joins(:tags).where(tags: {tag_name: params[:key].capitalize}).includes(:reviews, :reviewed_users).limit(15)
           end
       else
         name = "%#{params[:key]}%"
         if params[:loc].length > 0
           result = Biz.where('UPPER(name) LIKE UPPER(?)', name)
-          @bizes = result.where(city: params[:loc].split(' ').map{|el| el.capitalize})
+          @bizes = result.where(city: params[:loc].split(' ').map{|el| el.capitalize}).limit(15)
         else
-          @bizes = Biz.where('UPPER(name) LIKE UPPER(?)', name)
+          @bizes = Biz.where('UPPER(name) LIKE UPPER(?)', name).limit(15)
         end
         # name = "%#{params[:key].split("").join('%')}%"
         # if params[:loc].length > 0
@@ -25,15 +25,13 @@ class Api::SearchesController < ApplicationController
       end
     elsif params[:loc]
       if params[:loc].length > 0
-        @bizes = Biz.where(city: params[:loc].split(' ').map{|el| el.capitalize}.join(' ')).includes(:reviews, :reviewed_users).limit(20)
-      else
-        @bizes = Biz.where(city: 'San Francisco').limit(20)
+        @bizes = Biz.where(city: params[:loc].split(' ').map{|el| el.capitalize}.join(' ')).includes(:reviews, :reviewed_users).limit(15)
       end
     elsif params[:cat]
       if params[:num].to_i > 0
-        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users).sample(params[:num].to_i)
+        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}, city: 'San Francisco').sample(params[:num].to_i)
       else
-        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users).sample(20)
+        @bizes = Biz.joins(:categories).where(categories: {category: params[:cat].capitalize}).includes(:reviews, :reviewed_users).sample(15)
       end
     else
       @bizes = {}

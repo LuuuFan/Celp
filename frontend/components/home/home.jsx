@@ -42,9 +42,9 @@ class Home extends React.Component {
         <div className='home-main'>
           <div className='home-header'>
             <div className='services'>
-              <a href='/#/write_review'><div>Write a Review</div></a>
-              <a href='/'><div>Events</div></a>
-              <a href='/'><div>Talk</div></a>
+              <a href='/#/write_review'><div className='tooltip'>Write a Review<div className='tooltiptext'>under construction</div></div></a>
+              <a href='/'><div className='tooltip'>Events<div className='tooltiptext'>under construction</div></div></a>
+              <a href='/'><div className='tooltip'>Talk<div className='tooltiptext'>under construction</div></div></a>
             </div>
             {currentUser ? (
               <Button currentUser={currentUser} logout={logout} />

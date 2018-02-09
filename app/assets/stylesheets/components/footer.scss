@@ -31,17 +31,26 @@
   padding: 10px 0;
 }
 
-.footer-main>ul>li>ul>a,
-.footer-main div>li>ul>a{
+.footer-main>ul>li>ul>a>li{
   color: #0073bb;
   cursor: pointer;
 }
 
-.footer-main a:hover {
+.footer-main>ul>li>ul>a>li>i{
+  margin-right: 5px;
+}
+
+.footer-main div>li>ul>a>li{
+  color: #0073bb;
+  cursor: pointer;
+}
+
+.footer-main a:hover li{
   text-decoration: underline;
 }
 
 .footer-background-container{
+  z-index: -3;
   position: relative;
   width: 60%;
   min-width: 1020px;

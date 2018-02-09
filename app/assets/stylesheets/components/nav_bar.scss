@@ -59,6 +59,7 @@
 }
 
 .searchBar{
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,6 +69,36 @@
   width: 80%;
   margin-left: 12px;
   margin-right: 12px;
+}
+
+.hint:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+
+.hint{
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  width: 150px;
+  top: -15px;
+  left: 30%;
+  background-color: #555;
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 6px;
+  z-index: 1;
+  opacity: 0.9;
+  transition: opacity .6s;
 }
 
 .searchBar span{

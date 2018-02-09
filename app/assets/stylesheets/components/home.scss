@@ -3,9 +3,6 @@
   color: white;
 }
 
-.main{
-}
-
 .home-header .user{
   background-color:rgba(0, 0, 0, 0.2);
 }
@@ -185,4 +182,41 @@
 
 .home-main .business a{
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.tooltip{
+  position: relative;
+}
+
+.tooltip:hover .tooltiptext{
+  visibility: visible;
+}
+
+.tooltip .tooltiptext{
+  position: absolute;
+  visibility: hidden;
+  top: -90%;
+  width: 150px;
+  background-color: #555;
+  opacity: 0.9;
+  transition: opacity .6s;
+  z-index: 1;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.tooltip .tooltiptext:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  opacity: 0.9;
+  z-index: 1;
 }

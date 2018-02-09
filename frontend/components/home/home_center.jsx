@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeCenterItem from './home_center_item';
 import {Link} from 'react-router-dom';
+import HomeCenterActivities from './home_center_activities';
 
 class HomeCenter extends React.Component{
 
@@ -31,16 +32,7 @@ class HomeCenter extends React.Component{
             </div>
            : ""}
         </div>
-        <div className='home-center-recent-activity'>
-          <h1>Recent Activity</h1>
-            <ul>
-              <div>
-                <li>Nearby</li>
-                <li>Friends</li>
-                <li>Following</li>
-              </div>
-            </ul>
-        </div>
+        <HomeCenterActivities />
       </div>
     );
   }
