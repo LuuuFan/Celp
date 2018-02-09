@@ -28695,13 +28695,13 @@ var BizIndex = function (_React$Component) {
   _createClass(BizIndex, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (this.props.location.search.includes('cat')) {
-        this.props.requestCategory(this.props.location.search.slice(5));
-      } else if (this.props.location.search.includes('key')) {
+      if (this.props.location.search.includes('key')) {
         var arr = this.props.location.search.split('&');
         var key = arr[0] ? arr[0].slice(5) : "";
         var loc = arr[1] ? arr[1].slice(4) : "";
         this.props.requestSearch(key, loc);
+      } else if (this.props.location.search.includes('cat')) {
+        this.props.requestCategory(this.props.location.search.slice(5));
       }
     }
   }, {
