@@ -60,7 +60,7 @@ class UserProfile extends React.Component{
             <UserProfileNav user={user} />
             <div className='user-show-detail-center-summary'>
               <UserProfileCenter user={user} imgs={imgs} reviews={reviews} biz={biz}/>
-              
+
               <div className='user-show-detail-summary'>
                 <h2>About {user.username}</h2>
                 <h3>Last 90 days</h3>
