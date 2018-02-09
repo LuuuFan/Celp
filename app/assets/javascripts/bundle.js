@@ -29555,7 +29555,7 @@ var BizShowImg = function (_React$Component) {
                 return _react2.default.createElement(
                   'div',
                   { key: idx, className: 'thumb', id: 'biz-show-img-' + idx },
-                  _react2.default.createElement('img', { src: img.url })
+                  img ? _react2.default.createElement('img', { src: img.url }) : ""
                 );
               }
             })

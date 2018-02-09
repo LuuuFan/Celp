@@ -19,7 +19,7 @@ class BizShowImg extends React.Component {
                   if (idx <= 2) {
                     return (
                       <div key={idx} className='thumb' id={`biz-show-img-${idx}`}>
-                        <img  src={img.url} />
+                        {img ? <img src={img.url} /> : ""}
                       </div>
                     );
                   }
