@@ -28675,6 +28675,10 @@ var _map = __webpack_require__(62);
 
 var _map2 = _interopRequireDefault(_map);
 
+var _reactDom = __webpack_require__(34);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28695,6 +28699,8 @@ var BizIndex = function (_React$Component) {
   _createClass(BizIndex, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
+      // ReactDOM.findDOMNode(this).scrollTop = 0;
       if (this.props.location.search.includes('key')) {
         console.log("======DidMount sending requestCategory======");
 
@@ -29153,6 +29159,7 @@ var BizShow = function (_React$Component) {
   _createClass(BizShow, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
       this.props.requestBiz(this.props.match.params.bizId);
     }
   }, {

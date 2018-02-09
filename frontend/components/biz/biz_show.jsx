@@ -11,6 +11,7 @@ class BizShow extends React.Component {
 
 
   componentDidMount(){
+    window.scrollTo(0, 0);
     this.props.requestBiz(this.props.match.params.bizId);
   }
 

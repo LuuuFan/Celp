@@ -1,6 +1,7 @@
 import React from 'react';
 import BizIndexItem from './biz_index_item';
 import Map from '../map/map';
+import ReactDOM from 'react-dom';
 
 class BizIndex extends React.Component {
   constructor(){
@@ -8,6 +9,8 @@ class BizIndex extends React.Component {
   }
 
   componentDidMount(){
+    window.scrollTo(0, 0)
+    // ReactDOM.findDOMNode(this).scrollTop = 0;
     if (this.props.location.search.includes('key')) {
       console.log("======DidMount sending requestCategory======");
 
