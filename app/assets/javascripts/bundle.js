@@ -28250,20 +28250,20 @@ var HomeCenter = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/search?key=&loc=San+Burno' },
+              { to: '/search?key=&loc=San+Bruno' },
               _react2.default.createElement(
                 'li',
                 null,
-                'San Burno'
+                'San Bruno'
               )
             ),
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/search?key=&loc=Millbare' },
+              { to: '/search?key=&loc=Millbrae' },
               _react2.default.createElement(
                 'li',
                 null,
-                'Millbare'
+                'Millbrae'
               )
             ),
             _react2.default.createElement(
@@ -28304,7 +28304,7 @@ var HomeCenter = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/search?key=&loc=Redwood=City' },
+              { to: '/search?key=&loc=Redwood+City' },
               _react2.default.createElement(
                 'li',
                 null,
@@ -28471,12 +28471,12 @@ var HomeCenterItem = function (_React$Component) {
                   biz.price
                 ) : "$$"
               ),
-              biz.tags.length > 0 ? _react2.default.createElement(
+              biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                 'p',
                 null,
                 '\xB7'
               ) : "",
-              biz.tags.length > 0 ? _react2.default.createElement(
+              biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                 'div',
                 { className: 'biz-info-tags' },
                 biz.tags.map(function (tag) {
@@ -28493,11 +28493,11 @@ var HomeCenterItem = function (_React$Component) {
                 })
               ) : ""
             ),
-            _react2.default.createElement(
+            biz.location.city ? _react2.default.createElement(
               'p',
               null,
               biz.location.city
-            ),
+            ) : "",
             _react2.default.createElement(
               'div',
               { className: 'home-center-item-biz-hot' },
@@ -28702,6 +28702,20 @@ var BizIndex = function (_React$Component) {
         var key = arr[0] ? arr[0].slice(5) : "";
         var loc = arr[1] ? arr[1].slice(4) : "";
         this.props.requestSearch(key, loc);
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (this.props.location.search !== newProps.location.search) {
+        if (newProps.location.search.includes('cat')) {
+          this.props.requestCategory(newProps.location.search.slice(5));
+        } else if (newProps.location.search.includes('key')) {
+          var arr = newProps.location.search.split('&');
+          var key = arr[0] ? arr[0].slice(5) : "";
+          var loc = arr[1] ? arr[1].slice(4) : "";
+          this.props.requestSearch(key, loc);
+        }
       }
     }
   }, {
@@ -28920,12 +28934,12 @@ var BizIndexItem = function (_React$Component) {
                     biz.price
                   ) : "$$"
                 ),
-                biz.tags.length > 0 ? _react2.default.createElement(
+                biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                   'p',
                   null,
                   '\xB7'
                 ) : "",
-                biz.tags.length > 0 ? _react2.default.createElement(
+                biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                   'div',
                   { className: 'biz-info-tags' },
                   biz.tags.map(function (tag) {
@@ -29204,12 +29218,12 @@ var BizShow = function (_React$Component) {
                       biz.price
                     ) : "$$"
                   ),
-                  biz.tags.length > 0 ? _react2.default.createElement(
+                  biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                     'p',
                     null,
                     '\xB7'
                   ) : "",
-                  biz.tags.length > 0 ? _react2.default.createElement(
+                  biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                     'div',
                     { className: 'biz-info-tags' },
                     biz.tags.map(function (tag) {
@@ -35262,11 +35276,11 @@ var UserProfileNav = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'You added a photo for ',
+                'You added a review for ',
                 _react2.default.createElement(
                   _reactRouterDom.Link,
                   { to: '/biz/' + reviews[reviews.order[0]].biz_id },
-                  biz[imgs[imgs.order[0]].biz_id].name
+                  biz[reviews[reviews.order[0]].biz_id].name
                 )
               ),
               _react2.default.createElement(

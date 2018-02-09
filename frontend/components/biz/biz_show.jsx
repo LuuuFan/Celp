@@ -44,8 +44,8 @@ class BizShow extends React.Component {
                     <div className='biz-info-price'>
                       {biz.price ? <p>{biz.price}</p> : "$$"}
                     </div>
-                    {biz.tags.length > 0 ? <p>&middot;</p> : ""}
-                    {biz.tags.length > 0 ?
+                    {biz.tags && biz.tags.length > 0 ? <p>&middot;</p> : ""}
+                    {biz.tags && biz.tags.length > 0 ?
                       <div className='biz-info-tags'>
                         {biz.tags.map(tag => <p><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
                       </div>

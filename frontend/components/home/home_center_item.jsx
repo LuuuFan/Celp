@@ -29,14 +29,14 @@ class HomeCenterItem extends React.Component{
                 <div className='biz-info-price'>
                   {biz.price ? <p>{biz.price}</p> : "$$"}
                 </div>
-                {biz.tags.length > 0 ? <p>&middot;</p> : ""}
-                {biz.tags.length > 0 ?
+                {biz.tags && biz.tags.length > 0 ? <p>&middot;</p> : ""}
+                {biz.tags && biz.tags.length > 0 ?
                   <div className='biz-info-tags'>
                     {biz.tags.map(tag => <p><Link href={`/search?key=${tag}`}>{tag} </Link></p>)}
                   </div>
                  : ""}
               </div>
-              <p>{biz.location.city}</p>
+              {biz.location.city ? <p>{biz.location.city}</p> : ""}
               <div className='home-center-item-biz-hot'>
                 <i className="fas fa-fire"></i><p>Hot place</p>
               </div>

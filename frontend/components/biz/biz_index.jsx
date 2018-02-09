@@ -18,6 +18,19 @@ class BizIndex extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.location.search !== newProps.location.search) {
+      if (newProps.location.search.includes('cat')) {
+        this.props.requestCategory(newProps.location.search.slice(5));
+      } else if (newProps.location.search.includes('key')) {
+        let arr = newProps.location.search.split('&');
+        let key = arr[0] ? arr[0].slice(5) : "";
+        let loc = arr[1] ? arr[1].slice(4) : "";
+        this.props.requestSearch(key, loc);
+      }
+    }
+  }
+
   render(){
     const bizes = this.props.bizes;
     return(

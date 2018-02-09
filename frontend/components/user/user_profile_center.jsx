@@ -35,7 +35,7 @@ class UserProfileNav extends React.Component {
                 <img src={user.avatar_url}/>
               </div>
               <div className='activity-item-detail'>
-                <p>You added a photo for <Link to={`/biz/${reviews[reviews.order[0]].biz_id}`}>{biz[imgs[imgs.order[0]].biz_id].name}</Link></p>
+                <p>You added a review for <Link to={`/biz/${reviews[reviews.order[0]].biz_id}`}>{biz[reviews[reviews.order[0]].biz_id].name}</Link></p>
                 <div className='activity-item-review-container'>
                   <p>{reviews[reviews.order[0]].body}</p>
                 </div>
