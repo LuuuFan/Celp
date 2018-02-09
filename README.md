@@ -30,23 +30,29 @@ User can check the detail of the business, such as reviews, photos. Also user ca
 User can also check self profile or other Celper's profile, page listed the total number of reviews, photos and bookmarks. Also shows the recent activities for the user. Celp will add more feature on user.
 ![](http://res.cloudinary.com/ddwejrtgh/image/upload/v1518215858/celp/Screenshot_from_2018-02-09_14-37-21_o9rikx.png)
 
-# Future Development
-* Homepage
-  * Recent activity on homepage is hard coded now, will update to show the realtime data.
-* User profile
-  * Adding more user information - avatar, city, interests, ect.
-  * Display user reviews, photos, bookmarks.
-  * Option to add other Celp users as friends.
-* Useful, Funny, Cool Reviews
-  * Ability to rate other reviews
-* Filter search result
-  * User can filter the serach result base on price, open time
-* Search base on map range
-  * Allow user to drag map to do the re-search in the certain area.
-  * Marker can guide user to the business show page
-  * Update geocode request, save it to business database after get geocode from google, avoide Google geocode query alert
-
 # Select Code Snippets
+## Map geocode request & Marker
+Will update to save the lat/lng to database after get geocode
+```js
+class Map extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.addBizPlace = this.addBizPlace.bind(this);
+  }
+  componentDidUpdate(){
+    let pos;
+    if (this.props.bizes) {
+      this.props.bizes.forEach((biz, idx) => {
+        if (biz.lat && biz.lng) {
+          pos = new google.maps.LatLng(biz.lat, biz.lng);
+          this.addBizPlace({pos: pos, name: biz.name});
+          if (idx === 0) {
+            this.map.setCenter(pos);
+          }
+        }...      
+```
+
 ## Realtime update rate when write a review
 
 ```js
@@ -64,7 +70,40 @@ class WriteReview extends React.Component{
     background.style.backgroundPosition = `0 -${position}px`;
     this.setState({rate: rate});
   }
+```
 
-
-
+## Business rating and opening status on model
+```ruby
+class Biz < ApplicationRecord
+  def biz_rate
+    (self.reviews.average(:rate).to_f * 2).round(0) / 2.to_f
+  end
+  
+  def is_open
+  today_hour = self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
+  start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3)
+  over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3)
+  if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
+    true
+  else
+    false
+  end
+end
+```
+# Future Development
+* Homepage
+  * Recent activity on homepage is hard coded now, will update to show the realtime data.
+* User profile
+  * Adding more user information - avatar, city, interests, ect.
+  * Display user reviews, photos, bookmarks.
+  * Option to add other Celp users as friends.
+* Useful, Funny, Cool Reviews
+  * Ability to rate other reviews
+* Filter search result
+  * User can filter the serach result base on price, open time
+* Search base on map range
+  * Allow user to drag map to do the re-search in the certain area.
+  * Marker can guide user to the business show page
+  * Update geocode request, save it to business database after get geocode from google, avoide Google geocode query alert
+* Optimize CSS styling
 
