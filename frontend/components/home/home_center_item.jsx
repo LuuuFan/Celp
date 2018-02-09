@@ -8,7 +8,7 @@ class HomeCenterItem extends React.Component{
     const {biz} = this.props;
     return(
       <div className='home-center-item'>
-        {biz ?
+        {biz && biz.name ?
           <div>
             <div className='home-center-item-img'>
               {biz.img_url ?
@@ -32,7 +32,7 @@ class HomeCenterItem extends React.Component{
                 {biz.tags && biz.tags.length > 0 ? <p>&middot;</p> : ""}
                 {biz.tags && biz.tags.length > 0 ?
                   <div className='biz-info-tags'>
-                    {biz.tags.map(tag => <p><Link href={`/search?key=${tag}`}>{tag} </Link></p>)}
+                    {biz.tags.map(tag => <p><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
                   </div>
                  : ""}
               </div>
