@@ -20,7 +20,6 @@ class Map extends React.Component {
   }
 
   componentDidUpdate(){
-    // const bizPlace = [];
     let pos;
     if (this.props.bizes) {
       this.props.bizes.forEach((biz, idx) => {
@@ -69,16 +68,14 @@ class Map extends React.Component {
       map: this.map
     });
     marker.addListener('click', () => {
-      // alert(`clicked on: ${place.name}`);
+      // Future feature;
     });
   }
 
   listenForMove(){
     google.maps.event.addListener(this.map, 'idle', ()=>{
       const bounds = this.map.getBounds();
-      // console.log('center',
-      //   bounds.getCenter().lat(),
-      //   bounds.getCenter().lng());
+      // Future feature;
     });
   }
 

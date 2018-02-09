@@ -16,6 +16,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
+  z-index: 1000;
 }
 
 .footer-main>ul>li, .footer-main div>li{
@@ -50,7 +51,6 @@
 }
 
 .footer-background-container{
-  z-index: -3;
   position: relative;
   width: 60%;
   min-width: 1020px;
@@ -61,7 +61,6 @@
   position: absolute;
   overflow: hidden;
   top: -150px;
-  // z-index: -1;
   height: 400px;
 }
 
@@ -69,6 +68,7 @@
   height: 600;
   opacity: 0.1;
   object-fit: cover;
+  z-index: -1;
 }
 
 .footer p{

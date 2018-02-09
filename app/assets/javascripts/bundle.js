@@ -4276,7 +4276,6 @@ var Map = function (_React$Component) {
     value: function componentDidUpdate() {
       var _this2 = this;
 
-      // const bizPlace = [];
       var pos = void 0;
       if (this.props.bizes) {
         this.props.bizes.forEach(function (biz, idx) {
@@ -4326,7 +4325,7 @@ var Map = function (_React$Component) {
         map: this.map
       });
       marker.addListener('click', function () {
-        // alert(`clicked on: ${place.name}`);
+        // Future feature;
       });
     }
   }, {
@@ -4336,9 +4335,7 @@ var Map = function (_React$Component) {
 
       google.maps.event.addListener(this.map, 'idle', function () {
         var bounds = _this3.map.getBounds();
-        // console.log('center',
-        //   bounds.getCenter().lat(),
-        //   bounds.getCenter().lng());
+        // Future feature;
       });
     }
   }, {
@@ -31314,7 +31311,7 @@ var AddImg = function (_React$Component) {
 
       cloudinary.openUploadWidget({ cloud_name: 'ddwejrtgh', upload_preset: 'l8du0kzb' }, function (errors, result) {
         if (errors) {
-          console.log(errors);
+          // console.log(errors);
         }
         result.forEach(function (file) {
           var img = { url: file.url, description: '' };
