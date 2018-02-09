@@ -71,6 +71,10 @@
   margin-right: 12px;
 }
 
+.searchBar::-webkit-input-placeholder {
+  color: lightgray;
+}
+
 .hint:after {
   content: " ";
   display: block;
