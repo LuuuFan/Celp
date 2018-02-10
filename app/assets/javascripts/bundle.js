@@ -4285,34 +4285,36 @@ var Map = function (_React$Component) {
             if (idx === 0) {
               _this2.map.setCenter(pos);
             }
-          } else {
-            _this2.geocoder.geocode({ 'address': biz.display_address }, function (results, status) {
-              if (status == 'OK') {
-                if (idx === 0) {
-                  _this2.map.setCenter(results[0].geometry.location);
-                }
-                _this2.addBizPlace({ pos: results[0].geometry.location, name: biz.name });
-              } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-              }
-            });
           }
+          // else {
+          //   this.geocoder.geocode({'address': biz.display_address}, (results, status)=>{
+          //     if (status == 'OK') {
+          //       if (idx === 0) {
+          //         this.map.setCenter(results[0].geometry.location);
+          //       }
+          //       this.addBizPlace({pos: results[0].geometry.location, name: biz.name})
+          //     } else {
+          //       alert('Geocode was not successful for the following reason: ' + status);
+          //     }
+          //   });
+          // }
         });
       } else if (this.props.biz) {
         if (this.props.biz.lat && this.props.biz.lng) {
           pos = new google.maps.LatLng(this.props.biz.lat, this.props.biz.lng);
           this.addBizPlace({ pos: pos, name: this.props.biz.name });
           this.map.setCenter(pos);
-        } else {
-          this.geocoder.geocode({ 'address': this.props.biz.display_address }, function (results, status) {
-            if (status == 'OK') {
-              _this2.map.setCenter(results[0].geometry.location);
-              _this2.addBizPlace({ pos: results[0].geometry.location, name: _this2.props.biz.name });
-            } else {
-              alert('Geocode was not successful for the following reason: ' + status);
-            }
-          });
         }
+        // else {
+        //   this.geocoder.geocode({'address': this.props.biz.display_address}, (results, status)=>{
+        //     if (status == 'OK') {
+        //       this.map.setCenter(results[0].geometry.location);
+        //       this.addBizPlace({pos: results[0].geometry.location, name: this.props.biz.name})
+        //     } else {
+        //       alert('Geocode was not successful for the following reason: ' + status);
+        //     }
+        //   });
+        // }
       }
       // bizPlace.forEach(this.addBizPlace);
     }
