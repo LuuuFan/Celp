@@ -71,12 +71,16 @@ class Biz < ApplicationRecord
 
   def is_open
     today_hour = self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
-    start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3)
-    over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3)
-    if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
-      true
-    else
+    if today_hour.nil?
       false
+    else
+      start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3)
+      over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3)
+      if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
+        true
+      else
+        false
+      end
     end
   end
 
