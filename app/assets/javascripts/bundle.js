@@ -35691,55 +35691,58 @@ var UserProfileNav = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'user-show-detail-nav' },
-        _react2.default.createElement(
-          'h2',
-          null,
-          user.username,
-          '\'s Profile'
-        ),
-        _react2.default.createElement(
-          'ul',
+        user.username ? _react2.default.createElement(
+          'div',
           null,
           _react2.default.createElement(
-            'li',
+            'h2',
             null,
-            _react2.default.createElement('i', { className: 'fas fa-user' }),
-            'Profile Overview'
+            user.username + '\'s Profile'
           ),
           _react2.default.createElement(
-            'li',
-            { className: 'tooltip' },
-            _react2.default.createElement('i', { className: 'fas fa-star' }),
-            'Reviews',
+            'ul',
+            null,
             _react2.default.createElement(
-              'div',
-              { className: 'tooltiptext' },
-              'under construction'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'tooltip' },
-            _react2.default.createElement('i', { className: 'fas fa-camera' }),
-            'Business Photos',
+              'li',
+              null,
+              _react2.default.createElement('i', { className: 'fas fa-user' }),
+              'Profile Overview'
+            ),
             _react2.default.createElement(
-              'div',
-              { className: 'tooltiptext' },
-              'under construction'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'tooltip' },
-            _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
-            'Bookmarks',
+              'li',
+              { className: 'tooltip' },
+              _react2.default.createElement('i', { className: 'fas fa-star' }),
+              'Reviews',
+              _react2.default.createElement(
+                'div',
+                { className: 'tooltiptext' },
+                'under construction'
+              )
+            ),
             _react2.default.createElement(
-              'div',
-              { className: 'tooltiptext' },
-              'under construction'
+              'li',
+              { className: 'tooltip' },
+              _react2.default.createElement('i', { className: 'fas fa-camera' }),
+              'Business Photos',
+              _react2.default.createElement(
+                'div',
+                { className: 'tooltiptext' },
+                'under construction'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'tooltip' },
+              _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
+              'Bookmarks',
+              _react2.default.createElement(
+                'div',
+                { className: 'tooltiptext' },
+                'under construction'
+              )
             )
           )
-        )
+        ) : ""
       );
     }
   }]);
