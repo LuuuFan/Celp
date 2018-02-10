@@ -10,12 +10,12 @@
 Celp is a single-page web application that use React and Redux for the frontend and Ruby on Rails and Postgresql for the backend. GoogleMap API and Cloudinary Widget are used for mapping business and photo uploading.
 
 # Features
-## Homepage 
-Homepage shows the sample business in San Francisco and location navigation. Also search bar on the top allows user to search for business by location. 
+## Homepage
+Homepage shows the sample business in San Francisco and location navigation. Also search bar on the top allows user to search for business by location.
 ![](http://res.cloudinary.com/ddwejrtgh/image/upload/v1518214712/celp/Screenshot_from_2018-02-09_14-18-12_yknmtz.png)
 
 ## User Login/Signup
-Using BCrypt encryption on the backend to provide security for user account. 
+Using BCrypt encryption on the backend to provide security for user account.
 ![](http://res.cloudinary.com/ddwejrtgh/image/upload/v1518214973/celp/Screenshot_from_2018-02-09_14-22-23_dygthy.png)
 
 ## Search
@@ -23,7 +23,7 @@ By clicking category on the navigation bar or searching, user can see all the re
 ![](http://res.cloudinary.com/ddwejrtgh/image/upload/v1518215120/celp/Screenshot_from_2018-02-09_14-25-02_u5l3uv.png)
 
 ## Business View
-User can check the detail of the business, such as reviews, photos. Also user can leave a review, update exsiting review, delete review or add photo, remove photo for this businnes and add the business to bookmark. 
+User can check the detail of the business, such as reviews, photos. Also user can leave a review, update exsiting review, delete review or add photo, remove photo for this businnes and add the business to bookmark.
 ![](http://res.cloudinary.com/ddwejrtgh/image/upload/v1518215492/celp/Screenshot_from_2018-02-09_14-31-10_ybw7yx.png)
 
 ## User Profile
@@ -42,7 +42,7 @@ class WriteReview extends React.Component{
     this.state = this.props.review;
     this.handleInput = this.handleInput.bind(this);
   }
-  
+
     mouseOver(rate){
     const background = document.getElementById('write-review-rating-background');
     const position = 48 * rate - 24;
@@ -58,7 +58,7 @@ class Biz < ApplicationRecord
   def biz_rate
     (self.reviews.average(:rate).to_f * 2).round(0) / 2.to_f
   end
-  
+
   def is_open
     today_hour = self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
     if today_hour.nil?
@@ -91,4 +91,3 @@ end
   * Marker can guide user to the business show page
   * Update geocode request, save it to business database after get geocode from google, avoide Google geocode query alert
 * Optimize CSS styling
-
