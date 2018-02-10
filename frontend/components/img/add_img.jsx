@@ -22,9 +22,8 @@ class AddImg extends React.Component {
   cloudinary(){
     cloudinary.openUploadWidget({ cloud_name: 'ddwejrtgh', upload_preset: 'l8du0kzb'},
       (errors, result) => {
-          if (errors) {
-            // console.log(errors);
-          }
+        if (errors) {
+        }
         result.forEach(file=> {
           let img = {url: file.url, description: ''}
           this.setState({img: this.state.img.concat([img])});

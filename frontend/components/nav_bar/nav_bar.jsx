@@ -8,13 +8,7 @@ class NavBar extends React.Component {
   constructor(props){
     super(props);
   }
-  //
-  // componentWillReceiveProps(newProps){
-  //   if (this.props.currentUser !== newProps.currentUser) {
-  //     console.log('do something but I donot know');
-  //   }
-  // }
-
+  
   render(){
     const {currentUser, logout} = this.props;
     return (

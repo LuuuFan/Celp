@@ -27227,12 +27227,6 @@ var NavBar = function (_React$Component) {
 
     return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
   }
-  //
-  // componentWillReceiveProps(newProps){
-  //   if (this.props.currentUser !== newProps.currentUser) {
-  //     console.log('do something but I donot know');
-  //   }
-  // }
 
   _createClass(NavBar, [{
     key: 'render',
@@ -31606,9 +31600,7 @@ var AddImg = function (_React$Component) {
       var _this2 = this;
 
       cloudinary.openUploadWidget({ cloud_name: 'ddwejrtgh', upload_preset: 'l8du0kzb' }, function (errors, result) {
-        if (errors) {
-          // console.log(errors);
-        }
+        if (errors) {}
         result.forEach(function (file) {
           var img = { url: file.url, description: '' };
           _this2.setState({ img: _this2.state.img.concat([img]) });
