@@ -31,27 +31,6 @@ User can also check self profile or other Celper's profile, page listed the tota
 ![](http://res.cloudinary.com/ddwejrtgh/image/upload/v1518215858/celp/Screenshot_from_2018-02-09_14-37-21_o9rikx.png)
 
 # Select Code Snippets
-## Map geocode request & Marker
-Will update to save the lat/lng to database after get geocode
-```js
-class Map extends React.Component {
-
-  constructor(props){
-    super(props);
-    this.addBizPlace = this.addBizPlace.bind(this);
-  }
-  componentDidUpdate(){
-    let pos;
-    if (this.props.bizes) {
-      this.props.bizes.forEach((biz, idx) => {
-        if (biz.lat && biz.lng) {
-          pos = new google.maps.LatLng(biz.lat, biz.lng);
-          this.addBizPlace({pos: pos, name: biz.name});
-          if (idx === 0) {
-            this.map.setCenter(pos);
-          }
-        }...      
-```
 
 ## Realtime update rate when write a review
 
@@ -73,6 +52,7 @@ class WriteReview extends React.Component{
 ```
 
 ## Business rating and opening status on model
+* Need to adjust later to fix timezone issue on heroku
 ```ruby
 class Biz < ApplicationRecord
   def biz_rate
@@ -80,13 +60,18 @@ class Biz < ApplicationRecord
   end
   
   def is_open
-  today_hour = self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
-  start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3)
-  over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3)
-  if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
-    true
-  else
-    false
+    today_hour = self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
+    if today_hour.nil?
+      false
+    else
+      start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3)
+      over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3)
+      if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
+        true
+      else
+        false
+      end
+    end
   end
 end
 ```
