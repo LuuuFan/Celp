@@ -6,6 +6,8 @@ import Loading from '../loading';
 import BizShowRating from './biz_show_rating';
 import Map from '../map/map';
 import BizShowBookmarkContainer from './biz_show_bookmark_container';
+import BizIndexItemRating from './biz_index_item_rating';
+
 
 class BizShow extends React.Component {
   constructor(){
@@ -146,23 +148,72 @@ class BizShow extends React.Component {
                 </div>
                 <BizShowImg imgs={imgs} biz={biz} />
               </div>
+              <div className={this.state.className} id='send-sms'>
+                <div className='biz-show-sms'>
+                  <div className='biz-show-sms-header'>
+                    <h1>Text to Phone</h1>
+                      <div onClick={(e)=>this.closeModal(e)}>
+                        <span>&times;</span>
+                      </div>
+                  </div>
+                  <div className='biz_index_item'>
+                    {biz.img_url ?
+                     <div className='index-thumb'>
+                       <Link to={`/biz/${biz.id}`}  target="_blank">
+                         <img src={`${biz.img_url}`} />
+                       </Link>
+                     </div>
+                      :
+                     <div className='index-thumb'>
+                       <Link to={`/biz/${biz.id}`}  target="_blank">
+                         <img src='https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' />
+                       </Link>
+                     </div>
+                    }
+                    <div className='biz-index-item-right'>
+                      <div className='biz-info'>
+                        <div className='biz-info-left'>
+                          <div className='biz-info-title'>
+                            <Link to={`/biz/${biz.id}`}  target="_blank">{biz.name}</Link>
+                          </div>
+                          {biz.review_ids && biz.review_ids.length > 0 ?
+                          <div className='biz-info-rate-review'>
+                            <BizIndexItemRating biz={biz}/>
+                            {biz.review_ids.length == 1 ? <p>1 review</p> : <p>{biz.review_ids.length} reviews</p>}
+                          </div>
+                          : ""}
+                          <div className='biz-info-price-tags'>
+                            <div className='biz-info-price'>
+                              {biz.price ? <p>{biz.price}</p> : "$$"}
+                            </div>
+                            {biz.tags && biz.tags.length > 0 ? <p>&middot;</p> : ""}
+                            {biz.tags && biz.tags.length > 0 ?
+                              <div className='biz-info-tags'>
+                                {biz.tags.map((tag, idx) => <p key={idx}><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
+                              </div>
+                              : ""}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    Text a link to your phone so you can quickly get directions, see photos, and read reviews on the go!
+                  </div>
+                  <form className='send-sms-phone-number'>
+                    <div>
+                      <input value= '+1'/>
+                      <input type='text' placeholder='Phone Number'/>
+                    </div>
+                    <input type='submit' value='Text Link' />
+                  </form>
+                  <p>Your carrier's rates may apply</p>
+                </div>
+                <div onClick={(e)=>this.closeModal(e)} className='modal-screen'>
+                </div>
+              </div>
             </div>
           ) : <Loading />}
-        </div>
-        <div className={this.state.className} id='send-sms'>
-          <div className='biz-show-sms'>
-            <div>
-              <h1>Sending SMS</h1>
-                <div onClick={(e)=>this.closeModal(e)}>
-                  <span>&times;</span>
-                </div>
-            </div>
-            <p>Sending SMS to your friends</p>
-            <div>
-            </div>
-          </div>
-          <div onClick={(e)=>this.closeModal(e)} className='modal-screen'>
-          </div>
         </div>
         <div>
           {bizEnoughInfo && reviews ?
