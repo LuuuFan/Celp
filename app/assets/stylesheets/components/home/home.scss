@@ -78,7 +78,6 @@
 .home-header .sessionButton {
   display: flex;
   justify-content: flex-end;
-  width: 250px;
   padding: 10px;
 }
 
@@ -94,6 +93,10 @@
   width: 50px;
   padding: 0 10px;
   margin-right: 5px;
+}
+
+.home-header .demo-login{
+  width: 100px;
 }
 
 .home-header .login:hover{

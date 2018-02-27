@@ -50,7 +50,7 @@ class Home extends React.Component {
               <Button currentUser={currentUser} logout={logout} />
             ) : (
               <div className='sessionButton'>
-                <a href='/#/login' onClick={()=>this.loginDemo()}><div className='login'><p>Demo</p></div></a>
+                <a href='/#/login' onClick={()=>this.loginDemo()}><div className='login demo-login'><p>Demo User</p></div></a>
                 <a href='/#/login'><div className='login'><p>Log In</p></div></a>
                 <a href='/#/signup'><div className='signup'><p>Sign Up</p></div></a>
               </div>

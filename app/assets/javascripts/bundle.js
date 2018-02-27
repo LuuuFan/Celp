@@ -28151,11 +28151,11 @@ var Home = function (_React$Component) {
                   } },
                 _react2.default.createElement(
                   'div',
-                  { className: 'login' },
+                  { className: 'login demo-login' },
                   _react2.default.createElement(
                     'p',
                     null,
-                    'Demo'
+                    'Demo User'
                   )
                 )
               ),
