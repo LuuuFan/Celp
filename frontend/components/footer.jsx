@@ -34,7 +34,7 @@ const Footer = () => (
     </div>
     <div className='footer-background-container'>
       <div className='footer-background'>
-        <img src='http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
+        <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
       </div>
     </div>
     <p>

@@ -2172,7 +2172,7 @@ var Loading = function Loading() {
     _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517685405/celp/loading_n3hxjr.gif' })
+      _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517685405/celp/loading_n3hxjr.gif' })
     ),
     _react2.default.createElement(
       'h1',
@@ -28441,7 +28441,15 @@ var HomeCenterItem = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'home-center-item-img' },
-            biz.img_url ? _react2.default.createElement('img', { src: biz.img_url }) : _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517604984/celp/IMG_0531_id5npe.jpg' })
+            biz.img_url ? _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/biz/' + biz.id },
+              _react2.default.createElement('img', { src: biz.img_url })
+            ) : _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/biz/' + biz.id },
+              _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517604984/celp/IMG_0531_id5npe.jpg' })
+            )
           ),
           _react2.default.createElement(
             'div',
@@ -28548,6 +28556,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28630,7 +28640,11 @@ var HomeCenterActivities = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'activity-item-avatar' },
-                _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg' })
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://celp.herokuapp.com/#/user/night' },
+                  _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg' })
+                )
               ),
               _react2.default.createElement(
                 'div',
@@ -28672,7 +28686,11 @@ var HomeCenterActivities = function (_React$Component) {
                   _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518152703/celp/IMG_6974_ci5qep.jpg' })
+                    _react2.default.createElement(
+                      'a',
+                      { href: 'https://celp.herokuapp.com/#/biz/41/' },
+                      _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1518152703/celp/IMG_6974_ci5qep.jpg' })
+                    )
                   ),
                   _react2.default.createElement(
                     'div',
@@ -28692,7 +28710,11 @@ var HomeCenterActivities = function (_React$Component) {
                   _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518152650/celp/IMG_8181_wezxkw.jpg' })
+                    _react2.default.createElement(
+                      'a',
+                      { href: 'https://celp.herokuapp.com/#/biz/41/' },
+                      _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1518152650/celp/IMG_8181_wezxkw.jpg' })
+                    )
                   ),
                   _react2.default.createElement(
                     'div',
@@ -28718,7 +28740,11 @@ var HomeCenterActivities = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'activity-item-avatar' },
-                _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865985/celp/323463_2651367759148_317015209_o_ywnmvb.jpg' })
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://celp.herokuapp.com/#/user/luufan' },
+                  _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865985/celp/323463_2651367759148_317015209_o_ywnmvb.jpg' })
+                )
               ),
               _react2.default.createElement(
                 'div',
@@ -28745,7 +28771,11 @@ var HomeCenterActivities = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'activity-item-biz-img' },
-                _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518141662/celp/o_llfg8s.png' })
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://celp.herokuapp.com/#/biz/48/' },
+                  _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1518141662/celp/o_llfg8s.png' })
+                )
               ),
               _react2.default.createElement(
                 'a',
@@ -28781,7 +28811,11 @@ var HomeCenterActivities = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'activity-item-avatar' },
-                _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg' })
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://celp.herokuapp.com/#/user/night' },
+                  _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517865922/celp/1517951_10202453119865002_502589953_o_qngm10.jpg' })
+                )
               ),
               _react2.default.createElement(
                 'div',
@@ -28820,7 +28854,11 @@ var HomeCenterActivities = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   null,
-                  _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1518152938/celp/IMG_6995_xbjibc.jpg' })
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'https://celp.herokuapp.com/#/biz/42/' },
+                    _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1518152938/celp/IMG_6995_xbjibc.jpg' })
+                  )
                 ),
                 _react2.default.createElement(
                   'div',
@@ -29897,7 +29935,7 @@ var BizShowImg = function (_React$Component) {
           ) : _react2.default.createElement(
             'div',
             { className: 'biz-show-no-img' },
-            _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' }),
+            _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' }),
             _react2.default.createElement(
               'a',
               { href: '/#/biz/' + biz.id + '/addphoto' },
@@ -34997,7 +35035,7 @@ var Footer = function Footer() {
       _react2.default.createElement(
         'div',
         { className: 'footer-background' },
-        _react2.default.createElement('img', { src: 'http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' })
+        _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' })
       )
     ),
     _react2.default.createElement(

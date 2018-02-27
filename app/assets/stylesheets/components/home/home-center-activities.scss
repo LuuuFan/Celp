@@ -29,6 +29,11 @@
   margin-right: 20px;
 }
 
+.activity-item-avatar img{
+  height: 100%;
+  object-fit: cover;
+}
+
 .home-center-activity-item a{
   color: #0073bb;
   cursor: pointer;
@@ -40,7 +45,7 @@
   overflow: hidden;
 }
 
-.activity-item-biz-img>img{
+.activity-item-biz-img img{
   object-fit: cover;
   height: 100%;
 }

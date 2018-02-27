@@ -28,7 +28,7 @@ class BizShowImg extends React.Component {
             </div>
           ) : (
             <div className='biz-show-no-img'>
-              <img src='http://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
+              <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
               <a href={`/#/biz/${biz.id}/addphoto`}><div><i className="fas fa-camera"></i>Add Photo</div></a>
             </div>
           )}
