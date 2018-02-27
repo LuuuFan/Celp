@@ -45,10 +45,9 @@ class ReviewsIndex extends React.Component {
           { biz.review_ids && biz.review_ids.length > 0 ?
             <div>
               {reviews.map(review =>
-                <div>
+                <div key={review.id}>
                   {review ?
                     <ReviewsIndexItem
-                      key={review.id}
                       review={review}
                       users={users}
                       bizId={biz.id}

@@ -67,7 +67,7 @@ class ReviewsIndexItem extends React.Component {
                   <tr><th><i className="fas fa-code"></i></th><td>Embed Review</td></tr>
                   {currentUser && review.user_id === currentUser.id ?
                   <tr><th><i className="fas fa-pencil-alt"></i></th><td><a href={`/#/update_review/biz/${review.biz_id}`}>Edit Review</a></td></tr>
-                  : ""}
+                  : <tr><th></th><td></td></tr>}
                 </tbody>
               </table>
             </div>

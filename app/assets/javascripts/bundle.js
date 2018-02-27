@@ -29265,7 +29265,7 @@ var BizIndexItem = function (_React$Component) {
   function BizIndexItem() {
     _classCallCheck(this, BizIndexItem);
 
-    return _possibleConstructorReturn(this, (BizIndexItem.__proto__ || Object.getPrototypeOf(BizIndexItem)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (BizIndexItem.__proto__ || Object.getPrototypeOf(BizIndexItem)).call(this));
   }
 
   _createClass(BizIndexItem, [{
@@ -29288,11 +29288,19 @@ var BizIndexItem = function (_React$Component) {
         biz.img_url ? _react2.default.createElement(
           'div',
           { className: 'index-thumb' },
-          _react2.default.createElement('img', { src: '' + biz.img_url })
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/biz/' + biz.id },
+            _react2.default.createElement('img', { src: '' + biz.img_url })
+          )
         ) : _react2.default.createElement(
           'div',
           { className: 'index-thumb' },
-          _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' })
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/biz/' + biz.id },
+            _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' })
+          )
         ),
         _react2.default.createElement(
           'div',
@@ -29554,7 +29562,10 @@ var BizShow = function (_React$Component) {
   function BizShow() {
     _classCallCheck(this, BizShow);
 
-    return _possibleConstructorReturn(this, (BizShow.__proto__ || Object.getPrototypeOf(BizShow)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (BizShow.__proto__ || Object.getPrototypeOf(BizShow)).call(this));
+
+    _this.state = { className: 'modal' };
+    return _this;
   }
 
   _createClass(BizShow, [{
@@ -29571,8 +29582,21 @@ var BizShow = function (_React$Component) {
       }
     }
   }, {
+    key: 'onpenModal',
+    value: function onpenModal() {
+      this.setState({ className: 'is-open' });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal(e) {
+      e.preventDefault();
+      this.setState({ className: 'modal' });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props,
           bizEnoughInfo = _props.bizEnoughInfo,
           biz = _props.biz,
@@ -29637,10 +29661,10 @@ var BizShow = function (_React$Component) {
                   biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                     'div',
                     { className: 'biz-info-tags' },
-                    biz.tags.map(function (tag) {
+                    biz.tags.map(function (tag, idx) {
                       return _react2.default.createElement(
                         'p',
-                        null,
+                        { key: idx },
                         _react2.default.createElement(
                           _reactRouterDom.Link,
                           { to: '/search?key=' + tag },
@@ -29824,7 +29848,9 @@ var BizShow = function (_React$Component) {
                               null,
                               _react2.default.createElement(
                                 'a',
-                                null,
+                                { onClick: function onClick() {
+                                    return _this2.onpenModal();
+                                  } },
                                 'Send to your Phone'
                               )
                             )
@@ -29839,6 +29865,43 @@ var BizShow = function (_React$Component) {
               _react2.default.createElement(_biz_show_img2.default, { imgs: imgs, biz: biz })
             )
           ) : _react2.default.createElement(_loading2.default, null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: this.state.className, id: 'send-sms' },
+          _react2.default.createElement(
+            'div',
+            { className: 'biz-show-sms' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'h1',
+                null,
+                'Sending SMS'
+              ),
+              _react2.default.createElement(
+                'div',
+                { onClick: function onClick(e) {
+                    return _this2.closeModal(e);
+                  } },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  '\xD7'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Sending SMS to your friends'
+            ),
+            _react2.default.createElement('div', null)
+          ),
+          _react2.default.createElement('div', { onClick: function onClick(e) {
+              return _this2.closeModal(e);
+            }, className: 'modal-screen' })
         ),
         _react2.default.createElement(
           'div',
@@ -30112,9 +30175,8 @@ var ReviewsIndex = function (_React$Component) {
             reviews.map(function (review) {
               return _react2.default.createElement(
                 'div',
-                null,
+                { key: review.id },
                 review ? _react2.default.createElement(_reviews_index_item2.default, {
-                  key: review.id,
                   review: review,
                   users: users,
                   bizId: biz.id,
@@ -30343,7 +30405,12 @@ var ReviewsIndexItem = function (_React$Component) {
                         'Edit Review'
                       )
                     )
-                  ) : ""
+                  ) : _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement('th', null),
+                    _react2.default.createElement('td', null)
+                  )
                 )
               )
             )

@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom';
 import BizIndexItemRating from './biz_index_item_rating';
 
 class BizIndexItem extends React.Component {
+  constructor(){
+    super();
+  }
 
   render(){
     const {biz,idx} = this.props;
@@ -17,10 +20,16 @@ class BizIndexItem extends React.Component {
    return (
      <div className='biz_index_item'>
        {biz.img_url ?
-        <div className='index-thumb'><img src={`${biz.img_url}`} /></div>
+        <div className='index-thumb'>
+          <Link to={`/biz/${biz.id}`}>
+            <img src={`${biz.img_url}`} />
+          </Link>
+        </div>
          :
         <div className='index-thumb'>
-          <img src='https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' />
+          <Link to={`/biz/${biz.id}`}>
+            <img src='https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png' />
+          </Link>
         </div>
        }
        <div className='biz-index-item-right'>

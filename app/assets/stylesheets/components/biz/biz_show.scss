@@ -295,6 +295,20 @@
   text-decoration: none;
 }
 
+.biz-show-sms{
+  position: fixed;
+  top: 33%;
+  left: 40%;
+  width: 20%;
+  height: 140px;
+  z-index: 3;
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 // .review-and-biz-more-info{
 //   display: flex;

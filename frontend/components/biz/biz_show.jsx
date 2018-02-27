@@ -8,7 +8,10 @@ import Map from '../map/map';
 import BizShowBookmarkContainer from './biz_show_bookmark_container';
 
 class BizShow extends React.Component {
-
+  constructor(){
+    super();
+    this.state = {className: 'modal'};
+  }
 
   componentDidMount(){
     window.scrollTo(0, 0);
@@ -22,6 +25,15 @@ class BizShow extends React.Component {
       ) {
       this.props.requestBiz(newProps.match.params.bizId);
     }
+  }
+
+  onpenModal(){
+    this.setState({className: 'is-open'});
+  }
+
+  closeModal(e){
+    e.preventDefault();
+    this.setState({className: 'modal'});
   }
 
   render(){
@@ -48,7 +60,7 @@ class BizShow extends React.Component {
                     {biz.tags && biz.tags.length > 0 ? <p>&middot;</p> : ""}
                     {biz.tags && biz.tags.length > 0 ?
                       <div className='biz-info-tags'>
-                        {biz.tags.map(tag => <p><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
+                        {biz.tags.map((tag, idx) => <p key={idx}><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
                       </div>
                       : ""}
                   </div>
@@ -118,7 +130,7 @@ class BizShow extends React.Component {
                             </tr>
                             <tr>
                               <th><i className="fas fa-mobile-alt"></i></th>
-                              <td><a>Send to your Phone</a></td>
+                              <td><a onClick={()=>this.onpenModal()}>Send to your Phone</a></td>
                             </tr>
                           </tbody>
                         </table>
@@ -136,6 +148,21 @@ class BizShow extends React.Component {
               </div>
             </div>
           ) : <Loading />}
+        </div>
+        <div className={this.state.className} id='send-sms'>
+          <div className='biz-show-sms'>
+            <div>
+              <h1>Sending SMS</h1>
+                <div onClick={(e)=>this.closeModal(e)}>
+                  <span>&times;</span>
+                </div>
+            </div>
+            <p>Sending SMS to your friends</p>
+            <div>
+            </div>
+          </div>
+          <div onClick={(e)=>this.closeModal(e)} className='modal-screen'>
+          </div>
         </div>
         <div>
           {bizEnoughInfo && reviews ?
