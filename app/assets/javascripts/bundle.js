@@ -30053,6 +30053,11 @@ var BizShow = function (_React$Component) {
                   'Text a link to your phone so you can quickly get directions, see photos, and read reviews on the go!'
                 ),
                 _react2.default.createElement(
+                  'div',
+                  { className: 'developer-notification' },
+                  'Message from Developer: I\'m using free trial twilio that can only send message to verified number, feel free to contact me @425-449-2096.'
+                ),
+                _react2.default.createElement(
                   'form',
                   { className: 'send-sms-phone-number' },
                   _react2.default.createElement(

@@ -228,6 +228,9 @@ class BizShow extends React.Component {
                   <div>
                     Text a link to your phone so you can quickly get directions, see photos, and read reviews on the go!
                   </div>
+                  <div className='developer-notification'>
+                    Message from Developer: I'm using free trial twilio that can only send message to verified number, feel free to contact me @425-449-2096.
+                  </div>
                   <form className='send-sms-phone-number'>
                     <div>
                       <input readOnly value= '+1'/>
