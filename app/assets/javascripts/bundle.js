@@ -526,6 +526,8 @@ var APIUtilBiz = _interopRequireWildcard(_biz_util);
 
 var _session = __webpack_require__(9);
 
+var _notification = __webpack_require__(197);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var RECEIVE_ALL_BIZ = exports.RECEIVE_ALL_BIZ = 'RECEIVE_ALL_BIZ';
@@ -564,7 +566,7 @@ var requestBiz = exports.requestBiz = function requestBiz(bizId) {
 var sendSMS = exports.sendSMS = function sendSMS(bizId, phoneNumber) {
   return function (dispatch) {
     return APIUtilBiz.sendSMS(bizId, phoneNumber).then(function (confirmation) {
-      return dispatch(receiveConfirmation(confirmation));
+      return dispatch((0, _notification.receiveConfirmation)(confirmation));
     }, function (errors) {
       return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
@@ -22347,12 +22349,17 @@ var _errors = __webpack_require__(105);
 
 var _errors2 = _interopRequireDefault(_errors);
 
+var _notification = __webpack_require__(198);
+
+var _notification2 = _interopRequireDefault(_notification);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
   entities: _entities2.default,
   session: _session2.default,
-  errors: _errors2.default
+  errors: _errors2.default,
+  notification: _notification2.default
 });
 
 exports.default = rootReducer;
@@ -36175,6 +36182,66 @@ var UserProfileNav = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = UserProfileNav;
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RECEIVE_CONFIRMATION = exports.RECEIVE_CONFIRMATION = 'RECEIVE_CONFIRMATION';
+var CLEAR_NOTIFICATION = exports.CLEAR_NOTIFICATION = 'CLEAR_NOTIFICATION';
+
+var clearNotification = exports.clearNotification = function clearNotification() {
+  return {
+    type: CLEAR_NOTIFICATION
+  };
+};
+
+var receiveConfirmation = exports.receiveConfirmation = function receiveConfirmation(confirmation) {
+  return {
+    type: RECEIVE_CONFIRMATION,
+    confirmation: confirmation
+  };
+};
+
+/***/ }),
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _notification = __webpack_require__(197);
+
+var notificationReducer = function notificationReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  Object.freeze(state);
+  var newState = void 0;
+  switch (action.type) {
+    case _notification.RECEIVE_CONFIRMATION:
+      return action.confirmation;
+
+    case _notification.CLEAR_NOTIFICATION:
+      return {};
+
+    default:
+      return state;
+
+  }
+};
+
+exports.default = notificationReducer;
 
 /***/ })
 /******/ ]);
