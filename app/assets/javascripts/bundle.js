@@ -563,9 +563,9 @@ var requestBiz = exports.requestBiz = function requestBiz(bizId) {
 
 var sendSMS = exports.sendSMS = function sendSMS(bizId, phoneNumber) {
   return function (dispatch) {
-    return APIUtilBiz.sendSMS(bizId, phoneNumber).then(
-    // confirmation => dispatch(receiveConfirmation(confirmation))
-    function (errors) {
+    return APIUtilBiz.sendSMS(bizId, phoneNumber).then(function (confirmation) {
+      return dispatch(receiveConfirmation(confirmation));
+    }, function (errors) {
       return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
   };

@@ -1,3 +1,4 @@
+
 class Api::BizController < ApplicationController
 
   def index
@@ -11,8 +12,12 @@ class Api::BizController < ApplicationController
   end
 
   def sms
-    debugger
-    
+    phone_number = '1' + params[:phoneNumber]
+    url = "https://celp.herokuapp.com/#/#{params[:id]}"
+    body = "Hi, checkout this restaurant: #{url}"
+    twilio = TwilioTextMessenger.new(body)
+    twilio.call(phone_number)
+    render json: {confirmation: 'success'}
   end
 
   private

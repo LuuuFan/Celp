@@ -26,6 +26,6 @@ export const requestBiz = (bizId) => dispatch => APIUtilBiz.fetchBiz(bizId)
 
 export const sendSMS = (bizId, phoneNumber) => dispatch => APIUtilBiz.sendSMS(bizId, phoneNumber)
   .then(
-    // confirmation => dispatch(receiveConfirmation(confirmation))
+    confirmation => dispatch(receiveConfirmation(confirmation)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
