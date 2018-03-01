@@ -340,6 +340,7 @@
 }
 
 .send-sms-phone-number{
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 70%;
@@ -383,6 +384,10 @@
   color: lightgray;
 }
 
+
+.send-sms-phone-number .hint{
+  top: -50px;
+}
 // .review-and-biz-more-info{
 //   display: flex;
 //   justify-content: flex-start;

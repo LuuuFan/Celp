@@ -12,7 +12,12 @@ import BizIndexItemRating from './biz_index_item_rating';
 class BizShow extends React.Component {
   constructor(){
     super();
-    this.state = {className: 'modal'};
+    this.state = {
+      className: 'modal',
+      phoneNumber: '',
+      hint: 'hidden'
+    };
+    this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
   }
 
   componentDidMount(){
@@ -29,13 +34,36 @@ class BizShow extends React.Component {
     }
   }
 
-  onpenModal(){
-    this.setState({className: 'is-open'});
+  openModal(){
+    this.setState({className: 'is-open', phoneNumber: ''});
   }
 
-  closeModal(e){
-    e.preventDefault();
+  closeModal(){
+    // e.preventDefault();
     this.setState({className: 'modal'});
+  }
+
+  handlePhoneNumber(){
+    return (e) =>{
+      if (this.state.hint === '') {
+        this.setState({hint: 'hidden'});
+      }
+      this.setState({phoneNumber: e.target.value})
+    }
+  }
+
+  phoneNumberCheck(str){
+    const pattern = new RegExp(/^\+?1?\s*?\(?\d{3}(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{4}$/);
+    return pattern.test(str);
+  }
+
+  sendPhoneNumber(e){
+    e.preventDefault();
+    if (this.phoneNumberCheck(this.state.phoneNumber)) {
+      this.props.sendSMS(this.props.biz.id, this.state.phoneNumber).then(this.closeModal())
+    } else {
+      this.setState({hint: ''})
+    }
   }
 
   render(){
@@ -132,7 +160,7 @@ class BizShow extends React.Component {
                             </tr>
                             <tr>
                               <th><i className="fas fa-mobile-alt"></i></th>
-                              <td><a onClick={()=>this.onpenModal()}>Send to your Phone</a></td>
+                              <td><a onClick={()=>this.openModal()}>Send to your Phone</a></td>
                             </tr>
                           </tbody>
                         </table>
@@ -152,7 +180,7 @@ class BizShow extends React.Component {
                 <div className='biz-show-sms'>
                   <div className='biz-show-sms-header'>
                     <h1>Text to Phone</h1>
-                      <div onClick={(e)=>this.closeModal(e)}>
+                      <div onClick={()=>this.closeModal()}>
                         <span>&times;</span>
                       </div>
                   </div>
@@ -202,14 +230,15 @@ class BizShow extends React.Component {
                   </div>
                   <form className='send-sms-phone-number'>
                     <div>
-                      <input value= '+1'/>
-                      <input type='text' placeholder='Phone Number'/>
+                      <input readOnly value= '+1'/>
+                      <input onChange={this.handlePhoneNumber()} value={this.state.phoneNumber} type='text' placeholder='Phone Number'/>
+                      <div className={`hint ${this.state.hint}`}>Please input the valid phone number</div>
                     </div>
-                    <input type='submit' value='Text Link' />
+                    <input onClick={(e)=>this.sendPhoneNumber(e)} type='submit' value='Text Link' />
                   </form>
                   <p>Your carrier's rates may apply</p>
                 </div>
-                <div onClick={(e)=>this.closeModal(e)} className='modal-screen'>
+                <div onClick={()=>this.closeModal()} className='modal-screen'>
                 </div>
               </div>
             </div>

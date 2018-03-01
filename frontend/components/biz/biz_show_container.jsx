@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import BizShow from './biz_show';
-import {requestBiz} from '../../actions/biz';
+import {requestBiz, sendSMS} from '../../actions/biz';
 import {withRouter} from 'react-router-dom';
 import {deleteReview} from '../../actions/review';
 
@@ -35,8 +35,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return({
     requestBiz: (bizId) => dispatch(requestBiz(bizId)),
-    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
-
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+    sendSMS: (bizId, phoneNumber) => dispatch(sendSMS(bizId, phoneNumber))
   });
 }
 

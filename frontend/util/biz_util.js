@@ -11,3 +11,11 @@ export const fetchBiz = (bizId) => (
     method: 'GET'
   })
 );
+
+export const sendSMS = (bizId, phoneNumber) => (
+  $.ajax({
+    url: `api/biz/${bizId}/sms`,
+    method: 'POST',
+    data: {phoneNumber: phoneNumber}
+  })
+);

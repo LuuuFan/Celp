@@ -518,11 +518,13 @@ module.exports = invariant;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.requestBiz = exports.requestAllBiz = exports.receiveBiz = exports.receiveAllBiz = exports.RECEIVE_BIZ = exports.RECEIVE_ALL_BIZ = undefined;
+exports.sendSMS = exports.requestBiz = exports.requestAllBiz = exports.receiveBiz = exports.receiveAllBiz = exports.RECEIVE_BIZ = exports.RECEIVE_ALL_BIZ = undefined;
 
 var _biz_util = __webpack_require__(95);
 
 var APIUtilBiz = _interopRequireWildcard(_biz_util);
+
+var _session = __webpack_require__(9);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -555,6 +557,16 @@ var requestBiz = exports.requestBiz = function requestBiz(bizId) {
   return function (dispatch) {
     return APIUtilBiz.fetchBiz(bizId).then(function (payload) {
       return dispatch(receiveBiz(payload));
+    });
+  };
+};
+
+var sendSMS = exports.sendSMS = function sendSMS(bizId, phoneNumber) {
+  return function (dispatch) {
+    return APIUtilBiz.sendSMS(bizId, phoneNumber).then(
+    // confirmation => dispatch(receiveConfirmation(confirmation))
+    function (errors) {
+      return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
   };
 };
@@ -22467,6 +22479,14 @@ var fetchBiz = exports.fetchBiz = function fetchBiz(bizId) {
   });
 };
 
+var sendSMS = exports.sendSMS = function sendSMS(bizId, phoneNumber) {
+  return $.ajax({
+    url: 'api/biz/' + bizId + '/sms',
+    method: 'POST',
+    data: { phoneNumber: phoneNumber }
+  });
+};
+
 /***/ }),
 /* 96 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -29498,8 +29518,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     },
     deleteReview: function deleteReview(reviewId) {
       return dispatch((0, _review.deleteReview)(reviewId));
+    },
+    sendSMS: function sendSMS(bizId, phoneNumber) {
+      return dispatch((0, _biz.sendSMS)(bizId, phoneNumber));
     }
-
   };
 };
 
@@ -29568,7 +29590,12 @@ var BizShow = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (BizShow.__proto__ || Object.getPrototypeOf(BizShow)).call(this));
 
-    _this.state = { className: 'modal' };
+    _this.state = {
+      className: 'modal',
+      phoneNumber: '',
+      hint: 'hidden'
+    };
+    _this.handlePhoneNumber = _this.handlePhoneNumber.bind(_this);
     return _this;
   }
 
@@ -29586,20 +29613,48 @@ var BizShow = function (_React$Component) {
       }
     }
   }, {
-    key: 'onpenModal',
-    value: function onpenModal() {
-      this.setState({ className: 'is-open' });
+    key: 'openModal',
+    value: function openModal() {
+      this.setState({ className: 'is-open', phoneNumber: '' });
     }
   }, {
     key: 'closeModal',
-    value: function closeModal(e) {
-      e.preventDefault();
+    value: function closeModal() {
+      // e.preventDefault();
       this.setState({ className: 'modal' });
+    }
+  }, {
+    key: 'handlePhoneNumber',
+    value: function handlePhoneNumber() {
+      var _this2 = this;
+
+      return function (e) {
+        if (_this2.state.hint === '') {
+          _this2.setState({ hint: 'hidden' });
+        }
+        _this2.setState({ phoneNumber: e.target.value });
+      };
+    }
+  }, {
+    key: 'phoneNumberCheck',
+    value: function phoneNumberCheck(str) {
+      var pattern = new RegExp(/^\+?1?\s*?\(?\d{3}(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{4}$/);
+      return pattern.test(str);
+    }
+  }, {
+    key: 'sendPhoneNumber',
+    value: function sendPhoneNumber(e) {
+      e.preventDefault();
+      if (this.phoneNumberCheck(this.state.phoneNumber)) {
+        this.props.sendSMS(this.props.biz.id, this.state.phoneNumber).then(this.closeModal());
+      } else {
+        this.setState({ hint: '' });
+      }
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _props = this.props,
           bizEnoughInfo = _props.bizEnoughInfo,
@@ -29853,7 +29908,7 @@ var BizShow = function (_React$Component) {
                               _react2.default.createElement(
                                 'a',
                                 { onClick: function onClick() {
-                                    return _this2.onpenModal();
+                                    return _this3.openModal();
                                   } },
                                 'Send to your Phone'
                               )
@@ -29884,8 +29939,8 @@ var BizShow = function (_React$Component) {
                   ),
                   _react2.default.createElement(
                     'div',
-                    { onClick: function onClick(e) {
-                        return _this2.closeModal(e);
+                    { onClick: function onClick() {
+                        return _this3.closeModal();
                       } },
                     _react2.default.createElement(
                       'span',
@@ -29996,10 +30051,17 @@ var BizShow = function (_React$Component) {
                   _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement('input', { value: '+1' }),
-                    _react2.default.createElement('input', { type: 'text', placeholder: 'Phone Number' })
+                    _react2.default.createElement('input', { readOnly: true, value: '+1' }),
+                    _react2.default.createElement('input', { onChange: this.handlePhoneNumber(), value: this.state.phoneNumber, type: 'text', placeholder: 'Phone Number' }),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'hint ' + this.state.hint },
+                      'Please input the valid phone number'
+                    )
                   ),
-                  _react2.default.createElement('input', { type: 'submit', value: 'Text Link' })
+                  _react2.default.createElement('input', { onClick: function onClick(e) {
+                      return _this3.sendPhoneNumber(e);
+                    }, type: 'submit', value: 'Text Link' })
                 ),
                 _react2.default.createElement(
                   'p',
@@ -30007,8 +30069,8 @@ var BizShow = function (_React$Component) {
                   'Your carrier\'s rates may apply'
                 )
               ),
-              _react2.default.createElement('div', { onClick: function onClick(e) {
-                  return _this2.closeModal(e);
+              _react2.default.createElement('div', { onClick: function onClick() {
+                  return _this3.closeModal();
                 }, className: 'modal-screen' })
             )
           ) : _react2.default.createElement(_loading2.default, null)

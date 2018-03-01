@@ -10,4 +10,13 @@ class Api::BizController < ApplicationController
     render :show
   end
 
+  def sms
+    debugger
+    
+  end
+
+  private
+  def biz_sms
+    params.require(:biz).permit(:phoneNumber)
+  end
 end

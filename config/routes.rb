@@ -17,4 +17,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :destroy]
     resources :searches, only: [:index]
   end
+  post '/api/biz/:id/sms', to: 'api/biz#sms', as: 'biz_sms'
 end
