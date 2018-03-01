@@ -1,6 +1,11 @@
 import React from 'react';
+import BizShowImgItem from './biz_show_img_item';
 
 class BizShowImg extends React.Component {
+  constructor(){
+    super();
+    this.state = {};
+  }
 
   mouseOver(){
     // const img = document.getElementById("biz-show-img-2");
@@ -19,7 +24,7 @@ class BizShowImg extends React.Component {
                   if (idx <= 2) {
                     return (
                       <div key={idx} className='thumb' id={`biz-show-img-${idx}`}>
-                        {img ? <img src={img.url} /> : ""}
+                        {img ? <BizShowImgItem img={img} /> : ""}
                       </div>
                     );
                   }
