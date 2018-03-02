@@ -29,7 +29,7 @@ class BizImgIndexItem extends React.Component{
   }
 
   escImg(e){
-    Debugger
+    // Debugger
     if (e.keyCode == 27) {
       this.closeShowImg(e);
     }
@@ -42,7 +42,6 @@ class BizImgIndexItem extends React.Component{
         { img ? <img onClick={(e)=>this.showImg(e)} src={img.url}/> : ""}
         <div className={this.state.className} id={`modal-${img.id}`}>
           <div className='img-show'>
-
             <div className='modal-img-show'>
               <img src={img.url} />
             </div>

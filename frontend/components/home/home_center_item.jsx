@@ -32,7 +32,7 @@ class HomeCenterItem extends React.Component{
                 {biz.tags && biz.tags.length > 0 ? <p>&middot;</p> : ""}
                 {biz.tags && biz.tags.length > 0 ?
                   <div className='biz-info-tags'>
-                    {biz.tags.map(tag => <p><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
+                    {biz.tags.map((tag, idx) => <p key={idx}><Link to={`/search?key=${tag}`}>{tag} </Link></p>)}
                   </div>
                  : ""}
               </div>

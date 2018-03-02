@@ -174,7 +174,7 @@ class BizShow extends React.Component {
                     </div>
                   </div>
                 </div>
-                <BizShowImg imgs={imgs} biz={biz} />
+                <BizShowImg imgs={imgs} biz={biz} currentUser={currentUser} />
               </div>
               <div className={this.state.className} id='send-sms'>
                 <div className='biz-show-sms'>

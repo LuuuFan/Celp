@@ -14,7 +14,7 @@ class BizShowImg extends React.Component {
   }
 
   render(){
-    const {imgs, biz} = this.props;
+    const {imgs, biz, currentUser} = this.props;
     return (
       <div className='biz-show-right-bottom'>
         <div className='biz-show-img'>
@@ -24,7 +24,7 @@ class BizShowImg extends React.Component {
                   if (idx <= 2) {
                     return (
                       <div key={idx} className='thumb' id={`biz-show-img-${idx}`}>
-                        {img ? <BizShowImgItem img={img} /> : ""}
+                        {img ? <BizShowImgItem img={img}  biz={biz} currentUser={currentUser}/> : ""}
                       </div>
                     );
                   }

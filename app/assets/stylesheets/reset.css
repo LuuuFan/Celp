@@ -23,6 +23,10 @@ ul {
   list-style: none;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: lightgray;
+}
+
 img {
   display: block;
   width: 100%;

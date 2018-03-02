@@ -263,6 +263,7 @@
 }
 
 .thumb img{
+  cursor: pointer;
   height: 100%;
   object-fit: cover;
   opacity: 0.9;
@@ -399,6 +400,41 @@
 .send-sms-phone-number .hint{
   top: -50px;
 }
+
+.biz-show-img-item-modal{
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  width: 70%;
+  z-index: 3;
+}
+
+ .img-show {
+   // min-width: 1020px;
+   // height: 860px;
+   position: relative;
+   width: 100%;
+   border-radius: 10px;
+   overflow: hidden;
+ }
+
+.biz-show-img-item-modal .img-show img{
+  object-fit: cover;
+  width: 100%;
+}
+
+.biz-show-img-item-modal .close-modal{
+  position: absolute;
+  top: 10px;
+  left: 95%;
+  margin-left: 0;
+  z-index: 7;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+
 // .review-and-biz-more-info{
 //   display: flex;
 //   justify-content: flex-start;
