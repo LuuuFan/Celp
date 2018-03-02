@@ -7,6 +7,15 @@ class BizImgIndexItem extends React.Component{
     this.state = {className: 'modal'};
   }
 
+  componentDidUpdate(){
+    $(document).keydown((e)=>{
+      if (e.keyCode == 27) {
+        this.closeShowImg(e);
+      }
+    });
+  }
+
+
   showImg(e){
     e.preventDefault();
     if (e.target.tagName === 'IMG') {
@@ -26,13 +35,6 @@ class BizImgIndexItem extends React.Component{
           this.setState({className: 'modal'});
         }
       );
-  }
-
-  escImg(e){
-    // Debugger
-    if (e.keyCode == 27) {
-      this.closeShowImg(e);
-    }
   }
 
   render(){
@@ -76,7 +78,7 @@ class BizImgIndexItem extends React.Component{
               : ""}
             </div>
           </div>
-          <div onKeyPress={(e)=>this.escImg(e)} onClick={(e)=>this.closeShowImg(e)} className='modal-screen'>
+          <div onClick={(e)=>this.closeShowImg(e)} className='modal-screen'>
           </div>
         </div>
 

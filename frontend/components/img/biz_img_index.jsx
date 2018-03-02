@@ -32,8 +32,8 @@ class BizImgIndex extends React.Component {
               </Link>
             </div>
             <div className='group'>
-              {imgs.map((img) => <BizImgIndexItem
-                key={img.id}
+              {imgs.map((img, idx) => <BizImgIndexItem
+                key={idx}
                 bizId={this.props.match.params.bizId}
                 currentUser={currentUser}
                 img={img}

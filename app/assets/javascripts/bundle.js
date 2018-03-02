@@ -30321,6 +30321,17 @@ var BizShowImgItem = function (_React$Component) {
   }
 
   _createClass(BizShowImgItem, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      var _this2 = this;
+
+      $(document).keydown(function (e) {
+        if (e.keyCode == 27) {
+          _this2.closeShowImg(e);
+        }
+      });
+    }
+  }, {
     key: 'showImg',
     value: function showImg(e) {
       e.preventDefault();
@@ -30345,17 +30356,9 @@ var BizShowImgItem = function (_React$Component) {
     // }
 
   }, {
-    key: 'escImg',
-    value: function escImg(e) {
-      // Debugger
-      if (e.keyCode == 27) {
-        this.closeShowImg(e);
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _props = this.props,
           img = _props.img,
@@ -30366,7 +30369,7 @@ var BizShowImgItem = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement('img', { className: 'biz-show-img-item', onClick: function onClick(e) {
-            return _this2.showImg(e);
+            return _this3.showImg(e);
           }, src: img.url }),
         _react2.default.createElement(
           'div',
@@ -30378,7 +30381,7 @@ var BizShowImgItem = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'close-modal', onClick: function onClick(e) {
-                  return _this2.closeShowImg(e);
+                  return _this3.closeShowImg(e);
                 } },
               _react2.default.createElement(
                 'span',
@@ -30387,10 +30390,8 @@ var BizShowImgItem = function (_React$Component) {
               )
             )
           ),
-          _react2.default.createElement('div', { onKeyPress: function onKeyPress(e) {
-              return _this2.escImg(e);
-            }, onClick: function onClick(e) {
-              return _this2.closeShowImg(e);
+          _react2.default.createElement('div', { onClick: function onClick(e) {
+              return _this3.closeShowImg(e);
             }, className: 'modal-screen' })
         )
       );
@@ -35146,9 +35147,9 @@ var BizImgIndex = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'group' },
-            imgs.map(function (img) {
+            imgs.map(function (img, idx) {
               return _react2.default.createElement(_biz_img_index_item2.default, {
-                key: img.id,
+                key: idx,
                 bizId: _this2.props.match.params.bizId,
                 currentUser: currentUser,
                 img: img,
@@ -35204,6 +35205,17 @@ var BizImgIndexItem = function (_React$Component) {
   }
 
   _createClass(BizImgIndexItem, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      var _this2 = this;
+
+      $(document).keydown(function (e) {
+        if (e.keyCode == 27) {
+          _this2.closeShowImg(e);
+        }
+      });
+    }
+  }, {
     key: 'showImg',
     value: function showImg(e) {
       e.preventDefault();
@@ -35220,26 +35232,18 @@ var BizImgIndexItem = function (_React$Component) {
   }, {
     key: 'handleDelete',
     value: function handleDelete(imgId) {
-      var _this2 = this;
+      var _this3 = this;
 
       var bizId = this.props.bizId;
 
       this.props.deleteImg(imgId).then(function () {
-        _this2.setState({ className: 'modal' });
+        _this3.setState({ className: 'modal' });
       });
-    }
-  }, {
-    key: 'escImg',
-    value: function escImg(e) {
-      // Debugger
-      if (e.keyCode == 27) {
-        this.closeShowImg(e);
-      }
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var _props = this.props,
           img = _props.img,
@@ -35251,7 +35255,7 @@ var BizImgIndexItem = function (_React$Component) {
         'div',
         { className: 'img-item' },
         img ? _react2.default.createElement('img', { onClick: function onClick(e) {
-            return _this3.showImg(e);
+            return _this4.showImg(e);
           }, src: img.url }) : "",
         _react2.default.createElement(
           'div',
@@ -35293,7 +35297,7 @@ var BizImgIndexItem = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'close-modal', onClick: function onClick(e) {
-                      return _this3.closeShowImg(e);
+                      return _this4.closeShowImg(e);
                     } },
                   _react2.default.createElement(
                     'span',
@@ -35328,7 +35332,7 @@ var BizImgIndexItem = function (_React$Component) {
                     _react2.default.createElement(
                       'td',
                       { onClick: function onClick() {
-                          return _this3.handleDelete(img.id);
+                          return _this4.handleDelete(img.id);
                         } },
                       'Delete photo'
                     )
@@ -35342,10 +35346,8 @@ var BizImgIndexItem = function (_React$Component) {
               ) : ""
             )
           ),
-          _react2.default.createElement('div', { onKeyPress: function onKeyPress(e) {
-              return _this3.escImg(e);
-            }, onClick: function onClick(e) {
-              return _this3.closeShowImg(e);
+          _react2.default.createElement('div', { onClick: function onClick(e) {
+              return _this4.closeShowImg(e);
             }, className: 'modal-screen' })
         )
       );
