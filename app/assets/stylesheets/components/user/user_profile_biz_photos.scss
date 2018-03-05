@@ -1,0 +1,38 @@
+.user-profile-biz-photos{
+  width: 62%;
+  padding-left: 20px;
+  color: #333;
+}
+
+.user-profile-biz-photos h1{
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32323;
+  margin-bottom: 10px;
+}
+
+.user-profile-biz-photos-index{
+  margin-top: 10px;
+  border-top: 1px solid #e6e6e6;
+}
+
+
+.user-profile-biz-photos-item-container{
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 5px;
+  float: left;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+
+.user-profile-biz-photos-item-container:hover{
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+  opacity: 0.7;
+}
+
+.user-profile-biz-photos-item-container img{
+  height: 100%;
+  object-fit: cover;
+}

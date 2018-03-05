@@ -19,7 +19,7 @@ class UserProfileCenter extends React.Component {
                 <img src={user.avatar_url}/>
               </div>
               <div className='activity-item-detail'>
-                {biz[imgs[imgs.order[0]].biz_id].name ?
+                {biz[imgs[imgs.order[0]].biz_id] && biz[imgs[imgs.order[0]].biz_id].name ?
                   <p>You added a photo for <Link to={`/biz/${imgs[imgs.order[0]].biz_id}`}>{biz[imgs[imgs.order[0]].biz_id].name}</Link></p>
                 : ""}
                 <div className='activity-item-img-container'>

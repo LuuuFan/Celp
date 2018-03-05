@@ -36346,7 +36346,7 @@ var UserProfileCenter = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'activity-item-detail' },
-              biz[imgs[imgs.order[0]].biz_id].name ? _react2.default.createElement(
+              biz[imgs[imgs.order[0]].biz_id] && biz[imgs[imgs.order[0]].biz_id].name ? _react2.default.createElement(
                 'p',
                 null,
                 'You added a photo for ',
@@ -36483,55 +36483,63 @@ var UserProfileReviews = function (_React$Component) {
           null,
           'Reviews'
         ),
-        reviews.order.map(function (idx) {
-          return _react2.default.createElement(
-            'div',
-            { key: idx, className: 'user-profile-reviews-item' },
-            _react2.default.createElement(
+        reviews.order.length > 0 ? _react2.default.createElement(
+          'div',
+          null,
+          reviews.order.map(function (idx) {
+            return _react2.default.createElement(
               'div',
-              { className: 'user-profile-reviews-item-biz' },
+              { key: idx, className: 'user-profile-reviews-item' },
               _react2.default.createElement(
                 'div',
-                { className: 'user-profile-reviews-item-biz-cover' },
-                _react2.default.createElement('img', { src: biz[reviews[idx].biz_id].img_url })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'user-profile-reviews-item-biz-info' },
+                { className: 'user-profile-reviews-item-biz' },
                 _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/biz/' + reviews[idx].biz_id },
-                  biz[reviews[idx].biz_id].name
+                  'div',
+                  { className: 'user-profile-reviews-item-biz-cover' },
+                  _react2.default.createElement('img', { src: biz[reviews[idx].biz_id].img_url })
                 ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'user-profile-reviews-item-biz-info-address' },
-                  biz[reviews[idx].biz_id].display_address
+                  { className: 'user-profile-reviews-item-biz-info' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/biz/' + reviews[idx].biz_id },
+                    biz[reviews[idx].biz_id].name
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'user-profile-reviews-item-biz-info-address' },
+                    biz[reviews[idx].biz_id].display_address
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'user-profile-reviews-item-rating' },
+                _react2.default.createElement(_reviews_index_item_rating2.default, { review: reviews[idx] }),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  ' ',
+                  reviews[idx].updated_at.slice(0, 10)
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'user-profile-reviews-item-body' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  reviews[idx].body
                 )
               )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'user-profile-reviews-item-rating' },
-              _react2.default.createElement(_reviews_index_item_rating2.default, { review: reviews[idx] }),
-              _react2.default.createElement(
-                'p',
-                null,
-                ' ',
-                reviews[idx].updated_at.slice(0, 10)
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'user-profile-reviews-item-body' },
-              _react2.default.createElement(
-                'p',
-                null,
-                reviews[idx].body
-              )
-            )
-          );
-        })
+            );
+          })
+        ) : _react2.default.createElement(
+          'div',
+          null,
+          'You don\'t have reviews yet. Go write a review for business.'
+        )
       );
     }
   }]);
@@ -36558,6 +36566,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(1);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36581,13 +36591,42 @@ var UserProfileBizPhotos = function (_React$Component) {
   _createClass(UserProfileBizPhotos, [{
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          user = _props.user,
+          imgs = _props.imgs,
+          reviews = _props.reviews,
+          biz = _props.biz;
+
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'user-profile-biz-photos' },
         _react2.default.createElement(
           'h1',
           null,
           'Business Photos'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-profile-biz-photos-index group' },
+          imgs.order.length > 0 ? _react2.default.createElement(
+            'div',
+            null,
+            imgs.order.map(function (idx) {
+              return _react2.default.createElement(
+                'div',
+                { className: 'user-profile-biz-photos-item-container', key: idx },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/biz/' + imgs[idx].biz_id },
+                  _react2.default.createElement('img', { src: imgs[idx].url })
+                )
+              );
+            })
+          ) : _react2.default.createElement(
+            'div',
+            null,
+            'You don\'t have photo uploaded yet. Go upload photo for business.'
+          )
         )
       );
     }
