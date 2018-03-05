@@ -4,6 +4,13 @@
   color: #333;
 }
 
+.user-show-detail-center h1{
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32323;
+  margin-bottom: 5px;
+}
+
 .user-show-detail-center-summary{
   width: 80%;
   display: flex;
@@ -67,7 +74,7 @@
   text-overflow: ellipsis;
   width: 300px;
   margin: 20px 0;
-  
+
 }
 
 .activity-item-review-container>p{

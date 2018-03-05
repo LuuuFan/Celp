@@ -13,14 +13,14 @@ class HomeCenter extends React.Component{
           <h1>Celp San Francisco</h1>
           <ul>
             <Link to='/search?key=&loc=daly+city'><li>Daly City</li></Link>
-            <Link  to='/search?key=&loc=South+San+Francisco'><li>South San Francisco</li></Link>
-            <Link  to='/search?key=&loc=San+Bruno'><li>San Bruno</li></Link>
-            <Link  to='/search?key=&loc=Millbrae'><li>Millbrae</li></Link>
-            <Link  to='/search?key=&loc=Burlingame'><li>Burlingame</li></Link>
-            <Link  to='/search?key=&loc=San+Mateo'><li>San Mateo</li></Link>
-            <Link  to='/search?key=&loc=Foster+City'><li>Foster City</li></Link>
-            <Link  to='/search?key=&loc=Belmont'><li>Belmont</li></Link>
-            <Link  to='/search?key=&loc=Redwood+City'><li>Redwood City</li></Link>
+            <Link to='/search?key=&loc=South+San+Francisco'><li>South San Francisco</li></Link>
+            <Link to='/search?key=&loc=San+Bruno'><li>San Bruno</li></Link>
+            <Link to='/search?key=&loc=Millbrae'><li>Millbrae</li></Link>
+            <Link to='/search?key=&loc=Burlingame'><li>Burlingame</li></Link>
+            <Link to='/search?key=&loc=San+Mateo'><li>San Mateo</li></Link>
+            <Link to='/search?key=&loc=Foster+City'><li>Foster City</li></Link>
+            <Link to='/search?key=&loc=Belmont'><li>Belmont</li></Link>
+            <Link to='/search?key=&loc=Redwood+City'><li>Redwood City</li></Link>
           </ul>
           {bizes.length > 0 ?
             <div className='home-center-restaurant-samples'>

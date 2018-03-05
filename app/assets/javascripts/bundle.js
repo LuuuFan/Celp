@@ -35891,10 +35891,6 @@ var _user_profile_nav = __webpack_require__(198);
 
 var _user_profile_nav2 = _interopRequireDefault(_user_profile_nav);
 
-var _user_profile_center = __webpack_require__(199);
-
-var _user_profile_center2 = _interopRequireDefault(_user_profile_center);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36052,96 +36048,7 @@ var UserProfile = function (_React$Component) {
             )
           )
         ) : "",
-        user ? _react2.default.createElement(
-          'div',
-          { className: 'user-show-detail' },
-          _react2.default.createElement(_user_profile_nav2.default, { user: user }),
-          _react2.default.createElement(
-            'div',
-            { className: 'user-show-detail-center-summary' },
-            _react2.default.createElement(_user_profile_center2.default, { user: user, imgs: imgs, reviews: reviews, biz: biz }),
-            _react2.default.createElement(
-              'div',
-              { className: 'user-show-detail-summary' },
-              _react2.default.createElement(
-                'h2',
-                null,
-                'About ',
-                user.username
-              ),
-              _react2.default.createElement(
-                'h3',
-                null,
-                'Last 90 days'
-              ),
-              _react2.default.createElement(
-                'table',
-                null,
-                _react2.default.createElement(
-                  'tbody',
-                  null,
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'th',
-                      null,
-                      _react2.default.createElement('i', { className: 'fas fa-star' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      null,
-                      _react2.default.createElement(
-                        'b',
-                        null,
-                        user.review_num
-                      ),
-                      ' Reviews'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'th',
-                      null,
-                      _react2.default.createElement('i', { className: 'fas fa-camera-retro' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      null,
-                      _react2.default.createElement(
-                        'b',
-                        null,
-                        user.img_num
-                      ),
-                      ' Photos'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'th',
-                      null,
-                      _react2.default.createElement('i', { className: 'fas fa-bookmark' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      null,
-                      _react2.default.createElement(
-                        'b',
-                        null,
-                        user.bookmark_num
-                      ),
-                      ' Bookmarks'
-                    )
-                  )
-                )
-              )
-            )
-          )
-        ) : ""
+        user ? _react2.default.createElement(_user_profile_nav2.default, { user: user, imgs: imgs, reviews: reviews, biz: biz }) : ""
       );
     }
   }]);
@@ -36168,6 +36075,22 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _user_profile_center = __webpack_require__(199);
+
+var _user_profile_center2 = _interopRequireDefault(_user_profile_center);
+
+var _user_profile_reviews = __webpack_require__(200);
+
+var _user_profile_reviews2 = _interopRequireDefault(_user_profile_reviews);
+
+var _user_profile_biz_photo = __webpack_require__(201);
+
+var _user_profile_biz_photo2 = _interopRequireDefault(_user_profile_biz_photo);
+
+var _user_profile_bookmarks = __webpack_require__(202);
+
+var _user_profile_bookmarks2 = _interopRequireDefault(_user_profile_bookmarks);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36184,70 +36107,166 @@ var UserProfileNav = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (UserProfileNav.__proto__ || Object.getPrototypeOf(UserProfileNav)).call(this, props));
 
-    _this.state = { className: '' };
+    _this.state = { listName: 'UserProfileCenter' };
     return _this;
   }
 
   _createClass(UserProfileNav, [{
+    key: 'handleClick',
+    value: function handleClick(listName) {
+      this.setState({ listName: listName });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var user = this.props.user;
+      var _this2 = this;
+
+      var _props = this.props,
+          user = _props.user,
+          imgs = _props.imgs,
+          reviews = _props.reviews,
+          biz = _props.biz;
 
       return _react2.default.createElement(
         'div',
-        { className: 'user-show-detail-nav' },
-        user.username ? _react2.default.createElement(
+        { className: 'user-show-detail' },
+        _react2.default.createElement(
           'div',
-          null,
-          _react2.default.createElement(
-            'h2',
-            null,
-            user.username + '\'s Profile'
-          ),
-          _react2.default.createElement(
-            'ul',
+          { className: 'user-show-detail-nav' },
+          user.username ? _react2.default.createElement(
+            'div',
             null,
             _react2.default.createElement(
-              'li',
+              'h2',
               null,
-              _react2.default.createElement('i', { className: 'fas fa-user' }),
-              'Profile Overview'
+              user.username + '\'s Profile'
             ),
             _react2.default.createElement(
-              'li',
-              { className: 'tooltip' },
-              _react2.default.createElement('i', { className: 'fas fa-star' }),
-              'Reviews',
+              'ul',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'tooltiptext' },
-                'under construction'
+                'li',
+                { className: this.state.listName == 'UserProfileCenter' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
+                    return _this2.handleClick('UserProfileCenter');
+                  } },
+                _react2.default.createElement('i', { className: 'fas fa-user' }),
+                'Profile Overview'
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: this.state.listName == 'UserProfileReviews' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
+                    return _this2.handleClick('UserProfileReviews');
+                  } },
+                _react2.default.createElement('i', { className: 'fas fa-star' }),
+                'Reviews'
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: this.state.listName == 'UserProfileBizPhotos' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
+                    return _this2.handleClick('UserProfileBizPhotos');
+                  } },
+                _react2.default.createElement('i', { className: 'fas fa-camera' }),
+                'Business Photos'
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: this.state.listName == 'UserProfileBookmarks' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
+                    return _this2.handleClick('UserProfileBookmarks');
+                  } },
+                _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
+                'Bookmarks'
               )
+            )
+          ) : ""
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-show-detail-center-summary' },
+          this.state.listName == 'UserProfileCenter' ? _react2.default.createElement(_user_profile_center2.default, { user: user, imgs: imgs, reviews: reviews, biz: biz }) : "",
+          this.state.listName == 'UserProfileReviews' ? _react2.default.createElement(_user_profile_reviews2.default, { user: user, imgs: imgs, reviews: reviews, biz: biz }) : "",
+          this.state.listName == 'UserProfileBizPhotos' ? _react2.default.createElement(_user_profile_biz_photo2.default, { user: user, imgs: imgs, reviews: reviews, biz: biz }) : "",
+          this.state.listName == 'UserProfileBookmarks' ? _react2.default.createElement(_user_profile_bookmarks2.default, { user: user, imgs: imgs, reviews: reviews, biz: biz }) : "",
+          _react2.default.createElement(
+            'div',
+            { className: 'user-show-detail-summary' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              'About ',
+              user.username
             ),
             _react2.default.createElement(
-              'li',
-              { className: 'tooltip' },
-              _react2.default.createElement('i', { className: 'fas fa-camera' }),
-              'Business Photos',
-              _react2.default.createElement(
-                'div',
-                { className: 'tooltiptext' },
-                'under construction'
-              )
+              'h3',
+              null,
+              'Last 90 days'
             ),
             _react2.default.createElement(
-              'li',
-              { className: 'tooltip' },
-              _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
-              'Bookmarks',
+              'table',
+              null,
               _react2.default.createElement(
-                'div',
-                { className: 'tooltiptext' },
-                'under construction'
+                'tbody',
+                null,
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    _react2.default.createElement('i', { className: 'fas fa-star' })
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      user.review_num
+                    ),
+                    ' Reviews'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    _react2.default.createElement('i', { className: 'fas fa-camera-retro' })
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      user.img_num
+                    ),
+                    ' Photos'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    _react2.default.createElement('i', { className: 'fas fa-bookmark' })
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      user.bookmark_num
+                    ),
+                    ' Bookmarks'
+                  )
+                )
               )
             )
           )
-        ) : ""
+        )
       );
     }
   }]);
@@ -36284,19 +36303,19 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var UserProfileNav = function (_React$Component) {
-  _inherits(UserProfileNav, _React$Component);
+var UserProfileCenter = function (_React$Component) {
+  _inherits(UserProfileCenter, _React$Component);
 
-  function UserProfileNav(props) {
-    _classCallCheck(this, UserProfileNav);
+  function UserProfileCenter(props) {
+    _classCallCheck(this, UserProfileCenter);
 
-    var _this = _possibleConstructorReturn(this, (UserProfileNav.__proto__ || Object.getPrototypeOf(UserProfileNav)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (UserProfileCenter.__proto__ || Object.getPrototypeOf(UserProfileCenter)).call(this, props));
 
     _this.state = { className: '' };
     return _this;
   }
 
-  _createClass(UserProfileNav, [{
+  _createClass(UserProfileCenter, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -36308,7 +36327,7 @@ var UserProfileNav = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'user-show-detail-center' },
-        user.username ? _react2.default.createElement(
+        user && user.username ? _react2.default.createElement(
           'div',
           null,
           _react2.default.createElement(
@@ -36327,7 +36346,7 @@ var UserProfileNav = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'activity-item-detail' },
-              _react2.default.createElement(
+              biz[imgs[imgs.order[0]].biz_id].name ? _react2.default.createElement(
                 'p',
                 null,
                 'You added a photo for ',
@@ -36336,7 +36355,7 @@ var UserProfileNav = function (_React$Component) {
                   { to: '/biz/' + imgs[imgs.order[0]].biz_id },
                   biz[imgs[imgs.order[0]].biz_id].name
                 )
-              ),
+              ) : "",
               _react2.default.createElement(
                 'div',
                 { className: 'activity-item-img-container' },
@@ -36399,10 +36418,187 @@ var UserProfileNav = function (_React$Component) {
     }
   }]);
 
-  return UserProfileNav;
+  return UserProfileCenter;
 }(_react2.default.Component);
 
-exports.default = UserProfileNav;
+exports.default = UserProfileCenter;
+
+/***/ }),
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserProfileReviews = function (_React$Component) {
+  _inherits(UserProfileReviews, _React$Component);
+
+  function UserProfileReviews() {
+    _classCallCheck(this, UserProfileReviews);
+
+    var _this = _possibleConstructorReturn(this, (UserProfileReviews.__proto__ || Object.getPrototypeOf(UserProfileReviews)).call(this));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(UserProfileReviews, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          user = _props.user,
+          imgs = _props.imgs,
+          reviews = _props.reviews,
+          biz = _props.biz;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'user-profile-reviews' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Reviews'
+        )
+      );
+    }
+  }]);
+
+  return UserProfileReviews;
+}(_react2.default.Component);
+
+exports.default = UserProfileReviews;
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserProfileBizPhotos = function (_React$Component) {
+  _inherits(UserProfileBizPhotos, _React$Component);
+
+  function UserProfileBizPhotos() {
+    _classCallCheck(this, UserProfileBizPhotos);
+
+    var _this = _possibleConstructorReturn(this, (UserProfileBizPhotos.__proto__ || Object.getPrototypeOf(UserProfileBizPhotos)).call(this));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(UserProfileBizPhotos, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Business Photos'
+        )
+      );
+    }
+  }]);
+
+  return UserProfileBizPhotos;
+}(_react2.default.Component);
+
+exports.default = UserProfileBizPhotos;
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserProfileBookmarks = function (_React$Component) {
+  _inherits(UserProfileBookmarks, _React$Component);
+
+  function UserProfileBookmarks() {
+    _classCallCheck(this, UserProfileBookmarks);
+
+    var _this = _possibleConstructorReturn(this, (UserProfileBookmarks.__proto__ || Object.getPrototypeOf(UserProfileBookmarks)).call(this));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(UserProfileBookmarks, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Bookmarks'
+        )
+      );
+    }
+  }]);
+
+  return UserProfileBookmarks;
+}(_react2.default.Component);
+
+exports.default = UserProfileBookmarks;
 
 /***/ })
 /******/ ]);

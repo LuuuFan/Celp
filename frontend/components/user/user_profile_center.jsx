@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class UserProfileNav extends React.Component {
+class UserProfileCenter extends React.Component {
   constructor(props){
     super(props);
     this.state = {className: ''};
@@ -11,7 +11,7 @@ class UserProfileNav extends React.Component {
     const {user, imgs, reviews, biz} = this.props;
     return(
       <div className='user-show-detail-center'>
-        {user.username ? <div>
+        {user && user.username ? <div>
           <h1>Recent Activity</h1>
           {user.img_num > 0 ?
             <div className='user-show-recent-activity-item group'>
@@ -19,7 +19,9 @@ class UserProfileNav extends React.Component {
                 <img src={user.avatar_url}/>
               </div>
               <div className='activity-item-detail'>
-                <p>You added a photo for <Link to={`/biz/${imgs[imgs.order[0]].biz_id}`}>{biz[imgs[imgs.order[0]].biz_id].name}</Link></p>
+                {biz[imgs[imgs.order[0]].biz_id].name ?
+                  <p>You added a photo for <Link to={`/biz/${imgs[imgs.order[0]].biz_id}`}>{biz[imgs[imgs.order[0]].biz_id].name}</Link></p>
+                : ""}
                 <div className='activity-item-img-container'>
                   <img src={imgs[imgs.order[0]].url} />
                 </div>
@@ -52,4 +54,4 @@ class UserProfileNav extends React.Component {
   }
 }
 
-export default UserProfileNav;
+export default UserProfileCenter;
