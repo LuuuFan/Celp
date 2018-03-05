@@ -35405,7 +35405,7 @@ var Footer = function Footer() {
             ),
             _react2.default.createElement(
               'a',
-              { href: '/' },
+              { href: 'https://www.linkedin.com/in/lu-fan-a4a94812/' },
               _react2.default.createElement(
                 'li',
                 null,
@@ -35503,11 +35503,7 @@ var Footer = function Footer() {
     _react2.default.createElement(
       'div',
       { className: 'footer-background-container' },
-      _react2.default.createElement(
-        'div',
-        { className: 'footer-background' },
-        _react2.default.createElement('img', { src: 'https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' })
-      )
+      _react2.default.createElement('div', { className: 'footer-background' })
     ),
     _react2.default.createElement(
       'p',
@@ -35520,6 +35516,8 @@ var Footer = function Footer() {
 };
 
 exports.default = Footer;
+
+// <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
 
 /***/ }),
 /* 194 */

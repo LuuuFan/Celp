@@ -7,7 +7,7 @@ const Footer = () => (
       <li>About
         <ul>
           <a href='https://github.com/LuuuFan/Celp'><li><i className="fab fa-github"></i>About Celp</li></a>
-          <a href='/'><li><i className="fab fa-linkedin"></i>About Me</li></a>
+          <a href='https://www.linkedin.com/in/lu-fan-a4a94812/'><li><i className="fab fa-linkedin"></i>About Me</li></a>
         </ul>
       </li>
       <li>Discover
@@ -34,7 +34,6 @@ const Footer = () => (
     </div>
     <div className='footer-background-container'>
       <div className='footer-background'>
-        <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
       </div>
     </div>
     <p>
@@ -44,3 +43,5 @@ const Footer = () => (
 );
 
 export default Footer
+
+// <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
