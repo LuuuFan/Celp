@@ -71,7 +71,7 @@ class BizIndex extends React.Component {
         </div>
         <div className='index'>
           <ul className='biz_index_list'>
-            {bizes.map((biz, idx) => <BizIndexItem key={biz.id} biz={biz} idx={idx}/>)}
+            {bizes.map((biz, idx) => <BizIndexItem key={idx} biz={biz} idx={idx}/>)}
           </ul>
           <div className='biz-index-map'>
             <Map bizes={bizes} />

@@ -26,17 +26,18 @@ end
 json.biz do
   @user.reviewed_biz.each do |biz|
     json.set! biz.id do
-      json.extract! biz, :name, :img_url, :display_address
+      json.extract! biz, :id, :name, :img_url, :display_address, :biz_rate
     end
   end
   @user.imged_biz.each do |biz|
     json.set! biz.id do
-      json.extract! biz, :name, :img_url, :display_address
+      json.extract! biz, :id, :name, :img_url, :display_address, :biz_rate
     end
   end
   @user.bookmark_biz.each do |biz|
     json.set! biz.id do
-      json.extract! biz, :name, :img_url, :display_address
+      json.extract! biz, :id, :name, :img_url, :display_address, :biz_rate
+      json.set! :reviews_num, biz.reviews.length
     end
   end
 end

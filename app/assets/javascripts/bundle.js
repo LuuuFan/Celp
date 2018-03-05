@@ -29370,7 +29370,7 @@ var BizIndex = function (_React$Component) {
             'ul',
             { className: 'biz_index_list' },
             bizes.map(function (biz, idx) {
-              return _react2.default.createElement(_biz_index_item2.default, { key: biz.id, biz: biz, idx: idx });
+              return _react2.default.createElement(_biz_index_item2.default, { key: idx, biz: biz, idx: idx });
             })
           ),
           _react2.default.createElement(
@@ -36654,6 +36654,12 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(1);
+
+var _biz_index_item_rating = __webpack_require__(34);
+
+var _biz_index_item_rating2 = _interopRequireDefault(_biz_index_item_rating);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36677,13 +36683,72 @@ var UserProfileBookmarks = function (_React$Component) {
   _createClass(UserProfileBookmarks, [{
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          user = _props.user,
+          imgs = _props.imgs,
+          reviews = _props.reviews,
+          biz = _props.biz;
+
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'user-profile-bookmarks' },
         _react2.default.createElement(
           'h1',
           null,
           'Bookmarks'
+        ),
+        user.bookmark_num > 0 ? _react2.default.createElement(
+          'div',
+          { className: 'user-profile-bookmarks-index' },
+          user.bookmark_biz_ids.map(function (idx) {
+            return _react2.default.createElement(
+              'div',
+              { className: 'user-profile-bookmarks-item', key: idx },
+              _react2.default.createElement(
+                'div',
+                { className: 'user-profile-bookmarks-item-biz-cover' },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/biz/' + idx },
+                  _react2.default.createElement('img', { src: biz[idx].img_url })
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'user-profile-bookmarks-item-biz-info' },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/biz/' + idx },
+                  biz[idx].name
+                ),
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement(_biz_index_item_rating2.default, { biz: biz[idx] }),
+                  biz[idx].reviews_num > 1 ? _react2.default.createElement(
+                    'p',
+                    null,
+                    biz[idx].reviews_num,
+                    ' reviews'
+                  ) : _react2.default.createElement(
+                    'p',
+                    null,
+                    biz[idx].reviews_num,
+                    ' review'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'user-profile-reviews-item-biz-info-address' },
+                  biz[idx].display_address
+                )
+              )
+            );
+          })
+        ) : _react2.default.createElement(
+          'div',
+          null,
+          'You don\'t have bookmark yet. Go find a business.'
         )
       );
     }
