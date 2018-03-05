@@ -1,7 +1,7 @@
 import React from 'react';
 import UserProfileCenter from './user_profile_center';
 import UserProfileReviews from './user_profile_reviews';
-import UserProfileBizPhotos from './user_profile_biz_photo';
+import UserProfileBizPhotos from './user_profile_biz_photos';
 import UserProfileBookmarks from './user_profile_bookmarks';
 
 

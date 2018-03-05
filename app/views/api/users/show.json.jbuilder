@@ -8,7 +8,7 @@ end
 json.imgs do
   @user.imgs.each do |img|
     json.set! img.id do
-      json.extract! img, :url, :biz_id
+      json.extract! img, :url, :biz_id, :updated_at
     end
   end
   json.order @user.imgs.order(updated_at: :desc).pluck(:id)
@@ -26,17 +26,17 @@ end
 json.biz do
   @user.reviewed_biz.each do |biz|
     json.set! biz.id do
-      json.extract! biz, :name
+      json.extract! biz, :name, :img_url, :display_address
     end
   end
   @user.imged_biz.each do |biz|
     json.set! biz.id do
-      json.extract! biz, :name
+      json.extract! biz, :name, :img_url, :display_address
     end
   end
   @user.bookmark_biz.each do |biz|
     json.set! biz.id do
-      json.extract! biz, :name
+      json.extract! biz, :name, :img_url, :display_address
     end
   end
 end
