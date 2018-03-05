@@ -2,6 +2,9 @@ import React from 'react';
 
 const Footer = () => (
   <div className='footer'>
+    <div className='footer-background'>
+      <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
+    </div>
     <div className='footer-main'>
       <ul>
       <li>About
@@ -32,10 +35,6 @@ const Footer = () => (
       </div>
     </ul>
     </div>
-    <div className='footer-background-container'>
-      <div className='footer-background'>
-      </div>
-    </div>
     <p>
       Copyright &copy; 2018-2018 Celp Inc. <i className="fab fa-yelp"></i> and related marks are registered trademarks of Celp.
     </p>
@@ -43,5 +42,3 @@ const Footer = () => (
 );
 
 export default Footer
-
-// <img src='https://res.cloudinary.com/ddwejrtgh/image/upload/v1517535496/celp/city_line_nypobt.png' />
