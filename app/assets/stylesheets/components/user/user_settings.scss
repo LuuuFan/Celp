@@ -3,9 +3,11 @@
   margin: 50px auto;
   min-width: 1020px;
   display: flex;
+  color: #666;
 }
 
 .user-settings-sub-component{
+  width: 70%;
   margin-left: 50px;
 }
 
@@ -17,7 +19,7 @@
 }
 
 .user-settings-change-password{
-  width: 100%;
+  width: 60%;
 }
 
 .user-settings-change-password input[type='password']{
@@ -53,9 +55,11 @@
   text-decoration: underline;
 }
 
-.user-settings-change-password input[type='submit']{
+.user-settings-change-password input[type='submit'],
+.user-settings-email-add>button,
+.user-settings-save-phone-numbers{
   padding: 7px 10px;
-  width: 50%;
+  width: 150px;
   text-align: center;
   background-color: #d90007;
   border: 1px solid #8d0005;
@@ -67,6 +71,51 @@
   margin-bottom: 10px;
 }
 
-.user-settings-change-password input[type='submit']:hover{
+.user-settings-change-password input[type='submit']:hover,
+.user-settings-email-add>button:hover,
+.user-settings-save-phone-numbers:hover{
   background-color: #a71c1c;
+}
+
+.user-settings-email-add{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.user-settings-email-current-account{
+  padding: 20px 0;
+  border-top: 1px solid lightgray;
+  color: #333;
+}
+
+.user-settings-email-phone{
+  padding: 20px 0;
+  border-top: 1px solid lightgray;
+}
+
+.user-setting-email-phone-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-setting-email-phone-form>div{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.user-setting-email-phone-form>div>input:first-of-type{
+  padding: 10px;
+  width: 20%;
+  border-right: 1px solid lightgray;
+  text-align: center;
+}
+
+.user-setting-email-phone-form>div>input:last-of-type{
+  padding: 10px 20px;
 }

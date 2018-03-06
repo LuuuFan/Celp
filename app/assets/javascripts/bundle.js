@@ -36902,7 +36902,7 @@ var UserSettings = function (_React$Component) {
           { className: 'user-settings-sub-component' },
           this.state.listName == 'UserProfile' ? _react2.default.createElement(_user_settings_profile2.default, null) : "",
           this.state.listName == 'Password' ? _react2.default.createElement(_user_settings_password2.default, null) : "",
-          this.state.listName == 'Email' ? _react2.default.createElement(_user_settings_email2.default, null) : ""
+          this.state.listName == 'Email' ? _react2.default.createElement(_user_settings_email2.default, { currentUser: currentUser }) : ""
         )
       );
     }
@@ -37029,7 +37029,6 @@ var UserSettingsPassword = function (_React$Component) {
     key: 'changePassword',
     value: function changePassword(e) {
       e.preventDefault();
-      debugger;
     }
   }, {
     key: 'render',
@@ -37140,13 +37139,68 @@ var UserSettingsEmail = function (_React$Component) {
   _createClass(UserSettingsEmail, [{
     key: 'render',
     value: function render() {
+      var currentUser = this.props.currentUser;
+
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
-          'h1',
-          null,
-          'Email Accounts'
+          'div',
+          { className: 'user-settings-email-add' },
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Email Accounts'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Add accounts, remove accounts, and change your primary account.'
+            )
+          ),
+          _react2.default.createElement(
+            'button',
+            null,
+            'Add Email'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-settings-email-current-account' },
+          currentUser.email,
+          ' \xB7 Primary account'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-settings-email-phone' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Phone Number'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Add or edit your phone number. We\u2019ll do nothing with it since we are using free trial SMS service, cannot send message to non-verfied phonenumber'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-settings-email-update-phone' },
+          _react2.default.createElement(
+            'form',
+            { className: 'user-setting-email-phone-form' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement('input', { value: '+1' }),
+              _react2.default.createElement('input', { type: 'text' })
+            ),
+            _react2.default.createElement('input', { className: 'user-settings-save-phone-numbers', type: 'submit', value: 'Save Phone Number' })
+          )
         )
       );
     }

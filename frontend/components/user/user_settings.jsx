@@ -30,7 +30,7 @@ class UserSettings extends React.Component{
         <div className='user-settings-sub-component'>
           { this.state.listName == 'UserProfile' ? <UserProfile /> : ""}
           { this.state.listName == 'Password' ? <Password /> : ""}
-          { this.state.listName == 'Email' ? <Email /> : ""}
+          { this.state.listName == 'Email' ? <Email currentUser={currentUser} /> : ""}
 
         </div>
       </div>

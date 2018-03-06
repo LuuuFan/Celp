@@ -6,10 +6,35 @@ class UserSettingsEmail extends React.Component {
     this.state = {};
   }
 
+
+
   render(){
+    const {currentUser} = this.props;
     return(
       <div>
-        <h1>Email Accounts</h1>
+        <div className='user-settings-email-add'>
+          <div >
+            <h1>Email Accounts</h1>
+            <p>Add accounts, remove accounts, and change your primary account.</p>
+          </div>
+          <button>Add Email</button>
+        </div>
+        <div className='user-settings-email-current-account'>
+          {currentUser.email} &middot; Primary account
+        </div>
+        <div className='user-settings-email-phone'>
+          <h1>Phone Number</h1>
+          <p>Add or edit your phone number. We’ll do nothing with it since we are using free trial SMS service, cannot send message to non-verfied phonenumber</p>
+        </div>
+        <div className='user-settings-email-update-phone'>
+          <form className='user-setting-email-phone-form'>
+            <div>
+              <input value='+1' />
+              <input type='text' />
+            </div>
+            <input className='user-settings-save-phone-numbers' type='submit' value='Save Phone Number'/>
+          </form>
+        </div>
       </div>
     )
   }

@@ -20,7 +20,6 @@ class UserSettingsPassword extends React.Component {
 
   changePassword(e){
     e.preventDefault();
-    debugger
   }
 
   render(){
