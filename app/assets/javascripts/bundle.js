@@ -36989,6 +36989,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -37003,13 +37005,37 @@ var UserSettingsPassword = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (UserSettingsPassword.__proto__ || Object.getPrototypeOf(UserSettingsPassword)).call(this));
 
-    _this.state = {};
+    _this.state = { oldPassword: '', newPassword: '', confirmPassword: '' };
+    _this.handleInput = _this.handleInput.bind(_this);
     return _this;
   }
 
   _createClass(UserSettingsPassword, [{
+    key: 'handleCancel',
+    value: function handleCancel() {
+      window.location.reload(true);
+    }
+  }, {
+    key: 'handleInput',
+    value: function handleInput(type) {
+      var _this2 = this;
+
+      return function (e) {
+        e.preventDefault();
+        _this2.setState(_defineProperty({}, type, e.target.value));
+      };
+    }
+  }, {
+    key: 'changePassword',
+    value: function changePassword(e) {
+      e.preventDefault();
+      debugger;
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       return _react2.default.createElement(
         'div',
         null,
@@ -37017,6 +37043,53 @@ var UserSettingsPassword = function (_React$Component) {
           'h1',
           null,
           'Change Your Password'
+        ),
+        _react2.default.createElement(
+          'form',
+          { className: 'user-settings-change-password' },
+          _react2.default.createElement(
+            'label',
+            null,
+            'Current password'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Enter your existing password.'
+          ),
+          _react2.default.createElement('input', { onChange: this.handleInput('oldPassword'), type: 'password', value: this.state.oldPassword }),
+          _react2.default.createElement(
+            'label',
+            null,
+            'New Password'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Enter the new password you would like.'
+          ),
+          _react2.default.createElement('input', { onChange: this.handleInput('newPassword'), type: 'password', value: this.state.newPassword }),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Verify new password'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Reenter your password to verify.'
+          ),
+          _react2.default.createElement('input', { onChange: this.handleInput('confirmPassword'), type: 'password', value: this.state.confirmPassword }),
+          _react2.default.createElement('input', { onClick: function onClick(e) {
+              return _this3.changePassword(e);
+            }, type: 'submit', value: 'Save New Password' }),
+          _react2.default.createElement(
+            'a',
+            { onClick: function onClick() {
+                return _this3.handleCancel();
+              } },
+            'cancel'
+          )
         )
       );
     }
