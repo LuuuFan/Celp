@@ -56,7 +56,6 @@ class UserProfile extends React.Component{
         : "" }
         {user ?
           <UserProfileNav user={user} imgs={imgs} reviews={reviews} biz={biz} />
-
         : ""}
       </div>
     );

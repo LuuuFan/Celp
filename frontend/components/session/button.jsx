@@ -40,10 +40,10 @@ class Button extends React.Component {
               <hr/>
               <ul>
                 <li><i className="fa fa-user" aria-hidden="true"></i><Link to='/aboutme'>About Me</Link></li>
-                <li className='tooltip'>
+                <li>
                   <i className="fa fa-cog" aria-hidden="true"></i>
-                  <Link to='/aboutme'>Account Setting</Link>
-                  <div className='tooltiptext'>under construction</div></li>
+                  <Link to='/settings'>Account Setting</Link>
+                  </li>
               </ul>
               <hr/>
               <ul>
