@@ -119,3 +119,69 @@
 .user-setting-email-phone-form>div>input:last-of-type{
   padding: 10px 20px;
 }
+
+.user-setting-profile-avatar{
+  width: 100%;
+  border-top: 1px solid lightgray;
+  padding: 20px 0;
+}
+
+.user-setting-profile-avatar-container{
+  margin-top: 10px;
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.user-setting-profile-avatar-container img{
+  object-fit: cover;
+  height: 100%;
+}
+
+.user-setting-profile h2{
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.user-setting-profile h2 a{
+  cursor: pointer;
+  color: #0073bb;
+}
+
+.user-setting-profile h2 a:hover{
+  text-decoration: underline;
+}
+
+.user-settings-profile-form{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.user-settings-profile-form label{
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.user-settings-profile-form textarea{
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  margin-top: 10px;
+  resize: vertical;
+}
+
+.user-settings-profile-form input[type='text']{
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px 20px;
+}

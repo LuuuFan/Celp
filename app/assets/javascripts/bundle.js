@@ -36892,7 +36892,7 @@ var UserSettings = function (_React$Component) {
                 { className: this.state.listName == 'Email' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
                     return _this2.handleClick('Email');
                   } },
-                'Email'
+                'Email / Notifications'
               )
             )
           )
@@ -36900,7 +36900,7 @@ var UserSettings = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'user-settings-sub-component' },
-          this.state.listName == 'UserProfile' ? _react2.default.createElement(_user_settings_profile2.default, null) : "",
+          this.state.listName == 'UserProfile' ? _react2.default.createElement(_user_settings_profile2.default, { currentUser: currentUser }) : "",
           this.state.listName == 'Password' ? _react2.default.createElement(_user_settings_password2.default, null) : "",
           this.state.listName == 'Email' ? _react2.default.createElement(_user_settings_email2.default, { currentUser: currentUser }) : ""
         )
@@ -36946,20 +36946,112 @@ var UserSettingsProfile = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (UserSettingsProfile.__proto__ || Object.getPrototypeOf(UserSettingsProfile)).call(this));
 
-    _this.state = {};
+    _this.state = {
+      avatar: ""
+    };
     return _this;
   }
 
   _createClass(UserSettingsProfile, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.currentUser && !this.state.avatar) {
+        this.setState({ avatar: this.props.currentUser.avatar_url });
+      }
+    }
+  }, {
+    key: 'uploadAvatar',
+    value: function uploadAvatar() {
+      var _this2 = this;
+
+      cloudinary.openUploadWidget({ cloud_name: 'ddwejrtgh', upload_preset: 'l8du0kzb' }, function (errors, result) {
+        if (errors) {}
+        result.forEach(function (file) {
+          var avatar_url = 'https' + file.url.slice(4);
+          _this2.setState({ avatar: avatar_url });
+        });
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
+      var currentUser = this.props.currentUser;
+
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'user-setting-profile' },
         _react2.default.createElement(
           'h1',
           null,
           'Profile'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Tell us more about you.'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-setting-profile-avatar' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Your Profile Photo ',
+            _react2.default.createElement(
+              'a',
+              { onClick: function onClick() {
+                  _this3.uploadAvatar();
+                } },
+              '(Add/Edit)'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'user-setting-profile-avatar-container' },
+            _react2.default.createElement('img', { src: this.state.avatar })
+          )
+        ),
+        _react2.default.createElement(
+          'form',
+          { className: 'user-settings-profile-form' },
+          _react2.default.createElement(
+            'label',
+            null,
+            'First Name'
+          ),
+          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Last Name'
+          ),
+          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Nickame'
+          ),
+          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Your Headline'
+          ),
+          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement(
+            'label',
+            null,
+            'I Love...'
+          ),
+          _react2.default.createElement('textarea', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Find Me In'
+          ),
+          _react2.default.createElement('input', { type: 'text' })
         )
       );
     }
@@ -37118,6 +37210,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -37132,74 +37226,98 @@ var UserSettingsEmail = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (UserSettingsEmail.__proto__ || Object.getPrototypeOf(UserSettingsEmail)).call(this));
 
-    _this.state = {};
+    _this.state = { phoneNumber: "", email: "" };
+    _this.handleInput = _this.handleInput.bind(_this);
     return _this;
   }
 
   _createClass(UserSettingsEmail, [{
-    key: 'render',
+    key: "handleInput",
+    value: function handleInput(type) {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState(_defineProperty({}, type, e.target.value));
+      };
+    }
+  }, {
+    key: "saveEmail",
+    value: function saveEmail(e) {
+      e.preventDefault();
+    }
+  }, {
+    key: "savePhoneNumber",
+    value: function savePhoneNumber(e) {
+      e.preventDefault();
+    }
+  }, {
+    key: "render",
     value: function render() {
+      var _this3 = this;
+
       var currentUser = this.props.currentUser;
 
       return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-          'div',
-          { className: 'user-settings-email-add' },
+          "div",
+          { className: "user-settings-email-add" },
           _react2.default.createElement(
-            'div',
+            "div",
             null,
             _react2.default.createElement(
-              'h1',
+              "h1",
               null,
-              'Email Accounts'
+              "Email Accounts"
             ),
             _react2.default.createElement(
-              'p',
+              "p",
               null,
-              'Add accounts, remove accounts, and change your primary account.'
+              "Add accounts, remove accounts, and change your primary account."
             )
           ),
           _react2.default.createElement(
-            'button',
+            "button",
             null,
-            'Add Email'
+            "Add Email"
           )
         ),
         _react2.default.createElement(
-          'div',
-          { className: 'user-settings-email-current-account' },
+          "div",
+          { className: "user-settings-email-current-account" },
           currentUser.email,
-          ' \xB7 Primary account'
+          " \xB7 Primary account"
         ),
         _react2.default.createElement(
-          'div',
-          { className: 'user-settings-email-phone' },
+          "div",
+          { className: "user-settings-email-phone" },
           _react2.default.createElement(
-            'h1',
+            "h1",
             null,
-            'Phone Number'
+            "Phone Number"
           ),
           _react2.default.createElement(
-            'p',
+            "p",
             null,
-            'Add or edit your phone number. We\u2019ll do nothing with it since we are using free trial SMS service, cannot send message to non-verfied phonenumber'
+            "Add or edit your phone number. We\u2019ll do nothing with it since we are using free trial SMS service, cannot send message to non-verfied phonenumber"
           )
         ),
         _react2.default.createElement(
-          'div',
-          { className: 'user-settings-email-update-phone' },
+          "div",
+          { className: "user-settings-email-update-phone" },
           _react2.default.createElement(
-            'form',
-            { className: 'user-setting-email-phone-form' },
+            "form",
+            { className: "user-setting-email-phone-form" },
             _react2.default.createElement(
-              'div',
+              "div",
               null,
-              _react2.default.createElement('input', { value: '+1' }),
-              _react2.default.createElement('input', { type: 'text' })
+              _react2.default.createElement("input", { readOnly: true, value: "+1" }),
+              _react2.default.createElement("input", { onChange: this.handleInput('phoneNumber'), type: "text", value: this.state.phoneNumber })
             ),
-            _react2.default.createElement('input', { className: 'user-settings-save-phone-numbers', type: 'submit', value: 'Save Phone Number' })
+            _react2.default.createElement("input", { onClick: function onClick(e) {
+                return _this3.savePhoneNumber(e);
+              }, className: "user-settings-save-phone-numbers", type: "submit", value: "Save Phone Number" })
           )
         )
       );

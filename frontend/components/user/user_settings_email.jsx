@@ -3,10 +3,23 @@ import React from 'react';
 class UserSettingsEmail extends React.Component {
   constructor(){
     super();
-    this.state = {};
+    this.state = {phoneNumber: "", email: ""};
+    this.handleInput = this.handleInput.bind(this);
   }
 
+  handleInput(type){
+    return (e) => {
+      this.setState({[type]: e.target.value});
+    }
+  }
 
+  saveEmail(e){
+    e.preventDefault();
+  }
+
+  savePhoneNumber(e){
+    e.preventDefault();
+  }
 
   render(){
     const {currentUser} = this.props;
@@ -29,10 +42,10 @@ class UserSettingsEmail extends React.Component {
         <div className='user-settings-email-update-phone'>
           <form className='user-setting-email-phone-form'>
             <div>
-              <input value='+1' />
-              <input type='text' />
+              <input readOnly value='+1' />
+              <input onChange={this.handleInput('phoneNumber')} type='text' value={this.state.phoneNumber}/>
             </div>
-            <input className='user-settings-save-phone-numbers' type='submit' value='Save Phone Number'/>
+            <input onClick={(e)=>this.savePhoneNumber(e)} className='user-settings-save-phone-numbers' type='submit' value='Save Phone Number'/>
           </form>
         </div>
       </div>

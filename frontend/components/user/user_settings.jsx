@@ -23,12 +23,12 @@ class UserSettings extends React.Component{
             <ul>
               <li className={this.state.listName == 'UserProfile' ? 'user-profile-nav-clicked' : "" } onClick={()=>this.handleClick('UserProfile')}>Profile</li>
               <li className={this.state.listName == 'Password' ? 'user-profile-nav-clicked' : "" } onClick={()=>this.handleClick('Password')}>Password</li>
-              <li className={this.state.listName == 'Email' ? 'user-profile-nav-clicked' : "" } onClick={()=>this.handleClick('Email')}>Email</li>
+              <li className={this.state.listName == 'Email' ? 'user-profile-nav-clicked' : "" } onClick={()=>this.handleClick('Email')}>Email / Notifications</li>
             </ul>
           </div>
         </div>
         <div className='user-settings-sub-component'>
-          { this.state.listName == 'UserProfile' ? <UserProfile /> : ""}
+          { this.state.listName == 'UserProfile' ? <UserProfile  currentUser={currentUser} /> : ""}
           { this.state.listName == 'Password' ? <Password /> : ""}
           { this.state.listName == 'Email' ? <Email currentUser={currentUser} /> : ""}
 
