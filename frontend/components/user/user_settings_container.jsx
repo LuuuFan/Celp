@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 import UserSettings from './user_settings';
 
 const mapStateToProps = (state) => ({
+  currentUser: state.session.currentUser
 
 });
 

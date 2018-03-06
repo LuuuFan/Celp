@@ -35999,17 +35999,12 @@ var UserProfile = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'li',
-                      { className: 'tooltip' },
+                      null,
                       _react2.default.createElement('i', { className: 'fas fa-camera-retro' }),
                       _react2.default.createElement(
                         'a',
-                        null,
+                        { href: '/#/settings' },
                         'Add Profile Photos'
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'tooltiptext' },
-                        'under construction'
                       )
                     ),
                     _react2.default.createElement(
@@ -36787,7 +36782,10 @@ var _user_settings2 = _interopRequireDefault(_user_settings);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {};
+  return {
+    currentUser: state.session.currentUser
+
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -36813,6 +36811,18 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _user_settings_profile = __webpack_require__(205);
+
+var _user_settings_profile2 = _interopRequireDefault(_user_settings_profile);
+
+var _user_settings_password = __webpack_require__(206);
+
+var _user_settings_password2 = _interopRequireDefault(_user_settings_password);
+
+var _user_settings_email = __webpack_require__(207);
+
+var _user_settings_email2 = _interopRequireDefault(_user_settings_email);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36824,22 +36834,75 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var UserSettings = function (_React$Component) {
   _inherits(UserSettings, _React$Component);
 
-  function UserSettings() {
+  function UserSettings(props) {
     _classCallCheck(this, UserSettings);
 
-    return _possibleConstructorReturn(this, (UserSettings.__proto__ || Object.getPrototypeOf(UserSettings)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (UserSettings.__proto__ || Object.getPrototypeOf(UserSettings)).call(this, props));
+
+    _this.state = { listName: 'UserProfile' };
+    return _this;
   }
 
   _createClass(UserSettings, [{
+    key: 'handleClick',
+    value: function handleClick(listName) {
+      this.setState({ listName: listName });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var currentUser = this.props.currentUser;
+
       return _react2.default.createElement(
         'div',
         { className: 'user-settings' },
         _react2.default.createElement(
-          'h1',
-          null,
-          'User Setting!!!!'
+          'div',
+          { className: 'user-show-detail-nav' },
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'h2',
+              null,
+              currentUser.username,
+              '\'s Account Settings\''
+            ),
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                { className: this.state.listName == 'UserProfile' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
+                    return _this2.handleClick('UserProfile');
+                  } },
+                'Profile'
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: this.state.listName == 'Password' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
+                    return _this2.handleClick('Password');
+                  } },
+                'Password'
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: this.state.listName == 'Email' ? 'user-profile-nav-clicked' : "", onClick: function onClick() {
+                    return _this2.handleClick('Email');
+                  } },
+                'Email'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'user-settings-sub-component' },
+          this.state.listName == 'UserProfile' ? _react2.default.createElement(_user_settings_profile2.default, null) : "",
+          this.state.listName == 'Password' ? _react2.default.createElement(_user_settings_password2.default, null) : "",
+          this.state.listName == 'Email' ? _react2.default.createElement(_user_settings_email2.default, null) : ""
         )
       );
     }
@@ -36849,6 +36912,177 @@ var UserSettings = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = UserSettings;
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserSettingsProfile = function (_React$Component) {
+  _inherits(UserSettingsProfile, _React$Component);
+
+  function UserSettingsProfile() {
+    _classCallCheck(this, UserSettingsProfile);
+
+    var _this = _possibleConstructorReturn(this, (UserSettingsProfile.__proto__ || Object.getPrototypeOf(UserSettingsProfile)).call(this));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(UserSettingsProfile, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Profile'
+        )
+      );
+    }
+  }]);
+
+  return UserSettingsProfile;
+}(_react2.default.Component);
+
+exports.default = UserSettingsProfile;
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserSettingsPassword = function (_React$Component) {
+  _inherits(UserSettingsPassword, _React$Component);
+
+  function UserSettingsPassword() {
+    _classCallCheck(this, UserSettingsPassword);
+
+    var _this = _possibleConstructorReturn(this, (UserSettingsPassword.__proto__ || Object.getPrototypeOf(UserSettingsPassword)).call(this));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(UserSettingsPassword, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Change Your Password'
+        )
+      );
+    }
+  }]);
+
+  return UserSettingsPassword;
+}(_react2.default.Component);
+
+exports.default = UserSettingsPassword;
+
+/***/ }),
+/* 207 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserSettingsEmail = function (_React$Component) {
+  _inherits(UserSettingsEmail, _React$Component);
+
+  function UserSettingsEmail() {
+    _classCallCheck(this, UserSettingsEmail);
+
+    var _this = _possibleConstructorReturn(this, (UserSettingsEmail.__proto__ || Object.getPrototypeOf(UserSettingsEmail)).call(this));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(UserSettingsEmail, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Email Accounts'
+        )
+      );
+    }
+  }]);
+
+  return UserSettingsEmail;
+}(_react2.default.Component);
+
+exports.default = UserSettingsEmail;
 
 /***/ })
 /******/ ]);
