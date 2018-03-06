@@ -56,6 +56,7 @@
 }
 
 .user-settings-change-password input[type='submit'],
+.user-settings-profile-form input[type='submit'],
 .user-settings-email-add>button,
 .user-settings-save-phone-numbers{
   padding: 7px 10px;
@@ -72,6 +73,7 @@
 }
 
 .user-settings-change-password input[type='submit']:hover,
+.user-settings-profile-form input[type='submit']:hover,
 .user-settings-email-add>button:hover,
 .user-settings-save-phone-numbers:hover{
   background-color: #a71c1c;

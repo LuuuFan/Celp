@@ -52,6 +52,7 @@ class UserSettingsProfile extends React.Component {
           <textarea />
           <label>Find Me In</label>
           <input type='text' />
+          <input type='submit' />
         </form>
       </div>
     )

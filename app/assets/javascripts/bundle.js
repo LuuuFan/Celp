@@ -37051,7 +37051,8 @@ var UserSettingsProfile = function (_React$Component) {
             null,
             'Find Me In'
           ),
-          _react2.default.createElement('input', { type: 'text' })
+          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement('input', { type: 'submit' })
         )
       );
     }
