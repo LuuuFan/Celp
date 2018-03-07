@@ -3,8 +3,27 @@ import React from 'react';
 class UserSettingsEmail extends React.Component {
   constructor(){
     super();
-    this.state = {phoneNumber: "", email: ""};
+    this.state = {
+      phoneNumber: "",
+      email: "",
+      className: 'modal',
+      hint: 'hidden'
+    };
     this.handleInput = this.handleInput.bind(this);
+  }
+
+  openModal(){
+    this.setState({className: 'is-open', phoneNumber: ''});
+  }
+
+  closeModal(){
+    // e.preventDefault();
+    this.setState({className: 'modal'});
+  }
+
+  phoneNumberCheck(str){
+    const pattern = new RegExp(/^\+?1?\s*?\(?\d{3}(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{4}$/);
+    return pattern.test(str);
   }
 
   handleInput(type){
@@ -30,7 +49,11 @@ class UserSettingsEmail extends React.Component {
             <h1>Email Accounts</h1>
             <p>Add accounts, remove accounts, and change your primary account.</p>
           </div>
-          <button>Add Email</button>
+          <button onClick={()=>this.openModal()}>Add Email</button>
+        </div>
+        <div className={this.state.className}>
+          <div className='user-setting-add-email-modal'>Add Email~~~</div>
+          <div onClick={()=>this.closeModal()} className='modal-screen'></div>
         </div>
         <div className='user-settings-email-current-account'>
           {currentUser.email} &middot; Primary account

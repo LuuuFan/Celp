@@ -62,14 +62,15 @@
 }
 
 .footer-background>img{
-  width: 100%;
+  margin: auto;
+  width: 80%;
   opacity: 0.3;
   object-fit: cover;
   z-index: -1;
 }
 
 .footer p{
-  margin-top: 150px;
+  margin-top: 160px;
   text-align: center;
   font-size: 14px;
   color: gray;

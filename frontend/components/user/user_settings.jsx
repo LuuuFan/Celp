@@ -19,7 +19,7 @@ class UserSettings extends React.Component{
       <div className='user-settings'>
         <div className='user-show-detail-nav'>
           <div>
-            <h2>{currentUser.username}'s Account Settings'</h2>
+            <h2>{currentUser.username}'s Account Settings</h2>
             <ul>
               <li className={this.state.listName == 'UserProfile' ? 'user-profile-nav-clicked' : "" } onClick={()=>this.handleClick('UserProfile')}>Profile</li>
               <li className={this.state.listName == 'Password' ? 'user-profile-nav-clicked' : "" } onClick={()=>this.handleClick('Password')}>Password</li>
