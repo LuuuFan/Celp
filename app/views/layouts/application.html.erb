@@ -16,7 +16,14 @@
           'id': <%= current_user.id %>,
           'username': "<%= current_user.username %>",
           "email": "<%= current_user.email %>",
-          "avatar_url": "<%= current_user.avatar_url %>"
+          "avatar_url": "<%= current_user.avatar_url %>",
+          "phone_number": "<%= current_user.phone_number%>",
+          "multiple_email": "<%= current_user.multiple_email%>",
+          "first_name": "<%= current_user.first_name%>",
+          "last_name": "<%= current_user.last_name%>",
+          "headline": "<%= current_user.headline%>",
+          "love": "<%= current_user.love%>",
+          "find_me_in": "<%= current_user.find_me_in%>",
         };
       </script>
     <% end %>

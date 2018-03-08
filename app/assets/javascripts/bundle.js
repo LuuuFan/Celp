@@ -524,7 +524,7 @@ var _biz_util = __webpack_require__(97);
 
 var APIUtilBiz = _interopRequireWildcard(_biz_util);
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 var _notification = __webpack_require__(46);
 
@@ -575,48 +575,6 @@ var sendSMS = exports.sendSMS = function sendSMS(bizId, phoneNumber) {
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-function makeEmptyFunction(arg) {
-  return function () {
-    return arg;
-  };
-}
-
-/**
- * This function accepts and discards inputs; it has no side effects. This is
- * primarily useful idiomatically for overridable function endpoints which
- * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
- */
-var emptyFunction = function emptyFunction() {};
-
-emptyFunction.thatReturns = makeEmptyFunction;
-emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function () {
-  return this;
-};
-emptyFunction.thatReturnsArgument = function (arg) {
-  return arg;
-};
-
-module.exports = emptyFunction;
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -699,50 +657,49 @@ var logout = exports.logout = function logout() {
 };
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.requestUser = exports.receiveUser = exports.RECEIVE_USER = undefined;
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
 
-var _user_util = __webpack_require__(101);
-
-var APIUtilUser = _interopRequireWildcard(_user_util);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var RECEIVE_USER = exports.RECEIVE_USER = 'RECEIVE_USER';
-
-var receiveUser = exports.receiveUser = function receiveUser(payload) {
-  var reviews = payload.reviews ? payload.reviews : {};
-  var imgs = payload.imgs ? payload.imgs : {};
-  var biz = payload.biz ? payload.biz : {};
-  return {
-    type: RECEIVE_USER,
-    user: payload.user,
-    reviews: reviews,
-    imgs: imgs,
-    biz: biz
+function makeEmptyFunction(arg) {
+  return function () {
+    return arg;
   };
+}
+
+/**
+ * This function accepts and discards inputs; it has no side effects. This is
+ * primarily useful idiomatically for overridable function endpoints which
+ * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+ */
+var emptyFunction = function emptyFunction() {};
+
+emptyFunction.thatReturns = makeEmptyFunction;
+emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
 };
 
-var requestUser = exports.requestUser = function requestUser(username) {
-  return function (dispatch) {
-    return APIUtilUser.requestUser(username).then(function (payload) {
-      return dispatch(receiveUser(payload));
-    }, function (errors) {
-      return dispatch(receiveErrors(errors.responseJSON));
-    });
-  };
-};
+module.exports = emptyFunction;
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -839,7 +796,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -897,6 +854,49 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.requestUser = exports.receiveUser = exports.RECEIVE_USER = undefined;
+
+var _user_util = __webpack_require__(101);
+
+var APIUtilUser = _interopRequireWildcard(_user_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_USER = exports.RECEIVE_USER = 'RECEIVE_USER';
+
+var receiveUser = exports.receiveUser = function receiveUser(payload) {
+  var reviews = payload.reviews ? payload.reviews : {};
+  var imgs = payload.imgs ? payload.imgs : {};
+  var biz = payload.biz ? payload.biz : {};
+  return {
+    type: RECEIVE_USER,
+    user: payload.user,
+    reviews: reviews,
+    imgs: imgs,
+    biz: biz
+  };
+};
+
+var requestUser = exports.requestUser = function requestUser(username) {
+  return function (dispatch) {
+    return APIUtilUser.requestUser(username).then(function (payload) {
+      return dispatch(receiveUser(payload));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors.responseJSON));
+    });
+  };
+};
 
 /***/ }),
 /* 13 */
@@ -1075,7 +1075,7 @@ module.exports = emptyObject;
 
 
 
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -1182,7 +1182,7 @@ var _review_util = __webpack_require__(99);
 
 var APIUtilReview = _interopRequireWildcard(_review_util);
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1458,7 +1458,7 @@ exports.default = BizIndexItemRating;
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(12);
+  var invariant = __webpack_require__(11);
   var warning = __webpack_require__(16);
   var ReactPropTypesSecret = __webpack_require__(23);
   var loggedTypeFailures = {};
@@ -2335,7 +2335,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -4553,7 +4553,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(11),n=__webpack_require__(15),p=__webpack_require__(8),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(10),n=__webpack_require__(15),p=__webpack_require__(9),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -4589,11 +4589,11 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(11);
+var _assign = __webpack_require__(10);
 var emptyObject = __webpack_require__(15);
-var invariant = __webpack_require__(12);
+var invariant = __webpack_require__(11);
 var warning = __webpack_require__(16);
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 var checkPropTypes = __webpack_require__(22);
 
 // TODO: this is special because it gets imported during build.
@@ -5949,7 +5949,7 @@ module.exports = react;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0),l=__webpack_require__(36),B=__webpack_require__(11),C=__webpack_require__(8),ba=__webpack_require__(37),da=__webpack_require__(38),ea=__webpack_require__(39),fa=__webpack_require__(40),ia=__webpack_require__(41),D=__webpack_require__(15);
+var aa=__webpack_require__(0),l=__webpack_require__(36),B=__webpack_require__(10),C=__webpack_require__(9),ba=__webpack_require__(37),da=__webpack_require__(38),ea=__webpack_require__(39),fa=__webpack_require__(40),ia=__webpack_require__(41),D=__webpack_require__(15);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -6247,11 +6247,11 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var React = __webpack_require__(0);
-var invariant = __webpack_require__(12);
+var invariant = __webpack_require__(11);
 var warning = __webpack_require__(16);
 var ExecutionEnvironment = __webpack_require__(36);
-var _assign = __webpack_require__(11);
-var emptyFunction = __webpack_require__(8);
+var _assign = __webpack_require__(10);
+var emptyFunction = __webpack_require__(9);
 var EventListener = __webpack_require__(37);
 var getActiveElement = __webpack_require__(38);
 var shallowEqual = __webpack_require__(39);
@@ -22525,7 +22525,7 @@ var _review = __webpack_require__(18);
 
 var _bookmark = __webpack_require__(47);
 
-var _user = __webpack_require__(10);
+var _user = __webpack_require__(12);
 
 var bizReducer = function bizReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -22618,7 +22618,7 @@ var createUser = exports.createUser = function createUser(user) {
 
 var updateUser = exports.updateUser = function updateUser(user) {
   return $.ajax({
-    url: 'api/users',
+    url: '/api/users/' + user.id,
     method: 'PATCH',
     data: { user: user }
   });
@@ -22742,7 +22742,7 @@ var _biz = __webpack_require__(7);
 
 var _img = __webpack_require__(27);
 
-var _user = __webpack_require__(10);
+var _user = __webpack_require__(12);
 
 var imgReducer = function imgReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -22829,7 +22829,7 @@ var _biz = __webpack_require__(7);
 
 var _review = __webpack_require__(18);
 
-var _user = __webpack_require__(10);
+var _user = __webpack_require__(12);
 
 var reviewReducer = function reviewReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -22875,7 +22875,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _biz = __webpack_require__(7);
 
-var _user = __webpack_require__(10);
+var _user = __webpack_require__(12);
 
 var userReducer = function userReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -22910,7 +22910,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 var _nullSession = { currentUser: null };
 
@@ -22942,7 +22942,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 var errorsReducer = function errorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -23144,10 +23144,10 @@ function createProvider() {
 
 
 
-var emptyFunction = __webpack_require__(8);
-var invariant = __webpack_require__(12);
+var emptyFunction = __webpack_require__(9);
+var invariant = __webpack_require__(11);
 var warning = __webpack_require__(16);
-var assign = __webpack_require__(11);
+var assign = __webpack_require__(10);
 
 var ReactPropTypesSecret = __webpack_require__(23);
 var checkPropTypes = __webpack_require__(22);
@@ -23694,8 +23694,8 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 
-var emptyFunction = __webpack_require__(8);
-var invariant = __webpack_require__(12);
+var emptyFunction = __webpack_require__(9);
+var invariant = __webpack_require__(11);
 var ReactPropTypesSecret = __webpack_require__(23);
 
 module.exports = function() {
@@ -27340,7 +27340,7 @@ var _nav_bar = __webpack_require__(149);
 
 var _nav_bar2 = _interopRequireDefault(_nav_bar);
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27770,7 +27770,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(4);
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 var _session_form = __webpack_require__(154);
 
@@ -28143,7 +28143,7 @@ var _home = __webpack_require__(158);
 
 var _home2 = _interopRequireDefault(_home);
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 var _search = __webpack_require__(20);
 
@@ -35560,7 +35560,7 @@ var _review = __webpack_require__(18);
 
 var _biz = __webpack_require__(7);
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35860,7 +35860,7 @@ var _user_profile = __webpack_require__(197);
 
 var _user_profile2 = _interopRequireDefault(_user_profile);
 
-var _user = __webpack_require__(10);
+var _user = __webpack_require__(12);
 
 var _reactRouterDom = __webpack_require__(1);
 
@@ -36790,7 +36790,7 @@ var _user_settings = __webpack_require__(204);
 
 var _user_settings2 = _interopRequireDefault(_user_settings);
 
-var _session = __webpack_require__(9);
+var _session = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37251,13 +37251,24 @@ var UserSettingsEmail = function (_React$Component) {
       password: "",
       email: "",
       className: 'modal',
-      hint: 'hidden'
+      hint: 'hidden',
+      notification: ''
     };
     _this.handleInput = _this.handleInput.bind(_this);
     return _this;
   }
 
   _createClass(UserSettingsEmail, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (this.props.currentUser) {
+        this.setState({
+          phoneNumber: this.props.currentUser.phone_number,
+          notification: ''
+        });
+      }
+    }
+  }, {
     key: "openModal",
     value: function openModal() {
       this.setState({ className: 'is-open', phoneNumber: '' });
@@ -37279,6 +37290,9 @@ var UserSettingsEmail = function (_React$Component) {
       var _this2 = this;
 
       return function (e) {
+        if (_this2.state.hint === '') {
+          _this2.setState({ hint: 'hidden' });
+        }
         _this2.setState(_defineProperty({}, type, e.target.value));
       };
     }
@@ -37286,22 +37300,64 @@ var UserSettingsEmail = function (_React$Component) {
     key: "saveEmail",
     value: function saveEmail(e) {
       e.preventDefault();
+      var user = {
+        id: this.props.currentUser.id,
+        multiple_email: this.state.email,
+        password: this.state.password
+        // this.props.updateUser(user)
+      };
     }
   }, {
     key: "savePhoneNumber",
     value: function savePhoneNumber(e) {
+      var _this3 = this;
+
       e.preventDefault();
+      if (this.phoneNumberCheck(this.state.phoneNumber && this.props.currentUser.phone_number !== this.state.phoneNumber)) {
+        var user = {
+          id: this.props.currentUser.id,
+          phone_number: this.state.phoneNumber
+        };
+        this.props.updateUser(user).then(function () {
+          return _this3.setState({ notification: 'User information saved' });
+        });
+      } else if (this.props.currentUser.phone_number == this.state.phoneNumber) {
+        this.setState({ notification: "You phone number doesn't change" });
+      } else {
+        this.setState({ hint: '' });
+      }
+    }
+  }, {
+    key: "closeNotification",
+    value: function closeNotification() {
+      this.setState({ notification: "" });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var currentUser = this.props.currentUser;
 
       return _react2.default.createElement(
         "div",
         null,
+        this.state.notification ? _react2.default.createElement(
+          "div",
+          { className: "success-notification" },
+          this.state.notification,
+          _react2.default.createElement(
+            "div",
+            { onClick: function onClick() {
+                return _this4.closeNotification();
+              } },
+            _react2.default.createElement(
+              "span",
+              null,
+              "\xD7"
+            )
+          )
+        ) : "",
         _react2.default.createElement(
           "div",
           { className: "user-settings-email-add" },
@@ -37322,7 +37378,7 @@ var UserSettingsEmail = function (_React$Component) {
           _react2.default.createElement(
             "button",
             { onClick: function onClick() {
-                return _this3.openModal();
+                return _this4.openModal();
               } },
             "Add Email"
           )
@@ -37344,7 +37400,7 @@ var UserSettingsEmail = function (_React$Component) {
               _react2.default.createElement(
                 "div",
                 { onClick: function onClick() {
-                    return _this3.closeModal();
+                    return _this4.closeModal();
                   } },
                 _react2.default.createElement(
                   "span",
@@ -37352,6 +37408,11 @@ var UserSettingsEmail = function (_React$Component) {
                   "\xD7"
                 )
               )
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "This function does not finish yet. I will finish it as soon as possilbe. But I don't want to remove it. please~~~"
             ),
             _react2.default.createElement(
               "form",
@@ -37371,11 +37432,13 @@ var UserSettingsEmail = function (_React$Component) {
               _react2.default.createElement(
                 "div",
                 null,
-                _react2.default.createElement("input", { type: "submit", value: "Save" }),
+                _react2.default.createElement("input", { onClick: function onClick() {
+                    return _this4.closeModal();
+                  }, type: "submit", value: "Save" }),
                 _react2.default.createElement(
                   "a",
                   { onClick: function onClick() {
-                      return _this3.closeModal();
+                      return _this4.closeModal();
                     } },
                   "Cancel"
                 )
@@ -37383,7 +37446,7 @@ var UserSettingsEmail = function (_React$Component) {
             )
           ),
           _react2.default.createElement("div", { onClick: function onClick() {
-              return _this3.closeModal();
+              return _this4.closeModal();
             }, className: "modal-screen" })
         ),
         _react2.default.createElement(
@@ -37416,10 +37479,15 @@ var UserSettingsEmail = function (_React$Component) {
               "div",
               null,
               _react2.default.createElement("input", { readOnly: true, value: "+1" }),
-              _react2.default.createElement("input", { onChange: this.handleInput('phoneNumber'), type: "text", value: this.state.phoneNumber })
+              _react2.default.createElement("input", { onChange: this.handleInput('phoneNumber'), type: "text", value: this.state.phoneNumber }),
+              _react2.default.createElement(
+                "div",
+                { className: "hint " + this.state.hint },
+                "Please input the valid phone number"
+              )
             ),
             _react2.default.createElement("input", { onClick: function onClick(e) {
-                return _this3.savePhoneNumber(e);
+                return _this4.savePhoneNumber(e);
               }, className: "user-settings-save-phone-numbers", type: "submit", value: "Save Phone Number" })
           )
         )

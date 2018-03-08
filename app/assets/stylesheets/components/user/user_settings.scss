@@ -104,6 +104,7 @@
 }
 
 .user-setting-email-phone-form{
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -205,7 +206,12 @@
   padding: 10px 20px;
 }
 
+.user-setting-add-email-modal>p{
+  font-size: 12px;
+}
+
 .user-setting-add-email-modal-header{
+  margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -227,4 +233,26 @@
   width: 70%;
   display: flex;
   flex-direction: column;
+}
+
+.success-notification{
+  width: 100%;
+  background-color: #d0f2db;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.success-notification span{
+  font-size: 22px;
+  color: #666;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.success-notification span:hover{
+  color: black;
 }

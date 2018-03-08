@@ -31,7 +31,6 @@ class UserSettings extends React.Component{
           { this.state.listName == 'UserProfile' ? <UserProfile  currentUser={currentUser} updateUser={updateUser}/> : ""}
           { this.state.listName == 'Password' ? <Password updateUser={updateUser}/> : ""}
           { this.state.listName == 'Email' ? <Email currentUser={currentUser} updateUser={updateUser}/> : ""}
-
         </div>
       </div>
     )
