@@ -37245,7 +37245,9 @@ var UserSettingsPassword = function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      if (this.state.newPassword === this.state.confirmPassword) {
+      if (this.props.currentUser.username === 'demo_user') {
+        this.setState({ error: 'Please do not change demo_user password.' });
+      } else if (this.state.newPassword === this.state.confirmPassword) {
         var user = {
           id: this.props.currentUser.id,
           password: this.state.oldPassword,

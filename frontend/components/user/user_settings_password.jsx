@@ -26,7 +26,9 @@ class UserSettingsPassword extends React.Component {
 
   changePassword(e){
     e.preventDefault();
-    if (this.state.newPassword === this.state.confirmPassword) {
+    if (this.props.currentUser.username === 'demo_user'){
+      this.setState({error: 'Please do not change demo_user password.'})
+    } else if (this.state.newPassword === this.state.confirmPassword) {
       const user = {
         id: this.props.currentUser.id,
         password: this.state.oldPassword,
