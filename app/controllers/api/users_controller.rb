@@ -28,7 +28,11 @@ class Api::UsersController < ApplicationController
         render json: @user.errors.full_messages, status: 422
       end
     else
-      
+      if @user.update(user_params)
+        render "api/users/session"
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
     end
   end
 
@@ -46,7 +50,8 @@ class Api::UsersController < ApplicationController
       :headline,
       :love,
       :find_me_in,
-      :multiple_email
+      :multiple_email,
+      :nickname
     )
   end
 end

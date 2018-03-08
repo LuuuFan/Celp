@@ -36951,6 +36951,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -36966,20 +36968,36 @@ var UserSettingsProfile = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (UserSettingsProfile.__proto__ || Object.getPrototypeOf(UserSettingsProfile)).call(this));
 
     _this.state = {
-      avatar: ""
+      avatar_url: "",
+      first_name: "",
+      last_name: "",
+      nickname: "",
+      headline: "",
+      love: "",
+      find_me_in: "",
+      notification: ""
     };
+    _this.handleInput = _this.handleInput.bind(_this);
     return _this;
   }
 
   _createClass(UserSettingsProfile, [{
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
-      if (this.props.currentUser && !this.state.avatar) {
-        this.setState({ avatar: this.props.currentUser.avatar_url });
+      if (this.props.currentUser && !this.state.avatar_url) {
+        this.setState({
+          avatar_url: this.props.currentUser.avatar_url,
+          first_name: this.props.currentUser.first_name,
+          last_name: this.props.currentUser.last_name,
+          nickname: this.props.currentUser.nickname,
+          headline: this.props.currentUser.headline,
+          love: this.props.currentUser.love,
+          find_me_in: this.props.currentUser.find_me_in
+        });
       }
     }
   }, {
-    key: 'uploadAvatar',
+    key: "uploadAvatar",
     value: function uploadAvatar() {
       var _this2 = this;
 
@@ -36987,91 +37005,164 @@ var UserSettingsProfile = function (_React$Component) {
         if (errors) {}
         result.forEach(function (file) {
           var avatar_url = 'https' + file.url.slice(4);
-          _this2.setState({ avatar: avatar_url });
+          _this2.setState({ avatar_url: avatar_url });
         });
       });
     }
   }, {
-    key: 'render',
-    value: function render() {
+    key: "handleInput",
+    value: function handleInput(type) {
       var _this3 = this;
+
+      return function (e) {
+        e.preventDefault();
+        _this3.setState(_defineProperty({}, type, e.target.value));
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this4 = this;
+
+      e.preventDefault();
+      var user = {
+        id: this.props.currentUser.id,
+        avatar_url: this.state.avatar_url,
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        nickname: this.state.nickname,
+        headline: this.state.headline,
+        love: this.state.love,
+        find_me_in: this.state.find_me_in
+      };
+      this.props.updateUser(user).then(function () {
+        _this4.setState({ notification: 'You profile has been saved.' });
+      });
+    }
+  }, {
+    key: "closeNotification",
+    value: function closeNotification() {
+      this.setState({ notification: "" });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this5 = this;
 
       var currentUser = this.props.currentUser;
 
       return _react2.default.createElement(
-        'div',
-        { className: 'user-setting-profile' },
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Profile'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Tell us more about you.'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'user-setting-profile-avatar' },
+        "div",
+        { className: "user-setting-profile" },
+        this.state.notification ? _react2.default.createElement(
+          "div",
+          { className: "success-notification" },
+          this.state.notification,
           _react2.default.createElement(
-            'h2',
-            null,
-            'Your Profile Photo ',
+            "div",
+            { onClick: function onClick() {
+                return _this5.closeNotification();
+              } },
             _react2.default.createElement(
-              'a',
+              "span",
+              null,
+              "\xD7"
+            )
+          )
+        ) : "",
+        _react2.default.createElement(
+          "h1",
+          null,
+          "Profile"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "Tell us more about you."
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "user-setting-profile-avatar" },
+          _react2.default.createElement(
+            "h2",
+            null,
+            "Your Profile Photo ",
+            _react2.default.createElement(
+              "a",
               { onClick: function onClick() {
-                  _this3.uploadAvatar();
+                  _this5.uploadAvatar();
                 } },
-              '(Add/Edit)'
+              "(Add/Edit)"
             )
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'user-setting-profile-avatar-container' },
-            _react2.default.createElement('img', { src: this.state.avatar })
+            "div",
+            { className: "user-setting-profile-avatar-container" },
+            _react2.default.createElement("img", { src: this.state.avatar_url })
           )
         ),
         _react2.default.createElement(
-          'form',
-          { className: 'user-settings-profile-form' },
+          "form",
+          { className: "user-settings-profile-form" },
           _react2.default.createElement(
-            'label',
+            "label",
             null,
-            'First Name'
+            "First Name"
           ),
-          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement("input", { type: "text", value: this.state.first_name, onChange: this.handleInput('first_name') }),
           _react2.default.createElement(
-            'label',
+            "label",
             null,
-            'Last Name'
+            "Last Name"
           ),
-          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement("input", { type: "text", value: this.state.last_name, onChange: this.handleInput('last_name') }),
           _react2.default.createElement(
-            'label',
+            "label",
             null,
-            'Nickame'
+            "Nickname"
           ),
-          _react2.default.createElement('input', { type: 'text' }),
           _react2.default.createElement(
-            'label',
+            "p",
             null,
-            'Your Headline'
+            "The Boss, Calamity Jane, The Prolific Reviewer"
           ),
-          _react2.default.createElement('input', { type: 'text' }),
+          _react2.default.createElement("input", { type: "text", value: this.state.nickname, onChange: this.handleInput('nickname') }),
           _react2.default.createElement(
-            'label',
+            "label",
             null,
-            'I Love...'
+            "Your Headline"
           ),
-          _react2.default.createElement('textarea', null),
           _react2.default.createElement(
-            'label',
+            "p",
             null,
-            'Find Me In'
+            "Taco Tuesday Aficionado, The Globetrotting Reviewer"
           ),
-          _react2.default.createElement('input', { type: 'text' }),
-          _react2.default.createElement('input', { type: 'submit' })
+          _react2.default.createElement("input", { type: "text", value: this.state.headline, onChange: this.handleInput('headline') }),
+          _react2.default.createElement(
+            "label",
+            null,
+            "I Love..."
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Comma separated phrases (e.g. sushi, Radiohead, puppies)"
+          ),
+          _react2.default.createElement("textarea", { value: this.state.love, onChange: this.handleInput('love') }),
+          _react2.default.createElement(
+            "label",
+            null,
+            "Find Me In"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Nob Hill, the newest brunch spot, a turtleneck"
+          ),
+          _react2.default.createElement("input", { type: "text", value: this.state.find_me_in, onChange: this.handleInput('find_me_in') }),
+          _react2.default.createElement("input", { type: "submit", value: "Save Changes", onClick: function onClick(e) {
+              _this5.handleSubmit(e);
+            } })
         )
       );
     }

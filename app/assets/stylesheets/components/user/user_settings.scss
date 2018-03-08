@@ -160,6 +160,11 @@
   color: #0073bb;
 }
 
+.user-setting-profile>p{
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
 .user-setting-profile h2 a:hover{
   text-decoration: underline;
 }
@@ -168,6 +173,10 @@
   display: flex;
   flex-direction: column;
   width: 60%;
+}
+
+.user-settings-profile-form>p{
+  font-size: 12px;
 }
 
 .user-settings-profile-form label{
@@ -193,6 +202,7 @@
   border: 1px solid lightgray;
   border-radius: 5px;
   padding: 10px 20px;
+  font-size: 14px;
 }
 
 .user-setting-add-email-modal{
