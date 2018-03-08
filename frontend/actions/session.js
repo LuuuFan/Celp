@@ -27,6 +27,12 @@ export const createUser = (user) => dispatch => APIUtilSession.createUser(user)
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
 
+export const updateUser = (user) => dispatch => APIUtilSession.updateUser(user)
+  .then(
+    user => dispatch(receiveCurrentUser(user)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
+  );
+
 export const createSession = (user) => dispatch => APIUtilSession.createSession(user)
   .then(
     user => dispatch(receiveCurrentUser(user)),

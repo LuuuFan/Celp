@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207063341) do
+ActiveRecord::Schema.define(version: 20180308062115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,13 @@ ActiveRecord::Schema.define(version: 20180207063341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_url", default: "https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png"
+    t.string "phone_number"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "headline"
+    t.text "love"
+    t.string "find_me_in"
+    t.string "multiple_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

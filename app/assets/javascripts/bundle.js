@@ -625,7 +625,7 @@ module.exports = emptyFunction;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logout = exports.createSession = exports.createUser = exports.clearErrors = exports.receiveErrors = exports.receiveCurrentUser = exports.CLEAR_ERRORS = exports.RECEIVE_ERRORS = exports.LOGOUT_CURRENT_USER = exports.RECEIVE_CURRENT_USER = undefined;
+exports.logout = exports.createSession = exports.updateUser = exports.createUser = exports.clearErrors = exports.receiveErrors = exports.receiveCurrentUser = exports.CLEAR_ERRORS = exports.RECEIVE_ERRORS = exports.LOGOUT_CURRENT_USER = exports.RECEIVE_CURRENT_USER = undefined;
 
 var _session = __webpack_require__(98);
 
@@ -661,6 +661,16 @@ var clearErrors = exports.clearErrors = function clearErrors() {
 var createUser = exports.createUser = function createUser(user) {
   return function (dispatch) {
     return APIUtilSession.createUser(user).then(function (user) {
+      return dispatch(receiveCurrentUser(user));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors.responseJSON));
+    });
+  };
+};
+
+var updateUser = exports.updateUser = function updateUser(user) {
+  return function (dispatch) {
+    return APIUtilSession.updateUser(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (errors) {
       return dispatch(receiveErrors(errors.responseJSON));
@@ -22606,6 +22616,14 @@ var createUser = exports.createUser = function createUser(user) {
   });
 };
 
+var updateUser = exports.updateUser = function updateUser(user) {
+  return $.ajax({
+    url: 'api/users',
+    method: 'PATCH',
+    data: { user: user }
+  });
+};
+
 var createSession = exports.createSession = function createSession(user) {
   return $.ajax({
     url: '/api/session',
@@ -36009,17 +36027,12 @@ var UserProfile = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'li',
-                      { className: 'tooltip' },
+                      null,
                       _react2.default.createElement('i', { className: 'fas fa-id-card' }),
                       _react2.default.createElement(
                         'a',
-                        null,
+                        { href: '/#/settings' },
                         'Update Your Profile'
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'tooltiptext' },
-                        'under construction'
                       )
                     ),
                     _react2.default.createElement(
@@ -36771,13 +36784,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(4);
 
-var _user = __webpack_require__(10);
-
 var _reactRouterDom = __webpack_require__(1);
 
 var _user_settings = __webpack_require__(204);
 
 var _user_settings2 = _interopRequireDefault(_user_settings);
+
+var _session = __webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36789,7 +36802,11 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    updateUser: function updateUser(user) {
+      return dispatch((0, _session.updateUser)(user));
+    }
+  };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_user_settings2.default);
@@ -36853,7 +36870,9 @@ var UserSettings = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var currentUser = this.props.currentUser;
+      var _props = this.props,
+          currentUser = _props.currentUser,
+          updateUser = _props.updateUser;
 
       return _react2.default.createElement(
         'div',
@@ -36900,9 +36919,9 @@ var UserSettings = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'user-settings-sub-component' },
-          this.state.listName == 'UserProfile' ? _react2.default.createElement(_user_settings_profile2.default, { currentUser: currentUser }) : "",
-          this.state.listName == 'Password' ? _react2.default.createElement(_user_settings_password2.default, null) : "",
-          this.state.listName == 'Email' ? _react2.default.createElement(_user_settings_email2.default, { currentUser: currentUser }) : ""
+          this.state.listName == 'UserProfile' ? _react2.default.createElement(_user_settings_profile2.default, { currentUser: currentUser, updateUser: updateUser }) : "",
+          this.state.listName == 'Password' ? _react2.default.createElement(_user_settings_password2.default, { updateUser: updateUser }) : "",
+          this.state.listName == 'Email' ? _react2.default.createElement(_user_settings_email2.default, { currentUser: currentUser, updateUser: updateUser }) : ""
         )
       );
     }
@@ -37229,6 +37248,7 @@ var UserSettingsEmail = function (_React$Component) {
 
     _this.state = {
       phoneNumber: "",
+      password: "",
       email: "",
       className: 'modal',
       hint: 'hidden'
@@ -37245,7 +37265,6 @@ var UserSettingsEmail = function (_React$Component) {
   }, {
     key: "closeModal",
     value: function closeModal() {
-      // e.preventDefault();
       this.setState({ className: 'modal' });
     }
   }, {
@@ -37297,7 +37316,7 @@ var UserSettingsEmail = function (_React$Component) {
             _react2.default.createElement(
               "p",
               null,
-              "Add accounts, remove accounts, and change your primary account."
+              "Add accounts, remove accounts."
             )
           ),
           _react2.default.createElement(
@@ -37314,7 +37333,54 @@ var UserSettingsEmail = function (_React$Component) {
           _react2.default.createElement(
             "div",
             { className: "user-setting-add-email-modal" },
-            "Add Email~~~"
+            _react2.default.createElement(
+              "div",
+              { className: "user-setting-add-email-modal-header" },
+              _react2.default.createElement(
+                "h1",
+                null,
+                "Add a new email account"
+              ),
+              _react2.default.createElement(
+                "div",
+                { onClick: function onClick() {
+                    return _this3.closeModal();
+                  } },
+                _react2.default.createElement(
+                  "span",
+                  null,
+                  "\xD7"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "form",
+              { className: "user-setting-add-email" },
+              _react2.default.createElement(
+                "label",
+                null,
+                "Current Celp Password"
+              ),
+              _react2.default.createElement("input", { type: "password", onChange: this.handleInput('password'), value: this.state.password }),
+              _react2.default.createElement(
+                "label",
+                null,
+                "Email Address"
+              ),
+              _react2.default.createElement("input", { type: "text", onChange: this.handleInput('email'), value: this.state.email }),
+              _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement("input", { type: "submit", value: "Save" }),
+                _react2.default.createElement(
+                  "a",
+                  { onClick: function onClick() {
+                      return _this3.closeModal();
+                    } },
+                  "Cancel"
+                )
+              )
+            )
           ),
           _react2.default.createElement("div", { onClick: function onClick() {
               return _this3.closeModal();
@@ -37337,7 +37403,7 @@ var UserSettingsEmail = function (_React$Component) {
           _react2.default.createElement(
             "p",
             null,
-            "Add or edit your phone number. We\u2019ll do nothing with it since we are using free trial SMS service, cannot send message to non-verfied phonenumber"
+            "Add or edit your phone number. We\u2019ll do nothing with it since we are using free trial SMS service, cannot send message to non-verified phonenumber"
           )
         ),
         _react2.default.createElement(

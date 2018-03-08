@@ -45,7 +45,7 @@ class UserProfile extends React.Component{
                   <div className='user-actions'>
                   <ul>
                     <li><i className="fas fa-camera-retro"></i><a href='/#/settings'>Add Profile Photos</a></li>
-                    <li className='tooltip'><i className="fas fa-id-card"></i><a>Update Your Profile</a><div className='tooltiptext'>under construction</div></li>
+                    <li><i className="fas fa-id-card"></i><a href='/#/settings'>Update Your Profile</a></li>
                     <li className='tooltip'><i className="fas fa-users"></i><a>Find Friends</a><div className='tooltiptext'>under construction</div></li>
                   </ul>
                 </div>

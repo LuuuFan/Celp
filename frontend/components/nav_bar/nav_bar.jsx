@@ -8,7 +8,7 @@ class NavBar extends React.Component {
   constructor(props){
     super(props);
   }
-  
+
   render(){
     const {currentUser, logout} = this.props;
     return (
