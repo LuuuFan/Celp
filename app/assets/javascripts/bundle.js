@@ -29938,7 +29938,9 @@ var BizShow = function (_React$Component) {
                   ),
                   _react2.default.createElement(
                     'li',
-                    null,
+                    { onClick: function onClick() {
+                        return _this3.openModal();
+                      } },
                     _react2.default.createElement('i', { className: 'fas fa-share-square' }),
                     'Share'
                   ),
@@ -30011,7 +30013,7 @@ var BizShow = function (_React$Component) {
                               null,
                               _react2.default.createElement(
                                 'a',
-                                null,
+                                { href: 'https://www.google.com/maps/dir/' + biz.display_address, target: '_blank' },
                                 'Get Directions'
                               )
                             )

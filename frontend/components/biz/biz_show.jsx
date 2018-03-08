@@ -117,7 +117,7 @@ class BizShow extends React.Component {
                   }
                   <ul>
                     <a href={`/#/biz/${biz.id}/addphoto`}><li><i className="fas fa-camera"></i>Add Photo</li></a>
-                    <li><i className="fas fa-share-square"></i>Share</li>
+                    <li onClick={()=>this.openModal()}><i className="fas fa-share-square"></i>Share</li>
                     <Route component={BizShowBookmarkContainer} />
                   </ul>
                 </div>
@@ -143,7 +143,7 @@ class BizShow extends React.Component {
                             </tr>
                             <tr>
                               <th><i className="far fa-compass"></i></th>
-                              <td><a>Get Directions</a></td></tr>
+                              <td><a href={`https://www.google.com/maps/dir/${biz.display_address}`} target='_blank'>Get Directions</a></td></tr>
                             <tr>
                               <th><i className="fas fa-phone"></i></th>
                               <td>{biz.phone}</td>
