@@ -27,6 +27,17 @@ class Api::UsersController < ApplicationController
       else
         render json: @user.errors.full_messages, status: 422
       end
+    elsif params[:user][:password]
+      if @user.is_password?(params[:user][:password])
+        @user.password=(params[:user][:newPassword])
+        if @user.save
+          render "api/users/session"
+        else
+          render json: @user.errors.full_messages, status: 422
+        end
+      else
+        render json: ['The password you entered is incorrect.'], status: 401
+      end
     else
       if @user.update(user_params)
         render "api/users/session"
@@ -51,7 +62,8 @@ class Api::UsersController < ApplicationController
       :love,
       :find_me_in,
       :multiple_email,
-      :nickname
+      :nickname,
+      :newPassword
     )
   end
 end

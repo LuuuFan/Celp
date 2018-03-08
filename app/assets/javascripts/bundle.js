@@ -36796,8 +36796,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    currentUser: state.session.currentUser
-
+    currentUser: state.session.currentUser,
+    errors: state.errors
   };
 };
 
@@ -36805,6 +36805,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     updateUser: function updateUser(user) {
       return dispatch((0, _session.updateUser)(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch((0, _session.clearErrors)());
     }
   };
 };
@@ -36872,7 +36875,9 @@ var UserSettings = function (_React$Component) {
 
       var _props = this.props,
           currentUser = _props.currentUser,
-          updateUser = _props.updateUser;
+          updateUser = _props.updateUser,
+          errors = _props.errors,
+          clearErrors = _props.clearErrors;
 
       return _react2.default.createElement(
         'div',
@@ -36920,7 +36925,7 @@ var UserSettings = function (_React$Component) {
           'div',
           { className: 'user-settings-sub-component' },
           this.state.listName == 'UserProfile' ? _react2.default.createElement(_user_settings_profile2.default, { currentUser: currentUser, updateUser: updateUser }) : "",
-          this.state.listName == 'Password' ? _react2.default.createElement(_user_settings_password2.default, { updateUser: updateUser }) : "",
+          this.state.listName == 'Password' ? _react2.default.createElement(_user_settings_password2.default, { currentUser: currentUser, clearErrors: clearErrors, updateUser: updateUser, errors: errors }) : "",
           this.state.listName == 'Email' ? _react2.default.createElement(_user_settings_email2.default, { currentUser: currentUser, updateUser: updateUser }) : ""
         )
       );
@@ -37208,7 +37213,13 @@ var UserSettingsPassword = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (UserSettingsPassword.__proto__ || Object.getPrototypeOf(UserSettingsPassword)).call(this));
 
-    _this.state = { oldPassword: '', newPassword: '', confirmPassword: '' };
+    _this.state = {
+      oldPassword: '',
+      newPassword: '',
+      confirmPassword: '',
+      error: '',
+      notification: ''
+    };
     _this.handleInput = _this.handleInput.bind(_this);
     return _this;
   }
@@ -37231,12 +37242,45 @@ var UserSettingsPassword = function (_React$Component) {
   }, {
     key: 'changePassword',
     value: function changePassword(e) {
+      var _this3 = this;
+
       e.preventDefault();
+      if (this.state.newPassword === this.state.confirmPassword) {
+        var user = {
+          id: this.props.currentUser.id,
+          password: this.state.oldPassword,
+          newPassword: this.state.newPassword
+        };
+        this.props.updateUser(user).then(function () {
+          _this3.setState({
+            oldPassword: '',
+            newPassword: '',
+            confirmPassword: '',
+            notification: 'Your new password has been saved.'
+          });
+        });
+      } else {
+        this.setState({ error: 'Verify new password is not same with new password' });
+      }
+    }
+  }, {
+    key: 'handleClose',
+    value: function handleClose() {
+      if (this.state.error) {
+        this.setState({ error: "" });
+      } else {
+        this.props.clearErrors();
+      }
+    }
+  }, {
+    key: 'closeNotification',
+    value: function closeNotification() {
+      this.setState({ notification: "" });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       return _react2.default.createElement(
         'div',
@@ -37246,6 +37290,38 @@ var UserSettingsPassword = function (_React$Component) {
           null,
           'Change Your Password'
         ),
+        this.state.notification ? _react2.default.createElement(
+          'div',
+          { className: 'success-notification' },
+          this.state.notification,
+          _react2.default.createElement(
+            'div',
+            { onClick: function onClick() {
+                return _this4.closeNotification();
+              } },
+            _react2.default.createElement(
+              'span',
+              null,
+              '\xD7'
+            )
+          )
+        ) : "",
+        this.props.errors.length ? _react2.default.createElement(
+          'div',
+          { className: 'session-error' },
+          _react2.default.createElement(
+            'p',
+            null,
+            this.props.errors[0]
+          ),
+          _react2.default.createElement(
+            'div',
+            { onClick: function onClick() {
+                return _this4.handleClose();
+              }, className: 'errors-closeBtn' },
+            '\xD7'
+          )
+        ) : "",
         _react2.default.createElement(
           'form',
           { className: 'user-settings-change-password' },
@@ -37271,6 +37347,22 @@ var UserSettingsPassword = function (_React$Component) {
             'Enter the new password you would like.'
           ),
           _react2.default.createElement('input', { onChange: this.handleInput('newPassword'), type: 'password', value: this.state.newPassword }),
+          this.state.error ? _react2.default.createElement(
+            'div',
+            { className: 'session-error' },
+            _react2.default.createElement(
+              'p',
+              null,
+              this.state.error
+            ),
+            _react2.default.createElement(
+              'div',
+              { onClick: function onClick() {
+                  return _this4.handleClose();
+                }, className: 'errors-closeBtn' },
+              '\xD7'
+            )
+          ) : "",
           _react2.default.createElement(
             'label',
             null,
@@ -37283,12 +37375,12 @@ var UserSettingsPassword = function (_React$Component) {
           ),
           _react2.default.createElement('input', { onChange: this.handleInput('confirmPassword'), type: 'password', value: this.state.confirmPassword }),
           _react2.default.createElement('input', { onClick: function onClick(e) {
-              return _this3.changePassword(e);
+              return _this4.changePassword(e);
             }, type: 'submit', value: 'Save New Password' }),
           _react2.default.createElement(
             'a',
             { onClick: function onClick() {
-                return _this3.handleCancel();
+                return _this4.handleCancel();
               } },
             'cancel'
           )

@@ -14,7 +14,7 @@ class UserSettings extends React.Component{
   }
 
   render(){
-    const {currentUser, updateUser} = this.props;
+    const {currentUser, updateUser, errors, clearErrors} = this.props;
     return(
       <div className='user-settings'>
         <div className='user-show-detail-nav'>
@@ -29,8 +29,8 @@ class UserSettings extends React.Component{
         </div>
         <div className='user-settings-sub-component'>
           { this.state.listName == 'UserProfile' ? <UserProfile  currentUser={currentUser} updateUser={updateUser}/> : ""}
-          { this.state.listName == 'Password' ? <Password updateUser={updateUser}/> : ""}
-          { this.state.listName == 'Email' ? <Email currentUser={currentUser} updateUser={updateUser}/> : ""}
+          { this.state.listName == 'Password' ? <Password currentUser={currentUser} clearErrors={clearErrors} updateUser={updateUser} errors={errors}/> : ""}
+          { this.state.listName == 'Email' ? <Email currentUser={currentUser} updateUser={updateUser} /> : ""}
         </div>
       </div>
     )
