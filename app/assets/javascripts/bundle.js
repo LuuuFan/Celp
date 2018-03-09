@@ -27271,6 +27271,10 @@ var _user_settings_container = __webpack_require__(203);
 
 var _user_settings_container2 = _interopRequireDefault(_user_settings_container);
 
+var _home_write_review = __webpack_require__(208);
+
+var _home_write_review2 = _interopRequireDefault(_home_write_review);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -27295,6 +27299,7 @@ var App = function App() {
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/aboutme', component: _user_profile_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/user/:username', component: _user_profile_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _biz_index_container2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/writereview/search', component: _home_write_review2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId/photos', component: _biz_img_index_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/biz/:bizId/addphoto', component: _add_img_container2.default }),
@@ -27450,10 +27455,10 @@ var NavBar = function (_React$Component) {
               { className: 'services' },
               _react2.default.createElement(
                 'ul',
-                { className: 'tooltip' },
+                null,
                 _react2.default.createElement(
                   'a',
-                  { href: '/#/write_review' },
+                  { href: '/#/writereview/search' },
                   _react2.default.createElement(
                     'li',
                     null,
@@ -27477,11 +27482,6 @@ var NavBar = function (_React$Component) {
                     { className: 'tooltip' },
                     'Talk'
                   )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'tooltiptext' },
-                  'under construction'
                 )
               )
             ),
@@ -28301,16 +28301,11 @@ var Home = function (_React$Component) {
               { className: 'services' },
               _react2.default.createElement(
                 'a',
-                { href: '/#/write_review' },
+                { href: '/#/writereview/search' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'tooltip' },
-                  'Write a Review',
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'tooltiptext' },
-                    'under construction'
-                  )
+                  null,
+                  'Write a Review'
                 )
               ),
               _react2.default.createElement(
@@ -28318,13 +28313,8 @@ var Home = function (_React$Component) {
                 { href: '/' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'tooltip' },
-                  'Events',
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'tooltiptext' },
-                    'under construction'
-                  )
+                  null,
+                  'Events'
                 )
               ),
               _react2.default.createElement(
@@ -28332,13 +28322,8 @@ var Home = function (_React$Component) {
                 { href: '/' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'tooltip' },
-                  'Talk',
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'tooltiptext' },
-                    'under construction'
-                  )
+                  null,
+                  'Talk'
                 )
               )
             ),
@@ -37733,6 +37718,77 @@ var UserSettingsEmail = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = UserSettingsEmail;
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _search_container = __webpack_require__(61);
+
+var _search_container2 = _interopRequireDefault(_search_container);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeWriteReview = function (_React$Component) {
+  _inherits(HomeWriteReview, _React$Component);
+
+  function HomeWriteReview() {
+    _classCallCheck(this, HomeWriteReview);
+
+    var _this = _possibleConstructorReturn(this, (HomeWriteReview.__proto__ || Object.getPrototypeOf(HomeWriteReview)).call(this));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(HomeWriteReview, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'home-write-review-header' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'You Next Review Awaits'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Review everything from your favorite burger to your dentist.'
+          ),
+          _react2.default.createElement(_search_container2.default, null)
+        )
+      );
+    }
+  }]);
+
+  return HomeWriteReview;
+}(_react2.default.Component);
+
+exports.default = HomeWriteReview;
 
 /***/ })
 /******/ ]);
