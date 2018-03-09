@@ -38,6 +38,10 @@ class Home extends React.Component {
       <div className='home'>
         <div className='home-img-frame'>
           <img className='home-img' src={`${img[Math.floor(Math.random()*6)]}`}/>
+          <div className='home-img-photo-by'>
+            <p>Photo by </p>
+            <a href='https://celp.herokuapp.com/#/user/luufan'>luufan</a>
+          </div>
         </div>
         <div className='home-main'>
           <div className='home-header'>
@@ -56,7 +60,9 @@ class Home extends React.Component {
               </div>
             )}
           </div>
-          <a href='/'><h1 className='home-logo'>Celp<i className="fab fa-yelp"></i></h1></a>
+          <div className='home-logo-container'>
+            <a href='/'><h1 className='home-logo'>Celp<i className="fab fa-yelp"></i></h1></a>
+          </div>
           <SearchContainer />
           <CategoryContainer />
         </div>

@@ -28265,7 +28265,21 @@ var Home = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'home-img-frame' },
-          _react2.default.createElement('img', { className: 'home-img', src: '' + img[Math.floor(Math.random() * 6)] })
+          _react2.default.createElement('img', { className: 'home-img', src: '' + img[Math.floor(Math.random() * 6)] }),
+          _react2.default.createElement(
+            'div',
+            { className: 'home-img-photo-by' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Photo by '
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: 'https://celp.herokuapp.com/#/user/luufan' },
+              'luufan'
+            )
+          )
         ),
         _react2.default.createElement(
           'div',
@@ -28366,13 +28380,17 @@ var Home = function (_React$Component) {
             )
           ),
           _react2.default.createElement(
-            'a',
-            { href: '/' },
+            'div',
+            { className: 'home-logo-container' },
             _react2.default.createElement(
-              'h1',
-              { className: 'home-logo' },
-              'Celp',
-              _react2.default.createElement('i', { className: 'fab fa-yelp' })
+              'a',
+              { href: '/' },
+              _react2.default.createElement(
+                'h1',
+                { className: 'home-logo' },
+                'Celp',
+                _react2.default.createElement('i', { className: 'fab fa-yelp' })
+              )
             )
           ),
           _react2.default.createElement(_search_container2.default, null),
