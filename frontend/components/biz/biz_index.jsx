@@ -6,7 +6,13 @@ import ReactDOM from 'react-dom';
 class BizIndex extends React.Component {
   constructor(){
     super();
-    this.state = {loc: '', cat: '', key:''}
+    this.state = {
+      loc: '',
+      cat: '',
+      key:'',
+      filter: '',
+      bizes: []
+    };
   }
 
   componentDidMount(){
@@ -18,10 +24,14 @@ class BizIndex extends React.Component {
       let loc = arr[1] ? arr[1].slice(4) : "";
       this.setState({cat:''});
       this.setState({loc: loc.split('+').join(' '), key: key});
-      this.props.requestSearch(key, loc);
+      this.props.requestSearch(key, loc).then(()=>{
+        this.setState({bizes: this.props.bizes});
+      });
     } else if (this.props.location.search.includes('cat')) {
       this.setState({cat: this.props.location.search.slice(5)})
-      this.props.requestCategory(this.props.location.search.slice(5));
+      this.props.requestCategory(this.props.location.search.slice(5)).then(()=>{
+        this.setState({bizes: this.props.bizes});
+      });
     }
   }
 
@@ -33,16 +43,28 @@ class BizIndex extends React.Component {
         let loc = arr[1] ? arr[1].slice(4) : "";
         this.setState({cat:''});
         this.setState({loc: loc.split('+').join(' '), key: key});
-        this.props.requestSearch(key, loc);
+        this.props.requestSearch(key, loc).then(()=>{
+          this.setState({bizes: this.props.bizes});
+        });
       } else if (newProps.location.search.includes('cat')) {
         this.setState({cat: newProps.location.search.slice(5)})
-        this.props.requestCategory(newProps.location.search.slice(5));
+        this.props.requestCategory(newProps.location.search.slice(5)).then(()=>{
+          this.setState({bizes: this.props.bizes});
+        });
       }
     }
   }
 
+  handleFilter(fil){
+    if (fil === 'open') {
+      this.setState({bizes: this.props.bizes.filter(biz=>biz.is_open===true)})
+    } else {
+      this.setState({bizes: this.props.bizes.filter(biz=>biz.price===fil)})
+    }
+  }
+
   render(){
-    const bizes = this.props.bizes;
+    const bizes = this.state.bizes;
     return(
       <div>
         <div className='search-banner'>
@@ -54,16 +76,15 @@ class BizIndex extends React.Component {
             <div className='filter-btn'>
               <div className='filter-price'>
                 <ul>
-                  <li className='tooltip'>$<div className='tooltiptext'>under construction</div></li>
-                  <li className='tooltip'>$$<div className='tooltiptext'>under construction</div></li>
-                  <li className='tooltip'>$$$<div className='tooltiptext'>under construction</div></li>
-                  <li className='tooltip'>$$$$<div className='tooltiptext'>under construction</div></li>
+                  <li onClick={()=>this.handleFilter('$')}>$</li>
+                  <li onClick={()=>this.handleFilter('$$')}>$$</li>
+                  <li onClick={()=>this.handleFilter('$$$')}>$$$</li>
+                  <li onClick={()=>this.handleFilter('$$$$')}>$$$$</li>
                 </ul>
               </div>
               <div className='filter-open-hour'>
-                <ul className='tooltip'>
-                  <li><i className="far fa-clock"></i>Open Now</li>
-                  <div className='tooltiptext'>under construction</div>
+                <ul>
+                  <li  onClick={()=>this.handleFilter('open')}><i className="far fa-clock"></i>Open Now</li>
                 </ul>
               </div>
             </div>

@@ -46,7 +46,7 @@ class BizIndexItem extends React.Component {
              : ""}
              <div className='biz-info-price-tags'>
                <div className='biz-info-price'>
-                 {biz.price ? <p>{biz.price}</p> : "$$"}
+                 {biz.price ? <p>{biz.price}</p> : "No Price Reference Yet"}
                </div>
                {biz.tags && biz.tags.length > 0 ? <p>&middot;</p> : ""}
                {biz.tags && biz.tags.length > 0 ?

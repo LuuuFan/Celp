@@ -29256,13 +29256,21 @@ var BizIndex = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (BizIndex.__proto__ || Object.getPrototypeOf(BizIndex)).call(this));
 
-    _this.state = { loc: '', cat: '', key: '' };
+    _this.state = {
+      loc: '',
+      cat: '',
+      key: '',
+      filter: '',
+      bizes: []
+    };
     return _this;
   }
 
   _createClass(BizIndex, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       window.scrollTo(0, 0);
       // ReactDOM.findDOMNode(this).scrollTop = 0;
       if (this.props.location.search.includes('key')) {
@@ -29271,15 +29279,21 @@ var BizIndex = function (_React$Component) {
         var loc = arr[1] ? arr[1].slice(4) : "";
         this.setState({ cat: '' });
         this.setState({ loc: loc.split('+').join(' '), key: key });
-        this.props.requestSearch(key, loc);
+        this.props.requestSearch(key, loc).then(function () {
+          _this2.setState({ bizes: _this2.props.bizes });
+        });
       } else if (this.props.location.search.includes('cat')) {
         this.setState({ cat: this.props.location.search.slice(5) });
-        this.props.requestCategory(this.props.location.search.slice(5));
+        this.props.requestCategory(this.props.location.search.slice(5)).then(function () {
+          _this2.setState({ bizes: _this2.props.bizes });
+        });
       }
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
+      var _this3 = this;
+
       if (this.props.location.search !== newProps.location.search) {
         if (newProps.location.search.includes('key')) {
           var arr = newProps.location.search.split('&');
@@ -29287,17 +29301,36 @@ var BizIndex = function (_React$Component) {
           var loc = arr[1] ? arr[1].slice(4) : "";
           this.setState({ cat: '' });
           this.setState({ loc: loc.split('+').join(' '), key: key });
-          this.props.requestSearch(key, loc);
+          this.props.requestSearch(key, loc).then(function () {
+            _this3.setState({ bizes: _this3.props.bizes });
+          });
         } else if (newProps.location.search.includes('cat')) {
           this.setState({ cat: newProps.location.search.slice(5) });
-          this.props.requestCategory(newProps.location.search.slice(5));
+          this.props.requestCategory(newProps.location.search.slice(5)).then(function () {
+            _this3.setState({ bizes: _this3.props.bizes });
+          });
         }
+      }
+    }
+  }, {
+    key: 'handleFilter',
+    value: function handleFilter(fil) {
+      if (fil === 'open') {
+        this.setState({ bizes: this.props.bizes.filter(function (biz) {
+            return biz.is_open === true;
+          }) });
+      } else {
+        this.setState({ bizes: this.props.bizes.filter(function (biz) {
+            return biz.price === fil;
+          }) });
       }
     }
   }, {
     key: 'render',
     value: function render() {
-      var bizes = this.props.bizes;
+      var _this4 = this;
+
+      var bizes = this.state.bizes;
       return _react2.default.createElement(
         'div',
         null,
@@ -29337,43 +29370,31 @@ var BizIndex = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'li',
-                    { className: 'tooltip' },
-                    '$',
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'tooltiptext' },
-                      'under construction'
-                    )
+                    { onClick: function onClick() {
+                        return _this4.handleFilter('$');
+                      } },
+                    '$'
                   ),
                   _react2.default.createElement(
                     'li',
-                    { className: 'tooltip' },
-                    '$$',
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'tooltiptext' },
-                      'under construction'
-                    )
+                    { onClick: function onClick() {
+                        return _this4.handleFilter('$$');
+                      } },
+                    '$$'
                   ),
                   _react2.default.createElement(
                     'li',
-                    { className: 'tooltip' },
-                    '$$$',
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'tooltiptext' },
-                      'under construction'
-                    )
+                    { onClick: function onClick() {
+                        return _this4.handleFilter('$$$');
+                      } },
+                    '$$$'
                   ),
                   _react2.default.createElement(
                     'li',
-                    { className: 'tooltip' },
-                    '$$$$',
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'tooltiptext' },
-                      'under construction'
-                    )
+                    { onClick: function onClick() {
+                        return _this4.handleFilter('$$$$');
+                      } },
+                    '$$$$'
                   )
                 )
               ),
@@ -29382,17 +29403,14 @@ var BizIndex = function (_React$Component) {
                 { className: 'filter-open-hour' },
                 _react2.default.createElement(
                   'ul',
-                  { className: 'tooltip' },
+                  null,
                   _react2.default.createElement(
                     'li',
-                    null,
+                    { onClick: function onClick() {
+                        return _this4.handleFilter('open');
+                      } },
                     _react2.default.createElement('i', { className: 'far fa-clock' }),
                     'Open Now'
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'tooltiptext' },
-                    'under construction'
                   )
                 )
               )
@@ -29546,7 +29564,7 @@ var BizIndexItem = function (_React$Component) {
                     'p',
                     null,
                     biz.price
-                  ) : "$$"
+                  ) : "No Price Reference Yet"
                 ),
                 biz.tags && biz.tags.length > 0 ? _react2.default.createElement(
                   'p',
