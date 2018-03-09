@@ -40,21 +40,21 @@ class Events extends React.Component {
           </div>
           <div className='events-index-item'>
             <div className='events-index-item-img-container'>
-              <a href='https://www.yelp.com/events/san-mateo-cat-and-kitten-adoption-fair-adoption-fair-this-sunday-3-11-at-pet-club-in-san-mateo-12-3-pm'>
-                <img src='https://s3-media1.fl.yelpcdn.com/ephoto/D_ozNRnmHnNljkusMTfRBg/300s.jpg' />
+              <a href='https://www.yelp.com/events/san-francisco-san-francisco-decorator-showcase-2018'>
+                <img src='https://s3-media3.fl.yelpcdn.com/ephoto/bsDcDN2tr45ohUsq0Mwzlg/300s.jpg' />
               </a>
             </div>
             <div className='events-item-description'>
               <h3>
-                <a href='https://www.yelp.com/events/san-mateo-cat-and-kitten-adoption-fair-adoption-fair-this-sunday-3-11-at-pet-club-in-san-mateo-12-3-pm'>Cat and Kitten Adoption Fair Adoption Fair</a>
+                <a href='https://www.yelp.com/events/san-francisco-san-francisco-decorator-showcase-2018'>San Francisco Decorator Showcase 2018</a>
               </h3>
               <table>
                 <tbody>
-                  <tr><td><i className="fas fa-calendar-alt"></i></td><td>Mar 11, 12:00pm</td></tr>
-                  <tr><td><i className="fas fa-map-marker"></i></td><td>pet Club -- San Mateo</td></tr>
+                  <tr><td><i className="fas fa-calendar-alt"></i></td><td>Apr 28, 10:00 am</td></tr>
+                  <tr><td><i className="fas fa-map-marker"></i></td><td>465 Marina Blvd. San Francisco</td></tr>
                 </tbody>
               </table>
-              <p>Want Kitties? Oh, ho, ho. Have we got kitties for you!  We have LOTS of kittens...</p>
+              <p>The 41st San Francisco Decorator Showcase is delighted to announce the ...</p>
               <div className='events-item-category'>
                 <a href='https://www.yelp.com/events/sf/browse?c=9'>Charities</a>
               </div>
