@@ -56,10 +56,12 @@ class BizIndex extends React.Component {
   }
 
   handleFilter(fil){
-    if (fil === 'open') {
-      this.setState({bizes: this.props.bizes.filter(biz=>biz.is_open===true)})
+    if (this.state.filter === fil) {
+      this.setState({filter: '', bizes: this.props.bizes})
+    } else if (fil === 'open') {
+      this.setState({filter: fil, bizes: this.props.bizes.filter(biz=>biz.is_open===true)})
     } else {
-      this.setState({bizes: this.props.bizes.filter(biz=>biz.price===fil)})
+      this.setState({filter: fil, bizes: this.props.bizes.filter(biz=>biz.price===fil)})
     }
   }
 
@@ -76,15 +78,15 @@ class BizIndex extends React.Component {
             <div className='filter-btn'>
               <div className='filter-price'>
                 <ul>
-                  <li onClick={()=>this.handleFilter('$')}>$</li>
-                  <li onClick={()=>this.handleFilter('$$')}>$$</li>
-                  <li onClick={()=>this.handleFilter('$$$')}>$$$</li>
-                  <li onClick={()=>this.handleFilter('$$$$')}>$$$$</li>
+                  <li onClick={()=>this.handleFilter('$')} className={this.state.filter=='$' ? 'filtered' : ""}>$</li>
+                  <li onClick={()=>this.handleFilter('$$')} className={this.state.filter=='$$' ? 'filtered' : ""}>$$</li>
+                  <li onClick={()=>this.handleFilter('$$$')} className={this.state.filter=='$$$' ? 'filtered' : ""}>$$$</li>
+                  <li onClick={()=>this.handleFilter('$$$$')} className={this.state.filter=='$$$$' ? 'filtered' : ""}>$$$$</li>
                 </ul>
               </div>
               <div className='filter-open-hour'>
                 <ul>
-                  <li  onClick={()=>this.handleFilter('open')}><i className="far fa-clock"></i>Open Now</li>
+                  <li  onClick={()=>this.handleFilter('open')} className={this.state.filter=='open' ? 'filtered' : ""}><i className="far fa-clock"></i>Open Now</li>
                 </ul>
               </div>
             </div>

@@ -40,13 +40,13 @@
   display: flex;
 }
 
-.filter-open-hour ul{
-  padding: 10px;
-  background-color: white;
-  border: 1px solid #e6e6e6;
-  border-radius: 3px;
-  margin-right: 5px;
-}
+// .filter-open-hour ul{
+//   padding: 10px;
+//   background-color: white;
+//   border: 1px solid #e6e6e6;
+//   border-radius: 3px;
+//   margin-right: 5px;
+// }
 
 .filter-open-hour i{
   margin-right: 5px;
@@ -57,12 +57,17 @@
   box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
 }
 
-.filter-price li{
+.filter-price li,
+.filter-open-hour li{
   background-color: white;
   padding: 10px;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
   border-left: 1px solid #e6e6e6;
+}
+
+.filter-open-hour li{
+  border-right: 1px solid #e6e6e6;
 }
 
 .filter-price li:hover{
@@ -77,6 +82,14 @@
 
 .filter-price li:first-of-type{
   border-radius: 3px 0 0 3px;
+}
+
+.filter-price ul .filtered,
+.filter-open-hour ul .filtered
+{
+  background-color: #e6e6e6;
+  font-weight: bold;
+  color: green;
 }
 
 .temp{

@@ -29324,12 +29324,14 @@ var BizIndex = function (_React$Component) {
   }, {
     key: 'handleFilter',
     value: function handleFilter(fil) {
-      if (fil === 'open') {
-        this.setState({ bizes: this.props.bizes.filter(function (biz) {
+      if (this.state.filter === fil) {
+        this.setState({ filter: '', bizes: this.props.bizes });
+      } else if (fil === 'open') {
+        this.setState({ filter: fil, bizes: this.props.bizes.filter(function (biz) {
             return biz.is_open === true;
           }) });
       } else {
-        this.setState({ bizes: this.props.bizes.filter(function (biz) {
+        this.setState({ filter: fil, bizes: this.props.bizes.filter(function (biz) {
             return biz.price === fil;
           }) });
       }
@@ -29381,28 +29383,28 @@ var BizIndex = function (_React$Component) {
                     'li',
                     { onClick: function onClick() {
                         return _this4.handleFilter('$');
-                      } },
+                      }, className: this.state.filter == '$' ? 'filtered' : "" },
                     '$'
                   ),
                   _react2.default.createElement(
                     'li',
                     { onClick: function onClick() {
                         return _this4.handleFilter('$$');
-                      } },
+                      }, className: this.state.filter == '$$' ? 'filtered' : "" },
                     '$$'
                   ),
                   _react2.default.createElement(
                     'li',
                     { onClick: function onClick() {
                         return _this4.handleFilter('$$$');
-                      } },
+                      }, className: this.state.filter == '$$$' ? 'filtered' : "" },
                     '$$$'
                   ),
                   _react2.default.createElement(
                     'li',
                     { onClick: function onClick() {
                         return _this4.handleFilter('$$$$');
-                      } },
+                      }, className: this.state.filter == '$$$$' ? 'filtered' : "" },
                     '$$$$'
                   )
                 )
@@ -29417,7 +29419,7 @@ var BizIndex = function (_React$Component) {
                     'li',
                     { onClick: function onClick() {
                         return _this4.handleFilter('open');
-                      } },
+                      }, className: this.state.filter == 'open' ? 'filtered' : "" },
                     _react2.default.createElement('i', { className: 'far fa-clock' }),
                     'Open Now'
                   )
