@@ -30,5 +30,50 @@
 }
 
 .write-review-search .searchBar{
+  height: 35px;
   margin: 0;
+  width: 95%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.write-review-search .searchBar>div:first-of-type{
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 55%;
+}
+
+.write-review-search .searchBar .searchBar-location{
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 35%;
+}
+
+.write-review-search .searchBar button{
+  width: 5%;
+  border-radius: 4px;
+  border-color: #8d0005;
+  background-color: #d90007;
+  background: linear-gradient(#d90007, #c91400);
+}
+
+.write-review-search .searchBar button i{
+  margin-left: 30%;
+  font-size: 14px;
+}
+
+.write-review-temp{
+  width: 50%;
+  min-width: 1020px;
+  margin: 100px auto;
 }

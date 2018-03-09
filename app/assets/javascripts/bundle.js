@@ -27609,7 +27609,7 @@ var Search = function (_React$Component) {
           ),
           _react2.default.createElement('input', { onChange: function onChange(e) {
               return _this2.handleInput(e, 'loc');
-            }, type: 'text', value: this.state.loc, placeholder: 'San Francisco, CA, US' })
+            }, type: 'text', value: this.state.loc, placeholder: 'San Francisco, CA' })
         ),
         _react2.default.createElement(
           'button',
@@ -37749,6 +37749,10 @@ var _search_container = __webpack_require__(61);
 
 var _search_container2 = _interopRequireDefault(_search_container);
 
+var _home_center_activities = __webpack_require__(161);
+
+var _home_center_activities2 = _interopRequireDefault(_home_center_activities);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37774,30 +37778,39 @@ var WriteReviewSearch = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'write-review-search-banner' },
+        null,
         _react2.default.createElement(
           'div',
-          { className: 'write-review-search-header' },
+          { className: 'write-review-search-banner' },
           _react2.default.createElement(
             'div',
-            { className: 'write-review-search' },
+            { className: 'write-review-search-header' },
             _react2.default.createElement(
-              'h1',
-              null,
-              'You Next Review Awaits'
+              'div',
+              { className: 'write-review-search' },
+              _react2.default.createElement(
+                'h1',
+                null,
+                'You Next Review Awaits'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Review everything from your favorite burger to your dentist.'
+              ),
+              _react2.default.createElement(_search_container2.default, null)
             ),
             _react2.default.createElement(
-              'p',
-              null,
-              'Review everything from your favorite burger to your dentist.'
-            ),
-            _react2.default.createElement(_search_container2.default, null)
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'write-review-search-img-container' },
-            _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/assets/2/www/img/6010a06f69a3/writeareview/rating_building.png' })
+              'div',
+              { className: 'write-review-search-img-container' },
+              _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/assets/2/www/img/6010a06f69a3/writeareview/rating_building.png' })
+            )
           )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'write-review-temp' },
+          _react2.default.createElement(_home_center_activities2.default, null)
         )
       );
     }

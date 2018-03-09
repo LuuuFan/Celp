@@ -9,7 +9,8 @@
   width: 100%;
 }
 
-.home-center h1{
+.home-center h1,
+.write-review-temp h1{
   text-align: center;
   color: #d32323;
   font-size: 20px;
@@ -17,7 +18,8 @@
   margin: 30px auto;
 }
 
-.home-center ul{
+.home-center ul,
+.write-review-temp ul{
   margin: auto;
   display: flex;
   width: 100%;
@@ -30,13 +32,15 @@
   font-size: 16px;
 }
 
-.home-center li{
+.home-center li,
+.write-review-temp li{
   border-bottom: 3px solid transparent;
   padding: 10px 5px;
   cursor: pointer;
 }
 
-.home-center li:hover{
+.home-center li:hover,
+.write-review-temp li:hover{
   border-bottom: 3px solid #d32323;
 }
 

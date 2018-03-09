@@ -43,7 +43,7 @@ class Search extends React.Component{
         </div>
         <div className='searchBar-location'>
           <span>Near</span>
-          <input onChange={(e)=>this.handleInput(e,'loc')} type='text' value={this.state.loc} placeholder="San Francisco, CA, US"/>
+          <input onChange={(e)=>this.handleInput(e,'loc')} type='text' value={this.state.loc} placeholder="San Francisco, CA"/>
         </div>
         <button onClick={(e)=>this.handleClick(e)}>
           <i className="fas fa-search"></i>
