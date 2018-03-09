@@ -29,8 +29,8 @@ class NavBar extends React.Component {
           <div className='services'>
             <ul>
               <a href='/#/writereview/search'><li>Write a Review</li></a>
-              <a href='/'><li>Events</li></a>
-              <a href='/'><li className='tooltip'>Talk</li></a>
+              <a href='/#/events'><li>Events</li></a>
+              <a href='https://www.yelp.com/talk'><li className='tooltip'>Talk</li></a>
             </ul>
           </div>
           {!currentUser ?

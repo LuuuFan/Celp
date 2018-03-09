@@ -61,10 +61,16 @@
 
 .write-review-search .searchBar button{
   width: 5%;
+  border: 1px solid lightgray;
   border-radius: 4px;
   border-color: #8d0005;
   background-color: #d90007;
   background: linear-gradient(#d90007, #c91400);
+}
+
+.write-review-search .searchBar button:hover{
+  background-color: #ed0008;
+  background: linear-gradient(#ed0008, #dd1600);
 }
 
 .write-review-search .searchBar button i{

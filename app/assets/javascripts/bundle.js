@@ -27275,6 +27275,10 @@ var _write_review_search = __webpack_require__(209);
 
 var _write_review_search2 = _interopRequireDefault(_write_review_search);
 
+var _events = __webpack_require__(210);
+
+var _events2 = _interopRequireDefault(_events);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -27300,6 +27304,7 @@ var App = function App() {
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/user/:username', component: _user_profile_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _biz_index_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/writereview/search', component: _write_review_search2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/events', component: _events2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId/photos', component: _biz_img_index_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/biz/:bizId/addphoto', component: _add_img_container2.default }),
@@ -27467,7 +27472,7 @@ var NavBar = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'a',
-                  { href: '/' },
+                  { href: '/#/events' },
                   _react2.default.createElement(
                     'li',
                     null,
@@ -27476,7 +27481,7 @@ var NavBar = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'a',
-                  { href: '/' },
+                  { href: 'https://www.yelp.com/talk' },
                   _react2.default.createElement(
                     'li',
                     { className: 'tooltip' },
@@ -28318,7 +28323,7 @@ var Home = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'a',
-                { href: '/' },
+                { href: '/#/events' },
                 _react2.default.createElement(
                   'div',
                   null,
@@ -28327,7 +28332,7 @@ var Home = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'a',
-                { href: '/' },
+                { href: 'https://www.yelp.com/talk' },
                 _react2.default.createElement(
                   'div',
                   null,
@@ -37820,6 +37825,320 @@ var WriteReviewSearch = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = WriteReviewSearch;
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Events = function (_React$Component) {
+  _inherits(Events, _React$Component);
+
+  function Events() {
+    _classCallCheck(this, Events);
+
+    return _possibleConstructorReturn(this, (Events.__proto__ || Object.getPrototypeOf(Events)).apply(this, arguments));
+  }
+
+  _createClass(Events, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'events' },
+        _react2.default.createElement(
+          'div',
+          { className: 'events-header' },
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Browse Events'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'This is a showcase page, everything links to real ',
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.yelp.com/events' },
+                'Yelp'
+              ),
+              '.'
+            )
+          ),
+          _react2.default.createElement(
+            'a',
+            { href: 'https://www.yelp.com/events/create' },
+            _react2.default.createElement(
+              'button',
+              null,
+              'Create an Event on Yelp'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'events-index group' },
+          _react2.default.createElement(
+            'div',
+            { className: 'events-index-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'events-index-item-img-container' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.yelp.com/events/san-mateo-cat-and-kitten-adoption-fair-adoption-fair-this-sunday-3-11-at-pet-club-in-san-mateo-12-3-pm' },
+                _react2.default.createElement('img', { src: 'https://s3-media1.fl.yelpcdn.com/ephoto/D_ozNRnmHnNljkusMTfRBg/300s.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'events-item-description' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/san-mateo-cat-and-kitten-adoption-fair-adoption-fair-this-sunday-3-11-at-pet-club-in-san-mateo-12-3-pm' },
+                  'Cat and Kitten Adoption Fair Adoption Fair'
+                )
+              ),
+              _react2.default.createElement(
+                'table',
+                null,
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-calendar-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Mar 11, 12:00pm'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-map-marker' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'pet Club -- San Mateo'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Want Kitties? Oh, ho, ho. Have we got kitties for you!  We have LOTS of kittens...'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'events-item-category' },
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/sf/browse?c=9' },
+                  'Charities'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'events-index-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'events-index-item-img-container' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.yelp.com/events/san-mateo-cat-and-kitten-adoption-fair-adoption-fair-this-sunday-3-11-at-pet-club-in-san-mateo-12-3-pm' },
+                _react2.default.createElement('img', { src: 'https://s3-media1.fl.yelpcdn.com/ephoto/D_ozNRnmHnNljkusMTfRBg/300s.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'events-item-description' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/san-mateo-cat-and-kitten-adoption-fair-adoption-fair-this-sunday-3-11-at-pet-club-in-san-mateo-12-3-pm' },
+                  'Cat and Kitten Adoption Fair Adoption Fair'
+                )
+              ),
+              _react2.default.createElement(
+                'table',
+                null,
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-calendar-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Mar 11, 12:00pm'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-map-marker' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'pet Club -- San Mateo'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Want Kitties? Oh, ho, ho. Have we got kitties for you!  We have LOTS of kittens...'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'events-item-category' },
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/sf/browse?c=9' },
+                  'Charities'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'events-index-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'events-index-item-img-container' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.yelp.com/events/san-francisco-san-francisco-spca-150th-anniversary-celebration' },
+                _react2.default.createElement('img', { src: 'https://s3-media2.fl.yelpcdn.com/ephoto/tC_iZSQA8XsdW66gyuQpLQ/300s.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'events-item-description' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/san-francisco-san-francisco-spca-150th-anniversary-celebration' },
+                  'San Francisco SPCA 150th Anniversary Celebration'
+                )
+              ),
+              _react2.default.createElement(
+                'table',
+                null,
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-calendar-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Apr 18, 6:30 pm'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-map-marker' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'San Francisco City Hall'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'The San Francisco SPCA is celebrating 150 years of rescuing and caring for animals ...'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'events-item-category' },
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/sf/browse?c=9' },
+                  'Charities'
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Events;
+}(_react2.default.Component);
+
+exports.default = Events;
 
 /***/ })
 /******/ ]);

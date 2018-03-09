@@ -48,8 +48,8 @@ class Home extends React.Component {
           <div className='home-header'>
             <div className='services'>
               <a href='/#/writereview/search'><div>Write a Review</div></a>
-              <a href='/'><div>Events</div></a>
-              <a href='/'><div>Talk</div></a>
+              <a href='/#/events'><div>Events</div></a>
+              <a href='https://www.yelp.com/talk'><div>Talk</div></a>
             </div>
             {currentUser ? (
               <Button currentUser={currentUser} logout={logout} />

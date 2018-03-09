@@ -34,7 +34,8 @@
   text-align: center;
 }
 
-.upload-photo-page button{
+.upload-photo-page button,
+.events-header button{
   padding: 8px 16px;
   color: white;
   background-color: #d90007;
@@ -43,7 +44,8 @@
   font-weight: 800;
 }
 
-.upload-photo-page button:hover{
+.upload-photo-page button:hover,
+.events-header button:hover{
   background-color: #a71c1c;
 }
 

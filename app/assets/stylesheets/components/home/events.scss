@@ -1,0 +1,103 @@
+.events{
+  width: 50%;
+  min-width: 1020px;
+  margin: 50px auto;
+}
+
+.events-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.events-header h1{
+  font-size: 24px;
+  color: #d32323;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.events-header p{
+  font-size: 14px;
+  color: #333;
+}
+
+.events-header a,
+.events-item-category a{
+  font-weight: bold;
+  color: #0073bb;
+}
+
+.events-header button{
+  height: 50%;
+}
+
+.events-header a:hover,
+.events-item-category a:hover{
+  text-decoration: underline;
+}
+
+.events-index{
+  margin-top: 20px;
+  width: 100%;
+}
+
+.events-index-item{
+  width: 31%;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.events-index-item-img-container{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+
+}
+
+.events-index-item-img-container img{
+  cursor: pointer;
+  object-fit: cover;
+  width: 100%;
+}
+
+.events-item-description{
+  padding: 15px 10px;
+}
+
+.events-item-description h3{
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0073bb;
+}
+
+
+.events-item-description table tbody tr td:first-of-type{
+  width: 20%;
+}
+
+.events-item-description table tbody tr{
+  margin: 5px 0;
+}
+
+.events-item-description table tbody tr,
+.events-item-description table tbody td,
+.events-item-description p{
+  color: #333;
+  font-size: 14px;
+}
+
+.events-item-description p{
+  margin: 15px 0;
+}
+
+.events-item-category{
+  padding-top: 8px;
+  border-top: 1px solid lightgray;
+}
