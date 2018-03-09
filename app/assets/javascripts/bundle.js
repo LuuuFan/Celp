@@ -28268,6 +28268,15 @@ var Home = function (_React$Component) {
           _react2.default.createElement('img', { className: 'home-img', src: '' + img[Math.floor(Math.random() * 6)] }),
           _react2.default.createElement(
             'div',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: 'https://celp.herokuapp.com/#/biz/41/' },
+              'Sungrass Bakery'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
             { className: 'home-img-photo-by' },
             _react2.default.createElement(
               'p',

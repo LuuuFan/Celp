@@ -18,18 +18,28 @@
   min-width: 1020px;
 }
 
-.home-img-photo-by{
+.home-img-frame>div{
+  z-index: 5;
   position: absolute;
   top: 90%;
   left: 45%;
-  display: flex;
   color: white;
-  z-index: 5;
+}
+
+.home-img-frame>.home-img-photo-by{
+  top: 94%;
+  display: flex;
 }
 
 .home-img-photo-by a{
   margin-left: 10px;
+}
+
+.home-img-frame>div a:hover, .home-img-photo-by a:hover{
   text-decoration: underline;
+}
+
+.home-img-frame>div a, .home-img-photo-by a{
   cursor: pointer;
   font-weight: bold;
 }
@@ -128,6 +138,10 @@
 .home-header .signup:hover{
   background-color: white;
   color: gray;
+}
+
+.home .business{
+  z-index: 2;
 }
 
 .home .business ul{

@@ -38,6 +38,7 @@ class Home extends React.Component {
       <div className='home'>
         <div className='home-img-frame'>
           <img className='home-img' src={`${img[Math.floor(Math.random()*6)]}`}/>
+          <div><a href='https://celp.herokuapp.com/#/biz/41/'>Sungrass Bakery</a></div>
           <div className='home-img-photo-by'>
             <p>Photo by </p>
             <a href='https://celp.herokuapp.com/#/user/luufan'>luufan</a>
