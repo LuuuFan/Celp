@@ -71,9 +71,6 @@
   margin-right: 12px;
 }
 
-.searchBar::-webkit-input-placeholder {
-  color: lightgray;
-}
 
 .hint:after {
   content: " ";
@@ -111,13 +108,18 @@
   font-weight: 600;
 }
 
-.searchBar input{
+.searchBar>div:first-of-type{
   padding: 1px;
-  width: 41%;
+  width: 55%;
 }
 
-.searchBar input:first-of-type{
-  border-right: 1px solid lightgray;
+.searchBar .searchBar-location{
+  width: 45%;
+  border-left: 1px solid lightgray;
+}
+
+.searchBar>div:first-of-type input{
+  width: 85%;
 }
 
 .searchBar button{

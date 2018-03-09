@@ -13,7 +13,7 @@ import Footer from './footer';
 import WriteReviewContainer from './review/write_review_container';
 import UserProfileContainer from './user/user_profile_container';
 import UserSettingsContainer from './user/user_settings_container';
-import HomeWriteReview from './review/home_write_review';
+import WriteReviewSearch from './review/write_review_search';
 
 const App = () => (
   <div className='main'>
@@ -31,7 +31,7 @@ const App = () => (
       <ProtectedRoute exact path='/aboutme'  component={UserProfileContainer}/>
       <Route exact path='/user/:username' component={UserProfileContainer} />
       <Route path='/search' component={BizIndexContainer} />
-      <Route path='/writereview/search' component={HomeWriteReview} />
+      <Route path='/writereview/search' component={WriteReviewSearch} />
       <Route exact path='/biz/:bizId' component={BizShowContainer} />
       <Route exact path='/biz/:bizId/photos' component={BizImgIndexContainer} />
       <ProtectedRoute exact path='/biz/:bizId/addphoto' component={AddImgContainer} />

@@ -27271,9 +27271,9 @@ var _user_settings_container = __webpack_require__(203);
 
 var _user_settings_container2 = _interopRequireDefault(_user_settings_container);
 
-var _home_write_review = __webpack_require__(208);
+var _write_review_search = __webpack_require__(209);
 
-var _home_write_review2 = _interopRequireDefault(_home_write_review);
+var _write_review_search2 = _interopRequireDefault(_write_review_search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27299,7 +27299,7 @@ var App = function App() {
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/aboutme', component: _user_profile_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/user/:username', component: _user_profile_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _biz_index_container2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/writereview/search', component: _home_write_review2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/writereview/search', component: _write_review_search2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId', component: _biz_show_container2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/biz/:bizId/photos', component: _biz_img_index_container2.default }),
       _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/biz/:bizId/addphoto', component: _add_img_container2.default }),
@@ -27588,21 +27588,29 @@ var Search = function (_React$Component) {
             return handleClick(e);
           }, className: 'searchBar' },
         _react2.default.createElement(
-          'span',
+          'div',
           null,
-          'Find'
+          _react2.default.createElement(
+            'span',
+            null,
+            'Find'
+          ),
+          _react2.default.createElement('input', { onChange: function onChange(e) {
+              return _this2.handleInput(e, 'key');
+            }, type: 'text', value: this.state.key, placeholder: 'App Academy, Cake, Bakeries' })
         ),
-        _react2.default.createElement('input', { onChange: function onChange(e) {
-            return _this2.handleInput(e, 'key');
-          }, type: 'text', value: this.state.key, placeholder: 'App Academy, Cake, Bakeries' }),
         _react2.default.createElement(
-          'span',
-          null,
-          'Near'
+          'div',
+          { className: 'searchBar-location' },
+          _react2.default.createElement(
+            'span',
+            null,
+            'Near'
+          ),
+          _react2.default.createElement('input', { onChange: function onChange(e) {
+              return _this2.handleInput(e, 'loc');
+            }, type: 'text', value: this.state.loc, placeholder: 'San Francisco, CA, US' })
         ),
-        _react2.default.createElement('input', { onChange: function onChange(e) {
-            return _this2.handleInput(e, 'loc');
-          }, type: 'text', value: this.state.loc, placeholder: 'San Francisco, CA, US' }),
         _react2.default.createElement(
           'button',
           { onClick: function onClick(e) {
@@ -37720,7 +37728,8 @@ var UserSettingsEmail = function (_React$Component) {
 exports.default = UserSettingsEmail;
 
 /***/ }),
-/* 208 */
+/* 208 */,
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37748,47 +37757,56 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var HomeWriteReview = function (_React$Component) {
-  _inherits(HomeWriteReview, _React$Component);
+var WriteReviewSearch = function (_React$Component) {
+  _inherits(WriteReviewSearch, _React$Component);
 
-  function HomeWriteReview() {
-    _classCallCheck(this, HomeWriteReview);
+  function WriteReviewSearch() {
+    _classCallCheck(this, WriteReviewSearch);
 
-    var _this = _possibleConstructorReturn(this, (HomeWriteReview.__proto__ || Object.getPrototypeOf(HomeWriteReview)).call(this));
+    var _this = _possibleConstructorReturn(this, (WriteReviewSearch.__proto__ || Object.getPrototypeOf(WriteReviewSearch)).call(this));
 
     _this.state = {};
     return _this;
   }
 
-  _createClass(HomeWriteReview, [{
+  _createClass(WriteReviewSearch, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'write-review-search-banner' },
         _react2.default.createElement(
           'div',
-          { className: 'home-write-review-header' },
+          { className: 'write-review-search-header' },
           _react2.default.createElement(
-            'h1',
-            null,
-            'You Next Review Awaits'
+            'div',
+            { className: 'write-review-search' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              'You Next Review Awaits'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Review everything from your favorite burger to your dentist.'
+            ),
+            _react2.default.createElement(_search_container2.default, null)
           ),
           _react2.default.createElement(
-            'p',
-            null,
-            'Review everything from your favorite burger to your dentist.'
-          ),
-          _react2.default.createElement(_search_container2.default, null)
+            'div',
+            { className: 'write-review-search-img-container' },
+            _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/assets/2/www/img/6010a06f69a3/writeareview/rating_building.png' })
+          )
         )
       );
     }
   }]);
 
-  return HomeWriteReview;
+  return WriteReviewSearch;
 }(_react2.default.Component);
 
-exports.default = HomeWriteReview;
+exports.default = WriteReviewSearch;
 
 /***/ })
 /******/ ]);

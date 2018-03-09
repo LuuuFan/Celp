@@ -37,10 +37,14 @@ class Search extends React.Component{
   render(){
     return(
       <form onSubmit={(e)=>handleClick(e)} className='searchBar'>
-        <span>Find</span>
-        <input onChange={(e)=>this.handleInput(e,'key')} type='text' value={this.state.key} placeholder="App Academy, Cake, Bakeries"/>
-        <span>Near</span>
-        <input onChange={(e)=>this.handleInput(e,'loc')} type='text' value={this.state.loc} placeholder="San Francisco, CA, US"/>
+        <div>
+          <span>Find</span>
+          <input onChange={(e)=>this.handleInput(e,'key')} type='text' value={this.state.key} placeholder="App Academy, Cake, Bakeries"/>
+        </div>
+        <div className='searchBar-location'>
+          <span>Near</span>
+          <input onChange={(e)=>this.handleInput(e,'loc')} type='text' value={this.state.loc} placeholder="San Francisco, CA, US"/>
+        </div>
         <button onClick={(e)=>this.handleClick(e)}>
           <i className="fas fa-search"></i>
         </button>
