@@ -31487,32 +31487,30 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       ),
       _react2.default.createElement(
         'li',
-        { className: 'tooltip' },
+        null,
         _react2.default.createElement('i', { className: 'fas fa-shopping-bag' }),
         _react2.default.createElement(
-          'p',
-          null,
-          'Shopping'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'tooltiptext' },
-          'under construction'
+          'a',
+          { href: 'https://www.yelp.com/search?cflt=shopping&find_near=panuchos-san-francisco', target: '_blank' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Shopping'
+          )
         )
       ),
       _react2.default.createElement(
         'li',
-        { className: 'tooltip' },
+        null,
         _react2.default.createElement('i', { className: 'fas fa-ellipsis-h' }),
         _react2.default.createElement(
-          'p',
-          null,
-          'Show all'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'tooltiptext' },
-          'under construction'
+          'a',
+          { href: '/#/search?cat=Restaurant' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Show all'
+          )
         )
       )
     ),
@@ -31526,32 +31524,30 @@ var BizShowMoreInfo = function BizShowMoreInfo(_ref) {
       null,
       _react2.default.createElement(
         'li',
-        { className: 'tooltip' },
+        null,
         _react2.default.createElement('i', { className: 'fas fa-search' }),
         _react2.default.createElement(
-          'p',
-          null,
-          'Search for reservations'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'tooltiptext' },
-          'under construction'
+          'a',
+          { href: 'https://www.yelp.com', target: '_blank' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Search for reservations in Yelp'
+          )
         )
       ),
       _react2.default.createElement(
         'li',
-        { className: 'tooltip' },
+        null,
         _react2.default.createElement('i', { className: 'fas fa-calendar-alt' }),
         _react2.default.createElement(
-          'p',
-          null,
-          'Book a Table in Celp'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'tooltiptext' },
-          'under construction'
+          'a',
+          { href: 'https://www.yelp.com', target: '_blank' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Book a Table in Yelp'
+          )
         )
       )
     ),
@@ -35998,7 +35994,8 @@ var UserProfile = function (_React$Component) {
           user = _props.user,
           biz = _props.biz,
           reviews = _props.reviews,
-          imgs = _props.imgs;
+          imgs = _props.imgs,
+          currentUser = _props.currentUser;
 
       return _react2.default.createElement(
         'div',
@@ -36059,7 +36056,7 @@ var UserProfile = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'user-actions' },
-                  _react2.default.createElement(
+                  currentUser.id === user.id ? _react2.default.createElement(
                     'ul',
                     null,
                     _react2.default.createElement(
@@ -36097,7 +36094,7 @@ var UserProfile = function (_React$Component) {
                         'under construction'
                       )
                     )
-                  )
+                  ) : ""
                 )
               )
             )

@@ -35,13 +35,13 @@ const BizShowMoreInfo = ({biz}) => (
     <ul>
       <li><i className="fas fa-utensils"></i><a href='/#/search?cat=Restaurant'><p>Restaurants</p></a></li>
       <li><i className="fas fa-glass-martini"></i><a href='/#/search?cat=Nightlife'><p>Nightlife</p></a></li>
-      <li className='tooltip'><i className="fas fa-shopping-bag"></i><p>Shopping</p><div className='tooltiptext'>under construction</div></li>
-      <li className='tooltip'><i className="fas fa-ellipsis-h"></i><p>Show all</p><div className='tooltiptext'>under construction</div></li>
+      <li><i className="fas fa-shopping-bag"></i><a href='https://www.yelp.com/search?cflt=shopping&find_near=panuchos-san-francisco' target='_blank'><p>Shopping</p></a></li>
+      <li><i className="fas fa-ellipsis-h"></i><a href='/#/search?cat=Restaurant'><p>Show all</p></a></li>
     </ul>
     <h1>Dining in Celp</h1>
     <ul>
-      <li className='tooltip'><i className="fas fa-search"></i><p>Search for reservations</p><div className='tooltiptext'>under construction</div></li>
-      <li className='tooltip'><i className="fas fa-calendar-alt"></i><p>Book a Table in Celp</p><div className='tooltiptext'>under construction</div></li>
+      <li><i className="fas fa-search"></i><a href='https://www.yelp.com' target="_blank"><p>Search for reservations in Yelp</p></a></li>
+      <li><i className="fas fa-calendar-alt"></i><a href='https://www.yelp.com' target="_blank"><p>Book a Table in Yelp</p></a></li>
     </ul>
     <h1>Near Me</h1>
     <ul>

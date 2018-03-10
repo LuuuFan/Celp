@@ -21,7 +21,7 @@ class UserProfile extends React.Component{
   }
 
   render(){
-    const {user, biz, reviews, imgs} = this.props;
+    const {user, biz, reviews, imgs, currentUser} = this.props;
     return(
       <div className='user-profile'>
         {user.username ?
@@ -43,11 +43,13 @@ class UserProfile extends React.Component{
                     </div>
                   </div>
                   <div className='user-actions'>
+                  {currentUser.id === user.id ?
                   <ul>
                     <li><i className="fas fa-camera-retro"></i><a href='/#/settings'>Add Profile Photos</a></li>
                     <li><i className="fas fa-id-card"></i><a href='/#/settings'>Update Your Profile</a></li>
                     <li className='tooltip'><i className="fas fa-users"></i><a>Find Friends</a><div className='tooltiptext'>under construction</div></li>
                   </ul>
+                  : ""}
                 </div>
                 </div>
               </div>
