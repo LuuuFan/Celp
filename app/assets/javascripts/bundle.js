@@ -38128,6 +38128,234 @@ var Events = function (_React$Component) {
                 )
               )
             )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'events-index-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'events-index-item-img-container' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.yelp.com/events/san-francisco-san-franciscos-167th-annual-st-patricks-day-festival-and-parade' },
+                _react2.default.createElement('img', { src: 'https://s3-media2.fl.yelpcdn.com/ephoto/cmRAg3C_tim9duJH7gnVmg/300s.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'events-item-description' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/san-francisco-san-franciscos-167th-annual-st-patricks-day-festival-and-parade' },
+                  'San Francisco\'s 167th Annual St. Patrick\'s Day Festival and Parade'
+                )
+              ),
+              _react2.default.createElement(
+                'table',
+                null,
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-calendar-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Mar 17, 10:00 am'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-map-marker' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      '2ND St San Francisco, CA 94107'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'The 167th Annual St. Patrick\'s Day Parade in San Francisco is a well established event ...'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'events-item-category' },
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/sf/browse?c=8' },
+                  'Festivals & Fairs'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'events-index-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'events-index-item-img-container' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.yelp.com/events/palo-alto-palo-alto-festival-of-the-arts-13' },
+                _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/ephoto/sxPBBtgFYE0wQQ_aRzvnZw/300s.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'events-item-description' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/palo-alto-palo-alto-festival-of-the-arts-13' },
+                  'Palo Alto Festival of the Arts'
+                )
+              ),
+              _react2.default.createElement(
+                'table',
+                null,
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-calendar-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Aug 25, 10:00 am'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-map-marker' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'University Ave Palo Alto, CA 94306'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'The 167th Annual St. Patrick\'s Day Parade in San Francisco is a well established event ...'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'events-item-category' },
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/sf/browse?c=8' },
+                  'Festivals & Fairs'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'events-index-item' },
+            _react2.default.createElement(
+              'div',
+              { className: 'events-index-item-img-container' },
+              _react2.default.createElement(
+                'a',
+                { href: 'https://www.yelp.com/events/fremont-halal-fest-2018' },
+                _react2.default.createElement('img', { src: 'https://s3-media3.fl.yelpcdn.com/ephoto/yl0yqa581KWwcohENu3ZaQ/300s.jpg' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'events-item-description' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/fremont-halal-fest-2018' },
+                  'Halal Fest 2018'
+                )
+              ),
+              _react2.default.createElement(
+                'table',
+                null,
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-calendar-alt' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Jun 30, 12:00 pm'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('i', { className: 'fas fa-map-marker' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Halal Fest 2018 Town Fair Plaza'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'The 6th Annual Halal Food & Eid Festival is scheduled for Saturday June 30th (12 noon to 11pm)...'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'events-item-category' },
+                _react2.default.createElement(
+                  'a',
+                  { href: 'https://www.yelp.com/events/sf/browse?c=7' },
+                  'Food & Drink'
+                )
+              )
+            )
           )
         )
       );

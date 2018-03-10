@@ -82,6 +82,78 @@ class Events extends React.Component {
               </div>
             </div>
           </div>
+          <div className='events-index-item'>
+            <div className='events-index-item-img-container'>
+              <a href='https://www.yelp.com/events/san-francisco-san-franciscos-167th-annual-st-patricks-day-festival-and-parade'>
+                <img src='https://s3-media2.fl.yelpcdn.com/ephoto/cmRAg3C_tim9duJH7gnVmg/300s.jpg' />
+              </a>
+            </div>
+            <div className='events-item-description'>
+              <h3>
+                <a href='https://www.yelp.com/events/san-francisco-san-franciscos-167th-annual-st-patricks-day-festival-and-parade'>
+                  San Francisco's 167th Annual St. Patrick's Day Festival and Parade
+                </a>
+              </h3>
+              <table>
+                <tbody>
+                  <tr><td><i className="fas fa-calendar-alt"></i></td><td>Mar 17, 10:00 am</td></tr>
+                  <tr><td><i className="fas fa-map-marker"></i></td><td>2ND St San Francisco, CA 94107</td></tr>
+                </tbody>
+              </table>
+              <p>The 167th Annual St. Patrick's Day Parade in San Francisco is a well established event ...</p>
+              <div className='events-item-category'>
+                <a href='https://www.yelp.com/events/sf/browse?c=8'>Festivals & Fairs</a>
+              </div>
+            </div>
+          </div>
+          <div className='events-index-item'>
+            <div className='events-index-item-img-container'>
+              <a href='https://www.yelp.com/events/palo-alto-palo-alto-festival-of-the-arts-13'>
+                <img src='https://s3-media3.fl.yelpcdn.com/ephoto/sxPBBtgFYE0wQQ_aRzvnZw/300s.jpg' />
+              </a>
+            </div>
+            <div className='events-item-description'>
+              <h3>
+                <a href='https://www.yelp.com/events/palo-alto-palo-alto-festival-of-the-arts-13'>
+                  Palo Alto Festival of the Arts
+                </a>
+              </h3>
+              <table>
+                <tbody>
+                  <tr><td><i className="fas fa-calendar-alt"></i></td><td>Aug 25, 10:00 am</td></tr>
+                  <tr><td><i className="fas fa-map-marker"></i></td><td>University Ave Palo Alto, CA 94306</td></tr>
+                </tbody>
+              </table>
+              <p>The 167th Annual St. Patrick's Day Parade in San Francisco is a well established event ...</p>
+              <div className='events-item-category'>
+                <a href='https://www.yelp.com/events/sf/browse?c=8'>Festivals & Fairs</a>
+              </div>
+            </div>
+          </div>
+          <div className='events-index-item'>
+            <div className='events-index-item-img-container'>
+              <a href='https://www.yelp.com/events/fremont-halal-fest-2018'>
+                <img src='https://s3-media3.fl.yelpcdn.com/ephoto/yl0yqa581KWwcohENu3ZaQ/300s.jpg' />
+              </a>
+            </div>
+            <div className='events-item-description'>
+              <h3>
+                <a href='https://www.yelp.com/events/fremont-halal-fest-2018'>
+                  Halal Fest 2018
+                </a>
+              </h3>
+              <table>
+                <tbody>
+                  <tr><td><i className="fas fa-calendar-alt"></i></td><td>Jun 30, 12:00 pm</td></tr>
+                  <tr><td><i className="fas fa-map-marker"></i></td><td>Halal Fest 2018 Town Fair Plaza</td></tr>
+                </tbody>
+              </table>
+              <p>The 6th Annual Halal Food & Eid Festival is scheduled for Saturday June 30th (12 noon to 11pm)...</p>
+              <div className='events-item-category'>
+                <a href='https://www.yelp.com/events/sf/browse?c=7'>Food & Drink</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
