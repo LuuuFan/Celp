@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308183428) do
+ActiveRecord::Schema.define(version: 20180310025021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,17 @@ ActiveRecord::Schema.define(version: 20180308183428) do
     t.text "description"
     t.index ["biz_id"], name: "index_imgs_on_biz_id"
     t.index ["user_id"], name: "index_imgs_on_user_id"
+  end
+
+  create_table "review_tags", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "review_id", null: false
+    t.string "tag", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id", "user_id", "tag"], name: "index_review_tags_on_review_id_and_user_id_and_tag", unique: true
+    t.index ["review_id"], name: "index_review_tags_on_review_id"
+    t.index ["user_id"], name: "index_review_tags_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

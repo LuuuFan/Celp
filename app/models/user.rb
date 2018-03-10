@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :bookmark_biz,
     through: :bookmarks,
     source: :biz
+  has_many :review_tags
 
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
