@@ -26,6 +26,14 @@ class ReviewsIndexItem extends React.Component {
     this.setState({className: 'modal'});
   }
 
+  reviewTag(e, tag){
+    if (e.target.className === '') {
+      this.props.createReviewTag(this.props.review.id, tag)
+    } else {
+      this.props.deleteReviewTag(this.props.review.id, tag)
+    }
+  }
+
   // mouseOver(id){
   //   const reviewTable = document.getElementById(`review-table-${id}`);
   //   reviewTable.classList.remove('hidden');
@@ -88,9 +96,9 @@ class ReviewsIndexItem extends React.Component {
                   <p>Was this review ...?</p>
                   <div>
                     <ul className='group'>
-                      <li className='tooltip'><i className="fas fa-lightbulb"></i>Userful<div className='tooltiptext'>under construction</div></li>
-                      <li className='tooltip'><i className="far fa-smile"></i>Funny<div className='tooltiptext'>under construction</div></li>
-                      <li className='tooltip'><i className="far fa-hand-peace"></i>Cool<div className='tooltiptext'>under construction</div></li>
+                      <li onClick={(e)=>this.reviewTag(e, 'userful')} className={this.props.review.is_tagged_by_user.includes('userful') ? 'tagged' : ""}><i className="fas fa-lightbulb"></i>Userful</li>
+                      <li onClick={(e)=>this.reviewTag(e, 'funny')} className={this.props.review.is_tagged_by_user.includes('funny') ? 'tagged' : ""}><i className="far fa-smile"></i>Funny</li>
+                      <li onClick={(e)=>this.reviewTag(e, 'cool')} className={this.props.review.is_tagged_by_user.includes('cool') ? 'tagged' : ""}><i className="far fa-hand-peace"></i>Cool</li>
                     </ul>
                     <div className='report-review tooltip'><i className="fas fa-flag"></i><div className='tooltiptext'>under construction</div></div>
                   </div>

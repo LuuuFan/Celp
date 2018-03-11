@@ -19,7 +19,7 @@ class ReviewsIndex extends React.Component {
   // }
 
   render(){
-    const {reviews, biz, currentUser, users, deleteReview, history} = this.props;
+    const {reviews, biz, currentUser, users, deleteReview, history, deleteReviewTag, createReviewTag} = this.props;
     return (
       <div className='review-main group'>
         <div className='review-index'>
@@ -52,6 +52,8 @@ class ReviewsIndex extends React.Component {
                       users={users}
                       bizId={biz.id}
                       currentUser={currentUser}
+                      createReviewTag={createReviewTag}
+                      deleteReviewTag={deleteReviewTag}
                       deleteReview={deleteReview} />
                   :""}
                 </div>

@@ -12,15 +12,20 @@ const reviewReducer = (state={}, action) => {
       } else {
         return state
       }
+
     case RECEIVE_ALL_REVIEWS:
       return Object.assign({}, action.reviews);
+
     case RECEIVE_REVIEW:
       newState[action.review.id] = action.review;
       return Object.assign({}, state, newState);
+
     case REMOVE_REVIEW:
       newState = Object.assign({}, state);
       delete newState[action.reviewId];
+      newState.order.splice(newState.order.indexOf(action.reviewId), 1)
       return newState;
+
     case RECEIVE_USER:
       return action.reviews;
     default:

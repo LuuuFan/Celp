@@ -24,7 +24,7 @@ export const removeReview = (payload) => ({
 
 export const createReview = (bizId, review) => dispatch => APIUtilReview.createReview(bizId, review)
   .then(
-    payload => dispatch(receiveReview(payload)),
+    review => dispatch(receiveReview(review)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
 

@@ -48,7 +48,7 @@ json.reviews do
     json.set! review.id do
       json.extract! review, :id, :body, :rate, :updated_at, :user_id, :biz_id
       if current_user
-        json.is_tagged_by_user? review.is_tagged_by_user?(current_user.id)
+        json.is_tagged_by_user review.is_tagged_by_user?(current_user.id)
       end
       # json.set! :user, review.user.username
       # json.set! :user_avatar, review.user.avatar_url

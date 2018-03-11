@@ -1215,8 +1215,8 @@ var removeReview = exports.removeReview = function removeReview(payload) {
 
 var createReview = exports.createReview = function createReview(bizId, review) {
   return function (dispatch) {
-    return APIUtilReview.createReview(bizId, review).then(function (payload) {
-      return dispatch(receiveReview(payload));
+    return APIUtilReview.createReview(bizId, review).then(function (review) {
+      return dispatch(receiveReview(review));
     }, function (errors) {
       return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
@@ -23189,15 +23189,20 @@ var reviewReducer = function reviewReducer() {
       } else {
         return state;
       }
+
     case _review.RECEIVE_ALL_REVIEWS:
       return Object.assign({}, action.reviews);
+
     case _review.RECEIVE_REVIEW:
       newState[action.review.id] = action.review;
       return Object.assign({}, state, newState);
+
     case _review.REMOVE_REVIEW:
       newState = Object.assign({}, state);
       delete newState[action.reviewId];
+      newState.order.splice(newState.order.indexOf(action.reviewId), 1);
       return newState;
+
     case _user.RECEIVE_USER:
       return action.reviews;
     default:
@@ -29681,6 +29686,8 @@ var _reactRouterDom = __webpack_require__(1);
 
 var _review = __webpack_require__(18);
 
+var _review_tag = __webpack_require__(210);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
@@ -29724,6 +29731,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     },
     sendSMS: function sendSMS(bizId, phoneNumber) {
       return dispatch((0, _biz.sendSMS)(bizId, phoneNumber));
+    },
+    createReviewTag: function createReviewTag(reviewId, tag) {
+      return dispatch((0, _review_tag.createReviewTag)(reviewId, tag));
+    },
+    deleteReviewTag: function deleteReviewTag(reviewId, tag) {
+      return dispath((0, _review_tag.deleteReviewTag)(reviewId, tag));
     }
   };
 };
@@ -29866,7 +29879,9 @@ var BizShow = function (_React$Component) {
           reviews = _props.reviews,
           users = _props.users,
           currentUser = _props.currentUser,
-          deleteReview = _props.deleteReview;
+          deleteReview = _props.deleteReview,
+          createReviewTag = _props.createReviewTag,
+          deleteReviewTag = _props.deleteReviewTag;
 
       return _react2.default.createElement(
         'div',
@@ -30293,6 +30308,8 @@ var BizShow = function (_React$Component) {
             users: users,
             currentUser: currentUser,
             deleteReview: deleteReview,
+            createReviewTag: createReviewTag,
+            deleteReviewTag: deleteReviewTag,
             biz: biz }) : ""
         )
       );
@@ -30642,7 +30659,9 @@ var ReviewsIndex = function (_React$Component) {
           currentUser = _props.currentUser,
           users = _props.users,
           deleteReview = _props.deleteReview,
-          history = _props.history;
+          history = _props.history,
+          deleteReviewTag = _props.deleteReviewTag,
+          createReviewTag = _props.createReviewTag;
 
       return _react2.default.createElement(
         'div',
@@ -30722,6 +30741,8 @@ var ReviewsIndex = function (_React$Component) {
                   users: users,
                   bizId: biz.id,
                   currentUser: currentUser,
+                  createReviewTag: createReviewTag,
+                  deleteReviewTag: deleteReviewTag,
                   deleteReview: deleteReview }) : ""
               );
             })
@@ -30808,6 +30829,15 @@ var ReviewsIndexItem = function (_React$Component) {
     value: function closeDelete(e) {
       e.preventDefault();
       this.setState({ className: 'modal' });
+    }
+  }, {
+    key: 'reviewTag',
+    value: function reviewTag(e, tag) {
+      if (e.target.className === '') {
+        this.props.createReviewTag(this.props.review.id, tag);
+      } else {
+        this.props.deleteReviewTag(this.props.review.id, tag);
+      }
     }
 
     // mouseOver(id){
@@ -31003,36 +31033,27 @@ var ReviewsIndexItem = function (_React$Component) {
                     { className: 'group' },
                     _react2.default.createElement(
                       'li',
-                      { className: 'tooltip' },
+                      { onClick: function onClick(e) {
+                          return _this2.reviewTag(e, 'userful');
+                        }, className: this.props.review.is_tagged_by_user.includes('userful') ? 'tagged' : "" },
                       _react2.default.createElement('i', { className: 'fas fa-lightbulb' }),
-                      'Userful',
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'tooltiptext' },
-                        'under construction'
-                      )
+                      'Userful'
                     ),
                     _react2.default.createElement(
                       'li',
-                      { className: 'tooltip' },
+                      { onClick: function onClick(e) {
+                          return _this2.reviewTag(e, 'funny');
+                        }, className: this.props.review.is_tagged_by_user.includes('funny') ? 'tagged' : "" },
                       _react2.default.createElement('i', { className: 'far fa-smile' }),
-                      'Funny',
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'tooltiptext' },
-                        'under construction'
-                      )
+                      'Funny'
                     ),
                     _react2.default.createElement(
                       'li',
-                      { className: 'tooltip' },
+                      { onClick: function onClick(e) {
+                          return _this2.reviewTag(e, 'cool');
+                        }, className: this.props.review.is_tagged_by_user.includes('cool') ? 'tagged' : "" },
                       _react2.default.createElement('i', { className: 'far fa-hand-peace' }),
-                      'Cool',
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'tooltiptext' },
-                        'under construction'
-                      )
+                      'Cool'
                     )
                   ),
                   _react2.default.createElement(
@@ -38363,6 +38384,76 @@ var Events = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Events;
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.deleteReviewTag = exports.createReviewTag = undefined;
+
+var _review_tag_util = __webpack_require__(211);
+
+var APIUtilReviewTag = _interopRequireWildcard(_review_tag_util);
+
+var _review = __webpack_require__(18);
+
+var _session = __webpack_require__(8);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var createReviewTag = exports.createReviewTag = function createReviewTag(reviewId, tag) {
+  return function (dispatch) {
+    return APIUtilReviewTag.createReviewTag(reviewId, tag).then(function () {
+      return function (payload) {
+        return dispatch((0, _review.receiveReview)(payload));
+      }, function (errors) {
+        return dispatch((0, _session.receiveErrors)(errors.responseJSON));
+      };
+    });
+  };
+};
+
+var deleteReviewTag = exports.deleteReviewTag = function deleteReviewTag(reviewId, tag) {
+  return function (dispatch) {
+    return APIUtilReviewTag.deleteReviewTag(reviewId, tag).then(function (payload) {
+      return dispatch((0, _review.receiveReview)(payload));
+    }, function (errors) {
+      return dispatch((0, _session.receiveErrors)(errors.responseJSON));
+    });
+  };
+};
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var createReviewTag = exports.createReviewTag = function createReviewTag(reviewId, tag) {
+  return $.ajax({
+    url: 'api/reviews/' + reviewId + '/review_tags',
+    method: 'POST',
+    data: { tag: tag }
+  });
+};
+
+var deleteReviewTag = exports.deleteReviewTag = function deleteReviewTag(reviewId, tag) {
+  return $.ajax({
+    url: 'api/reviews/' + reviewId + '/review_tags',
+    method: 'DELETE',
+    data: { tag: tag }
+  });
+};
 
 /***/ })
 /******/ ]);

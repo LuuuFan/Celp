@@ -4,6 +4,7 @@ import BizShow from './biz_show';
 import {requestBiz, sendSMS} from '../../actions/biz';
 import {withRouter} from 'react-router-dom';
 import {deleteReview} from '../../actions/review';
+import {createReviewTag, deleteReviewTag} from '../../actions/review_tag';
 
 const mapStateToProps = (state, ownProps) => {
   let biz = state.entities.biz[ownProps.match.params.bizId];
@@ -36,7 +37,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return({
     requestBiz: (bizId) => dispatch(requestBiz(bizId)),
     deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
-    sendSMS: (bizId, phoneNumber) => dispatch(sendSMS(bizId, phoneNumber))
+    sendSMS: (bizId, phoneNumber) => dispatch(sendSMS(bizId, phoneNumber)),
+    createReviewTag: (reviewId, tag) => dispatch(createReviewTag(reviewId, tag)),
+    deleteReviewTag: (reviewId, tag) => dispath(deleteReviewTag(reviewId, tag))
   });
 }
 

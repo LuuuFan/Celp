@@ -21,8 +21,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find_by(id: params[:review_id])
-    # @review = Review.where(biz_id: params[:biz_id], user_id: current_user.id)[0]
+    # @review = Review.find_by(id: params[:review_id])
+    @review = Review.where(biz_id: params[:biz_id], user_id: current_user.id)[0]
   end
 
   def update

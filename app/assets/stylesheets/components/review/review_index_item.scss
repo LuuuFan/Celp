@@ -143,6 +143,13 @@
   margin-right: 5px;
 }
 
+.review-status .tagged{
+  background: linear-gradient(#0097ec, #0097ec);
+  color: white;
+  background-color: #0097ec;
+  border: 1px solid #007abe;
+}
+
 
 .review-user:hover .review-table{
   display: block;

@@ -8,15 +8,15 @@ Rails.application.routes.draw do
     end
     resources :biz, only: [:index, :show] do
       resources :imgs, only: [:index, :create]
-      resources :reviews, only: [:index, :create] do
-        resource :review_tags, only: [:create, :destroy]
-      end
+      resources :reviews, only: [:index, :create]
       resource :review, only: [:show, :update,]
       resource :bookmark, only: [:create, :destroy]
     end
     resource :session, only: [:create, :destroy]
     resources :imgs, only: [:show, :destroy]
-    resources :reviews, only: [:show, :destroy]
+    resources :reviews, only: [:show, :destroy] do
+      resource :review_tags, only: [:create, :destroy]
+    end
     resources :searches, only: [:index]
   end
   post '/api/biz/:id/sms', to: 'api/biz#sms', as: 'biz_sms'

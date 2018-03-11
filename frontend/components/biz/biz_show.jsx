@@ -67,7 +67,7 @@ class BizShow extends React.Component {
   }
 
   render(){
-    const {bizEnoughInfo, biz, imgs, reviews, users, currentUser, deleteReview} = this.props;
+    const {bizEnoughInfo, biz, imgs, reviews, users, currentUser, deleteReview, createReviewTag, deleteReviewTag} = this.props;
     return(
       <div>
         <div className='biz-show'>
@@ -254,6 +254,8 @@ class BizShow extends React.Component {
                 users={users}
                 currentUser={currentUser}
                 deleteReview={deleteReview}
+                createReviewTag={createReviewTag}
+                deleteReviewTag={deleteReviewTag}
                 biz={biz} />
           : ""}
         </div>
