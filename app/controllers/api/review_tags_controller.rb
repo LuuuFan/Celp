@@ -4,9 +4,8 @@ class Api::ReviewTagsController < ApplicationController
     @review_tag = ReviewTag.new(review_id: params[:review_id], tag:params[:tag])
     @review_tag.user_id = current_user.id
     @review = Review.find_by(id: params[:review_id])
-    debugger
     if @review_tag.save
-      render json: 'api/reviews/show', status: 200
+      render :show
     else
       render json: @review_tag.errors.full_messages
     end
@@ -17,7 +16,7 @@ class Api::ReviewTagsController < ApplicationController
     @review = Review.find_by(id: params[:review_id])
     if @review_tag
       @review_tag.destroy
-      render json: 'api/reviews/show', status: 200
+      render :show
     else
       render json: ['cannot find review_tag'], status: 422
     end

@@ -29750,7 +29750,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
       return dispatch((0, _review_tag.createReviewTag)(reviewId, tag));
     },
     deleteReviewTag: function deleteReviewTag(reviewId, tag) {
-      return dispath((0, _review_tag.deleteReviewTag)(reviewId, tag));
+      return dispatch((0, _review_tag.deleteReviewTag)(reviewId, tag));
     }
   };
 };
@@ -38440,12 +38440,10 @@ var removeReviewTag = exports.removeReviewTag = function removeReviewTag(payload
 
 var createReviewTag = exports.createReviewTag = function createReviewTag(reviewId, tag) {
   return function (dispatch) {
-    return APIUtilReviewTag.createReviewTag(reviewId, tag).then(function () {
-      return function (payload) {
-        return dispatch(receiveReviewTag(payload));
-      }, function (errors) {
-        return dispatch((0, _session.receiveErrors)(errors.responseJSON));
-      };
+    return APIUtilReviewTag.createReviewTag(reviewId, tag).then(function (payload) {
+      return dispatch(receiveReviewTag(payload));
+    }, function (errors) {
+      return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
   };
 };
@@ -38454,8 +38452,6 @@ var deleteReviewTag = exports.deleteReviewTag = function deleteReviewTag(reviewI
   return function (dispatch) {
     return APIUtilReviewTag.deleteReviewTag(reviewId, tag).then(function (payload) {
       return dispatch(removeReviewTag(payload));
-    }, function (errors) {
-      return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
   };
 };

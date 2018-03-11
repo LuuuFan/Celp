@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
     sendSMS: (bizId, phoneNumber) => dispatch(sendSMS(bizId, phoneNumber)),
     createReviewTag: (reviewId, tag) => dispatch(createReviewTag(reviewId, tag)),
-    deleteReviewTag: (reviewId, tag) => dispath(deleteReviewTag(reviewId, tag))
+    deleteReviewTag: (reviewId, tag) => dispatch(deleteReviewTag(reviewId, tag))
   });
 }
 

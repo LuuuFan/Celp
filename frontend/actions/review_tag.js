@@ -17,16 +17,11 @@ export const removeReviewTag = (payload) => ({
 
 export const createReviewTag = (reviewId, tag) => dispatch => APIUtilReviewTag.createReviewTag(reviewId, tag)
   .then(
-    ()=>{
-      return (
-        payload => dispatch(receiveReviewTag(payload)),
-        errors => dispatch(receiveErrors(errors.responseJSON))
-      )
-    }
+    payload => dispatch(receiveReviewTag(payload)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
   );
 
 export const deleteReviewTag = (reviewId, tag) => dispatch => APIUtilReviewTag.deleteReviewTag(reviewId, tag)
   .then(
-    payload => dispatch(removeReviewTag(payload)),
-    errors => dispatch(receiveErrors(errors.responseJSON))
+    payload => dispatch(removeReviewTag(payload))
   );
