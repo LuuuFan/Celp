@@ -5,7 +5,10 @@ import ReviewsIndexItemRating from './reviews_index_item_rating';
 class ReviewsIndexItem extends React.Component {
   constructor(){
     super();
-    this.state = {className: 'modal'};
+    this.state = {
+      className: 'modal',
+      report: 'modal'
+    };
   }
 
   handleClick(e, id){
@@ -32,6 +35,18 @@ class ReviewsIndexItem extends React.Component {
     } else {
       this.props.deleteReviewTag(this.props.review.id, tag)
     }
+  }
+
+  openReport(e){
+    e.preventDefault();
+    if (e.target.classList.value !== 'modal-screen') {
+      this.setState({report: 'is-open'});
+    }
+  }
+
+  closeReport(e){
+    e.preventDefault();
+    this.setState({report: 'modal'});
   }
 
   // mouseOver(id){
@@ -104,7 +119,7 @@ class ReviewsIndexItem extends React.Component {
                       <li onClick={(e)=>this.reviewTag(e, 'funny')} className={this.props.review.is_tagged_by_user.includes('funny') ? 'tagged' : ""}><i className="far fa-smile"></i>Funny</li>
                       <li onClick={(e)=>this.reviewTag(e, 'cool')} className={this.props.review.is_tagged_by_user.includes('cool') ? 'tagged' : ""}><i className="far fa-hand-peace"></i>Cool</li>
                     </ul>
-                    <div className='report-review tooltip'><i className="fas fa-flag"></i><div className='tooltiptext'>under construction</div></div>
+                    <div onClick={(e)=>this.openReport(e)} className='report-review'><i className="fas fa-flag"></i></div>
                   </div>
                 </div>
               }
@@ -127,6 +142,22 @@ class ReviewsIndexItem extends React.Component {
             </div>
           </div>
           <div onClick={(e)=>this.closeDelete(e)} className='modal-screen'>
+          </div>
+        </div>
+        <div className={this.state.report} id={`modal-${review.id}`}>
+          <div className='delete-confirmation'>
+            <div>
+              <h1>Report</h1>
+                <div onClick={(e)=>this.closeReport(e)}>
+                  <span>&times;</span>
+                </div>
+            </div>
+            <p>Are you sure you would like to delete this review?</p>
+            <div>
+              <button onClick={(e)=>this.closeReport(e)}>cancel</button>
+            </div>
+          </div>
+          <div onClick={(e)=>this.closeReport(e)} className='modal-screen'>
           </div>
         </div>
       </div>

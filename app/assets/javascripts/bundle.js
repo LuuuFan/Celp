@@ -30819,7 +30819,10 @@ var ReviewsIndexItem = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ReviewsIndexItem.__proto__ || Object.getPrototypeOf(ReviewsIndexItem)).call(this));
 
-    _this.state = { className: 'modal' };
+    _this.state = {
+      className: 'modal',
+      report: 'modal'
+    };
     return _this;
   }
 
@@ -30852,6 +30855,20 @@ var ReviewsIndexItem = function (_React$Component) {
       } else {
         this.props.deleteReviewTag(this.props.review.id, tag);
       }
+    }
+  }, {
+    key: 'openReport',
+    value: function openReport(e) {
+      e.preventDefault();
+      if (e.target.classList.value !== 'modal-screen') {
+        this.setState({ report: 'is-open' });
+      }
+    }
+  }, {
+    key: 'closeReport',
+    value: function closeReport(e) {
+      e.preventDefault();
+      this.setState({ report: 'modal' });
     }
 
     // mouseOver(id){
@@ -31076,13 +31093,10 @@ var ReviewsIndexItem = function (_React$Component) {
                   ),
                   _react2.default.createElement(
                     'div',
-                    { className: 'report-review tooltip' },
-                    _react2.default.createElement('i', { className: 'fas fa-flag' }),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'tooltiptext' },
-                      'under construction'
-                    )
+                    { onClick: function onClick(e) {
+                        return _this2.openReport(e);
+                      }, className: 'report-review' },
+                    _react2.default.createElement('i', { className: 'fas fa-flag' })
                   )
                 )
               )
@@ -31141,6 +31155,53 @@ var ReviewsIndexItem = function (_React$Component) {
           ),
           _react2.default.createElement('div', { onClick: function onClick(e) {
               return _this2.closeDelete(e);
+            }, className: 'modal-screen' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: this.state.report, id: 'modal-' + review.id },
+          _react2.default.createElement(
+            'div',
+            { className: 'delete-confirmation' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'h1',
+                null,
+                'Report'
+              ),
+              _react2.default.createElement(
+                'div',
+                { onClick: function onClick(e) {
+                    return _this2.closeReport(e);
+                  } },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  '\xD7'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Are you sure you would like to delete this review?'
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'button',
+                { onClick: function onClick(e) {
+                    return _this2.closeReport(e);
+                  } },
+                'cancel'
+              )
+            )
+          ),
+          _react2.default.createElement('div', { onClick: function onClick(e) {
+              return _this2.closeReport(e);
             }, className: 'modal-screen' })
         )
       );
