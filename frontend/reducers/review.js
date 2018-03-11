@@ -1,6 +1,7 @@
 import {RECEIVE_BIZ} from '../actions/biz';
 import {RECEIVE_ALL_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW} from '../actions/review';
 import {RECEIVE_USER} from '../actions/user';
+import {RECEIVE_REVIEW_TAG, REMOVE_REVIEW_TAG} from '../actions/review_tag';
 
 const reviewReducer = (state={}, action) => {
   Object.freeze(state);
@@ -28,6 +29,17 @@ const reviewReducer = (state={}, action) => {
 
     case RECEIVE_USER:
       return action.reviews;
+
+    case RECEIVE_REVIEW_TAG:
+      newState = Object.assign({}, state);
+      newState[action.review.id] = action.review;
+      return newState;
+
+    case REMOVE_REVIEW_TAG:
+      newState = Object.assign({}, state);
+      newState[action.review.id] = action.review;
+      return newState;
+
     default:
       return state;
   }

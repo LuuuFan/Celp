@@ -22881,6 +22881,7 @@ var bizReducer = function bizReducer() {
   switch (action.type) {
     case _biz.RECEIVE_ALL_BIZ:
       return action.bizes;
+
     case _biz.RECEIVE_BIZ:
       newState = Object.assign({}, state);
       newState[action.payload.biz.id] = action.payload.biz;
@@ -23176,6 +23177,8 @@ var _review = __webpack_require__(18);
 
 var _user = __webpack_require__(12);
 
+var _review_tag = __webpack_require__(210);
+
 var reviewReducer = function reviewReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments[1];
@@ -23205,6 +23208,17 @@ var reviewReducer = function reviewReducer() {
 
     case _user.RECEIVE_USER:
       return action.reviews;
+
+    case _review_tag.RECEIVE_REVIEW_TAG:
+      newState = Object.assign({}, state);
+      newState[action.review.id] = action.review;
+      return newState;
+
+    case _review_tag.REMOVE_REVIEW_TAG:
+      newState = Object.assign({}, state);
+      newState[action.review.id] = action.review;
+      return newState;
+
     default:
       return state;
   }
@@ -38395,7 +38409,7 @@ exports.default = Events;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.deleteReviewTag = exports.createReviewTag = undefined;
+exports.deleteReviewTag = exports.createReviewTag = exports.removeReviewTag = exports.receiveReviewTag = exports.REMOVE_REVIEW_TAG = exports.RECEIVE_REVIEW_TAG = undefined;
 
 var _review_tag_util = __webpack_require__(211);
 
@@ -38407,11 +38421,28 @@ var _session = __webpack_require__(8);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+var RECEIVE_REVIEW_TAG = exports.RECEIVE_REVIEW_TAG = 'RECEIVE_REVIEW_TAG';
+var REMOVE_REVIEW_TAG = exports.REMOVE_REVIEW_TAG = 'REMOVE_REVIEW_TAG';
+
+var receiveReviewTag = exports.receiveReviewTag = function receiveReviewTag(payload) {
+  return {
+    type: 'RECEIVE_REVIEW_TAG',
+    review: payload.review
+  };
+};
+
+var removeReviewTag = exports.removeReviewTag = function removeReviewTag(payload) {
+  return {
+    type: 'REMOVE_REVIEW_TAG',
+    review: payload.review
+  };
+};
+
 var createReviewTag = exports.createReviewTag = function createReviewTag(reviewId, tag) {
   return function (dispatch) {
     return APIUtilReviewTag.createReviewTag(reviewId, tag).then(function () {
       return function (payload) {
-        return dispatch((0, _review.receiveReview)(payload));
+        return dispatch(receiveReviewTag(payload));
       }, function (errors) {
         return dispatch((0, _session.receiveErrors)(errors.responseJSON));
       };
@@ -38422,7 +38453,7 @@ var createReviewTag = exports.createReviewTag = function createReviewTag(reviewI
 var deleteReviewTag = exports.deleteReviewTag = function deleteReviewTag(reviewId, tag) {
   return function (dispatch) {
     return APIUtilReviewTag.deleteReviewTag(reviewId, tag).then(function (payload) {
-      return dispatch((0, _review.receiveReview)(payload));
+      return dispatch(removeReviewTag(payload));
     }, function (errors) {
       return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
