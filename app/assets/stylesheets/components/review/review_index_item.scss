@@ -150,6 +150,14 @@
   border: 1px solid #007abe;
 }
 
+.already-voted{
+  color: green;
+}
+
+.review-status .tagged:hover{
+  border: 1px solid #ccc;
+  color: #ccc;
+}
 
 .review-user:hover .review-table{
   display: block;

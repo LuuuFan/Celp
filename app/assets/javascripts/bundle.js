@@ -31034,7 +31034,11 @@ var ReviewsIndexItem = function (_React$Component) {
               ) : _react2.default.createElement(
                 'div',
                 { className: 'review-status' },
-                _react2.default.createElement(
+                this.props.review.is_tagged_by_user.length > 0 ? _react2.default.createElement(
+                  'p',
+                  { className: 'already-voted' },
+                  'You voted'
+                ) : _react2.default.createElement(
                   'p',
                   null,
                   'Was this review ...?'

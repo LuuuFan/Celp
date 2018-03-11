@@ -93,7 +93,11 @@ class ReviewsIndexItem extends React.Component {
                 </div>
               :
                 <div className='review-status'>
+                  {this.props.review.is_tagged_by_user.length > 0 ?
+                    <p className='already-voted'>You voted</p>
+                    :
                   <p>Was this review ...?</p>
+                  }
                   <div>
                     <ul className='group'>
                       <li onClick={(e)=>this.reviewTag(e, 'userful')} className={this.props.review.is_tagged_by_user.includes('userful') ? 'tagged' : ""}><i className="fas fa-lightbulb"></i>Userful</li>
