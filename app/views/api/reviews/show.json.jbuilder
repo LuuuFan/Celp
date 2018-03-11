@@ -1,5 +1,8 @@
 json.review do
   json.extract! @review, :id, :body, :rate
+  if current_user
+    json.is_tagged_by_user? review.is_tagged_by_user?(current_user.id)
+  end
 end
 
 json.biz do

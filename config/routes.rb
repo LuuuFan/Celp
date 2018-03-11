@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     end
     resources :biz, only: [:index, :show] do
       resources :imgs, only: [:index, :create]
-      resources :reviews, only: [:index, :create]
+      resources :reviews, only: [:index, :create] do
+        resource :review_tags, only: [:create, :destroy]
+      end
       resource :review, only: [:show, :update,]
       resource :bookmark, only: [:create, :destroy]
     end

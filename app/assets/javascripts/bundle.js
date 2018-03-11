@@ -1215,8 +1215,8 @@ var removeReview = exports.removeReview = function removeReview(payload) {
 
 var createReview = exports.createReview = function createReview(bizId, review) {
   return function (dispatch) {
-    return APIUtilReview.createReview(bizId, review).then(function (review) {
-      return dispatch(receiveReview(review));
+    return APIUtilReview.createReview(bizId, review).then(function (payload) {
+      return dispatch(receiveReview(payload));
     }, function (errors) {
       return dispatch((0, _session.receiveErrors)(errors.responseJSON));
     });
