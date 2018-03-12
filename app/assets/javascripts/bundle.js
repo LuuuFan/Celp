@@ -35724,6 +35724,16 @@ var Footer = function Footer() {
                 _react2.default.createElement('i', { className: 'fab fa-linkedin' }),
                 'About Me'
               )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: 'https://www.facebook.com/angelia.fan.3' },
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement('i', { className: 'fab fa-facebook-f' }),
+                'More About Me'
+              )
             )
           )
         ),

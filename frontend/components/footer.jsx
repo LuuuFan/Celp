@@ -11,6 +11,7 @@ const Footer = () => (
         <ul>
           <a href='https://github.com/LuuuFan/Celp'><li><i className="fab fa-github"></i>About Celp</li></a>
           <a href='https://www.linkedin.com/in/lu-fan-a4a94812/'><li><i className="fab fa-linkedin"></i>About Me</li></a>
+          <a href='https://www.facebook.com/angelia.fan.3'><li><i className="fab fa-facebook-f"></i>More About Me</li></a>
         </ul>
       </li>
       <li>Discover
