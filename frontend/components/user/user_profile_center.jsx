@@ -27,7 +27,7 @@ class UserProfileCenter extends React.Component {
                 </div>
               </div>
               <div className='activity-item-update'>
-                <p>days ago</p>
+                <p>{imgs[imgs.order[0]].updated_at.slice(0, 10)}</p>
               </div>
             </div>
            : ""}
@@ -43,7 +43,7 @@ class UserProfileCenter extends React.Component {
                 </div>
               </div>
               <div className='activity-item-update'>
-                <p>days ago</p>
+                <p>{reviews[reviews.order[0]].updated_at.slice(0, 10)}</p>
               </div>
             </div>
            : ""}

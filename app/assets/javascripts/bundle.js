@@ -36638,7 +36638,7 @@ var UserProfileCenter = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'days ago'
+                imgs[imgs.order[0]].updated_at.slice(0, 10)
               )
             )
           ) : "",
@@ -36679,7 +36679,7 @@ var UserProfileCenter = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'days ago'
+                reviews[reviews.order[0]].updated_at.slice(0, 10)
               )
             )
           ) : ""
