@@ -85,9 +85,7 @@ class Map extends React.Component {
     return(
       <div className='map' ref='map'>
         <p>
-          Hey! Here are a few good burrito places in SF. Click on them
-          to find their name. Move the map and check the console to see
-          the new boundaries of the displayed map.
+          Hey! Here is google map.
         </p>
       </div>
     );

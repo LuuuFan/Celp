@@ -4739,7 +4739,7 @@ var Map = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Hey! Here are a few good burrito places in SF. Click on them to find their name. Move the map and check the console to see the new boundaries of the displayed map.'
+          'Hey! Here is google map.'
         )
       );
     }
@@ -30031,7 +30031,7 @@ var BizShow = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'biz-show-map' },
-                  _react2.default.createElement(_map2.default, { biz: biz })
+                  false ? _react2.default.createElement(_map2.default, { biz: biz }) : ""
                 ),
                 _react2.default.createElement(
                   'div',
@@ -31162,7 +31162,7 @@ var ReviewsIndexItem = function (_React$Component) {
           { className: this.state.report, id: 'modal-' + review.id },
           _react2.default.createElement(
             'div',
-            { className: 'delete-confirmation' },
+            { className: 'report-review-modal' },
             _react2.default.createElement(
               'div',
               null,
@@ -31186,17 +31186,34 @@ var ReviewsIndexItem = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'Are you sure you would like to delete this review?'
+              'Please refer to our Content Guidelines and Terms of Service and let us know why you think the content you\'ve reported may violate these guidelines.'
             ),
             _react2.default.createElement(
-              'div',
+              'form',
               null,
               _react2.default.createElement(
-                'button',
-                { onClick: function onClick(e) {
-                    return _this2.closeReport(e);
-                  } },
-                'cancel'
+                'label',
+                null,
+                'Please provide specific details below:'
+              ),
+              _react2.default.createElement('textarea', null),
+              _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'button',
+                  { onClick: function onClick(e) {
+                      return _this2.closeReport(e);
+                    } },
+                  'Report'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { onClick: function onClick(e) {
+                      return _this2.closeReport(e);
+                    } },
+                  'Cancel'
+                )
               )
             )
           ),

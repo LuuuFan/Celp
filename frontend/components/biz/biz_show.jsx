@@ -125,7 +125,7 @@ class BizShow extends React.Component {
               <div className='biz-show-bottom'>
                 <div className='biz-show-left-bottom'>
                   <div className='biz-show-map'>
-                    <Map biz={biz}/>
+                    {false ? <Map biz={biz}/> : ""}
                   </div>
                   <div className='biz-show-left-bottom-detail'>
                     <div>

@@ -145,20 +145,24 @@ class ReviewsIndexItem extends React.Component {
           </div>
         </div>
         <div className={this.state.report} id={`modal-${review.id}`}>
-          <div className='delete-confirmation'>
+          <div className='report-review-modal'>
             <div>
               <h1>Report</h1>
-                <div onClick={(e)=>this.closeReport(e)}>
-                  <span>&times;</span>
-                </div>
+              <div onClick={(e)=>this.closeReport(e)}>
+                <span>&times;</span>
+              </div>
             </div>
-            <p>Are you sure you would like to delete this review?</p>
-            <div>
-              <button onClick={(e)=>this.closeReport(e)}>cancel</button>
-            </div>
+            <p>Please refer to our Content Guidelines and Terms of Service and let us know why you think the content you've reported may violate these guidelines.</p>
+            <form>
+              <label>Please provide specific details below:</label>
+              <textarea />
+              <div>
+                <button onClick={(e)=>this.closeReport(e)}>Report</button>
+                <a onClick={(e)=>this.closeReport(e)}>Cancel</a>
+              </div>
+            </form>
           </div>
-          <div onClick={(e)=>this.closeReport(e)} className='modal-screen'>
-          </div>
+          <div onClick={(e)=>this.closeReport(e)} className='modal-screen'></div>
         </div>
       </div>
     );

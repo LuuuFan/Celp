@@ -189,7 +189,8 @@
   text-decoration: underline;
 }
 
-.delete-confirmation{
+.delete-confirmation,
+.report-review-modal{
   position: fixed;
   top: 33%;
   left: 40%;
@@ -204,19 +205,48 @@
   justify-content: space-between;
 }
 
-.delete-confirmation span{
+.report-review-modal{
+  width: 40%;
+  left: 30%;
+  height: 30%;
+}
+
+.report-review-modal>form{
+  display: flex;
+  flex-direction: column;
+}
+
+.report-review-modal>form>textarea{
+  padding: 15px;
+  resize: none;
+  height: 100px;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.report-review-modal>form>label{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.delete-confirmation span,
+.report-review-modal span{
   font-weight: bold;
   font-size: 20px;
   color: gray;
   cursor: pointer;
 }
 
-.delete-confirmation span:hover{
+.delete-confirmation span:hover,
+.report-review-modal span:hover{
   color: black;
 }
 
-.delete-confirmation>div{
+.delete-confirmation>div,
+.report-review-modal>div{
   display: flex;
+  justify-content: space-between;
 }
 
 .delete-confirmation>div:first-of-type{
@@ -225,7 +255,8 @@
   border-bottom: 1px solid lightgray;
 }
 
-.delete-confirmation>div>button:first-of-type{
+.delete-confirmation>div>button:first-of-type,
+.report-review-modal button{
   color: white;
   padding: 7px 10px;
   border: 1px solid #8d0005;
@@ -242,4 +273,13 @@
 
 .delete-confirmation>div>button:last-of-type:hover{
   color: #0073bb;
+}
+
+.report-review-modal a{
+  cursor: pointer;
+  color: #0073bb;
+}
+
+.report-review-modal a:hover{
+  text-decoration: underline;
 }
