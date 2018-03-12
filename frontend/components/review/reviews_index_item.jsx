@@ -57,15 +57,15 @@ class ReviewsIndexItem extends React.Component {
 
   closeReport(e){
     e.preventDefault();
-    if (this.state.reportContent) {
-      this.setState({report: 'modal'});
-      if (e.target.innerText === 'Report') {
-        this.setState({
-          notification: 'Your report has been submit.'
-        })
-      }
-    } else {
+    if (this.state.reportContent && e.target.innerText === 'Report') {
+      this.setState({
+        report: 'modal',
+        notification: 'Your report has been submit.'
+      });
+    } else if(e.target.innerText === 'Report'){
       this.setState({error: 'report-error'})
+    } else {
+      this.setState({report: 'modal'});
     }
   }
 
