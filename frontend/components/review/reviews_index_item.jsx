@@ -152,7 +152,7 @@ class ReviewsIndexItem extends React.Component {
                 <span>&times;</span>
               </div>
             </div>
-            <p>Please refer to our Content Guidelines and Terms of Service and let us know why you think the content you've reported may violate these guidelines.</p>
+            <p>Please refer to our <a href='https://www.yelp.com/guidelines'>Content Guidelines</a> and <a href='https://www.yelp.com/static?p=tos'>Terms of Service</a> from <a href='https://www.yelp.com'>Yelp</a> and let us know why you think the content you've reported may violate these guidelines.</p>
             <form>
               <label>Please provide specific details below:</label>
               <textarea />
