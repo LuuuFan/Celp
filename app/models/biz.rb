@@ -70,7 +70,8 @@ class Biz < ApplicationRecord
   end
 
   def is_open
-    today_hour = self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
+    cwday = DateTime.now.cwday == 7 ? 0 : DateTime.now.cwday
+    today_hour = self.hours.where(day: cwday).pluck(:start, :end)[0]
     if today_hour.nil?
       false
     else
@@ -85,7 +86,8 @@ class Biz < ApplicationRecord
   end
 
   def today_hour
-    self.hours.where(day: DateTime.now.cwday).pluck(:start, :end)[0]
+    cwday = DateTime.now.cwday == 7 ? 0 : DateTime.now.cwday
+    self.hours.where(day: cwday).pluck(:start, :end)[0]
   end
 
   private
