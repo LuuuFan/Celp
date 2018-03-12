@@ -30114,7 +30114,7 @@ var BizShow = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'biz-show-map' },
-                  false ? _react2.default.createElement(_map2.default, { biz: biz }) : ""
+                  _react2.default.createElement(_map2.default, { biz: biz })
                 ),
                 _react2.default.createElement(
                   'div',
@@ -30904,8 +30904,12 @@ var ReviewsIndexItem = function (_React$Component) {
 
     _this.state = {
       className: 'modal',
-      report: 'modal'
+      report: 'modal',
+      notification: '',
+      error: '',
+      reportContent: ''
     };
+    _this.handleInput = _this.handleInput.bind(_this);
     return _this;
   }
 
@@ -30948,10 +30952,27 @@ var ReviewsIndexItem = function (_React$Component) {
       }
     }
   }, {
+    key: 'handleInput',
+    value: function handleInput(e) {
+      if (this.state.error) {
+        this.setState({ error: '' });
+      }
+      this.setState({ reportContent: e.target.value });
+    }
+  }, {
     key: 'closeReport',
     value: function closeReport(e) {
       e.preventDefault();
-      this.setState({ report: 'modal' });
+      if (this.state.reportContent) {
+        this.setState({ report: 'modal' });
+        if (e.target.innerText === 'Report') {
+          this.setState({
+            notification: 'Your report has been submit.'
+          });
+        }
+      } else {
+        this.setState({ error: 'report-error' });
+      }
     }
 
     // mouseOver(id){
@@ -31121,6 +31142,11 @@ var ReviewsIndexItem = function (_React$Component) {
                 null,
                 review.body
               ),
+              this.state.notification ? _react2.default.createElement(
+                'div',
+                { className: 'submit-report' },
+                this.state.notification
+              ) : "",
               currentUser && review.user_id === currentUser.id ? _react2.default.createElement(
                 'div',
                 { className: 'review-status' },
@@ -31294,10 +31320,12 @@ var ReviewsIndexItem = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'label',
-                null,
+                { className: this.state.error },
                 'Please provide specific details below:'
               ),
-              _react2.default.createElement('textarea', null),
+              _react2.default.createElement('textarea', { onChange: function onChange(e) {
+                  return _this2.handleInput(e);
+                }, value: this.state.reportContent }),
               _react2.default.createElement(
                 'div',
                 null,

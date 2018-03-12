@@ -7,8 +7,12 @@ class ReviewsIndexItem extends React.Component {
     super();
     this.state = {
       className: 'modal',
-      report: 'modal'
+      report: 'modal',
+      notification: '',
+      error: '',
+      reportContent: ''
     };
+    this.handleInput = this.handleInput.bind(this);
   }
 
   handleClick(e, id){
@@ -44,9 +48,25 @@ class ReviewsIndexItem extends React.Component {
     }
   }
 
+  handleInput(e){
+    if (this.state.error) {
+      this.setState({error: ''})
+    }
+    this.setState({reportContent: e.target.value})
+  }
+
   closeReport(e){
     e.preventDefault();
-    this.setState({report: 'modal'});
+    if (this.state.reportContent) {
+      this.setState({report: 'modal'});
+      if (e.target.innerText === 'Report') {
+        this.setState({
+          notification: 'Your report has been submit.'
+        })
+      }
+    } else {
+      this.setState({error: 'report-error'})
+    }
   }
 
   // mouseOver(id){
@@ -102,6 +122,7 @@ class ReviewsIndexItem extends React.Component {
             </div>
             <div className='review-info-body'>
               <p>{review.body}</p>
+              {this.state.notification ? <div className='submit-report'>{this.state.notification}</div> : ""}
               { currentUser && review.user_id === currentUser.id ?
                 <div className='review-status'>
                   <div onClick={(e)=>this.showDelete(e)} className='deleteReview'><i className="fas fa-trash-alt"></i></div>
@@ -154,8 +175,8 @@ class ReviewsIndexItem extends React.Component {
             </div>
             <p>Please refer to our <a href='https://www.yelp.com/guidelines'>Content Guidelines</a> and <a href='https://www.yelp.com/static?p=tos'>Terms of Service</a> from <a href='https://www.yelp.com'>Yelp</a> and let us know why you think the content you've reported may violate these guidelines.</p>
             <form>
-              <label>Please provide specific details below:</label>
-              <textarea />
+              <label className={this.state.error}>Please provide specific details below:</label>
+              <textarea onChange={(e)=>this.handleInput(e)} value={this.state.reportContent} />
               <div>
                 <button onClick={(e)=>this.closeReport(e)}>Report</button>
                 <a onClick={(e)=>this.closeReport(e)}>Cancel</a>
