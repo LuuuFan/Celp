@@ -80,7 +80,7 @@ class Biz < ApplicationRecord
       if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
         true
       else
-        false
+        true
       end
     end
   end
