@@ -30937,10 +30937,14 @@ var ReviewsIndexItem = function (_React$Component) {
   }, {
     key: 'reviewTag',
     value: function reviewTag(e, tag) {
-      if (e.target.className === '') {
-        this.props.createReviewTag(this.props.review.id, tag);
+      if (!this.props.currentUser) {
+        this.setState({ notification: 'Please login before tag review' });
       } else {
-        this.props.deleteReviewTag(this.props.review.id, tag);
+        if (e.target.className === '') {
+          this.props.createReviewTag(this.props.review.id, tag);
+        } else {
+          this.props.deleteReviewTag(this.props.review.id, tag);
+        }
       }
     }
   }, {
@@ -31160,7 +31164,7 @@ var ReviewsIndexItem = function (_React$Component) {
               ) : _react2.default.createElement(
                 'div',
                 { className: 'review-status' },
-                this.props.review.is_tagged_by_user.length > 0 ? _react2.default.createElement(
+                this.props.review.is_tagged_by_user && this.props.review.is_tagged_by_user.length > 0 ? _react2.default.createElement(
                   'p',
                   { className: 'already-voted' },
                   'You voted'
@@ -31179,7 +31183,7 @@ var ReviewsIndexItem = function (_React$Component) {
                       'li',
                       { onClick: function onClick(e) {
                           return _this2.reviewTag(e, 'userful');
-                        }, className: this.props.review.is_tagged_by_user.includes('userful') ? 'tagged' : "" },
+                        }, className: review.is_tagged_by_user && review.is_tagged_by_user.includes('userful') ? 'tagged' : "" },
                       _react2.default.createElement('i', { className: 'fas fa-lightbulb' }),
                       'Userful'
                     ),
@@ -31187,7 +31191,7 @@ var ReviewsIndexItem = function (_React$Component) {
                       'li',
                       { onClick: function onClick(e) {
                           return _this2.reviewTag(e, 'funny');
-                        }, className: this.props.review.is_tagged_by_user.includes('funny') ? 'tagged' : "" },
+                        }, className: review.is_tagged_by_user && review.is_tagged_by_user.includes('funny') ? 'tagged' : "" },
                       _react2.default.createElement('i', { className: 'far fa-smile' }),
                       'Funny'
                     ),
@@ -31195,7 +31199,7 @@ var ReviewsIndexItem = function (_React$Component) {
                       'li',
                       { onClick: function onClick(e) {
                           return _this2.reviewTag(e, 'cool');
-                        }, className: this.props.review.is_tagged_by_user.includes('cool') ? 'tagged' : "" },
+                        }, className: review.is_tagged_by_user && review.is_tagged_by_user.includes('cool') ? 'tagged' : "" },
                       _react2.default.createElement('i', { className: 'far fa-hand-peace' }),
                       'Cool'
                     )

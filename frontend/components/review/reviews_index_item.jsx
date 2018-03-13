@@ -34,10 +34,14 @@ class ReviewsIndexItem extends React.Component {
   }
 
   reviewTag(e, tag){
-    if (e.target.className === '') {
-      this.props.createReviewTag(this.props.review.id, tag)
+    if (!this.props.currentUser) {
+      this.setState({notification: 'Please login before tag review'});
     } else {
-      this.props.deleteReviewTag(this.props.review.id, tag)
+      if (e.target.className === '') {
+        this.props.createReviewTag(this.props.review.id, tag)
+      } else {
+        this.props.deleteReviewTag(this.props.review.id, tag)
+      }
     }
   }
 
@@ -129,19 +133,19 @@ class ReviewsIndexItem extends React.Component {
                 </div>
               :
                 <div className='review-status'>
-                  {this.props.review.is_tagged_by_user.length > 0 ?
+                  {this.props.review.is_tagged_by_user && this.props.review.is_tagged_by_user.length > 0 ?
                     <p className='already-voted'>You voted</p>
                     :
                   <p>Was this review ...?</p>
                   }
                   <div>
                     <ul className='group'>
-                      <li onClick={(e)=>this.reviewTag(e, 'userful')} className={this.props.review.is_tagged_by_user.includes('userful') ? 'tagged' : ""}><i className="fas fa-lightbulb"></i>Userful</li>
-                      <li onClick={(e)=>this.reviewTag(e, 'funny')} className={this.props.review.is_tagged_by_user.includes('funny') ? 'tagged' : ""}><i className="far fa-smile"></i>Funny</li>
-                      <li onClick={(e)=>this.reviewTag(e, 'cool')} className={this.props.review.is_tagged_by_user.includes('cool') ? 'tagged' : ""}><i className="far fa-hand-peace"></i>Cool</li>
+                      <li onClick={(e)=>this.reviewTag(e, 'userful')} className={review.is_tagged_by_user && review.is_tagged_by_user.includes('userful') ? 'tagged' : ""}><i className="fas fa-lightbulb"></i>Userful</li>
+                      <li onClick={(e)=>this.reviewTag(e, 'funny')} className={review.is_tagged_by_user && review.is_tagged_by_user.includes('funny') ? 'tagged' : ""}><i className="far fa-smile"></i>Funny</li>
+                      <li onClick={(e)=>this.reviewTag(e, 'cool')} className={review.is_tagged_by_user && review.is_tagged_by_user.includes('cool') ? 'tagged' : ""}><i className="far fa-hand-peace"></i>Cool</li>
                     </ul>
                     <div onClick={(e)=>this.openReport(e)} className='report-review'><i className="fas fa-flag"></i></div>
-                  </div>
+                    </div>
                 </div>
               }
             </div>
