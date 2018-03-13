@@ -36316,7 +36316,7 @@ var UserProfile = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'user-actions' },
-                  currentUser.id === user.id ? _react2.default.createElement(
+                  currentUser && user && currentUser.id === user.id ? _react2.default.createElement(
                     'ul',
                     null,
                     _react2.default.createElement(

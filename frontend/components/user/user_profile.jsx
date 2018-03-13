@@ -43,7 +43,7 @@ class UserProfile extends React.Component{
                     </div>
                   </div>
                   <div className='user-actions'>
-                  {currentUser.id === user.id ?
+                  {currentUser && user && currentUser.id === user.id ?
                   <ul>
                     <li><i className="fas fa-camera-retro"></i><a href='/#/settings'>Add Profile Photos</a></li>
                     <li><i className="fas fa-id-card"></i><a href='/#/settings'>Update Your Profile</a></li>
