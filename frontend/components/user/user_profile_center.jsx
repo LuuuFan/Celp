@@ -31,7 +31,7 @@ class UserProfileCenter extends React.Component {
               </div>
             </div>
            : ""}
-          {user.review_num > 0 ?
+          {user.review_num > 0 && biz[reviews[reviews.order[0]].biz_id] ?
             <div className='user-show-recent-activity-item group'>
               <div className='activity-item-avatar'>
                 <img src={user.avatar_url}/>

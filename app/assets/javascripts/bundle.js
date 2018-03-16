@@ -36670,7 +36670,7 @@ var UserProfileCenter = function (_React$Component) {
               )
             )
           ) : "",
-          user.review_num > 0 ? _react2.default.createElement(
+          user.review_num > 0 && biz[reviews[reviews.order[0]].biz_id] ? _react2.default.createElement(
             'div',
             { className: 'user-show-recent-activity-item group' },
             _react2.default.createElement(
