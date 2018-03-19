@@ -25,7 +25,7 @@ class AddImg extends React.Component {
         if (errors) {
         }
         result.forEach(file=> {
-          let img = {url: file.url, description: ''}
+          let img = {url: file.secure_url, description: ''}
           this.setState({img: this.state.img.concat([img])});
         });
       });

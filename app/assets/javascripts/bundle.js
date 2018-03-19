@@ -32409,7 +32409,7 @@ var AddImg = function (_React$Component) {
       cloudinary.openUploadWidget({ cloud_name: 'ddwejrtgh', upload_preset: 'l8du0kzb' }, function (errors, result) {
         if (errors) {}
         result.forEach(function (file) {
-          var img = { url: file.url, description: '' };
+          var img = { url: file.secure_url, description: '' };
           _this2.setState({ img: _this2.state.img.concat([img]) });
         });
       });
