@@ -76,18 +76,18 @@ class Biz < ApplicationRecord
 end
 ```
 # Future Development
-* Homepage
-  * Recent activity on homepage is hard coded now, will update to show the realtime data.
-* User profile
-  * Adding more user information - avatar, city, interests, ect.
-  * Display user reviews, photos, bookmarks.
-  * Option to add other Celp users as friends.
-* Useful, Funny, Cool Reviews
-  * Ability to rate other reviews
-* Filter search result
-  * User can filter the serach result base on price, open time
-* Search base on map range
-  * Allow user to drag map to do the re-search in the certain area.
-  * Marker can guide user to the business show page
-  * Update geocode request, save it to business database after get geocode from google, avoide Google geocode query alert
-* Optimize CSS styling
+- [ ] Homepage
+  - [ ]  Recent activity on homepage is hard coded now, will update to show the realtime data.
+- [ ]  User profile
+  - [x]  Adding more user information - avatar, city, interests, ect.
+  - [x]  Display user reviews, photos, bookmarks.
+  - [ ]  Option to add other Celp users as friends.
+- [x]  Useful, Funny, Cool Reviews
+  - [x]  Ability to rate other reviews
+- [x]  Filter search result
+  - [x]  User can filter the search result base on price, open time
+- [ ]  Search base on map range
+  - [ ]  Allow user to drag map to do the re-search in the certain area.
+  - [ ]  Marker can guide user to the business show page
+  - [ ]  Update geocode request, save it to business database after get geocode from google, avoide Google geocode query alert
+- [ ]  Optimize CSS styling
