@@ -19,5 +19,4 @@ class Api::LikesController < ApplicationController
       render json: ['cannot find like'], status: 422
     end
   end
-
 end
