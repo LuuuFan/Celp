@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       resource :bookmark, only: [:create, :destroy]
     end
     resource :session, only: [:create, :destroy]
-    resources :imgs, only: [:show, :destroy]
+    resources :imgs, only: [:show, :destroy] do
+      resource :like, only: [:create, :destroy]
+    end
     resources :reviews, only: [:show, :destroy] do
       resource :review_tags, only: [:create, :destroy]
     end
