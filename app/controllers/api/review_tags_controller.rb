@@ -1,7 +1,7 @@
 class Api::ReviewTagsController < ApplicationController
 
   def create
-    @review_tag = ReviewTag.new(review_id: params[:review_id], tag:params[:tag])
+    @review_tag = ReviewTag.new(review_id: params[:review_id], tag: params[:tag])
     @review_tag.user_id = current_user.id
     @review = Review.find_by(id: params[:review_id])
     if @review_tag.save
