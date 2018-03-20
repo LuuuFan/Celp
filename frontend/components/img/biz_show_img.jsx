@@ -7,10 +7,16 @@ class BizShowImg extends React.Component {
     this.state = {};
   }
 
-  mouseOver(){
-    // const img = document.getElementById("biz-show-img-2");
-    // // debugger
-    // img.classList.remove(".biz-show-img-zoom");
+  mouseOver(e){
+    if (e.currentTarget.id !== "biz-show-img-1") {
+      const img = document.getElementById("biz-show-img-1");
+      img.classList.remove('biz-show-img-zoom');
+    }
+  }
+
+  mouseOut(){
+    const img = document.getElementById("biz-show-img-1");
+    img.classList.add('biz-show-img-zoom');
   }
 
   render(){
@@ -19,11 +25,11 @@ class BizShowImg extends React.Component {
       <div className='biz-show-right-bottom'>
         <div className='biz-show-img'>
           { imgs.length > 0 ? (
-            <div>
+            <div onMouseOut={()=>this.mouseOut()}>
               { imgs.map((img, idx) => {
                   if (idx <= 2) {
                     return (
-                      <div key={idx} className='thumb' id={`biz-show-img-${idx}`}>
+                      <div onMouseOver={(e)=>this.mouseOver(e)} key={idx} className={idx === 1 ? 'thumb biz-show-img-zoom' : 'thumb'} id={`biz-show-img-${idx}`}>
                         {img ? <BizShowImgItem img={img}  biz={biz} currentUser={currentUser}/> : ""}
                       </div>
                     );

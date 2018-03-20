@@ -30414,13 +30414,6 @@ var BizShow = function (_React$Component) {
 
 exports.default = BizShow;
 
-// <div className='thumb biz-show-img-zoom' id='biz-show-img-2'>
-//   <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1487994_10202453162466067_1183927869_o.jpg?oh=965e3bb005bd86a4858fe85048640aed&oe=5AEAEB97' />
-// </div>
-// <div onMouseOver={()=>this.mouseOver()} className='thumb' id='biz-show-img-3'>
-//   <img src='https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/1501349_10202453168466217_804954821_o.jpg?oh=fcb423a163691b33856b052bb38dfe24&oe=5ADDCFDB' />
-// </div>
-
 /***/ }),
 /* 170 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -30464,14 +30457,23 @@ var BizShowImg = function (_React$Component) {
 
   _createClass(BizShowImg, [{
     key: 'mouseOver',
-    value: function mouseOver() {
-      // const img = document.getElementById("biz-show-img-2");
-      // // debugger
-      // img.classList.remove(".biz-show-img-zoom");
+    value: function mouseOver(e) {
+      if (e.currentTarget.id !== "biz-show-img-1") {
+        var img = document.getElementById("biz-show-img-1");
+        img.classList.remove('biz-show-img-zoom');
+      }
+    }
+  }, {
+    key: 'mouseOut',
+    value: function mouseOut() {
+      var img = document.getElementById("biz-show-img-1");
+      img.classList.add('biz-show-img-zoom');
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props,
           imgs = _props.imgs,
           biz = _props.biz,
@@ -30485,12 +30487,16 @@ var BizShowImg = function (_React$Component) {
           { className: 'biz-show-img' },
           imgs.length > 0 ? _react2.default.createElement(
             'div',
-            null,
+            { onMouseOut: function onMouseOut() {
+                return _this2.mouseOut();
+              } },
             imgs.map(function (img, idx) {
               if (idx <= 2) {
                 return _react2.default.createElement(
                   'div',
-                  { key: idx, className: 'thumb', id: 'biz-show-img-' + idx },
+                  { onMouseOver: function onMouseOver(e) {
+                      return _this2.mouseOver(e);
+                    }, key: idx, className: idx === 1 ? 'thumb biz-show-img-zoom' : 'thumb', id: 'biz-show-img-' + idx },
                   img ? _react2.default.createElement(_biz_show_img_item2.default, { img: img, biz: biz, currentUser: currentUser }) : ""
                 );
               }
