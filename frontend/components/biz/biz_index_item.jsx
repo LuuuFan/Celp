@@ -8,7 +8,7 @@ class BizIndexItem extends React.Component {
   }
 
   render(){
-    const {biz,idx} = this.props;
+    const {biz, idx} = this.props;
     let review;
     if (biz.reviews_num > 1) {
       review = `${biz.reviews_num} Reviews`;
@@ -55,6 +55,11 @@ class BizIndexItem extends React.Component {
                  </div>
                  : ""}
              </div>
+            {biz['bookmarked?'] ?
+              <div className='biz-index-item-bookmarked'>
+                <i className="fas fa-bookmark"></i><p>Bookmarked</p>
+              </div>
+             : ""}
            </div>
            <div className='biz-info-right'>
              <div className='biz-info-address'>

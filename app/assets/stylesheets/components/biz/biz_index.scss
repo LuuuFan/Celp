@@ -104,3 +104,16 @@
   min-width: 1020px;
   display: flex;
 }
+
+.biz-index-item-bookmarked{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+  margin-top: 5px;
+}
+
+.biz-index-item-bookmarked>i{
+  color: red;
+  margin-right: 5px;
+}

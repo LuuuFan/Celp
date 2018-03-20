@@ -29684,7 +29684,17 @@ var BizIndexItem = function (_React$Component) {
                     );
                   })
                 ) : ""
-              )
+              ),
+              biz['bookmarked?'] ? _react2.default.createElement(
+                'div',
+                { className: 'biz-index-item-bookmarked' },
+                _react2.default.createElement('i', { className: 'fas fa-bookmark' }),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Bookmarked'
+                )
+              ) : ""
             ),
             _react2.default.createElement(
               'div',

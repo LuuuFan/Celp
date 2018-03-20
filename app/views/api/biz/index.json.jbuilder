@@ -12,6 +12,9 @@
       json.extract! biz, :address1, :address2, :address3, :city, :state, :zip_code
     end
     json.set! :display_address, biz.display_address
+    if current_user
+      json.bookmarked? biz.bookmarked?(current_user.id)
+    end
     json.set! :reviews_num, biz.reviews.length
      if biz.review_sample
        json.set! :review_sample do
