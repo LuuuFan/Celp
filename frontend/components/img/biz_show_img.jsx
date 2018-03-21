@@ -10,13 +10,17 @@ class BizShowImg extends React.Component {
   mouseOver(e){
     if (e.currentTarget.id !== "biz-show-img-1") {
       const img = document.getElementById("biz-show-img-1");
-      img.classList.remove('biz-show-img-zoom');
+      if (img) {
+        img.classList.remove('biz-show-img-zoom');
+      }
     }
   }
 
   mouseOut(){
     const img = document.getElementById("biz-show-img-1");
-    img.classList.add('biz-show-img-zoom');
+    if (img) {
+      img.classList.add('biz-show-img-zoom');
+    }
   }
 
   render(){

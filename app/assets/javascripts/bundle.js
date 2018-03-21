@@ -30460,14 +30460,18 @@ var BizShowImg = function (_React$Component) {
     value: function mouseOver(e) {
       if (e.currentTarget.id !== "biz-show-img-1") {
         var img = document.getElementById("biz-show-img-1");
-        img.classList.remove('biz-show-img-zoom');
+        if (img) {
+          img.classList.remove('biz-show-img-zoom');
+        }
       }
     }
   }, {
     key: 'mouseOut',
     value: function mouseOut() {
       var img = document.getElementById("biz-show-img-1");
-      img.classList.add('biz-show-img-zoom');
+      if (img) {
+        img.classList.add('biz-show-img-zoom');
+      }
     }
   }, {
     key: 'render',
