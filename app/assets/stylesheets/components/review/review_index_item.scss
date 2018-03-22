@@ -44,7 +44,6 @@
 }
 
 .review-user-info>ul>li>a{
-
   font-size: 14px;
   cursor: pointer;
   color: #0073bb;
@@ -65,6 +64,12 @@
 
 .review-user-info>ul>li:nth-child(2){
   font-weight: bold;
+}
+
+.review-user-info>ul>li>i{
+  margin-right: 5px;
+  font-size: 10px;
+  color: rgb(241, 92, 0);
 }
 
 .review-info-rate-time{

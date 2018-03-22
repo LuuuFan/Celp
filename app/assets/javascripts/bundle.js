@@ -31111,6 +31111,7 @@ var ReviewsIndexItem = function (_React$Component) {
                   users[review.user_id].user_review_num > 1 ? _react2.default.createElement(
                     'li',
                     null,
+                    _react2.default.createElement('i', { className: 'fas fa-star' }),
                     _react2.default.createElement(
                       'strong',
                       null,
@@ -31120,13 +31121,20 @@ var ReviewsIndexItem = function (_React$Component) {
                   ) : _react2.default.createElement(
                     'li',
                     null,
+                    _react2.default.createElement('i', { className: 'fas fa-star' }),
                     _react2.default.createElement(
                       'strong',
                       null,
                       '1'
                     ),
                     ' review'
-                  )
+                  ),
+                  users[review.user_id].user_imgs_num > 0 ? _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('i', { className: 'fas fa-camera' }),
+                    users[review.user_id].user_imgs_num > 1 ? users[review.user_id].user_imgs_num + ' photos' : "1 photo"
+                  ) : ""
                 )
               )
             ),

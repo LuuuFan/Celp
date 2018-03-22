@@ -62,6 +62,7 @@ json.set! :users do
     json.set! user.id do
       json.extract! user, :id, :avatar_url, :username
       json.set! :user_review_num, user.reviews.length
+      json.set! :user_imgs_num, user.imgs.length
     end
   end
 end

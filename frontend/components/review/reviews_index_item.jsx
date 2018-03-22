@@ -101,8 +101,12 @@ class ReviewsIndexItem extends React.Component {
                   <li><Link to={`/user/${users[review.user_id].username}`}>{users[review.user_id].username}</Link></li>
                   <li>San Francisco, CA</li>
                   {users[review.user_id].user_review_num > 1 ?
-                    <li><strong>{users[review.user_id].user_review_num}</strong> reviews</li>
-                  : <li><strong>1</strong> review</li>
+                    <li><i className='fas fa-star'></i><strong>{users[review.user_id].user_review_num}</strong> reviews</li>
+                  : <li><i className='fas fa-star'></i><strong>1</strong> review</li>
+                  }
+                  {users[review.user_id].user_imgs_num > 0 ?
+                    <li><i className='fas fa-camera'></i>{users[review.user_id].user_imgs_num > 1 ? `${users[review.user_id].user_imgs_num} photos` : "1 photo"}</li>
+                    : ""
                   }
                 </ul>
               </div>
