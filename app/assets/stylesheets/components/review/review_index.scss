@@ -84,10 +84,19 @@ strong{
   background-color: #bd1f1f;
   position: relative;
 }
+
 .searchReview>form>button > i{
   font-size: 14px;
   position: absolute;
   margin: auto;
   top: 25%;
   right: 30%;
+}
+
+.reviews-filter {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0 10px 0;
 }

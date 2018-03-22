@@ -30760,6 +30760,12 @@ var ReviewsIndex = function (_React$Component) {
   }, {
     key: 'handleInput',
     value: function handleInput(e) {
+      if (e.target.value === "") {
+        this.setState({
+          filter: e.target.value,
+          reviews: this.props.reviews
+        });
+      }
       this.setState({ filter: e.target.value });
     }
   }, {
@@ -30882,20 +30888,30 @@ var ReviewsIndex = function (_React$Component) {
           biz.review_ids && biz.review_ids.length > 0 ? _react2.default.createElement(
             'div',
             null,
-            this.state.reviews.map(function (review) {
-              return _react2.default.createElement(
-                'div',
-                { key: review.id },
-                review ? _react2.default.createElement(_reviews_index_item2.default, {
-                  review: review,
-                  users: users,
-                  bizId: biz.id,
-                  currentUser: currentUser,
-                  createReviewTag: createReviewTag,
-                  deleteReviewTag: deleteReviewTag,
-                  deleteReview: deleteReview }) : ""
-              );
-            })
+            this.state.reviews.length > 0 ? _react2.default.createElement(
+              'div',
+              null,
+              this.state.reviews.map(function (review) {
+                return _react2.default.createElement(
+                  'div',
+                  { key: review.id },
+                  review ? _react2.default.createElement(_reviews_index_item2.default, {
+                    review: review,
+                    users: users,
+                    bizId: biz.id,
+                    currentUser: currentUser,
+                    createReviewTag: createReviewTag,
+                    deleteReviewTag: deleteReviewTag,
+                    deleteReview: deleteReview }) : ""
+                );
+              })
+            ) : _react2.default.createElement(
+              'div',
+              { className: 'reviews-filter' },
+              '0 reviews mentioning ',
+              this.state.filter,
+              '.'
+            )
           ) : _react2.default.createElement(
             'div',
             { className: 'no-review' },

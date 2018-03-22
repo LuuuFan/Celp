@@ -24,6 +24,12 @@ class ReviewsIndex extends React.Component {
   }
 
   handleInput(e){
+    if (e.target.value === "") {
+      this.setState({
+        filter: e.target.value,
+        reviews: this.props.reviews
+      })
+    }
     this.setState({filter: e.target.value});
   }
 
@@ -75,20 +81,28 @@ class ReviewsIndex extends React.Component {
           <hr/>
           { biz.review_ids && biz.review_ids.length > 0 ?
             <div>
-              {this.state.reviews.map(review =>
-                <div key={review.id}>
-                  {review ?
-                    <ReviewsIndexItem
-                      review={review}
-                      users={users}
-                      bizId={biz.id}
-                      currentUser={currentUser}
-                      createReviewTag={createReviewTag}
-                      deleteReviewTag={deleteReviewTag}
-                      deleteReview={deleteReview} />
-                  :""}
+              {this.state.reviews.length > 0 ?
+                <div>
+                  {this.state.reviews.map(review =>
+                    <div key={review.id}>
+                      {review ?
+                        <ReviewsIndexItem
+                          review={review}
+                          users={users}
+                          bizId={biz.id}
+                          currentUser={currentUser}
+                          createReviewTag={createReviewTag}
+                          deleteReviewTag={deleteReviewTag}
+                          deleteReview={deleteReview} />
+                      : ""}
+                    </div>
+                  )}
                 </div>
-              )}
+                :
+                <div className='reviews-filter'>
+                  0 reviews mentioning {this.state.filter}.
+                </div>
+              }
             </div>
             :
             <div className='no-review'>
