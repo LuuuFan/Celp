@@ -6,6 +6,35 @@ import BizShowMoreInfo from '../biz/biz_show_more_info';
 
 
 class ReviewsIndex extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      reviews: [],
+      filter: ''
+    };
+    this.handleInput = this.handleInput.bind(this);
+  }
+
+  componentDidMount(){
+    this.setState({reviews: this.props.reviews});
+  }
+
+  componentWillReceiveProps(newProps){
+    this.setState({reviews: newProps.reviews});
+  }
+
+  handleInput(e){
+    this.setState({filter: e.target.value});
+  }
+
+  filterReview(e){
+    e.preventDefault();
+    if (this.state.filter.length == 0) {
+      this.setState({reviews: this.props.reviews})
+    } else {
+      this.setState({reviews: this.props.reviews.filter(review=>review.body.includes(this.state.filter))})
+    }
+  }
 
   // componentDidMount(){
   //   this.props.requestAllReviews(this.props.match.params.bizId);
@@ -35,16 +64,18 @@ class ReviewsIndex extends React.Component {
               {biz ? <h2>for {biz.name}</h2> : ''}
             </div>
             <div className='searchReview '>
-              <input placeholder='Search within the reviews'/>
-              <button>
-                <i className="fas fa-search"></i>
-              </button>
+              <form onSubmit={(e)=>this.filterReview(e)}>
+                <input onChange={(e)=>this.handleInput(e)} type='text' placeholder='Search within the reviews'/>
+                <button onClick={(e)=>this.filterReview(e)} >
+                  <i className="fas fa-search"></i>
+                </button>
+              </form>
             </div>
           </div>
           <hr/>
           { biz.review_ids && biz.review_ids.length > 0 ?
             <div>
-              {reviews.map(review =>
+              {this.state.reviews.map(review =>
                 <div key={review.id}>
                   {review ?
                     <ReviewsIndexItem

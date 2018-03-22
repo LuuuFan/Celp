@@ -29397,12 +29397,12 @@ var BizIndex = function (_React$Component) {
           this.setState({ cat: '' });
           this.setState({ loc: loc.split('+').join(' '), key: key });
           this.props.requestSearch(key, loc).then(function () {
-            _this3.setState({ bizes: _this3.props.bizes });
+            _this3.setState({ bizes: newProps.bizes });
           });
         } else if (newProps.location.search.includes('cat')) {
           this.setState({ cat: newProps.location.search.slice(5) });
           this.props.requestCategory(newProps.location.search.slice(5)).then(function () {
-            _this3.setState({ bizes: _this3.props.bizes });
+            _this3.setState({ bizes: newProps.bizes });
           });
         }
       }
@@ -30737,12 +30737,45 @@ var ReviewsIndex = function (_React$Component) {
   function ReviewsIndex() {
     _classCallCheck(this, ReviewsIndex);
 
-    return _possibleConstructorReturn(this, (ReviewsIndex.__proto__ || Object.getPrototypeOf(ReviewsIndex)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (ReviewsIndex.__proto__ || Object.getPrototypeOf(ReviewsIndex)).call(this));
+
+    _this.state = {
+      reviews: [],
+      filter: ''
+    };
+    _this.handleInput = _this.handleInput.bind(_this);
+    return _this;
   }
 
   _createClass(ReviewsIndex, [{
-    key: 'render',
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setState({ reviews: this.props.reviews });
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      this.setState({ reviews: newProps.reviews });
+    }
+  }, {
+    key: 'handleInput',
+    value: function handleInput(e) {
+      this.setState({ filter: e.target.value });
+    }
+  }, {
+    key: 'filterReview',
+    value: function filterReview(e) {
+      var _this2 = this;
 
+      e.preventDefault();
+      if (this.state.filter.length == 0) {
+        this.setState({ reviews: this.props.reviews });
+      } else {
+        this.setState({ reviews: this.props.reviews.filter(function (review) {
+            return review.body.includes(_this2.state.filter);
+          }) });
+      }
+    }
 
     // componentDidMount(){
     //   this.props.requestAllReviews(this.props.match.params.bizId);
@@ -30755,7 +30788,11 @@ var ReviewsIndex = function (_React$Component) {
     //   }
     // }
 
+  }, {
+    key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props = this.props,
           reviews = _props.reviews,
           biz = _props.biz,
@@ -30823,11 +30860,21 @@ var ReviewsIndex = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'searchReview ' },
-              _react2.default.createElement('input', { placeholder: 'Search within the reviews' }),
               _react2.default.createElement(
-                'button',
-                null,
-                _react2.default.createElement('i', { className: 'fas fa-search' })
+                'form',
+                { onSubmit: function onSubmit(e) {
+                    return _this3.filterReview(e);
+                  } },
+                _react2.default.createElement('input', { onChange: function onChange(e) {
+                    return _this3.handleInput(e);
+                  }, type: 'text', placeholder: 'Search within the reviews' }),
+                _react2.default.createElement(
+                  'button',
+                  { onClick: function onClick(e) {
+                      return _this3.filterReview(e);
+                    } },
+                  _react2.default.createElement('i', { className: 'fas fa-search' })
+                )
               )
             )
           ),
@@ -30835,7 +30882,7 @@ var ReviewsIndex = function (_React$Component) {
           biz.review_ids && biz.review_ids.length > 0 ? _react2.default.createElement(
             'div',
             null,
-            reviews.map(function (review) {
+            this.state.reviews.map(function (review) {
               return _react2.default.createElement(
                 'div',
                 { key: review.id },

@@ -60,24 +60,31 @@ strong{
   border-radius: 3px;
   border: 1px solid gray;
   overflow: hidden;
-  display: flex;
-  justify-content: space-between;
   height: 26px;
 }
 
-.searchReview>input{
-  padding: 5px 8px;
-  font-size: 14px;
+.searchReview>form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.searchReview > button{
+.searchReview input{
+  width: 90%;
+  padding: 5px 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.searchReview>form>button{
   border-left: 1px solid gray;
   height: 100%;
   width: 40px;
   background-color: #bd1f1f;
   position: relative;
 }
-.searchReview > button > i{
+.searchReview>form>button > i{
   font-size: 14px;
   position: absolute;
   margin: auto;
