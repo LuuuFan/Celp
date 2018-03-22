@@ -29397,12 +29397,12 @@ var BizIndex = function (_React$Component) {
           this.setState({ cat: '' });
           this.setState({ loc: loc.split('+').join(' '), key: key });
           this.props.requestSearch(key, loc).then(function () {
-            _this3.setState({ bizes: newProps.bizes });
+            _this3.setState({ bizes: _this3.props.bizes });
           });
         } else if (newProps.location.search.includes('cat')) {
           this.setState({ cat: newProps.location.search.slice(5) });
           this.props.requestCategory(newProps.location.search.slice(5)).then(function () {
-            _this3.setState({ bizes: newProps.bizes });
+            _this3.setState({ bizes: _this3.props.bizes });
           });
         }
       }

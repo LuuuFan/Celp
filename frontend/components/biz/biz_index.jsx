@@ -44,12 +44,12 @@ class BizIndex extends React.Component {
         this.setState({cat:''});
         this.setState({loc: loc.split('+').join(' '), key: key});
         this.props.requestSearch(key, loc).then(()=>{
-          this.setState({bizes: newProps.bizes});
+          this.setState({bizes: this.props.bizes});
         });
       } else if (newProps.location.search.includes('cat')) {
         this.setState({cat: newProps.location.search.slice(5)})
         this.props.requestCategory(newProps.location.search.slice(5)).then(()=>{
-          this.setState({bizes: newProps.bizes});
+          this.setState({bizes: this.props.bizes});
         });
       }
     }
