@@ -31090,7 +31090,7 @@ var ReviewsIndexItem = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'review-user-info' },
+                { className: 'review-user-info-list' },
                 _react2.default.createElement(
                   'ul',
                   null,

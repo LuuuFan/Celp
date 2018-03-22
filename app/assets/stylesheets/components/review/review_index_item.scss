@@ -1,4 +1,5 @@
 .biz-review-rating{
+
   background-image: url("https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png");
   background-size: 132px 560px;
   background-repeat: no-repeat;
@@ -20,21 +21,18 @@
   width: 33%;
 }
 
-.review-user .review-user-info{
-  width: 80%;
+.review-user-info{
   display: flex;
 }
 
 .review-info{
-  width: 67%;
+  width: 65%;
 }
-
 
 .review-user-avatar{
   height: 60px;
   width: 60px;
   overflow: hidden;
-  margin-right: 5px;
   border-radius: 5px;
 }
 
@@ -43,30 +41,35 @@
   height: 100%;
 }
 
-.review-user-info>ul>li>a{
+.review-user-info-list>ul>li>a{
   font-size: 14px;
   cursor: pointer;
   color: #0073bb;
   font-weight: bold;
 }
 
-.review-user-info>ul>li>a:hover{
+.review-user-info-list{
+  margin-left: 15px;
+}
+
+.review-user-info-list>ul>li>a:hover{
   text-decoration: underline;
 }
 
-.review-user-info>ul>li:first-of-type{
+.review-user-info-list>ul>li:first-of-type{
   margin-bottom: 5px;
 }
 
-.review-user-info>ul>li{
+.review-user-info-list>ul>li{
+  margin-bottom: 3px;
   font-size: 12px;
 }
 
-.review-user-info>ul>li:nth-child(2){
+.review-user-info-list>ul>li:nth-child(2){
   font-weight: bold;
 }
 
-.review-user-info>ul>li>i{
+.review-user-info-list>ul>li>i{
   margin-right: 5px;
   font-size: 10px;
   color: rgb(241, 92, 0);

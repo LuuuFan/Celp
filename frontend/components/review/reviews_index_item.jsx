@@ -96,7 +96,7 @@ class ReviewsIndexItem extends React.Component {
               <div className='review-user-avatar'>
                 <img src={users[review.user_id].avatar_url}/>
               </div>
-              <div className='review-user-info'>
+              <div className='review-user-info-list'>
                 <ul>
                   <li><Link to={`/user/${users[review.user_id].username}`}>{users[review.user_id].username}</Link></li>
                   <li>San Francisco, CA</li>
