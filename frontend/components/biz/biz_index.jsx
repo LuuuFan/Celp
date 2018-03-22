@@ -71,10 +71,16 @@ class BizIndex extends React.Component {
       <div>
         <div className='search-banner'>
           <div>
-            <div className='search-title'>
-              <h1>Best {this.state.cat ? this.state.cat : this.state.key }</h1>
-              <h1>{this.state.cat ? 'in San Francisco, CA' : <div>{this.state.loc ? `in ${this.state.loc}` : ''}</div>}</h1>
-            </div>
+            {bizes.length == 0 ?
+              <div className='search-title'>
+                <h1>No Result for {this.state.key}</h1>
+                <h1>{this.state.loc ?  `in ${this.state.loc}` : ""}</h1>
+              </div>
+               :
+              <div  className='search-title'>
+                <h1>Best {this.state.cat ? this.state.cat : this.state.key }</h1>
+                <h1>{this.state.cat ? 'in San Francisco, CA' : <div>{this.state.loc ? `in ${this.state.loc}` : ''}</div>}</h1>
+              </div>}
             <div className='filter-btn'>
               <div className='filter-price'>
                 <ul>

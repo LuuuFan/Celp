@@ -29437,7 +29437,21 @@ var BizIndex = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(
+            bizes.length == 0 ? _react2.default.createElement(
+              'div',
+              { className: 'search-title' },
+              _react2.default.createElement(
+                'h1',
+                null,
+                'No Result for ',
+                this.state.key
+              ),
+              _react2.default.createElement(
+                'h1',
+                null,
+                this.state.loc ? 'in ' + this.state.loc : ""
+              )
+            ) : _react2.default.createElement(
               'div',
               { className: 'search-title' },
               _react2.default.createElement(
