@@ -75,9 +75,10 @@ class Biz < ApplicationRecord
     if today_hour.nil?
       false
     else
-      start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3)
-      over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3)
-      if DateTime.now > Time.parse(start) && DateTime.now < Time.parse(over)
+      start = today_hour[0].slice(0, 2) + ":" + today_hour[0].slice(2,3) + ' PST'
+      over = today_hour[1].slice(0, 2) + ":" + today_hour[1].slice(2,3) + ' PST'
+      time = Time.now.in_time_zone('Pacific Time (US & Canada)')
+      if time > Time.parse(start) && time < Time.parse(over)
         true
       else
         false
