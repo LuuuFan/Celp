@@ -28689,7 +28689,9 @@ var Home = function (_React$Component) {
             var btn = document.getElementById('login');
             btn.setAttribute("style", "background-color: #a71c1c");
             window.setTimeout(function () {
-              _this2.props.createSession({ username: 'demo_user', email: '', password: 'password' }).then(_this2.props.history.push('/'));
+              _this2.props.createSession({ username: 'demo_user', email: '', password: 'password' }).then(function () {
+                return _this2.props.history.push('/');
+              });
             }, 100);
           }, 500);
         }, 1000);

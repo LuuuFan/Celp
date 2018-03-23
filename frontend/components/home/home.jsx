@@ -25,7 +25,8 @@ class Home extends React.Component {
           const btn = document.getElementById('login');
           btn.setAttribute("style", "background-color: #a71c1c");
           window.setTimeout(()=>{
-            this.props.createSession({username: 'demo_user', email:'', password: 'password'}).then(this.props.history.push('/'));
+            this.props.createSession({username: 'demo_user', email:'', password: 'password'})
+              .then(()=>this.props.history.push('/'));
           }, 100);
         }, 500);
       }, 1000);
