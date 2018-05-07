@@ -5,7 +5,7 @@ const errorsReducer = (state={}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ERRORS:
-      return action.errors
+      return action.errors;
     case CLEAR_ERRORS:
       return {};
     default:
